@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dab8148e7e0a0e3479699140684fc527, type: 3}
+  m_Name: Unarmed Right
+  m_EditorClassIdentifier: 
+  itemIcon: {fileID: 21300000, guid: c9b495460a7a4df4096430cd4cf06c7b, type: 3}
+  itemName: Unarmed
+  modelPrefab: {fileID: 3390800227218497196, guid: b6752d91774a99e489d19f0b55fc07e1, type: 3}
+  isUnarmed: 1
+  Left_Hand_Idle: 
+  Right_Hand_Idle: 
+  OH_Light_Attack_1: PunchRight
+  OH_Light_Attack_2: PunchRight
+  OH_Heavy_Attack_1: RightHook
+  baseStaminaCost: 10
+  lightAttackMultiplier: 1
+  heavyAttackMultiplier: 1.5
