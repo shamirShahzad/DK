@@ -106,15 +106,15 @@ NavMeshSettings:
   m_BuildSettings:
     serializedVersion: 2
     agentTypeID: 0
-    agentRadius: 0.5
-    agentHeight: 2
+    agentRadius: 0.2922526
+    agentHeight: 1.932661
     agentSlope: 45
     agentClimb: 0.4
     ledgeDropHeight: 0
     maxJumpAcrossDistance: 0
     minRegionArea: 2
     manualCellSize: 0
-    cellSize: 0.16666667
+    cellSize: 0.09741753
     manualTileSize: 0
     tileSize: 256
     accuratePlacement: 0
@@ -122,7 +122,7 @@ NavMeshSettings:
     preserveTilesOutsideBounds: 0
     debug:
       m_Flags: 0
-  m_NavMeshData: {fileID: 0}
+  m_NavMeshData: {fileID: 23800000, guid: be94316beaa9af749ae0824647626674, type: 2}
 --- !u!1 &123001046
 GameObject:
   m_ObjectHideFlags: 0
@@ -6006,7 +6006,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!64 &1905452394
 MeshCollider:
@@ -6161,12 +6161,8 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 1643376218639256608, guid: 9eec5f8e90660154e9b5ea043b5401f2, type: 3}
-      propertyPath: detectionLayer.m_Bits
-      value: 512
-      objectReference: {fileID: 0}
-    - target: {fileID: 6192375382953457164, guid: 9eec5f8e90660154e9b5ea043b5401f2, type: 3}
-      propertyPath: detectionRadius
-      value: 80
+      propertyPath: stoppingDistance
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6192375382953457165, guid: 9eec5f8e90660154e9b5ea043b5401f2, type: 3}
       propertyPath: m_RootOrder
@@ -6211,6 +6207,26 @@ PrefabInstance:
     - target: {fileID: 6192375382953457165, guid: 9eec5f8e90660154e9b5ea043b5401f2, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6192375382953457166, guid: 9eec5f8e90660154e9b5ea043b5401f2, type: 3}
+      propertyPath: m_Height
+      value: 1.9326609
+      objectReference: {fileID: 0}
+    - target: {fileID: 6192375382953457166, guid: 9eec5f8e90660154e9b5ea043b5401f2, type: 3}
+      propertyPath: m_Radius
+      value: 0.2922526
+      objectReference: {fileID: 0}
+    - target: {fileID: 6192375382953457166, guid: 9eec5f8e90660154e9b5ea043b5401f2, type: 3}
+      propertyPath: m_Center.x
+      value: -0.011553466
+      objectReference: {fileID: 0}
+    - target: {fileID: 6192375382953457166, guid: 9eec5f8e90660154e9b5ea043b5401f2, type: 3}
+      propertyPath: m_Center.y
+      value: 0.9506083
+      objectReference: {fileID: 0}
+    - target: {fileID: 6192375382953457166, guid: 9eec5f8e90660154e9b5ea043b5401f2, type: 3}
+      propertyPath: m_Center.z
+      value: -0.03805688
       objectReference: {fileID: 0}
     - target: {fileID: 6192375382953457169, guid: 9eec5f8e90660154e9b5ea043b5401f2, type: 3}
       propertyPath: m_Name

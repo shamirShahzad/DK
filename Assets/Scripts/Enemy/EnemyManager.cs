@@ -5,7 +5,7 @@ namespace DK
 {
     public class EnemyManager : CharacterManager
     {
-        bool isPerformingAction;
+        public bool isPerformingAction;
         [Header("Settings")]
         public float detectionRadius = 20;
         public float minimumDetectionAngle = -50;
@@ -18,6 +18,10 @@ namespace DK
 
         private void Update()
         {
+           
+        }
+        private void FixedUpdate()
+        {
             HandleCurrentAction();
         }
 
@@ -26,6 +30,11 @@ namespace DK
             if(enemyLocomotionManager.currentTarget == null)
             {
                 enemyLocomotionManager.HandleDetection();
+            }
+            else
+            {
+                enemyLocomotionManager.HandleMoveToTarget();
+                
             }
         }
     }
