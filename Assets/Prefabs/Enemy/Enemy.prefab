@@ -4080,10 +4080,10 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  m_Radius: 0.24944732
-  m_Height: 1.4220424
+  m_Radius: 0.2922526
+  m_Height: 1.9326609
   m_Direction: 1
-  m_Center: {x: 0.002747625, y: 1.2059176, z: -0.03805688}
+  m_Center: {x: -0.011553466, y: 0.9506083, z: -0.03805688}
 --- !u!114 &6192375382953457167
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4153,7 +4153,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 512
   distanceFromTarget: 0
-  stoppingDistance: 0.5
+  stoppingDistance: 1
   rotationSpeed: 15
   currentTarget: {fileID: 0}
 --- !u!1 &6243770055607205325
