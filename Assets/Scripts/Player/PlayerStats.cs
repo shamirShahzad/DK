@@ -12,7 +12,7 @@ namespace DK
         PlayerManager playerManager;
         public float staminaRegenarationAmount = 25;
         public float staminaRegenerationTimer = 0;
-        CapsuleCollider collider;
+        CapsuleCollider Ccollider;
 
         public HealthBar healthBar;
         public StaminaBar staminaBar;
@@ -22,7 +22,7 @@ namespace DK
             staminaBar = FindObjectOfType<StaminaBar>();
             animatorHandler = GetComponentInChildren<AnimatorHandler>();
             playerManager = GetComponent<PlayerManager>();
-            collider = GameObject.FindGameObjectWithTag("collider").GetComponent<CapsuleCollider>();
+            //Ccollider = GameObject.FindGameObjectWithTag("collider").GetComponent<CapsuleCollider>();
             maxHealth = SetMaxHealthFromHealthLevel();
             maxStamina = SetMaxStaminaFromStaminaLevel();
             currentHealth = maxHealth;
@@ -56,7 +56,7 @@ namespace DK
             {
                 currentHealth = 0;
                 animatorHandler.PlayTargetAnimation("Death", true);
-                collider.enabled = false;
+                //Ccollider.enabled = false;
                 
             }
         }

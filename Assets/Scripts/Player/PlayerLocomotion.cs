@@ -43,6 +43,9 @@ namespace DK
         [SerializeField]
         float walkingSpeed = 6;
 
+        public CapsuleCollider characterCollider;
+        public CapsuleCollider characterCollisionBlocker;
+
         [Header("Locomotion Stamina Costs")]
         [SerializeField]
         int rollStaminaCost = 15;
@@ -68,6 +71,7 @@ namespace DK
             cameraHandler = FindObjectOfType<CameraHandler>();
             playerManager.isGrounded = true;
             ignoreForGroundCheck = ~(1 << 8 | 1 << 11 | 1 << 12);
+            Physics.IgnoreCollision(characterCollider, characterCollisionBlocker, true);
 
         }
 
