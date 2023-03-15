@@ -5,17 +5,12 @@ namespace DK
 {
     public class EnemyStats : CharacterStats
     {
-      
-
-        public bool isDead;
-
         Animator animator;
 
 
         private void Awake()
         {
             animator = GetComponentInChildren<Animator>();
-            isDead = false;
         }
 
         private void Start()
@@ -33,6 +28,9 @@ namespace DK
 
         public void TakeDamage(int damage)
         {
+
+            if (isDead)
+                return;
             currentHealth = currentHealth - damage;
 
 

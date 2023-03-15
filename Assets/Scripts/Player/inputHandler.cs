@@ -38,6 +38,7 @@ namespace DK
         WeaponSlotManager weaponSlotManager;
         PlayerStats playerStats;
         CameraHandler cameraHandler;
+        AnimatorHandler animatorHandler;
         
 
         Vector2 movementInput;  
@@ -54,6 +55,7 @@ namespace DK
             playerStats = GetComponent<PlayerStats>();
             cameraHandler = FindObjectOfType<CameraHandler>();
             weaponSlotManager = GetComponentInChildren<WeaponSlotManager>();
+            animatorHandler = GetComponentInChildren<AnimatorHandler>();
         }
 
         public void OnEnable()
@@ -159,6 +161,7 @@ namespace DK
                         return;
                     if (playerManager.canDoCombo)
                         return;
+                    animatorHandler.anim.SetBool("isUsingRightHand", true);
                     playerAttacker.HandleLightAttack(playerInventory.rightWeapon);
                 }
                 

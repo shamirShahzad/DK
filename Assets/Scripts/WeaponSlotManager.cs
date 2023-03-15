@@ -9,6 +9,7 @@ namespace DK
         WeaponHolderSlot rightHandSlot;
         WeaponHolderSlot backSlot;
         inputHandler inputHandler;
+        PlayerManager playerManager;
 
         DamageCollider leftDamageCollider;
         DamageCollider rightDamageCollider;
@@ -20,10 +21,12 @@ namespace DK
         PlayerStats playerStats;
         private void Awake()
         {
+            playerManager = GetComponentInParent<PlayerManager>();
             animator = GetComponent<Animator>();
             inputHandler = GetComponentInParent<inputHandler>();
-            WeaponHolderSlot[] weaponHolderSlots = GetComponentsInChildren<WeaponHolderSlot>();
             playerStats = GetComponentInParent<PlayerStats>();
+            WeaponHolderSlot[] weaponHolderSlots = GetComponentsInChildren<WeaponHolderSlot>();
+            
 
 
             foreach(WeaponHolderSlot weaponSlot in weaponHolderSlots)
@@ -107,26 +110,26 @@ namespace DK
             rightDamageCollider = rightHandSlot.currentWeaponModel.GetComponentInChildren<DamageCollider>();
         }
 
-        public void OpenRightDamageCollider()
+        public void OpenDamageCollider()
         {
-            rightDamageCollider.EnableDamageCollider(); 
+            if (playerManager.isUsingRightHand)
+            {
+                rightDamageCollider.EnableDamageCollider();
+            }
+       
+            else if (playerManager.isUsingLeftHand)
+            {
+                leftDamageCollider.EnableDamageCollider();
+            }
+
         }
 
-        public void OpenLeftDamageCollider()
-        {
-            leftDamageCollider.EnableDamageCollider();
-        }
 
-        public void CloseRightDamageCollider()
+        public void CloseDamageCollider()
         {
             rightDamageCollider.DisableDamageCollider();
-        }
-
-        public void CloseLeftDamageCollider()
-        {
             leftDamageCollider.DisableDamageCollider();
         }
-
         public void DrainStaminaLightAttack()
         {
             playerStats.TakeStaminaDamage(Mathf.RoundToInt(attackingItem.baseStaminaCost * attackingItem.lightAttackMultiplier));

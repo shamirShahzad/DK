@@ -33,12 +33,14 @@ namespace DK
 
         private void OnTriggerEnter(Collider collision)
         {
-            if(collision.tag == "Player")
+            if(collision.tag =="Player")
             {
-                PlayerStats playerStats = collision.GetComponent<PlayerStats>();
+                PlayerStats playerStats = collision.GetComponentInParent<PlayerStats>();
 
                 if (playerStats != null)
                 {
+                    if (playerStats.isDead)
+                        return;
                     playerStats.TakeDamage(weaponDamage);
                 }
             }

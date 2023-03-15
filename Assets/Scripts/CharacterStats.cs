@@ -14,5 +14,6 @@ namespace DK
         public int staminaLevel = 10;
         public int maxStamina;
         public float currentStamina;
+        public bool isDead;
     }
 }

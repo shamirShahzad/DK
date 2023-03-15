@@ -4687,6 +4687,8 @@ MonoBehaviour:
   isInAir: 0
   isGrounded: 0
   canDoCombo: 0
+  isUsingRightHand: 0
+  isUsingLeftHand: 0
 --- !u!114 &6871147488357812504
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4741,6 +4743,7 @@ MonoBehaviour:
   staminaLevel: 10
   maxStamina: 0
   currentStamina: 0
+  isDead: 0
   hitCount: 0
   staminaRegenarationAmount: 25
   staminaRegenerationTimer: 0
@@ -5912,7 +5915,7 @@ GameObject:
   - component: {fileID: 1934687460}
   m_Layer: 11
   m_Name: Spine1_M
-  m_TagString: collider
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
