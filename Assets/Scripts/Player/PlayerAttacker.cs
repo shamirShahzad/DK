@@ -117,6 +117,8 @@ namespace DK
 
         public void AttemptBackStabOrRiposte()
         {
+            if (playerStats.currentStamina <= 0)
+                return;
             RaycastHit hit;
 
             if (Physics.Raycast(inputHandler.criticalAttackRaycastStartPoint.position, 
