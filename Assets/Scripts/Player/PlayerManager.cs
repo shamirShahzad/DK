@@ -9,6 +9,7 @@ namespace DK
         CameraHandler cameraHandler;
         Animator anim;
         PlayerLocomotion playerLocomotion;
+        PlayerAnimatorManager playerAnimatorManager;
         InteractableUi interactableUi;
         PlayerStats playerStats;
 
@@ -25,7 +26,8 @@ namespace DK
         public bool isUsingLeftHand;
         public bool isInvulnerable;
 
-        void Start()
+
+        private void Awake()
         {
             cameraHandler = FindObjectOfType<CameraHandler>();
             inputHandler = GetComponent<inputHandler>();
@@ -34,10 +36,8 @@ namespace DK
             interactableUi = FindObjectOfType<InteractableUi>();
             playerStats = GetComponent<PlayerStats>();
             backStabCollider = GetComponentInChildren<BackStabColliders>();
-
-        }
-
-       
+            playerAnimatorManager = GetComponentInChildren<PlayerAnimatorManager>();
+        }       
         void Update()
         {
             float delta = Time.deltaTime;
@@ -49,6 +49,7 @@ namespace DK
             isInvulnerable = anim.GetBool("isInvulnerable");
             anim.SetBool("isInAir", isInAir);
             anim.SetBool("isDead", playerStats.isDead);
+            playerAnimatorManager.canRotate = anim.GetBool("canRotate");
             inputHandler.TickInput(delta);
             playerLocomotion.HandleRolling(delta);
             playerLocomotion.HandleJumping();
@@ -63,9 +64,10 @@ namespace DK
         {
             float delta = Time.fixedDeltaTime;
 
-
-            playerLocomotion.HandleMovement(delta);
             playerLocomotion.HandleFalling(delta, playerLocomotion.moveDirection);
+            playerLocomotion.HandleMovement(delta);
+            playerLocomotion.HandleRotation(delta);
+            
            
 
         }

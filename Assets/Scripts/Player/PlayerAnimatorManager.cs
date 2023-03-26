@@ -11,7 +11,7 @@ namespace DK
         PlayerStats playerStats;
         int vertical;
         int horizontal;
-        public bool canRotate;
+     
 
 
         public void Initialize() {
@@ -91,13 +91,13 @@ namespace DK
   
         public void CanRotate()
         {
-            canRotate = true;
+            anim.SetBool("canRotate", true);
 
         }
 
         public void StopRotate()
         {
-            canRotate = false;
+            anim.SetBool("canRotate", false);
         }
 
         public void EnableCombo()
