@@ -6151,6 +6151,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1376979908870801112, guid: 3983a83a03f71d244ab3bfc84ee871e5, type: 3}
+      propertyPath: canRotate
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6871147488357812486, guid: 3983a83a03f71d244ab3bfc84ee871e5, type: 3}
       propertyPath: m_RootOrder
       value: 2
@@ -6207,6 +6211,10 @@ PrefabInstance:
       propertyPath: itemInteractableGameobject
       value: 
       objectReference: {fileID: 370951686}
+    - target: {fileID: 6871147488357812507, guid: 3983a83a03f71d244ab3bfc84ee871e5, type: 3}
+      propertyPath: rotationSpeed
+      value: 20
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3983a83a03f71d244ab3bfc84ee871e5, type: 3}
 --- !u!1001 &8901235123550744285

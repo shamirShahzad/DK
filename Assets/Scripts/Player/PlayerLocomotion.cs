@@ -183,10 +183,6 @@ namespace DK
             {
                 animatorHandler.updateAnimatorValues(inputHandler.moveAmount, 0, playerManager.isSprinting);
             }
-
-            
-
-         
         }
 
         public void HandleRolling(float delta) {

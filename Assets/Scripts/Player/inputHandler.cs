@@ -125,9 +125,8 @@ namespace DK
                 rollInputTimer += delta;
                 if (playerStats.currentStamina<=0)
                 {
-                    b_input = false;
-                    sprintFlag = false;
-                    
+                    b_input = false; 
+                    sprintFlag = false;           
                 }
                 if (moveAmount > 0.5 && playerStats.currentStamina > 0)
                 {
