@@ -18,6 +18,7 @@ namespace DK
         public bool y_input;
         public bool rb_input;
         public bool rt_input;
+        public bool criticalAttackInput;    
         public bool jump_input;
         public bool lockOnInput;
         public bool right_Stick_Right_Input;
@@ -29,6 +30,8 @@ namespace DK
         public bool sprintFlag;
         public bool comboFlag;
         public float rollInputTimer;
+
+        public Transform criticalAttackRaycastStartPoint;
 
 
         PlayerControls inputActions;
@@ -49,7 +52,7 @@ namespace DK
 
         private void Start()
         {
-            playerAttacker = GetComponent<PlayerAttacker>();
+            playerAttacker = GetComponentInChildren<PlayerAttacker>();
             playerInventory = GetComponent<PlayerInventory>();
             playerManager = GetComponent<PlayerManager>();
             playerStats = GetComponent<PlayerStats>();
@@ -78,6 +81,7 @@ namespace DK
                 inputActions.PlayerMovement.LockOnTargetRight.performed += i => right_Stick_Right_Input = true;
                 inputActions.PlayerMovement.LockOnTargetLeft.performed += i => right_Stick_Left_Input = true;
                 inputActions.PlayerActions.Y.performed += i => y_input = true;
+                inputActions.PlayerActions.CriticalAttack.performed += i => criticalAttackInput = true;
             }
 
             inputActions.Enable();
@@ -96,6 +100,7 @@ namespace DK
             HandleAttackInput(delta);
             HandleLockOnInput();
             HandleTwoHandInput();
+            HandleCriticalAttackInput();
 
         }
 
@@ -149,22 +154,7 @@ namespace DK
 
             if (rb_input)
             {
-                if (playerManager.canDoCombo)
-                {
-                    comboFlag = true;
-                    playerAttacker.HandleWeaponCombo(playerInventory.rightWeapon);
-                    comboFlag = false;
-                }
-                else
-                {
-                    if (playerManager.isInteracting)
-                        return;
-                    if (playerManager.canDoCombo)
-                        return;
-                    animatorHandler.anim.SetBool("isUsingRightHand", true);
-                    playerAttacker.HandleLightAttack(playerInventory.rightWeapon);
-                }
-                
+                playerAttacker.HandleRBAction();   
             }
             if (rt_input)
             {
@@ -228,6 +218,16 @@ namespace DK
                     weaponSlotManager.LoadWeaponOnSlot(playerInventory.leftWeapon, true);
                 }
             }
+        }
+
+        private void HandleCriticalAttackInput()
+        {
+            if (criticalAttackInput)
+            {
+                criticalAttackInput = false;
+               playerAttacker.AttemptBackStabOrRiposte();
+            }
+
         }
         
     }

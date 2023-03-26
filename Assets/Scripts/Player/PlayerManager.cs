@@ -23,6 +23,7 @@ namespace DK
         public bool canDoCombo;
         public bool isUsingRightHand;
         public bool isUsingLeftHand;
+        public bool isInvulnerable;
 
         void Start()
         {
@@ -32,6 +33,7 @@ namespace DK
             anim = GetComponentInChildren<Animator>();
             interactableUi = FindObjectOfType<InteractableUi>();
             playerStats = GetComponent<PlayerStats>();
+            backStabCollider = GetComponentInChildren<BackStabColliders>();
 
         }
 
@@ -44,12 +46,14 @@ namespace DK
             canDoCombo = anim.GetBool("canDoCombo");
             isUsingRightHand = anim.GetBool("isUsingRightHand");
             isUsingLeftHand = anim.GetBool("isUsingLeftHand");
+            isInvulnerable = anim.GetBool("isInvulnerable");
             anim.SetBool("isInAir", isInAir);
             inputHandler.TickInput(delta);
             playerLocomotion.HandleRolling(delta);
             playerLocomotion.HandleJumping();
 
             playerStats.RegenarateStamina();
+            playerStats.RegenarateFocus();
             CheckForInteractable();
 
         }

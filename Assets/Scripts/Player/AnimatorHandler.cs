@@ -103,6 +103,14 @@ namespace DK
             anim.SetBool("canDoCombo", true);
         }
 
+        public void EnableIsInvulnerable()
+        {
+            anim.SetBool("isInvulnerable", true);
+        }   
+        public void DisableIsInvulnerable()
+        {
+            anim.SetBool("isInvulnerable", false);
+        }
         public void DisableCombo()
         {
             anim.SetBool("canDoCombo", false);

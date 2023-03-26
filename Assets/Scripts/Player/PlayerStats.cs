@@ -11,24 +11,31 @@ namespace DK
         AnimatorHandler animatorHandler;
         PlayerManager playerManager;
         public float staminaRegenarationAmount = 25;
+        public float focusRegenarationAmount = 11;
         public float staminaRegenerationTimer = 0;
+        public float focusRegenrationTimer = 0;
         //CapsuleCollider Ccollider;
 
         public HealthBar healthBar;
         public StaminaBar staminaBar;
+        public FocusPointBar focusPointBar;
         private void Start()
         {
             healthBar = FindObjectOfType<HealthBar>();
             staminaBar = FindObjectOfType<StaminaBar>();
+            focusPointBar = FindObjectOfType<FocusPointBar>();
             animatorHandler = GetComponentInChildren<AnimatorHandler>();
             playerManager = GetComponent<PlayerManager>();
             //Ccollider = GameObject.FindGameObjectWithTag("Player").GetComponent<CapsuleCollider>();
             maxHealth = SetMaxHealthFromHealthLevel();
             maxStamina = SetMaxStaminaFromStaminaLevel();
+            maxFocus = SetMaxFocusFromFocusLevel();
             currentHealth = maxHealth;
             currentStamina = maxStamina;
+            currentFocus = maxFocus;
             healthBar.SetMaxHealth(maxHealth);
             staminaBar.SetMaxStamina(maxStamina);
+            focusPointBar.SetMaxFocus(maxFocus);
         }
 
         private int SetMaxHealthFromHealthLevel()
@@ -38,15 +45,26 @@ namespace DK
             return maxHealth;
         }
 
-        private int SetMaxStaminaFromStaminaLevel()
+        private float SetMaxStaminaFromStaminaLevel()
         {
             maxStamina = staminaLevel * 10;
 
             return maxStamina;
         }
 
+        private float SetMaxFocusFromFocusLevel()
+        {
+            maxFocus = focusLevel* 10;
+
+            return maxFocus;
+        }
+
         public void TakeDamage(int damage)
         {
+            if (playerManager.isInvulnerable)
+            {
+                return;
+            }
             if (isDead)
             {
                 return;
@@ -89,6 +107,45 @@ namespace DK
                 }
             }
            
+        }
+
+        public void RegenarateFocus()
+        {
+            if (playerManager.isInteracting)
+            {
+                focusRegenrationTimer = 0;
+            }
+            else
+            {
+                focusRegenrationTimer += Time.deltaTime;
+                if (currentFocus < maxFocus&& focusRegenrationTimer > 3f)
+                {
+                    currentFocus += focusRegenrationTimer* Time.deltaTime;
+                    focusPointBar.SetcurrentFocus(Mathf.RoundToInt(currentFocus));
+                }
+            }
+
+        }
+
+        public void healPlayer(int health)
+        {
+            currentHealth = currentHealth + health;
+
+            if(currentHealth > maxHealth)
+            {
+                currentHealth = maxHealth;
+            }
+            healthBar.SetCurrentHealth(currentHealth);
+        }
+
+        public void DeductfocusPoints(float focusPoints)
+        {
+            currentFocus -= focusPoints;
+            if(currentFocus < 0)
+            {
+                currentFocus = 0;
+            }
+            focusPointBar.SetcurrentFocus(currentFocus);
         }
     }
 }

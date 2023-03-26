@@ -27,5 +27,12 @@ namespace DK
         public float lightAttackMultiplier;
         public float heavyAttackMultiplier;
 
+        [Header("Weapon Type")]
+        public bool isSpellCaster;
+        public bool isFaithCaster;
+        public bool isPyroCaster;
+        public bool isMeleeWeapon;
+
+
     }
 }

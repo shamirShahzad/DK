@@ -12,8 +12,13 @@ namespace DK
         public int currentHealth;
 
         public int staminaLevel = 10;
-        public int maxStamina;
+        public float maxStamina;
         public float currentStamina;
+
+        public int focusLevel = 10;
+        public float maxFocus;
+        public float currentFocus;
+        
         public bool isDead;
     }
 }
