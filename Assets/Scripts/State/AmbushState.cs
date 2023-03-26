@@ -18,10 +18,7 @@ namespace DK
             {
                 enemyAnimatorManager.PlayTargetAnimation(sleepAnimation, true);
             }
-            else
-            {
-                enemyAnimatorManager.PlayTargetAnimation("idle_01",false);
-            }
+          
             #region Handle Target Detection
             Collider[] colliders = Physics.OverlapSphere(enemyManager.transform.position, detectionRadius, detectionLayer);
 
