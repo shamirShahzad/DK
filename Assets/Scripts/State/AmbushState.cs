@@ -18,7 +18,6 @@ namespace DK
             {
                 enemyAnimatorManager.PlayTargetAnimation(sleepAnimation, true);
             }
-          
             #region Handle Target Detection
             Collider[] colliders = Physics.OverlapSphere(enemyManager.transform.position, detectionRadius, detectionLayer);
 
@@ -27,7 +26,7 @@ namespace DK
                 CharacterStats characterStats = colliders[i].transform.GetComponentInParent<CharacterStats>();
 
                 if(characterStats != null)
-                {
+                {  
                     Vector3 targetDirection = characterStats.transform.position - enemyManager.transform.position;
                     float viewableAngle = Vector3.Angle(targetDirection, enemyManager.transform.forward);
                     if(viewableAngle > enemyManager.minimumDetectionAngle &&
