@@ -11,5 +11,9 @@ namespace DK
         public BoxCollider backStabBoxCollider;
         public BackStabColliders backStabCollider;
 
+        public int pendingCriticalDamage;
+
+
+
     }
 }

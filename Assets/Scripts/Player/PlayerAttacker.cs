@@ -5,7 +5,7 @@ namespace DK
 {
     public class PlayerAttacker : MonoBehaviour
     {
-        AnimatorHandler animatorHandler;
+        PlayerAnimatorManager animatorHandler;
         PlayerManager playerManager;
         inputHandler inputHandler;
         PlayerStats playerStats;
@@ -14,9 +14,11 @@ namespace DK
         [SerializeField]
         LayerMask backStabLayer;
         public string lastAttack;
+        [HideInInspector]
+        public bool isStabbing;
         private void Start()
         {
-            animatorHandler = GetComponent<AnimatorHandler>();
+            animatorHandler = GetComponent<PlayerAnimatorManager>();
             inputHandler = GetComponentInParent<inputHandler>();
             playerStats = GetComponentInParent<PlayerStats>();
             weaponSlotManager = GetComponent<WeaponSlotManager>();
@@ -121,9 +123,10 @@ namespace DK
                 transform.TransformDirection(Vector3.forward),out hit,0.5f,backStabLayer))
             {
                 CharacterManager enemycharacterManager = hit.transform.gameObject.GetComponent<CharacterManager>();
-
+                DamageCollider rightWeapon = weaponSlotManager.rightDamageCollider;
                 if (enemycharacterManager != null)
                 {
+                    isStabbing = true;
                     playerManager.transform.position = enemycharacterManager.backStabCollider.backStabberStandPoint.position;
                     Vector3 rotationDirection = playerManager.transform.root.eulerAngles;
                     rotationDirection = hit.transform.position - playerManager.transform.position;
@@ -131,7 +134,10 @@ namespace DK
                     rotationDirection.Normalize();
                     Quaternion tr = Quaternion.LookRotation(rotationDirection);
                     Quaternion targetRotation = Quaternion.Slerp(playerManager.transform.rotation, tr, 500 * Time.deltaTime);
-                    playerManager.transform.rotation = targetRotation;  
+                    playerManager.transform.rotation = targetRotation;
+
+                    int criticalDamage = playerInventory.rightWeapon.criticalDamageMultiplier * rightWeapon.weaponDamage;
+                    enemycharacterManager.pendingCriticalDamage = criticalDamage;
 
                     animatorHandler.PlayTargetAnimation("Back Stab",true);
                     enemycharacterManager.GetComponentInChildren<AnimatorManager>().PlayTargetAnimation("Back Stabbed",true);

@@ -8,7 +8,7 @@ namespace DK
  
         public int hitCount = 0;
 
-        AnimatorHandler animatorHandler;
+        PlayerAnimatorManager animatorHandler;
         PlayerManager playerManager;
         public float staminaRegenarationAmount = 25;
         public float focusRegenarationAmount = 11;
@@ -24,7 +24,7 @@ namespace DK
             healthBar = FindObjectOfType<HealthBar>();
             staminaBar = FindObjectOfType<StaminaBar>();
             focusPointBar = FindObjectOfType<FocusPointBar>();
-            animatorHandler = GetComponentInChildren<AnimatorHandler>();
+            animatorHandler = GetComponentInChildren<PlayerAnimatorManager>();
             playerManager = GetComponent<PlayerManager>();
             //Ccollider = GameObject.FindGameObjectWithTag("Player").GetComponent<CapsuleCollider>();
             maxHealth = SetMaxHealthFromHealthLevel();
@@ -58,7 +58,17 @@ namespace DK
 
             return maxFocus;
         }
-
+        public void TakeDamageNoAnimation(int damage)
+        {
+            if (isDead)
+                return;
+            currentHealth = currentHealth - damage;
+            if (currentHealth <= 0)
+            {
+                isDead = true;
+                currentHealth = 0;
+            }
+        }
         public void TakeDamage(int damage)
         {
             if (playerManager.isInvulnerable)

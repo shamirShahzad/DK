@@ -7,7 +7,7 @@ namespace DK
     {
         Collider damageCollider;
         [SerializeField]
-        int weaponDamage = 8;
+        public int weaponDamage = 8;
         PlayerStats myPlayerStats;
 
         private void Awake()

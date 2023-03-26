@@ -48,6 +48,7 @@ namespace DK
             isUsingLeftHand = anim.GetBool("isUsingLeftHand");
             isInvulnerable = anim.GetBool("isInvulnerable");
             anim.SetBool("isInAir", isInAir);
+            anim.SetBool("isDead", playerStats.isDead);
             inputHandler.TickInput(delta);
             playerLocomotion.HandleRolling(delta);
             playerLocomotion.HandleJumping();

@@ -3,11 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 namespace DK
 {
-    public class AnimatorHandler : AnimatorManager
+    public class PlayerAnimatorManager : AnimatorManager
     {
         PlayerManager playerManager;
         inputHandler inputHandler;
         PlayerLocomotion playerLocomotion;
+        PlayerStats playerStats;
         int vertical;
         int horizontal;
         public bool canRotate;
@@ -18,6 +19,7 @@ namespace DK
             inputHandler = GetComponentInParent<inputHandler>();
             playerLocomotion = GetComponentInParent<PlayerLocomotion>();
             playerManager = GetComponentInParent<PlayerManager>();
+            playerStats = GetComponentInParent<PlayerStats>();
             vertical = Animator.StringToHash("Vertical");
             horizontal = Animator.StringToHash("Horizontal");
 
@@ -110,6 +112,12 @@ namespace DK
         public void DisableIsInvulnerable()
         {
             anim.SetBool("isInvulnerable", false);
+        }
+
+        public override void TakeCriticalDamageAnimationEvent()
+        {
+            playerStats.TakeDamageNoAnimation(playerManager.pendingCriticalDamage);
+            playerManager.pendingCriticalDamage = 0;
         }
         public void DisableCombo()
         {

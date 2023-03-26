@@ -10,9 +10,10 @@ namespace DK
         WeaponHolderSlot backSlot;
         inputHandler inputHandler;
         PlayerManager playerManager;
+        PlayerInventory playerInventory;
 
-        DamageCollider leftDamageCollider;
-        DamageCollider rightDamageCollider;
+        public DamageCollider leftDamageCollider;
+        public DamageCollider rightDamageCollider;
 
         Animator animator;
 
@@ -25,6 +26,7 @@ namespace DK
             animator = GetComponent<Animator>();
             inputHandler = GetComponentInParent<inputHandler>();
             playerStats = GetComponentInParent<PlayerStats>();
+            playerInventory = GetComponentInParent<PlayerInventory>();
             WeaponHolderSlot[] weaponHolderSlots = GetComponentsInChildren<WeaponHolderSlot>();
             
 
@@ -103,11 +105,13 @@ namespace DK
         private void LoadLeftWeaponDamageCollider()
         {
             leftDamageCollider = leftHandSlot.currentWeaponModel.GetComponentInChildren<DamageCollider>();
+            leftDamageCollider.weaponDamage = playerInventory.leftWeapon.baseDamage;
         }
 
         private void LoadRightWeaponDamageCollider()
         {
             rightDamageCollider = rightHandSlot.currentWeaponModel.GetComponentInChildren<DamageCollider>();
+            rightDamageCollider.weaponDamage = playerInventory.rightWeapon.baseDamage;
         }
 
         public void OpenDamageCollider()

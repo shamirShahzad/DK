@@ -2368,9 +2368,9 @@ GameObject:
   m_Component:
   - component: {fileID: 2860646759868097697}
   - component: {fileID: 812780969869184452}
-  - component: {fileID: 2860646759868097696}
   - component: {fileID: 2860646759868097703}
   - component: {fileID: 2751944335899050677}
+  - component: {fileID: 1376979908870801112}
   m_Layer: 0
   m_Name: Model
   m_TagString: Untagged
@@ -2416,20 +2416,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &2860646759868097696
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3240585942376857115}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d8b039fb053ac874bb766ddfc7c8f3c5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  anim: {fileID: 0}
-  canRotate: 1
 --- !u!114 &2860646759868097703
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2442,6 +2428,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c38a3b91febee3c40bef781d6ff25445, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  leftDamageCollider: {fileID: 0}
+  rightDamageCollider: {fileID: 0}
   attackingItem: {fileID: 0}
 --- !u!114 &2751944335899050677
 MonoBehaviour:
@@ -2459,6 +2447,21 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 4096
   lastAttack: 
+  isStabbing: 0
+--- !u!114 &1376979908870801112
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3240585942376857115}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bd201342ce422ab4db15d20f001d4a8a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  anim: {fileID: 812780969869184452}
+  canRotate: 1
 --- !u!1 &3278501041400699942
 GameObject:
   m_ObjectHideFlags: 0
@@ -4828,6 +4831,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   lockOnTransform: {fileID: 6871147488478706553}
   backStabBoxCollider: {fileID: 0}
+  backStabCollider: {fileID: 0}
+  pendingCriticalDamage: 0
   interactableUiGameObject: {fileID: 0}
   itemInteractableGameobject: {fileID: 0}
   isInteracting: 0
@@ -6026,7 +6031,7 @@ GameObject:
   - component: {fileID: 1213103626914161391}
   - component: {fileID: 8782274644306223016}
   - component: {fileID: 6871147486983189933}
-  m_Layer: 9
+  m_Layer: 12
   m_Name: BackStab Collider
   m_TagString: Untagged
   m_Icon: {fileID: 0}

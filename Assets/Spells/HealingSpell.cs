@@ -9,7 +9,7 @@ namespace DK
     public class HealingSpell : SpellItem
     {
         public int healAmount;
-        public override void AttemptToCastSpell(AnimatorHandler animatorHandler,PlayerStats playerStats)
+        public override void AttemptToCastSpell(PlayerAnimatorManager animatorHandler,PlayerStats playerStats)
         {
             base.AttemptToCastSpell(animatorHandler, playerStats);
             GameObject instanstiatedWarmupSpellFX = Instantiate(spellWarmupEffect,animatorHandler.transform);
@@ -18,7 +18,7 @@ namespace DK
             Destroy(instanstiatedWarmupSpellFX, 1.5f);
         }
 
-        public override void SuccessfullyCastedSpell(AnimatorHandler animatorHandler, PlayerStats playerStats)
+        public override void SuccessfullyCastedSpell(PlayerAnimatorManager animatorHandler, PlayerStats playerStats)
         {
             base.SuccessfullyCastedSpell(animatorHandler, playerStats);
             GameObject instansiatedSpellFX = Instantiate(spellCastEffect, animatorHandler.transform);

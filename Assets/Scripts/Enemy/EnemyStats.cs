@@ -25,6 +25,17 @@ namespace DK
 
             return maxHealth;
         }
+        public void TakeDamageNoAnimation(int damage)
+        {
+            if (isDead)
+                return;
+            currentHealth = currentHealth - damage;
+            if (currentHealth <= 0)
+            {
+                isDead = true;
+                currentHealth = 0;  
+            }
+        }
 
         public void TakeDamage(int damage)
         {
@@ -32,7 +43,7 @@ namespace DK
             if (isDead)
                 return;
             currentHealth = currentHealth - damage;
-
+            
 
             animator.Play("Hit");
 
