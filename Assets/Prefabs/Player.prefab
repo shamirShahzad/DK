@@ -2461,7 +2461,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   anim: {fileID: 812780969869184452}
-  canRotate: 1
+  canRotate: 0
 --- !u!1 &3278501041400699942
 GameObject:
   m_ObjectHideFlags: 0
@@ -4773,7 +4773,7 @@ MonoBehaviour:
   groundDetectionRayDistance: 0.2
   inAirTimer: 0
   movementSpeed: 5
-  rotationSpeed: 10
+  rotationSpeed: 20
   sprintSpeed: 8
   fallingSpeed: 450
   walkingSpeed: 6

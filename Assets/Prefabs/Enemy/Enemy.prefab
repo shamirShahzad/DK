@@ -190,7 +190,7 @@ GameObject:
   - component: {fileID: 606361386}
   - component: {fileID: 6820548775853880793}
   - component: {fileID: 606361387}
-  m_Layer: 9
+  m_Layer: 12
   m_Name: BackStab Collider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4408,6 +4408,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   anim: {fileID: 8620604442608502802}
+  canRotate: 0
 --- !u!114 &6192375383893979969
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4750,6 +4751,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   lockOnTransform: {fileID: 6192375382487577859}
   backStabBoxCollider: {fileID: 0}
+  backStabCollider: {fileID: 0}
+  pendingCriticalDamage: 0
   currentState: {fileID: 2067934341}
   isPerformingAction: 0
   isInteracting: 0

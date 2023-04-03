@@ -5,7 +5,8 @@ namespace DK
 {
     public class Interactable : MonoBehaviour
     {
-        float radius = 0.5f;
+        [SerializeField]
+        float radius = 0.6f;
         public string interactableText;
         private void OnDrawGizmosSelected()
         {
