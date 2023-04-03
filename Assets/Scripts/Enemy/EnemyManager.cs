@@ -36,7 +36,6 @@ namespace DK
             enemyAnimatorManager = GetComponentInChildren<EnemyAnimatorManager>();
             enemyStats = GetComponent<EnemyStats>();
             navMeshAgent = GetComponentInChildren<NavMeshAgent>();
-            backStabCollider = GetComponentInChildren<BackStabColliders>(); 
             enemyRigidbody = GetComponent<Rigidbody>();
         }
         private void Start()

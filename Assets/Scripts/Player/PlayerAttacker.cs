@@ -13,6 +13,8 @@ namespace DK
         WeaponSlotManager weaponSlotManager;
         [SerializeField]
         LayerMask backStabLayer;
+        [SerializeField]
+        LayerMask riposteLayer;
         public string lastAttack;
         [HideInInspector]
         public bool isStabbing;
@@ -65,7 +67,7 @@ namespace DK
 
         public void HandleHeavyAttack(WeaponItem weapon)
         {
-            if (playerStats.currentStamina <= 0)
+            if (playerStats.currentStamina <= 0 || playerManager.isInteracting)
                 return;
             weaponSlotManager.attackingItem = weapon;
             if (inputHandler.twoHandFlag)
@@ -124,12 +126,12 @@ namespace DK
             if (Physics.Raycast(inputHandler.criticalAttackRaycastStartPoint.position, 
                 transform.TransformDirection(Vector3.forward),out hit,0.5f,backStabLayer))
             {
-                CharacterManager enemycharacterManager = hit.transform.gameObject.GetComponent<CharacterManager>();
+                CharacterManager enemycharacterManager = hit.transform.gameObject.GetComponentInParent<CharacterManager>();
                 DamageCollider rightWeapon = weaponSlotManager.rightDamageCollider;
                 if (enemycharacterManager != null)
                 {
                     isStabbing = true;
-                    playerManager.transform.position = enemycharacterManager.backStabCollider.backStabberStandPoint.position;
+                    playerManager.transform.position = enemycharacterManager.backStabCollider.criticalDamagerStandPosition.position;
                     Vector3 rotationDirection = playerManager.transform.root.eulerAngles;
                     rotationDirection = hit.transform.position - playerManager.transform.position;
                     rotationDirection.y = 0;
@@ -143,6 +145,31 @@ namespace DK
 
                     animatorHandler.PlayTargetAnimation("Back Stab",true);
                     enemycharacterManager.GetComponentInChildren<AnimatorManager>().PlayTargetAnimation("Back Stabbed",true);
+                }
+            }
+            else if (Physics.Raycast(inputHandler.criticalAttackRaycastStartPoint.position,
+                transform.TransformDirection(Vector3.forward), out hit, 0.7f, riposteLayer))
+            {
+                
+                CharacterManager enemycharacterManager = hit.transform.gameObject.GetComponentInParent<CharacterManager>();
+                DamageCollider rightWeapon = weaponSlotManager.rightDamageCollider;
+                if (enemycharacterManager != null && enemycharacterManager.canBeRiposted == true)
+                {
+                    Debug.Log("FROM RIPOSTE"); 
+                    playerManager.transform.position = enemycharacterManager.riposteCollider.criticalDamagerStandPosition.position;
+
+                    Vector3 rotationDirection = playerManager.transform.root.eulerAngles;
+                    rotationDirection = hit.transform.position - playerManager.transform.position;
+                    rotationDirection.y = 0;
+                    rotationDirection.Normalize();
+                    Quaternion tr = Quaternion.LookRotation(rotationDirection);
+                    Quaternion targetRotation = Quaternion.Slerp(playerManager.transform.rotation, tr, 500 * Time.deltaTime);
+                    playerManager.transform.rotation = targetRotation;
+
+                    int criticalDamage = playerInventory.rightWeapon.criticalDamageMultiplier * rightWeapon.weaponDamage;
+                    enemycharacterManager.pendingCriticalDamage = criticalDamage;
+                    animatorHandler.PlayTargetAnimation("Riposte", true);
+                    enemycharacterManager.GetComponentInChildren<AnimatorManager>().PlayTargetAnimation("Riposted", true);
                 }
             }
         }

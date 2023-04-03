@@ -35,7 +35,7 @@ namespace DK
             anim = GetComponentInChildren<Animator>();
             interactableUi = FindObjectOfType<InteractableUi>();
             playerStats = GetComponent<PlayerStats>();
-            backStabCollider = GetComponentInChildren<BackStabColliders>();
+            backStabCollider = GetComponentInChildren<CriticalDamageCollider>();
             playerAnimatorManager = GetComponentInChildren<PlayerAnimatorManager>();
         }       
         void Update()
