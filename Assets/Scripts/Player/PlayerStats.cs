@@ -157,5 +157,10 @@ namespace DK
             }
             focusPointBar.SetcurrentFocus(currentFocus);
         }
+
+        public void AddSouls(int souls)
+        {
+            soulCount = soulCount + souls;
+        }
     }
 }

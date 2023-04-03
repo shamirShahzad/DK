@@ -18,6 +18,8 @@ namespace DK
         public int focusLevel = 10;
         public float maxFocus;
         public float currentFocus;
+
+        public int soulCount = 0;
         
         public bool isDead;
     }

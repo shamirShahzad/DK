@@ -5,12 +5,12 @@ namespace DK
 {
     public class EnemyStats : CharacterStats
     {
-        Animator animator;
+        EnemyAnimatorManager enemyAnimatorManager;
 
-
+        public int soulsAwardedOnDeath = 50;
         private void Awake()
         {
-            animator = GetComponentInChildren<Animator>();
+            enemyAnimatorManager = GetComponentInChildren<EnemyAnimatorManager>();
         }
 
         private void Start()
@@ -43,16 +43,23 @@ namespace DK
             if (isDead)
                 return;
             currentHealth = currentHealth - damage;
-            
 
-            animator.Play("Hit");
+
+            enemyAnimatorManager.PlayTargetAnimation("Hit", true);
 
             if (currentHealth <= 0)
             {
-                isDead = true;
-                currentHealth = 0;
-                animator.Play("Death");
+                HandleDeath();
             }
+        }
+
+        private void HandleDeath()
+        {
+            currentHealth = 0;
+            enemyAnimatorManager.PlayTargetAnimation("Death", true);
+            isDead = true;
+
+           
         }
     }
 }

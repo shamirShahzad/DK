@@ -29,5 +29,21 @@ namespace DK
             enemyStats.TakeDamageNoAnimation(enemyManager.pendingCriticalDamage);
             enemyManager.pendingCriticalDamage = 0;
         }
+
+        public void AwardSoulsOnDeath()
+        {
+            PlayerStats playerStats = FindObjectOfType<PlayerStats>();
+            SoulCountBar soulCountBar = FindObjectOfType<SoulCountBar>();
+            
+            if (playerStats != null)
+            {
+                playerStats.AddSouls(enemyStats.soulsAwardedOnDeath);
+                if (soulCountBar != null)
+                {
+                    soulCountBar.SetSoulCountText(playerStats.soulCount);
+                }
+            }
+           
+        }
     }  
 }
