@@ -7,6 +7,9 @@ namespace DK
     [CreateAssetMenu(menuName ="A.I/Enemy Actions/Attack Actions")]
     public class EnemyAttackAction : EnemyActions
     {
+        public bool canCombo;
+
+        public EnemyAttackAction comboAction;
         public int attackScore = 3;
         public float recoveryTime = 2;
         public float maximumAttackAngle = 35;

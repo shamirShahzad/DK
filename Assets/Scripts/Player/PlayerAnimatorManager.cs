@@ -119,6 +119,24 @@ namespace DK
             playerStats.TakeDamageNoAnimation(playerManager.pendingCriticalDamage);
             playerManager.pendingCriticalDamage = 0;
         }
+
+        public void EnableIsParrying()
+        {
+            playerManager.isParrying = true;
+        }
+        public void DisableIsParrying()
+        {
+            playerManager.isParrying = false;
+        }
+
+        public void EnableCanBeRiposted()
+        {
+            playerManager.canBeRiposted = true;
+        }
+        public void DisableCanBeRiposted()
+        {
+            playerManager.canBeRiposted = false;
+        }
         public void DisableCombo()
         {
             anim.SetBool("canDoCombo", false);

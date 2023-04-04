@@ -17,7 +17,9 @@ namespace DK
         public bool a_input;
         public bool y_input;
         public bool rb_input;
+        public bool lb_input;
         public bool rt_input;
+        public bool lt_input;
         public bool criticalAttackInput;    
         public bool jump_input;
         public bool lockOnInput;
@@ -72,7 +74,9 @@ namespace DK
                 inputActions.PlayerMovement.Camera.performed+=i=> cameraInput= i.ReadValue<Vector2>();
                 
                 inputActions.PlayerActions.RB.performed += i => rb_input = true;
+                inputActions.PlayerActions.LB.performed += i => lb_input = true;
                 inputActions.PlayerActions.RT.performed += i => rt_input = true;
+                inputActions.PlayerActions.LT.performed += i => lt_input = true;
                 inputActions.PlayerActions.A.performed += i => a_input = true;
                 inputActions.PlayerActions.Roll.performed += i => b_input = true;
                 inputActions.PlayerActions.Roll.canceled += i => b_input = false;
@@ -97,7 +101,7 @@ namespace DK
         {
             MoveInput(delta);
             HandleRollingInput(delta);
-            HandleAttackInput(delta);
+            HandleCombatInput(delta);
             HandleLockOnInput();
             HandleTwoHandInput();
             HandleCriticalAttackInput();
@@ -145,7 +149,7 @@ namespace DK
             }
         }
 
-        private void HandleAttackInput(float delta)
+        private void HandleCombatInput(float delta)
         {
             
 
@@ -159,6 +163,21 @@ namespace DK
             if (rt_input)
             {
                 playerAttacker.HandleHeavyAttack(playerInventory.rightWeapon);
+            }
+            if (lb_input)
+            {
+                //do block
+            }
+            if (lt_input)
+            {
+                if (twoHandFlag)
+                {
+
+                }
+                else
+                {
+                    playerAttacker.HandleLTAction();
+                }
             }
         }
 

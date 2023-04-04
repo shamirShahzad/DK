@@ -98,6 +98,25 @@ namespace DK
             }    
         }
 
+        public void HandleLBAaction()
+        {
+            PerformLBBlockAction();
+        }
+
+
+        public void HandleLTAction()
+        {
+            if (playerInventory.leftWeapon.isShield)
+            {
+                PerformLTWeaponArt(inputHandler.twoHandFlag);
+
+            }
+            else if (playerInventory.leftWeapon.isMeleeWeapon)
+            {
+
+            }
+        }
+
         private void PerfromRBMeleeAction()
         {
             if (playerManager.canDoCombo)
@@ -116,6 +135,7 @@ namespace DK
                 HandleLightAttack(playerInventory.rightWeapon);
             }
         }
+
 
         public void AttemptBackStabOrRiposte()
         {
@@ -191,6 +211,30 @@ namespace DK
                   
                 }
             }
+        }
+
+        private void PerformLTWeaponArt(bool isTwoHanding)
+        {
+            if (playerManager.isInteracting)
+                return;
+            if (isTwoHanding)
+            {
+               
+            }
+            else
+            {
+                animatorHandler.PlayTargetAnimation(playerInventory.leftWeapon.weaponArtShield, true);
+
+            }
+
+
+        }
+
+        private void PerformLBBlockAction()
+        {
+            if (playerManager.isInteracting)
+                return;
+            animatorHandler.PlayTargetAnimation("Block",false);
         }
 
         private void SuccessfullycastedSpell()

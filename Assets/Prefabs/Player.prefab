@@ -4900,6 +4900,7 @@ MonoBehaviour:
   y_input: 0
   rb_input: 0
   rt_input: 0
+  lt_input: 0
   criticalAttackInput: 0
   jump_input: 0
   lockOnInput: 0
@@ -4959,7 +4960,7 @@ MonoBehaviour:
   weaponItemsLeft:
   - {fileID: 11400000, guid: 32fd7bee58f37c94193429903d6da805, type: 2}
   - {fileID: 11400000, guid: 69ae6967547257341ba37b25fe3d6b3f, type: 2}
-  - {fileID: 11400000, guid: 0060897fa98a2ef4d85f187644374df9, type: 2}
+  - {fileID: 11400000, guid: 86513175fbf229344b21ec717ae7117a, type: 2}
   rightWeapon: {fileID: 0}
   leftWeapon: {fileID: 0}
   weaponsInventory: []

@@ -1483,7 +1483,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   weaponHolderUi: {fileID: 163820148}
-  weaponItemIndex: 0
+  weaponItemIndexLeft: 0
   weaponItemsRight:
   - {fileID: 11400000, guid: 2035fcc6b5e5956428f3213594734d88, type: 2}
   - {fileID: 11400000, guid: 69ae6967547257341ba37b25fe3d6b3f, type: 2}
@@ -1491,7 +1491,7 @@ MonoBehaviour:
   weaponItemsLeft:
   - {fileID: 11400000, guid: 32fd7bee58f37c94193429903d6da805, type: 2}
   - {fileID: 11400000, guid: 69ae6967547257341ba37b25fe3d6b3f, type: 2}
-  - {fileID: 11400000, guid: 0060897fa98a2ef4d85f187644374df9, type: 2}
+  - {fileID: 11400000, guid: 86513175fbf229344b21ec717ae7117a, type: 2}
   hand: {fileID: 2555000114677300235, guid: b90ca28ac96034c47a88dd7c260ff7f8, type: 3}
 --- !u!1 &2029769665
 GameObject:

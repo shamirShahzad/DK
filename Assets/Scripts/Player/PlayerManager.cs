@@ -77,6 +77,7 @@ namespace DK
             inputHandler.rollFlag = false;
             inputHandler.rb_input = false;
             inputHandler.rt_input = false;
+            inputHandler.lt_input = false;
             inputHandler.a_input = false;
             inputHandler.jump_input = false;
 

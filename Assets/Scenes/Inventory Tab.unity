@@ -1074,7 +1074,7 @@ MonoBehaviour:
   weaponItemsLeft:
   - {fileID: 11400000, guid: 32fd7bee58f37c94193429903d6da805, type: 2}
   - {fileID: 11400000, guid: 69ae6967547257341ba37b25fe3d6b3f, type: 2}
-  - {fileID: 11400000, guid: 0060897fa98a2ef4d85f187644374df9, type: 2}
+  - {fileID: 11400000, guid: 86513175fbf229344b21ec717ae7117a, type: 2}
   weaponSpriteLeft: {fileID: 52252661}
   weaponSpriteRight: {fileID: 386727942}
 --- !u!1 &1421529574

@@ -13,6 +13,7 @@ namespace DK
 
         [Header("Combat Flags")]
         public bool canBeRiposted;
+        public bool isParrying;
 
         public int pendingCriticalDamage;
 

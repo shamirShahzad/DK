@@ -16,6 +16,8 @@ namespace DK
 
         public float rotationSpeed = 15f;
         public float maximumAttackRange = 1.5f;
+        [Header("Combat Flags")]
+        public bool canDoCombo;
 
 
 
@@ -46,13 +48,15 @@ namespace DK
         private void Update()
         {
             HandleRecoveryTimer();
-
+            HandleStateMachine();
             isInteracting = enemyAnimatorManager.anim.GetBool("isInteracting");
+            canDoCombo = enemyAnimatorManager.anim.GetBool("canDoCombo");
             enemyAnimatorManager.anim.SetBool("isDead", enemyStats.isDead);
         }
-        private void FixedUpdate()
+        private void LateUpdate()
         {
-            HandleStateMachine();
+            navMeshAgent.transform.localPosition = Vector3.zero;
+            navMeshAgent.transform.localRotation = Quaternion.identity;
         }
 
         private void HandleStateMachine()

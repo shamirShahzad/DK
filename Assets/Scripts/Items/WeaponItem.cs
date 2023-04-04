@@ -26,6 +26,8 @@ namespace DK
         [Header("Two Handed Attack")]
         public string TH_Light_Attack_01;
         public string TH_Light_Attack_02;
+        [Header("Weapon Art")]
+        public string weaponArtShield;
         [Header("Stamina Drain")]
         public int baseStaminaCost;
         public float lightAttackMultiplier;
@@ -36,6 +38,7 @@ namespace DK
         public bool isFaithCaster;
         public bool isPyroCaster;
         public bool isMeleeWeapon;
+        public bool isShield;
 
 
     }
