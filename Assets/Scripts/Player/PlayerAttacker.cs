@@ -234,7 +234,12 @@ namespace DK
         {
             if (playerManager.isInteracting)
                 return;
-            animatorHandler.PlayTargetAnimation("Block",false);
+            if (playerManager.isBlocking)
+            {
+                return;
+            }
+            animatorHandler.PlayTargetAnimation("Block Start", false, true);
+            playerManager.isBlocking = true;
         }
 
         private void SuccessfullycastedSpell()

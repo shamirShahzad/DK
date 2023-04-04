@@ -25,6 +25,7 @@ namespace DK
         public bool isUsingRightHand;
         public bool isUsingLeftHand;
         public bool isInvulnerable;
+        public bool isBlocking;
 
 
         private void Awake()
@@ -47,6 +48,7 @@ namespace DK
             isUsingRightHand = anim.GetBool("isUsingRightHand");
             isUsingLeftHand = anim.GetBool("isUsingLeftHand");
             isInvulnerable = anim.GetBool("isInvulnerable");
+            anim.SetBool("isBlocking",isBlocking);
             anim.SetBool("isInAir", isInAir);
             anim.SetBool("isDead", playerStats.isDead);
             playerAnimatorManager.canRotate = anim.GetBool("canRotate");

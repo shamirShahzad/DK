@@ -75,6 +75,7 @@ namespace DK
                 
                 inputActions.PlayerActions.RB.performed += i => rb_input = true;
                 inputActions.PlayerActions.LB.performed += i => lb_input = true;
+                inputActions.PlayerActions.LB.canceled+= i => lb_input = false;
                 inputActions.PlayerActions.RT.performed += i => rt_input = true;
                 inputActions.PlayerActions.LT.performed += i => lt_input = true;
                 inputActions.PlayerActions.A.performed += i => a_input = true;
@@ -166,7 +167,11 @@ namespace DK
             }
             if (lb_input)
             {
-                //do block
+                playerAttacker.HandleLBAaction();
+            }
+            else
+            {
+                playerManager.isBlocking = false;
             }
             if (lt_input)
             {
