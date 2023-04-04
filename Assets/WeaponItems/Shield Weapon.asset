@@ -18,14 +18,15 @@ MonoBehaviour:
   isUnarmed: 0
   baseDamage: 2
   criticalDamageMultiplier: 1
+  physicalDamageAbsorbtion: 99
   Left_Hand_Idle: Left_Arm_Idle
   Right_Hand_Idle: Right_Arm_Idle
   th_idle: TH_Idle_01
-  OH_Light_Attack_1: 
-  OH_Light_Attack_2: 
-  OH_Heavy_Attack_1: 
-  TH_Light_Attack_01: Empty
-  TH_Light_Attack_02: Empty
+  OH_Light_Attack_1: OH_Light_Attack_01
+  OH_Light_Attack_2: OH_Light_Attack_02
+  OH_Heavy_Attack_1: OH_Heavy_Attack_01
+  TH_Light_Attack_01: TH_Light_Attack_01
+  TH_Light_Attack_02: TH_Light_Attack_02
   weaponArtShield: Parry
   baseStaminaCost: 2
   lightAttackMultiplier: 1

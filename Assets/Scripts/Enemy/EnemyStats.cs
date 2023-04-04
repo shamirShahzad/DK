@@ -7,6 +7,7 @@ namespace DK
     {
         EnemyAnimatorManager enemyAnimatorManager;
 
+        public UiEnemyHealthBar enemyHealthBar;
         public int soulsAwardedOnDeath = 50;
         private void Awake()
         {
@@ -17,6 +18,7 @@ namespace DK
         {
             maxHealth = SetMaxHealthFromHealthLevel();
             currentHealth = maxHealth;
+            enemyHealthBar.SetMaxHealth(maxHealth);
         }
 
         private int SetMaxHealthFromHealthLevel()
@@ -30,6 +32,8 @@ namespace DK
             if (isDead)
                 return;
             currentHealth = currentHealth - damage;
+
+            enemyHealthBar.setHealth(currentHealth);
             if (currentHealth <= 0)
             {
                 isDead = true;
@@ -37,15 +41,16 @@ namespace DK
             }
         }
 
-        public void TakeDamage(int damage)
+        public void TakeDamage(int damage,string damageAnimation = "Hit")
         {
 
             if (isDead)
                 return;
             currentHealth = currentHealth - damage;
+            enemyHealthBar.setHealth(currentHealth);
 
 
-            enemyAnimatorManager.PlayTargetAnimation("Hit", true);
+            enemyAnimatorManager.PlayTargetAnimation(damageAnimation, true);
 
             if (currentHealth <= 0)
             {

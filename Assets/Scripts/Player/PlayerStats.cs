@@ -69,7 +69,7 @@ namespace DK
                 currentHealth = 0;
             }
         }
-        public void TakeDamage(int damage)
+        public void TakeDamage(int damage,string damageAnimation = "Hit")
         {
             if (playerManager.isInvulnerable)
             {
@@ -82,7 +82,7 @@ namespace DK
             currentHealth = currentHealth - damage;
 
             healthBar.SetCurrentHealth(currentHealth);
-            animatorHandler.PlayTargetAnimation("Hit", true);
+            animatorHandler.PlayTargetAnimation(damageAnimation, true);
 
             if(currentHealth <=0)
             {

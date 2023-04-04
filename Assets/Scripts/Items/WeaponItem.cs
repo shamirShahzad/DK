@@ -14,6 +14,9 @@ namespace DK
         public int baseDamage = 25;
         public int criticalDamageMultiplier = 4;
 
+        [Header("Absorbtion")]
+        public float physicalDamageAbsorbtion;
+
         [Header("Idle Animations")]
         public string Left_Hand_Idle;
         public string Right_Hand_Idle;

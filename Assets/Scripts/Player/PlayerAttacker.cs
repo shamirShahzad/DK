@@ -6,6 +6,7 @@ namespace DK
     public class PlayerAttacker : MonoBehaviour
     {
         PlayerAnimatorManager animatorHandler;
+        PlayerEquipmentManager playerEquipmentManager;
         PlayerManager playerManager;
         inputHandler inputHandler;
         PlayerStats playerStats;
@@ -26,6 +27,7 @@ namespace DK
             weaponSlotManager = GetComponent<WeaponSlotManager>();
             playerManager = GetComponentInParent<PlayerManager>();
             playerInventory = GetComponentInParent<PlayerInventory>();
+            playerEquipmentManager = GetComponent<PlayerEquipmentManager>();
         }
         public void HandleWeaponCombo(WeaponItem weapon)
         {
@@ -239,6 +241,7 @@ namespace DK
                 return;
             }
             animatorHandler.PlayTargetAnimation("Block Start", false, true);
+            playerEquipmentManager.OpenBlockingCollider();
             playerManager.isBlocking = true;
         }
 

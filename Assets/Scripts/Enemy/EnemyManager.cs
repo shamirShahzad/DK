@@ -29,6 +29,11 @@ namespace DK
         EnemyAnimatorManager enemyAnimatorManager;
         EnemyStats enemyStats;
 
+        [Header("A.I Combat Settings")]
+        public bool allowAIToPerformCombo;
+        public float comboLikelyhood;
+
+
 
         public float currentRecoveryTime = 0;
 

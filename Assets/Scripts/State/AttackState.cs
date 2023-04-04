@@ -10,7 +10,7 @@ namespace DK
         public EnemyAttackAction[] enemyAttacks;
         public EnemyAttackAction currentAttack;
 
-        bool isComboing = false;
+        bool willDoComboOnNextAttack = false;
         public override State Tick(EnemyManager enemyManager, EnemyStats enemyStats, EnemyAnimatorManager enemyAnimatorManager)
         {
             if (enemyManager.isInteracting && enemyManager.canDoCombo == false)
@@ -20,10 +20,10 @@ namespace DK
             }
             else if (enemyManager.isInteracting && enemyManager.canDoCombo)
             {
-                if (isComboing)
+                if (willDoComboOnNextAttack)
                 {
+                    willDoComboOnNextAttack = false;
                     enemyAnimatorManager.PlayTargetAnimation(currentAttack.actionAnimation, true);
-                    isComboing = false;
                 }
             }
               
@@ -56,7 +56,9 @@ namespace DK
                             enemyAnimatorManager.PlayTargetAnimation(currentAttack.actionAnimation, true);
                             enemyManager.isPerformingAction = true;
 
-                            if (currentAttack.canCombo)
+                            RollForComboChance(enemyManager);
+
+                            if (currentAttack.canCombo && willDoComboOnNextAttack)
                             {
                                 currentAttack = currentAttack.comboAction;
                                 return this;
@@ -183,6 +185,16 @@ namespace DK
                 }
                 //enemyManager.enemyRigidbody.velocity = targetVelocity;
                 //enemyManager.transform.rotation = Quaternion.Slerp(enemyManager.transform.rotation, enemyManager.navMeshAgent.transform.rotation, enemyManager.rotationSpeed / Time.deltaTime);
+            }
+        }
+
+        private void RollForComboChance(EnemyManager enemyManager)
+        {
+            float comboChance = Random.Range(0, 100);
+
+            if (enemyManager.allowAIToPerformCombo && comboChance <= enemyManager.comboLikelyhood)
+            {
+                willDoComboOnNextAttack = true;
             }
         }
     }

@@ -41,6 +41,7 @@ namespace DK
         PlayerInventory playerInventory;
         PlayerManager playerManager;
         WeaponSlotManager weaponSlotManager;
+        BlockingCollider blockingCollider;
         PlayerStats playerStats;
         CameraHandler cameraHandler;
         PlayerAnimatorManager animatorHandler;
@@ -54,6 +55,7 @@ namespace DK
 
         private void Start()
         {
+
             playerAttacker = GetComponentInChildren<PlayerAttacker>();
             playerInventory = GetComponent<PlayerInventory>();
             playerManager = GetComponent<PlayerManager>();
@@ -61,6 +63,7 @@ namespace DK
             cameraHandler = FindObjectOfType<CameraHandler>();
             weaponSlotManager = GetComponentInChildren<WeaponSlotManager>();
             animatorHandler = GetComponentInChildren<PlayerAnimatorManager>();
+            blockingCollider = GetComponentInChildren<BlockingCollider>();
         }
 
         public void OnEnable()
@@ -172,6 +175,11 @@ namespace DK
             else
             {
                 playerManager.isBlocking = false;
+
+                if (blockingCollider.blockingBoxCollider.enabled)
+                {
+                    blockingCollider.DisableBlockingCollider();
+                }
             }
             if (lt_input)
             {
