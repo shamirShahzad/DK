@@ -6722,7 +6722,7 @@ GameObject:
   - component: {fileID: 5752528148919973128}
   - component: {fileID: 7343556767455693211}
   - component: {fileID: 66257170763386008}
-  m_Layer: 19
+  m_Layer: 13
   m_Name: Riposte Collider
   m_TagString: Untagged
   m_Icon: {fileID: 0}

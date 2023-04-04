@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 9051286534061063579}
   - component: {fileID: 9051286534061063572}
   - component: {fileID: 9051286534061063583}
-  m_Layer: 12
+  m_Layer: 0
   m_Name: Item
   m_TagString: Interactable
   m_Icon: {fileID: 0}
@@ -28,14 +28,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9051286534061063573}
-  m_LocalRotation: {x: -0.6725218, y: 0, z: 0, w: 0.7400774}
+  m_LocalRotation: {x: -0.7071068, y: 0, z: 0, w: 0.7071068}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: -84.524, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
 --- !u!135 &9051286534061063577
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -4840,7 +4840,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1119faccdc0528749a8adf0b435a1a45, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  radius: 0.6
+  radius: 0.5
   interactableText: Pick up item
   weapon: {fileID: 11400000, guid: 69ae6967547257341ba37b25fe3d6b3f, type: 2}
 --- !u!212 &9051286534061063583

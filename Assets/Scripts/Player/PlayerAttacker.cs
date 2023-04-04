@@ -153,9 +153,8 @@ namespace DK
                 
                 CharacterManager enemycharacterManager = hit.transform.gameObject.GetComponentInParent<CharacterManager>();
                 DamageCollider rightWeapon = weaponSlotManager.rightDamageCollider;
-                if (enemycharacterManager != null && enemycharacterManager.canBeRiposted == true)
+                if (enemycharacterManager != null && enemycharacterManager.canBeRiposted)
                 {
-                    Debug.Log("FROM RIPOSTE"); 
                     playerManager.transform.position = enemycharacterManager.riposteCollider.criticalDamagerStandPosition.position;
 
                     Vector3 rotationDirection = playerManager.transform.root.eulerAngles;
