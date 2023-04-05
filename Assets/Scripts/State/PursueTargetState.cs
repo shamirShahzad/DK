@@ -63,14 +63,23 @@ namespace DK
             //Navmesh Rotation
             else
             {
-                //Vector3 relativeDirection = transform.InverseTransformDirection(enemyManager.navMeshAgent.desiredVelocity);
-               // Vector3 targetVelocity = enemyManager.enemyRigidbody.velocity;
+               // Vector3 relativeDirection = transform.InverseTransformDirection(enemyManager.navMeshAgent.desiredVelocity);
+                //Vector3 targetVelocity = enemyManager.enemyRigidbody.velocity;
 
                 enemyManager.navMeshAgent.enabled = true;
                 enemyManager.navMeshAgent.SetDestination(enemyManager.currentTarget.transform.position);
-                float rotoationToApplyToDynamicEnemy = Quaternion.Angle(enemyManager.transform.rotation,
-                    Quaternion.LookRotation(enemyManager.navMeshAgent.desiredVelocity.normalized));
-                if(distanceFromTarget > 5)
+                float rotoationToApplyToDynamicEnemy;
+                if (enemyManager.navMeshAgent.desiredVelocity.magnitude > 0)
+                {
+                    rotoationToApplyToDynamicEnemy = Quaternion.Angle(enemyManager.transform.rotation,
+                        Quaternion.LookRotation(enemyManager.navMeshAgent.desiredVelocity.normalized));
+                }
+                else
+                {
+                    rotoationToApplyToDynamicEnemy = float.Epsilon;
+                }
+
+                if (distanceFromTarget > 5)
                 {
                     enemyManager.navMeshAgent.angularSpeed = 500f;
                 }
@@ -97,7 +106,7 @@ namespace DK
                 {
                     enemyManager.transform.rotation = Quaternion.RotateTowards(enemyManager.transform.rotation, rotationToApplyToStaticEnemy,enemyManager.navMeshAgent.angularSpeed*Time.deltaTime);
                 }
-                    //enemyManager.enemyRigidbody.velocity = targetVelocity;
+                  //  enemyManager.enemyRigidbody.velocity = targetVelocity;
                 //enemyManager.transform.rotation = Quaternion.Slerp(enemyManager.transform.rotation, enemyManager.navMeshAgent.transform.rotation, enemyManager.rotationSpeed / Time.deltaTime);
             }
         }

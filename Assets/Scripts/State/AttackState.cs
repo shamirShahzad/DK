@@ -149,13 +149,20 @@ namespace DK
             //Navmesh Rotation
             else
             {
-                //Vector3 relativeDirection = transform.InverseTransformDirection(enemyManager.navMeshAgent.desiredVelocity);
-                // Vector3 targetVelocity = enemyManager.enemyRigidbody.velocity;
+                Vector3 relativeDirection = transform.InverseTransformDirection(enemyManager.navMeshAgent.desiredVelocity);
+                 Vector3 targetVelocity = enemyManager.enemyRigidbody.velocity;
 
                 enemyManager.navMeshAgent.enabled = true;
                 enemyManager.navMeshAgent.SetDestination(enemyManager.currentTarget.transform.position);
-                float rotoationToApplyToDynamicEnemy = Quaternion.Angle(enemyManager.transform.rotation,
-                    Quaternion.LookRotation(enemyManager.navMeshAgent.desiredVelocity.normalized));
+                float rotoationToApplyToDynamicEnemy;
+                if (enemyManager.navMeshAgent.desiredVelocity.magnitude >0) {
+                    rotoationToApplyToDynamicEnemy = Quaternion.Angle(enemyManager.transform.rotation,
+                        Quaternion.LookRotation(enemyManager.navMeshAgent.desiredVelocity.normalized));
+                }
+                else
+                {
+                    rotoationToApplyToDynamicEnemy = float.Epsilon;
+                }
                 if (distanceFromTarget > 5)
                 {
                     enemyManager.navMeshAgent.angularSpeed = 500f;

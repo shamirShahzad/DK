@@ -1156,6 +1156,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2053789961, guid: 9eec5f8e90660154e9b5ea043b5401f2, type: 3}
+      propertyPath: m_AngularSpeed
+      value: 100000
+      objectReference: {fileID: 0}
     - target: {fileID: 5497369508491516408, guid: 9eec5f8e90660154e9b5ea043b5401f2, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0

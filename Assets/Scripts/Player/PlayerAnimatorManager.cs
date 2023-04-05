@@ -141,6 +141,10 @@ namespace DK
         {
             anim.SetBool("canDoCombo", false);
         }
+        public void AwardSoulsOnDeath()
+        {
+        }
+
         private void OnAnimatorMove()
         {
             if (playerManager.isInteracting == false)
