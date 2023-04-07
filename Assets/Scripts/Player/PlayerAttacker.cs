@@ -204,13 +204,28 @@ namespace DK
                 if(playerInventory.currentSpell != null && playerInventory.currentSpell.isFaithSpell)
                 {
                     if(playerStats.currentFocus >= playerInventory.currentSpell.focusPointCost){
-                        playerInventory.currentSpell.AttemptToCastSpell(animatorHandler, playerStats);
+                        playerInventory.currentSpell.AttemptToCastSpell(animatorHandler, playerStats,weaponSlotManager);
                     }
                     else
                     {
                         animatorHandler.PlayTargetAnimation("Failed Cast", true);
                     }
                   
+                }
+            }
+            else if(weapon.isPyroCaster)
+            {
+                if (playerInventory.currentSpell != null && playerInventory.currentSpell.isPyroSpell)
+                {
+                    if (playerStats.currentFocus >= playerInventory.currentSpell.focusPointCost)
+                    {
+                        playerInventory.currentSpell.AttemptToCastSpell(animatorHandler, playerStats, weaponSlotManager);
+                    }
+                    else
+                    {
+                        animatorHandler.PlayTargetAnimation("Failed Cast", true);
+                    }
+
                 }
             }
         }
@@ -248,6 +263,7 @@ namespace DK
         private void SuccessfullycastedSpell()
         {
             playerInventory.currentSpell.SuccessfullyCastedSpell(animatorHandler, playerStats);
+            animatorHandler.anim.SetBool("isFiringSpell", true);
         }
     }
 }

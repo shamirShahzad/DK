@@ -26,12 +26,15 @@ namespace DK
         [TextArea]
         public string spellDescription;
 
-        public virtual void AttemptToCastSpell(PlayerAnimatorManager animatorHandler, PlayerStats playerStats)
+        public virtual void AttemptToCastSpell(PlayerAnimatorManager animatorHandler,
+            PlayerStats playerStats,
+            WeaponSlotManager weaponSlotManager)
         {
             Debug.Log("Attempted cast");
         }
 
-        public virtual void SuccessfullyCastedSpell(PlayerAnimatorManager animatorHandler, PlayerStats playerStats)
+        public virtual void SuccessfullyCastedSpell(PlayerAnimatorManager animatorHandler,
+            PlayerStats playerStats)
         {
             Debug.Log("Success cast spell");
             playerStats.DeductfocusPoints(focusPointCost);

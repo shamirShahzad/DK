@@ -15,7 +15,9 @@ namespace DK
         public bool canBeRiposted;
         public bool isParrying;
         public bool isBlocking;
+        public bool isFiringSpell;
         public int pendingCriticalDamage;
+       
 
 
 
