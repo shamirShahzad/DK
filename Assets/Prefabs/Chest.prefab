@@ -24,7 +24,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 471166284779233842}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0.779}
+  m_LocalPosition: {x: 0, y: 0, z: 0.457}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -45,12 +45,13 @@ GameObject:
   - component: {fileID: 4044866082908597670}
   - component: {fileID: 2863320857460417154}
   - component: {fileID: 2423829742026955765}
+  - component: {fileID: 1193631559}
   m_Layer: 0
   m_Name: Chest
   m_TagString: Interactable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 2147483647
+  m_StaticEditorFlags: 126
   m_IsActive: 1
 --- !u!4 &3947758178294609997
 Transform:
@@ -86,7 +87,7 @@ MeshRenderer:
   m_GameObject: {fileID: 4666558327117510209}
   m_Enabled: 1
   m_CastShadows: 1
-  m_ReceiveShadows: 1
+  m_ReceiveShadows: 0
   m_DynamicOccludee: 1
   m_StaticShadowCaster: 0
   m_MotionVectors: 1
@@ -147,7 +148,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cd8374da7c2c03c49935ce0a909907d1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  radius: 0.6
+  radius: 0.3
   interactableText: Open Chest
   playerStandingPosition: {fileID: 6622432342107237572}
   itemSpawner: {fileID: 9051286534061063573, guid: 4a6ca026486caf847bd6835c6b6b2b6e, type: 3}
@@ -172,6 +173,22 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!208 &1193631559
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4666558327117510209}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.49, y: 0.23300001, z: 0.305}
+  m_MoveThreshold: 0.1
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0.231, z: 0.012}
+  m_TimeToStationary: 0.5
 --- !u!1 &7224292098935705919
 GameObject:
   m_ObjectHideFlags: 0
@@ -189,7 +206,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 2147483647
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &8001216277039876997
 Transform:
@@ -223,7 +240,7 @@ MeshRenderer:
   m_GameObject: {fileID: 7224292098935705919}
   m_Enabled: 1
   m_CastShadows: 1
-  m_ReceiveShadows: 1
+  m_ReceiveShadows: 0
   m_DynamicOccludee: 1
   m_StaticShadowCaster: 0
   m_MotionVectors: 1

@@ -2582,6 +2582,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c38a3b91febee3c40bef781d6ff25445, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  leftHandSlot: {fileID: 0}
+  rightHandSlot: {fileID: 0}
   leftDamageCollider: {fileID: 0}
   rightDamageCollider: {fileID: 0}
   attackingItem: {fileID: 0}
@@ -5007,6 +5009,7 @@ MonoBehaviour:
   canBeRiposted: 0
   isParrying: 0
   isBlocking: 0
+  isFiringSpell: 0
   pendingCriticalDamage: 0
   interactableUiGameObject: {fileID: 0}
   itemInteractableGameobject: {fileID: 0}
@@ -5030,10 +5033,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6ad425d25d85769469d01d92bd7cf158, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentSpell: {fileID: 11400000, guid: a67358f7d97aa0f4f877d6034611fec5, type: 2}
+  currentSpell: {fileID: 11400000, guid: 70d574e52e6202f489dd32f9d86bf0f9, type: 2}
   weaponItemsRight:
   - {fileID: 11400000, guid: 2035fcc6b5e5956428f3213594734d88, type: 2}
-  - {fileID: 11400000, guid: 69ae6967547257341ba37b25fe3d6b3f, type: 2}
+  - {fileID: 11400000, guid: 77c4d10d35ab5b54d82b108604760b06, type: 2}
   - {fileID: 11400000, guid: 69ae6967547257341ba37b25fe3d6b3f, type: 2}
   weaponItemsLeft:
   - {fileID: 11400000, guid: 32fd7bee58f37c94193429903d6da805, type: 2}
@@ -6298,7 +6301,7 @@ GameObject:
   - component: {fileID: 1934687460}
   m_Layer: 11
   m_Name: Spine1_M
-  m_TagString: Player
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
