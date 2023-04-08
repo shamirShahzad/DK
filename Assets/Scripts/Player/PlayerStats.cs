@@ -69,7 +69,7 @@ namespace DK
                 currentHealth = 0;
             }
         }
-        public void TakeDamage(int damage,string damageAnimation = "Hit")
+        public override void TakeDamage(int damage,string damageAnimation = "Hit")
         {
             if (playerManager.isInvulnerable)
             {

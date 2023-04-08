@@ -12,6 +12,7 @@ namespace DK
         PlayerStats playerStats;
         PlayerInventory playerInventory;
         WeaponSlotManager weaponSlotManager;
+        CameraHandler cameraHandler;
         [SerializeField]
         LayerMask backStabLayer;
         [SerializeField]
@@ -28,6 +29,7 @@ namespace DK
             playerManager = GetComponentInParent<PlayerManager>();
             playerInventory = GetComponentInParent<PlayerInventory>();
             playerEquipmentManager = GetComponent<PlayerEquipmentManager>();
+            cameraHandler = FindObjectOfType<CameraHandler>();
         }
         public void HandleWeaponCombo(WeaponItem weapon)
         {
@@ -204,7 +206,7 @@ namespace DK
                 if(playerInventory.currentSpell != null && playerInventory.currentSpell.isFaithSpell)
                 {
                     if(playerStats.currentFocus >= playerInventory.currentSpell.focusPointCost){
-                        playerInventory.currentSpell.AttemptToCastSpell(animatorHandler, playerStats,weaponSlotManager);
+                        playerInventory.currentSpell.AttemptToCastSpell(animatorHandler, playerStats,weaponSlotManager,cameraHandler);
                     }
                     else
                     {
@@ -219,7 +221,7 @@ namespace DK
                 {
                     if (playerStats.currentFocus >= playerInventory.currentSpell.focusPointCost)
                     {
-                        playerInventory.currentSpell.AttemptToCastSpell(animatorHandler, playerStats, weaponSlotManager);
+                        playerInventory.currentSpell.AttemptToCastSpell(animatorHandler, playerStats, weaponSlotManager,cameraHandler);
                     }
                     else
                     {
@@ -262,7 +264,7 @@ namespace DK
 
         private void SuccessfullycastedSpell()
         {
-            playerInventory.currentSpell.SuccessfullyCastedSpell(animatorHandler, playerStats);
+            playerInventory.currentSpell.SuccessfullyCastedSpell(animatorHandler, playerStats,cameraHandler,weaponSlotManager);
             animatorHandler.anim.SetBool("isFiringSpell", true);
         }
     }

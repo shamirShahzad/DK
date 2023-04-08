@@ -15,12 +15,15 @@ MonoBehaviour:
   itemIcon: {fileID: 0}
   itemName: Fire BAll
   spellWarmupEffect: {fileID: 100008, guid: fb9dc86bfa2071046ba05b56e7dba0c5, type: 3}
-  spellCastEffect: {fileID: 100008, guid: 6a2dabb295745d9488037712e2ba0f26, type: 3}
+  spellCastEffect: {fileID: 100008, guid: e6637dcfd7a18b84a81388e40a571b53, type: 3}
   spellAnimation: 1H_Spell_Cast_Start
   focusPointCost: 0
   isFaithSpell: 0
   isMagicSpell: 0
   isPyroSpell: 1
   spellDescription: 'Just another fireball '
-  baseDamage: 20
-  projectileVelocity: 10
+  baseDamage: 75
+  projectileForwardVelocity: 800
+  projectileUpwardVelocity: 250
+  projectileMass: 15
+  isEffectedByGravity: 1

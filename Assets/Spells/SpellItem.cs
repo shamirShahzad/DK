@@ -28,13 +28,16 @@ namespace DK
 
         public virtual void AttemptToCastSpell(PlayerAnimatorManager animatorHandler,
             PlayerStats playerStats,
-            WeaponSlotManager weaponSlotManager)
+            WeaponSlotManager weaponSlotManager,
+            CameraHandler cameraHandler)
         {
             Debug.Log("Attempted cast");
         }
 
         public virtual void SuccessfullyCastedSpell(PlayerAnimatorManager animatorHandler,
-            PlayerStats playerStats)
+            PlayerStats playerStats,
+            CameraHandler cameraHandler,
+            WeaponSlotManager weaponSlotManager)
         {
             Debug.Log("Success cast spell");
             playerStats.DeductfocusPoints(focusPointCost);

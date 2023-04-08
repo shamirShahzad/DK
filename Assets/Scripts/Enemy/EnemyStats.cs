@@ -41,7 +41,7 @@ namespace DK
             }
         }
 
-        public void TakeDamage(int damage,string damageAnimation = "Hit")
+        public override void TakeDamage(int damage,string damageAnimation = "Hit")
         {
 
             if (isDead)

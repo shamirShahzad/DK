@@ -11,18 +11,19 @@ namespace DK
         public int healAmount;
         public override void AttemptToCastSpell(PlayerAnimatorManager animatorHandler,
             PlayerStats playerStats,
-            WeaponSlotManager weaponSlotManager)
+            WeaponSlotManager weaponSlotManager,
+            CameraHandler cameraHandler)
         {
-            base.AttemptToCastSpell(animatorHandler, playerStats,weaponSlotManager);
+            base.AttemptToCastSpell(animatorHandler, playerStats,weaponSlotManager,cameraHandler);
             GameObject instanstiatedWarmupSpellFX = Instantiate(spellWarmupEffect,animatorHandler.transform);
             animatorHandler.PlayTargetAnimation(spellAnimation, true);
             Debug.Log("Attempting baaby..");
             Destroy(instanstiatedWarmupSpellFX, 1.5f);
         }
 
-        public override void SuccessfullyCastedSpell(PlayerAnimatorManager animatorHandler, PlayerStats playerStats)
+        public override void SuccessfullyCastedSpell(PlayerAnimatorManager animatorHandler, PlayerStats playerStats,CameraHandler cameraHandler,WeaponSlotManager weaponSlotManager)
         {
-            base.SuccessfullyCastedSpell(animatorHandler, playerStats);
+            base.SuccessfullyCastedSpell(animatorHandler, playerStats,cameraHandler,weaponSlotManager);
             GameObject instansiatedSpellFX = Instantiate(spellCastEffect, animatorHandler.transform);
             playerStats.healPlayer(healAmount);
             Debug.Log("Success BABY");

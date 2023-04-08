@@ -10,6 +10,7 @@ namespace DK
         [SerializeField]
         public int weaponDamage = 8;
         PlayerStats myPlayerStats;
+        public bool enableOnstartup = false;
 
         private void Awake()
         {
@@ -18,6 +19,7 @@ namespace DK
             damageCollider.isTrigger = true;
             damageCollider.enabled = false;
             myPlayerStats = FindObjectOfType<PlayerStats>();
+            damageCollider.enabled = enableOnstartup;
         }
 
         public void EnableDamageCollider()

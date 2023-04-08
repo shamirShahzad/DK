@@ -6,7 +6,7 @@ namespace DK
 {
     public class DestroyAfterCastingSpell : MonoBehaviour
     {
-        CharacterManager characterCastingSpell;
+        public CharacterManager characterCastingSpell;
 
         private void Awake()
         {
