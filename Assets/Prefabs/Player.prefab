@@ -2649,6 +2649,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentParticleFX: {fileID: 0}
   instantiatedFXModel: {fileID: 0}
+  healParticles: {fileID: 0}
   amountToHealed: 0
 --- !u!1 &3278501041400699942
 GameObject:
@@ -5050,7 +5051,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6ad425d25d85769469d01d92bd7cf158, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentConsumable: {fileID: 0}
+  currentConsumable: {fileID: 11400000, guid: 53742d759b6041441978e9fa78b03368, type: 2}
   currentSpell: {fileID: 11400000, guid: 70d574e52e6202f489dd32f9d86bf0f9, type: 2}
   weaponItemsRight:
   - {fileID: 11400000, guid: 2035fcc6b5e5956428f3213594734d88, type: 2}
