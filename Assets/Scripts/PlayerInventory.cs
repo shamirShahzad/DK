@@ -4,6 +4,8 @@ namespace DK
 {
     public class PlayerInventory : MonoBehaviour
     {
+
+        public ConsumableItem currentConsumable;
         WeaponSlotManager weaponSlotManager;
         public SpellItem currentSpell;
         public WeaponItem[] weaponItemsRight;

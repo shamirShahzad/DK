@@ -16,6 +16,7 @@ namespace DK
         public bool b_input;
         public bool a_input;
         public bool y_input;
+        public bool x_input;
         public bool rb_input;
         public bool lb_input;
         public bool rt_input;
@@ -40,11 +41,12 @@ namespace DK
         PlayerAttacker playerAttacker;
         PlayerInventory playerInventory;
         PlayerManager playerManager;
+        PlayerFXManager playerFXManager;
         WeaponSlotManager weaponSlotManager;
         BlockingCollider blockingCollider;
         PlayerStats playerStats;
         CameraHandler cameraHandler;
-        PlayerAnimatorManager animatorHandler;
+        PlayerAnimatorManager playerAnimatorManager;
         
 
         Vector2 movementInput;  
@@ -58,11 +60,12 @@ namespace DK
 
             playerAttacker = GetComponentInChildren<PlayerAttacker>();
             playerInventory = GetComponent<PlayerInventory>();
+            playerFXManager = GetComponentInChildren<PlayerFXManager>();
             playerManager = GetComponent<PlayerManager>();
             playerStats = GetComponent<PlayerStats>();
             cameraHandler = FindObjectOfType<CameraHandler>();
             weaponSlotManager = GetComponentInChildren<WeaponSlotManager>();
-            animatorHandler = GetComponentInChildren<PlayerAnimatorManager>();
+            playerAnimatorManager = GetComponentInChildren<PlayerAnimatorManager>();
             blockingCollider = GetComponentInChildren<BlockingCollider>();
         }
 
@@ -82,6 +85,7 @@ namespace DK
                 inputActions.PlayerActions.RT.performed += i => rt_input = true;
                 inputActions.PlayerActions.LT.performed += i => lt_input = true;
                 inputActions.PlayerActions.A.performed += i => a_input = true;
+                inputActions.PlayerActions.X.performed += i => x_input = true;
                 inputActions.PlayerActions.Roll.performed += i => b_input = true;
                 inputActions.PlayerActions.Roll.canceled += i => b_input = false;
                 inputActions.PlayerActions.Jump.performed += i => jump_input = true;
@@ -109,6 +113,7 @@ namespace DK
             HandleLockOnInput();
             HandleTwoHandInput();
             HandleCriticalAttackInput();
+            HandleConsumableInput();
 
         }
 
@@ -260,6 +265,15 @@ namespace DK
                playerAttacker.AttemptBackStabOrRiposte();
             }
 
+        }
+
+        private void HandleConsumableInput()
+        {
+            if (x_input)
+            {
+                x_input = false;
+                playerInventory.currentConsumable.AttemptToConsumeItems(playerAnimatorManager, weaponSlotManager, playerFXManager);
+            }
         }
         
     }

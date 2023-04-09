@@ -1,0 +1,35 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+
+namespace DK
+{
+    [CreateAssetMenu(menuName = "Items/Consumables/Flask")]
+    public class FlaskItem : ConsumableItem
+    {
+        [Header("Flask Tye")]
+        public bool estusFlassk;
+        public bool ashenFlask;
+        [Header("Recovery Amount")]
+        public int healthRecoverAmount;
+        public int focusPointRecoveryAmount;
+
+        [Header("Recovery FX")]
+        public GameObject recoverFx;
+
+
+        public override void AttemptToConsumeItems(PlayerAnimatorManager playerAnimatorManager,WeaponSlotManager weaponSlotManager, PlayerFXManager playerFXManager)
+        {
+            base.AttemptToConsumeItems(playerAnimatorManager, weaponSlotManager, playerFXManager);
+            GameObject flask = Instantiate(itemModel, weaponSlotManager.rightHandSlot.transform);
+            playerFXManager.currentParticleFX = recoverFx;
+            playerFXManager.amountToHealed = healthRecoverAmount;
+            playerFXManager.instantiatedFXModel = flask;
+            weaponSlotManager.rightHandSlot.UnloadWeapon();
+
+
+            
+        }
+    }
+}

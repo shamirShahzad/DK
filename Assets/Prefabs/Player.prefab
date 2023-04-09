@@ -2525,6 +2525,7 @@ GameObject:
   - component: {fileID: 2751944335899050677}
   - component: {fileID: 1376979908870801112}
   - component: {fileID: 1714488635}
+  - component: {fileID: 625030867}
   m_Layer: 0
   m_Name: Model
   m_TagString: Untagged
@@ -2634,6 +2635,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blockingCollider: {fileID: 202177243}
+--- !u!114 &625030867
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3240585942376857115}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db8c022d116ad69498621819c5796fe1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentParticleFX: {fileID: 0}
+  instantiatedFXModel: {fileID: 0}
+  amountToHealed: 0
 --- !u!1 &3278501041400699942
 GameObject:
   m_ObjectHideFlags: 0
@@ -4975,6 +4991,7 @@ MonoBehaviour:
   b_input: 0
   a_input: 0
   y_input: 0
+  x_input: 0
   rb_input: 0
   lb_input: 0
   rt_input: 0
@@ -5033,6 +5050,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6ad425d25d85769469d01d92bd7cf158, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  currentConsumable: {fileID: 0}
   currentSpell: {fileID: 11400000, guid: 70d574e52e6202f489dd32f9d86bf0f9, type: 2}
   weaponItemsRight:
   - {fileID: 11400000, guid: 2035fcc6b5e5956428f3213594734d88, type: 2}
