@@ -24,11 +24,11 @@ namespace DK
             playerStats.healPlayer(amountToHealed);
             healParticles = Instantiate(currentParticleFX, playerStats.transform);
             Destroy(instantiatedFXModel,2f);
-            weaponSlotManager.LoadBothWeaponOnslot();
         }
 
         public void DestroyHealEffects()
         {
+            weaponSlotManager.LoadBothWeaponOnslot(); 
             Destroy(healParticles,2f);
         }
 

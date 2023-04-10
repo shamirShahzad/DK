@@ -23,6 +23,7 @@ namespace DK
         {
             base.AttemptToConsumeItems(playerAnimatorManager, weaponSlotManager, playerFXManager);
             GameObject flask = Instantiate(itemModel, weaponSlotManager.rightHandSlot.transform);
+            flask.transform.localScale = new Vector3(100, 100, 100);
             playerFXManager.currentParticleFX = recoverFx;
             playerFXManager.amountToHealed = healthRecoverAmount;
             playerFXManager.instantiatedFXModel = flask;
