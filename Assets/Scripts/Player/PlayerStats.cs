@@ -75,7 +75,7 @@ namespace DK
             {
                 return;
             }
-            base.TakeDamage(damage, damageAnimation = "Hit");
+            base.TakeDamage(damage, damageAnimation);
             healthBar.SetCurrentHealth(currentHealth);
             animatorHandler.PlayTargetAnimation(damageAnimation, true);
 

@@ -33,12 +33,17 @@ namespace DK
         {
             if (isDead)
                 return;
+
             float totalPhysicalDamageAbsorbtion = 1 - (1 - physicalDamageAbsorbtionHead / 100)*
                 (1-physicalDamageAbsorbtionTorso/100)*(1-physicalDamageAbsorbtionLegs/100)*
-                (1-physicalDamageAbsorbtionHands);
+                (1-physicalDamageAbsorbtionHands/100);
+
+            //Debug.Log("Total Damage Absorbtion is:"+totalPhysicalDamageAbsorbtion+"%");
 
             physicalDamage =Mathf.RoundToInt (physicalDamage - (physicalDamage * totalPhysicalDamageAbsorbtion));
             float finalDamage = physicalDamage;
+
+            //Debug.Log("Total damage Dealt is:" + finalDamage);
             currentHealth = Mathf.RoundToInt(currentHealth - finalDamage);
             if (currentHealth <= 0)
             {
