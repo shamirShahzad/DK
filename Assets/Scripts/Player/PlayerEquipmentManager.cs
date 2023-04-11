@@ -110,6 +110,10 @@ namespace DK
                 rightLegModelChanger.EquipRightLegModelByName(nakedRightLeg);
             }
             //HAND LOWER ARM
+            rightHandModelChanger.UnequipAllRightHandModels();
+            lowerArmRightModelChanger.UnequipAllLowerRightArmModels();
+            leftHandModelChanger.UnequipAllLeftHandModels();
+            lowerArmLeftModelChanger.UnequipAllLowerLeftArmModels();
             if(playerInventory.currentHandEquipment != null)
             {
                 rightHandModelChanger.EquipRightHandModelByName(playerInventory.currentHandEquipment.rightHandModelName);
