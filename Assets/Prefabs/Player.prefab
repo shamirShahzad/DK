@@ -4903,7 +4903,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &6871147488357812486
 Transform:
   m_ObjectHideFlags: 0
@@ -5055,7 +5055,7 @@ MonoBehaviour:
   currentSpell: {fileID: 11400000, guid: 70d574e52e6202f489dd32f9d86bf0f9, type: 2}
   weaponItemsRight:
   - {fileID: 11400000, guid: 2035fcc6b5e5956428f3213594734d88, type: 2}
-  - {fileID: 11400000, guid: 77c4d10d35ab5b54d82b108604760b06, type: 2}
+  - {fileID: 11400000, guid: 69ae6967547257341ba37b25fe3d6b3f, type: 2}
   - {fileID: 11400000, guid: 69ae6967547257341ba37b25fe3d6b3f, type: 2}
   weaponItemsLeft:
   - {fileID: 11400000, guid: 32fd7bee58f37c94193429903d6da805, type: 2}
