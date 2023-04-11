@@ -7,6 +7,7 @@ namespace DK
     {
         inputHandler inputHandler;
         PlayerInventory playerInventory;
+        PlayerStats playerStats;
         [Header("Equipment Model Changer")]
         [SerializeField]
         BlockingCollider blockingCollider;
@@ -40,6 +41,7 @@ namespace DK
         {
             inputHandler = GetComponentInParent<inputHandler>();
             playerInventory = GetComponentInParent<PlayerInventory>();
+            playerStats = GetComponentInParent<PlayerStats>();
             helmetModelChanger = GetComponentInChildren<HelmetModelChanger>();
             torsoModelChanger = GetComponentInChildren<TorsoModelChanger>();
             hipModelChanger = GetComponentInChildren<HipModelChanger>();
@@ -51,6 +53,7 @@ namespace DK
             upperArmLeftModelChanger = GetComponentInChildren<UpperArmLeftModelChanger>();
             lowerArmLeftModelChanger = GetComponentInChildren<LowerArmLeftModelChanger>();
             leftHandModelChanger = GetComponentInChildren<LeftHandModelChanger>();
+
         }
         private void Start()
         {
@@ -68,6 +71,7 @@ namespace DK
                 defaultFacial.SetActive(false);
                 defaultHair.SetActive(false);
                 helmetModelChanger.EquipHelmetModelByName(playerInventory.currentHelmetEquipment.helmetModelName);
+                playerStats.physicalDamageAbsorbtionHead = playerInventory.currentHelmetEquipment.physicalDefense;
             }
             else
             {
@@ -75,6 +79,7 @@ namespace DK
                 defaultEyebrow.SetActive(true);
                 defaultFacial.SetActive(true);
                 defaultHair.SetActive(true);
+                playerStats.physicalDamageAbsorbtionHead = 0;
             }
             //TORSO, UPPER ARM
             torsoModelChanger.UnequipAllTorsoModels();
@@ -85,12 +90,14 @@ namespace DK
                 torsoModelChanger.EquipTorsoModelByName(playerInventory.currentTorsoEquipment.torsoModelName);
                 upperArmLeftModelChanger.EquipUpperLeftArmModelByName(playerInventory.currentTorsoEquipment.upperLeftArmModelName);
                 upperArmRightModelChanger.EquipUpperRightArmModelByName(playerInventory.currentTorsoEquipment.upperRightArmModelName);
+                playerStats.physicalDamageAbsorbtionTorso = playerInventory.currentTorsoEquipment.physicalDefense;
             }
             else
             {
                 torsoModelChanger.EquipTorsoModelByName(nakedTorso);
                 upperArmLeftModelChanger.EquipUpperLeftArmModelByName(nakedUpperLeftArm);
                 upperArmRightModelChanger.EquipUpperRightArmModelByName(nakedUpperRightArm);
+                playerStats.physicalDamageAbsorbtionTorso = 0;
             }
             //HIP LEGS
             hipModelChanger.UnequipAllHipModels();
@@ -102,12 +109,14 @@ namespace DK
                 hipModelChanger.EquipHipModelByName(playerInventory.currentLegEquipment.hipModelName);
                 leftLegModelChanger.EquipLeftLegModelByName(playerInventory.currentLegEquipment.leftLegModelName);
                 rightLegModelChanger.EquipRightLegModelByName(playerInventory.currentLegEquipment.rightLegModelName);
+                playerStats.physicalDamageAbsorbtionLegs = playerInventory.currentLegEquipment.physicalDefense;
             }
             else
             {
                 hipModelChanger.EquipHipModelByName(nakedHip);
                 leftLegModelChanger.EquipLeftLegModelByName(nakedLeftLeg);
                 rightLegModelChanger.EquipRightLegModelByName(nakedRightLeg);
+                playerStats.physicalDamageAbsorbtionLegs = 0;
             }
             //HAND LOWER ARM
             rightHandModelChanger.UnequipAllRightHandModels();
@@ -120,6 +129,7 @@ namespace DK
                 lowerArmRightModelChanger.EquipLowerRightArmModelByName(playerInventory.currentHandEquipment.lowerRightArmModelName);
                 leftHandModelChanger.EquipLeftHandModelByName(playerInventory.currentHandEquipment.leftHandModelName);
                 lowerArmLeftModelChanger.EquipLowerLeftArmModelByName(playerInventory.currentHandEquipment.lowerLeftArmModelName);
+                playerStats.physicalDamageAbsorbtionHands = playerInventory.currentHandEquipment.physicalDefense;
             }
             else
             {
@@ -127,6 +137,7 @@ namespace DK
                 lowerArmRightModelChanger.EquipLowerRightArmModelByName(nakedLowerRightArm);
                 leftHandModelChanger.EquipLeftHandModelByName(nakedLeftHand);
                 lowerArmLeftModelChanger.EquipLowerLeftArmModelByName(nakedLowerLeftArm);
+                playerStats.physicalDamageAbsorbtionHands = 0;
             }
             
         }

@@ -20,12 +20,31 @@ namespace DK
         public float currentFocus;
 
         public int soulCount = 0;
+
+        [Header("Armor absorbtions")]
+        public float physicalDamageAbsorbtionHead;
+        public float physicalDamageAbsorbtionTorso;
+        public float physicalDamageAbsorbtionLegs;
+        public float physicalDamageAbsorbtionHands;
         
         public bool isDead;
 
-        public virtual void TakeDamage(int damage, string damageAnimation = "Hit")
+        public virtual void TakeDamage(int physicalDamage, string damageAnimation = "Hit")
         {
+            if (isDead)
+                return;
+            float totalPhysicalDamageAbsorbtion = 1 - (1 - physicalDamageAbsorbtionHead / 100)*
+                (1-physicalDamageAbsorbtionTorso/100)*(1-physicalDamageAbsorbtionLegs/100)*
+                (1-physicalDamageAbsorbtionHands);
 
+            physicalDamage =Mathf.RoundToInt (physicalDamage - (physicalDamage * totalPhysicalDamageAbsorbtion));
+            float finalDamage = physicalDamage;
+            currentHealth = Mathf.RoundToInt(currentHealth - finalDamage);
+            if (currentHealth <= 0)
+            {
+                currentHealth = 0;
+                isDead = true;
+            }
         }
     }
 }

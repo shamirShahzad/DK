@@ -75,12 +75,7 @@ namespace DK
             {
                 return;
             }
-            if (isDead)
-            {
-                return;
-            }
-            currentHealth = currentHealth - damage;
-
+            base.TakeDamage(damage, damageAnimation = "Hit");
             healthBar.SetCurrentHealth(currentHealth);
             animatorHandler.PlayTargetAnimation(damageAnimation, true);
 

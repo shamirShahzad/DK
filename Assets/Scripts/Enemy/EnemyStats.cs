@@ -44,12 +44,8 @@ namespace DK
         public override void TakeDamage(int damage,string damageAnimation = "Hit")
         {
 
-            if (isDead)
-                return;
-            currentHealth = currentHealth - damage;
+            base.TakeDamage(damage, damageAnimation = "Hit");
             enemyHealthBar.setHealth(currentHealth);
-
-
             enemyAnimatorManager.PlayTargetAnimation(damageAnimation, true);
 
             if (currentHealth <= 0)

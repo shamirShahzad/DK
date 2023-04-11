@@ -64,7 +64,8 @@ namespace DK
                 {
                     if (playerStats.isDead)
                         return;
-                    playerStats.TakeDamage(weaponDamage);
+                    if(gameObject.tag == "Skeleton Sword")
+                    playerStats.TakeDamage(weaponDamage,"Skeleton Hit");
                 }
             }
             if(collision.tag == "Enemy")
