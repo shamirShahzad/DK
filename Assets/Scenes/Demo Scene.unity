@@ -2909,9 +2909,13 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 370951686}
     - target: {fileID: 2554598860014443788, guid: 96e02eda9c2e03c479bcb5f17f34d8f3, type: 3}
+      propertyPath: currentTorsoEquipment
+      value: 
+      objectReference: {fileID: 11400000, guid: 35e4e1c4dd4c4514290593c159080a16, type: 2}
+    - target: {fileID: 2554598860014443788, guid: 96e02eda9c2e03c479bcb5f17f34d8f3, type: 3}
       propertyPath: currentHelmetEquipment
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 11400000, guid: 482700fa87faf3e45915730f780ce9e7, type: 2}
     - target: {fileID: 2554598860014443789, guid: 96e02eda9c2e03c479bcb5f17f34d8f3, type: 3}
       propertyPath: m_Name
       value: New Player
@@ -3300,6 +3304,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 8712038281041642118, guid: ec545e5b29518014388cb554bb29607f, type: 3}
+      propertyPath: rightHandWeapon
+      value: 
+      objectReference: {fileID: 11400000, guid: 44e98c3a36a536f40a2a2f3369306804, type: 2}
     - target: {fileID: 9000053290340805183, guid: ec545e5b29518014388cb554bb29607f, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0

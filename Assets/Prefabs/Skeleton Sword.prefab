@@ -43,7 +43,7 @@ GameObject:
   - component: {fileID: 5898545186816285574}
   m_Layer: 0
   m_Name: Skeleton Sword
-  m_TagString: Untagged
+  m_TagString: Skeleton Sword
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

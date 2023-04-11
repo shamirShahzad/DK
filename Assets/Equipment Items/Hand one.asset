@@ -9,12 +9,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 559bfc46358165c44baca44583474243, type: 3}
-  m_Name: Torso One
+  m_Script: {fileID: 11500000, guid: ad327e47e9a9afd489522ae108cc86b8, type: 3}
+  m_Name: Hand one
   m_EditorClassIdentifier: 
   itemIcon: {fileID: 0}
-  itemName: Knight Armor
+  itemName: 
   physicalDefense: 0
-  torsoModelName: Male_Torso_16
-  upperLeftArmModelName: Chr_ArmUpperLeft_Male_00
-  upperRightArmModelName: Chr_ArmUpperRight_Male_00
+  leftHandModelName: 
+  rightHandModelName: 
+  lowerLeftArmModelName: 
+  lowerRightArmModelName: 
