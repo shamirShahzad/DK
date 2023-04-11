@@ -19,6 +19,11 @@ namespace DK
 
         public List<WeaponItem> weaponsInventory;
 
+        [Header("Current Equipment")]
+        public HelmetEquipment currentHelmetEquipment;
+        public TorsoEquipment currentTorsoEquipment;
+        public LegEquipment currentLegEquipment;
+        public HandEquipment currentHandEquipment;
 
         private void Awake()
         {

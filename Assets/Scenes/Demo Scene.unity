@@ -225,6 +225,19 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 8197537058181291661, guid: b224f8ee074729445b3532a555b5504a, type: 3}
   m_PrefabInstance: {fileID: 8901235123550744285}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &563666881
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2554598858784302776}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2d39d9802828c3f4fa66a6045ea041de, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  leftHandModels: []
 --- !u!1 &654178742
 GameObject:
   m_ObjectHideFlags: 0
@@ -1151,9 +1164,633 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 725180640101351112, guid: 96e02eda9c2e03c479bcb5f17f34d8f3, type: 3}
+      propertyPath: nakedHip
+      value: Male_Hips_0
+      objectReference: {fileID: 0}
+    - target: {fileID: 725180640101351112, guid: 96e02eda9c2e03c479bcb5f17f34d8f3, type: 3}
+      propertyPath: nakedTorso
+      value: Male_Torso_1
+      objectReference: {fileID: 0}
+    - target: {fileID: 725180640101351112, guid: 96e02eda9c2e03c479bcb5f17f34d8f3, type: 3}
+      propertyPath: defaultHair
+      value: 
+      objectReference: {fileID: 2896100434218878569}
+    - target: {fileID: 725180640101351112, guid: 96e02eda9c2e03c479bcb5f17f34d8f3, type: 3}
+      propertyPath: defaultHead
+      value: 
+      objectReference: {fileID: 2896624855343618055}
+    - target: {fileID: 725180640101351112, guid: 96e02eda9c2e03c479bcb5f17f34d8f3, type: 3}
+      propertyPath: nakedLeftLeg
+      value: Male_LeftLeg_0
+      objectReference: {fileID: 0}
+    - target: {fileID: 725180640101351112, guid: 96e02eda9c2e03c479bcb5f17f34d8f3, type: 3}
+      propertyPath: defaultFacial
+      value: 
+      objectReference: {fileID: 2896921790989091143}
+    - target: {fileID: 725180640101351112, guid: 96e02eda9c2e03c479bcb5f17f34d8f3, type: 3}
+      propertyPath: nakedLeftHand
+      value: Chr_HandLeft_Male_00
+      objectReference: {fileID: 0}
+    - target: {fileID: 725180640101351112, guid: 96e02eda9c2e03c479bcb5f17f34d8f3, type: 3}
+      propertyPath: nakedRightLeg
+      value: Male_RightLeg_0
+      objectReference: {fileID: 0}
+    - target: {fileID: 725180640101351112, guid: 96e02eda9c2e03c479bcb5f17f34d8f3, type: 3}
+      propertyPath: defaultEyebrow
+      value: 
+      objectReference: {fileID: 2895934756082340257}
+    - target: {fileID: 725180640101351112, guid: 96e02eda9c2e03c479bcb5f17f34d8f3, type: 3}
+      propertyPath: nakedRightHand
+      value: Chr_HandRight_Male_00
+      objectReference: {fileID: 0}
+    - target: {fileID: 725180640101351112, guid: 96e02eda9c2e03c479bcb5f17f34d8f3, type: 3}
+      propertyPath: nakedLowerLeftArm
+      value: Chr_ArmLowerLeft_Male_00
+      objectReference: {fileID: 0}
+    - target: {fileID: 725180640101351112, guid: 96e02eda9c2e03c479bcb5f17f34d8f3, type: 3}
+      propertyPath: nakedUpperLeftArm
+      value: Chr_ArmUpperLeft_Male_00
+      objectReference: {fileID: 0}
+    - target: {fileID: 725180640101351112, guid: 96e02eda9c2e03c479bcb5f17f34d8f3, type: 3}
+      propertyPath: nakedLowerRightArm
+      value: Chr_ArmLowerRight_Male_00
+      objectReference: {fileID: 0}
+    - target: {fileID: 725180640101351112, guid: 96e02eda9c2e03c479bcb5f17f34d8f3, type: 3}
+      propertyPath: nakedUpperRightArm
+      value: Chr_ArmUpperRight_Male_00
+      objectReference: {fileID: 0}
+    - target: {fileID: 810654069935491792, guid: 96e02eda9c2e03c479bcb5f17f34d8f3, type: 3}
+      propertyPath: m_Name
+      value: Male_LeftLeg_13
+      objectReference: {fileID: 0}
+    - target: {fileID: 810662006494029562, guid: 96e02eda9c2e03c479bcb5f17f34d8f3, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 810669564079031208, guid: 96e02eda9c2e03c479bcb5f17f34d8f3, type: 3}
+      propertyPath: m_Name
+      value: Male_Torso_1
+      objectReference: {fileID: 0}
+    - target: {fileID: 810673976475457532, guid: 96e02eda9c2e03c479bcb5f17f34d8f3, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 810675282535205618, guid: 96e02eda9c2e03c479bcb5f17f34d8f3, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 810679713435087434, guid: 96e02eda9c2e03c479bcb5f17f34d8f3, type: 3}
+      propertyPath: m_Name
+      value: Male_Helmet_8
+      objectReference: {fileID: 0}
+    - target: {fileID: 810679713435087434, guid: 96e02eda9c2e03c479bcb5f17f34d8f3, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 810686633712787696, guid: 96e02eda9c2e03c479bcb5f17f34d8f3, type: 3}
+      propertyPath: m_Name
+      value: Male_Hip_5
+      objectReference: {fileID: 0}
+    - target: {fileID: 810697572624279536, guid: 96e02eda9c2e03c479bcb5f17f34d8f3, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 810703134247153656, guid: 96e02eda9c2e03c479bcb5f17f34d8f3, type: 3}
+      propertyPath: m_Name
+      value: Male_LeftLeg_16
+      objectReference: {fileID: 0}
+    - target: {fileID: 810707459731451268, guid: 96e02eda9c2e03c479bcb5f17f34d8f3, type: 3}
+      propertyPath: m_Name
+      value: Male_Torso_18
+      objectReference: {fileID: 0}
+    - target: {fileID: 810738377061863928, guid: 96e02eda9c2e03c479bcb5f17f34d8f3, type: 3}
+      propertyPath: m_Name
+      value: Male_Helmet_1
+      objectReference: {fileID: 0}
+    - target: {fileID: 810738377061863928, guid: 96e02eda9c2e03c479bcb5f17f34d8f3, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 810755703917062286, guid: 96e02eda9c2e03c479bcb5f17f34d8f3, type: 3}
+      propertyPath: m_Name
+      value: Male_Hip_25
+      objectReference: {fileID: 0}
+    - target: {fileID: 810758982574366152, guid: 96e02eda9c2e03c479bcb5f17f34d8f3, type: 3}
+      propertyPath: m_Name
+      value: Male_LeftLeg_9
+      objectReference: {fileID: 0}
+    - target: {fileID: 810761690401349264, guid: 96e02eda9c2e03c479bcb5f17f34d8f3, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 810764471730948332, guid: 96e02eda9c2e03c479bcb5f17f34d8f3, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 810780405056121220, guid: 96e02eda9c2e03c479bcb5f17f34d8f3, type: 3}
+      propertyPath: m_Name
+      value: Male_Hip_11
+      objectReference: {fileID: 0}
+    - target: {fileID: 810824946764062684, guid: 96e02eda9c2e03c479bcb5f17f34d8f3, type: 3}
+      propertyPath: m_Name
+      value: Male_RightLeg_1
+      objectReference: {fileID: 0}
+    - target: {fileID: 810839432791348088, guid: 96e02eda9c2e03c479bcb5f17f34d8f3, type: 3}
+      propertyPath: m_Name
+      value: Male_Helmet_10
+      objectReference: {fileID: 0}
+    - target: {fileID: 810841615316500386, guid: 96e02eda9c2e03c479bcb5f17f34d8f3, type: 3}
+      propertyPath: m_Name
+      value: Male_RightLeg_18
+      objectReference: {fileID: 0}
+    - target: {fileID: 810842982510052428, guid: 96e02eda9c2e03c479bcb5f17f34d8f3, type: 3}
+      propertyPath: m_Name
+      value: Male_Torso_9
+      objectReference: {fileID: 0}
+    - target: {fileID: 810845431406919734, guid: 96e02eda9c2e03c479bcb5f17f34d8f3, type: 3}
+      propertyPath: m_Name
+      value: Male_Hip_22
+      objectReference: {fileID: 0}
+    - target: {fileID: 810857857835466254, guid: 96e02eda9c2e03c479bcb5f17f34d8f3, type: 3}
+      propertyPath: m_Name
+      value: Male_RightLeg_4
+      objectReference: {fileID: 0}
+    - target: {fileID: 810858623553938534, guid: 96e02eda9c2e03c479bcb5f17f34d8f3, type: 3}
+      propertyPath: m_Name
+      value: Male_Torso_15
+      objectReference: {fileID: 0}
+    - target: {fileID: 810880035751847466, guid: 96e02eda9c2e03c479bcb5f17f34d8f3, type: 3}
+      propertyPath: m_Name
+      value: Male_RightLeg_6
+      objectReference: {fileID: 0}
+    - target: {fileID: 810889247432434038, guid: 96e02eda9c2e03c479bcb5f17f34d8f3, type: 3}
+      propertyPath: m_Name
+      value: Male_RightLeg_0
+      objectReference: {fileID: 0}
+    - target: {fileID: 810894732136141316, guid: 96e02eda9c2e03c479bcb5f17f34d8f3, type: 3}
+      propertyPath: m_Name
+      value: Male_Hip_12
+      objectReference: {fileID: 0}
+    - target: {fileID: 810897410327875076, guid: 96e02eda9c2e03c479bcb5f17f34d8f3, type: 3}
+      propertyPath: m_Name
+      value: Male_Helmet_11
+      objectReference: {fileID: 0}
+    - target: {fileID: 810897966913298714, guid: 96e02eda9c2e03c479bcb5f17f34d8f3, type: 3}
+      propertyPath: m_Name
+      value: Male_RightLeg_14
+      objectReference: {fileID: 0}
+    - target: {fileID: 810930226731496528, guid: 96e02eda9c2e03c479bcb5f17f34d8f3, type: 3}
+      propertyPath: m_Name
+      value: Male_Hip_21
+      objectReference: {fileID: 0}
+    - target: {fileID: 810935104982747814, guid: 96e02eda9c2e03c479bcb5f17f34d8f3, type: 3}
+      propertyPath: m_Name
+      value: Male_Torso_4
+      objectReference: {fileID: 0}
+    - target: {fileID: 810943505840651116, guid: 96e02eda9c2e03c479bcb5f17f34d8f3, type: 3}
+      propertyPath: m_Name
+      value: Male_Hip_15
+      objectReference: {fileID: 0}
+    - target: {fileID: 810963867184945880, guid: 96e02eda9c2e03c479bcb5f17f34d8f3, type: 3}
+      propertyPath: m_Name
+      value: Male_Torso_8
+      objectReference: {fileID: 0}
+    - target: {fileID: 810967710139039408, guid: 96e02eda9c2e03c479bcb5f17f34d8f3, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 811004978042144440, guid: 96e02eda9c2e03c479bcb5f17f34d8f3, type: 3}
+      propertyPath: m_Name
+      value: Male_Hip_1
+      objectReference: {fileID: 0}
+    - target: {fileID: 811008393213672322, guid: 96e02eda9c2e03c479bcb5f17f34d8f3, type: 3}
+      propertyPath: m_Name
+      value: Male_Hip_19
+      objectReference: {fileID: 0}
     - target: {fileID: 811011089889567890, guid: 96e02eda9c2e03c479bcb5f17f34d8f3, type: 3}
       propertyPath: m_TagString
       value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 811013849767012088, guid: 96e02eda9c2e03c479bcb5f17f34d8f3, type: 3}
+      propertyPath: m_Name
+      value: Male_RightLeg_19
+      objectReference: {fileID: 0}
+    - target: {fileID: 811028557158105986, guid: 96e02eda9c2e03c479bcb5f17f34d8f3, type: 3}
+      propertyPath: m_Name
+      value: Male_Torso_0
+      objectReference: {fileID: 0}
+    - target: {fileID: 811031917900350696, guid: 96e02eda9c2e03c479bcb5f17f34d8f3, type: 3}
+      propertyPath: m_Name
+      value: Male_Hip_9
+      objectReference: {fileID: 0}
+    - target: {fileID: 811031967495844308, guid: 96e02eda9c2e03c479bcb5f17f34d8f3, type: 3}
+      propertyPath: m_Name
+      value: Male_LeftLeg_8
+      objectReference: {fileID: 0}
+    - target: {fileID: 811037680636999834, guid: 96e02eda9c2e03c479bcb5f17f34d8f3, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 811040600897694334, guid: 96e02eda9c2e03c479bcb5f17f34d8f3, type: 3}
+      propertyPath: m_Name
+      value: Male_RightLeg_10
+      objectReference: {fileID: 0}
+    - target: {fileID: 811040988694436344, guid: 96e02eda9c2e03c479bcb5f17f34d8f3, type: 3}
+      propertyPath: m_Name
+      value: Male_LeftLeg_14
+      objectReference: {fileID: 0}
+    - target: {fileID: 811042250969183646, guid: 96e02eda9c2e03c479bcb5f17f34d8f3, type: 3}
+      propertyPath: m_Name
+      value: Male_Torso_7
+      objectReference: {fileID: 0}
+    - target: {fileID: 811056683292789384, guid: 96e02eda9c2e03c479bcb5f17f34d8f3, type: 3}
+      propertyPath: m_Name
+      value: Male_Hip_8
+      objectReference: {fileID: 0}
+    - target: {fileID: 811062706913234860, guid: 96e02eda9c2e03c479bcb5f17f34d8f3, type: 3}
+      propertyPath: m_Name
+      value: Male_Hip_6
+      objectReference: {fileID: 0}
+    - target: {fileID: 811074072114078416, guid: 96e02eda9c2e03c479bcb5f17f34d8f3, type: 3}
+      propertyPath: m_Name
+      value: Male_Hip_14
+      objectReference: {fileID: 0}
+    - target: {fileID: 811087660881171988, guid: 96e02eda9c2e03c479bcb5f17f34d8f3, type: 3}
+      propertyPath: m_Name
+      value: Male_LeftLeg_17
+      objectReference: {fileID: 0}
+    - target: {fileID: 811087996093815832, guid: 96e02eda9c2e03c479bcb5f17f34d8f3, type: 3}
+      propertyPath: m_Name
+      value: Male_Helmet_3
+      objectReference: {fileID: 0}
+    - target: {fileID: 811093466498481732, guid: 96e02eda9c2e03c479bcb5f17f34d8f3, type: 3}
+      propertyPath: m_Name
+      value: Male_Torso_17
+      objectReference: {fileID: 0}
+    - target: {fileID: 811093602315687278, guid: 96e02eda9c2e03c479bcb5f17f34d8f3, type: 3}
+      propertyPath: m_Name
+      value: Male_Hip_28
+      objectReference: {fileID: 0}
+    - target: {fileID: 811103029719660762, guid: 96e02eda9c2e03c479bcb5f17f34d8f3, type: 3}
+      propertyPath: m_Name
+      value: Male_RightLeg_16
+      objectReference: {fileID: 0}
+    - target: {fileID: 811117553160670534, guid: 96e02eda9c2e03c479bcb5f17f34d8f3, type: 3}
+      propertyPath: m_Name
+      value: Male_Torso_23
+      objectReference: {fileID: 0}
+    - target: {fileID: 811122168669776870, guid: 96e02eda9c2e03c479bcb5f17f34d8f3, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 811126955091227970, guid: 96e02eda9c2e03c479bcb5f17f34d8f3, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 811127672985577818, guid: 96e02eda9c2e03c479bcb5f17f34d8f3, type: 3}
+      propertyPath: m_Name
+      value: Male_Torso_24
+      objectReference: {fileID: 0}
+    - target: {fileID: 811128054642676640, guid: 96e02eda9c2e03c479bcb5f17f34d8f3, type: 3}
+      propertyPath: m_Name
+      value: Male_Torso_19
+      objectReference: {fileID: 0}
+    - target: {fileID: 811129896965563544, guid: 96e02eda9c2e03c479bcb5f17f34d8f3, type: 3}
+      propertyPath: m_Name
+      value: Male_Torso_3
+      objectReference: {fileID: 0}
+    - target: {fileID: 811130414773135732, guid: 96e02eda9c2e03c479bcb5f17f34d8f3, type: 3}
+      propertyPath: m_Name
+      value: Male_Helmet_13
+      objectReference: {fileID: 0}
+    - target: {fileID: 811130414773135732, guid: 96e02eda9c2e03c479bcb5f17f34d8f3, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 811131338720071634, guid: 96e02eda9c2e03c479bcb5f17f34d8f3, type: 3}
+      propertyPath: m_Name
+      value: Male_RightLeg_17
+      objectReference: {fileID: 0}
+    - target: {fileID: 811178117142684136, guid: 96e02eda9c2e03c479bcb5f17f34d8f3, type: 3}
+      propertyPath: m_Name
+      value: Male_RightLeg_13
+      objectReference: {fileID: 0}
+    - target: {fileID: 811185814605890592, guid: 96e02eda9c2e03c479bcb5f17f34d8f3, type: 3}
+      propertyPath: m_Name
+      value: Male_Torso_25
+      objectReference: {fileID: 0}
+    - target: {fileID: 811188840084280636, guid: 96e02eda9c2e03c479bcb5f17f34d8f3, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 811204723332712036, guid: 96e02eda9c2e03c479bcb5f17f34d8f3, type: 3}
+      propertyPath: m_Name
+      value: Male_Torso_22
+      objectReference: {fileID: 0}
+    - target: {fileID: 811205864767446342, guid: 96e02eda9c2e03c479bcb5f17f34d8f3, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 811206227128900136, guid: 96e02eda9c2e03c479bcb5f17f34d8f3, type: 3}
+      propertyPath: m_Name
+      value: Male_Torso_14
+      objectReference: {fileID: 0}
+    - target: {fileID: 811213661815494620, guid: 96e02eda9c2e03c479bcb5f17f34d8f3, type: 3}
+      propertyPath: m_Name
+      value: Male_Hip_16
+      objectReference: {fileID: 0}
+    - target: {fileID: 811224532263422576, guid: 96e02eda9c2e03c479bcb5f17f34d8f3, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 811226273266166774, guid: 96e02eda9c2e03c479bcb5f17f34d8f3, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 811229564461998164, guid: 96e02eda9c2e03c479bcb5f17f34d8f3, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 811250508898570250, guid: 96e02eda9c2e03c479bcb5f17f34d8f3, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 811258967148801344, guid: 96e02eda9c2e03c479bcb5f17f34d8f3, type: 3}
+      propertyPath: m_Name
+      value: Male_Hip_2
+      objectReference: {fileID: 0}
+    - target: {fileID: 811261966099385944, guid: 96e02eda9c2e03c479bcb5f17f34d8f3, type: 3}
+      propertyPath: m_Name
+      value: Male_RightLeg_7
+      objectReference: {fileID: 0}
+    - target: {fileID: 811282463512376100, guid: 96e02eda9c2e03c479bcb5f17f34d8f3, type: 3}
+      propertyPath: m_Name
+      value: Male_LeftLeg_5
+      objectReference: {fileID: 0}
+    - target: {fileID: 811283777883103786, guid: 96e02eda9c2e03c479bcb5f17f34d8f3, type: 3}
+      propertyPath: m_Name
+      value: Male_RightLeg_15
+      objectReference: {fileID: 0}
+    - target: {fileID: 811285890258112044, guid: 96e02eda9c2e03c479bcb5f17f34d8f3, type: 3}
+      propertyPath: m_Name
+      value: Male_Helmet_5
+      objectReference: {fileID: 0}
+    - target: {fileID: 811285890258112044, guid: 96e02eda9c2e03c479bcb5f17f34d8f3, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 811285903680637862, guid: 96e02eda9c2e03c479bcb5f17f34d8f3, type: 3}
+      propertyPath: m_Name
+      value: Male_Hip_7
+      objectReference: {fileID: 0}
+    - target: {fileID: 811297668344286272, guid: 96e02eda9c2e03c479bcb5f17f34d8f3, type: 3}
+      propertyPath: m_Name
+      value: Male_Torso_16
+      objectReference: {fileID: 0}
+    - target: {fileID: 811299819734678914, guid: 96e02eda9c2e03c479bcb5f17f34d8f3, type: 3}
+      propertyPath: m_Name
+      value: Male_LeftLeg_10
+      objectReference: {fileID: 0}
+    - target: {fileID: 811300465613128522, guid: 96e02eda9c2e03c479bcb5f17f34d8f3, type: 3}
+      propertyPath: m_Name
+      value: Male_LeftLeg_15
+      objectReference: {fileID: 0}
+    - target: {fileID: 811302122703215322, guid: 96e02eda9c2e03c479bcb5f17f34d8f3, type: 3}
+      propertyPath: m_Name
+      value: Male_LeftLeg_1
+      objectReference: {fileID: 0}
+    - target: {fileID: 811303151701543124, guid: 96e02eda9c2e03c479bcb5f17f34d8f3, type: 3}
+      propertyPath: m_Name
+      value: Male_Helmets
+      objectReference: {fileID: 0}
+    - target: {fileID: 811303689401645614, guid: 96e02eda9c2e03c479bcb5f17f34d8f3, type: 3}
+      propertyPath: m_Name
+      value: Male_Hip_24
+      objectReference: {fileID: 0}
+    - target: {fileID: 811322742498357020, guid: 96e02eda9c2e03c479bcb5f17f34d8f3, type: 3}
+      propertyPath: m_Name
+      value: Male_Torso_6
+      objectReference: {fileID: 0}
+    - target: {fileID: 811326900131721558, guid: 96e02eda9c2e03c479bcb5f17f34d8f3, type: 3}
+      propertyPath: m_Name
+      value: Male_RightLeg_12
+      objectReference: {fileID: 0}
+    - target: {fileID: 811334311569430540, guid: 96e02eda9c2e03c479bcb5f17f34d8f3, type: 3}
+      propertyPath: m_Name
+      value: Male_RightLeg_9
+      objectReference: {fileID: 0}
+    - target: {fileID: 811334961067661154, guid: 96e02eda9c2e03c479bcb5f17f34d8f3, type: 3}
+      propertyPath: m_Name
+      value: Male_Torso_21
+      objectReference: {fileID: 0}
+    - target: {fileID: 811336669802877294, guid: 96e02eda9c2e03c479bcb5f17f34d8f3, type: 3}
+      propertyPath: m_Name
+      value: Male_LeftLeg_19
+      objectReference: {fileID: 0}
+    - target: {fileID: 811336669802877294, guid: 96e02eda9c2e03c479bcb5f17f34d8f3, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 811342467240416758, guid: 96e02eda9c2e03c479bcb5f17f34d8f3, type: 3}
+      propertyPath: m_Name
+      value: Male_LeftLeg_0
+      objectReference: {fileID: 0}
+    - target: {fileID: 811342737830139142, guid: 96e02eda9c2e03c479bcb5f17f34d8f3, type: 3}
+      propertyPath: m_Name
+      value: Male_Torso_20
+      objectReference: {fileID: 0}
+    - target: {fileID: 811357231266424924, guid: 96e02eda9c2e03c479bcb5f17f34d8f3, type: 3}
+      propertyPath: m_Name
+      value: Male_Torso_26
+      objectReference: {fileID: 0}
+    - target: {fileID: 811362941831830622, guid: 96e02eda9c2e03c479bcb5f17f34d8f3, type: 3}
+      propertyPath: m_Name
+      value: Male_Torso_11
+      objectReference: {fileID: 0}
+    - target: {fileID: 811369581273767466, guid: 96e02eda9c2e03c479bcb5f17f34d8f3, type: 3}
+      propertyPath: m_Name
+      value: Male_LeftLeg_11
+      objectReference: {fileID: 0}
+    - target: {fileID: 811370352124446050, guid: 96e02eda9c2e03c479bcb5f17f34d8f3, type: 3}
+      propertyPath: m_Name
+      value: Male_Hip_3
+      objectReference: {fileID: 0}
+    - target: {fileID: 811373711762370576, guid: 96e02eda9c2e03c479bcb5f17f34d8f3, type: 3}
+      propertyPath: m_Name
+      value: Male_Helmet_7
+      objectReference: {fileID: 0}
+    - target: {fileID: 811379524417812160, guid: 96e02eda9c2e03c479bcb5f17f34d8f3, type: 3}
+      propertyPath: m_Name
+      value: Male_Hips_0
+      objectReference: {fileID: 0}
+    - target: {fileID: 811392698785477778, guid: 96e02eda9c2e03c479bcb5f17f34d8f3, type: 3}
+      propertyPath: m_Name
+      value: Male_Torso_5
+      objectReference: {fileID: 0}
+    - target: {fileID: 811402176835214352, guid: 96e02eda9c2e03c479bcb5f17f34d8f3, type: 3}
+      propertyPath: m_Name
+      value: Male_Hip_17
+      objectReference: {fileID: 0}
+    - target: {fileID: 811403181762675002, guid: 96e02eda9c2e03c479bcb5f17f34d8f3, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 811405191360766582, guid: 96e02eda9c2e03c479bcb5f17f34d8f3, type: 3}
+      propertyPath: m_Name
+      value: Male_Torso_2
+      objectReference: {fileID: 0}
+    - target: {fileID: 811407727980217538, guid: 96e02eda9c2e03c479bcb5f17f34d8f3, type: 3}
+      propertyPath: m_Name
+      value: Male_RightLeg_11
+      objectReference: {fileID: 0}
+    - target: {fileID: 811408882356373806, guid: 96e02eda9c2e03c479bcb5f17f34d8f3, type: 3}
+      propertyPath: m_Name
+      value: Male_Torso_10
+      objectReference: {fileID: 0}
+    - target: {fileID: 811411267949218874, guid: 96e02eda9c2e03c479bcb5f17f34d8f3, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 811412653085232418, guid: 96e02eda9c2e03c479bcb5f17f34d8f3, type: 3}
+      propertyPath: m_Name
+      value: Male_Torso_12
+      objectReference: {fileID: 0}
+    - target: {fileID: 811413106744434242, guid: 96e02eda9c2e03c479bcb5f17f34d8f3, type: 3}
+      propertyPath: m_Name
+      value: Male_Torso_28
+      objectReference: {fileID: 0}
+    - target: {fileID: 811416526880464580, guid: 96e02eda9c2e03c479bcb5f17f34d8f3, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 811418617371746094, guid: 96e02eda9c2e03c479bcb5f17f34d8f3, type: 3}
+      propertyPath: m_Name
+      value: Male_Hip_13
+      objectReference: {fileID: 0}
+    - target: {fileID: 811428726809845982, guid: 96e02eda9c2e03c479bcb5f17f34d8f3, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 811429443359512474, guid: 96e02eda9c2e03c479bcb5f17f34d8f3, type: 3}
+      propertyPath: m_Name
+      value: Male_Hip_20
+      objectReference: {fileID: 0}
+    - target: {fileID: 811432301057188068, guid: 96e02eda9c2e03c479bcb5f17f34d8f3, type: 3}
+      propertyPath: m_Name
+      value: Male_Hip_27
+      objectReference: {fileID: 0}
+    - target: {fileID: 811433244397597512, guid: 96e02eda9c2e03c479bcb5f17f34d8f3, type: 3}
+      propertyPath: m_Name
+      value: Male_LeftLeg_12
+      objectReference: {fileID: 0}
+    - target: {fileID: 811437537064976428, guid: 96e02eda9c2e03c479bcb5f17f34d8f3, type: 3}
+      propertyPath: m_Name
+      value: Male_Helmet_6
+      objectReference: {fileID: 0}
+    - target: {fileID: 811438095338685732, guid: 96e02eda9c2e03c479bcb5f17f34d8f3, type: 3}
+      propertyPath: m_Name
+      value: Male_Helmet_2
+      objectReference: {fileID: 0}
+    - target: {fileID: 811438095338685732, guid: 96e02eda9c2e03c479bcb5f17f34d8f3, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 811443772071386152, guid: 96e02eda9c2e03c479bcb5f17f34d8f3, type: 3}
+      propertyPath: m_Name
+      value: Male_Helmet_12
+      objectReference: {fileID: 0}
+    - target: {fileID: 811447990505663844, guid: 96e02eda9c2e03c479bcb5f17f34d8f3, type: 3}
+      propertyPath: m_Name
+      value: Male_LeftLeg_6
+      objectReference: {fileID: 0}
+    - target: {fileID: 811459139860921422, guid: 96e02eda9c2e03c479bcb5f17f34d8f3, type: 3}
+      propertyPath: m_Name
+      value: Male_Hip_18
+      objectReference: {fileID: 0}
+    - target: {fileID: 811461632992428432, guid: 96e02eda9c2e03c479bcb5f17f34d8f3, type: 3}
+      propertyPath: m_Name
+      value: Male_RightLeg_2
+      objectReference: {fileID: 0}
+    - target: {fileID: 811471564317477958, guid: 96e02eda9c2e03c479bcb5f17f34d8f3, type: 3}
+      propertyPath: m_Name
+      value: Male_LeftLeg_2
+      objectReference: {fileID: 0}
+    - target: {fileID: 811482793305605926, guid: 96e02eda9c2e03c479bcb5f17f34d8f3, type: 3}
+      propertyPath: m_Name
+      value: Male_Hip_26
+      objectReference: {fileID: 0}
+    - target: {fileID: 811482947711537580, guid: 96e02eda9c2e03c479bcb5f17f34d8f3, type: 3}
+      propertyPath: m_Name
+      value: Male_LeftLeg_18
+      objectReference: {fileID: 0}
+    - target: {fileID: 811685260634502934, guid: 96e02eda9c2e03c479bcb5f17f34d8f3, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 812619947707342562, guid: 96e02eda9c2e03c479bcb5f17f34d8f3, type: 3}
+      propertyPath: m_Name
+      value: Male_Hip_23
+      objectReference: {fileID: 0}
+    - target: {fileID: 812622444893981390, guid: 96e02eda9c2e03c479bcb5f17f34d8f3, type: 3}
+      propertyPath: m_Name
+      value: Male_Helmet_9
+      objectReference: {fileID: 0}
+    - target: {fileID: 812623501089521916, guid: 96e02eda9c2e03c479bcb5f17f34d8f3, type: 3}
+      propertyPath: m_Name
+      value: Male_LeftLeg_4
+      objectReference: {fileID: 0}
+    - target: {fileID: 812675974494850268, guid: 96e02eda9c2e03c479bcb5f17f34d8f3, type: 3}
+      propertyPath: m_Name
+      value: Male_RightLeg_3
+      objectReference: {fileID: 0}
+    - target: {fileID: 812675982013668916, guid: 96e02eda9c2e03c479bcb5f17f34d8f3, type: 3}
+      propertyPath: m_Name
+      value: Male_Torso_27
+      objectReference: {fileID: 0}
+    - target: {fileID: 812691236223053888, guid: 96e02eda9c2e03c479bcb5f17f34d8f3, type: 3}
+      propertyPath: m_Name
+      value: Male_LeftLeg_7
+      objectReference: {fileID: 0}
+    - target: {fileID: 812701757709493442, guid: 96e02eda9c2e03c479bcb5f17f34d8f3, type: 3}
+      propertyPath: m_Name
+      value: Male_RightLeg_8
+      objectReference: {fileID: 0}
+    - target: {fileID: 812701769488451354, guid: 96e02eda9c2e03c479bcb5f17f34d8f3, type: 3}
+      propertyPath: m_Name
+      value: Male_RightLeg_5
+      objectReference: {fileID: 0}
+    - target: {fileID: 812703588345199478, guid: 96e02eda9c2e03c479bcb5f17f34d8f3, type: 3}
+      propertyPath: m_Name
+      value: Male_Torso_13
+      objectReference: {fileID: 0}
+    - target: {fileID: 812721549444063576, guid: 96e02eda9c2e03c479bcb5f17f34d8f3, type: 3}
+      propertyPath: m_Name
+      value: Male_Hip_10
+      objectReference: {fileID: 0}
+    - target: {fileID: 812733645959067558, guid: 96e02eda9c2e03c479bcb5f17f34d8f3, type: 3}
+      propertyPath: m_Name
+      value: Male_Hip_4
+      objectReference: {fileID: 0}
+    - target: {fileID: 812738483202282866, guid: 96e02eda9c2e03c479bcb5f17f34d8f3, type: 3}
+      propertyPath: m_Name
+      value: Male_Helmet_4
+      objectReference: {fileID: 0}
+    - target: {fileID: 812738483202282866, guid: 96e02eda9c2e03c479bcb5f17f34d8f3, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 812740606169575970, guid: 96e02eda9c2e03c479bcb5f17f34d8f3, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 812748173209602094, guid: 96e02eda9c2e03c479bcb5f17f34d8f3, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 812755312836182578, guid: 96e02eda9c2e03c479bcb5f17f34d8f3, type: 3}
+      propertyPath: m_Name
+      value: Male_LeftLeg_3
       objectReference: {fileID: 0}
     - target: {fileID: 813484011278653840, guid: 96e02eda9c2e03c479bcb5f17f34d8f3, type: 3}
       propertyPath: m_LocalPosition.y
@@ -2271,6 +2908,10 @@ PrefabInstance:
       propertyPath: itemInteractableGameobject
       value: 
       objectReference: {fileID: 370951686}
+    - target: {fileID: 2554598860014443788, guid: 96e02eda9c2e03c479bcb5f17f34d8f3, type: 3}
+      propertyPath: currentHelmetEquipment
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 2554598860014443789, guid: 96e02eda9c2e03c479bcb5f17f34d8f3, type: 3}
       propertyPath: m_Name
       value: New Player
@@ -2321,6 +2962,211 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 96e02eda9c2e03c479bcb5f17f34d8f3, type: 3}
+--- !u!1 &2554598858784302776 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 810950157381043724, guid: 96e02eda9c2e03c479bcb5f17f34d8f3, type: 3}
+  m_PrefabInstance: {fileID: 2554598858784302775}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &2554598858784302777 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 812698290034716958, guid: 96e02eda9c2e03c479bcb5f17f34d8f3, type: 3}
+  m_PrefabInstance: {fileID: 2554598858784302775}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &2554598858784302778 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 811370804596956178, guid: 96e02eda9c2e03c479bcb5f17f34d8f3, type: 3}
+  m_PrefabInstance: {fileID: 2554598858784302775}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &2554598858784302779 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 810889936874868406, guid: 96e02eda9c2e03c479bcb5f17f34d8f3, type: 3}
+  m_PrefabInstance: {fileID: 2554598858784302775}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &2554598858784302780 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 810733494757687238, guid: 96e02eda9c2e03c479bcb5f17f34d8f3, type: 3}
+  m_PrefabInstance: {fileID: 2554598858784302775}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &2554598858784302781 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 811458301498109080, guid: 96e02eda9c2e03c479bcb5f17f34d8f3, type: 3}
+  m_PrefabInstance: {fileID: 2554598858784302775}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &2554598858784302782
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2554598858784302777}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7e89648f493f7c8438f5d9892596854f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rightHandModels: []
+--- !u!114 &2554598858784302783
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2554598858784302778}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 26ae8e6816685104ab4b506762481f9f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lowerLeftArmModels: []
+--- !u!114 &2554598858784302784
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2554598858784302779}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 961ced06beec7314bb4024a3088656ee, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lowerRightArmModels: []
+--- !u!114 &2554598858784302785
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2554598858784302780}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d64afb63f5c82ce48bd9cdb63507dcee, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  upperLeftArmModels: []
+--- !u!114 &2554598858784302786
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2554598858784302781}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0981a2aedf05acc4d90cf689d987b050, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  upperRightArmModels: []
+--- !u!1 &2895934756082340257 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 811685260634502934, guid: 96e02eda9c2e03c479bcb5f17f34d8f3, type: 3}
+  m_PrefabInstance: {fileID: 2554598858784302775}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &2896100434218878569 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 811428726809845982, guid: 96e02eda9c2e03c479bcb5f17f34d8f3, type: 3}
+  m_PrefabInstance: {fileID: 2554598858784302775}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &2896256338909179491 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 811303151701543124, guid: 96e02eda9c2e03c479bcb5f17f34d8f3, type: 3}
+  m_PrefabInstance: {fileID: 2554598858784302775}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &2896256338909179492
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2896256338909179491}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b6c4ae93cf01bcc4595156e10550cf35, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  helmetModels: []
+--- !u!1 &2896586162291451165 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 811070025162376106, guid: 96e02eda9c2e03c479bcb5f17f34d8f3, type: 3}
+  m_PrefabInstance: {fileID: 2554598858784302775}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &2896624855343618055 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 810967710139039408, guid: 96e02eda9c2e03c479bcb5f17f34d8f3, type: 3}
+  m_PrefabInstance: {fileID: 2554598858784302775}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &2896815236074999753 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 810731750946007422, guid: 96e02eda9c2e03c479bcb5f17f34d8f3, type: 3}
+  m_PrefabInstance: {fileID: 2554598858784302775}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &2896858089892731001 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 810779003344469710, guid: 96e02eda9c2e03c479bcb5f17f34d8f3, type: 3}
+  m_PrefabInstance: {fileID: 2554598858784302775}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &2896921790989091143 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 810697572624279536, guid: 96e02eda9c2e03c479bcb5f17f34d8f3, type: 3}
+  m_PrefabInstance: {fileID: 2554598858784302775}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &2897171819412587935 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 812636176034358056, guid: 96e02eda9c2e03c479bcb5f17f34d8f3, type: 3}
+  m_PrefabInstance: {fileID: 2554598858784302775}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &2898222526034266564
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2897171819412587935}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e7ddb139223a9e649a7b4e94179b9eeb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hipModels: []
+--- !u!114 &2898240462154006404
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2896858089892731001}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 50f6f66f6208d0b4482f65ab887630a7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rightLegModels: []
+--- !u!114 &2898386983415987056
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2896815236074999753}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ea3ea397c87346f4c9a8e78e91cfed52, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  torsoModels: []
+--- !u!114 &2898589063614089788
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2896586162291451165}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 558175ca918258f46905a3432401bf4e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  leftLegModels: []
 --- !u!1 &5563883611268426221 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4392524969241145702, guid: b224f8ee074729445b3532a555b5504a, type: 3}
