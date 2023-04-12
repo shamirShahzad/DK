@@ -953,28 +953,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1329105243}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!114 &1483523733 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 1483523733, guid: ec545e5b29518014388cb554bb29607f, type: 3}
-  m_PrefabInstance: {fileID: 9000053292430875704}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 992f9e01c77cfb548b3489f66cadaea0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &1600812347 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 9000053291826532789, guid: ec545e5b29518014388cb554bb29607f, type: 3}
-  m_PrefabInstance: {fileID: 9000053292430875704}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8a9776d7f60f9f545b80e60847681833, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1784445825
 GameObject:
   m_ObjectHideFlags: 0
@@ -1282,10 +1260,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Chest
       objectReference: {fileID: 0}
-    - target: {fileID: 4666558327117510209, guid: fdcceb368caa6a64bb02a25b9b7e2999, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fdcceb368caa6a64bb02a25b9b7e2999, type: 3}
 --- !u!1001 &2554598858784302775
@@ -1486,10 +1460,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1483523733, guid: ec545e5b29518014388cb554bb29607f, type: 3}
-      propertyPath: pursueTargetState
-      value: 
-      objectReference: {fileID: 1600812347}
     - target: {fileID: 9000053290340805183, guid: ec545e5b29518014388cb554bb29607f, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
@@ -1498,10 +1468,6 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 9000053291826532789, guid: ec545e5b29518014388cb554bb29607f, type: 3}
-      propertyPath: rotateTowardsTargetState
-      value: 
-      objectReference: {fileID: 1483523733}
     - target: {fileID: 9000053292317615552, guid: ec545e5b29518014388cb554bb29607f, type: 3}
       propertyPath: m_RootOrder
       value: 11
@@ -1550,14 +1516,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: New Enemy
       objectReference: {fileID: 0}
-    - target: {fileID: 9000053292317615563, guid: ec545e5b29518014388cb554bb29607f, type: 3}
-      propertyPath: detectionRadius
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 9000053292317615563, guid: ec545e5b29518014388cb554bb29607f, type: 3}
-      propertyPath: maximumAggroRadius
-      value: 5
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ec545e5b29518014388cb554bb29607f, type: 3}
 --- !u!1001 &9051286534423785603
@@ -1567,10 +1525,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 9051286534061063572, guid: 4a6ca026486caf847bd6835c6b6b2b6e, type: 3}
-      propertyPath: radius
-      value: 0.1
-      objectReference: {fileID: 0}
     - target: {fileID: 9051286534061063573, guid: 4a6ca026486caf847bd6835c6b6b2b6e, type: 3}
       propertyPath: m_Name
       value: Item

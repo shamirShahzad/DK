@@ -62094,6 +62094,8 @@ MonoBehaviour:
   instantiatedFXModel: {fileID: 0}
   healParticles: {fileID: 0}
   amountToHealed: 0
+  toBeInstantiated: 1
+  isDrinking: 0
 --- !u!114 &725180640101351112
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -70020,6 +70022,8 @@ MonoBehaviour:
   isBlocking: 0
   isFiringSpell: 0
   pendingCriticalDamage: 0
+  isRotatingWithRootMotion: 0
+  canRotate: 0
   interactableUiGameObject: {fileID: 0}
   itemInteractableGameobject: {fileID: 0}
   isInteracting: 0
