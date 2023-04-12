@@ -18,10 +18,6 @@ namespace DK
 
             HandleRotateTowardsTarget(enemyManager, distanceFromTarget);
 
-            if(viewableAngle >= 55 || viewableAngle <= -55)
-            {
-                return rotateTowardsTargetState;
-            }
             if (enemyManager.isInteracting)
                 return this;
 
