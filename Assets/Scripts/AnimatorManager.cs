@@ -16,6 +16,15 @@ namespace DK
             canRotate = false;
         }
 
+        public void PlayTargetAnimationWithRootrotation(string targetAnim, bool isInteracting)
+        {
+            anim.applyRootMotion = isInteracting;
+            anim.SetBool("isRotatingWithRootMotion", true);
+            anim.SetBool("isInteracting", isInteracting);
+            anim.CrossFade(targetAnim, 0.2f);
+            canRotate = false;
+        }
+
 
         public virtual void TakeCriticalDamageAnimationEvent()
         {

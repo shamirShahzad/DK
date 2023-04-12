@@ -1,5 +1,50 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &1483523732
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1483523734}
+  - component: {fileID: 1483523733}
+  m_Layer: 9
+  m_Name: Rotate Towards Target
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1483523734
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1483523732}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 9000053291232228946}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1483523733
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1483523732}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 992f9e01c77cfb548b3489f66cadaea0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  combatStanceState: {fileID: 9000053290621313865}
 --- !u!1 &8712038281048753271
 GameObject:
   m_ObjectHideFlags: 0
@@ -1002,7 +1047,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a1edea3c173b597428db864f3c63efec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rightHandWeapon: {fileID: 11400000, guid: 69ae6967547257341ba37b25fe3d6b3f, type: 2}
+  rightHandWeapon: {fileID: 11400000, guid: 44e98c3a36a536f40a2a2f3369306804, type: 2}
   leftHandWeapon: {fileID: 0}
 --- !u!1 &8712038281048769467
 GameObject:
@@ -5049,6 +5094,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   attackState: {fileID: 9000053291785420742}
   pursueTargetState: {fileID: 9000053291826532789}
+  enemyAttacks:
+  - {fileID: 11400000, guid: 3bf48793b2dcb464aa89872f4620da62, type: 2}
+  - {fileID: 11400000, guid: 6ae29f2eb7f54564bae00bcb6e1aa1dc, type: 2}
 --- !u!1 &9000053290846048680
 GameObject:
   m_ObjectHideFlags: 0
@@ -5375,6 +5423,7 @@ Transform:
   - {fileID: 9000053290621313866}
   - {fileID: 9000053291785420743}
   - {fileID: 9000053290846048681}
+  - {fileID: 1483523734}
   m_Father: {fileID: 9000053292317615552}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -5795,10 +5844,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   combatStanceState: {fileID: 9000053290621313865}
-  enemyAttacks:
-  - {fileID: 11400000, guid: 3bf48793b2dcb464aa89872f4620da62, type: 2}
-  - {fileID: 11400000, guid: 6ae29f2eb7f54564bae00bcb6e1aa1dc, type: 2}
+  pursueTargetState: {fileID: 9000053291826532789}
+  rotateTowardsTarget: {fileID: 1483523733}
   currentAttack: {fileID: 0}
+  hasPerformedAttack: 0
 --- !u!1 &9000053291787366312
 GameObject:
   m_ObjectHideFlags: 0
@@ -5846,6 +5895,9 @@ MonoBehaviour:
   detectionLayer:
     serializedVersion: 2
     m_Bits: 2048
+  obstructionLayer:
+    serializedVersion: 2
+    m_Bits: 64
   pursueTargetState: {fileID: 9000053291826532789}
 --- !u!1 &9000053291826532788
 GameObject:
@@ -6179,6 +6231,10 @@ MonoBehaviour:
   maxFocus: 0
   currentFocus: 0
   soulCount: 0
+  physicalDamageAbsorbtionHead: 0
+  physicalDamageAbsorbtionTorso: 0
+  physicalDamageAbsorbtionLegs: 0
+  physicalDamageAbsorbtionHands: 0
   isDead: 0
   enemyHealthBar: {fileID: 9000053292083880270}
   soulsAwardedOnDeath: 50
@@ -6216,16 +6272,18 @@ MonoBehaviour:
   isBlocking: 0
   isFiringSpell: 0
   pendingCriticalDamage: 0
-  currentState: {fileID: 9000053290846048682}
+  isRotatingWithRootMotion: 0
+  canRotate: 0
+  currentState: {fileID: 9000053291787366314}
   isPerformingAction: 0
   isInteracting: 0
   currentTarget: {fileID: 0}
   navMeshAgent: {fileID: 9000053291340928878}
   enemyRigidbody: {fileID: 9000053292317615566}
   rotationSpeed: 15
-  maximumAttackRange: 1.5
+  maximumAggroRadius: 1.5
   canDoCombo: 0
-  detectionRadius: 20
+  detectionRadius: 5
   minimumDetectionAngle: -50
   maximumDetectionAngle: 50
   allowAIToPerformCombo: 1

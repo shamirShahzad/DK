@@ -100,6 +100,12 @@ namespace DK
                     enemyStats.TakeDamage(weaponDamage);
                 }
             }
+            if(collision.tag == "Illusionary Wall")
+            {
+                IllusionaryWall illusionaryWall = collision.GetComponent<IllusionaryWall>();
+
+                illusionaryWall.wallhasBeenHit = true;
+            }
         }
     }
 }

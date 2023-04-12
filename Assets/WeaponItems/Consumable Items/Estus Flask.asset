@@ -15,7 +15,7 @@ MonoBehaviour:
   itemIcon: {fileID: 21300000, guid: b4d64edd149c29f4d88ee7f4f8820019, type: 3}
   itemName: Health Flask
   maxItemAmount: 10
-  currentItemAmount: 4
+  currentItemAmount: 10
   itemModel: {fileID: 7172700985510971644, guid: 2838060b804921e439a9690ce4b80017, type: 3}
   consumableAnimation: Potion_Drink
   isInteracing: 0

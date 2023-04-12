@@ -190,7 +190,7 @@ GameObject:
   - component: {fileID: 816528127559136472}
   - component: {fileID: 769373285673200382}
   m_Layer: 0
-  m_Name: Chr_LegRight_Male_13
+  m_Name: Male_LeftLeg_13
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1436,7 +1436,7 @@ GameObject:
   - component: {fileID: 813787782640028484}
   - component: {fileID: 766541068600892770}
   m_Layer: 0
-  m_Name: Chr_Torso_Male_01
+  m_Name: Male_Torso_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2261,7 +2261,7 @@ GameObject:
   - component: {fileID: 813962426841053434}
   - component: {fileID: 766642491945774512}
   m_Layer: 0
-  m_Name: Chr_Head_No_Elements_Male_08
+  m_Name: Male_Helmet_8
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2534,8 +2534,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 810684462245189362}
-  m_LocalRotation: {x: 0.04177524, y: 0.7058717, z: -0.70419, w: -0.06415935}
-  m_LocalPosition: {x: 4.1157684, y: -2.6920698, z: -9.896706}
+  m_LocalRotation: {x: 0.056999378, y: 0.7304188, z: -0.68030274, w: -0.020682298}
+  m_LocalPosition: {x: 4.115767, y: -2.6920695, z: -9.896705}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -2642,7 +2642,7 @@ GameObject:
   - component: {fileID: 816519285071499582}
   - component: {fileID: 769132066753810890}
   m_Layer: 0
-  m_Name: Chr_Hips_Male_05
+  m_Name: Male_Hip_5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3812,7 +3812,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &816317371674341288
 Transform:
   m_ObjectHideFlags: 0
@@ -3924,7 +3924,7 @@ GameObject:
   - component: {fileID: 813897163015855814}
   - component: {fileID: 769197194034827250}
   m_Layer: 0
-  m_Name: Chr_LegRight_Male_16
+  m_Name: Male_LeftLeg_16
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4647,7 +4647,7 @@ GameObject:
   - component: {fileID: 813477036190031810}
   - component: {fileID: 766502270250661666}
   m_Layer: 0
-  m_Name: Chr_Torso_Male_18
+  m_Name: Male_Torso_18
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6297,6 +6297,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 813710873709567448}
+  - component: {fileID: 2898386983415987056}
   m_Layer: 0
   m_Name: Male_03_Torso
   m_TagString: Untagged
@@ -6348,6 +6349,19 @@ Transform:
   m_Father: {fileID: 813482830579904084}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2898386983415987056
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 810731750946007422}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ea3ea397c87346f4c9a8e78e91cfed52, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  torsoModels: []
 --- !u!1 &810733494757687238
 GameObject:
   m_ObjectHideFlags: 0
@@ -6357,6 +6371,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 816524047295562760}
+  - component: {fileID: 2554598858784302785}
   m_Layer: 0
   m_Name: Male_05_Arm_Upper_Left
   m_TagString: Untagged
@@ -6400,6 +6415,19 @@ Transform:
   m_Father: {fileID: 813482830579904084}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2554598858784302785
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 810733494757687238}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d64afb63f5c82ce48bd9cdb63507dcee, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  upperLeftArmModels: []
 --- !u!1 &810734423225659474
 GameObject:
   m_ObjectHideFlags: 0
@@ -7086,7 +7114,7 @@ GameObject:
   - component: {fileID: 813945196861877180}
   - component: {fileID: 766298970869597178}
   m_Layer: 0
-  m_Name: Chr_Head_No_Elements_Male_01
+  m_Name: Male_Helmet_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8368,7 +8396,7 @@ GameObject:
   - component: {fileID: 816573107268703624}
   - component: {fileID: 769267869781438292}
   m_Layer: 0
-  m_Name: Chr_Hips_Male_25
+  m_Name: Male_Hip_25
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8634,7 +8662,7 @@ GameObject:
   - component: {fileID: 816710912337146772}
   - component: {fileID: 766632862088030494}
   m_Layer: 0
-  m_Name: Chr_LegRight_Male_09
+  m_Name: Male_LeftLeg_9
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9277,8 +9305,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 810762541645531120}
-  m_LocalRotation: {x: -0.0024864315, y: -0.043879747, z: 0.056519255, w: 0.9974337}
-  m_LocalPosition: {x: 9.9825, y: 0.116, z: 3.28334}
+  m_LocalRotation: {x: -0.08118498, y: 0.1638828, z: 0.012085733, w: -0.9830592}
+  m_LocalPosition: {x: 9.982498, y: 0.11600007, z: 3.2833436}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -10031,8 +10059,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 810773836932138112}
-  m_LocalRotation: {x: -8.012619e-16, y: 1.2480334e-15, z: -0.2700158, w: 0.96285594}
-  m_LocalPosition: {x: -11.284036, y: -1.15463195e-14, z: -2.113351e-15}
+  m_LocalRotation: {x: 0.000000014901159, y: -0.000000029802319, z: -0.27001575, w: 0.96285594}
+  m_LocalPosition: {x: -11.284041, y: 0.0000014898598, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -10669,6 +10697,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 813845831712938292}
+  - component: {fileID: 2898240462154006404}
   m_Layer: 0
   m_Name: Male_11_Leg_Right
   m_TagString: Untagged
@@ -10711,6 +10740,19 @@ Transform:
   m_Father: {fileID: 813482830579904084}
   m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2898240462154006404
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 810779003344469710}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 50f6f66f6208d0b4482f65ab887630a7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rightLegModels: []
 --- !u!1 &810780405056121220
 GameObject:
   m_ObjectHideFlags: 0
@@ -10722,7 +10764,7 @@ GameObject:
   - component: {fileID: 813581563168776724}
   - component: {fileID: 766463360876860192}
   m_Layer: 0
-  m_Name: Chr_Hips_Male_11
+  m_Name: Male_Hip_11
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -11520,8 +11562,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 810790609058951072}
-  m_LocalRotation: {x: 7.053966e-17, y: 1.3040385e-15, z: 0.04173335, w: 0.9991288}
-  m_LocalPosition: {x: -11.188968, y: -6.661338e-16, z: -4.624413e-15}
+  m_LocalRotation: {x: -0.000000017577761, y: 0.00000012399535, z: 0.041733414, w: 0.9991288}
+  m_LocalPosition: {x: -11.188966, y: -0.0000014897139, z: 0.0000004655982}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -11640,8 +11682,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 810794623028545882}
-  m_LocalRotation: {x: 0.0026372706, y: 0.019492026, z: 0.02126933, w: 0.99958026}
-  m_LocalPosition: {x: 4.2488093, y: 0.000026534415, z: -0.0000019789932}
+  m_LocalRotation: {x: -0.047596607, y: -0.017423945, z: -0.34373325, w: -0.9376985}
+  m_LocalPosition: {x: 4.2488112, y: 0.000030655476, z: -0.00000195933}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -13488,7 +13530,7 @@ GameObject:
   - component: {fileID: 813512412259348120}
   - component: {fileID: 769297004742440056}
   m_Layer: 0
-  m_Name: Chr_LegLeft_Male_01
+  m_Name: Male_RightLeg_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -14364,7 +14406,7 @@ GameObject:
   - component: {fileID: 813533432646302340}
   - component: {fileID: 766535183454163094}
   m_Layer: 0
-  m_Name: Chr_Head_No_Elements_Male_10
+  m_Name: Male_Helmet_10
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -14572,7 +14614,7 @@ GameObject:
   - component: {fileID: 816708389383594740}
   - component: {fileID: 766615561329808444}
   m_Layer: 0
-  m_Name: Chr_LegLeft_Male_18
+  m_Name: Male_RightLeg_18
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -14660,7 +14702,7 @@ GameObject:
   - component: {fileID: 813944700328072202}
   - component: {fileID: 769467597212429022}
   m_Layer: 0
-  m_Name: Chr_Torso_Male_09
+  m_Name: Male_Torso_9
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -14944,7 +14986,7 @@ GameObject:
   - component: {fileID: 816414433714950034}
   - component: {fileID: 769477844448600644}
   m_Layer: 0
-  m_Name: Chr_Hips_Male_22
+  m_Name: Male_Hip_22
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -15675,8 +15717,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 810855258705444142}
-  m_LocalRotation: {x: 0.85767007, y: 0.507213, z: 0.039752707, w: -0.0745436}
-  m_LocalPosition: {x: -37.712353, y: -7.771561e-15, z: 1.6819879e-14}
+  m_LocalRotation: {x: -0.83671904, y: -0.5111221, z: -0.121969864, w: 0.15420395}
+  m_LocalPosition: {x: -37.712364, y: 0.000005959323, z: -0.000005400494}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -16201,7 +16243,7 @@ GameObject:
   - component: {fileID: 816707462627951926}
   - component: {fileID: 766540317983536014}
   m_Layer: 0
-  m_Name: Chr_LegLeft_Male_04
+  m_Name: Male_RightLeg_4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -16327,7 +16369,7 @@ GameObject:
   - component: {fileID: 813752042318730752}
   - component: {fileID: 769129791087291646}
   m_Layer: 0
-  m_Name: Chr_Torso_Male_15
+  m_Name: Male_Torso_15
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -17463,7 +17505,7 @@ GameObject:
   - component: {fileID: 816825433295485326}
   - component: {fileID: 769259882313891404}
   m_Layer: 0
-  m_Name: Chr_LegLeft_Male_06
+  m_Name: Male_RightLeg_6
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -17856,7 +17898,7 @@ GameObject:
   - component: {fileID: 813564268180270726}
   - component: {fileID: 766727616651169132}
   m_Layer: 0
-  m_Name: Chr_LegLeft_Male_00
+  m_Name: Male_RightLeg_0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -17943,6 +17985,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 813493856769421242}
+  - component: {fileID: 2554598858784302784}
   m_Layer: 0
   m_Name: Male_06_Arm_Lower_Right
   m_TagString: Untagged
@@ -17984,6 +18027,19 @@ Transform:
   m_Father: {fileID: 813482830579904084}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2554598858784302784
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 810889936874868406}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 961ced06beec7314bb4024a3088656ee, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lowerRightArmModels: []
 --- !u!1 &810894732136141316
 GameObject:
   m_ObjectHideFlags: 0
@@ -17995,7 +18051,7 @@ GameObject:
   - component: {fileID: 816425548149941784}
   - component: {fileID: 766201570157340268}
   m_Layer: 0
-  m_Name: Chr_Hips_Male_12
+  m_Name: Male_Hip_12
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -18273,7 +18329,7 @@ GameObject:
   - component: {fileID: 813631962824265074}
   - component: {fileID: 766618012417740924}
   m_Layer: 0
-  m_Name: Chr_Head_No_Elements_Male_11
+  m_Name: Male_Helmet_11
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -18360,7 +18416,7 @@ GameObject:
   - component: {fileID: 813464830777063044}
   - component: {fileID: 769538465840132586}
   m_Layer: 0
-  m_Name: Chr_LegLeft_Male_14
+  m_Name: Male_RightLeg_14
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -18943,8 +18999,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 810902058485081126}
-  m_LocalRotation: {x: -0.0024864315, y: -0.043879747, z: 0.056519255, w: 0.9974337}
-  m_LocalPosition: {x: -9.982526, y: -0.11595894, z: -3.2833402}
+  m_LocalRotation: {x: 0.056230642, y: -0.09125193, z: -0.0031420125, w: 0.9942341}
+  m_LocalPosition: {x: -9.982525, y: -0.11595855, z: -3.2833402}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -19331,8 +19387,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 810904283236281288}
-  m_LocalRotation: {x: 0.025480643, y: 0.27684274, z: 0.08803956, w: 0.9565343}
-  m_LocalPosition: {x: 3.514, y: 1.171, z: -4.50554}
+  m_LocalRotation: {x: -0.12989469, y: -0.12373188, z: -0.37568945, w: -0.9092168}
+  m_LocalPosition: {x: 3.5139987, y: 1.1709994, z: -4.5055456}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -20159,7 +20215,7 @@ GameObject:
   - component: {fileID: 816356680897186302}
   - component: {fileID: 766521788838398252}
   m_Layer: 0
-  m_Name: Chr_Hips_Male_21
+  m_Name: Male_Hip_21
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -20692,7 +20748,7 @@ GameObject:
   - component: {fileID: 814021576429564870}
   - component: {fileID: 769520428304573292}
   m_Layer: 0
-  m_Name: Chr_Torso_Male_04
+  m_Name: Male_Torso_4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -20799,8 +20855,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 810936676861119226}
-  m_LocalRotation: {x: -2.4156169e-17, y: -0.035830766, z: 1.6679253e-15, w: 0.9993579}
-  m_LocalPosition: {x: -27.114529, y: 0, z: -0.038136426}
+  m_LocalRotation: {x: -0.18243462, y: -0.019140035, z: -0.068265684, w: 0.98065853}
+  m_LocalPosition: {x: -27.114525, y: -0.00000039492718, z: -0.038136315}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -21500,7 +21556,7 @@ GameObject:
   - component: {fileID: 816479996808731596}
   - component: {fileID: 769164705794799506}
   m_Layer: 0
-  m_Name: Chr_Hips_Male_15
+  m_Name: Male_Hip_15
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -21965,8 +22021,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 810947536670511242}
-  m_LocalRotation: {x: 0.0016838326, y: 0.040749595, z: -0.041251875, w: 0.99831605}
-  m_LocalPosition: {x: -33.947403, y: -0.14490709, z: -0.14362642}
+  m_LocalRotation: {x: -0.09161104, y: 0.20146777, z: 0.034304276, w: 0.9745981}
+  m_LocalPosition: {x: -33.947403, y: -0.14490554, z: -0.1436264}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -21984,6 +22040,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 816806666316650346}
+  - component: {fileID: 563666881}
   m_Layer: 0
   m_Name: Male_09_Hand_Left
   m_TagString: Untagged
@@ -22024,6 +22081,19 @@ Transform:
   m_Father: {fileID: 813482830579904084}
   m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &563666881
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 810950157381043724}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2d39d9802828c3f4fa66a6045ea041de, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  leftHandModels: []
 --- !u!1 &810952087559666790
 GameObject:
   m_ObjectHideFlags: 0
@@ -23317,7 +23387,7 @@ GameObject:
   - component: {fileID: 816752127133869456}
   - component: {fileID: 769122812393444772}
   m_Layer: 0
-  m_Name: Chr_Torso_Male_08
+  m_Name: Male_Torso_8
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -23502,7 +23572,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &813559268302305370
 Transform:
   m_ObjectHideFlags: 0
@@ -23597,8 +23667,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 810969489955875100}
-  m_LocalRotation: {x: -0.5785476, y: 0.63248575, z: -0.35251346, w: -0.37547135}
-  m_LocalPosition: {x: -5.8011727, y: -4.1914477, z: -7.447154}
+  m_LocalRotation: {x: 0.50207525, y: -0.626661, z: 0.43372115, w: 0.40878162}
+  m_LocalPosition: {x: -5.8011785, y: -4.1914487, z: -7.4471545}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -23802,8 +23872,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 810978808391345184}
-  m_LocalRotation: {x: 0.6443777, y: 0.02446273, z: -0.0047377087, w: 0.76430136}
-  m_LocalPosition: {x: -39.930904, y: -6.8833828e-15, z: -5.3342145e-15}
+  m_LocalRotation: {x: 0.69640523, y: 0.046938315, z: -0.030142322, w: 0.71547747}
+  m_LocalPosition: {x: -39.93092, y: 0.000011919946, z: 0.000000053429524}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -25687,7 +25757,7 @@ GameObject:
   - component: {fileID: 816704242680556372}
   - component: {fileID: 769338767275165966}
   m_Layer: 0
-  m_Name: Chr_Hips_Male_01
+  m_Name: Male_Hip_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -26145,7 +26215,7 @@ GameObject:
   - component: {fileID: 813980586837931192}
   - component: {fileID: 769525864855689704}
   m_Layer: 0
-  m_Name: Chr_Hips_Male_19
+  m_Name: Male_Hip_19
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -26324,7 +26394,7 @@ GameObject:
   - component: {fileID: 811011089889567889}
   m_Layer: 11
   m_Name: Spine_01
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -26336,8 +26406,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 811011089889567890}
-  m_LocalRotation: {x: 0.9950197, y: -0.09967895, z: 1.3224718e-15, w: 7.094358e-17}
-  m_LocalPosition: {x: -10.393265, y: 1.3322676e-15, z: 4.6155367e-15}
+  m_LocalRotation: {x: -0.99508506, y: 0.098823175, z: -0.0062347907, w: 0.0009607073}
+  m_LocalPosition: {x: -10.393269, y: 0, z: -0.0000006519258}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -26857,7 +26927,7 @@ GameObject:
   - component: {fileID: 814020412816645216}
   - component: {fileID: 766495753923934114}
   m_Layer: 0
-  m_Name: Chr_LegLeft_Male_19
+  m_Name: Male_RightLeg_19
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -27585,7 +27655,7 @@ GameObject:
   - component: {fileID: 816461648208009688}
   - component: {fileID: 769176949216587712}
   m_Layer: 0
-  m_Name: Chr_Torso_Male_00
+  m_Name: Male_Torso_0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -27691,8 +27761,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 811029974752119830}
-  m_LocalRotation: {x: -0.036403257, y: -0.15203469, z: -0.22999534, w: 0.9605532}
-  m_LocalPosition: {x: -5.66557, y: 2.91156e-14, z: 3.996803e-15}
+  m_LocalRotation: {x: -0.06939124, y: -0.17302689, z: -0.23185158, w: 0.9547206}
+  m_LocalPosition: {x: -5.6655674, y: 0.0000018856679, z: 0.000001721557}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -27710,7 +27780,7 @@ GameObject:
   - component: {fileID: 814016978613801922}
   - component: {fileID: 769220250966553422}
   m_Layer: 0
-  m_Name: Chr_Hips_Male_09
+  m_Name: Male_Hip_9
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -27800,7 +27870,7 @@ GameObject:
   - component: {fileID: 816395896603918316}
   - component: {fileID: 766497519480106724}
   m_Layer: 0
-  m_Name: Chr_LegRight_Male_08
+  m_Name: Male_LeftLeg_8
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -28925,7 +28995,7 @@ GameObject:
   - component: {fileID: 813753086062541034}
   - component: {fileID: 769490752799094936}
   m_Layer: 0
-  m_Name: Chr_LegLeft_Male_10
+  m_Name: Male_RightLeg_10
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -29013,7 +29083,7 @@ GameObject:
   - component: {fileID: 813969556811100680}
   - component: {fileID: 769195456985542214}
   m_Layer: 0
-  m_Name: Chr_LegRight_Male_14
+  m_Name: Male_LeftLeg_14
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -29102,7 +29172,7 @@ GameObject:
   - component: {fileID: 816395138984678180}
   - component: {fileID: 769150191946673948}
   m_Layer: 0
-  m_Name: Chr_Torso_Male_07
+  m_Name: Male_Torso_7
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -30195,8 +30265,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 811052148320743556}
-  m_LocalRotation: {x: -0.018149227, y: -0.07147895, z: 0.09251083, w: 0.9929769}
-  m_LocalPosition: {x: 3.5133245, y: -0.00001997848, z: 0.0000014853608}
+  m_LocalRotation: {x: -0.030063141, y: 0.03221887, z: -0.3924938, w: -0.91869843}
+  m_LocalPosition: {x: 3.513322, y: -0.000023257806, z: 0.0000019590127}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -30393,7 +30463,7 @@ GameObject:
   - component: {fileID: 813700546389411016}
   - component: {fileID: 769494885189560844}
   m_Layer: 0
-  m_Name: Chr_Hips_Male_08
+  m_Name: Male_Hip_8
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -30705,8 +30775,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 811059644905213690}
-  m_LocalRotation: {x: 0.00028049533, y: 0.065794446, z: 0.004253931, w: 0.99782413}
-  m_LocalPosition: {x: -10.396562, y: 0.39871514, z: 2.6726496}
+  m_LocalRotation: {x: 0.081430376, y: -0.19641145, z: -0.02108554, w: 0.97690696}
+  m_LocalPosition: {x: -10.396563, y: 0.398721, z: 2.6726494}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -30725,7 +30795,7 @@ GameObject:
   - component: {fileID: 813685508667721334}
   - component: {fileID: 769340635493998322}
   m_Layer: 0
-  m_Name: Chr_Hips_Male_06
+  m_Name: Male_Hip_6
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -30915,8 +30985,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 811066521844161396}
-  m_LocalRotation: {x: -0.039942026, y: -0.1178403, z: 0.14163579, w: 0.98206806}
-  m_LocalPosition: {x: -6.370214, y: -6.1062266e-16, z: 4.440892e-16}
+  m_LocalRotation: {x: -0.071702816, y: -0.20388259, z: 0.022370987, w: 0.97610974}
+  m_LocalPosition: {x: -6.3702145, y: -0.0000019313493, z: 0.00000013993389}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -31281,6 +31351,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 813490470326381708}
+  - component: {fileID: 2898589063614089788}
   m_Layer: 0
   m_Name: Male_12_Leg_Left
   m_TagString: Untagged
@@ -31323,6 +31394,19 @@ Transform:
   m_Father: {fileID: 813482830579904084}
   m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2898589063614089788
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 811070025162376106}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 558175ca918258f46905a3432401bf4e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  leftLegModels: []
 --- !u!1 &811070923484291896
 GameObject:
   m_ObjectHideFlags: 0
@@ -31519,7 +31603,7 @@ GameObject:
   - component: {fileID: 816320898242310474}
   - component: {fileID: 769025601410031694}
   m_Layer: 0
-  m_Name: Chr_Hips_Male_14
+  m_Name: Male_Hip_14
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -32489,7 +32573,7 @@ GameObject:
   - component: {fileID: 813955975392537294}
   - component: {fileID: 766479401176506866}
   m_Layer: 0
-  m_Name: Chr_LegRight_Male_17
+  m_Name: Male_LeftLeg_17
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -32578,7 +32662,7 @@ GameObject:
   - component: {fileID: 816487481699109614}
   - component: {fileID: 769095370864279600}
   m_Layer: 0
-  m_Name: Chr_Head_No_Elements_Male_03
+  m_Name: Male_Helmet_3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -32937,7 +33021,7 @@ GameObject:
   - component: {fileID: 816614138671321536}
   - component: {fileID: 769203785340687606}
   m_Layer: 0
-  m_Name: Chr_Torso_Male_17
+  m_Name: Male_Torso_17
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -33031,7 +33115,7 @@ GameObject:
   - component: {fileID: 813965172434337832}
   - component: {fileID: 766643128406007276}
   m_Layer: 0
-  m_Name: Chr_Hips_Male_28
+  m_Name: Male_Hip_28
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -33479,7 +33563,7 @@ GameObject:
   - component: {fileID: 813837232578147818}
   - component: {fileID: 769021989133522888}
   m_Layer: 0
-  m_Name: Chr_LegLeft_Male_16
+  m_Name: Male_RightLeg_16
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -34514,7 +34598,7 @@ GameObject:
   - component: {fileID: 813958827306215126}
   - component: {fileID: 766576199297228762}
   m_Layer: 0
-  m_Name: Chr_Torso_Male_23
+  m_Name: Male_Torso_23
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -35035,7 +35119,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &813696783120159726
 Transform:
   m_ObjectHideFlags: 0
@@ -35139,8 +35223,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 811122692346294200}
-  m_LocalRotation: {x: -0.0069121956, y: -0.025717413, z: 0.057002403, w: 0.9980188}
-  m_LocalPosition: {x: -3.791188, y: -2.1461999e-14, z: -3.8302694e-15}
+  m_LocalRotation: {x: 0.04642663, y: -0.0102409255, z: 0.15409559, w: 0.9869115}
+  m_LocalPosition: {x: -3.7911851, y: -0.0000024882845, z: -0.000000478832}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -35520,7 +35604,7 @@ GameObject:
   - component: {fileID: 816813631567194648}
   - component: {fileID: 766542399175443098}
   m_Layer: 0
-  m_Name: Chr_Torso_Male_24
+  m_Name: Male_Torso_24
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -35794,7 +35878,7 @@ GameObject:
   - component: {fileID: 816827772720601316}
   - component: {fileID: 769217918876679048}
   m_Layer: 0
-  m_Name: Chr_Torso_Male_19
+  m_Name: Male_Torso_19
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -35976,7 +36060,7 @@ GameObject:
   - component: {fileID: 813875808191936438}
   - component: {fileID: 769428580329079536}
   m_Layer: 0
-  m_Name: Chr_Torso_Male_03
+  m_Name: Male_Torso_3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -36158,7 +36242,7 @@ GameObject:
   - component: {fileID: 813516974025136120}
   - component: {fileID: 769369149825557846}
   m_Layer: 0
-  m_Name: Chr_Head_No_Elements_Male_13
+  m_Name: Male_Helmet_13
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -36245,7 +36329,7 @@ GameObject:
   - component: {fileID: 816714353270405042}
   - component: {fileID: 769523845509431964}
   m_Layer: 0
-  m_Name: Chr_LegLeft_Male_17
+  m_Name: Male_RightLeg_17
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -37144,8 +37228,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 811136797146131062}
-  m_LocalRotation: {x: 0.0113281235, y: 0.23685996, z: 0.03380652, w: 0.9708894}
-  m_LocalPosition: {x: -13.197872, y: -4.8572257e-17, z: -2.6645353e-15}
+  m_LocalRotation: {x: 0.3036605, y: 0.20950168, z: 0.46115345, w: 0.8069925}
+  m_LocalPosition: {x: -13.197872, y: -0.0000010909946, z: -0.00000058192705}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -37629,8 +37713,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 811142045416256866}
-  m_LocalRotation: {x: -0.7058717, y: 0.04177525, z: -0.064159356, w: 0.70419}
-  m_LocalPosition: {x: 4.1157784, y: -2.692075, z: 9.89671}
+  m_LocalRotation: {x: -0.72358054, y: -0.058219578, z: -0.024835994, w: 0.6873318}
+  m_LocalPosition: {x: 4.115781, y: -2.692076, z: 9.89671}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -38291,8 +38375,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 811156543659955332}
-  m_LocalRotation: {x: 0.63248575, y: 0.5785476, z: 0.37547135, w: -0.35251346}
-  m_LocalPosition: {x: -5.801534, y: -4.191418, z: 7.44715}
+  m_LocalRotation: {x: 0.6243295, y: 0.5030609, z: 0.4111864, w: -0.43366838}
+  m_LocalPosition: {x: -5.801536, y: -4.1914186, z: 7.4471507}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -39626,7 +39710,7 @@ GameObject:
   - component: {fileID: 814022552527551414}
   - component: {fileID: 766513794760250882}
   m_Layer: 0
-  m_Name: Chr_LegLeft_Male_13
+  m_Name: Male_RightLeg_13
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -39890,7 +39974,7 @@ GameObject:
   - component: {fileID: 813786352285221076}
   - component: {fileID: 769429960982637846}
   m_Layer: 0
-  m_Name: Chr_Torso_Male_25
+  m_Name: Male_Torso_25
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -40476,7 +40560,7 @@ GameObject:
   - component: {fileID: 813902053182813176}
   - component: {fileID: 769108278159246766}
   m_Layer: 0
-  m_Name: Chr_Torso_Male_22
+  m_Name: Male_Torso_22
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -40786,7 +40870,7 @@ GameObject:
   - component: {fileID: 816573185124331850}
   - component: {fileID: 766565263929428862}
   m_Layer: 0
-  m_Name: Chr_Torso_Male_14
+  m_Name: Male_Torso_14
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -41435,8 +41519,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 811212505210248260}
-  m_LocalRotation: {x: 0.9938103, y: -0.11109032, z: -3.483493e-17, w: -6.5507636e-17}
-  m_LocalPosition: {x: -17.903725, y: 2.220446e-15, z: 7.5097255e-15}
+  m_LocalRotation: {x: -0.99187183, y: 0.121152036, z: -0.016842684, w: 0.035055187}
+  m_LocalPosition: {x: -17.903728, y: -0.0000014898895, z: -0.0000018625374}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -41460,7 +41544,7 @@ GameObject:
   - component: {fileID: 816381957458690878}
   - component: {fileID: 769482933308020200}
   m_Layer: 0
-  m_Name: Chr_Hips_Male_16
+  m_Name: Male_Hip_16
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -42356,7 +42440,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &813750336172217538
 Transform:
   m_ObjectHideFlags: 0
@@ -42451,8 +42535,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 811229260361189012}
-  m_LocalRotation: {x: -0.001153992, y: -0.010741636, z: 0.09832994, w: 0.99509525}
-  m_LocalPosition: {x: -4.0936317, y: -1.5276409e-16, z: 2.4424907e-15}
+  m_LocalRotation: {x: 0.04965765, y: -0.0023954825, z: 0.31207153, w: 0.948757}
+  m_LocalPosition: {x: -4.093629, y: -0.0000035189569, z: -0.00000055248165}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -43612,7 +43696,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &813785606554104012
 Transform:
   m_ObjectHideFlags: 0
@@ -44315,7 +44399,7 @@ GameObject:
   - component: {fileID: 816479585717032954}
   - component: {fileID: 766697771249517044}
   m_Layer: 0
-  m_Name: Chr_Hips_Male_02
+  m_Name: Male_Hip_2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -44669,7 +44753,7 @@ GameObject:
   - component: {fileID: 813542418519882190}
   - component: {fileID: 769385363560124782}
   m_Layer: 0
-  m_Name: Chr_LegLeft_Male_07
+  m_Name: Male_RightLeg_7
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -44769,8 +44853,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 811262059521954132}
-  m_LocalRotation: {x: -0.036403257, y: -0.15203467, z: -0.22999534, w: 0.9605532}
-  m_LocalPosition: {x: 5.6655083, y: 0.000009835502, z: -0.000020279542}
+  m_LocalRotation: {x: 0.049756408, y: 0.25619993, z: 0.23526523, w: -0.93623513}
+  m_LocalPosition: {x: 5.66551, y: 0.000015262493, z: -0.000022299751}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -45154,8 +45238,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 811268759723313706}
-  m_LocalRotation: {x: 0.6443777, y: 0.02446273, z: -0.0047377087, w: 0.76430136}
-  m_LocalPosition: {x: 39.93092, y: -0.000038050264, z: 1.4654944e-14}
+  m_LocalRotation: {x: 0.6410803, y: 0.06519222, z: -0.043506432, w: 0.7634613}
+  m_LocalPosition: {x: 39.930935, y: -0.00003575914, z: 0.000000033260395}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -45811,8 +45895,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 811281464965815954}
-  m_LocalRotation: {x: -0.001153992, y: -0.010741636, z: 0.09832994, w: 0.99509525}
-  m_LocalPosition: {x: 4.093591, y: 0.00009698693, z: -0.000004956748}
+  m_LocalRotation: {x: -0.04962259, y: 0.0021401453, z: -0.30793354, w: -0.9501105}
+  m_LocalPosition: {x: 4.0935926, y: 0.00009500708, z: -0.000004757572}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -45831,7 +45915,7 @@ GameObject:
   - component: {fileID: 816467021126465632}
   - component: {fileID: 769084390214468534}
   m_Layer: 0
-  m_Name: Chr_LegRight_Male_05
+  m_Name: Male_LeftLeg_5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -46008,7 +46092,7 @@ GameObject:
   - component: {fileID: 816331316925815470}
   - component: {fileID: 766560628748126380}
   m_Layer: 0
-  m_Name: Chr_LegLeft_Male_15
+  m_Name: Male_RightLeg_15
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -46183,7 +46267,7 @@ GameObject:
   - component: {fileID: 813738837748883728}
   - component: {fileID: 769309040753876986}
   m_Layer: 0
-  m_Name: Chr_Head_No_Elements_Male_05
+  m_Name: Male_Helmet_5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -46270,7 +46354,7 @@ GameObject:
   - component: {fileID: 816407144699983118}
   - component: {fileID: 769466753460020866}
   m_Layer: 0
-  m_Name: Chr_Hips_Male_07
+  m_Name: Male_Hip_7
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -47336,7 +47420,7 @@ GameObject:
   - component: {fileID: 813472799197490036}
   - component: {fileID: 769494228239319336}
   m_Layer: 0
-  m_Name: Chr_Torso_Male_16
+  m_Name: Male_Torso_16
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -47516,7 +47600,7 @@ GameObject:
   - component: {fileID: 813699250658505478}
   - component: {fileID: 766585355768480796}
   m_Layer: 0
-  m_Name: Chr_LegRight_Male_10
+  m_Name: Male_LeftLeg_10
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -47697,7 +47781,7 @@ GameObject:
   - component: {fileID: 813821114683070280}
   - component: {fileID: 766495534335531828}
   m_Layer: 0
-  m_Name: Chr_LegRight_Male_15
+  m_Name: Male_LeftLeg_15
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -47892,8 +47976,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 811301622405041500}
-  m_LocalRotation: {x: 3.533937e-15, y: 4.8918194e-15, z: -0.2700158, w: 0.96285594}
-  m_LocalPosition: {x: 11.284033, y: -0.0000016849572, z: -7.1054274e-15}
+  m_LocalRotation: {x: -0.000000019116001, y: -0.000000019711788, z: -0.27001542, w: 0.962856}
+  m_LocalPosition: {x: 11.284036, y: -0.00000037243512, z: -0.000000745002}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -48000,7 +48084,7 @@ GameObject:
   - component: {fileID: 813955270836318056}
   - component: {fileID: 769746058413015294}
   m_Layer: 0
-  m_Name: Chr_LegRight_Male_01
+  m_Name: Male_LeftLeg_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -48087,8 +48171,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 816780596473559398}
+  - component: {fileID: 2896256338909179492}
   m_Layer: 0
-  m_Name: Male_Head_No_Elements
+  m_Name: Male_Helmets
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -48122,6 +48207,19 @@ Transform:
   m_Father: {fileID: 816551971730873888}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2896256338909179492
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 811303151701543124}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b6c4ae93cf01bcc4595156e10550cf35, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  helmetModels: []
 --- !u!1 &811303689401645614
 GameObject:
   m_ObjectHideFlags: 0
@@ -48133,7 +48231,7 @@ GameObject:
   - component: {fileID: 813834342282151474}
   - component: {fileID: 766544293304753682}
   m_Layer: 0
-  m_Name: Chr_Hips_Male_24
+  m_Name: Male_Hip_24
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -48594,8 +48692,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 811305720747318582}
-  m_LocalRotation: {x: 0.0026372706, y: 0.019492025, z: 0.021269329, w: 0.99958026}
-  m_LocalPosition: {x: -4.2488146, y: -1.0581813e-15, z: -8.3266727e-16}
+  m_LocalRotation: {x: 0.047685236, y: 0.017191967, z: 0.34822738, w: 0.9360387}
+  m_LocalPosition: {x: -4.248814, y: -0.00000030360695, z: -0.00000013702855}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -49261,7 +49359,7 @@ GameObject:
   - component: {fileID: 816834964614818330}
   - component: {fileID: 769116970781031284}
   m_Layer: 0
-  m_Name: Chr_Torso_Male_06
+  m_Name: Male_Torso_6
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -49889,7 +49987,7 @@ GameObject:
   - component: {fileID: 816341629094271844}
   - component: {fileID: 766303752400872416}
   m_Layer: 0
-  m_Name: Chr_LegLeft_Male_12
+  m_Name: Male_RightLeg_12
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -50188,7 +50286,7 @@ GameObject:
   - component: {fileID: 816703706744945976}
   - component: {fileID: 769461032523354236}
   m_Layer: 0
-  m_Name: Chr_LegLeft_Male_09
+  m_Name: Male_RightLeg_9
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -50452,7 +50550,7 @@ GameObject:
   - component: {fileID: 816561213169549584}
   - component: {fileID: 769546768048743440}
   m_Layer: 0
-  m_Name: Chr_Torso_Male_21
+  m_Name: Male_Torso_21
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -50632,7 +50730,7 @@ GameObject:
   - component: {fileID: 813972702817462560}
   - component: {fileID: 766467867494592208}
   m_Layer: 0
-  m_Name: Chr_LegRight_Male_19
+  m_Name: Male_LeftLeg_19
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -50994,7 +51092,7 @@ GameObject:
   - component: {fileID: 813781036924205922}
   - component: {fileID: 766532195778495286}
   m_Layer: 0
-  m_Name: Chr_LegRight_Male_00
+  m_Name: Male_LeftLeg_0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -51083,7 +51181,7 @@ GameObject:
   - component: {fileID: 813912588509584492}
   - component: {fileID: 769179357116843326}
   m_Layer: 0
-  m_Name: Chr_Torso_Male_20
+  m_Name: Male_Torso_20
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -51652,8 +51750,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 811346964310634746}
-  m_LocalRotation: {x: 1.8856444e-14, y: -0.7071068, z: 1.8856444e-14, w: 0.7071068}
-  m_LocalPosition: {x: -7.2957563, y: 2.040087e-16, z: 3.4087126e-16}
+  m_LocalRotation: {x: -0.00000014730941, y: -0.70710677, z: -0.00000020691405, w: 0.7071069}
+  m_LocalPosition: {x: -7.2957582, y: -0.0000000066084938, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -52208,7 +52306,7 @@ GameObject:
   - component: {fileID: 816350557636693340}
   - component: {fileID: 769119889141618016}
   m_Layer: 0
-  m_Name: Chr_Torso_Male_26
+  m_Name: Male_Torso_26
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -52388,7 +52486,7 @@ GameObject:
   - component: {fileID: 816766275544439056}
   - component: {fileID: 766558445071280492}
   m_Layer: 0
-  m_Name: Chr_Torso_Male_11
+  m_Name: Male_Torso_11
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -53117,7 +53215,7 @@ GameObject:
   - component: {fileID: 816826662642689652}
   - component: {fileID: 766574221063768406}
   m_Layer: 0
-  m_Name: Chr_LegRight_Male_11
+  m_Name: Male_LeftLeg_11
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -53206,7 +53304,7 @@ GameObject:
   - component: {fileID: 816536443847701854}
   - component: {fileID: 769746163454032006}
   m_Layer: 0
-  m_Name: Chr_Hips_Male_03
+  m_Name: Male_Hip_3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -53308,8 +53406,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 811370736942628540}
-  m_LocalRotation: {x: 0.99518615, y: -0.098002784, z: -6.0366487e-16, w: -1.2097554e-16}
-  m_LocalPosition: {x: -18.151169, y: 1.5543122e-15, z: -7.1010728e-15}
+  m_LocalRotation: {x: 0.9948446, y: -0.09800398, z: -0.019615294, w: 0.01716672}
+  m_LocalPosition: {x: -18.151169, y: -0.0000014899689, z: 0.0000033527112}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -53326,6 +53424,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 813724589007114952}
+  - component: {fileID: 2554598858784302783}
   m_Layer: 0
   m_Name: Male_07_Arm_Lower_Left
   m_TagString: Untagged
@@ -53367,6 +53466,19 @@ Transform:
   m_Father: {fileID: 813482830579904084}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2554598858784302783
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 811370804596956178}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 26ae8e6816685104ab4b506762481f9f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lowerLeftArmModels: []
 --- !u!1 &811373711762370576
 GameObject:
   m_ObjectHideFlags: 0
@@ -53378,7 +53490,7 @@ GameObject:
   - component: {fileID: 816754383466193942}
   - component: {fileID: 768989746203407708}
   m_Layer: 0
-  m_Name: Chr_Head_No_Elements_Male_07
+  m_Name: Male_Helmet_7
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -54005,7 +54117,7 @@ GameObject:
   - component: {fileID: 813583772291637404}
   - component: {fileID: 766558172242333886}
   m_Layer: 0
-  m_Name: Chr_Hips_Male_00
+  m_Name: Male_Hips_0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -54195,8 +54307,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 811386690228087600}
-  m_LocalRotation: {x: 0.00028049533, y: 0.065794446, z: 0.004253931, w: 0.99782413}
-  m_LocalPosition: {x: 10.3966, y: -0.399, z: -2.67265}
+  m_LocalRotation: {x: -0.09628903, y: 0.24630024, z: 0.03359705, w: -0.96381325}
+  m_LocalPosition: {x: 10.3966, y: -0.3989995, z: -2.6726532}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -54840,7 +54952,7 @@ GameObject:
   - component: {fileID: 816627531920368086}
   - component: {fileID: 769322812752004682}
   m_Layer: 0
-  m_Name: Chr_Torso_Male_05
+  m_Name: Male_Torso_5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -55129,8 +55241,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 811397032934711772}
-  m_LocalRotation: {x: 0.025480645, y: 0.2768427, z: 0.08803956, w: 0.9565343}
-  m_LocalPosition: {x: -3.5140479, y: -1.1706916, z: 4.5055394}
+  m_LocalRotation: {x: 0.11900492, y: 0.08413706, z: 0.33158225, w: 0.9321009}
+  m_LocalPosition: {x: -3.5140462, y: -1.1706939, z: 4.5055394}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -55235,7 +55347,7 @@ GameObject:
   - component: {fileID: 816531829570069332}
   - component: {fileID: 766680758546182736}
   m_Layer: 0
-  m_Name: Chr_Hips_Male_17
+  m_Name: Male_Hip_17
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -55677,7 +55789,7 @@ GameObject:
   - component: {fileID: 813933040829161954}
   - component: {fileID: 766209091835990026}
   m_Layer: 0
-  m_Name: Chr_Torso_Male_02
+  m_Name: Male_Torso_2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -55771,7 +55883,7 @@ GameObject:
   - component: {fileID: 816369721188558262}
   - component: {fileID: 766489648960322460}
   m_Layer: 0
-  m_Name: Chr_LegLeft_Male_11
+  m_Name: Male_RightLeg_11
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -55859,7 +55971,7 @@ GameObject:
   - component: {fileID: 816314398708690102}
   - component: {fileID: 766703521353317926}
   m_Layer: 0
-  m_Name: Chr_Torso_Male_10
+  m_Name: Male_Torso_10
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -56045,7 +56157,7 @@ GameObject:
   - component: {fileID: 813498326425076460}
   - component: {fileID: 769367371975097520}
   m_Layer: 0
-  m_Name: Chr_Torso_Male_12
+  m_Name: Male_Torso_12
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -56225,7 +56337,7 @@ GameObject:
   - component: {fileID: 816706369964088644}
   - component: {fileID: 769013175524882218}
   m_Layer: 0
-  m_Name: Chr_Torso_Male_28
+  m_Name: Male_Torso_28
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -56532,7 +56644,7 @@ GameObject:
   - component: {fileID: 816308123685065042}
   - component: {fileID: 769048534900766726}
   m_Layer: 0
-  m_Name: Chr_Hips_Male_13
+  m_Name: Male_Hip_13
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -56808,8 +56920,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 811424509873623942}
-  m_LocalRotation: {x: -0.018149227, y: -0.07147895, z: 0.09251083, w: 0.9929769}
-  m_LocalPosition: {x: -3.5133274, y: -3.00324e-14, z: 3.7747583e-15}
+  m_LocalRotation: {x: 0.03019185, y: -0.03245528, z: 0.39693406, w: 0.9167761}
+  m_LocalPosition: {x: -3.513325, y: 0.0000019529023, z: -0.00000022374749}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -57277,7 +57389,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &816380087469986466
 Transform:
   m_ObjectHideFlags: 0
@@ -57365,7 +57477,7 @@ GameObject:
   - component: {fileID: 813763249308366268}
   - component: {fileID: 769004194296678464}
   m_Layer: 0
-  m_Name: Chr_Hips_Male_20
+  m_Name: Male_Hip_20
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -57574,7 +57686,7 @@ GameObject:
   - component: {fileID: 813762316496151418}
   - component: {fileID: 766249201835643784}
   m_Layer: 0
-  m_Name: Chr_Hips_Male_27
+  m_Name: Male_Hip_27
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -57664,7 +57776,7 @@ GameObject:
   - component: {fileID: 816809695458739796}
   - component: {fileID: 766700033505795124}
   m_Layer: 0
-  m_Name: Chr_LegRight_Male_12
+  m_Name: Male_LeftLeg_12
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -58259,7 +58371,7 @@ GameObject:
   - component: {fileID: 816571544513731738}
   - component: {fileID: 769542374691079142}
   m_Layer: 0
-  m_Name: Chr_Head_No_Elements_Male_06
+  m_Name: Male_Helmet_6
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -58346,7 +58458,7 @@ GameObject:
   - component: {fileID: 816750991609297550}
   - component: {fileID: 766314922293856606}
   m_Layer: 0
-  m_Name: Chr_Head_No_Elements_Male_02
+  m_Name: Male_Helmet_2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -58804,7 +58916,7 @@ GameObject:
   - component: {fileID: 816299176912359562}
   - component: {fileID: 766638189593547766}
   m_Layer: 0
-  m_Name: Chr_Head_No_Elements_Male_12
+  m_Name: Male_Helmet_12
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -59000,8 +59112,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 811445067692492194}
-  m_LocalRotation: {x: 0.0113281235, y: 0.23685996, z: 0.03380652, w: 0.9708894}
-  m_LocalPosition: {x: 13.197861, y: 0.00064733915, z: 0.0000047353424}
+  m_LocalRotation: {x: 0.27296725, y: 0.16950203, z: 0.46911913, w: 0.8226088}
+  m_LocalPosition: {x: 13.197865, y: 0.0006424414, z: 0.0000044692}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -59203,7 +59315,7 @@ GameObject:
   - component: {fileID: 813482709981563276}
   - component: {fileID: 769708808329806806}
   m_Layer: 0
-  m_Name: Chr_LegRight_Male_06
+  m_Name: Male_LeftLeg_6
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -59963,6 +60075,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 816742633054858744}
+  - component: {fileID: 2554598858784302786}
   m_Layer: 0
   m_Name: Male_04_Arm_Upper_Right
   m_TagString: Untagged
@@ -60006,6 +60119,19 @@ Transform:
   m_Father: {fileID: 813482830579904084}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2554598858784302786
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 811458301498109080}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0981a2aedf05acc4d90cf689d987b050, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  upperRightArmModels: []
 --- !u!1 &811459139860921422
 GameObject:
   m_ObjectHideFlags: 0
@@ -60017,7 +60143,7 @@ GameObject:
   - component: {fileID: 813953500362012046}
   - component: {fileID: 769184884228589882}
   m_Layer: 0
-  m_Name: Chr_Hips_Male_18
+  m_Name: Male_Hip_18
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -60107,7 +60233,7 @@ GameObject:
   - component: {fileID: 816345223710435272}
   - component: {fileID: 769545644862285406}
   m_Layer: 0
-  m_Name: Chr_LegLeft_Male_02
+  m_Name: Male_RightLeg_2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -60420,8 +60546,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 811468316349736072}
-  m_LocalRotation: {x: 0.46113664, y: -0.5360532, z: -0.46113664, w: 0.5360532}
-  m_LocalPosition: {x: -0, y: 87.62761, z: 0}
+  m_LocalRotation: {x: 0.46440393, y: -0.5332126, z: -0.45846733, w: 0.53835034}
+  m_LocalPosition: {x: 0.14287439, y: 90.58502, z: -2.5028706}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -60487,7 +60613,7 @@ GameObject:
   - component: {fileID: 813706063775444236}
   - component: {fileID: 769697983689646176}
   m_Layer: 0
-  m_Name: Chr_LegRight_Male_02
+  m_Name: Male_LeftLeg_2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -60965,7 +61091,7 @@ GameObject:
   - component: {fileID: 816834174690147138}
   - component: {fileID: 766618346672299668}
   m_Layer: 0
-  m_Name: Chr_Hips_Male_26
+  m_Name: Male_Hip_26
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -61055,7 +61181,7 @@ GameObject:
   - component: {fileID: 816801502160226932}
   - component: {fileID: 766254069075446472}
   m_Layer: 0
-  m_Name: Chr_LegRight_Male_18
+  m_Name: Male_LeftLeg_18
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -61981,6 +62107,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blockingCollider: {fileID: 2554598859294813357}
+  nakedTorso: Male_Torso_1
+  nakedHip: Male_Hips_0
+  nakedLeftLeg: Male_LeftLeg_0
+  nakedRightLeg: Male_RightLeg_0
+  nakedUpperLeftArm: Chr_ArmUpperLeft_Male_00
+  nakedUpperRightArm: Chr_ArmUpperRight_Male_00
+  nakedLeftHand: Chr_HandLeft_Male_00
+  nakedRightHand: Chr_HandRight_Male_00
+  nakedLowerLeftArm: Chr_ArmLowerLeft_Male_00
+  nakedLowerRightArm: Chr_ArmLowerRight_Male_00
+  defaultHead: {fileID: 810967710139039408}
+  defaultEyebrow: {fileID: 811685260634502934}
+  defaultHair: {fileID: 811428726809845982}
+  defaultFacial: {fileID: 810697572624279536}
 --- !u!1 &811677672115714688
 GameObject:
   m_ObjectHideFlags: 0
@@ -62180,7 +62320,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &813681876291877072
 Transform:
   m_ObjectHideFlags: 0
@@ -62273,8 +62413,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 811686401059920620}
-  m_LocalRotation: {x: 0.458571, y: -0.5382496, z: 0.458571, w: 0.5382496}
-  m_LocalPosition: {x: -12.164435, y: -1.5099033e-14, z: -5.059176e-15}
+  m_LocalRotation: {x: 0.42928457, y: -0.52979213, z: 0.4903162, w: 0.54279387}
+  m_LocalPosition: {x: -12.164434, y: -0.0000029785506, z: 0.000001675802}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -62846,7 +62986,7 @@ GameObject:
   - component: {fileID: 813755087635073466}
   - component: {fileID: 769398071043122950}
   m_Layer: 0
-  m_Name: Chr_Hips_Male_23
+  m_Name: Male_Hip_23
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -63024,7 +63164,7 @@ GameObject:
   - component: {fileID: 816558401789538392}
   - component: {fileID: 769468971037965054}
   m_Layer: 0
-  m_Name: Chr_Head_No_Elements_Male_09
+  m_Name: Male_Helmet_9
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -63111,7 +63251,7 @@ GameObject:
   - component: {fileID: 816347655620279672}
   - component: {fileID: 766736060310144338}
   m_Layer: 0
-  m_Name: Chr_LegRight_Male_04
+  m_Name: Male_LeftLeg_4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -63300,8 +63440,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 812625428073991250}
-  m_LocalRotation: {x: -0.039942026, y: -0.1178403, z: 0.14163578, w: 0.98206806}
-  m_LocalPosition: {x: 6.370146, y: -0.0007811825, z: 0.000043638116}
+  m_LocalRotation: {x: 0.07318809, y: 0.15709494, z: -0.02132036, w: -0.9846371}
+  m_LocalPosition: {x: 6.370149, y: -0.00077558646, z: 0.000042527514}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -63606,8 +63746,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 812632148198239304}
-  m_LocalRotation: {x: -1.0083177e-16, y: -0.035830766, z: -1.1722682e-15, w: 0.9993579}
-  m_LocalPosition: {x: 27.11449, y: -2.842171e-14, z: 0.038136087}
+  m_LocalRotation: {x: -0.15530662, y: -0.07220153, z: -0.03287852, w: 0.98467547}
+  m_LocalPosition: {x: 27.114489, y: 0.0000038156113, z: 0.038135886}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -63658,8 +63798,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 812632783597208258}
-  m_LocalRotation: {x: -0.006912195, y: -0.025717413, z: 0.057002407, w: 0.9980188}
-  m_LocalPosition: {x: 3.7912128, y: 0.00032499834, z: -0.000004545292}
+  m_LocalRotation: {x: -0.046289627, y: 0.009986005, z: -0.14995703, w: -0.9875579}
+  m_LocalPosition: {x: 3.7912138, y: 0.00033087854, z: -0.000004290748}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -63850,6 +63990,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 813827895057854324}
+  - component: {fileID: 2898222526034266564}
   m_Layer: 0
   m_Name: Male_10_Hips
   m_TagString: Untagged
@@ -63901,6 +64042,19 @@ Transform:
   m_Father: {fileID: 813482830579904084}
   m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2898222526034266564
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 812636176034358056}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e7ddb139223a9e649a7b4e94179b9eeb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hipModels: []
 --- !u!1 &812639179075514338
 GameObject:
   m_ObjectHideFlags: 0
@@ -64790,7 +64944,7 @@ GameObject:
   - component: {fileID: 816338394606420754}
   - component: {fileID: 769155933968642804}
   m_Layer: 0
-  m_Name: Chr_LegLeft_Male_03
+  m_Name: Male_RightLeg_3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -64878,7 +65032,7 @@ GameObject:
   - component: {fileID: 813583236684559964}
   - component: {fileID: 766678062098335518}
   m_Layer: 0
-  m_Name: Chr_Torso_Male_27
+  m_Name: Male_Torso_27
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -65864,7 +66018,7 @@ GameObject:
   - component: {fileID: 816518492442700512}
   - component: {fileID: 769706994914623286}
   m_Layer: 0
-  m_Name: Chr_LegRight_Male_07
+  m_Name: Male_LeftLeg_7
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -66389,6 +66543,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 813946980375991188}
+  - component: {fileID: 2554598858784302782}
   m_Layer: 0
   m_Name: Male_08_Hand_Right
   m_TagString: Untagged
@@ -66429,6 +66584,19 @@ Transform:
   m_Father: {fileID: 813482830579904084}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2554598858784302782
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 812698290034716958}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7e89648f493f7c8438f5d9892596854f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rightHandModels: []
 --- !u!1 &812701757709493442
 GameObject:
   m_ObjectHideFlags: 0
@@ -66440,7 +66608,7 @@ GameObject:
   - component: {fileID: 813938582072984386}
   - component: {fileID: 769109779565139240}
   m_Layer: 0
-  m_Name: Chr_LegLeft_Male_08
+  m_Name: Male_RightLeg_8
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -66528,7 +66696,7 @@ GameObject:
   - component: {fileID: 816710125615613038}
   - component: {fileID: 769001917212132590}
   m_Layer: 0
-  m_Name: Chr_LegLeft_Male_05
+  m_Name: Male_RightLeg_5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -66705,7 +66873,7 @@ GameObject:
   - component: {fileID: 816370104370015020}
   - component: {fileID: 769408217768380578}
   m_Layer: 0
-  m_Name: Chr_Torso_Male_13
+  m_Name: Male_Torso_13
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -67241,7 +67409,7 @@ GameObject:
   - component: {fileID: 813809465563997134}
   - component: {fileID: 769088007992796174}
   m_Layer: 0
-  m_Name: Chr_Hips_Male_10
+  m_Name: Male_Hip_10
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -67797,7 +67965,7 @@ GameObject:
   - component: {fileID: 816590650245854344}
   - component: {fileID: 769275761123353158}
   m_Layer: 0
-  m_Name: Chr_Hips_Male_04
+  m_Name: Male_Hip_4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -68297,7 +68465,7 @@ GameObject:
   - component: {fileID: 816827141763493148}
   - component: {fileID: 769487636464317032}
   m_Layer: 0
-  m_Name: Chr_Head_No_Elements_Male_04
+  m_Name: Male_Helmet_4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -68569,7 +68737,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &814001853762708086
 Transform:
   m_ObjectHideFlags: 0
@@ -69009,7 +69177,7 @@ GameObject:
   - component: {fileID: 813487208929919404}
   - component: {fileID: 769330107982351584}
   m_Layer: 0
-  m_Name: Chr_LegRight_Male_03
+  m_Name: Male_LeftLeg_3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -69202,8 +69370,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 812755754803170066}
-  m_LocalRotation: {x: 0.85767007, y: 0.507213, z: 0.039752707, w: -0.0745436}
-  m_LocalPosition: {x: 37.712326, y: 0.000013169495, z: -0.00008411038}
+  m_LocalRotation: {x: 0.87222826, y: 0.47165164, z: 0.03217432, w: -0.12540878}
+  m_LocalPosition: {x: 37.712345, y: 0.00002085771, z: -0.00007366387}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -69327,8 +69495,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 812757934646253622}
-  m_LocalRotation: {x: 0.0016838326, y: 0.040749595, z: -0.041251875, w: 0.99831605}
-  m_LocalPosition: {x: 33.94746, y: 0.14475864, z: 0.14362636}
+  m_LocalRotation: {x: -0.109495975, y: 0.2281995, z: 0.024227865, w: 0.9671343}
+  m_LocalPosition: {x: 33.94746, y: 0.14475347, z: 0.14362599}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -69884,6 +70052,10 @@ MonoBehaviour:
   maxFocus: 0
   currentFocus: 0
   soulCount: 0
+  physicalDamageAbsorbtionHead: 0
+  physicalDamageAbsorbtionTorso: 0
+  physicalDamageAbsorbtionLegs: 0
+  physicalDamageAbsorbtionHands: 0
   isDead: 0
   hitCount: 0
   staminaRegenarationAmount: 25
@@ -69909,7 +70081,7 @@ MonoBehaviour:
   currentSpell: {fileID: 11400000, guid: 70d574e52e6202f489dd32f9d86bf0f9, type: 2}
   weaponItemsRight:
   - {fileID: 11400000, guid: 2035fcc6b5e5956428f3213594734d88, type: 2}
-  - {fileID: 11400000, guid: 0060897fa98a2ef4d85f187644374df9, type: 2}
+  - {fileID: 11400000, guid: 69ae6967547257341ba37b25fe3d6b3f, type: 2}
   - {fileID: 11400000, guid: 69ae6967547257341ba37b25fe3d6b3f, type: 2}
   weaponItemsLeft:
   - {fileID: 11400000, guid: 32fd7bee58f37c94193429903d6da805, type: 2}
@@ -69918,6 +70090,10 @@ MonoBehaviour:
   rightWeapon: {fileID: 0}
   leftWeapon: {fileID: 0}
   weaponsInventory: []
+  currentHelmetEquipment: {fileID: 11400000, guid: 482700fa87faf3e45915730f780ce9e7, type: 2}
+  currentTorsoEquipment: {fileID: 11400000, guid: 35e4e1c4dd4c4514290593c159080a16, type: 2}
+  currentLegEquipment: {fileID: 11400000, guid: 20a28d4d8ad02004d8ee1669dd17b5ca, type: 2}
+  currentHandEquipment: {fileID: 11400000, guid: a435bf31d2ced4e43b39bab486efe690, type: 2}
 --- !u!1 &2554598860042538197
 GameObject:
   m_ObjectHideFlags: 0

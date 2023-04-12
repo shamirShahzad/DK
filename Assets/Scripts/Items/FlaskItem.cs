@@ -22,15 +22,19 @@ namespace DK
         public override void AttemptToConsumeItems(PlayerAnimatorManager playerAnimatorManager,WeaponSlotManager weaponSlotManager, PlayerFXManager playerFXManager)
         {
             base.AttemptToConsumeItems(playerAnimatorManager, weaponSlotManager, playerFXManager);
-            GameObject flask = Instantiate(itemModel, weaponSlotManager.rightHandSlot.transform);
-            flask.transform.localScale = new Vector3(100, 100, 100);
-            playerFXManager.currentParticleFX = recoverFx;
-            playerFXManager.amountToHealed = healthRecoverAmount;
-            playerFXManager.instantiatedFXModel = flask;
-            weaponSlotManager.rightHandSlot.UnloadWeapon();
+            if (playerFXManager.toBeInstantiated)
+            {
+                GameObject flask = Instantiate(itemModel, weaponSlotManager.rightHandSlot.transform);
+                flask.transform.localScale = new Vector3(100, 100, 100);
+                playerFXManager.currentParticleFX = recoverFx;
+                playerFXManager.amountToHealed = healthRecoverAmount;
+                playerFXManager.instantiatedFXModel = flask;
+                weaponSlotManager.rightHandSlot.UnloadWeapon();
+
+            }
 
 
-            
+
         }
     }
 }

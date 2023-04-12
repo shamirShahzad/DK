@@ -15,7 +15,7 @@ namespace DK
         public Rigidbody enemyRigidbody;
 
         public float rotationSpeed = 15f;
-        public float maximumAttackRange = 1.5f;
+        public float maximumAggroRadius = 1.5f;
         [Header("Combat Flags")]
         public bool canDoCombo;
 
@@ -54,7 +54,9 @@ namespace DK
         {
             HandleRecoveryTimer();
             HandleStateMachine();
+            isRotatingWithRootMotion = enemyAnimatorManager.anim.GetBool("isRotatingWithRootMotion");
             isInteracting = enemyAnimatorManager.anim.GetBool("isInteracting");
+            canRotate = enemyAnimatorManager.anim.GetBool("canRotate");
             canDoCombo = enemyAnimatorManager.anim.GetBool("canDoCombo");
             enemyAnimatorManager.anim.SetBool("isDead", enemyStats.isDead);
         }

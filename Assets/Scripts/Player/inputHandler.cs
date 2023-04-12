@@ -272,6 +272,8 @@ namespace DK
             if (x_input)
             {
                 x_input = false;
+                if (playerFXManager.isDrinking)
+                    return;
                 playerInventory.currentConsumable.AttemptToConsumeItems(playerAnimatorManager, weaponSlotManager, playerFXManager);
             }
         }

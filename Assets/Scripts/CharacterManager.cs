@@ -17,7 +17,12 @@ namespace DK
         public bool isBlocking;
         public bool isFiringSpell;
         public int pendingCriticalDamage;
-       
+
+        [Header("Movement flag")]
+        public bool isRotatingWithRootMotion;
+        public bool canRotate;
+
+
 
 
 

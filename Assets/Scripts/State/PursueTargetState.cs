@@ -7,9 +7,21 @@ namespace DK
     public class PursueTargetState : State
     {
 
+
         public CombatStanceState combatStanceState;
+        public RotateTowardsTarget rotateTowardsTargetState;
         public override State Tick(EnemyManager enemyManager, EnemyStats enemyStats, EnemyAnimatorManager enemyAnimatorManager)
         {
+            Vector3 targetDirection = enemyManager.currentTarget.transform.position - enemyManager.transform.position;
+            float distanceFromTarget = Vector3.Distance(enemyManager.currentTarget.transform.position, enemyManager.transform.position);
+            float viewableAngle = Vector3.SignedAngle(targetDirection, enemyManager.transform.forward,Vector3.up);
+
+            HandleRotateTowardsTarget(enemyManager, distanceFromTarget);
+
+            if(viewableAngle >= 55 || viewableAngle <= -55)
+            {
+                return rotateTowardsTargetState;
+            }
             if (enemyManager.isInteracting)
                 return this;
 
@@ -18,20 +30,15 @@ namespace DK
                 enemyAnimatorManager.anim.SetFloat("Vertical", 0, 0.1f, Time.deltaTime);
                 return this;
             }
-            Vector3 targetDirection = enemyManager.currentTarget.transform.position - enemyManager.transform.position;
-            float distanceFromTarget  = Vector3.Distance(enemyManager.currentTarget.transform.position, enemyManager.transform.position);
-            float viewableAngle = Vector3.Angle(targetDirection, enemyManager.transform.forward);
-
-
-            if (distanceFromTarget > enemyManager.maximumAttackRange)
+            if (distanceFromTarget > enemyManager.maximumAggroRadius)
             {
                 enemyAnimatorManager.anim.SetFloat("Vertical", 1, 0.1f, Time.deltaTime);
             }
 
 
-            HandleRotateTowardsTarget(enemyManager,distanceFromTarget);
 
-            if (distanceFromTarget <=enemyManager.maximumAttackRange)
+
+            if (distanceFromTarget <=enemyManager.maximumAggroRadius)
             {
                 return combatStanceState;
             }

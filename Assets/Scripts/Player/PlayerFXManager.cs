@@ -10,7 +10,9 @@ namespace DK
         public GameObject currentParticleFX;
         public GameObject instantiatedFXModel;
         public GameObject healParticles;
-        public int amountToHealed; 
+        public int amountToHealed;
+        public bool toBeInstantiated = true;
+        public bool isDrinking = false;
 
         private void Awake()
         {
@@ -23,13 +25,14 @@ namespace DK
         {
             playerStats.healPlayer(amountToHealed);
             healParticles = Instantiate(currentParticleFX, playerStats.transform);
-            Destroy(instantiatedFXModel,2f);
+            Destroy(instantiatedFXModel,0.8f);
         }
 
         public void DestroyHealEffects()
         {
+            isDrinking = false;
             weaponSlotManager.LoadBothWeaponOnslot(); 
-            Destroy(healParticles,2f);
+            Destroy(healParticles,0.8f);
         }
 
     }

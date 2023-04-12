@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: Leg one
   m_EditorClassIdentifier: 
   itemIcon: {fileID: 0}
-  itemName: 
-  physicalDefense: 0
-  hipModelName: 
-  leftLegModelName: 
-  rightLegModelName: 
+  itemName: Leg One
+  physicalDefense: 5
+  hipModelName: Male_Hip_5
+  leftLegModelName: Male_LeftLeg_5
+  rightLegModelName: Male_RightLeg_5

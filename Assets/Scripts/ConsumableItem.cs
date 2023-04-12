@@ -22,10 +22,13 @@ namespace DK
             if(currentItemAmount > 0)
             {
                 playerAnimatorManager.PlayTargetAnimation(consumableAnimation, isInteracing,true);
+                playerFXManager.toBeInstantiated = true;
+                playerFXManager.isDrinking = true;
             }
             else
             {
                 playerAnimatorManager.PlayTargetAnimation("Failed Cast", true);
+                playerFXManager.toBeInstantiated = false;
             }
         }
 

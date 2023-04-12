@@ -113,7 +113,7 @@ namespace DK
         {
             RaycastHit hit;
 
-            if (Physics.SphereCast(transform.position, 0.3f, transform.forward, out hit, 1f, cameraHandler.ignoreLayers))
+            if (Physics.SphereCast(transform.position, 0.15f, transform.forward, out hit, 0.7f, cameraHandler.ignoreLayers))
             {
                 if (hit.collider.tag.Equals("Interactable"))
                 {

@@ -7,7 +7,9 @@ namespace DK
     public class IdleState : State
     {
         public LayerMask detectionLayer;
+        public LayerMask obstructionLayer;
         public PursueTargetState pursueTargetState;
+        Vector3 offset = new Vector3(0, 2, 0);
         public override State Tick(EnemyManager enemyManager, EnemyStats enemyStats, EnemyAnimatorManager enemyAnimatorManager)
         {
             Collider[] colliders = Physics.OverlapSphere(transform.position, enemyManager.detectionRadius, detectionLayer);
@@ -22,11 +24,15 @@ namespace DK
 
 
                     Vector3 targetDirection = characterStats.transform.position - transform.position;
+                    float distanceToTarget = Vector3.Distance(transform.position, characterStats.transform.position);
                     float viewableAngle = Vector3.Angle(targetDirection, transform.forward);
 
                     if (viewableAngle > enemyManager.minimumDetectionAngle && viewableAngle < enemyManager.maximumDetectionAngle)
                     {
-                        enemyManager.currentTarget = characterStats;
+                        if (!Physics.Raycast(transform.position + offset, targetDirection, distanceToTarget, obstructionLayer))
+                            enemyManager.currentTarget = characterStats;
+                        else
+                            enemyManager.currentTarget = null;
                         
                     }
                 }

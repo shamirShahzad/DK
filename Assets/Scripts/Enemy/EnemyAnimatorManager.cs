@@ -22,6 +22,11 @@ namespace DK
             deltaPosition.y = 0;
             Vector3 velocity = deltaPosition / delta;
             enemyManager.enemyRigidbody.velocity = velocity /* * enemyLocomotionManager.moveSpeed*/;
+
+            if (enemyManager.isRotatingWithRootMotion)
+            {
+                enemyManager.transform.rotation *= anim.deltaRotation;
+            }
         }
 
         public override void TakeCriticalDamageAnimationEvent()

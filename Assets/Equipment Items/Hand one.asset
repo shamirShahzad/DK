@@ -13,9 +13,9 @@ MonoBehaviour:
   m_Name: Hand one
   m_EditorClassIdentifier: 
   itemIcon: {fileID: 0}
-  itemName: 
-  physicalDefense: 0
-  leftHandModelName: 
-  rightHandModelName: 
-  lowerLeftArmModelName: 
-  lowerRightArmModelName: 
+  itemName: Hand One
+  physicalDefense: 5
+  leftHandModelName: Chr_HandLeft_Male_02
+  rightHandModelName: Chr_HandRight_Male_02
+  lowerLeftArmModelName: Chr_ArmLowerLeft_Male_02
+  lowerRightArmModelName: Chr_ArmLowerRight_Male_02
