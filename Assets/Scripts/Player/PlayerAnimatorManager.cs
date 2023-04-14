@@ -144,13 +144,13 @@ namespace DK
 
         public void DisableCollision()
         {
-            playerLocomotion.characterCollider.enabled = false;
-            playerLocomotion.characterCollisionBlocker.enabled = false;
+            playerManager.fogWallCollider.enabled = false;
+            playerManager.fogEntryCollider.enabled = false;
         }
         public void EnableCollisison()
         {
-            playerLocomotion.characterCollider.enabled = true;
-            playerLocomotion.characterCollisionBlocker.enabled = true;
+            playerManager.fogWallCollider.enabled = true;
+            playerManager.fogEntryCollider.enabled = true;
         }
         public void AwardSoulsOnDeath()
         {

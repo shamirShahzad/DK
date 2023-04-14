@@ -69684,7 +69684,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2554598859002233712}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1.218, z: 0}
+  m_LocalPosition: {x: 0, y: 1.235, z: 0.13}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -69795,7 +69795,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 573020a373bb948498a8b378cad01cb3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  blockingBoxCollider: {fileID: 0}
+  blockingBoxCollider: {fileID: 2554598859294813358}
   blockingPhysicalDamageAbsorbtion: 0
 --- !u!65 &2554598859294813358
 BoxCollider:
@@ -70026,6 +70026,8 @@ MonoBehaviour:
   canRotate: 0
   interactableUiGameObject: {fileID: 0}
   itemInteractableGameobject: {fileID: 0}
+  fogWallCollider: {fileID: 0}
+  fogEntryCollider: {fileID: 0}
   isInteracting: 0
   isSprinting: 0
   isInAir: 0

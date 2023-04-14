@@ -5,8 +5,11 @@ namespace DK
 {
     public class FoggWall : MonoBehaviour
     {
+        PassThroughWall passThroughWall;
         private void Awake()
         {
+            passThroughWall = GetComponentInChildren<PassThroughWall>();
+            passThroughWall.foggBlockColider = GetComponent<BoxCollider>();
             gameObject.SetActive(false);
         }
 

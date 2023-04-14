@@ -6,16 +6,19 @@ namespace DK
     public class PassThroughWall : Interactable
     {
         WorldEventManager worldEventManager;
+        [SerializeField]
+        BoxCollider foggEnterCollider;
+        public BoxCollider foggBlockColider;
 
         private void Awake()
         {
             worldEventManager = FindObjectOfType<WorldEventManager>();
+            foggEnterCollider = GetComponent<BoxCollider>();
         }
 
         public override void Interact(PlayerManager playerManager)
         {
-            base.Interact(playerManager);
-            playerManager.PassThroughtFoggWallInteraction(transform);
+            playerManager.PassThroughtFoggWallInteraction(transform,foggEnterCollider,foggBlockColider);
             worldEventManager.ActivateBossFight();
         }
     }

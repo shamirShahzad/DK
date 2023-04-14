@@ -15,6 +15,8 @@ namespace DK
 
         public GameObject interactableUiGameObject;
         public GameObject itemInteractableGameobject;
+        
+        public BoxCollider fogWallCollider,fogEntryCollider;
 
         public bool isInteracting;
         [Header("Player Flags")]
@@ -144,14 +146,18 @@ namespace DK
             }
         }
 
-        public void PassThroughtFoggWallInteraction(Transform fogWallTransform)
+        public void PassThroughtFoggWallInteraction(Transform fogWallTransform,
+            BoxCollider fogEnterCollider,BoxCollider fogBlockCollider)
         {
 
             playerLocomotion.rigidbody.velocity = Vector3.zero;
             Vector3 rotationDirection = fogWallTransform.transform.forward;
             Quaternion turnRotation = Quaternion.LookRotation(rotationDirection);
             transform.rotation = turnRotation;
-
+            fogWallCollider = fogBlockCollider;
+            fogEntryCollider = fogEnterCollider;
+            //fogEntryCollider.enabled = false;
+            //fogWallCollider.enabled = false;
             playerAnimatorManager.PlayTargetAnimation("Pass Through Wall", true);
 
             
