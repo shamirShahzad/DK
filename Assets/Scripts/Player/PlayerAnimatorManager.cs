@@ -141,6 +141,17 @@ namespace DK
         {
             anim.SetBool("canDoCombo", false);
         }
+
+        public void DisableCollision()
+        {
+            playerLocomotion.characterCollider.enabled = false;
+            playerLocomotion.characterCollisionBlocker.enabled = false;
+        }
+        public void EnableCollisison()
+        {
+            playerLocomotion.characterCollider.enabled = true;
+            playerLocomotion.characterCollisionBlocker.enabled = true;
+        }
         public void AwardSoulsOnDeath()
         {
         }

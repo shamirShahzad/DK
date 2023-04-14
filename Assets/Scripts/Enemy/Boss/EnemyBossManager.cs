@@ -12,12 +12,17 @@ namespace DK
         private void Awake()
         {
             bossHealthBar = FindObjectOfType<UiBossHealthBar>();
-            enemyStats.GetComponent<EnemyStats>();
+            enemyStats = GetComponent<EnemyStats>();
         }
         private void Start()
         {
             bossHealthBar.SetBossName(bossName);
             bossHealthBar.SetBossMaxHealth(enemyStats.maxHealth);
+        }
+
+        public void UpdateBossHealth(int currentHealth)
+        {
+            bossHealthBar.SetBossCurrentHealth(currentHealth);
         }
         //Handle Switching Phases
         //Handle ATTACK PATTERN

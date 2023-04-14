@@ -144,5 +144,16 @@ namespace DK
                 }
             }
         }
+
+        public void PassThroughtFoggWallInteraction(Transform fogWallTransform)
+        {
+            playerLocomotion.rigidbody.velocity = Vector3.zero;
+
+            Vector3 rotationDirection = fogWallTransform.transform.forward;
+            Quaternion turnRotation = Quaternion.LookRotation(rotationDirection);
+            transform.rotation = Quaternion.Lerp(transform.rotation,turnRotation,0.35f);
+
+            playerAnimatorManager.PlayTargetAnimation("Pass Through Wall", true);
+        }
     }
 }

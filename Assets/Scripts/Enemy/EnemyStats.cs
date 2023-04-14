@@ -8,18 +8,28 @@ namespace DK
         EnemyAnimatorManager enemyAnimatorManager;
 
         public UiEnemyHealthBar enemyHealthBar;
+        EnemyBossManager enemyBossManager;
         public int soulsAwardedOnDeath = 50;
+        public bool isBoss;
         private void Awake()
         {
             enemyAnimatorManager = GetComponentInChildren<EnemyAnimatorManager>();
+            enemyBossManager = GetComponent<EnemyBossManager>();
             maxHealth = SetMaxHealthFromHealthLevel();
             currentHealth = maxHealth;
         }
 
         private void Start()
         {
+            if (!isBoss)
+            {
+                enemyHealthBar.SetMaxHealth(maxHealth);
+            }
+            else
+            {
 
-            enemyHealthBar.SetMaxHealth(maxHealth);
+            }
+            
         }
 
         private int SetMaxHealthFromHealthLevel()
@@ -46,7 +56,16 @@ namespace DK
         {
 
             base.TakeDamage(damage, damageAnimation = "Hit");
-            enemyHealthBar.setHealth(currentHealth);
+
+            if (!isBoss)
+            {
+                enemyHealthBar.setHealth(currentHealth);
+            }
+            else if(isBoss && enemyBossManager!=null)
+            {
+                enemyBossManager.UpdateBossHealth(currentHealth);
+            }
+            
             enemyAnimatorManager.PlayTargetAnimation(damageAnimation, true);
 
             if (currentHealth <= 0)
