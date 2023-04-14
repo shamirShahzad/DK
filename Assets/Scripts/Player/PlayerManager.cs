@@ -107,7 +107,6 @@ namespace DK
             transform.position = playerStandsHereWhenOpeningChest.transform.position;
             playerAnimatorManager.PlayTargetAnimation("Open Chest", true);   
         }
-        #endregion
 
         public void CheckForInteractable()
         {
@@ -119,7 +118,7 @@ namespace DK
                 {
                     Interactable interactableObject = hit.collider.GetComponent<Interactable>();
 
-                    if(interactableObject != null)
+                    if (interactableObject != null)
                     {
                         string interactableText = interactableObject.interactableText;
                         interactableUi.interactableText.text = interactableText;
@@ -138,7 +137,7 @@ namespace DK
                 {
                     interactableUiGameObject.SetActive(false);
                 }
-                if(itemInteractableGameobject != null && inputHandler.a_input)
+                if (itemInteractableGameobject != null && inputHandler.a_input)
                 {
                     itemInteractableGameobject.SetActive(false);
                 }
@@ -147,13 +146,18 @@ namespace DK
 
         public void PassThroughtFoggWallInteraction(Transform fogWallTransform)
         {
-            playerLocomotion.rigidbody.velocity = Vector3.zero;
 
+            playerLocomotion.rigidbody.velocity = Vector3.zero;
             Vector3 rotationDirection = fogWallTransform.transform.forward;
             Quaternion turnRotation = Quaternion.LookRotation(rotationDirection);
-            transform.rotation = Quaternion.Lerp(transform.rotation,turnRotation,0.35f);
+            transform.rotation = turnRotation;
 
             playerAnimatorManager.PlayTargetAnimation("Pass Through Wall", true);
+
+            
         }
+        #endregion
+
+
     }
 }
