@@ -11,6 +11,9 @@ namespace DK
         public int weaponDamage = 8;
         PlayerStats myPlayerStats;
         public bool enableOnstartup = false;
+        [Header("Poise")]
+        public float poiseBreak;
+        public float offensivePoiseBonus; 
 
         private void Awake()
         {
@@ -53,8 +56,20 @@ namespace DK
                         float physicalDamageAfterBlock = weaponDamage- (weaponDamage * shield.blockingPhysicalDamageAbsorbtion)/100;
                         if(playerStats != null)
                         {
-                            playerStats.TakeDamage(Mathf.RoundToInt(physicalDamageAfterBlock),"Block Hit");
-                            return;
+                            if (playerStats.isDead)
+                                return;
+                            playerStats.poiseResetTimer = playerStats.totalPoiseResetTime;
+                            playerStats.totalPoiseDefense = playerStats.totalPoiseDefense - poiseBreak;
+                            Debug.Log("Players Poise is Currently" + playerStats.totalPoiseDefense);
+                            if (playerStats.totalPoiseDefense > poiseBreak)
+                            {
+                                playerStats.TakeDamageNoAnimation(weaponDamage);
+                               
+                            }
+                            else
+                            {
+                                playerStats.TakeDamage(weaponDamage);
+                            }
                         }
                     }
                     
@@ -97,7 +112,35 @@ namespace DK
                 {
                     if (enemyStats.isDead)
                         return;
-                    enemyStats.TakeDamage(weaponDamage);
+                    enemyStats.poiseResetTimer = enemyStats.totalPoiseResetTime;
+                    enemyStats.totalPoiseDefense = enemyStats.totalPoiseDefense - poiseBreak;
+                    Debug.Log("Enemy Poise is Currently" + enemyStats.totalPoiseDefense);
+
+                    if (enemyStats.isBoss)
+                    {
+                        if (enemyStats.totalPoiseDefense > poiseBreak)
+                        {
+                            enemyStats.TakeDamageNoAnimation(weaponDamage);
+
+                        }
+                        else
+                        {
+                            enemyStats.TakeDamageNoAnimation(weaponDamage);
+                            enemyStats.BreakGuard();
+                        }
+                    }
+                    else
+                    {
+                        if (enemyStats.totalPoiseDefense > poiseBreak)
+                        {
+                            enemyStats.TakeDamageNoAnimation(weaponDamage);
+
+                        }
+                        else
+                        {
+                            enemyStats.TakeDamage(weaponDamage);
+                        }
+                    }
                 }
             }
             if(collision.tag == "Illusionary Wall")

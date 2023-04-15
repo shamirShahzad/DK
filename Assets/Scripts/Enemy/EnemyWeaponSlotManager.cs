@@ -16,8 +16,22 @@ namespace DK
         DamageCollider leftHandDamageCollider;
         DamageCollider rightHandDamageCollider;
 
+        EnemyStats enemyStats;
+
 
         private void Awake()
+        {
+            enemyStats = GetComponentInParent<EnemyStats>();
+            LoadWeaponHolderSlot();
+        }
+
+        private void Start()
+        {
+            LoadWeaponsOnBothHands();
+        }
+
+
+        private void LoadWeaponHolderSlot()
         {
             WeaponHolderSlot[] weaponHolderSlots = GetComponentsInChildren<WeaponHolderSlot>();
 
@@ -35,12 +49,6 @@ namespace DK
                 }
             }
         }
-
-        private void Start()
-        {
-            LoadWeaponsOnBothHands();
-        }
-
         public void LoadWeaponOnSlot(WeaponItem weapon,bool isLeft)
         {
             if (isLeft)
@@ -115,6 +123,20 @@ namespace DK
             //anim.SetBool("canDoCombo", false);
         }
         #endregion
+
+        #region Handle Weapon Poise Bonus
+        public void GrantWeaponAttackingPoiseBonus()
+        {
+            enemyStats.totalPoiseDefense = enemyStats.totalPoiseDefense + enemyStats.offensivePoiseBonus;
+        }
+
+        public void ResetWeaponAttackingPoiseBonus()
+        {
+            enemyStats.totalPoiseDefense = enemyStats.armorPoisebonus;
+        }
+
+        #endregion
+
 
     }
 }

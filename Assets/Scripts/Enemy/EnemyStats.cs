@@ -6,7 +6,7 @@ namespace DK
     public class EnemyStats : CharacterStats
     {
         EnemyAnimatorManager enemyAnimatorManager;
-
+        EnemyManager enemyManager;
         public UiEnemyHealthBar enemyHealthBar;
         EnemyBossManager enemyBossManager;
         public int soulsAwardedOnDeath = 50;
@@ -17,6 +17,7 @@ namespace DK
             enemyBossManager = GetComponent<EnemyBossManager>();
             maxHealth = SetMaxHealthFromHealthLevel();
             currentHealth = maxHealth;
+            enemyManager = GetComponent<EnemyManager>();
         }
 
         private void Start()
@@ -32,6 +33,17 @@ namespace DK
             
         }
 
+        public override void HandlePoiseResetTimer()
+        {
+            if (poiseResetTimer > 0)
+            {
+                poiseResetTimer = poiseResetTimer - Time.deltaTime;
+            }
+            else
+            {
+                totalPoiseDefense = armorPoisebonus;
+            }
+        }
         private int SetMaxHealthFromHealthLevel()
         {
             maxHealth = healthLevel * 10;
@@ -43,27 +55,36 @@ namespace DK
             if (isDead)
                 return;
             currentHealth = currentHealth - damage;
-
-            enemyHealthBar.setHealth(currentHealth);
+            if (!isBoss)
+            {
+                enemyHealthBar.setHealth(currentHealth);
+            }
+            else if (isBoss && enemyBossManager != null)
+            {
+                enemyBossManager.UpdateBossHealth(currentHealth, maxHealth);
+            }
+            
             if (currentHealth <= 0)
             {
-                isDead = true;
-                currentHealth = 0;  
+                HandleDeath();
             }
+        }
+
+        public void BreakGuard()
+        {
+            enemyAnimatorManager.PlayTargetAnimation("Break Guard", true);
         }
 
         public override void TakeDamage(int damage,string damageAnimation = "Hit")
         {
-
             base.TakeDamage(damage, damageAnimation = "Hit");
-
             if (!isBoss)
             {
                 enemyHealthBar.setHealth(currentHealth);
             }
             else if(isBoss && enemyBossManager!=null)
             {
-                enemyBossManager.UpdateBossHealth(currentHealth);
+                enemyBossManager.UpdateBossHealth(currentHealth,maxHealth);
             }
             
             enemyAnimatorManager.PlayTargetAnimation(damageAnimation, true);

@@ -7,12 +7,14 @@ namespace DK
  public class EnemyAnimatorManager : AnimatorManager
  {
         EnemyManager enemyManager;
+        EnemyBossManager enemyBossManager;
         EnemyStats enemyStats;
         private void Awake()
         {
             anim = GetComponent<Animator>();
             enemyManager = GetComponentInParent<EnemyManager>();
             enemyStats = GetComponentInParent<EnemyStats>();
+            enemyBossManager = GetComponentInParent<EnemyBossManager>();
         }
         private void OnAnimatorMove()
         {
@@ -91,6 +93,13 @@ namespace DK
         public void DisableIsInvulnerable()
         {
             anim.SetBool("isInvulnerable", false);
+        }
+
+        public void InstantiataeBossParticleFX()
+        {
+            BossFxTransform bossFxTransform = GetComponentInChildren<BossFxTransform>();
+
+            GameObject phaseFX = Instantiate(enemyBossManager.particleFX, bossFxTransform.transform);
         }
     }  
 }

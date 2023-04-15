@@ -32,6 +32,7 @@ namespace DK
         [Header("A.I Combat Settings")]
         public bool allowAIToPerformCombo;
         public float comboLikelyhood;
+        public bool isPhaseShifting;
 
 
 
@@ -55,7 +56,10 @@ namespace DK
             HandleRecoveryTimer();
             HandleStateMachine();
             isRotatingWithRootMotion = enemyAnimatorManager.anim.GetBool("isRotatingWithRootMotion");
+            
             isInteracting = enemyAnimatorManager.anim.GetBool("isInteracting");
+            isPhaseShifting = enemyAnimatorManager.anim.GetBool("isPhaseShifting");
+            isInvulnerable = enemyAnimatorManager.anim.GetBool("isInvulnerable");
             canRotate = enemyAnimatorManager.anim.GetBool("canRotate");
             canDoCombo = enemyAnimatorManager.anim.GetBool("canDoCombo");
             enemyAnimatorManager.anim.SetBool("isDead", enemyStats.isDead);

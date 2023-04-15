@@ -111,12 +111,14 @@ namespace DK
         {
             leftDamageCollider = leftHandSlot.currentWeaponModel.GetComponentInChildren<DamageCollider>();
             leftDamageCollider.weaponDamage = playerInventory.leftWeapon.baseDamage;
+            leftDamageCollider.poiseBreak = playerInventory.leftWeapon.poiseBreak;
         }
 
         private void LoadRightWeaponDamageCollider()
         {
             rightDamageCollider = rightHandSlot.currentWeaponModel.GetComponentInChildren<DamageCollider>();
             rightDamageCollider.weaponDamage = playerInventory.rightWeapon.baseDamage;
+            rightDamageCollider.poiseBreak = playerInventory.rightWeapon.poiseBreak;
         }
 
         public void OpenDamageCollider()
@@ -136,8 +138,15 @@ namespace DK
 
         public void CloseDamageCollider()
         {
-            rightDamageCollider.DisableDamageCollider();
-            leftDamageCollider.DisableDamageCollider();
+            if (rightDamageCollider != null)
+            {
+                rightDamageCollider.DisableDamageCollider();
+            }
+            if (leftDamageCollider != null)
+            {
+               leftDamageCollider.DisableDamageCollider();
+            }
+            
         }
         public void DrainStaminaLightAttack()
         {
@@ -150,8 +159,21 @@ namespace DK
         #endregion
 
 
+        #region Handle Weapon Poise Bonus
+        public void GrantWeaponAttackingPoiseBonus()
+        {
+            playerStats.totalPoiseDefense = playerStats.totalPoiseDefense + attackingItem.offensivePoiseBonus;
+        }
+
+        public void ResetWeaponAttackingPoiseBonus()
+        {
+            playerStats.totalPoiseDefense = playerStats.armorPoisebonus;
+        }
+
+        #endregion
+
 
     }
 
-    
+
 }

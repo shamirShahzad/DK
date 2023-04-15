@@ -21,6 +21,13 @@ namespace DK
 
         public int soulCount = 0;
 
+        [Header("Poise")]
+        public float totalPoiseDefense;//total poise 
+        public float offensivePoiseBonus;// during attack poise
+        public float armorPoisebonus;//armor poise
+        public float totalPoiseResetTime = 15f;
+        public float poiseResetTimer = 0;
+
         [Header("Armor absorbtions")]
         public float physicalDamageAbsorbtionHead;
         public float physicalDamageAbsorbtionTorso;
@@ -28,6 +35,16 @@ namespace DK
         public float physicalDamageAbsorbtionHands;
         
         public bool isDead;
+
+        protected virtual void Update()
+        {
+            HandlePoiseResetTimer();
+        }
+
+        private void Start()
+        {
+            totalPoiseDefense = armorPoisebonus;
+        }
 
         public virtual void TakeDamage(int physicalDamage, string damageAnimation = "Hit")
         {
@@ -49,6 +66,19 @@ namespace DK
             {
                 currentHealth = 0;
                 isDead = true;
+            }
+        }
+
+
+        public virtual void HandlePoiseResetTimer()
+        {
+            if(poiseResetTimer > 0)
+            {
+                poiseResetTimer = poiseResetTimer - Time.deltaTime;
+            }
+            else
+            {
+                totalPoiseDefense = armorPoisebonus;
             }
         }
     }

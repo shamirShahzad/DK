@@ -10,9 +10,9 @@ namespace DK
         public PursueTargetState pursueTargetState;
         public EnemyAttackAction[] enemyAttacks;
 
-        bool randomDestinatonSet = false;
-        float verticalMovementValue = 0;
-        float horizontalMovementValue = 0;
+        protected bool randomDestinatonSet = false;
+        protected float verticalMovementValue = 0;
+        protected float horizontalMovementValue = 0;
         public override State Tick(EnemyManager enemyManager, EnemyStats enemyStats, EnemyAnimatorManager enemyAnimatorManager)
         {
             float distanceFromTarget = Vector3.Distance(enemyManager.currentTarget.transform.position, enemyManager.transform.position);
@@ -52,7 +52,7 @@ namespace DK
             return this;
         }
 
-        private void HandleRotateTowardsTarget(EnemyManager enemyManager, float distanceFromTarget)
+        protected void HandleRotateTowardsTarget(EnemyManager enemyManager, float distanceFromTarget)
         {
             //Manual Rotataion
             if (enemyManager.isPerformingAction)
@@ -119,12 +119,12 @@ namespace DK
             }
         }
 
-        private void DecideCirclingAction(EnemyAnimatorManager enemyAnimatorManager)
+        protected void DecideCirclingAction(EnemyAnimatorManager enemyAnimatorManager)
         {
             WalkAroundTarget(enemyAnimatorManager);
         }
 
-        private void WalkAroundTarget(EnemyAnimatorManager enemyAnimatorManager)
+        protected void WalkAroundTarget(EnemyAnimatorManager enemyAnimatorManager)
         {
             verticalMovementValue = 0.5f;
 
@@ -139,7 +139,7 @@ namespace DK
             }
         }
 
-        private void GetNewAttack(EnemyManager enemyManager)
+        protected virtual void GetNewAttack(EnemyManager enemyManager)
         {
             Vector3 targetDirection = enemyManager.currentTarget.transform.position - transform.position;
             float viewableAngle = Vector3.Angle(targetDirection, transform.forward);
