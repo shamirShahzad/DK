@@ -16,7 +16,7 @@ namespace DK
 
 
         public virtual void AttemptToConsumeItems(PlayerAnimatorManager playerAnimatorManager,
-            WeaponSlotManager weaponSlotManager,
+            PlayerWeaponSlotManager weaponSlotManager,
             PlayerFXManager playerFXManager)
         {
             if(currentItemAmount > 0)

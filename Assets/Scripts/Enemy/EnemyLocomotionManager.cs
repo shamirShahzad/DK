@@ -12,10 +12,12 @@ namespace DK
         public CapsuleCollider characterCollider;
         public CapsuleCollider characterCollisionBlocker;
 
+        public LayerMask detectionLayer;
+
         private void Awake()
         {
             enemyManager = GetComponent<EnemyManager>();
-            enemyAnimatorManager = GetComponentInChildren<EnemyAnimatorManager>();
+            enemyAnimatorManager = GetComponent<EnemyAnimatorManager>();
            
         }
         private void Start()

@@ -12,7 +12,7 @@ namespace DK
 
         bool hasCollded = false;
 
-        CharacterStats spellTarget;
+        CharacterStatsManager spellTarget;
        // Rigidbody rigidbody;
         Vector3 impactNormal;
 
@@ -37,7 +37,7 @@ namespace DK
            
             if (!hasCollded)
             {
-                spellTarget = collision.transform.GetComponent<CharacterStats>();
+                spellTarget = collision.transform.GetComponent<CharacterStatsManager>();
                 if (spellTarget != null)
                 {
                     spellTarget.TakeDamage(weaponDamage);

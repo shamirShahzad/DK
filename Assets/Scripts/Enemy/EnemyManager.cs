@@ -9,17 +9,13 @@ namespace DK
 
         public State currentState;
         public bool isPerformingAction;
-        public bool isInteracting;
-        public CharacterStats currentTarget;
+        public CharacterStatsManager currentTarget;
         public NavMeshAgent navMeshAgent;
         public Rigidbody enemyRigidbody;
 
         public float rotationSpeed = 15f;
         public float maximumAggroRadius = 1.5f;
-        [Header("Combat Flags")]
-        public bool canDoCombo;
-
-
+ 
 
         [Header("Settings")]
         public float detectionRadius = 20;
@@ -27,7 +23,7 @@ namespace DK
         public float maximumDetectionAngle = 50;
         EnemyLocomotionManager enemyLocomotionManager;
         EnemyAnimatorManager enemyAnimatorManager;
-        EnemyStats enemyStats;
+        EnemyStatsManager enemyStatsManager;
 
         [Header("A.I Combat Settings")]
         public bool allowAIToPerformCombo;
@@ -41,8 +37,8 @@ namespace DK
         private void Awake()
         {
             enemyLocomotionManager = GetComponent<EnemyLocomotionManager>();
-            enemyAnimatorManager = GetComponentInChildren<EnemyAnimatorManager>();
-            enemyStats = GetComponent<EnemyStats>();
+            enemyAnimatorManager = GetComponent<EnemyAnimatorManager>();
+            enemyStatsManager = GetComponent<EnemyStatsManager>();
             navMeshAgent = GetComponentInChildren<NavMeshAgent>();
             enemyRigidbody = GetComponent<Rigidbody>();
         }
@@ -55,14 +51,14 @@ namespace DK
         {
             HandleRecoveryTimer();
             HandleStateMachine();
-            isRotatingWithRootMotion = enemyAnimatorManager.anim.GetBool("isRotatingWithRootMotion");
+            isRotatingWithRootMotion = enemyAnimatorManager.animator.GetBool("isRotatingWithRootMotion");
             
-            isInteracting = enemyAnimatorManager.anim.GetBool("isInteracting");
-            isPhaseShifting = enemyAnimatorManager.anim.GetBool("isPhaseShifting");
-            isInvulnerable = enemyAnimatorManager.anim.GetBool("isInvulnerable");
-            canRotate = enemyAnimatorManager.anim.GetBool("canRotate");
-            canDoCombo = enemyAnimatorManager.anim.GetBool("canDoCombo");
-            enemyAnimatorManager.anim.SetBool("isDead", enemyStats.isDead);
+            isInteracting = enemyAnimatorManager.animator.GetBool("isInteracting");
+            isPhaseShifting = enemyAnimatorManager.animator.GetBool("isPhaseShifting");
+            isInvulnerable = enemyAnimatorManager.animator.GetBool("isInvulnerable");
+            canRotate = enemyAnimatorManager.animator.GetBool("canRotate");
+            canDoCombo = enemyAnimatorManager.animator.GetBool("canDoCombo");
+            enemyAnimatorManager.animator.SetBool("isDead", enemyStatsManager.isDead);
         }
         private void LateUpdate()
         {
@@ -74,7 +70,7 @@ namespace DK
         {
          if(currentState != null)
             {
-                State nextState = currentState.Tick(this, enemyStats, enemyAnimatorManager);
+                State nextState = currentState.Tick(this, enemyStatsManager, enemyAnimatorManager);
                 if (nextState != null)
                 {
                     SwitchToNextState(nextState);

@@ -38,13 +38,13 @@ namespace DK
 
 
         PlayerControls inputActions;
-        PlayerAttacker playerAttacker;
-        PlayerInventory playerInventory;
+        PlayerCombatManager playerCombatManager;
+        PlayerInventoryManager playerInventoryManager;
         PlayerManager playerManager;
         PlayerFXManager playerFXManager;
-        WeaponSlotManager weaponSlotManager;
+        PlayerWeaponSlotManager weaponSlotManager;
         BlockingCollider blockingCollider;
-        PlayerStats playerStats;
+        PlayerStatsManager playerStatsManager;
         CameraHandler cameraHandler;
         PlayerAnimatorManager playerAnimatorManager;
         
@@ -58,14 +58,14 @@ namespace DK
         private void Start()
         {
 
-            playerAttacker = GetComponentInChildren<PlayerAttacker>();
-            playerInventory = GetComponent<PlayerInventory>();
-            playerFXManager = GetComponentInChildren<PlayerFXManager>();
+            playerCombatManager = GetComponent<PlayerCombatManager>();
+            playerInventoryManager = GetComponent<PlayerInventoryManager>();
+            playerFXManager = GetComponent<PlayerFXManager>();
             playerManager = GetComponent<PlayerManager>();
-            playerStats = GetComponent<PlayerStats>();
+            playerStatsManager = GetComponent<PlayerStatsManager>();
             cameraHandler = FindObjectOfType<CameraHandler>();
-            weaponSlotManager = GetComponentInChildren<WeaponSlotManager>();
-            playerAnimatorManager = GetComponentInChildren<PlayerAnimatorManager>();
+            weaponSlotManager = GetComponent<PlayerWeaponSlotManager>();
+            playerAnimatorManager = GetComponent<PlayerAnimatorManager>();
             blockingCollider = GetComponentInChildren<BlockingCollider>();
         }
 
@@ -136,12 +136,12 @@ namespace DK
             
             if (b_input) {
                 rollInputTimer += delta;
-                if (playerStats.currentStamina<=0)
+                if (playerStatsManager.currentStamina<=0)
                 {
                     b_input = false; 
                     sprintFlag = false;           
                 }
-                if (moveAmount > 0.5 && playerStats.currentStamina > 0)
+                if (moveAmount > 0.5 && playerStatsManager.currentStamina > 0)
                 {
                     sprintFlag = true;
                 }
@@ -167,15 +167,15 @@ namespace DK
 
             if (rb_input)
             {
-                playerAttacker.HandleRBAction();   
+                playerCombatManager.HandleRBAction();   
             }
             if (rt_input)
             {
-                playerAttacker.HandleHeavyAttack(playerInventory.rightWeapon);
+                playerCombatManager.HandleHeavyAttack(playerInventoryManager.rightWeapon);
             }
             if (lb_input)
             {
-                playerAttacker.HandleLBAaction();
+                playerCombatManager.HandleLBAaction();
             }
             else
             {
@@ -194,7 +194,7 @@ namespace DK
                 }
                 else
                 {
-                    playerAttacker.HandleLTAction();
+                    playerCombatManager.HandleLTAction();
                 }
             }
         }
@@ -247,12 +247,12 @@ namespace DK
                 twoHandFlag = !twoHandFlag;
                 if(twoHandFlag)
                 {
-                    weaponSlotManager.LoadWeaponOnSlot(playerInventory.rightWeapon, false);
+                    weaponSlotManager.LoadWeaponOnSlot(playerInventoryManager.rightWeapon, false);
                 }
                 else
                 {
-                    weaponSlotManager.LoadWeaponOnSlot(playerInventory.rightWeapon, false);
-                    weaponSlotManager.LoadWeaponOnSlot(playerInventory.leftWeapon, true);
+                    weaponSlotManager.LoadWeaponOnSlot(playerInventoryManager.rightWeapon, false);
+                    weaponSlotManager.LoadWeaponOnSlot(playerInventoryManager.leftWeapon, true);
                 }
             }
         }
@@ -262,7 +262,7 @@ namespace DK
             if (criticalAttackInput)
             {
                 criticalAttackInput = false;
-               playerAttacker.AttemptBackStabOrRiposte();
+               playerCombatManager.AttemptBackStabOrRiposte();
             }
 
         }
@@ -274,7 +274,7 @@ namespace DK
                 x_input = false;
                 if (playerFXManager.isDrinking)
                     return;
-                playerInventory.currentConsumable.AttemptToConsumeItems(playerAnimatorManager, weaponSlotManager, playerFXManager);
+                playerInventoryManager.currentConsumable.AttemptToConsumeItems(playerAnimatorManager, weaponSlotManager, playerFXManager);
             }
         }
         

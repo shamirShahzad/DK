@@ -12,7 +12,7 @@ namespace DK
         public LayerMask detectionLayer;
 
         public PursueTargetState pursueTargetState;
-        public override State Tick(EnemyManager enemyManager, EnemyStats enemyStats, EnemyAnimatorManager enemyAnimatorManager)
+        public override State Tick(EnemyManager enemyManager, EnemyStatsManager enemyStats, EnemyAnimatorManager enemyAnimatorManager)
         {
             if(isSleeping && enemyManager.isInteracting== false)
             {
@@ -23,7 +23,7 @@ namespace DK
 
             for(int i =0; i < colliders.Length; i++)
             {
-                CharacterStats characterStats = colliders[i].transform.GetComponentInParent<CharacterStats>();
+                CharacterStatsManager characterStats = colliders[i].transform.GetComponentInParent<CharacterStatsManager>();
 
                 if(characterStats != null)
                 {  

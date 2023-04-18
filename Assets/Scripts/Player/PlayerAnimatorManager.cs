@@ -5,26 +5,24 @@ namespace DK
 {
     public class PlayerAnimatorManager : AnimatorManager
     {
-        PlayerManager playerManager;
         inputHandler inputHandler;
-        PlayerLocomotion playerLocomotion;
-        PlayerStats playerStats;
+        PlayerLocomotionManager playerLocomotionManager;
+        PlayerManager playerManager;
         int vertical;
         int horizontal;
-     
 
 
-        public void Initialize() {
-            anim = GetComponent<Animator>();
-            inputHandler = GetComponentInParent<inputHandler>();
-            playerLocomotion = GetComponentInParent<PlayerLocomotion>();
-            playerManager = GetComponentInParent<PlayerManager>();
-            playerStats = GetComponentInParent<PlayerStats>();
+        protected override void Awake()
+        {
+            base.Awake();
+            animator = GetComponent<Animator>();
+            inputHandler = GetComponent<inputHandler>();
+            playerLocomotionManager = GetComponent<PlayerLocomotionManager>();
+            playerManager = GetComponent<PlayerManager>();
             vertical = Animator.StringToHash("Vertical");
             horizontal = Animator.StringToHash("Horizontal");
-
-        
         }
+
 
         public void updateAnimatorValues(float verticalMovement,float horizontalMovement,bool isSprinting) 
         {
@@ -84,62 +82,8 @@ namespace DK
                 h = horizontalMovement;
             }
 
-            anim.SetFloat(vertical, v, 0.1f, Time.deltaTime);
-            anim.SetFloat(horizontal, h, 0.1f, Time.deltaTime);
-        }
-
-  
-        public void CanRotate()
-        {
-            anim.SetBool("canRotate", true);
-
-        }
-
-        public void StopRotate()
-        {
-            anim.SetBool("canRotate", false);
-        }
-
-        public void EnableCombo()
-        {
-            anim.SetBool("canDoCombo", true);
-        }
-
-        public void EnableIsInvulnerable()
-        {
-            anim.SetBool("isInvulnerable", true);
-        }   
-        public void DisableIsInvulnerable()
-        {
-            anim.SetBool("isInvulnerable", false);
-        }
-
-        public override void TakeCriticalDamageAnimationEvent()
-        {
-            playerStats.TakeDamageNoAnimation(playerManager.pendingCriticalDamage);
-            playerManager.pendingCriticalDamage = 0;
-        }
-
-        public void EnableIsParrying()
-        {
-            playerManager.isParrying = true;
-        }
-        public void DisableIsParrying()
-        {
-            playerManager.isParrying = false;
-        }
-
-        public void EnableCanBeRiposted()
-        {
-            playerManager.canBeRiposted = true;
-        }
-        public void DisableCanBeRiposted()
-        {
-            playerManager.canBeRiposted = false;
-        }
-        public void DisableCombo()
-        {
-            anim.SetBool("canDoCombo", false);
+            animator.SetFloat(vertical, v, 0.1f, Time.deltaTime);
+            animator.SetFloat(horizontal, h, 0.1f, Time.deltaTime);
         }
 
         public void DisableCollision()
@@ -158,14 +102,14 @@ namespace DK
 
         private void OnAnimatorMove()
         {
-            if (playerManager.isInteracting == false)
+            if (characterManager.isInteracting == false)
                 return;
             float delta = Time.deltaTime;
-            playerLocomotion.rigidbody.drag = 0;
-            Vector3 deltaPositions = anim.deltaPosition;
+            playerLocomotionManager.rigidbody.drag = 0;
+            Vector3 deltaPositions = animator.deltaPosition;
             deltaPositions.y = 0;
             Vector3 velocity = deltaPositions / delta;
-            playerLocomotion.rigidbody.velocity = velocity;
+            playerLocomotionManager.rigidbody.velocity = velocity;
 
         }
     }

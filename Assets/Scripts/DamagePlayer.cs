@@ -8,10 +8,10 @@ namespace DK
         [SerializeField]
         int damage = 25;
         [SerializeField]
-        PlayerStats playerStats;
+        PlayerStatsManager playerStats;
         private void OnTriggerEnter(Collider other)
         {
-            playerStats = other.GetComponentInParent<PlayerStats>();
+            playerStats = other.GetComponentInParent<PlayerStatsManager>();
 
             if (playerStats != null)
             {

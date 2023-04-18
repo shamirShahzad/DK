@@ -6,8 +6,8 @@ namespace DK
     public class PlayerEquipmentManager : MonoBehaviour
     {
         inputHandler inputHandler;
-        PlayerInventory playerInventory;
-        PlayerStats playerStats;
+        PlayerInventoryManager playerInventoryManager;
+        PlayerStatsManager playerStatsManager;
         [Header("Equipment Model Changer")]
         [SerializeField]
         BlockingCollider blockingCollider;
@@ -39,9 +39,9 @@ namespace DK
 
         private void Awake()
         {
-            inputHandler = GetComponentInParent<inputHandler>();
-            playerInventory = GetComponentInParent<PlayerInventory>();
-            playerStats = GetComponentInParent<PlayerStats>();
+            inputHandler = GetComponent<inputHandler>();
+            playerInventoryManager = GetComponent<PlayerInventoryManager>();
+            playerStatsManager = GetComponent<PlayerStatsManager>();
             helmetModelChanger = GetComponentInChildren<HelmetModelChanger>();
             torsoModelChanger = GetComponentInChildren<TorsoModelChanger>();
             hipModelChanger = GetComponentInChildren<HipModelChanger>();
@@ -64,14 +64,14 @@ namespace DK
         {
             //HElMET
             helmetModelChanger.UnequipAllHelmetModels();
-            if (playerInventory.currentHelmetEquipment != null)
+            if (playerInventoryManager.currentHelmetEquipment != null)
             {
                 defaultHead.SetActive(false);
                 defaultEyebrow.SetActive(false);
                 defaultFacial.SetActive(false);
                 defaultHair.SetActive(false);
-                helmetModelChanger.EquipHelmetModelByName(playerInventory.currentHelmetEquipment.helmetModelName);
-                playerStats.physicalDamageAbsorbtionHead = playerInventory.currentHelmetEquipment.physicalDefense;
+                helmetModelChanger.EquipHelmetModelByName(playerInventoryManager.currentHelmetEquipment.helmetModelName);
+                playerStatsManager.physicalDamageAbsorbtionHead = playerInventoryManager.currentHelmetEquipment.physicalDefense;
             }
             else
             {
@@ -79,57 +79,57 @@ namespace DK
                 defaultEyebrow.SetActive(true);
                 defaultFacial.SetActive(true);
                 defaultHair.SetActive(true);
-                playerStats.physicalDamageAbsorbtionHead = 0;
+                playerStatsManager.physicalDamageAbsorbtionHead = 0;
             }
             //TORSO, UPPER ARM
             torsoModelChanger.UnequipAllTorsoModels();
             upperArmLeftModelChanger.UnequipAllUpperLeftArmModels();
             upperArmRightModelChanger.UnequipAllUpperRightArmModels();
-            if (playerInventory.currentTorsoEquipment != null)
+            if (playerInventoryManager.currentTorsoEquipment != null)
             {
-                torsoModelChanger.EquipTorsoModelByName(playerInventory.currentTorsoEquipment.torsoModelName);
-                upperArmLeftModelChanger.EquipUpperLeftArmModelByName(playerInventory.currentTorsoEquipment.upperLeftArmModelName);
-                upperArmRightModelChanger.EquipUpperRightArmModelByName(playerInventory.currentTorsoEquipment.upperRightArmModelName);
-                playerStats.physicalDamageAbsorbtionTorso = playerInventory.currentTorsoEquipment.physicalDefense;
+                torsoModelChanger.EquipTorsoModelByName(playerInventoryManager.currentTorsoEquipment.torsoModelName);
+                upperArmLeftModelChanger.EquipUpperLeftArmModelByName(playerInventoryManager.currentTorsoEquipment.upperLeftArmModelName);
+                upperArmRightModelChanger.EquipUpperRightArmModelByName(playerInventoryManager.currentTorsoEquipment.upperRightArmModelName);
+                playerStatsManager.physicalDamageAbsorbtionTorso = playerInventoryManager.currentTorsoEquipment.physicalDefense;
             }
             else
             {
                 torsoModelChanger.EquipTorsoModelByName(nakedTorso);
                 upperArmLeftModelChanger.EquipUpperLeftArmModelByName(nakedUpperLeftArm);
                 upperArmRightModelChanger.EquipUpperRightArmModelByName(nakedUpperRightArm);
-                playerStats.physicalDamageAbsorbtionTorso = 0;
+                playerStatsManager.physicalDamageAbsorbtionTorso = 0;
             }
             //HIP LEGS
             hipModelChanger.UnequipAllHipModels();
             leftLegModelChanger.UnequipAllLeftLegModels();
             rightLegModelChanger.UnequipAllRightLegModels();
 
-            if(playerInventory.currentLegEquipment != null)
+            if(playerInventoryManager.currentLegEquipment != null)
             {
-                hipModelChanger.EquipHipModelByName(playerInventory.currentLegEquipment.hipModelName);
-                leftLegModelChanger.EquipLeftLegModelByName(playerInventory.currentLegEquipment.leftLegModelName);
-                rightLegModelChanger.EquipRightLegModelByName(playerInventory.currentLegEquipment.rightLegModelName);
-                playerStats.physicalDamageAbsorbtionLegs = playerInventory.currentLegEquipment.physicalDefense;
+                hipModelChanger.EquipHipModelByName(playerInventoryManager.currentLegEquipment.hipModelName);
+                leftLegModelChanger.EquipLeftLegModelByName(playerInventoryManager.currentLegEquipment.leftLegModelName);
+                rightLegModelChanger.EquipRightLegModelByName(playerInventoryManager.currentLegEquipment.rightLegModelName);
+                playerStatsManager.physicalDamageAbsorbtionLegs = playerInventoryManager.currentLegEquipment.physicalDefense;
             }
             else
             {
                 hipModelChanger.EquipHipModelByName(nakedHip);
                 leftLegModelChanger.EquipLeftLegModelByName(nakedLeftLeg);
                 rightLegModelChanger.EquipRightLegModelByName(nakedRightLeg);
-                playerStats.physicalDamageAbsorbtionLegs = 0;
+                playerStatsManager.physicalDamageAbsorbtionLegs = 0;
             }
             //HAND LOWER ARM
             rightHandModelChanger.UnequipAllRightHandModels();
             lowerArmRightModelChanger.UnequipAllLowerRightArmModels();
             leftHandModelChanger.UnequipAllLeftHandModels();
             lowerArmLeftModelChanger.UnequipAllLowerLeftArmModels();
-            if(playerInventory.currentHandEquipment != null)
+            if(playerInventoryManager.currentHandEquipment != null)
             {
-                rightHandModelChanger.EquipRightHandModelByName(playerInventory.currentHandEquipment.rightHandModelName);
-                lowerArmRightModelChanger.EquipLowerRightArmModelByName(playerInventory.currentHandEquipment.lowerRightArmModelName);
-                leftHandModelChanger.EquipLeftHandModelByName(playerInventory.currentHandEquipment.leftHandModelName);
-                lowerArmLeftModelChanger.EquipLowerLeftArmModelByName(playerInventory.currentHandEquipment.lowerLeftArmModelName);
-                playerStats.physicalDamageAbsorbtionHands = playerInventory.currentHandEquipment.physicalDefense;
+                rightHandModelChanger.EquipRightHandModelByName(playerInventoryManager.currentHandEquipment.rightHandModelName);
+                lowerArmRightModelChanger.EquipLowerRightArmModelByName(playerInventoryManager.currentHandEquipment.lowerRightArmModelName);
+                leftHandModelChanger.EquipLeftHandModelByName(playerInventoryManager.currentHandEquipment.leftHandModelName);
+                lowerArmLeftModelChanger.EquipLowerLeftArmModelByName(playerInventoryManager.currentHandEquipment.lowerLeftArmModelName);
+                playerStatsManager.physicalDamageAbsorbtionHands = playerInventoryManager.currentHandEquipment.physicalDefense;
             }
             else
             {
@@ -137,7 +137,7 @@ namespace DK
                 lowerArmRightModelChanger.EquipLowerRightArmModelByName(nakedLowerRightArm);
                 leftHandModelChanger.EquipLeftHandModelByName(nakedLeftHand);
                 lowerArmLeftModelChanger.EquipLowerLeftArmModelByName(nakedLowerLeftArm);
-                playerStats.physicalDamageAbsorbtionHands = 0;
+                playerStatsManager.physicalDamageAbsorbtionHands = 0;
             }
             
         }
@@ -145,11 +145,11 @@ namespace DK
         {
             if (inputHandler.twoHandFlag)
             {
-                blockingCollider.SetColliderDamageAbsorbtion(playerInventory.rightWeapon);
+                blockingCollider.SetColliderDamageAbsorbtion(playerInventoryManager.rightWeapon);
             }
             else
             {
-                blockingCollider.SetColliderDamageAbsorbtion(playerInventory.leftWeapon);
+                blockingCollider.SetColliderDamageAbsorbtion(playerInventoryManager.leftWeapon);
             }
             
             blockingCollider.EnableBlockingCollider();

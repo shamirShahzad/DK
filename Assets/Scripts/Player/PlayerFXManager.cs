@@ -5,8 +5,8 @@ namespace DK
 {
     public class PlayerFXManager : MonoBehaviour
     {
-        PlayerStats playerStats;
-        WeaponSlotManager weaponSlotManager;
+        PlayerStatsManager playerStatsManager;
+        PlayerWeaponSlotManager playerWeaponSlotManager;
         public GameObject currentParticleFX;
         public GameObject instantiatedFXModel;
         public GameObject healParticles;
@@ -16,22 +16,22 @@ namespace DK
 
         private void Awake()
         {
-            playerStats = GetComponentInParent<PlayerStats>();
-            weaponSlotManager = GetComponent<WeaponSlotManager>();
+            playerStatsManager = GetComponent<PlayerStatsManager>();
+            playerWeaponSlotManager = GetComponent<PlayerWeaponSlotManager>();
         }
 
 
         public void HealPlayerFromEffect()
         {
-            playerStats.healPlayer(amountToHealed);
-            healParticles = Instantiate(currentParticleFX, playerStats.transform);
+            playerStatsManager.healPlayer(amountToHealed);
+            healParticles = Instantiate(currentParticleFX, playerStatsManager.transform);
             Destroy(instantiatedFXModel,0.8f);
         }
 
         public void DestroyHealEffects()
         {
             isDrinking = false;
-            weaponSlotManager.LoadBothWeaponOnslot(); 
+            playerWeaponSlotManager.LoadBothWeaponOnslot(); 
             Destroy(healParticles,0.8f);
         }
 

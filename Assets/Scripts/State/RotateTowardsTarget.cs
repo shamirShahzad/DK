@@ -7,10 +7,10 @@ namespace DK
     {
         public CombatStanceState combatStanceState;
         public PursueTargetState pursueTargetState;
-        public override State Tick(EnemyManager enemyManager, EnemyStats enemyStats, EnemyAnimatorManager enemyAnimatorManager)
+        public override State Tick(EnemyManager enemyManager, EnemyStatsManager enemyStats, EnemyAnimatorManager enemyAnimatorManager)
         {
-            enemyAnimatorManager.anim.SetFloat("Vertical", 0);
-            enemyAnimatorManager.anim.SetFloat("Horizontal", 0);
+            enemyAnimatorManager.animator.SetFloat("Vertical", 0);
+            enemyAnimatorManager.animator.SetFloat("Horizontal", 0);
 
             Vector3 targetDiection = enemyManager.currentTarget.transform.position - enemyManager.transform.position;
             float viewableAngle = Vector3.SignedAngle(targetDiection, enemyManager.transform.forward, Vector3.up);

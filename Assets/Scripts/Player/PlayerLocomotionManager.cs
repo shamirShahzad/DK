@@ -3,19 +3,19 @@ using System.Collections.Generic;
 using UnityEngine;
 namespace DK
 {
-    public class PlayerLocomotion : MonoBehaviour
+    public class PlayerLocomotionManager : MonoBehaviour
     {
         CameraHandler cameraHandler;
         Transform cameraObject;
         inputHandler inputHandler;
         PlayerManager playerManager;
-        PlayerStats playerStats;
+        PlayerStatsManager playerStatsManager;
         public Vector3 moveDirection;
 
         [HideInInspector]
         public Transform myTransform;
         [HideInInspector]
-        public PlayerAnimatorManager animatorHandler;
+        public PlayerAnimatorManager playerAnimatorManager;
 
         public new Rigidbody rigidbody;
         public GameObject normalCamera;
@@ -63,11 +63,10 @@ namespace DK
             rigidbody = GetComponent<Rigidbody>();
             inputHandler = GetComponent<inputHandler>();
             playerManager = GetComponent<PlayerManager>();
-            playerStats = GetComponent<PlayerStats>();
-            animatorHandler = GetComponentInChildren<PlayerAnimatorManager>();
+            playerStatsManager = GetComponent<PlayerStatsManager>();
+            playerAnimatorManager = GetComponent<PlayerAnimatorManager>();
             cameraObject = Camera.main.transform;
             myTransform = this.transform;
-            animatorHandler.Initialize();
             cameraHandler = FindObjectOfType<CameraHandler>();
             playerManager.isGrounded = true;
             ignoreForGroundCheck = ~(1 << 8 | 1 << 11 | 1 << 12);
@@ -80,7 +79,7 @@ namespace DK
         Vector3 targetPosition;
 
         public void HandleRotation(float delta) {
-            if (animatorHandler.canRotate)
+            if (playerAnimatorManager.canRotate)
             {
                 if (inputHandler.lockOnFlag)
                 {
@@ -156,7 +155,7 @@ namespace DK
                 speed = sprintSpeed;
                 playerManager.isSprinting = true;
                 moveDirection *= speed;
-                playerStats.TakeStaminaDamage(sprintStaminaCost);
+                playerStatsManager.TakeStaminaDamage(sprintStaminaCost);
             }
             else {
                 if (inputHandler.moveAmount < 0.5f)
@@ -177,19 +176,19 @@ namespace DK
             rigidbody.velocity = projectedVelocity;
             if (inputHandler.lockOnFlag && inputHandler.sprintFlag == false)
             {
-                animatorHandler.updateAnimatorValues(inputHandler.vertical, inputHandler.horizontal, playerManager.isSprinting);
+                playerAnimatorManager.updateAnimatorValues(inputHandler.vertical, inputHandler.horizontal, playerManager.isSprinting);
             }
             else
             {
-                animatorHandler.updateAnimatorValues(inputHandler.moveAmount, 0, playerManager.isSprinting);
+                playerAnimatorManager.updateAnimatorValues(inputHandler.moveAmount, 0, playerManager.isSprinting);
             }
         }
 
         public void HandleRolling(float delta) {
-            if (animatorHandler.anim.GetBool("isInteracting")) {
+            if (playerAnimatorManager.animator.GetBool("isInteracting")) {
                 return;
             }
-            if(playerStats.currentStamina <= 0)
+            if(playerStatsManager.currentStamina <= 0)
                 return;
 
 
@@ -199,15 +198,15 @@ namespace DK
                 moveDirection += cameraObject.right * inputHandler.horizontal;
                 if (inputHandler.moveAmount > 0)
                 {
-                    animatorHandler.PlayTargetAnimation("Roll", true);
+                    playerAnimatorManager.PlayTargetAnimation("Roll", true);
                     moveDirection.y = 0;
                     Quaternion rollRotation = Quaternion.LookRotation(moveDirection);
                     myTransform.rotation = rollRotation;
-                    playerStats.TakeStaminaDamage(rollStaminaCost);
+                    playerStatsManager.TakeStaminaDamage(rollStaminaCost);
                 }
                 else {
-                    animatorHandler.PlayTargetAnimation("BackStep", true);
-                    playerStats.TakeStaminaDamage(backStepStaminacost);
+                    playerAnimatorManager.PlayTargetAnimation("BackStep", true);
+                    playerStatsManager.TakeStaminaDamage(backStepStaminacost);
                 }
             }
         }
@@ -246,12 +245,12 @@ namespace DK
                 {
                     if(inAirTimer > 0.5f)
                     {
-                        animatorHandler.PlayTargetAnimation("Land", true);
+                        playerAnimatorManager.PlayTargetAnimation("Land", true);
                         inAirTimer = 0;
                     }
                     else
                     {
-                        animatorHandler.PlayTargetAnimation("Empty", false);
+                        playerAnimatorManager.PlayTargetAnimation("Empty", false);
                         inAirTimer = 0;
                     }
                     playerManager.isInAir = false;
@@ -268,7 +267,7 @@ namespace DK
                 {
                     if(playerManager.isInteracting == false)
                     {
-                        animatorHandler.PlayTargetAnimation("Falling", true);
+                        playerAnimatorManager.PlayTargetAnimation("Falling", true);
                     }
 
                     Vector3 velocity = rigidbody.velocity;
@@ -293,7 +292,7 @@ namespace DK
         {
             if (playerManager.isInteracting)
                 return;
-            if (playerStats.currentStamina <= 0)
+            if (playerStatsManager.currentStamina <= 0)
                 return;
 
             if (inputHandler.jump_input)
@@ -302,11 +301,11 @@ namespace DK
                 {
                     moveDirection = cameraObject.forward * inputHandler.vertical;
                     moveDirection += cameraObject.right * inputHandler.horizontal;
-                    animatorHandler.PlayTargetAnimation("Jump", true);
+                    playerAnimatorManager.PlayTargetAnimation("Jump", true);
                     moveDirection.y = 0;
                     Quaternion jumpRotation = Quaternion.LookRotation(moveDirection);
                     myTransform.rotation = jumpRotation;
-                    playerStats.TakeStaminaDamage(jumpStaminaCost);
+                    playerStatsManager.TakeStaminaDamage(jumpStaminaCost);
                 }
             }
         }

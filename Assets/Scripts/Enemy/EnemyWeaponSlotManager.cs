@@ -4,24 +4,19 @@ using UnityEngine;
 
 namespace DK
 {
-    public class EnemyWeaponSlotManager : MonoBehaviour
+    public class EnemyWeaponSlotManager : CharacterWeaponSlotManager
     {
         public WeaponItem rightHandWeapon;
         public WeaponItem leftHandWeapon;
 
 
-        WeaponHolderSlot rightHandSlot;
-        WeaponHolderSlot leftHandSlot;
 
-        DamageCollider leftHandDamageCollider;
-        DamageCollider rightHandDamageCollider;
-
-        EnemyStats enemyStats;
+        EnemyStatsManager enemyStatsManager;
 
 
         private void Awake()
         {
-            enemyStats = GetComponentInParent<EnemyStats>();
+            enemyStatsManager = GetComponent<EnemyStatsManager>();
             LoadWeaponHolderSlot();
         }
 
@@ -81,13 +76,13 @@ namespace DK
         {
             if (isLeft)
             {
-                leftHandDamageCollider = leftHandSlot.currentWeaponModel.GetComponentInChildren<DamageCollider>();
-                leftHandDamageCollider.characterManager = GetComponentInParent<CharacterManager>();
+                leftDamageCollider = leftHandSlot.currentWeaponModel.GetComponentInChildren<DamageCollider>();
+                leftDamageCollider.characterManager = GetComponentInParent<CharacterManager>();
             }
             else
             {
-                rightHandDamageCollider = rightHandSlot.currentWeaponModel.GetComponentInChildren<DamageCollider>();
-                rightHandDamageCollider.characterManager = GetComponentInParent<CharacterManager>();
+                rightDamageCollider = rightHandSlot.currentWeaponModel.GetComponentInChildren<DamageCollider>();
+                rightDamageCollider.characterManager = GetComponentInParent<CharacterManager>();
             }
         }
 
@@ -96,12 +91,12 @@ namespace DK
         #region Animation Events
         public void OpenDamageCollider()
         {
-            rightHandDamageCollider.EnableDamageCollider();
+            rightDamageCollider.EnableDamageCollider();
         }
 
         public void CloseDamageCollider()
         {
-            rightHandDamageCollider.DisableDamageCollider();
+            rightDamageCollider.DisableDamageCollider();
         }
 
 
@@ -127,12 +122,12 @@ namespace DK
         #region Handle Weapon Poise Bonus
         public void GrantWeaponAttackingPoiseBonus()
         {
-            enemyStats.totalPoiseDefense = enemyStats.totalPoiseDefense + enemyStats.offensivePoiseBonus;
+            enemyStatsManager.totalPoiseDefense = enemyStatsManager.totalPoiseDefense + enemyStatsManager.offensivePoiseBonus;
         }
 
         public void ResetWeaponAttackingPoiseBonus()
         {
-            enemyStats.totalPoiseDefense = enemyStats.armorPoisebonus;
+            enemyStatsManager.totalPoiseDefense = enemyStatsManager.armorPoisebonus;
         }
 
         #endregion

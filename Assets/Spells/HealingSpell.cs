@@ -10,8 +10,8 @@ namespace DK
     {
         public int healAmount;
         public override void AttemptToCastSpell(PlayerAnimatorManager animatorHandler,
-            PlayerStats playerStats,
-            WeaponSlotManager weaponSlotManager,
+            PlayerStatsManager playerStats,
+            PlayerWeaponSlotManager weaponSlotManager,
             CameraHandler cameraHandler)
         {
             base.AttemptToCastSpell(animatorHandler, playerStats,weaponSlotManager,cameraHandler);
@@ -21,7 +21,7 @@ namespace DK
             Destroy(instanstiatedWarmupSpellFX, 1.5f);
         }
 
-        public override void SuccessfullyCastedSpell(PlayerAnimatorManager animatorHandler, PlayerStats playerStats,CameraHandler cameraHandler,WeaponSlotManager weaponSlotManager)
+        public override void SuccessfullyCastedSpell(PlayerAnimatorManager animatorHandler, PlayerStatsManager playerStats,CameraHandler cameraHandler,PlayerWeaponSlotManager weaponSlotManager)
         {
             base.SuccessfullyCastedSpell(animatorHandler, playerStats,cameraHandler,weaponSlotManager);
             GameObject instansiatedSpellFX = Instantiate(spellCastEffect, animatorHandler.transform);

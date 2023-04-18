@@ -9,7 +9,7 @@ namespace DK
         Collider damageCollider;
         [SerializeField]
         public int weaponDamage = 8;
-        PlayerStats myPlayerStats;
+        PlayerStatsManager myPlayerStats;
         public bool enableOnstartup = false;
         [Header("Poise")]
         public float poiseBreak;
@@ -21,7 +21,7 @@ namespace DK
             damageCollider.gameObject.SetActive(true);
             damageCollider.isTrigger = true;
             damageCollider.enabled = false;
-            myPlayerStats = FindObjectOfType<PlayerStats>();
+            myPlayerStats = FindObjectOfType<PlayerStatsManager>();
             damageCollider.enabled = enableOnstartup;
         }
 
@@ -40,7 +40,7 @@ namespace DK
         {
             if(collision.tag =="Player")
             {
-                PlayerStats playerStats = collision.GetComponentInParent<PlayerStats>();
+                PlayerStatsManager playerStats = collision.GetComponentInParent<PlayerStatsManager>();
                 CharacterManager enemyCharacterManager = collision.GetComponent<CharacterManager>();
                 BlockingCollider shield = collision.transform.GetComponentInChildren<BlockingCollider>();
 
@@ -85,7 +85,7 @@ namespace DK
             }
             if(collision.tag == "Enemy")
             {
-                EnemyStats enemyStats = collision.GetComponent<EnemyStats>();
+                EnemyStatsManager enemyStats = collision.GetComponent<EnemyStatsManager>();
                 CharacterManager enemyCharacterManager = collision.GetComponent<CharacterManager>();
                 BlockingCollider shield = collision.transform.GetComponentInChildren<BlockingCollider>();
 

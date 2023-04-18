@@ -5,7 +5,7 @@ using UnityEngine;
 
 namespace DK
 {
-    public class CharacterStats : MonoBehaviour
+    public class CharacterStatsManager : MonoBehaviour
     {
         public int healthLevel = 10;
         public int maxHealth;
@@ -20,6 +20,7 @@ namespace DK
         public float currentFocus;
 
         public int soulCount = 0;
+        public int soulsAwardedOnDeath = 50;
 
         [Header("Poise")]
         public float totalPoiseDefense;//total poise 
@@ -66,6 +67,27 @@ namespace DK
             {
                 currentHealth = 0;
                 isDead = true;
+            }
+        }
+
+        public virtual void TakeDamageNoAnimation(int damage)
+        {
+            if (isDead)
+                return;
+            currentHealth = currentHealth - damage;
+            if (currentHealth <= 0)
+            {
+                HandleDeath();
+            }
+
+        }
+
+        private void HandleDeath()
+        {
+            if (currentHealth <= 0)
+            {
+                isDead = true;
+                currentHealth = 0;
             }
         }
 

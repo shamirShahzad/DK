@@ -10,14 +10,14 @@ namespace DK
         public LayerMask obstructionLayer;
         public PursueTargetState pursueTargetState;
         Vector3 offset = new Vector3(0, 2, 0);
-        public override State Tick(EnemyManager enemyManager, EnemyStats enemyStats, EnemyAnimatorManager enemyAnimatorManager)
+        public override State Tick(EnemyManager enemyManager, EnemyStatsManager enemyStats, EnemyAnimatorManager enemyAnimatorManager)
         {
             Collider[] colliders = Physics.OverlapSphere(transform.position, enemyManager.detectionRadius, detectionLayer);
 
 
             for (int i = 0; i < colliders.Length; i++)
             {
-                CharacterStats characterStats = colliders[i].transform.GetComponentInParent<CharacterStats>();
+                CharacterStatsManager characterStats = colliders[i].transform.GetComponentInParent<CharacterStatsManager>();
 
                 if (characterStats != null)
                 {

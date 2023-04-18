@@ -15,8 +15,8 @@ namespace DK
         Rigidbody rigidbody;
         private Quaternion cameraOnPress;
         public override void AttemptToCastSpell(PlayerAnimatorManager animatorHandler,
-            PlayerStats playerStats,
-            WeaponSlotManager weaponSlotManager,
+            PlayerStatsManager playerStats,
+            PlayerWeaponSlotManager weaponSlotManager,
             CameraHandler cameraHandler)
         {
             base.AttemptToCastSpell(animatorHandler, playerStats,weaponSlotManager,cameraHandler);
@@ -28,9 +28,9 @@ namespace DK
         }
 
         public override void SuccessfullyCastedSpell(PlayerAnimatorManager animatorHandler,
-            PlayerStats playerStats,
+            PlayerStatsManager playerStats,
             CameraHandler cameraHandler,
-            WeaponSlotManager weaponSlotManager)
+            PlayerWeaponSlotManager weaponSlotManager)
         {
             base.SuccessfullyCastedSpell(animatorHandler, playerStats,cameraHandler,weaponSlotManager);
             GameObject instansiatedSpellFX = Instantiate(spellCastEffect, weaponSlotManager.rightHandSlot.transform.position, cameraHandler.cameraPivotTransform.rotation);

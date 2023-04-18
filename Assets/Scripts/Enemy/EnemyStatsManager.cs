@@ -3,21 +3,18 @@ using System.Collections.Generic;
 using UnityEngine;
 namespace DK
 {
-    public class EnemyStats : CharacterStats
+    public class EnemyStatsManager : CharacterStatsManager
     {
         EnemyAnimatorManager enemyAnimatorManager;
-        EnemyManager enemyManager;
         public UiEnemyHealthBar enemyHealthBar;
         EnemyBossManager enemyBossManager;
-        public int soulsAwardedOnDeath = 50;
         public bool isBoss;
         private void Awake()
         {
-            enemyAnimatorManager = GetComponentInChildren<EnemyAnimatorManager>();
+            enemyAnimatorManager = GetComponent<EnemyAnimatorManager>();
             enemyBossManager = GetComponent<EnemyBossManager>();
             maxHealth = SetMaxHealthFromHealthLevel();
             currentHealth = maxHealth;
-            enemyManager = GetComponent<EnemyManager>();
         }
 
         private void Start()
@@ -26,11 +23,6 @@ namespace DK
             {
                 enemyHealthBar.SetMaxHealth(maxHealth);
             }
-            else
-            {
-
-            }
-            
         }
 
         public override void HandlePoiseResetTimer()
@@ -50,11 +42,10 @@ namespace DK
 
             return maxHealth;
         }
-        public void TakeDamageNoAnimation(int damage)
+        public override void TakeDamageNoAnimation(int damage)
         {
-            if (isDead)
-                return;
-            currentHealth = currentHealth - damage;
+
+            base.TakeDamageNoAnimation(damage);
             if (!isBoss)
             {
                 enemyHealthBar.setHealth(currentHealth);
@@ -63,11 +54,11 @@ namespace DK
             {
                 enemyBossManager.UpdateBossHealth(currentHealth, maxHealth);
             }
-            
-            if (currentHealth <= 0)
+            if (isDead)
             {
-                HandleDeath();
+                enemyAnimatorManager.PlayTargetAnimation("Death", true);
             }
+
         }
 
         public void BreakGuard()
@@ -88,20 +79,10 @@ namespace DK
             }
             
             enemyAnimatorManager.PlayTargetAnimation(damageAnimation, true);
-
-            if (currentHealth <= 0)
+            if (isDead)
             {
-                HandleDeath();
+                enemyAnimatorManager.PlayTargetAnimation("Death", true);
             }
-        }
-
-        private void HandleDeath()
-        {
-            currentHealth = 0;
-            enemyAnimatorManager.PlayTargetAnimation("Death", true);
-            isDead = true;
-
-           
         }
     }
 }

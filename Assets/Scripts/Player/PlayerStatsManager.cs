@@ -3,12 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 namespace DK
 {
-    public class PlayerStats : CharacterStats
+    public class PlayerStatsManager : CharacterStatsManager
     {
  
         public int hitCount = 0;
 
-        PlayerAnimatorManager animatorHandler;
+        PlayerAnimatorManager playerAnimatorManager;
         PlayerManager playerManager;
         public float staminaRegenarationAmount = 25;
         public float focusRegenarationAmount = 11;
@@ -24,7 +24,7 @@ namespace DK
             healthBar = FindObjectOfType<HealthBar>();
             staminaBar = FindObjectOfType<StaminaBar>();
             focusPointBar = FindObjectOfType<FocusPointBar>();
-            animatorHandler = GetComponentInChildren<PlayerAnimatorManager>();
+            playerAnimatorManager = GetComponent<PlayerAnimatorManager>();
             playerManager = GetComponent<PlayerManager>();
             //Ccollider = GameObject.FindGameObjectWithTag("Player").GetComponent<CapsuleCollider>();
             maxHealth = SetMaxHealthFromHealthLevel();
@@ -70,15 +70,13 @@ namespace DK
 
             return maxFocus;
         }
-        public void TakeDamageNoAnimation(int damage)
+        public override void TakeDamageNoAnimation(int damage)
         {
+            base.TakeDamageNoAnimation(damage);
+            healthBar.SetCurrentHealth(currentHealth);
             if (isDead)
-                return;
-            currentHealth = currentHealth - damage;
-            if (currentHealth <= 0)
             {
-                isDead = true;
-                currentHealth = 0;
+              playerAnimatorManager.PlayTargetAnimation("Death", true);
             }
         }
         public override void TakeDamage(int damage,string damageAnimation = "Hit")
@@ -89,14 +87,14 @@ namespace DK
             }
             base.TakeDamage(damage, damageAnimation);
             healthBar.SetCurrentHealth(currentHealth);
-            animatorHandler.PlayTargetAnimation(damageAnimation, true);
+            playerAnimatorManager.PlayTargetAnimation(damageAnimation, true);
 
             if(currentHealth <=0)
             {
                 isDead = true;
 
                 currentHealth = 0;
-                animatorHandler.PlayTargetAnimation("Death", true);
+                playerAnimatorManager.PlayTargetAnimation("Death", true);
                // Ccollider.enabled = false;
                 
             }

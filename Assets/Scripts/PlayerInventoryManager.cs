@@ -2,11 +2,11 @@ using System.Collections.Generic;
 using UnityEngine;
 namespace DK
 {
-    public class PlayerInventory : MonoBehaviour
+    public class PlayerInventoryManager : MonoBehaviour
     {
 
         public ConsumableItem currentConsumable;
-        WeaponSlotManager weaponSlotManager;
+        PlayerWeaponSlotManager playerWeaponSlotManager;
         public SpellItem currentSpell;
         public WeaponItem[] weaponItemsRight;
         public WeaponItem[] weaponItemsLeft;
@@ -27,18 +27,17 @@ namespace DK
 
         private void Awake()
         {
-            weaponSlotManager = GetComponentInChildren<WeaponSlotManager>();
+            playerWeaponSlotManager = GetComponent<PlayerWeaponSlotManager>();
             selectedWeaponIndexLeft = PlayerPrefs.GetInt("SelectedWeaponIndexLeft", 0);
             selectedWeaponIndexRight = PlayerPrefs.GetInt("SelectedWeaponIndexRight", 0);
-
             rightWeapon = weaponItemsRight[selectedWeaponIndexRight];
             leftWeapon = weaponItemsLeft[selectedWeaponIndexLeft];
         }
 
         private void Start()
         {
-            weaponSlotManager.LoadWeaponOnSlot(rightWeapon, false);
-            weaponSlotManager.LoadWeaponOnSlot(leftWeapon, true);
+            playerWeaponSlotManager.LoadWeaponOnSlot(rightWeapon, false);
+            playerWeaponSlotManager.LoadWeaponOnSlot(leftWeapon, true);
         }
     }
 }

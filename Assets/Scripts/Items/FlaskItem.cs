@@ -19,7 +19,7 @@ namespace DK
         public GameObject recoverFx;
 
 
-        public override void AttemptToConsumeItems(PlayerAnimatorManager playerAnimatorManager,WeaponSlotManager weaponSlotManager, PlayerFXManager playerFXManager)
+        public override void AttemptToConsumeItems(PlayerAnimatorManager playerAnimatorManager,PlayerWeaponSlotManager weaponSlotManager, PlayerFXManager playerFXManager)
         {
             base.AttemptToConsumeItems(playerAnimatorManager, weaponSlotManager, playerFXManager);
             if (playerFXManager.toBeInstantiated)
