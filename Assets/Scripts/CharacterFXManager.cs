@@ -6,6 +6,9 @@ namespace DK
 {
     public class CharacterFXManager : MonoBehaviour
     {
+        [Header("Damage FX")]
+        public GameObject bloodSplatterFX;
+        [Header("Weapon Effects")]
         public WeaponVFX rightWeaponVFX;
         public WeaponVFX leftWeaponVFX;
 
@@ -25,6 +28,11 @@ namespace DK
                     leftWeaponVFX.PlayWeaponFX();
                 }
             }
+        }
+
+        public virtual void PlayBloodSplatterEffect(Vector3 bloodSplatterLocation)
+        {
+            GameObject blood = Instantiate(bloodSplatterFX, bloodSplatterLocation,Quaternion.identity);
         }
     }
 }

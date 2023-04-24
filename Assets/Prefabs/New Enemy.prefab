@@ -6103,13 +6103,14 @@ GameObject:
   - component: {fileID: 9000053292317615564}
   - component: {fileID: 9000053292317615563}
   - component: {fileID: 4413020848826425741}
+  - component: {fileID: 186067111658811817}
   m_Layer: 9
   m_Name: New Enemy
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &9000053292317615552
 Transform:
   m_ObjectHideFlags: 0
@@ -6196,6 +6197,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animator: {fileID: 6021831069042900677}
+  characterManager: {fileID: 0}
   canRotate: 0
 --- !u!114 &6021831069042900678
 MonoBehaviour:
@@ -6209,6 +6211,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a1edea3c173b597428db864f3c63efec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  unarmedWeapon: {fileID: 0}
+  leftDamageCollider: {fileID: 0}
+  rightDamageCollider: {fileID: 0}
+  leftHandSlot: {fileID: 0}
+  rightHandSlot: {fileID: 0}
+  backSlot: {fileID: 0}
   rightHandWeapon: {fileID: 11400000, guid: 44e98c3a36a536f40a2a2f3369306804, type: 2}
   leftHandWeapon: {fileID: 0}
 --- !u!114 &9000053292317615564
@@ -6249,17 +6257,22 @@ MonoBehaviour:
   isFiringSpell: 0
   isInvulnerable: 0
   pendingCriticalDamage: 0
+  canDoCombo: 0
+  isUsingRightHand: 0
+  isUsingLeftHand: 0
   isRotatingWithRootMotion: 0
   canRotate: 0
+  isSprinting: 0
+  isInAir: 0
+  isGrounded: 0
+  isInteracting: 0
   currentState: {fileID: 9000053291787366314}
   isPerformingAction: 0
-  isInteracting: 0
   currentTarget: {fileID: 0}
   navMeshAgent: {fileID: 9000053291340928878}
   enemyRigidbody: {fileID: 9000053292317615566}
   rotationSpeed: 15
   maximumAggroRadius: 5
-  canDoCombo: 0
   detectionRadius: 10
   minimumDetectionAngle: -50
   maximumDetectionAngle: 50
@@ -6289,6 +6302,7 @@ MonoBehaviour:
   maxFocus: 0
   currentFocus: 0
   soulCount: 0
+  soulsAwardedOnDeath: 50
   totalPoiseDefense: 0
   offensivePoiseBonus: 0
   armorPoisebonus: 0
@@ -6300,5 +6314,19 @@ MonoBehaviour:
   physicalDamageAbsorbtionHands: 0
   isDead: 0
   enemyHealthBar: {fileID: 9000053292083880270}
-  soulsAwardedOnDeath: 50
   isBoss: 0
+--- !u!114 &186067111658811817
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9000053292317615562}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ae68d3449bedd6645b0b0f0174f5a7bb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bloodSplatterFX: {fileID: 3548588485384254792, guid: 2f9e7dc163581394da1e00b561eed65d, type: 3}
+  rightWeaponVFX: {fileID: 0}
+  leftWeaponVFX: {fileID: 0}

@@ -69755,7 +69755,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2554598860014443789}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: -2.45}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -69895,19 +69895,19 @@ MonoBehaviour:
   isFiringSpell: 0
   isInvulnerable: 0
   pendingCriticalDamage: 0
+  canDoCombo: 0
+  isUsingRightHand: 0
+  isUsingLeftHand: 0
   isRotatingWithRootMotion: 0
   canRotate: 0
+  isSprinting: 0
+  isInAir: 0
+  isGrounded: 0
+  isInteracting: 0
   interactableUiGameObject: {fileID: 0}
   itemInteractableGameobject: {fileID: 0}
   fogWallCollider: {fileID: 0}
   fogEntryCollider: {fileID: 0}
-  isInteracting: 0
-  isSprinting: 0
-  isInAir: 0
-  isGrounded: 0
-  canDoCombo: 0
-  isUsingRightHand: 0
-  isUsingLeftHand: 0
 --- !u!114 &2554598860014443788
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -69924,7 +69924,7 @@ MonoBehaviour:
   currentSpell: {fileID: 11400000, guid: 70d574e52e6202f489dd32f9d86bf0f9, type: 2}
   weaponItemsRight:
   - {fileID: 11400000, guid: 2035fcc6b5e5956428f3213594734d88, type: 2}
-  - {fileID: 11400000, guid: 69ae6967547257341ba37b25fe3d6b3f, type: 2}
+  - {fileID: 11400000, guid: 0060897fa98a2ef4d85f187644374df9, type: 2}
   - {fileID: 11400000, guid: 69ae6967547257341ba37b25fe3d6b3f, type: 2}
   weaponItemsLeft:
   - {fileID: 11400000, guid: 32fd7bee58f37c94193429903d6da805, type: 2}
@@ -69949,12 +69949,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c38a3b91febee3c40bef781d6ff25445, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  leftHandSlot: {fileID: 0}
-  rightHandSlot: {fileID: 0}
+  unarmedWeapon: {fileID: 0}
   leftDamageCollider: {fileID: 0}
   rightDamageCollider: {fileID: 0}
+  leftHandSlot: {fileID: 0}
+  rightHandSlot: {fileID: 0}
+  backSlot: {fileID: 0}
   attackingItem: {fileID: 0}
-  unarmedWeapon: {fileID: 0}
 --- !u!114 &5161199277288787832
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -69988,6 +69989,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animator: {fileID: 0}
+  characterManager: {fileID: 0}
   canRotate: 0
 --- !u!114 &5161199277288787834
 MonoBehaviour:
@@ -70001,6 +70003,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: db8c022d116ad69498621819c5796fe1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bloodSplatterFX: {fileID: 3548588485384254792, guid: 2f9e7dc163581394da1e00b561eed65d, type: 3}
+  rightWeaponVFX: {fileID: 0}
+  leftWeaponVFX: {fileID: 0}
   currentParticleFX: {fileID: 0}
   instantiatedFXModel: {fileID: 0}
   healParticles: {fileID: 0}
@@ -70056,6 +70061,7 @@ MonoBehaviour:
   maxFocus: 0
   currentFocus: 0
   soulCount: 0
+  soulsAwardedOnDeath: 50
   totalPoiseDefense: 0
   offensivePoiseBonus: 0
   armorPoisebonus: 0

@@ -127,7 +127,7 @@ RectTransform:
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 1.3123779, y: 0}
   m_SizeDelta: {x: -18.5874, y: -21.212}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -5845,7 +5845,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &7983833999006744922
 Transform:
   m_ObjectHideFlags: 0
@@ -5932,6 +5932,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animator: {fileID: 0}
+  characterManager: {fileID: 0}
   canRotate: 0
 --- !u!114 &4013606419465560980
 MonoBehaviour:
@@ -5945,6 +5946,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a1edea3c173b597428db864f3c63efec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  unarmedWeapon: {fileID: 0}
+  leftDamageCollider: {fileID: 0}
+  rightDamageCollider: {fileID: 0}
+  leftHandSlot: {fileID: 0}
+  rightHandSlot: {fileID: 0}
+  backSlot: {fileID: 0}
   rightHandWeapon: {fileID: 11400000, guid: 9d7ab9c34c1fc8549adf1387cd511440, type: 2}
   leftHandWeapon: {fileID: 0}
 --- !u!114 &7983833999006744918
@@ -5985,17 +5992,22 @@ MonoBehaviour:
   isFiringSpell: 0
   isInvulnerable: 0
   pendingCriticalDamage: 0
+  canDoCombo: 0
+  isUsingRightHand: 0
+  isUsingLeftHand: 0
   isRotatingWithRootMotion: 0
   canRotate: 0
+  isSprinting: 0
+  isInAir: 0
+  isGrounded: 0
+  isInteracting: 0
   currentState: {fileID: 7983833999548402480}
   isPerformingAction: 0
-  isInteracting: 0
   currentTarget: {fileID: 0}
   navMeshAgent: {fileID: 7983833998019326964}
   enemyRigidbody: {fileID: 0}
   rotationSpeed: 15
   maximumAggroRadius: 5
-  canDoCombo: 0
   detectionRadius: 10
   minimumDetectionAngle: -50
   maximumDetectionAngle: 50
@@ -6039,6 +6051,7 @@ MonoBehaviour:
   maxFocus: 0
   currentFocus: 0
   soulCount: 0
+  soulsAwardedOnDeath: 50
   totalPoiseDefense: 0
   offensivePoiseBonus: 0
   armorPoisebonus: 0
@@ -6050,7 +6063,6 @@ MonoBehaviour:
   physicalDamageAbsorbtionHands: 0
   isDead: 0
   enemyHealthBar: {fileID: 0}
-  soulsAwardedOnDeath: 50
   isBoss: 0
 --- !u!1 &7983833999191523795
 GameObject:

@@ -41,17 +41,18 @@ namespace DK
             if(collision.tag =="Player")
             {
                 PlayerStatsManager playerStats = collision.GetComponentInParent<PlayerStatsManager>();
-                CharacterManager enemyCharacterManager = collision.GetComponent<CharacterManager>();
+                CharacterManager playerCharacterManager = collision.GetComponent<CharacterManager>();
+                CharacterFXManager playerFXManager = collision.GetComponent<CharacterFXManager>();
                 BlockingCollider shield = collision.transform.GetComponentInChildren<BlockingCollider>();
 
-                if (enemyCharacterManager != null)
+                if (playerCharacterManager != null)
                 {
-                    if (enemyCharacterManager.isParrying)
+                    if (playerCharacterManager.isParrying)
                     {
                         characterManager.GetComponentInChildren<AnimatorManager>().PlayTargetAnimation("Parried", true);
                         return;
                     }
-                    else if(shield!=null && enemyCharacterManager.isBlocking)
+                    else if(shield!=null && playerCharacterManager.isBlocking)
                     {
                         float physicalDamageAfterBlock = weaponDamage- (weaponDamage * shield.blockingPhysicalDamageAbsorbtion)/100;
                         if(playerStats != null)
@@ -60,7 +61,10 @@ namespace DK
                                 return;
                             playerStats.poiseResetTimer = playerStats.totalPoiseResetTime;
                             playerStats.totalPoiseDefense = playerStats.totalPoiseDefense - poiseBreak;
-                            Debug.Log("Players Poise is Currently" + playerStats.totalPoiseDefense);
+                            //Debug.Log("Players Poise is Currently" + playerStats.totalPoiseDefense);
+
+                            Vector3 contactPoint = collision.gameObject.GetComponent<Collider>().ClosestPointOnBounds(transform.position);
+                            playerFXManager.PlayBloodSplatterEffect(contactPoint);
                             if (playerStats.totalPoiseDefense > poiseBreak)
                             {
                                 playerStats.TakeDamageNoAnimation(weaponDamage);
@@ -69,6 +73,7 @@ namespace DK
                             else
                             {
                                 playerStats.TakeDamage(weaponDamage);
+                               
                             }
                         }
                     }
@@ -87,6 +92,7 @@ namespace DK
             {
                 EnemyStatsManager enemyStats = collision.GetComponent<EnemyStatsManager>();
                 CharacterManager enemyCharacterManager = collision.GetComponent<CharacterManager>();
+                CharacterFXManager enemyFXManager = collision.GetComponent<CharacterFXManager>();
                 BlockingCollider shield = collision.transform.GetComponentInChildren<BlockingCollider>();
 
                 if (enemyCharacterManager != null)
@@ -114,7 +120,9 @@ namespace DK
                         return;
                     enemyStats.poiseResetTimer = enemyStats.totalPoiseResetTime;
                     enemyStats.totalPoiseDefense = enemyStats.totalPoiseDefense - poiseBreak;
-                    Debug.Log("Enemy Poise is Currently" + enemyStats.totalPoiseDefense);
+                   // Debug.Log("Enemy Poise is Currently" + enemyStats.totalPoiseDefense);
+                    Vector3 contactPosition = collision.GetComponent<Collider>().ClosestPointOnBounds(transform.position);
+                    enemyFXManager.PlayBloodSplatterEffect(contactPosition);
 
                     if (enemyStats.isBoss)
                     {
