@@ -7,6 +7,7 @@ namespace DK
  public class EnemyAnimatorManager : AnimatorManager
  {
         EnemyBossManager enemyBossManager;
+        EnemyFXManager enemyFXManager;
         EnemyManager enemyManager;
         protected override void Awake()
         {
@@ -14,6 +15,7 @@ namespace DK
             animator = GetComponent<Animator>();
             enemyBossManager = GetComponent<EnemyBossManager>();
             enemyManager = GetComponent<EnemyManager>();
+            enemyFXManager = GetComponent<EnemyFXManager>();
         }
         private void OnAnimatorMove()
         {
@@ -47,7 +49,10 @@ namespace DK
            
         }
 
-
+        public void PlayWeaponTrailFX()
+        {
+            enemyFXManager.PlayWeaponFX(false);
+        }
         public void InstantiataeBossParticleFX()
         {
             BossFxTransform bossFxTransform = GetComponentInChildren<BossFxTransform>();

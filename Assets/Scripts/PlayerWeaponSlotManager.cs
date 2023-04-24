@@ -13,6 +13,7 @@ namespace DK
         Animator animator;
         public WeaponItem attackingItem;
         PlayerStatsManager playerStatsManager;
+        PlayerFXManager playerFXManager;
         private void Awake()
         {
             playerManager = GetComponent<PlayerManager>();
@@ -20,6 +21,7 @@ namespace DK
             inputHandler = GetComponent<inputHandler>();
             playerStatsManager = GetComponent<PlayerStatsManager>();
             playerInventoryManager = GetComponent<PlayerInventoryManager>();
+            playerFXManager = GetComponent<PlayerFXManager>();
             LoadWeaponHolderSlots();
 
         }
@@ -112,6 +114,7 @@ namespace DK
             leftDamageCollider = leftHandSlot.currentWeaponModel.GetComponentInChildren<DamageCollider>();
             leftDamageCollider.weaponDamage = playerInventoryManager.leftWeapon.baseDamage;
             leftDamageCollider.poiseBreak = playerInventoryManager.leftWeapon.poiseBreak;
+            playerFXManager.leftWeaponVFX = leftHandSlot.currentWeaponModel.GetComponentInChildren<WeaponVFX>();
         }
 
         private void LoadRightWeaponDamageCollider()
@@ -119,6 +122,7 @@ namespace DK
             rightDamageCollider = rightHandSlot.currentWeaponModel.GetComponentInChildren<DamageCollider>();
             rightDamageCollider.weaponDamage = playerInventoryManager.rightWeapon.baseDamage;
             rightDamageCollider.poiseBreak = playerInventoryManager.rightWeapon.poiseBreak;
+            playerFXManager.rightWeaponVFX = rightHandSlot.currentWeaponModel.GetComponentInChildren<WeaponVFX>();
         }
 
         public void OpenDamageCollider()

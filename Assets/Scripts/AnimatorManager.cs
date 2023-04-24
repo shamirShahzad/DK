@@ -6,7 +6,7 @@ namespace DK
     public class AnimatorManager : MonoBehaviour
     {
         public Animator animator;
-        protected CharacterManager characterManager;
+        public CharacterManager characterManager;
         protected CharacterStatsManager characterStatsManager;
         public bool canRotate;
 

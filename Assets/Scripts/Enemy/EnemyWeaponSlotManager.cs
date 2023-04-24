@@ -12,11 +12,13 @@ namespace DK
 
 
         EnemyStatsManager enemyStatsManager;
+        EnemyFXManager enemyFXManager;
 
 
         private void Awake()
         {
             enemyStatsManager = GetComponent<EnemyStatsManager>();
+            enemyFXManager = GetComponent<EnemyFXManager>();
             LoadWeaponHolderSlot();
         }
 
@@ -78,11 +80,13 @@ namespace DK
             {
                 leftDamageCollider = leftHandSlot.currentWeaponModel.GetComponentInChildren<DamageCollider>();
                 leftDamageCollider.characterManager = GetComponentInParent<CharacterManager>();
+                enemyFXManager.leftWeaponVFX = leftHandSlot.currentWeaponModel.GetComponentInChildren<WeaponVFX>();
             }
             else
             {
                 rightDamageCollider = rightHandSlot.currentWeaponModel.GetComponentInChildren<DamageCollider>();
                 rightDamageCollider.characterManager = GetComponentInParent<CharacterManager>();
+                enemyFXManager.rightWeaponVFX = rightHandSlot.currentWeaponModel.GetComponentInChildren<WeaponVFX>();
             }
         }
 

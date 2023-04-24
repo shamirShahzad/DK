@@ -13,7 +13,9 @@ namespace DK
 
         bool willDoComboOnNextAttack = false;
         public bool hasPerformedAttack = false;
-        public override State Tick(EnemyManager enemyManager, EnemyStatsManager enemyStats, EnemyAnimatorManager enemyAnimatorManager)
+        public override State Tick(EnemyManager enemyManager,
+            EnemyStatsManager enemyStats,
+            EnemyAnimatorManager enemyAnimatorManager)
         {
             float distanceFromTarget = Vector3.Distance(enemyManager.currentTarget.transform.position, enemyManager.transform.position);
             RotateTowardtargetWhilstAttacking(enemyManager);
@@ -40,6 +42,7 @@ namespace DK
         private void AttackTarget(EnemyAnimatorManager enemyAnimatorManager, EnemyManager enemyManager)
         {
             enemyAnimatorManager.PlayTargetAnimation(currentAttack.actionAnimation, true);
+            enemyAnimatorManager.PlayWeaponTrailFX();
             enemyManager.currentRecoveryTime = currentAttack.recoveryTime;
             hasPerformedAttack = true;
         }
@@ -48,6 +51,7 @@ namespace DK
         {
             willDoComboOnNextAttack = false;
             enemyAnimatorManager.PlayTargetAnimation(currentAttack.actionAnimation, true);
+            enemyAnimatorManager.PlayWeaponTrailFX();
             enemyManager.currentRecoveryTime = currentAttack.recoveryTime;
             currentAttack = null;
         }

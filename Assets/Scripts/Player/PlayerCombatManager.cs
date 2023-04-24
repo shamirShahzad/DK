@@ -12,6 +12,7 @@ namespace DK
         PlayerStatsManager playerStatsManager;
         PlayerInventoryManager playerInventoryManager;
         PlayerWeaponSlotManager playerWeaponSlotManager;
+        PlayerFXManager playerFXManager;
         CameraHandler cameraHandler;
         [SerializeField]
         LayerMask backStabLayer;
@@ -20,7 +21,7 @@ namespace DK
         public string lastAttack;
         [HideInInspector]
         public bool isStabbing;
-        private void Start()
+        private void Awake()
         {
             playerAnimtorManager = GetComponent<PlayerAnimatorManager>();
             inputHandler = GetComponent<inputHandler>();
@@ -29,6 +30,7 @@ namespace DK
             playerManager = GetComponent<PlayerManager>();
             playerInventoryManager = GetComponent<PlayerInventoryManager>();
             playerEquipmentManager = GetComponent<PlayerEquipmentManager>();
+            playerFXManager = GetComponent<PlayerFXManager>();
             cameraHandler = FindObjectOfType<CameraHandler>();
         }
         public void HandleWeaponCombo(WeaponItem weapon)
@@ -42,6 +44,7 @@ namespace DK
                 if (lastAttack == weapon.OH_Light_Attack_1)
                 {
                     playerAnimtorManager.PlayTargetAnimation(weapon.OH_Light_Attack_2, true);
+                    playerFXManager.PlayWeaponFX(false);
                 }
                 else if (lastAttack == weapon.TH_Light_Attack_01)
                 {
@@ -59,12 +62,14 @@ namespace DK
             {
                 playerAnimtorManager.PlayTargetAnimation(weapon.TH_Light_Attack_01, true);
                 lastAttack = weapon.TH_Light_Attack_01;
+                playerFXManager.PlayWeaponFX(false);
             }
             else
             {
                
                 playerAnimtorManager.PlayTargetAnimation(weapon.OH_Light_Attack_1, true);
                 lastAttack = weapon.OH_Light_Attack_1;
+                playerFXManager.PlayWeaponFX(false);
             }
            
         }
@@ -138,6 +143,8 @@ namespace DK
                 playerAnimtorManager.animator.SetBool("isUsingRightHand", true);
                 HandleLightAttack(playerInventoryManager.rightWeapon);
             }
+
+            
         }
 
 
