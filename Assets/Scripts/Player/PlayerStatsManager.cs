@@ -79,6 +79,23 @@ namespace DK
               playerAnimatorManager.PlayTargetAnimation("Death", true);
             }
         }
+
+        public override void TakePoisonDamage(int damage)
+        {
+            if (isDead)
+                return;
+            base.TakePoisonDamage(damage);
+            healthBar.SetCurrentHealth(currentHealth);
+            if (currentHealth <= 0)
+            {
+                isDead = true;
+
+                currentHealth = 0;
+                playerAnimatorManager.PlayTargetAnimation("Death", true);
+                // Ccollider.enabled = false;
+
+            }
+        }
         public override void TakeDamage(int damage,string damageAnimation = "Hit")
         {
             if (playerManager.isInvulnerable)

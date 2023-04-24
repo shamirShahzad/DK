@@ -5,12 +5,15 @@ namespace DK
 {
     public class DamageCollider : MonoBehaviour
     {
+
         public CharacterManager characterManager;
         Collider damageCollider;
         [SerializeField]
         public int weaponDamage = 8;
         PlayerStatsManager myPlayerStats;
         public bool enableOnstartup = false;
+        [Header("Team ID")]
+        public int teamIdNumber = 0;
         [Header("Poise")]
         public float poiseBreak;
         public float offensivePoiseBonus; 
@@ -41,29 +44,38 @@ namespace DK
             if(collision.tag =="Player")
             {
                 PlayerStatsManager playerStats = collision.GetComponentInParent<PlayerStatsManager>();
-                CharacterManager playerCharacterManager = collision.GetComponent<CharacterManager>();
-                CharacterFXManager playerFXManager = collision.GetComponent<CharacterFXManager>();
+                CharacterManager playerCharacterManager = collision.GetComponentInParent<CharacterManager>();
+                CharacterFXManager playerFXManager = collision.GetComponentInParent<CharacterFXManager>();
                 BlockingCollider shield = collision.transform.GetComponentInChildren<BlockingCollider>();
 
                 if (playerCharacterManager != null)
                 {
                     if (playerCharacterManager.isParrying)
                     {
-                        characterManager.GetComponentInChildren<AnimatorManager>().PlayTargetAnimation("Parried", true);
+                        characterManager.GetComponent<AnimatorManager>().PlayTargetAnimation("Parried", true);
                         return;
                     }
-                    else if(shield!=null && playerCharacterManager.isBlocking)
+                    else if (shield != null && playerCharacterManager.isBlocking)
                     {
-                        float physicalDamageAfterBlock = weaponDamage- (weaponDamage * shield.blockingPhysicalDamageAbsorbtion)/100;
+                        float physicalDamageAfterBlock = weaponDamage - (weaponDamage * shield.blockingPhysicalDamageAbsorbtion) / 100;
+
+                        if (playerStats != null)
+                        {
+                            playerStats.TakeDamage(Mathf.RoundToInt(physicalDamageAfterBlock), "Block");
+                            return;
+                        }
+                    }
+                }
+
                         if(playerStats != null)
                         {
+                           
                             if (playerStats.isDead)
                                 return;
                             playerStats.poiseResetTimer = playerStats.totalPoiseResetTime;
                             playerStats.totalPoiseDefense = playerStats.totalPoiseDefense - poiseBreak;
                             //Debug.Log("Players Poise is Currently" + playerStats.totalPoiseDefense);
-
-                            Vector3 contactPoint = collision.gameObject.GetComponent<Collider>().ClosestPointOnBounds(transform.position);
+                            Vector3 contactPoint = collision.GetComponent<Collider>().ClosestPointOnBounds(transform.position);
                             playerFXManager.PlayBloodSplatterEffect(contactPoint);
                             if (playerStats.totalPoiseDefense > poiseBreak)
                             {
@@ -76,19 +88,19 @@ namespace DK
                                
                             }
                         }
-                    }
-                    
-                }
-                
+
                 if (playerStats != null)
                 {
                     if (playerStats.isDead)
                         return;
-                    if(gameObject.tag == "Skeleton Sword")
-                    playerStats.TakeDamage(weaponDamage,"Skeleton Hit");
+                    if (gameObject.tag == "Skeleton Sword")
+                        playerStats.TakeDamage(weaponDamage, "Skeleton Hit");
                 }
+
             }
-            if(collision.tag == "Enemy")
+
+
+            if (collision.tag == "Enemy")
             {
                 EnemyStatsManager enemyStats = collision.GetComponent<EnemyStatsManager>();
                 CharacterManager enemyCharacterManager = collision.GetComponent<CharacterManager>();

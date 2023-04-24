@@ -7,6 +7,10 @@ namespace DK
 {
     public class CharacterStatsManager : MonoBehaviour
     {
+        [Header("Team ID")]
+        public int teamIdNumber = 0;
+
+
         public int healthLevel = 10;
         public int maxHealth;
         public int currentHealth;
@@ -82,7 +86,19 @@ namespace DK
 
         }
 
-        private void HandleDeath()
+        public virtual void TakePoisonDamage(int damage)
+        {
+            if (isDead)
+                return;
+            currentHealth = currentHealth - damage;
+            if (currentHealth <= 0)
+            {
+                HandleDeath();
+            }
+
+        }
+
+        protected void HandleDeath()
         {
             if (currentHealth <= 0)
             {

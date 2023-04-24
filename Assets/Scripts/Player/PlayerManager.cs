@@ -10,6 +10,7 @@ namespace DK
         Animator animator;
         PlayerLocomotionManager playerLocomotion;
         PlayerAnimatorManager playerAnimatorManager;
+        PlayerFXManager playerFXManager;
         InteractableUi interactableUi;
         PlayerStatsManager playerStatsManager;
 
@@ -29,6 +30,7 @@ namespace DK
             playerStatsManager = GetComponent<PlayerStatsManager>();
             backStabCollider = GetComponentInChildren<CriticalDamageCollider>();
             playerAnimatorManager = GetComponent<PlayerAnimatorManager>();
+            playerFXManager = GetComponent<PlayerFXManager>();
         }       
         void Update()
         {
@@ -61,7 +63,7 @@ namespace DK
             playerLocomotion.HandleFalling(delta, playerLocomotion.moveDirection);
             playerLocomotion.HandleMovement(delta);
             playerLocomotion.HandleRotation(delta);
-            
+            playerFXManager.HAndleAllBuildupEffects();
            
 
         }

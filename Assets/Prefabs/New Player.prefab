@@ -70003,9 +70003,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: db8c022d116ad69498621819c5796fe1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bloodSplatterFX: {fileID: 3548588485384254792, guid: 2f9e7dc163581394da1e00b561eed65d, type: 3}
+  bloodSplatterFX: {fileID: 183679963054362320, guid: ed5d829a9e21a7c4cb440881091a79a9, type: 3}
   rightWeaponVFX: {fileID: 0}
   leftWeaponVFX: {fileID: 0}
+  isPoisned: 0
+  poisnBuildup: 0
+  poisonAmount: 100
+  defaultPoisonAmount: 0
+  poisonTimer: 2
+  poisonDamage: 1
   currentParticleFX: {fileID: 0}
   instantiatedFXModel: {fileID: 0}
   healParticles: {fileID: 0}
@@ -70051,6 +70057,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dff893d7a3341244ab84b59424c04e77, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  teamIdNumber: 0
   healthLevel: 10
   maxHealth: 0
   currentHealth: 0

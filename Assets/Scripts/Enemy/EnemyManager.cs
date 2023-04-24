@@ -24,6 +24,7 @@ namespace DK
         EnemyLocomotionManager enemyLocomotionManager;
         EnemyAnimatorManager enemyAnimatorManager;
         EnemyStatsManager enemyStatsManager;
+        EnemyFXManager enemyFXManager;
 
         [Header("A.I Combat Settings")]
         public bool allowAIToPerformCombo;
@@ -38,6 +39,7 @@ namespace DK
         {
             enemyLocomotionManager = GetComponent<EnemyLocomotionManager>();
             enemyAnimatorManager = GetComponent<EnemyAnimatorManager>();
+            enemyFXManager = GetComponent<EnemyFXManager>();
             enemyStatsManager = GetComponent<EnemyStatsManager>();
             navMeshAgent = GetComponentInChildren<NavMeshAgent>();
             enemyRigidbody = GetComponent<Rigidbody>();
@@ -59,6 +61,11 @@ namespace DK
             canRotate = enemyAnimatorManager.animator.GetBool("canRotate");
             canDoCombo = enemyAnimatorManager.animator.GetBool("canDoCombo");
             enemyAnimatorManager.animator.SetBool("isDead", enemyStatsManager.isDead);
+        }
+
+        private void FixedUpdate()
+        {
+            enemyFXManager.HAndleAllBuildupEffects();
         }
         private void LateUpdate()
         {

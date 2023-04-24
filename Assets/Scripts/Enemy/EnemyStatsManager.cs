@@ -60,6 +60,35 @@ namespace DK
             }
 
         }
+        public override void TakePoisonDamage(int damage)
+        {
+            if (isDead)
+                return;
+            base.TakePoisonDamage(damage);
+            if (!isBoss)
+            {
+                enemyHealthBar.setHealth(currentHealth);
+            }
+            else if (isBoss && enemyBossManager != null)
+            {
+                enemyBossManager.UpdateBossHealth(currentHealth, maxHealth);
+            }
+            if (isDead)
+            {
+                enemyAnimatorManager.PlayTargetAnimation("Death", true);
+            }
+            if (currentHealth <= 0)
+            {
+                isDead = true;
+
+                currentHealth = 0;
+                enemyAnimatorManager.PlayTargetAnimation("Death", true);
+                // Ccollider.enabled = false;
+
+            }
+        }
+
+
 
         public void BreakGuard()
         {
