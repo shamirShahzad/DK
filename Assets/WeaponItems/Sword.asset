@@ -16,25 +16,14 @@ MonoBehaviour:
   itemName: Sword
   modelPrefab: {fileID: 6525723783963476284, guid: fc674730e73f85e4c8fb0b6ddcb01fba, type: 3}
   isUnarmed: 0
+  weaponController: {fileID: 22100000, guid: a617f19ae2c41674491c637a03405ff2, type: 2}
+  offHandIdleAnimation: Left_Arm_Idle
+  weaponTypes: 2
   baseDamage: 10
   criticalDamageMultiplier: 2
   poiseBreak: 20
   offensivePoiseBonus: 0
   physicalDamageAbsorbtion: 0
-  Left_Hand_Idle: Left_Arm_Idle
-  Right_Hand_Idle: Right_Arm_Idle
-  th_idle: TH_Idle_01
-  OH_Light_Attack_1: OH_Light_Attack_01
-  OH_Light_Attack_2: OH_Light_Attack_02
-  OH_Heavy_Attack_1: OH_Heavy_Attack_01
-  TH_Light_Attack_01: TH_Light_Attack_01
-  TH_Light_Attack_02: TH_Light_Attack_02
-  weaponArtShield: 
   baseStaminaCost: 20
   lightAttackMultiplier: 1
   heavyAttackMultiplier: 2
-  isSpellCaster: 0
-  isFaithCaster: 0
-  isPyroCaster: 0
-  isMeleeWeapon: 1
-  isShield: 0

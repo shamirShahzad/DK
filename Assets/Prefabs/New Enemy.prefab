@@ -6260,6 +6260,7 @@ MonoBehaviour:
   canDoCombo: 0
   isUsingRightHand: 0
   isUsingLeftHand: 0
+  isTwoHanding: 0
   isRotatingWithRootMotion: 0
   canRotate: 0
   isSprinting: 0
@@ -6292,6 +6293,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 11af86c469e13714a808b4b99c0fbbc4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  teamIdNumber: 1
   healthLevel: 10
   maxHealth: 0
   currentHealth: 0
@@ -6327,6 +6329,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ae68d3449bedd6645b0b0f0174f5a7bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bloodSplatterFX: {fileID: 3548588485384254792, guid: 2f9e7dc163581394da1e00b561eed65d, type: 3}
+  bloodSplatterFX: {fileID: 183679963054362320, guid: ed5d829a9e21a7c4cb440881091a79a9, type: 3}
   rightWeaponVFX: {fileID: 0}
   leftWeaponVFX: {fileID: 0}
+  defaultPoisonParticleFX: {fileID: 0}
+  currentPoisonParticleFX: {fileID: 0}
+  buildupTransform: {fileID: 0}
+  isPoisned: 0
+  poisonBuildup: 0
+  poisonAmount: 100
+  defaultPoisonAmount: 100
+  poisonTimer: 2
+  poisonDamage: 1

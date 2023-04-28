@@ -38,7 +38,7 @@ namespace DK
             if (!hasCollded)
             {
                 spellTarget = collision.transform.GetComponent<CharacterStatsManager>();
-                if (spellTarget != null)
+                if (spellTarget != null && spellTarget.teamIdNumber !=teamIdNumber)
                 {
                     spellTarget.TakeDamage(weaponDamage);
                 }

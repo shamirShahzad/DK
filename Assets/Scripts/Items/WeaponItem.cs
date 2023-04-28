@@ -9,6 +9,12 @@ namespace DK
         public GameObject modelPrefab;
 
         public bool isUnarmed;
+        [Header ("Animator Replacer")]
+        public AnimatorOverrideController weaponController;
+        public string offHandIdleAnimation = "Left_Arm_Idle";
+
+        [Header("Weapon Type")]
+        public WeaponTypes weaponTypes;
 
         [Header("Damage")]
         public int baseDamage = 25;
@@ -20,7 +26,7 @@ namespace DK
 
         [Header("Absorbtion")]
         public float physicalDamageAbsorbtion;
-
+/*
         [Header("Idle Animations")]
         public string Left_Hand_Idle;
         public string Right_Hand_Idle;
@@ -33,19 +39,22 @@ namespace DK
         [Header("Two Handed Attack")]
         public string TH_Light_Attack_01;
         public string TH_Light_Attack_02;
+
         [Header("Weapon Art")]
         public string weaponArtShield;
+*/
         [Header("Stamina Drain")]
         public int baseStaminaCost;
         public float lightAttackMultiplier;
         public float heavyAttackMultiplier;
-
+/*
         [Header("Weapon Type")]
         public bool isSpellCaster;
         public bool isFaithCaster;
         public bool isPyroCaster;
         public bool isMeleeWeapon;
         public bool isShield;
+*/
 
 
     }

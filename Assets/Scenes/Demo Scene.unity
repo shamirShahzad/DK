@@ -6127,6 +6127,10 @@ PrefabInstance:
       propertyPath: bloodSplatterFX
       value: 
       objectReference: {fileID: 183679963054362320, guid: ed5d829a9e21a7c4cb440881091a79a9, type: 3}
+    - target: {fileID: 4413020848826425741, guid: ec545e5b29518014388cb554bb29607f, type: 3}
+      propertyPath: teamIdNumber
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 9000053290340805183, guid: ec545e5b29518014388cb554bb29607f, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0

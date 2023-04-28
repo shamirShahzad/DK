@@ -107,6 +107,8 @@ namespace DK
 
                 if (enemyCharacterManager != null)
                 {
+                    if (enemyStats.teamIdNumber == teamIdNumber)
+                        return;
                     if (enemyCharacterManager.isParrying)
                     {
                         characterManager.GetComponentInChildren<AnimatorManager>().PlayTargetAnimation("Parried", true);
@@ -126,7 +128,7 @@ namespace DK
 
                 if(enemyStats != null)
                 {
-                    if (enemyStats.isDead)
+                    if (enemyStats.isDead || enemyStats.teamIdNumber == teamIdNumber)
                         return;
                     enemyStats.poiseResetTimer = enemyStats.totalPoiseResetTime;
                     enemyStats.totalPoiseDefense = enemyStats.totalPoiseDefense - poiseBreak;

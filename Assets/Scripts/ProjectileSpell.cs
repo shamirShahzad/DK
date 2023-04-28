@@ -34,6 +34,8 @@ namespace DK
         {
             base.SuccessfullyCastedSpell(animatorHandler, playerStats,cameraHandler,weaponSlotManager);
             GameObject instansiatedSpellFX = Instantiate(spellCastEffect, weaponSlotManager.rightHandSlot.transform.position, cameraHandler.cameraPivotTransform.rotation);
+            SpellDamageCollider spellDamageCollider = instansiatedSpellFX.GetComponent<SpellDamageCollider>();
+            spellDamageCollider.teamIdNumber = playerStats.teamIdNumber;
             rigidbody = instansiatedSpellFX.GetComponent<Rigidbody>();
             //spellDamageCollider = InstantiatedSpellFX = GetComponent<SpellDamageCollider>();
 

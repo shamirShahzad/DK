@@ -21,20 +21,23 @@ namespace DK
 
                 if (characterStats != null)
                 {
-
-
-                    Vector3 targetDirection = characterStats.transform.position - transform.position;
-                    float distanceToTarget = Vector3.Distance(transform.position, characterStats.transform.position);
-                    float viewableAngle = Vector3.Angle(targetDirection, transform.forward);
-
-                    if (viewableAngle > enemyManager.minimumDetectionAngle && viewableAngle < enemyManager.maximumDetectionAngle)
+                    if (characterStats.teamIdNumber != enemyStats.teamIdNumber)
                     {
-                        if (!Physics.Raycast(transform.position + offset, targetDirection, distanceToTarget, obstructionLayer))
-                            enemyManager.currentTarget = characterStats;
-                        else
-                            enemyManager.currentTarget = null;
-                        
+                        Vector3 targetDirection = characterStats.transform.position - transform.position;
+                        float distanceToTarget = Vector3.Distance(transform.position, characterStats.transform.position);
+                        float viewableAngle = Vector3.Angle(targetDirection, transform.forward);
+
+                        if (viewableAngle > enemyManager.minimumDetectionAngle && viewableAngle < enemyManager.maximumDetectionAngle)
+                        {
+                            if (!Physics.Raycast(transform.position + offset, targetDirection, distanceToTarget, obstructionLayer))
+                                enemyManager.currentTarget = characterStats;
+                            else
+                                enemyManager.currentTarget = null;
+
+                        }
                     }
+
+                    
                 }
             }
             if (enemyManager.currentTarget != null)

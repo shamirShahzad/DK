@@ -80,12 +80,16 @@ namespace DK
             {
                 leftDamageCollider = leftHandSlot.currentWeaponModel.GetComponentInChildren<DamageCollider>();
                 leftDamageCollider.characterManager = GetComponentInParent<CharacterManager>();
+
+                leftDamageCollider.teamIdNumber = enemyStatsManager.teamIdNumber;
                 enemyFXManager.leftWeaponVFX = leftHandSlot.currentWeaponModel.GetComponentInChildren<WeaponVFX>();
             }
             else
             {
                 rightDamageCollider = rightHandSlot.currentWeaponModel.GetComponentInChildren<DamageCollider>();
                 rightDamageCollider.characterManager = GetComponentInParent<CharacterManager>();
+
+                rightDamageCollider.teamIdNumber = enemyStatsManager.teamIdNumber;
                 enemyFXManager.rightWeaponVFX = rightHandSlot.currentWeaponModel.GetComponentInChildren<WeaponVFX>();
             }
         }

@@ -16,23 +16,14 @@ MonoBehaviour:
   itemName: Skeleton Boss
   modelPrefab: {fileID: 6525723783963476284, guid: 0117a1396356a0c4fbb9da922c28d413, type: 3}
   isUnarmed: 0
+  weaponController: {fileID: 0}
+  offHandIdleAnimation: Left_Arm_Idle
+  weaponTypes: 2
   baseDamage: 25
   criticalDamageMultiplier: 4
+  poiseBreak: 0
+  offensivePoiseBonus: 0
   physicalDamageAbsorbtion: 0
-  Left_Hand_Idle: 
-  Right_Hand_Idle: 
-  th_idle: 
-  OH_Light_Attack_1: 
-  OH_Light_Attack_2: 
-  OH_Heavy_Attack_1: 
-  TH_Light_Attack_01: 
-  TH_Light_Attack_02: 
-  weaponArtShield: 
   baseStaminaCost: 0
   lightAttackMultiplier: 0
   heavyAttackMultiplier: 0
-  isSpellCaster: 0
-  isFaithCaster: 0
-  isPyroCaster: 0
-  isMeleeWeapon: 1
-  isShield: 0

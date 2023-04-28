@@ -44,6 +44,7 @@ namespace DK
             isFiringSpell = animator.GetBool("isFiringSpell");
             animator.SetBool("isBlocking",isBlocking);
             animator.SetBool("isInAir", isInAir);
+            animator.SetBool("isTwoHanding", isTwoHanding);
             animator.SetBool("isDead", playerStatsManager.isDead);
             playerAnimatorManager.canRotate = animator.GetBool("canRotate");
             inputHandler.TickInput(delta);

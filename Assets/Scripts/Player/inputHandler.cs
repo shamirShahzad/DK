@@ -248,11 +248,13 @@ namespace DK
                 if(twoHandFlag)
                 {
                     weaponSlotManager.LoadWeaponOnSlot(playerInventoryManager.rightWeapon, false);
+                    playerManager.isTwoHanding = true;
                 }
                 else
                 {
                     weaponSlotManager.LoadWeaponOnSlot(playerInventoryManager.rightWeapon, false);
                     weaponSlotManager.LoadWeaponOnSlot(playerInventoryManager.leftWeapon, true);
+                    playerManager.isTwoHanding = false;
                 }
             }
         }

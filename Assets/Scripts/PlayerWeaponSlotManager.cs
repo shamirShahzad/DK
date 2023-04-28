@@ -9,7 +9,7 @@ namespace DK
         inputHandler inputHandler;
         PlayerManager playerManager;
         PlayerInventoryManager playerInventoryManager;
-
+        PlayerAnimatorManager playerAnimatorManager;
         Animator animator;
         public WeaponItem attackingItem;
         PlayerStatsManager playerStatsManager;
@@ -22,6 +22,7 @@ namespace DK
             playerStatsManager = GetComponent<PlayerStatsManager>();
             playerInventoryManager = GetComponent<PlayerInventoryManager>();
             playerFXManager = GetComponent<PlayerFXManager>();
+            playerAnimatorManager = GetComponent<PlayerAnimatorManager>();
             LoadWeaponHolderSlots();
 
         }
@@ -62,7 +63,7 @@ namespace DK
 
                     leftHandSlot.LoadWeaponModel(weaponItem);
                     LoadLeftWeaponDamageCollider();
-                    animator.CrossFade(weaponItem.Left_Hand_Idle, 0.2f);
+                    playerAnimatorManager.PlayTargetAnimation(weaponItem.offHandIdleAnimation, false,true);
                 }
                 else
                 {
@@ -70,19 +71,16 @@ namespace DK
                     {
                         backSlot.LoadWeaponModel(leftHandSlot.currentWeapon);
                         leftHandSlot.UnloadWeaponAndDestroy();
-                        animator.CrossFade(weaponItem.th_idle, 0.2f);
+                        playerAnimatorManager.PlayTargetAnimation("Left Arm Empty", false, true);
                     }
                     else
                     {
-
-
-                        animator.CrossFade("Both Arms Empty", 0.2f);
                         backSlot.UnloadWeaponAndDestroy();
-                        animator.CrossFade(weaponItem.Right_Hand_Idle, 0.2f);
                     }
                     rightHandSlot.currentWeapon = weaponItem;
                     rightHandSlot.LoadWeaponModel(weaponItem);
                     LoadRightWeaponDamageCollider();
+                    playerAnimatorManager.animator.runtimeAnimatorController = weaponItem.weaponController;
                 }
             }
             else
@@ -90,19 +88,19 @@ namespace DK
                 weaponItem = unarmedWeapon;
                 if (isLeft)
                 {
-                    animator.CrossFade("Left Arm Empty", 0.2f);
                     playerInventoryManager.leftWeapon = unarmedWeapon;
                     leftHandSlot.currentWeapon = unarmedWeapon;
                     leftHandSlot.LoadWeaponModel(weaponItem);
                     LoadLeftWeaponDamageCollider();
+                    playerAnimatorManager.PlayTargetAnimation(weaponItem.offHandIdleAnimation, false, true);
                 }
                 else
                 {
-                    animator.CrossFade("Right Arm Empty", 0.2f);
                     playerInventoryManager.rightWeapon = unarmedWeapon;
                     rightHandSlot.currentWeapon = unarmedWeapon;
                     rightHandSlot.LoadWeaponModel(weaponItem);
                     LoadRightWeaponDamageCollider();
+                    playerAnimatorManager.animator.runtimeAnimatorController = weaponItem.weaponController;
                 }
             }
         }
@@ -114,6 +112,7 @@ namespace DK
             leftDamageCollider = leftHandSlot.currentWeaponModel.GetComponentInChildren<DamageCollider>();
             leftDamageCollider.weaponDamage = playerInventoryManager.leftWeapon.baseDamage;
             leftDamageCollider.poiseBreak = playerInventoryManager.leftWeapon.poiseBreak;
+            leftDamageCollider.teamIdNumber = playerStatsManager.teamIdNumber;
             playerFXManager.leftWeaponVFX = leftHandSlot.currentWeaponModel.GetComponentInChildren<WeaponVFX>();
         }
 
@@ -122,6 +121,7 @@ namespace DK
             rightDamageCollider = rightHandSlot.currentWeaponModel.GetComponentInChildren<DamageCollider>();
             rightDamageCollider.weaponDamage = playerInventoryManager.rightWeapon.baseDamage;
             rightDamageCollider.poiseBreak = playerInventoryManager.rightWeapon.poiseBreak;
+            rightDamageCollider.teamIdNumber = playerStatsManager.teamIdNumber;
             playerFXManager.rightWeaponVFX = rightHandSlot.currentWeaponModel.GetComponentInChildren<WeaponVFX>();
         }
 
