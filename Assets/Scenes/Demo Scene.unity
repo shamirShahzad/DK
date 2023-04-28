@@ -2556,11 +2556,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1784445825}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!4 &1835113073 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 2554598860078321446, guid: 96e02eda9c2e03c479bcb5f17f34d8f3, type: 3}
-  m_PrefabInstance: {fileID: 7981463441519073274}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1859875614
 GameObject:
   m_ObjectHideFlags: 0
@@ -4675,10 +4670,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Chest
       objectReference: {fileID: 0}
-    - target: {fileID: 4666558327117510209, guid: fdcceb368caa6a64bb02a25b9b7e2999, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fdcceb368caa6a64bb02a25b9b7e2999, type: 3}
 --- !u!224 &2635181857651651018
@@ -6123,14 +6114,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 186067111658811817, guid: ec545e5b29518014388cb554bb29607f, type: 3}
-      propertyPath: bloodSplatterFX
-      value: 
-      objectReference: {fileID: 183679963054362320, guid: ed5d829a9e21a7c4cb440881091a79a9, type: 3}
-    - target: {fileID: 4413020848826425741, guid: ec545e5b29518014388cb554bb29607f, type: 3}
-      propertyPath: teamIdNumber
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 9000053290340805183, guid: ec545e5b29518014388cb554bb29607f, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
@@ -6196,10 +6179,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 2554598860014443785, guid: 96e02eda9c2e03c479bcb5f17f34d8f3, type: 3}
-      propertyPath: groundLayer.m_Bits
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 2554598860014443786, guid: 96e02eda9c2e03c479bcb5f17f34d8f3, type: 3}
       propertyPath: fogWallCollider
       value: 
@@ -6216,10 +6195,6 @@ PrefabInstance:
       propertyPath: itemInteractableGameobject
       value: 
       objectReference: {fileID: 739727966212714576}
-    - target: {fileID: 2554598860014443788, guid: 96e02eda9c2e03c479bcb5f17f34d8f3, type: 3}
-      propertyPath: currentConsumable
-      value: 
-      objectReference: {fileID: 11400000, guid: 28d47a0bfab76504eaa0b2469d84e81f, type: 2}
     - target: {fileID: 2554598860014443789, guid: 96e02eda9c2e03c479bcb5f17f34d8f3, type: 3}
       propertyPath: m_Name
       value: Player
@@ -6268,22 +6243,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5161199277288787834, guid: 96e02eda9c2e03c479bcb5f17f34d8f3, type: 3}
-      propertyPath: bloodSplatterFX
-      value: 
-      objectReference: {fileID: 183679963054362320, guid: ed5d829a9e21a7c4cb440881091a79a9, type: 3}
-    - target: {fileID: 5161199277288787834, guid: 96e02eda9c2e03c479bcb5f17f34d8f3, type: 3}
-      propertyPath: buildupTransform
-      value: 
-      objectReference: {fileID: 1835113073}
-    - target: {fileID: 5161199277288787834, guid: 96e02eda9c2e03c479bcb5f17f34d8f3, type: 3}
-      propertyPath: defaultPoisonAmount
-      value: 100
-      objectReference: {fileID: 0}
-    - target: {fileID: 5161199277288787834, guid: 96e02eda9c2e03c479bcb5f17f34d8f3, type: 3}
-      propertyPath: defaultPoisonParticleFX
-      value: 
-      objectReference: {fileID: 8905655186286618301, guid: 4eb56c3e13a32b3468386763aa5f8a27, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 96e02eda9c2e03c479bcb5f17f34d8f3, type: 3}
 --- !u!1001 &8184204028464732690

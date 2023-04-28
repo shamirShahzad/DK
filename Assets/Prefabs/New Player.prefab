@@ -69862,6 +69862,9 @@ MonoBehaviour:
   groundDetectionRayStartPoint: 0.5
   minimumDistanceNeededToFall: 1
   groundDetectionRayDistance: 0.2
+  groundLayer:
+    serializedVersion: 2
+    m_Bits: 1
   inAirTimer: 0
   movementSpeed: 5
   rotationSpeed: 20
@@ -69898,6 +69901,7 @@ MonoBehaviour:
   canDoCombo: 0
   isUsingRightHand: 0
   isUsingLeftHand: 0
+  isTwoHanding: 0
   isRotatingWithRootMotion: 0
   canRotate: 0
   isSprinting: 0
@@ -69920,7 +69924,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6ad425d25d85769469d01d92bd7cf158, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentConsumable: {fileID: 11400000, guid: 53742d759b6041441978e9fa78b03368, type: 2}
+  currentConsumable: {fileID: 11400000, guid: 28d47a0bfab76504eaa0b2469d84e81f, type: 2}
   currentSpell: {fileID: 11400000, guid: 70d574e52e6202f489dd32f9d86bf0f9, type: 2}
   weaponItemsRight:
   - {fileID: 11400000, guid: 2035fcc6b5e5956428f3213594734d88, type: 2}
@@ -70006,10 +70010,13 @@ MonoBehaviour:
   bloodSplatterFX: {fileID: 183679963054362320, guid: ed5d829a9e21a7c4cb440881091a79a9, type: 3}
   rightWeaponVFX: {fileID: 0}
   leftWeaponVFX: {fileID: 0}
+  defaultPoisonParticleFX: {fileID: 8905655186286618301, guid: 4eb56c3e13a32b3468386763aa5f8a27, type: 3}
+  currentPoisonParticleFX: {fileID: 0}
+  buildupTransform: {fileID: 2554598860078321446}
   isPoisned: 0
-  poisnBuildup: 0
+  poisonBuildup: 0
   poisonAmount: 100
-  defaultPoisonAmount: 0
+  defaultPoisonAmount: 100
   poisonTimer: 2
   poisonDamage: 1
   currentParticleFX: {fileID: 0}
