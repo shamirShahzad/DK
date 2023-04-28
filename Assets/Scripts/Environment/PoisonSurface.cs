@@ -34,7 +34,7 @@ namespace DK
             {
                 if (character.isPoisned)
                     continue;
-                character.poisnBuildup = character.poisnBuildup + poisonBuildupAmount * Time.deltaTime;
+                character.poisonBuildup = character.poisonBuildup + poisonBuildupAmount * Time.deltaTime;
             }
         }
     }

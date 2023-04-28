@@ -84,18 +84,16 @@ namespace DK
                             }
                             else
                             {
-                                playerStats.TakeDamage(weaponDamage);
-                               
+                                 if (gameObject.tag == "Skeleton Sword")
+                                     {
+                                        playerStats.TakeDamage(weaponDamage, "Skeleton Hit");
+                                     }
+                                 else
+                                     {
+                                      playerStats.TakeDamage(weaponDamage);
+                                     }
                             }
                         }
-
-                if (playerStats != null)
-                {
-                    if (playerStats.isDead)
-                        return;
-                    if (gameObject.tag == "Skeleton Sword")
-                        playerStats.TakeDamage(weaponDamage, "Skeleton Hit");
-                }
 
             }
 

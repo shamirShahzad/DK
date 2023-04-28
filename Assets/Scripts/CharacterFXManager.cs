@@ -13,10 +13,13 @@ namespace DK
         public WeaponVFX rightWeaponVFX;
         public WeaponVFX leftWeaponVFX;
         [Header("Poison")]
+        public GameObject defaultPoisonParticleFX;
+        public  GameObject currentPoisonParticleFX;
+        public Transform buildupTransform;
         public bool isPoisned;
-        public float poisnBuildup = 0;
+        public float poisonBuildup = 0;
         public float poisonAmount = 100;
-        public float defaultPoisonAmount;
+        public float defaultPoisonAmount = 100;
         public float poisonTimer = 2;
         public int poisonDamage = 1;
         float timer;
@@ -54,14 +57,22 @@ namespace DK
             if (isPoisned)
                 return;
             
-            if(poisnBuildup >0 && poisnBuildup < 100)
+            if(poisonBuildup >0 && poisonBuildup < 100)
             {
-                poisnBuildup = poisnBuildup - 1 * Time.deltaTime;
+                poisonBuildup = poisonBuildup - 1 * Time.deltaTime;
             }
-            else if (poisnBuildup >= 100)
+            else if (poisonBuildup >= 100)
             {
                 isPoisned = true;
-                poisnBuildup = 0;
+                poisonBuildup = 0;
+                if(buildupTransform != null)
+                {
+                    currentPoisonParticleFX = Instantiate(defaultPoisonParticleFX, buildupTransform.transform);
+                }
+                else
+                {
+                    currentPoisonParticleFX = Instantiate(defaultPoisonParticleFX, characterStatsManager.transform);
+                }
             }
         }
 
@@ -91,6 +102,7 @@ namespace DK
                 {
                     isPoisned = false;
                     poisonAmount = defaultPoisonAmount;
+                    Destroy(currentPoisonParticleFX);
                 }
             }
         }

@@ -32,9 +32,6 @@ namespace DK
                 weaponSlotManager.rightHandSlot.UnloadWeapon();
 
             }
-
-
-
         }
     }
 }

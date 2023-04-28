@@ -27,7 +27,7 @@ namespace DK
         float minimumDistanceNeededToFall = 1f;
         [SerializeField]
         float groundDetectionRayDistance = 0.2f;
-        LayerMask ignoreForGroundCheck;
+        public LayerMask groundLayer;
         public float inAirTimer;
 
 
@@ -69,7 +69,6 @@ namespace DK
             myTransform = this.transform;
             cameraHandler = FindObjectOfType<CameraHandler>();
             playerManager.isGrounded = true;
-            ignoreForGroundCheck = ~(1 << 8 | 1 << 11 | 1 << 12);
             Physics.IgnoreCollision(characterCollider, characterCollisionBlocker, true);
 
         }
@@ -234,7 +233,7 @@ namespace DK
 
             targetPosition = myTransform.position;
             Debug.DrawRay(origin, -Vector3.up * minimumDistanceNeededToFall, Color.red, 0.1f, false);
-            if(Physics.Raycast(origin,-Vector3.up,out hit,minimumDistanceNeededToFall,ignoreForGroundCheck))
+            if(Physics.Raycast(origin,-Vector3.up,out hit,minimumDistanceNeededToFall,groundLayer))
             {
                 normalVector = hit.normal;
                 Vector3 tp = hit.point;

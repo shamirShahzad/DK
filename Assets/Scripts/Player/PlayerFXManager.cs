@@ -14,11 +14,16 @@ namespace DK
         public bool toBeInstantiated = true;
         public bool isDrinking = false;
 
+
+        PoisonBuildUpBar poisonBuildUpBar;
+        PoisonAmountBar poisonAmountBar;
         protected override void Awake()
         {
             base.Awake();
             playerStatsManager = GetComponent<PlayerStatsManager>();
             playerWeaponSlotManager = GetComponent<PlayerWeaponSlotManager>();
+            poisonBuildUpBar = FindObjectOfType<PoisonBuildUpBar>();
+            poisonAmountBar = FindObjectOfType<PoisonAmountBar>();
         }
 
 
@@ -34,6 +39,36 @@ namespace DK
             isDrinking = false;
             playerWeaponSlotManager.LoadBothWeaponOnslot(); 
             Destroy(healParticles,0.8f);
+        }
+
+        protected override void HandlePoisonBuildup()
+        {
+            if(poisonBuildup <= 0)
+            {
+                poisonBuildUpBar.gameObject.SetActive(false);
+            }
+            else
+            {
+                poisonBuildUpBar.gameObject.SetActive(true);
+            }
+
+            base.HandlePoisonBuildup();
+            poisonBuildUpBar.SetPoisonBuildUp(Mathf.RoundToInt(poisonBuildup));
+        }
+
+        protected override void HandleIsPoisnedEffect()
+        {
+            if (isPoisned == false)
+            {
+                poisonAmountBar.gameObject.SetActive(false);
+
+            }
+            else
+            {
+                poisonAmountBar.gameObject.SetActive(true);
+            }
+            base.HandleIsPoisnedEffect();
+            poisonAmountBar.SetPoisonAmount(Mathf.RoundToInt(poisonAmount));
         }
 
     }
