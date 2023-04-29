@@ -76,8 +76,8 @@ namespace DK
         {
             if(inputHandler.lockOnFlag == false && currentLockOnTarget == null)
             {
-                lookangle += (mouseInputX * lookSpeed) / delta;
-                pivotAngle -= (mouseInputY * pivotSpeed) / delta;
+                lookangle += mouseInputX * lookSpeed * delta;
+                pivotAngle -= mouseInputY * pivotSpeed * delta;
                 pivotAngle = Mathf.Clamp(pivotAngle, minimumPivot, maximumPivot);
 
                 Vector3 rotation = Vector3.zero;

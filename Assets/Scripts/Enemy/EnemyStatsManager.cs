@@ -9,8 +9,9 @@ namespace DK
         public UiEnemyHealthBar enemyHealthBar;
         EnemyBossManager enemyBossManager;
         public bool isBoss;
-        private void Awake()
+        protected override void Awake()
         {
+            base.Awake();
             enemyAnimatorManager = GetComponent<EnemyAnimatorManager>();
             enemyBossManager = GetComponent<EnemyBossManager>();
             maxHealth = SetMaxHealthFromHealthLevel();

@@ -107,6 +107,8 @@ namespace DK
 
         public void TickInput(float delta)
         {
+            if (playerStatsManager.isDead)
+                return;
             MoveInput(delta);
             HandleRollingInput(delta);
             HandleCombatInput(delta);
@@ -247,14 +249,17 @@ namespace DK
                 twoHandFlag = !twoHandFlag;
                 if(twoHandFlag)
                 {
-                    weaponSlotManager.LoadWeaponOnSlot(playerInventoryManager.rightWeapon, false);
                     playerManager.isTwoHanding = true;
+                    weaponSlotManager.LoadWeaponOnSlot(playerInventoryManager.rightWeapon, false);
+                    weaponSlotManager.LoadTwoHandIKTargets(true);
                 }
                 else
                 {
+                    playerManager.isTwoHanding = false;
                     weaponSlotManager.LoadWeaponOnSlot(playerInventoryManager.rightWeapon, false);
                     weaponSlotManager.LoadWeaponOnSlot(playerInventoryManager.leftWeapon, true);
-                    playerManager.isTwoHanding = false;
+                    weaponSlotManager.LoadTwoHandIKTargets(false);
+                    
                 }
             }
         }

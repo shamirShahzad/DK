@@ -10,14 +10,12 @@ namespace DK
         PlayerManager playerManager;
         PlayerInventoryManager playerInventoryManager;
         PlayerAnimatorManager playerAnimatorManager;
-        Animator animator;
-        public WeaponItem attackingItem;
         PlayerStatsManager playerStatsManager;
         PlayerFXManager playerFXManager;
-        private void Awake()
+        protected override void Awake()
         {
+            base.Awake();
             playerManager = GetComponent<PlayerManager>();
-            animator = GetComponent<Animator>();
             inputHandler = GetComponent<inputHandler>();
             playerStatsManager = GetComponent<PlayerStatsManager>();
             playerInventoryManager = GetComponent<PlayerInventoryManager>();
@@ -27,32 +25,7 @@ namespace DK
 
         }
 
-        private void LoadWeaponHolderSlots()
-        {
-            WeaponHolderSlot[] weaponHolderSlots = GetComponentsInChildren<WeaponHolderSlot>();
-            foreach (WeaponHolderSlot weaponSlot in weaponHolderSlots)
-            {
-                if (weaponSlot.isLeftHandSlot)
-                {
-                    leftHandSlot = weaponSlot;
-                }
-                else if (weaponSlot.isRightHandSlot)
-                {
-                    rightHandSlot = weaponSlot;
-                }
-                else if (weaponSlot.isBackSlot)
-                {
-                    backSlot = weaponSlot;
-                }
-            }
-        }
-
-        public void LoadBothWeaponOnslot()
-        {
-            LoadWeaponOnSlot(playerInventoryManager.rightWeapon, false);
-            LoadWeaponOnSlot(playerInventoryManager.leftWeapon, true);
-        }
-        public void LoadWeaponOnSlot(WeaponItem weaponItem,bool isLeft)
+        public override void LoadWeaponOnSlot(WeaponItem weaponItem,bool isLeft)
         {
             if (weaponItem != null)
             {
@@ -104,54 +77,6 @@ namespace DK
                 }
             }
         }
-
-
-        #region Animation Events
-        private void LoadLeftWeaponDamageCollider()
-        {
-            leftDamageCollider = leftHandSlot.currentWeaponModel.GetComponentInChildren<DamageCollider>();
-            leftDamageCollider.weaponDamage = playerInventoryManager.leftWeapon.baseDamage;
-            leftDamageCollider.poiseBreak = playerInventoryManager.leftWeapon.poiseBreak;
-            leftDamageCollider.teamIdNumber = playerStatsManager.teamIdNumber;
-            playerFXManager.leftWeaponVFX = leftHandSlot.currentWeaponModel.GetComponentInChildren<WeaponVFX>();
-        }
-
-        private void LoadRightWeaponDamageCollider()
-        {
-            rightDamageCollider = rightHandSlot.currentWeaponModel.GetComponentInChildren<DamageCollider>();
-            rightDamageCollider.weaponDamage = playerInventoryManager.rightWeapon.baseDamage;
-            rightDamageCollider.poiseBreak = playerInventoryManager.rightWeapon.poiseBreak;
-            rightDamageCollider.teamIdNumber = playerStatsManager.teamIdNumber;
-            playerFXManager.rightWeaponVFX = rightHandSlot.currentWeaponModel.GetComponentInChildren<WeaponVFX>();
-        }
-
-        public void OpenDamageCollider()
-        {
-            if (playerManager.isUsingRightHand)
-            {
-                rightDamageCollider.EnableDamageCollider();
-            }
-       
-            else if (playerManager.isUsingLeftHand)
-            {
-                leftDamageCollider.EnableDamageCollider();
-            }
-
-        }
-
-
-        public void CloseDamageCollider()
-        {
-            if (rightDamageCollider != null)
-            {
-                rightDamageCollider.DisableDamageCollider();
-            }
-            if (leftDamageCollider != null)
-            {
-               leftDamageCollider.DisableDamageCollider();
-            }
-            
-        }
         public void DrainStaminaLightAttack()
         {
             playerStatsManager.TakeStaminaDamage(Mathf.RoundToInt(attackingItem.baseStaminaCost * attackingItem.lightAttackMultiplier));
@@ -160,21 +85,9 @@ namespace DK
         {
             playerStatsManager.TakeStaminaDamage(Mathf.RoundToInt(attackingItem.baseStaminaCost * attackingItem.heavyAttackMultiplier));
         }
-        #endregion
 
 
-        #region Handle Weapon Poise Bonus
-        public void GrantWeaponAttackingPoiseBonus()
-        {
-            playerStatsManager.totalPoiseDefense = playerStatsManager.totalPoiseDefense + attackingItem.offensivePoiseBonus;
-        }
 
-        public void ResetWeaponAttackingPoiseBonus()
-        {
-            playerStatsManager.totalPoiseDefense = playerStatsManager.armorPoisebonus;
-        }
-
-        #endregion
 
 
     }

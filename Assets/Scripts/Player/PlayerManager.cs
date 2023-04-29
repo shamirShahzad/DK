@@ -20,8 +20,9 @@ namespace DK
         public BoxCollider fogWallCollider,fogEntryCollider;
 
 
-        private void Awake()
+        protected override void Awake()
         {
+            base.Awake();
             cameraHandler = FindObjectOfType<CameraHandler>();
             inputHandler = GetComponent<inputHandler>();
             playerLocomotion = GetComponent<PlayerLocomotionManager>();
@@ -57,8 +58,9 @@ namespace DK
 
         }
 
-        private void FixedUpdate()
+        protected override void FixedUpdate()
         {
+            base.FixedUpdate();
             float delta = Time.fixedDeltaTime;
 
             playerLocomotion.HandleFalling(delta, playerLocomotion.moveDirection);

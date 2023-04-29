@@ -198,6 +198,7 @@ namespace DK
                 if (inputHandler.moveAmount > 0)
                 {
                     playerAnimatorManager.PlayTargetAnimation("Roll", true);
+                    playerAnimatorManager.EraseHandIKfromWeapon();
                     moveDirection.y = 0;
                     Quaternion rollRotation = Quaternion.LookRotation(moveDirection);
                     myTransform.rotation = rollRotation;
@@ -206,6 +207,7 @@ namespace DK
                 else {
                     playerAnimatorManager.PlayTargetAnimation("BackStep", true);
                     playerStatsManager.TakeStaminaDamage(backStepStaminacost);
+                    playerAnimatorManager.EraseHandIKfromWeapon();
                 }
             }
         }
@@ -301,6 +303,7 @@ namespace DK
                     moveDirection = cameraObject.forward * inputHandler.vertical;
                     moveDirection += cameraObject.right * inputHandler.horizontal;
                     playerAnimatorManager.PlayTargetAnimation("Jump", true);
+                    playerAnimatorManager.EraseHandIKfromWeapon();
                     moveDirection.y = 0;
                     Quaternion jumpRotation = Quaternion.LookRotation(moveDirection);
                     myTransform.rotation = jumpRotation;

@@ -35,8 +35,9 @@ namespace DK
 
         public float currentRecoveryTime = 0;
 
-        private void Awake()
+        protected override void Awake()
         {
+            base.Awake();
             enemyLocomotionManager = GetComponent<EnemyLocomotionManager>();
             enemyAnimatorManager = GetComponent<EnemyAnimatorManager>();
             enemyFXManager = GetComponent<EnemyFXManager>();
@@ -51,10 +52,13 @@ namespace DK
         }
         private void Update()
         {
+
+
             HandleRecoveryTimer();
             HandleStateMachine();
             isRotatingWithRootMotion = enemyAnimatorManager.animator.GetBool("isRotatingWithRootMotion");
-            
+            isUsingLeftHand = enemyAnimatorManager.animator.GetBool("isUsingLeftHand");
+            isUsingRightHand = enemyAnimatorManager.animator.GetBool("isUsingRightHand");
             isInteracting = enemyAnimatorManager.animator.GetBool("isInteracting");
             isPhaseShifting = enemyAnimatorManager.animator.GetBool("isPhaseShifting");
             isInvulnerable = enemyAnimatorManager.animator.GetBool("isInvulnerable");
@@ -63,8 +67,9 @@ namespace DK
             enemyAnimatorManager.animator.SetBool("isDead", enemyStatsManager.isDead);
         }
 
-        private void FixedUpdate()
+        protected override void FixedUpdate()
         {
+            base.FixedUpdate();
             enemyFXManager.HAndleAllBuildupEffects();
         }
         private void LateUpdate()

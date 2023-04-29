@@ -6,139 +6,18 @@ namespace DK
 {
     public class EnemyWeaponSlotManager : CharacterWeaponSlotManager
     {
-        public WeaponItem rightHandWeapon;
-        public WeaponItem leftHandWeapon;
-
-
-
-        EnemyStatsManager enemyStatsManager;
-        EnemyFXManager enemyFXManager;
-
-
-        private void Awake()
+   
+        public override void GrantWeaponAttackingPoiseBonus()
         {
-            enemyStatsManager = GetComponent<EnemyStatsManager>();
-            enemyFXManager = GetComponent<EnemyFXManager>();
-            LoadWeaponHolderSlot();
+            characterStatsManager.totalPoiseDefense = characterStatsManager.totalPoiseDefense + characterStatsManager.offensivePoiseBonus;
         }
 
-        private void Start()
+        public override void  ResetWeaponAttackingPoiseBonus()
         {
-            LoadWeaponsOnBothHands();
+            characterStatsManager.totalPoiseDefense = characterStatsManager.armorPoisebonus;
         }
 
 
-        private void LoadWeaponHolderSlot()
-        {
-            WeaponHolderSlot[] weaponHolderSlots = GetComponentsInChildren<WeaponHolderSlot>();
-
-
-
-            foreach (WeaponHolderSlot weaponSlot in weaponHolderSlots)
-            {
-                if (weaponSlot.isLeftHandSlot)
-                {
-                    leftHandSlot = weaponSlot;
-                }
-                else if (weaponSlot.isRightHandSlot)
-                {
-                    rightHandSlot = weaponSlot;
-                }
-            }
-        }
-        public void LoadWeaponOnSlot(WeaponItem weapon,bool isLeft)
-        {
-            if (isLeft)
-            {
-                leftHandSlot.currentWeapon = weapon;
-                leftHandSlot.LoadWeaponModel(weapon);
-                LoadWeaponsDamageCollider(true);
-            }
-            else
-            {
-                rightHandSlot.currentWeapon = weapon;
-                rightHandSlot.LoadWeaponModel(weapon);
-                LoadWeaponsDamageCollider(false);
-            }
-        }
-
-        public void LoadWeaponsOnBothHands()
-        {
-            if (rightHandWeapon != null)
-            {
-                LoadWeaponOnSlot(rightHandWeapon, false);
-            }
-            if (leftHandWeapon != null)
-            {
-                LoadWeaponOnSlot(leftHandWeapon, true);
-            }
-        }
-
-        public void LoadWeaponsDamageCollider(bool isLeft)
-        {
-            if (isLeft)
-            {
-                leftDamageCollider = leftHandSlot.currentWeaponModel.GetComponentInChildren<DamageCollider>();
-                leftDamageCollider.characterManager = GetComponentInParent<CharacterManager>();
-
-                leftDamageCollider.teamIdNumber = enemyStatsManager.teamIdNumber;
-                enemyFXManager.leftWeaponVFX = leftHandSlot.currentWeaponModel.GetComponentInChildren<WeaponVFX>();
-            }
-            else
-            {
-                rightDamageCollider = rightHandSlot.currentWeaponModel.GetComponentInChildren<DamageCollider>();
-                rightDamageCollider.characterManager = GetComponentInParent<CharacterManager>();
-
-                rightDamageCollider.teamIdNumber = enemyStatsManager.teamIdNumber;
-                enemyFXManager.rightWeaponVFX = rightHandSlot.currentWeaponModel.GetComponentInChildren<WeaponVFX>();
-            }
-        }
-
-
-
-        #region Animation Events
-        public void OpenDamageCollider()
-        {
-            rightDamageCollider.EnableDamageCollider();
-        }
-
-        public void CloseDamageCollider()
-        {
-            rightDamageCollider.DisableDamageCollider();
-        }
-
-
-        public void DrainStaminaLightAttack()
-        {
-
-        }
-        public void DrainStaminaHeavyAttack()
-        {
-        }
-
-        public void EnableCombo()
-        {
-            //anim.SetBool("canDoCombo", true);
-        }
-
-        public void DisableCombo()
-        {
-            //anim.SetBool("canDoCombo", false);
-        }
-        #endregion
-
-        #region Handle Weapon Poise Bonus
-        public void GrantWeaponAttackingPoiseBonus()
-        {
-            enemyStatsManager.totalPoiseDefense = enemyStatsManager.totalPoiseDefense + enemyStatsManager.offensivePoiseBonus;
-        }
-
-        public void ResetWeaponAttackingPoiseBonus()
-        {
-            enemyStatsManager.totalPoiseDefense = enemyStatsManager.armorPoisebonus;
-        }
-
-        #endregion
 
 
     }

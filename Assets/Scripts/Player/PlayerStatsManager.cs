@@ -19,8 +19,10 @@ namespace DK
         public HealthBar healthBar;
         public StaminaBar staminaBar;
         public FocusPointBar focusPointBar;
-        private void Start()
+
+        protected override void Awake()
         {
+            base.Awake();
             healthBar = FindObjectOfType<HealthBar>();
             staminaBar = FindObjectOfType<StaminaBar>();
             focusPointBar = FindObjectOfType<FocusPointBar>();

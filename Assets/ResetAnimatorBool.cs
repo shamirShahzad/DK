@@ -16,6 +16,12 @@ public class ResetAnimatorBool : StateMachineBehaviour
     public string isRotatingWithRootMotion = "isRotatingWithRootMotion";
     public bool isRotatingWithRootMotionStatus = false;
 
+    public string isUsingRightHand = "isUsingRightHand";
+    public bool isUsingRightHandStatus = false;
+    
+    public string isUsingLeftHand = "isUsingLeftHand";
+    public bool isUsingLeftHandStatus = false;
+
     public override void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
         animator.SetBool(isInteractingBool, isInteractingStatus);
@@ -23,6 +29,8 @@ public class ResetAnimatorBool : StateMachineBehaviour
         animator.SetBool(isFiringSpellBool, isFiringStatus);
         animator.SetBool(canRotateBool, canRotateStatus);
         animator.SetBool(isInvulnerable, isInvulnerableStatus);
+        animator.SetBool(isUsingRightHand, isUsingRightHandStatus);
+        animator.SetBool(isUsingLeftHand, isUsingLeftHandStatus);
     }
 
 }

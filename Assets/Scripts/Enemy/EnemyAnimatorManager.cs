@@ -4,7 +4,7 @@ using UnityEngine;
 namespace DK
 {
 
- public class EnemyAnimatorManager : AnimatorManager
+ public class EnemyAnimatorManager : CharacterAnimatorManager
  {
         EnemyBossManager enemyBossManager;
         EnemyFXManager enemyFXManager;

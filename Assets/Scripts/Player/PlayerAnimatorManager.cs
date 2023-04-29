@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 namespace DK
 {
-    public class PlayerAnimatorManager : AnimatorManager
+    public class PlayerAnimatorManager : CharacterAnimatorManager
     {
         inputHandler inputHandler;
         PlayerLocomotionManager playerLocomotionManager;

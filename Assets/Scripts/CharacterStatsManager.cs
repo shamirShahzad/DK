@@ -7,6 +7,7 @@ namespace DK
 {
     public class CharacterStatsManager : MonoBehaviour
     {
+        CharacterAnimatorManager characterAnimatorManager;
         [Header("Team ID")]
         public int teamIdNumber = 0;
 
@@ -41,6 +42,11 @@ namespace DK
         
         public bool isDead;
 
+        protected virtual void Awake()
+        {
+            characterAnimatorManager = GetComponent<CharacterAnimatorManager>();
+        }
+
         protected virtual void Update()
         {
             HandlePoiseResetTimer();
@@ -55,6 +61,7 @@ namespace DK
         {
             if (isDead)
                 return;
+            characterAnimatorManager.EraseHandIKfromWeapon();
 
             float totalPhysicalDamageAbsorbtion = 1 - (1 - physicalDamageAbsorbtionHead / 100)*
                 (1-physicalDamageAbsorbtionTorso/100)*(1-physicalDamageAbsorbtionLegs/100)*

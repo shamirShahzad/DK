@@ -186,7 +186,7 @@ namespace DK
                     enemycharacterManager.pendingCriticalDamage = criticalDamage;
 
                     playerAnimtorManager.PlayTargetAnimation("Back Stab",true);
-                    enemycharacterManager.GetComponentInChildren<AnimatorManager>().PlayTargetAnimation("Back Stabbed",true);
+                    enemycharacterManager.GetComponentInChildren<CharacterAnimatorManager>().PlayTargetAnimation("Back Stabbed",true);
                 }
             }
             else if (Physics.Raycast(inputHandler.criticalAttackRaycastStartPoint.position,
@@ -210,7 +210,7 @@ namespace DK
                     int criticalDamage = playerInventoryManager.rightWeapon.criticalDamageMultiplier * rightWeapon.weaponDamage;
                     enemycharacterManager.pendingCriticalDamage = criticalDamage;
                     playerAnimtorManager.PlayTargetAnimation("Riposte", true);
-                    enemycharacterManager.GetComponentInChildren<AnimatorManager>().PlayTargetAnimation("Riposted", true);
+                    enemycharacterManager.GetComponentInChildren<CharacterAnimatorManager>().PlayTargetAnimation("Riposted", true);
                 }
             }
         }

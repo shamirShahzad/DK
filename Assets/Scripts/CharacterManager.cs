@@ -5,6 +5,8 @@ namespace DK
 {
     public class CharacterManager : MonoBehaviour
     {
+        CharacterAnimatorManager characterAnimatorManager;
+        CharacterWeaponSlotManager characterWeaponSlotManager;
         [Header("Lock On Transform")]
         public Transform lockOnTransform;
         [Header("Combat Colliders")]
@@ -33,7 +35,16 @@ namespace DK
         public bool isInteracting;
 
 
+        protected virtual void Awake()
+        {
+            characterAnimatorManager = GetComponent<CharacterAnimatorManager>();
+            characterWeaponSlotManager = GetComponent<CharacterWeaponSlotManager>();
+        }
 
+        protected virtual void FixedUpdate()
+        {
+            characterAnimatorManager.CheckHandIKWeight(characterWeaponSlotManager.rightHandIKTarget, characterWeaponSlotManager.leftHandIKTarget, isTwoHanding);
+        }
 
 
 

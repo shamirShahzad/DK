@@ -52,7 +52,7 @@ namespace DK
                 {
                     if (playerCharacterManager.isParrying)
                     {
-                        characterManager.GetComponent<AnimatorManager>().PlayTargetAnimation("Parried", true);
+                        characterManager.GetComponent<CharacterAnimatorManager>().PlayTargetAnimation("Parried", true);
                         return;
                     }
                     else if (shield != null && playerCharacterManager.isBlocking)
@@ -111,7 +111,7 @@ namespace DK
                         return;
                     if (enemyCharacterManager.isParrying)
                     {
-                        characterManager.GetComponentInChildren<AnimatorManager>().PlayTargetAnimation("Parried", true);
+                        characterManager.GetComponentInChildren<CharacterAnimatorManager>().PlayTargetAnimation("Parried", true);
                         return;
                     }
                 }
