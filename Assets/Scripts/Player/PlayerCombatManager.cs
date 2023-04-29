@@ -186,7 +186,7 @@ namespace DK
                     enemycharacterManager.pendingCriticalDamage = criticalDamage;
 
                     playerAnimtorManager.PlayTargetAnimation("Back Stab",true);
-                    enemycharacterManager.GetComponentInChildren<CharacterAnimatorManager>().PlayTargetAnimation("Back Stabbed",true);
+                    enemycharacterManager.GetComponentInChildren<CharacterAnimatorManager>().PlayTargetAnimationWithRootrotation("Back Stabbed",true);
                 }
             }
             else if (Physics.Raycast(inputHandler.criticalAttackRaycastStartPoint.position,

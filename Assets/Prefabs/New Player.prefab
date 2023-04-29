@@ -1,5 +1,117 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &1586937712
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1586937713}
+  - component: {fileID: 1586937714}
+  m_Layer: 11
+  m_Name: Left Hand
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1586937713
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1586937712}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 3193716865813408228}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1586937714
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1586937712}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aeda7bfbf984f2a4da5ab4b8967b115d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Weight: 1
+  m_Data:
+    m_Root: {fileID: 813679937058715128}
+    m_Mid: {fileID: 816774461964591020}
+    m_Tip: {fileID: 813698120123594242}
+    m_Target: {fileID: 0}
+    m_Hint: {fileID: 0}
+    m_TargetPositionWeight: 1
+    m_TargetRotationWeight: 1
+    m_HintWeight: 1
+    m_MaintainTargetPositionOffset: 0
+    m_MaintainTargetRotationOffset: 0
+--- !u!1 &1691386192
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1691386193}
+  - component: {fileID: 1691386194}
+  m_Layer: 11
+  m_Name: Right Hand
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1691386193
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1691386192}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 3193716865813408228}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1691386194
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1691386192}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aeda7bfbf984f2a4da5ab4b8967b115d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Weight: 1
+  m_Data:
+    m_Root: {fileID: 816728856805249686}
+    m_Mid: {fileID: 813484011278653840}
+    m_Tip: {fileID: 813811074779178658}
+    m_Target: {fileID: 0}
+    m_Hint: {fileID: 0}
+    m_TargetPositionWeight: 1
+    m_TargetRotationWeight: 1
+    m_HintWeight: 1
+    m_MaintainTargetPositionOffset: 0
+    m_MaintainTargetRotationOffset: 0
 --- !u!1 &810650231193745892
 GameObject:
   m_ObjectHideFlags: 0
@@ -69926,8 +70038,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6ad425d25d85769469d01d92bd7cf158, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentConsumable: {fileID: 11400000, guid: 28d47a0bfab76504eaa0b2469d84e81f, type: 2}
-  currentSpell: {fileID: 11400000, guid: 70d574e52e6202f489dd32f9d86bf0f9, type: 2}
   weaponItemsRight:
   - {fileID: 11400000, guid: 2035fcc6b5e5956428f3213594734d88, type: 2}
   - {fileID: 11400000, guid: 0060897fa98a2ef4d85f187644374df9, type: 2}
@@ -69936,13 +70046,17 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 32fd7bee58f37c94193429903d6da805, type: 2}
   - {fileID: 11400000, guid: 69ae6967547257341ba37b25fe3d6b3f, type: 2}
   - {fileID: 11400000, guid: 86513175fbf229344b21ec717ae7117a, type: 2}
-  rightWeapon: {fileID: 0}
-  leftWeapon: {fileID: 0}
-  weaponsInventory: []
   currentHelmetEquipment: {fileID: 11400000, guid: 482700fa87faf3e45915730f780ce9e7, type: 2}
   currentTorsoEquipment: {fileID: 11400000, guid: 35e4e1c4dd4c4514290593c159080a16, type: 2}
   currentLegEquipment: {fileID: 11400000, guid: 20a28d4d8ad02004d8ee1669dd17b5ca, type: 2}
   currentHandEquipment: {fileID: 11400000, guid: a435bf31d2ced4e43b39bab486efe690, type: 2}
+  selectedWeaponIndexLeft: 0
+  selectedWeaponIndexRight: 0
+  currentConsumable: {fileID: 11400000, guid: 28d47a0bfab76504eaa0b2469d84e81f, type: 2}
+  currentSpell: {fileID: 11400000, guid: 70d574e52e6202f489dd32f9d86bf0f9, type: 2}
+  rightWeapon: {fileID: 0}
+  leftWeapon: {fileID: 0}
+  weaponsInventory: []
 --- !u!114 &5161199277288787833
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -69956,12 +70070,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   unarmedWeapon: {fileID: 0}
+  attackingItem: {fileID: 0}
   leftDamageCollider: {fileID: 0}
   rightDamageCollider: {fileID: 0}
   leftHandSlot: {fileID: 0}
   rightHandSlot: {fileID: 0}
   backSlot: {fileID: 0}
-  attackingItem: {fileID: 0}
+  rightHandIKTarget: {fileID: 0}
+  leftHandIKTarget: {fileID: 0}
 --- !u!114 &5161199277288787832
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -69997,6 +70113,8 @@ MonoBehaviour:
   animator: {fileID: 0}
   characterManager: {fileID: 0}
   canRotate: 0
+  leftHandConstraint: {fileID: 1586937714}
+  rightHandConstraint: {fileID: 1691386194}
 --- !u!114 &5161199277288787834
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -70318,7 +70436,9 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 1691386193}
+  - {fileID: 1586937713}
   m_Father: {fileID: 2554598860014443894}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

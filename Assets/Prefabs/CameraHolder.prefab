@@ -170,9 +170,9 @@ MonoBehaviour:
   environmentLayer:
     serializedVersion: 2
     m_Bits: 0
-  lookSpeed: 0.05
+  lookSpeed: 250
   followspeed: 0.1
-  pivotSpeed: 0.05
+  pivotSpeed: 250
   cameraSphereRadius: 0.2
   cameraCollisionOffset: 0.2
   minimumCollisionOffset: 0.2
