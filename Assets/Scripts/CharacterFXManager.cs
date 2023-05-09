@@ -6,6 +6,9 @@ namespace DK
 {
     public class CharacterFXManager : MonoBehaviour
     {
+        [Header("Current Range FX")]
+        public GameObject currentRangeFX;
+
         CharacterStatsManager characterStatsManager;
         [Header("Damage FX")]
         public GameObject bloodSplatterFX;

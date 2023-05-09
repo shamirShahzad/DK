@@ -180,6 +180,87 @@ namespace DK
             
         }
 
+        public void HandleHoldRTAction()
+        {
+            if (playerManager.isTwoHanding)
+            {
+                PerformRTTRangedAction();
+            }
+            else
+            {
+
+            }
+        }
+        private void DrawArrowAction()
+        {
+            playerAnimtorManager.animator.SetBool("isHoldingArrow", true);
+            playerAnimtorManager.PlayTargetAnimation("Bow_TH_Draw_01_R",true);
+            GameObject loadedArrow = Instantiate(playerInventoryManager.currentAmmo.loadedItemModel, playerWeaponSlotManager.leftHandSlot.transform);
+            Animator bowAnimator = playerWeaponSlotManager.rightHandSlot.GetComponentInChildren<Animator>();
+            bowAnimator.SetBool("isDrawn", true);
+            bowAnimator.Play("Bow_TH_Draw_01");
+            playerFXManager.currentRangeFX = loadedArrow;
+        }
+
+        public void FireArrowAction()
+        {
+            ArrowInstantiationLocation arrowInstantiationLocation;
+            arrowInstantiationLocation = playerWeaponSlotManager.rightHandSlot.GetComponentInChildren<ArrowInstantiationLocation>();
+
+            Animator bowAnimator = playerWeaponSlotManager.rightHandSlot.GetComponentInChildren<Animator>();
+            bowAnimator.SetBool("isDrawn", false);
+            bowAnimator.Play("Bow_TH_Fire_01");
+            Destroy(playerFXManager.currentRangeFX);//Destroy Loaded arrow
+
+            playerAnimtorManager.PlayTargetAnimation("Bow_TH_Fire_01_R",true);
+            playerAnimtorManager.animator.SetBool("isHoldingArrow", false);
+
+            GameObject liveArrow = Instantiate(playerInventoryManager.currentAmmo.liveModel, arrowInstantiationLocation.transform.position, cameraHandler.cameraPivotTransform.rotation);
+            Rigidbody rigidBody = liveArrow.GetComponentInChildren<Rigidbody>();
+            RangedProjectileDamageCollider damageCollider= liveArrow.GetComponentInChildren<RangedProjectileDamageCollider>();
+
+            if(cameraHandler.currentLockOnTarget != null)
+            {
+                Quaternion arrowRotaion = Quaternion.LookRotation(transform.forward);
+                liveArrow.transform.rotation = arrowRotaion;
+            }
+            else
+            {
+                liveArrow.transform.rotation = Quaternion.Euler(cameraHandler.cameraPivotTransform.eulerAngles.x, playerManager.lockOnTransform.eulerAngles.y, 0);
+            }
+            rigidBody.AddForce(liveArrow.transform.forward * playerInventoryManager.currentAmmo.forwardVelocity);
+            rigidBody.AddForce(liveArrow.transform.up * playerInventoryManager.currentAmmo.upWardVelocity);
+            rigidBody.useGravity = playerInventoryManager.currentAmmo.useGravity;
+            rigidBody.mass = playerInventoryManager.currentAmmo.ammoMass;
+            liveArrow.transform.parent = null;
+
+            damageCollider.characterManager = playerManager;
+            damageCollider.ammoItem = playerInventoryManager.currentAmmo;
+            damageCollider.weaponDamage = playerInventoryManager.currentAmmo.physicalDamage;
+
+
+        }
+        private void PerformRTTRangedAction()
+        {
+            if(playerStatsManager.currentStamina <= 0)
+            {
+                return;
+            }
+            playerAnimtorManager.EraseHandIKfromWeapon();
+            playerAnimtorManager.animator.SetBool("isUsingRightHand", true);
+            if (!playerManager.isHoldingArrow)
+            {
+                if (playerInventoryManager.currentAmmo != null)
+                {
+                    DrawArrowAction();
+                }
+                else
+                {
+                    playerAnimtorManager.PlayTargetAnimation("Failed Cast", true);
+                }
+            }
+        }
+
 
         public void AttemptBackStabOrRiposte()
         {
@@ -239,7 +320,7 @@ namespace DK
 
         private void PerformLBAimingAction()
         {
-            playerAnimtorManager.animator.SetBool("isAiming", true);
+           // playerAnimtorManager.animator.SetBool("isAiming", true);
         }
 
         private void PerformMagicAction(WeaponItem weapon,bool isLeftHanded)

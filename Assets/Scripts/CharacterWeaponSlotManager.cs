@@ -79,17 +79,6 @@ namespace DK
                 if (isLeft)
                 {
                     leftHandSlot.currentWeapon = weaponItem;
-                    if (leftHandSlot.currentWeapon.weaponTypes == WeaponTypes.PyromancyCaster ||
-                        leftHandSlot.currentWeapon.weaponTypes == WeaponTypes.FaithCaster
-                        )
-                    {
-                        characterInventoryManager.currentSpell = weaponItem.spellOfItem;
-                    }
-                    else
-                    {
-                        characterInventoryManager.currentSpell = null;
-                    }
-
                     leftHandSlot.LoadWeaponModel(weaponItem);
                     
                     LoadLeftWeaponDamageCollider();

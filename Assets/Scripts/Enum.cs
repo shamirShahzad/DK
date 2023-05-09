@@ -14,6 +14,11 @@ namespace DK
         Bow
 
     }
+    public enum AmmoType
+    {
+        Ammo,
+        Bolt
+    }
     public class Enum : MonoBehaviour
     {
         

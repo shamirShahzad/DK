@@ -27,3 +27,4 @@ MonoBehaviour:
   baseStaminaCost: 0
   lightAttackMultiplier: 0
   heavyAttackMultiplier: 0
+  spellOfItem: {fileID: 11400000, guid: 70d574e52e6202f489dd32f9d86bf0f9, type: 2}

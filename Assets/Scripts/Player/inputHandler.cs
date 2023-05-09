@@ -21,7 +21,7 @@ namespace DK
         public bool lb_input;
         public bool rt_input;
         public bool lt_input;
-        public bool criticalAttackInput;    
+        public bool hold_rt_Input;
         public bool jump_input;
         public bool lockOnInput;
         public bool right_Stick_Right_Input;
@@ -29,6 +29,7 @@ namespace DK
 
         public bool lockOnFlag;
         public bool twoHandFlag;
+        public bool fireFlag;
         public bool rollFlag;
         public bool sprintFlag;
         public bool comboFlag;
@@ -83,6 +84,9 @@ namespace DK
                 inputActions.PlayerActions.LB.performed += i => lb_input = true;
                 inputActions.PlayerActions.LB.canceled+= i => lb_input = false;
                 inputActions.PlayerActions.RT.performed += i => rt_input = true;
+                inputActions.PlayerActions.HoldRT.performed += i => hold_rt_Input = true;
+                inputActions.PlayerActions.HoldRT.canceled += i => hold_rt_Input = false;
+                inputActions.PlayerActions.HoldRT.canceled += i => fireFlag = true;
                 inputActions.PlayerActions.LT.performed += i => lt_input = true;
                 inputActions.PlayerActions.A.performed += i => a_input = true;
                 inputActions.PlayerActions.X.performed += i => x_input = true;
@@ -93,7 +97,7 @@ namespace DK
                 inputActions.PlayerMovement.LockOnTargetRight.performed += i => right_Stick_Right_Input = true;
                 inputActions.PlayerMovement.LockOnTargetLeft.performed += i => right_Stick_Left_Input = true;
                 inputActions.PlayerActions.Y.performed += i => y_input = true;
-                inputActions.PlayerActions.CriticalAttack.performed += i => criticalAttackInput = true;
+                //inputActions.PlayerActions.CriticalAttack.performed += i => criticalAttackInput = true;
             }
 
             inputActions.Enable();
@@ -115,14 +119,15 @@ namespace DK
             HandleLBInput();
             HandleLockOnInput();
             HandleTwoHandInput();
-            HandleCriticalAttackInput();
+            HandleHoldRTInput();
+            HandleFiringBowInput();
             HandleConsumableInput();
 
         }
 
         private void MoveInput(float delta)
         {
-            if(playerManager.isAiming)
+            if(playerManager.isHoldingArrow)
             {
                 horizontal = movementInput.x;
                 vertical = movementInput.y;
@@ -277,9 +282,9 @@ namespace DK
                 {
                     blockingCollider.DisableBlockingCollider();
                 }
-                if (playerManager.isAiming)
+                if (playerManager.isHoldingArrow)
                 {
-                    playerAnimatorManager.animator.SetBool("isAiming", false);
+                    //playerAnimatorManager.animator.SetBool("isAiming", false);
                 }
             }
         }
@@ -307,14 +312,34 @@ namespace DK
             }
         }
 
-        private void HandleCriticalAttackInput()
-        {
-            if (criticalAttackInput)
-            {
-                criticalAttackInput = false;
-               playerCombatManager.AttemptBackStabOrRiposte();
-            }
 
+
+        private void HandleHoldRTInput()
+        {
+            if (hold_rt_Input)
+            {
+                if(playerInventoryManager.rightWeapon.weaponTypes == WeaponTypes.Bow)
+                {
+                    playerCombatManager.HandleHoldRTAction();
+                }
+                else
+                {
+                    hold_rt_Input = false;
+                    playerCombatManager.AttemptBackStabOrRiposte();
+                }
+            }
+        }
+
+        private void HandleFiringBowInput()
+        {
+            if (fireFlag)
+            {
+                if (playerManager.isHoldingArrow)
+                {
+                    fireFlag = false;
+                    playerCombatManager.FireArrowAction();
+                }
+            }
         }
 
         private void HandleConsumableInput()

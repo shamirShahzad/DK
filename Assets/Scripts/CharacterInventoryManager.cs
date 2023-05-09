@@ -21,6 +21,8 @@ namespace DK
         public WeaponItem rightWeapon = null;
         public WeaponItem leftWeapon = null;
 
+        public RangedAmmoItem currentAmmo;
+
         private void Awake()
         {
             characterWeaponSlotManager = GetComponent<CharacterWeaponSlotManager>();

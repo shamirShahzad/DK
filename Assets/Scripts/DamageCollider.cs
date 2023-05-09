@@ -18,8 +18,8 @@ namespace DK
         public float poiseBreak;
         public float offensivePoiseBonus;
 
-        bool shieldHasBeenHit = false;
-        bool hasBeenParried = false;
+        protected bool shieldHasBeenHit = false;
+        protected bool hasBeenParried = false;
         protected string currentDamageAnimation;
 
         private void Awake()
@@ -43,7 +43,7 @@ namespace DK
         }
 
 
-        private void OnTriggerEnter(Collider collision)
+        protected virtual void OnTriggerEnter(Collider collision)
         {
             if(collision.tag == "Character")
             {

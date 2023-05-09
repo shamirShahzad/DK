@@ -74,8 +74,9 @@ GameObject:
   m_Component:
   - component: {fileID: 9059949191322734302}
   - component: {fileID: 9059949191311532030}
+  - component: {fileID: 942503067889221580}
   m_Layer: 0
-  m_Name: Bow03 1
+  m_Name: Bow 3 model
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -149,3 +150,23 @@ SkinnedMeshRenderer:
     m_Center: {x: 0, y: 0.2971162, z: 0}
     m_Extent: {x: 0.9453259, y: 0.30957964, z: 0.024968158}
   m_DirtyAABB: 0
+--- !u!95 &942503067889221580
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9059949191323095806}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0

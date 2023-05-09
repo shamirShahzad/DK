@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemIcon: {fileID: 21300000, guid: 9f7893e07c7681541940e2a165a87b98, type: 3}
   itemName: 'Bow '
-  modelPrefab: {fileID: 8249305810382430543, guid: 8f520124414d0f748823f8a1bee04378, type: 3}
+  modelPrefab: {fileID: 5932578590267294914, guid: de8b68c526cb68d4185d3dab586181f9, type: 3}
   isUnarmed: 0
   weaponController: {fileID: 22100000, guid: 053d8933b21ddd945ba1a96ef3efeb6a, type: 2}
   offHandIdleAnimation: Left_Arm_Idle
@@ -27,3 +27,4 @@ MonoBehaviour:
   baseStaminaCost: 0
   lightAttackMultiplier: 0
   heavyAttackMultiplier: 0
+  spellOfItem: {fileID: 0}
