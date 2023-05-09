@@ -80,57 +80,67 @@ namespace DK
         public void HandleRotation(float delta) {
             if (playerAnimatorManager.canRotate)
             {
-                if (inputHandler.lockOnFlag)
+                if (playerManager.isAiming)
                 {
-                    if (inputHandler.sprintFlag || inputHandler.rollFlag)
-                    {
-                        Vector3 targetDir = Vector3.zero;
-
-                        targetDir = cameraHandler.cameraTransform.forward * inputHandler.vertical;
-                        targetDir += cameraHandler.cameraTransform.right * inputHandler.horizontal;
-                        targetDir.Normalize();
-                        targetDir.y = 0;
-                        if (targetDir == Vector3.zero)
-                        {
-                            targetDir = transform.forward;
-                        }
-
-                        Quaternion tr = Quaternion.LookRotation(targetDir);
-                        Quaternion targetRotation = Quaternion.Slerp(transform.rotation, tr, rotationSpeed * Time.deltaTime);
-
-                        transform.rotation = targetRotation;
-                    }
-                    else
-                    {
-                        Vector3 rotationDirection = moveDirection;
-                        rotationDirection = cameraHandler.currentLockOnTarget.transform.position - transform.position;
-                        rotationDirection.y = 0;
-                        rotationDirection.Normalize();
-
-                        Quaternion tr = Quaternion.LookRotation(rotationDirection);
-                        Quaternion targetRotation = Quaternion.Slerp(transform.rotation, tr, rotationSpeed * Time.deltaTime);
-                        transform.rotation = targetRotation;
-                    }
-
+                    Quaternion targetRotation = Quaternion.Euler(0, cameraHandler.cameraTransform.eulerAngles.y, 0);
+                    Quaternion playerRotatin = Quaternion.Slerp(transform.rotation,targetRotation,rotationSpeed * Time.deltaTime);
+                    transform.rotation = playerRotatin;
                 }
                 else
                 {
-                    Vector3 targetDir = Vector3.zero;
+                    if (inputHandler.lockOnFlag)
+                    {
+                        if (inputHandler.sprintFlag || inputHandler.rollFlag)
+                        {
+                            Vector3 targetDir = Vector3.zero;
 
-                    float moveOverride = inputHandler.moveAmount;
-                    targetDir = cameraObject.forward * inputHandler.vertical;
-                    targetDir += cameraObject.right * inputHandler.horizontal;
-                    targetDir.Normalize();
-                    targetDir.y = 0;
-                    if (targetDir == Vector3.zero)
-                        targetDir = myTransform.forward;
+                            targetDir = cameraHandler.cameraTransform.forward * inputHandler.vertical;
+                            targetDir += cameraHandler.cameraTransform.right * inputHandler.horizontal;
+                            targetDir.Normalize();
+                            targetDir.y = 0;
+                            if (targetDir == Vector3.zero)
+                            {
+                                targetDir = transform.forward;
+                            }
 
-                    float rs = rotationSpeed;
-                    Quaternion tr = Quaternion.LookRotation(targetDir);
-                    Quaternion targetRotation = Quaternion.Slerp(myTransform.rotation, tr, rs * delta);
-                    myTransform.rotation = targetRotation;
+                            Quaternion tr = Quaternion.LookRotation(targetDir);
+                            Quaternion targetRotation = Quaternion.Slerp(transform.rotation, tr, rotationSpeed * Time.deltaTime);
 
+                            transform.rotation = targetRotation;
+                        }
+                        else
+                        {
+                            Vector3 rotationDirection = moveDirection;
+                            rotationDirection = cameraHandler.currentLockOnTarget.transform.position - transform.position;
+                            rotationDirection.y = 0;
+                            rotationDirection.Normalize();
+
+                            Quaternion tr = Quaternion.LookRotation(rotationDirection);
+                            Quaternion targetRotation = Quaternion.Slerp(transform.rotation, tr, rotationSpeed * Time.deltaTime);
+                            transform.rotation = targetRotation;
+                        }
+
+                    }
+                    else
+                    {
+                        Vector3 targetDir = Vector3.zero;
+
+                        float moveOverride = inputHandler.moveAmount;
+                        targetDir = cameraObject.forward * inputHandler.vertical;
+                        targetDir += cameraObject.right * inputHandler.horizontal;
+                        targetDir.Normalize();
+                        targetDir.y = 0;
+                        if (targetDir == Vector3.zero)
+                            targetDir = myTransform.forward;
+
+                        float rs = rotationSpeed;
+                        Quaternion tr = Quaternion.LookRotation(targetDir);
+                        Quaternion targetRotation = Quaternion.Slerp(myTransform.rotation, tr, rs * delta);
+                        myTransform.rotation = targetRotation;
+
+                    }
                 }
+             
             }
             
         }

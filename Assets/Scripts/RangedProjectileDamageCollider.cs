@@ -62,6 +62,17 @@ namespace DK
 
                 illusionaryWall.wallhasBeenHit = true;
             }
+            if (!hasAlreadyPenetrated && penetratedProjectile == null)
+            {
+                hasAlreadyPenetrated = true;
+                Vector3 contactPoint = collision.gameObject.GetComponent<Collider>().ClosestPointOnBounds(transform.position);
+                GameObject penetratedrrow = Instantiate(ammoItem.penetrateModel, contactPoint, Quaternion.Euler(0, 0, 0));
+
+                penetratedProjectile = penetratedrrow;
+                penetratedrrow.transform.parent = collision.transform;
+                penetratedrrow.transform.rotation = Quaternion.LookRotation(gameObject.transform.forward);
+            }
+            Destroy(transform.root.gameObject);
         }
     }
 }

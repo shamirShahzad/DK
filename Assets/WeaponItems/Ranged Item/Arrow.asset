@@ -15,9 +15,9 @@ MonoBehaviour:
   itemIcon: {fileID: 0}
   itemName: Arrow
   ammoType: 0
-  forwardVelocity: 550
-  upWardVelocity: 70
-  ammoMass: 1
+  forwardVelocity: 1000
+  upWardVelocity: 90
+  ammoMass: 5
   useGravity: 1
   carryLimit: 99
   currentAmmount: 99

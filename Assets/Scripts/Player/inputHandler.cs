@@ -48,6 +48,7 @@ namespace DK
         PlayerStatsManager playerStatsManager;
         CameraHandler cameraHandler;
         PlayerAnimatorManager playerAnimatorManager;
+        public UIManager uIManager;
         
 
         Vector2 movementInput;  
@@ -63,6 +64,7 @@ namespace DK
             playerInventoryManager = GetComponent<PlayerInventoryManager>();
             playerFXManager = GetComponent<PlayerFXManager>();
             playerManager = GetComponent<PlayerManager>();
+            uIManager = FindObjectOfType<UIManager>();
             playerStatsManager = GetComponent<PlayerStatsManager>();
             cameraHandler = FindObjectOfType<CameraHandler>();
             weaponSlotManager = GetComponent<PlayerWeaponSlotManager>();
@@ -132,8 +134,12 @@ namespace DK
                 horizontal = movementInput.x;
                 vertical = movementInput.y;
 
-                moveAmount = Mathf.Clamp01(Mathf.Abs(horizontal) + Mathf.Abs(vertical)) / 10 ;
+                moveAmount = Mathf.Clamp01(Mathf.Abs(horizontal) + Mathf.Abs(vertical)) ;
 
+                if(moveAmount > 0.5f)
+                {
+                    moveAmount = 0.5f;
+                }
                 mouseX = cameraInput.x;
                 mouseY = cameraInput.y;
             }
@@ -193,7 +199,8 @@ namespace DK
             }
             if (rt_input)
             {
-                playerCombatManager.HandleHeavyAttack(playerInventoryManager.rightWeapon);
+               
+                playerCombatManager.HandleRTAction();
             }
             if (lb_input)
             {
@@ -276,15 +283,16 @@ namespace DK
             }
             else if(lb_input == false)
             {
-                playerManager.isBlocking = false;
-
+                if (playerManager.isAiming)
+                {
+                    playerManager.isAiming = false;
+                    uIManager.aimCrosshair.SetActive(false);
+                    cameraHandler.ResetAimCamRotations();
+                }
                 if (blockingCollider.blockingBoxCollider.enabled)
                 {
+                    playerManager.isBlocking = false;
                     blockingCollider.DisableBlockingCollider();
-                }
-                if (playerManager.isHoldingArrow)
-                {
-                    //playerAnimatorManager.animator.SetBool("isAiming", false);
                 }
             }
         }

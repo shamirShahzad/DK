@@ -1,5 +1,36 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &188501713
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 188501714}
+  m_Layer: 11
+  m_Name: Target Tarnsform While Aiming
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &188501714
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 188501713}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 1.24}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2554598859508786790}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1586937712
 GameObject:
   m_ObjectHideFlags: 0
@@ -26503,10 +26534,10 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  m_Radius: 24.958982
-  m_Height: 137.96811
+  m_Radius: 18.540648
+  m_Height: 133.01108
   m_Direction: 0
-  m_Center: {x: -16.089977, y: 0.000001794014, z: -0.9698552}
+  m_Center: {x: -18.56852, y: 0.0000014349442, z: -0.18771201}
 --- !u!1 &811011404567684476
 GameObject:
   m_ObjectHideFlags: 0
@@ -69797,6 +69828,7 @@ Transform:
   m_Children:
   - {fileID: 2554598860057456476}
   - {fileID: 2554598860366144464}
+  - {fileID: 188501714}
   m_Father: {fileID: 2554598860014443894}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -69856,7 +69888,7 @@ GameObject:
   - component: {fileID: 1368521021009723081}
   m_Layer: 11
   m_Name: New Player
-  m_TagString: Player
+  m_TagString: Character
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -69944,18 +69976,20 @@ MonoBehaviour:
   lb_input: 0
   rt_input: 0
   lt_input: 0
-  criticalAttackInput: 0
+  hold_rt_Input: 0
   jump_input: 0
   lockOnInput: 0
   right_Stick_Right_Input: 0
   right_Stick_Left_Input: 0
   lockOnFlag: 0
   twoHandFlag: 0
+  fireFlag: 0
   rollFlag: 0
   sprintFlag: 0
   comboFlag: 0
   rollInputTimer: 0
   criticalAttackRaycastStartPoint: {fileID: 2554598859002233727}
+  uIManager: {fileID: 0}
 --- !u!114 &2554598860014443785
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -69984,7 +70018,7 @@ MonoBehaviour:
   rotationSpeed: 20
   sprintSpeed: 8
   fallingSpeed: 420
-  walkingSpeed: 6
+  walkingSpeed: 4
   characterCollider: {fileID: 811011089889567889}
   characterCollisionBlocker: {fileID: 2554598858793991050}
   rollStaminaCost: 15
@@ -70016,6 +70050,8 @@ MonoBehaviour:
   isUsingRightHand: 0
   isUsingLeftHand: 0
   isTwoHanding: 0
+  isHoldingArrow: 0
+  isAiming: 0
   isRotatingWithRootMotion: 0
   canRotate: 0
   isSprinting: 0
@@ -70040,12 +70076,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   weaponItemsRight:
   - {fileID: 11400000, guid: 2035fcc6b5e5956428f3213594734d88, type: 2}
-  - {fileID: 11400000, guid: 0060897fa98a2ef4d85f187644374df9, type: 2}
+  - {fileID: 11400000, guid: a404a8288789d5e45aca00b24d8dd057, type: 2}
   - {fileID: 11400000, guid: 69ae6967547257341ba37b25fe3d6b3f, type: 2}
   weaponItemsLeft:
   - {fileID: 11400000, guid: 32fd7bee58f37c94193429903d6da805, type: 2}
   - {fileID: 11400000, guid: 69ae6967547257341ba37b25fe3d6b3f, type: 2}
-  - {fileID: 11400000, guid: 86513175fbf229344b21ec717ae7117a, type: 2}
+  - {fileID: 11400000, guid: 32fd7bee58f37c94193429903d6da805, type: 2}
   currentHelmetEquipment: {fileID: 11400000, guid: 482700fa87faf3e45915730f780ce9e7, type: 2}
   currentTorsoEquipment: {fileID: 11400000, guid: 35e4e1c4dd4c4514290593c159080a16, type: 2}
   currentLegEquipment: {fileID: 11400000, guid: 20a28d4d8ad02004d8ee1669dd17b5ca, type: 2}
@@ -70053,9 +70089,10 @@ MonoBehaviour:
   selectedWeaponIndexLeft: 0
   selectedWeaponIndexRight: 0
   currentConsumable: {fileID: 11400000, guid: 28d47a0bfab76504eaa0b2469d84e81f, type: 2}
-  currentSpell: {fileID: 11400000, guid: 70d574e52e6202f489dd32f9d86bf0f9, type: 2}
+  currentSpell: {fileID: 0}
   rightWeapon: {fileID: 0}
   leftWeapon: {fileID: 0}
+  currentAmmo: {fileID: 11400000, guid: 97a09df18203b414bbc3f51629b09888, type: 2}
   weaponsInventory: []
 --- !u!114 &5161199277288787833
 MonoBehaviour:
@@ -70127,6 +70164,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: db8c022d116ad69498621819c5796fe1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  currentRangeFX: {fileID: 0}
   bloodSplatterFX: {fileID: 183679963054362320, guid: ed5d829a9e21a7c4cb440881091a79a9, type: 3}
   rightWeaponVFX: {fileID: 0}
   leftWeaponVFX: {fileID: 0}
@@ -70221,7 +70259,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2554598860014443789}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fff0960ef4ea6e04eac66b4a7fd2189d, type: 3}
   m_Name: 
@@ -70424,7 +70462,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &3193716865813408228
 Transform:
   m_ObjectHideFlags: 0

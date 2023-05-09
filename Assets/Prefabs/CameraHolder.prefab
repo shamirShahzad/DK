@@ -164,15 +164,18 @@ MonoBehaviour:
   targetTransform: {fileID: 0}
   cameraTransform: {fileID: 314712891478342488}
   cameraPivotTransform: {fileID: 314712891441664194}
+  targetTransformWhileAiming: {fileID: 0}
   ignoreLayers:
     serializedVersion: 2
     m_Bits: 0
   environmentLayer:
     serializedVersion: 2
     m_Bits: 0
-  lookSpeed: 250
-  followspeed: 0.1
-  pivotSpeed: 250
+  leftAndRightLookSpeed: 250
+  leftAndRightAimingLookSpeed: 25
+  followspeed: 20
+  upAndDownLookSpeed: 250
+  upAndDownAimingLookSpeed: 25
   cameraSphereRadius: 0.2
   cameraCollisionOffset: 0.2
   minimumCollisionOffset: 0.2
