@@ -96,9 +96,9 @@ namespace DK
             enemyAnimatorManager.PlayTargetAnimation("Break Guard", true);
         }
 
-        public override void TakeDamage(int damage,string damageAnimation = "Hit")
+        public override void TakeDamage(int damage,string damageAnimation)
         {
-            base.TakeDamage(damage, damageAnimation = "Hit");
+            base.TakeDamage(damage, damageAnimation);
             if (!isBoss)
             {
                 enemyHealthBar.setHealth(currentHealth);

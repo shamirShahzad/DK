@@ -112,6 +112,7 @@ namespace DK
             MoveInput(delta);
             HandleRollingInput(delta);
             HandleCombatInput(delta);
+            HandleLBInput();
             HandleLockOnInput();
             HandleTwoHandInput();
             HandleCriticalAttackInput();
@@ -121,13 +122,27 @@ namespace DK
 
         private void MoveInput(float delta)
         {
-            horizontal = movementInput.x;
-            vertical = movementInput.y;
+            if(playerManager.isAiming)
+            {
+                horizontal = movementInput.x;
+                vertical = movementInput.y;
 
-            moveAmount = Mathf.Clamp01(Mathf.Abs(horizontal) + Mathf.Abs(vertical));
+                moveAmount = Mathf.Clamp01(Mathf.Abs(horizontal) + Mathf.Abs(vertical)) / 10 ;
 
-            mouseX = cameraInput.x;
-            mouseY = cameraInput.y;
+                mouseX = cameraInput.x;
+                mouseY = cameraInput.y;
+            }
+            else
+            {
+                horizontal = movementInput.x;
+                vertical = movementInput.y;
+
+                moveAmount = Mathf.Clamp01(Mathf.Abs(horizontal) + Mathf.Abs(vertical));
+
+                mouseX = cameraInput.x;
+                mouseY = cameraInput.y;
+            }
+          
 
 
         }
@@ -239,6 +254,34 @@ namespace DK
             }
 
             cameraHandler.SetCameraHeight();
+        }
+
+        private void HandleLBInput()
+        {
+            if (playerManager.isInAir||playerManager.isSprinting||
+                playerManager.isFiringSpell)
+            {
+                lb_input = false;
+                return;
+            }   
+
+            if (lb_input)
+            {
+                playerCombatManager.HandleLBAaction();
+            }
+            else if(lb_input == false)
+            {
+                playerManager.isBlocking = false;
+
+                if (blockingCollider.blockingBoxCollider.enabled)
+                {
+                    blockingCollider.DisableBlockingCollider();
+                }
+                if (playerManager.isAiming)
+                {
+                    playerAnimatorManager.animator.SetBool("isAiming", false);
+                }
+            }
         }
 
         private void HandleTwoHandInput()

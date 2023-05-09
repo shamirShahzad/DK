@@ -57,7 +57,7 @@ namespace DK
             totalPoiseDefense = armorPoisebonus;
         }
 
-        public virtual void TakeDamage(int physicalDamage, string damageAnimation = "Hit")
+        public virtual void TakeDamage(int physicalDamage, string damageAnimation)
         {
             if (isDead)
                 return;

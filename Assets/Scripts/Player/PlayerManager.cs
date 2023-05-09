@@ -43,6 +43,7 @@ namespace DK
             isUsingLeftHand = animator.GetBool("isUsingLeftHand");
             isInvulnerable = animator.GetBool("isInvulnerable");
             isFiringSpell = animator.GetBool("isFiringSpell");
+            isAiming = animator.GetBool("isAiming");
             animator.SetBool("isBlocking",isBlocking);
             animator.SetBool("isInAir", isInAir);
             animator.SetBool("isTwoHanding", isTwoHanding);

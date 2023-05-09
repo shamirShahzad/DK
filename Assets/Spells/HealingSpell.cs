@@ -12,21 +12,22 @@ namespace DK
         public override void AttemptToCastSpell(PlayerAnimatorManager animatorHandler,
             PlayerStatsManager playerStats,
             PlayerWeaponSlotManager weaponSlotManager,
-            CameraHandler cameraHandler)
+            bool isLeftHanded, CameraHandler cameraHandler)
         {
-            base.AttemptToCastSpell(animatorHandler, playerStats,weaponSlotManager,cameraHandler);
+            base.AttemptToCastSpell(animatorHandler, playerStats,weaponSlotManager,isLeftHanded,cameraHandler);
             GameObject instanstiatedWarmupSpellFX = Instantiate(spellWarmupEffect,animatorHandler.transform);
-            animatorHandler.PlayTargetAnimation(spellAnimation, true);
-            Debug.Log("Attempting baaby..");
+            animatorHandler.PlayTargetAnimation(spellAnimation, true,false,isLeftHanded);
+           // Debug.Log("Attempting baaby..");
             Destroy(instanstiatedWarmupSpellFX, 1.5f);
         }
 
-        public override void SuccessfullyCastedSpell(PlayerAnimatorManager animatorHandler, PlayerStatsManager playerStats,CameraHandler cameraHandler,PlayerWeaponSlotManager weaponSlotManager)
+        public override void SuccessfullyCastedSpell(PlayerAnimatorManager animatorHandler, PlayerStatsManager playerStats,
+            CameraHandler cameraHandler,PlayerWeaponSlotManager weaponSlotManager,bool isLeftHanded)
         {
-            base.SuccessfullyCastedSpell(animatorHandler, playerStats,cameraHandler,weaponSlotManager);
+            base.SuccessfullyCastedSpell(animatorHandler, playerStats,cameraHandler,weaponSlotManager,isLeftHanded);
             GameObject instansiatedSpellFX = Instantiate(spellCastEffect, animatorHandler.transform);
             playerStats.healPlayer(healAmount);
-            Debug.Log("Success BABY");
+            //Debug.Log("Success BABY");
             Destroy(instansiatedSpellFX, 1.5f);
         }
     }

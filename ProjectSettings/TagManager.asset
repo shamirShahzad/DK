@@ -12,6 +12,7 @@ TagManager:
   - collider
   - Skeleton Sword
   - Illusionary Wall
+  - Character
   layers:
   - Default
   - TransparentFX

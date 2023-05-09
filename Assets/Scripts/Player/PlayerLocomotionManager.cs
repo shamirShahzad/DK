@@ -157,7 +157,7 @@ namespace DK
                 playerStatsManager.TakeStaminaDamage(sprintStaminaCost);
             }
             else {
-                if (inputHandler.moveAmount < 0.5f)
+                if (inputHandler.moveAmount <= 0.5f)
                 {
                     moveDirection *= walkingSpeed;
                     playerManager.isSprinting = false;

@@ -24,6 +24,7 @@ namespace DK
         public bool isUsingRightHand;
         public bool isUsingLeftHand;
         public bool isTwoHanding;
+        public bool isAiming;
 
 
         [Header("Movement flag")]

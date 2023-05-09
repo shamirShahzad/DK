@@ -11,6 +11,7 @@ namespace DK
         protected CharacterFXManager characterFXManager;
         protected CharacterInventoryManager characterInventoryManager;
         protected CharacterAnimatorManager characterAnimatorManager;
+
         
 
         [Header("Weapon Items")]
@@ -78,8 +79,19 @@ namespace DK
                 if (isLeft)
                 {
                     leftHandSlot.currentWeapon = weaponItem;
+                    if (leftHandSlot.currentWeapon.weaponTypes == WeaponTypes.PyromancyCaster ||
+                        leftHandSlot.currentWeapon.weaponTypes == WeaponTypes.FaithCaster
+                        )
+                    {
+                        characterInventoryManager.currentSpell = weaponItem.spellOfItem;
+                    }
+                    else
+                    {
+                        characterInventoryManager.currentSpell = null;
+                    }
 
                     leftHandSlot.LoadWeaponModel(weaponItem);
+                    
                     LoadLeftWeaponDamageCollider();
                     characterAnimatorManager.PlayTargetAnimation(weaponItem.offHandIdleAnimation, false, true);
 
@@ -129,6 +141,7 @@ namespace DK
         {
             leftDamageCollider = leftHandSlot.currentWeaponModel.GetComponentInChildren<DamageCollider>();
             leftDamageCollider.weaponDamage = characterInventoryManager.leftWeapon.baseDamage;
+            leftDamageCollider.characterManager = characterManager;
             leftDamageCollider.poiseBreak = characterInventoryManager.leftWeapon.poiseBreak;
             leftDamageCollider.teamIdNumber = characterStatsManager.teamIdNumber;
             characterFXManager.leftWeaponVFX = leftHandSlot.currentWeaponModel.GetComponentInChildren<WeaponVFX>();
@@ -136,11 +149,15 @@ namespace DK
 
         protected virtual void LoadRightWeaponDamageCollider()
         {
-            rightDamageCollider = rightHandSlot.currentWeaponModel.GetComponentInChildren<DamageCollider>();
-            rightDamageCollider.weaponDamage = characterInventoryManager.rightWeapon.baseDamage;
-            rightDamageCollider.poiseBreak = characterInventoryManager.rightWeapon.poiseBreak;
-            rightDamageCollider.teamIdNumber = characterStatsManager.teamIdNumber;
-            characterFXManager.rightWeaponVFX = rightHandSlot.currentWeaponModel.GetComponentInChildren<WeaponVFX>();
+            if (rightHandSlot.currentWeapon.weaponTypes != WeaponTypes.Bow)
+            {
+                rightDamageCollider = rightHandSlot.currentWeaponModel.GetComponentInChildren<DamageCollider>();
+                rightDamageCollider.weaponDamage = characterInventoryManager.rightWeapon.baseDamage;
+                rightDamageCollider.characterManager = characterManager;
+                rightDamageCollider.poiseBreak = characterInventoryManager.rightWeapon.poiseBreak;
+                rightDamageCollider.teamIdNumber = characterStatsManager.teamIdNumber;
+                characterFXManager.rightWeaponVFX = rightHandSlot.currentWeaponModel.GetComponentInChildren<WeaponVFX>();
+            }
         }
 
 

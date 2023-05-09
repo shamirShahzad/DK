@@ -29,17 +29,17 @@ namespace DK
         public virtual void AttemptToCastSpell(PlayerAnimatorManager animatorHandler,
             PlayerStatsManager playerStats,
             PlayerWeaponSlotManager weaponSlotManager,
-            CameraHandler cameraHandler)
+            bool isLeftHanded,CameraHandler cameraHandler)
         {
-            Debug.Log("Attempted cast");
+
         }
 
         public virtual void SuccessfullyCastedSpell(PlayerAnimatorManager animatorHandler,
             PlayerStatsManager playerStats,
             CameraHandler cameraHandler,
-            PlayerWeaponSlotManager weaponSlotManager)
+            PlayerWeaponSlotManager weaponSlotManager,
+            bool isLeftHanded)
         {
-            Debug.Log("Success cast spell");
             playerStats.DeductfocusPoints(focusPointCost);
         }
     }

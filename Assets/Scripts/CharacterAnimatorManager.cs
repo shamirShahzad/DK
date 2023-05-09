@@ -21,12 +21,13 @@ namespace DK
             characterManager = GetComponent<CharacterManager>();
             characterStatsManager = GetComponent<CharacterStatsManager>();
         }
-        public void PlayTargetAnimation(string targetAnim, bool isInteracting,bool canRotate = false)
+        public void PlayTargetAnimation(string targetAnim, bool isInteracting,bool canRotate = false,bool mirrorAnimation  = false)
         {
             rigBuilder = GetComponent<RigBuilder>();
             animator.applyRootMotion = isInteracting;
             animator.SetBool("canRotate", canRotate);
             animator.SetBool("isInteracting", isInteracting);
+            animator.SetBool("isMirrored", mirrorAnimation);
             animator.CrossFade(targetAnim, 0.2f);
             canRotate = false;
         }
@@ -95,13 +96,19 @@ namespace DK
         {
             if (isTwoHanding)
             {
-                rightHandConstraint.data.target = rightHandRigTarget.transform;
-                rightHandConstraint.data.targetPositionWeight = 1;
-                rightHandConstraint.data.targetRotationWeight = 1;
-
-                leftHandConstraint.data.target = leftHandRigTarget.transform;
-                leftHandConstraint.data.targetPositionWeight = 1;
-                leftHandConstraint.data.targetRotationWeight = 1;
+                if (rightHandRigTarget != null)
+                {
+                    rightHandConstraint.data.target = rightHandRigTarget.transform;
+                    rightHandConstraint.data.targetPositionWeight = 1;
+                    rightHandConstraint.data.targetRotationWeight = 1;
+                }
+                
+                if(leftHandRigTarget != null)
+                {
+                    leftHandConstraint.data.target = leftHandRigTarget.transform;
+                    leftHandConstraint.data.targetPositionWeight = 1;
+                    leftHandConstraint.data.targetRotationWeight = 1;
+                }  
             }
             else
             {

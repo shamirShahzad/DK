@@ -10,7 +10,8 @@ namespace DK
         StraightSword,
         Shield,
         SpellCaster,
-        Unarmed
+        Unarmed,
+        Bow
 
     }
     public class Enum : MonoBehaviour

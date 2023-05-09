@@ -19271,8 +19271,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8148937802079700759}
-  - component: {fileID: 3471560503039763793}
   - component: {fileID: -1586692309134433916}
+  - component: {fileID: 138948022408512162}
   m_Layer: 0
   m_Name: Pyromancy Flame
   m_TagString: Untagged
@@ -19296,21 +19296,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &3471560503039763793
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8817211810580454829}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6fcc6ae05be2fd6439f2fc6defb47d7e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  characterManager: {fileID: 0}
-  weaponDamage: 8
-  enableOnstartup: 0
 --- !u!135 &-1586692309134433916
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -19320,7 +19305,28 @@ SphereCollider:
   m_GameObject: {fileID: 8817211810580454829}
   m_Material: {fileID: 0}
   m_IsTrigger: 1
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
-  m_Radius: 0.5
+  m_Radius: 0.04
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &138948022408512162
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8817211810580454829}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa2144816c068f644b9773d088184f5d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  characterManager: {fileID: 0}
+  weaponDamage: 8
+  enableOnstartup: 0
+  teamIdNumber: 0
+  poiseBreak: 0
+  offensivePoiseBonus: 0
+  impactParticles: {fileID: 123764, guid: d37a42d0ffd950d4db31dca41c1d632c, type: 3}
+  projectileParticles: {fileID: 100008, guid: 6a2dabb295745d9488037712e2ba0f26, type: 3}
+  muzzleParticles: {fileID: 0}

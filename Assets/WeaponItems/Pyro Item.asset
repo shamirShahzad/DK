@@ -16,23 +16,14 @@ MonoBehaviour:
   itemName: Flame ball
   modelPrefab: {fileID: 8817211810580454829, guid: 6df73d24b864ce442a525be0b4005c61, type: 3}
   isUnarmed: 0
+  weaponController: {fileID: 22100000, guid: 3143ccc7d3d24b744965e054b8385eba, type: 2}
+  offHandIdleAnimation: Left_Arm_Idle
+  weaponTypes: 0
   baseDamage: 25
   criticalDamageMultiplier: 4
+  poiseBreak: 0
+  offensivePoiseBonus: 0
   physicalDamageAbsorbtion: 0
-  Left_Hand_Idle: 
-  Right_Hand_Idle: 
-  th_idle: 
-  OH_Light_Attack_1: 
-  OH_Light_Attack_2: 
-  OH_Heavy_Attack_1: Empty
-  TH_Light_Attack_01: 
-  TH_Light_Attack_02: 
-  weaponArtShield: 
   baseStaminaCost: 0
   lightAttackMultiplier: 0
   heavyAttackMultiplier: 0
-  isSpellCaster: 0
-  isFaithCaster: 0
-  isPyroCaster: 1
-  isMeleeWeapon: 0
-  isShield: 0

@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dab8148e7e0a0e3479699140684fc527, type: 3}
+  m_Name: Bow
+  m_EditorClassIdentifier: 
+  itemIcon: {fileID: 21300000, guid: 9f7893e07c7681541940e2a165a87b98, type: 3}
+  itemName: 'Bow '
+  modelPrefab: {fileID: 8249305810382430543, guid: 8f520124414d0f748823f8a1bee04378, type: 3}
+  isUnarmed: 0
+  weaponController: {fileID: 22100000, guid: 053d8933b21ddd945ba1a96ef3efeb6a, type: 2}
+  offHandIdleAnimation: Left_Arm_Idle
+  weaponTypes: 6
+  baseDamage: 25
+  criticalDamageMultiplier: 4
+  poiseBreak: 0
+  offensivePoiseBonus: 0
+  physicalDamageAbsorbtion: 0
+  baseStaminaCost: 0
+  lightAttackMultiplier: 0
+  heavyAttackMultiplier: 0

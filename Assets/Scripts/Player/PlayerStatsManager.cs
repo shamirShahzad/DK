@@ -98,7 +98,7 @@ namespace DK
 
             }
         }
-        public override void TakeDamage(int damage,string damageAnimation = "Hit")
+        public override void TakeDamage(int damage,string damageAnimation)
         {
             if (playerManager.isInvulnerable)
             {

@@ -113,13 +113,35 @@ namespace DK
                 playerInventoryManager.rightWeapon.weaponTypes == WeaponTypes.FaithCaster ||
                 playerInventoryManager.rightWeapon.weaponTypes == WeaponTypes.PyromancyCaster)
             {
-                PerformRBMagicAction(playerInventoryManager.rightWeapon);
+                PerformMagicAction(playerInventoryManager.rightWeapon,playerManager.isUsingLeftHand);
             }    
         }
 
         public void HandleLBAaction()
         {
-            PerformLBBlockAction();
+           // PerformLBBlockAction();
+
+            if (playerManager.isTwoHanding)
+            {
+                if (playerInventoryManager.rightWeapon.weaponTypes == WeaponTypes.Bow)
+                {
+                    PerformLBAimingAction();
+                }
+            }
+            else
+            {
+                if (playerInventoryManager.leftWeapon.weaponTypes == WeaponTypes.Shield ||
+                    playerInventoryManager.leftWeapon.weaponTypes == WeaponTypes.StraightSword)
+                {
+                    PerformLBBlockAction();
+                }
+                else if(playerInventoryManager.leftWeapon.weaponTypes == WeaponTypes.FaithCaster || 
+                    playerInventoryManager.leftWeapon.weaponTypes == WeaponTypes.PyromancyCaster)
+                {
+                    PerformMagicAction(playerInventoryManager.leftWeapon, true);
+                    playerAnimtorManager.animator.SetBool("isUsingLeftHand", true);
+                }
+            }
         }
 
 
@@ -215,16 +237,31 @@ namespace DK
             }
         }
 
-        private void PerformRBMagicAction(WeaponItem weapon)
+        private void PerformLBAimingAction()
+        {
+            playerAnimtorManager.animator.SetBool("isAiming", true);
+        }
+
+        private void PerformMagicAction(WeaponItem weapon,bool isLeftHanded)
         {
             if (playerManager.isInteracting)
                 return;
+            if (weapon.weaponTypes == WeaponTypes.PyromancyCaster ||
+                       weapon.weaponTypes == WeaponTypes.FaithCaster
+                       )
+            {
+                playerInventoryManager.currentSpell = weapon.spellOfItem;
+            }
+            else
+            {
+                playerInventoryManager.currentSpell = null;
+            }
             if (weapon.weaponTypes == WeaponTypes.FaithCaster)
             {
                 if(playerInventoryManager.currentSpell != null && playerInventoryManager.currentSpell.isFaithSpell)
                 {
                     if(playerStatsManager.currentFocus >= playerInventoryManager.currentSpell.focusPointCost){
-                        playerInventoryManager.currentSpell.AttemptToCastSpell(playerAnimtorManager, playerStatsManager,playerWeaponSlotManager,cameraHandler);
+                        playerInventoryManager.currentSpell.AttemptToCastSpell(playerAnimtorManager, playerStatsManager,playerWeaponSlotManager,isLeftHanded,cameraHandler);
                     }
                     else
                     {
@@ -239,7 +276,7 @@ namespace DK
                 {
                     if (playerStatsManager.currentFocus >= playerInventoryManager.currentSpell.focusPointCost)
                     {
-                        playerInventoryManager.currentSpell.AttemptToCastSpell(playerAnimtorManager, playerStatsManager, playerWeaponSlotManager,cameraHandler);
+                        playerInventoryManager.currentSpell.AttemptToCastSpell(playerAnimtorManager, playerStatsManager, playerWeaponSlotManager,isLeftHanded,cameraHandler);
                     }
                     else
                     {
@@ -282,7 +319,7 @@ namespace DK
 
         private void SuccessfullycastedSpell()
         {
-            playerInventoryManager.currentSpell.SuccessfullyCastedSpell(playerAnimtorManager, playerStatsManager,cameraHandler,playerWeaponSlotManager);
+            playerInventoryManager.currentSpell.SuccessfullyCastedSpell(playerAnimtorManager, playerStatsManager,cameraHandler,playerWeaponSlotManager,playerManager.isUsingLeftHand);
             playerAnimtorManager.animator.SetBool("isFiringSpell", true);
         }
     }
