@@ -12,20 +12,29 @@ namespace DK
         public int teamIdNumber = 0;
 
 
-        public int healthLevel = 10;
+        
         public int maxHealth;
         public int currentHealth;
 
-        public int staminaLevel = 10;
+        
         public float maxStamina;
         public float currentStamina;
 
-        public int focusLevel = 10;
+        
         public float maxFocus;
         public float currentFocus;
 
         public int soulCount = 0;
         public int soulsAwardedOnDeath = 50;
+
+        [Header("Levels")]
+        public int healthLevel = PlayerPrefs.GetInt("healthLevel");
+        public int staminaLevel = PlayerPrefs.GetInt("staminaLevel");
+        public int focusLevel = PlayerPrefs.GetInt("focusLevel");
+        public int strengthLevel = PlayerPrefs.GetInt("strengthLevel");
+        public int dexterityLevel = PlayerPrefs.GetInt("dexterityLevel");
+        public int intelligenceLevel = PlayerPrefs.GetInt("intelligenceLevel");
+        public int faithLevel = PlayerPrefs.GetInt("faithLevel");
 
         [Header("Poise")]
         public float totalPoiseDefense;//total poise 
