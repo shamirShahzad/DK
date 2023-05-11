@@ -9,6 +9,7 @@ namespace DK
         FaithCaster,
         StraightSword,
         Shield,
+        smallShield,
         SpellCaster,
         Unarmed,
         Bow

@@ -77,7 +77,7 @@ namespace DK
         Vector3 normalVector;
         Vector3 targetPosition;
 
-        public void HandleRotation(float delta) {
+        public void HandleRotation() {
             if (playerAnimatorManager.canRotate)
             {
                 if (playerManager.isAiming)
@@ -135,7 +135,7 @@ namespace DK
 
                         float rs = rotationSpeed;
                         Quaternion tr = Quaternion.LookRotation(targetDir);
-                        Quaternion targetRotation = Quaternion.Slerp(myTransform.rotation, tr, rs * delta);
+                        Quaternion targetRotation = Quaternion.Slerp(myTransform.rotation, tr, rs * Time.deltaTime);
                         myTransform.rotation = targetRotation;
 
                     }
@@ -145,7 +145,7 @@ namespace DK
             
         }
 
-        public void HandleMovement(float delta)
+        public void HandleMovement()
         {
 
             if (inputHandler.rollFlag)
@@ -193,7 +193,7 @@ namespace DK
             }
         }
 
-        public void HandleRolling(float delta) {
+        public void HandleRolling() {
             if (playerAnimatorManager.animator.GetBool("isInteracting")) {
                 return;
             }
@@ -203,6 +203,7 @@ namespace DK
 
             if(inputHandler.rollFlag)
             {
+                inputHandler.rollFlag = false;
                 moveDirection = cameraObject.forward * inputHandler.vertical;
                 moveDirection += cameraObject.right * inputHandler.horizontal;
                 if (inputHandler.moveAmount > 0)
@@ -222,7 +223,7 @@ namespace DK
             }
         }
 
-        public void HandleFalling(float delta, Vector3 moveDirection)
+        public void HandleFalling(Vector3 moveDirection)
         {
             playerManager.isGrounded = false;
             RaycastHit hit;
@@ -308,6 +309,7 @@ namespace DK
 
             if (inputHandler.jump_input)
             {
+                inputHandler.jump_input = false;
                 if(inputHandler.moveAmount > 0)
                 {
                     moveDirection = cameraObject.forward * inputHandler.vertical;

@@ -7,6 +7,9 @@ namespace DK
     {
         protected CharacterWeaponSlotManager characterWeaponSlotManager;
 
+        [Header("Current item being used")]
+        public Item currentItemBeingUsed;
+
         public WeaponItem[] weaponItemsRight;
         public WeaponItem[] weaponItemsLeft;
         [Header("Current Equipment")]

@@ -77,19 +77,6 @@ namespace DK
                 }
             }
         }
-        public void DrainStaminaLightAttack()
-        {
-            playerStatsManager.TakeStaminaDamage(Mathf.RoundToInt(attackingItem.baseStaminaCost * attackingItem.lightAttackMultiplier));
-        }
-        public void DrainStaminaHeavyAttack()
-        {
-            playerStatsManager.TakeStaminaDamage(Mathf.RoundToInt(attackingItem.baseStaminaCost * attackingItem.heavyAttackMultiplier));
-        }
-
-
-
-
-
     }
 
 

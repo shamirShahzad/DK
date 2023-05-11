@@ -28,13 +28,15 @@ namespace DK
 
         public override void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
         {
+            CharacterManager characterManager = animator.GetComponent<CharacterManager>();
+
+            characterManager.isUsingRightHand = false;
+            characterManager.isUsingLeftHand = false;
             animator.SetBool(isInteractingBool, isInteractingStatus);
             animator.SetBool(isRotatingWithRootMotion, isRotatingWithRootMotionStatus);
             animator.SetBool(isFiringSpellBool, isFiringStatus);
             animator.SetBool(canRotateBool, canRotateStatus);
             animator.SetBool(isInvulnerable, isInvulnerableStatus);
-            animator.SetBool(isUsingRightHand, isUsingRightHandStatus);
-            animator.SetBool(isUsingLeftHand, isUsingLeftHandStatus);
             animator.SetBool(isMirrored, isMirroredStatus);
         }
 

@@ -57,8 +57,6 @@ namespace DK
             HandleRecoveryTimer();
             HandleStateMachine();
             isRotatingWithRootMotion = enemyAnimatorManager.animator.GetBool("isRotatingWithRootMotion");
-            isUsingLeftHand = enemyAnimatorManager.animator.GetBool("isUsingLeftHand");
-            isUsingRightHand = enemyAnimatorManager.animator.GetBool("isUsingRightHand");
             isInteracting = enemyAnimatorManager.animator.GetBool("isInteracting");
             isPhaseShifting = enemyAnimatorManager.animator.GetBool("isPhaseShifting");
             isInvulnerable = enemyAnimatorManager.animator.GetBool("isInvulnerable");

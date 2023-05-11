@@ -3110,25 +3110,9 @@ PrefabInstance:
       value: CameraHolder
       objectReference: {fileID: 0}
     - target: {fileID: 314712891529277287, guid: f928aaed31038c94eaf4225e6a7be07c, type: 3}
-      propertyPath: upAndDownLookSpeed
-      value: 500
-      objectReference: {fileID: 0}
-    - target: {fileID: 314712891529277287, guid: f928aaed31038c94eaf4225e6a7be07c, type: 3}
-      propertyPath: leftAndRightLookSpeed
-      value: 500
-      objectReference: {fileID: 0}
-    - target: {fileID: 314712891529277287, guid: f928aaed31038c94eaf4225e6a7be07c, type: 3}
-      propertyPath: upAndDownAimingLookSpeed
-      value: 100
-      objectReference: {fileID: 0}
-    - target: {fileID: 314712891529277287, guid: f928aaed31038c94eaf4225e6a7be07c, type: 3}
       propertyPath: targetTransformWhileAiming
       value: 
       objectReference: {fileID: 188501714}
-    - target: {fileID: 314712891529277287, guid: f928aaed31038c94eaf4225e6a7be07c, type: 3}
-      propertyPath: leftAndRightAimingLookSpeed
-      value: 100
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f928aaed31038c94eaf4225e6a7be07c, type: 3}
 --- !u!1 &739727966212714576
@@ -6117,22 +6101,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1106178718, guid: ec545e5b29518014388cb554bb29607f, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1319789605, guid: ec545e5b29518014388cb554bb29607f, type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8712038281048706261, guid: ec545e5b29518014388cb554bb29607f, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -0.03805533
-      objectReference: {fileID: 0}
-    - target: {fileID: 8712038281048706261, guid: ec545e5b29518014388cb554bb29607f, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 1.2789726
-      objectReference: {fileID: 0}
     - target: {fileID: 9000053290340805183, guid: ec545e5b29518014388cb554bb29607f, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
@@ -6140,10 +6108,6 @@ PrefabInstance:
     - target: {fileID: 9000053290340805183, guid: ec545e5b29518014388cb554bb29607f, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 9000053291787366314, guid: ec545e5b29518014388cb554bb29607f, type: 3}
-      propertyPath: detectionLayer.m_Bits
-      value: 32
       objectReference: {fileID: 0}
     - target: {fileID: 9000053292317615552, guid: ec545e5b29518014388cb554bb29607f, type: 3}
       propertyPath: m_RootOrder
@@ -6192,10 +6156,6 @@ PrefabInstance:
     - target: {fileID: 9000053292317615562, guid: ec545e5b29518014388cb554bb29607f, type: 3}
       propertyPath: m_Name
       value: Enemy
-      objectReference: {fileID: 0}
-    - target: {fileID: 9000053292317615562, guid: ec545e5b29518014388cb554bb29607f, type: 3}
-      propertyPath: m_TagString
-      value: Character
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ec545e5b29518014388cb554bb29607f, type: 3}

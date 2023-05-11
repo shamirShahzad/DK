@@ -196,6 +196,15 @@
                     "id": "d8d4f714-d3c7-4763-b604-ea40fb60e406",
                     "expectedControlType": "Button",
                     "processors": "",
+                    "interactions": "Tap",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Hold RB",
+                    "type": "PassThrough",
+                    "id": "58fb820e-e45c-4747-9675-0dc0a257bdb3",
+                    "expectedControlType": "Button",
+                    "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
                 },
@@ -205,7 +214,7 @@
                     "id": "038f7a27-2c65-4d2b-bd29-0506edc8a993",
                     "expectedControlType": "Button",
                     "processors": "",
-                    "interactions": "",
+                    "interactions": "Hold",
                     "initialStateCheck": false
                 },
                 {
@@ -223,7 +232,7 @@
                     "id": "3097f078-634b-41a9-bc63-ced8e9977ffb",
                     "expectedControlType": "Button",
                     "processors": "",
-                    "interactions": "",
+                    "interactions": "Tap",
                     "initialStateCheck": false
                 },
                 {
@@ -232,7 +241,7 @@
                     "id": "2be3148b-4574-4f2f-bb7f-f79388bba7b8",
                     "expectedControlType": "Button",
                     "processors": "",
-                    "interactions": "",
+                    "interactions": "Tap",
                     "initialStateCheck": false
                 },
                 {
@@ -278,6 +287,15 @@
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "TapLB",
+                    "type": "Button",
+                    "id": "c96c3b31-a74e-4e1e-bbda-63c78cffc6e9",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "Tap",
                     "initialStateCheck": false
                 }
             ],
@@ -521,6 +539,50 @@
                     "processors": "",
                     "groups": "",
                     "action": "RT",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "bd79ece5-7c01-4996-89c9-6189f36c78ce",
+                    "path": "<Gamepad>/leftShoulder",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "TapLB",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "c2acd0db-1fae-49f4-884e-0a9e242b73ab",
+                    "path": "<Keyboard>/q",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "TapLB",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "5d9b5803-fb70-4723-a015-95f99a010fd3",
+                    "path": "<Keyboard>/e",
+                    "interactions": "Hold",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Hold RB",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "a07e8b0e-73a8-4106-bf87-de15b8b5affb",
+                    "path": "<Gamepad>/rightShoulder",
+                    "interactions": "Hold",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Hold RB",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

@@ -15,7 +15,7 @@ MonoBehaviour:
   itemIcon: {fileID: 0}
   itemName: Arrow
   ammoType: 0
-  forwardVelocity: 1000
+  forwardVelocity: 650
   upWardVelocity: 90
   ammoMass: 5
   useGravity: 1

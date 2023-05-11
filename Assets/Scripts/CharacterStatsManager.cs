@@ -126,5 +126,10 @@ namespace DK
                 totalPoiseDefense = armorPoisebonus;
             }
         }
+
+        public void DrainStaminaBasedOnAttackType()
+        {
+
+        }
     }
 }

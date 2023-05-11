@@ -28,3 +28,11 @@ MonoBehaviour:
   lightAttackMultiplier: 0
   heavyAttackMultiplier: 0
   spellOfItem: {fileID: 11400000, guid: a67358f7d97aa0f4f877d6034611fec5, type: 2}
+  hold_RB_Action: {fileID: 0}
+  tap_RB_Action: {fileID: 11400000, guid: 884748a7c83ad8547a571af4da128ae5, type: 2}
+  tap_LB_Action: {fileID: 11400000, guid: 884748a7c83ad8547a571af4da128ae5, type: 2}
+  hold_LB_Action: {fileID: 0}
+  hold_RT_Action: {fileID: 0}
+  tap_RT_Action: {fileID: 0}
+  tap_LT_Action: {fileID: 0}
+  hold_LT_Action: {fileID: 0}

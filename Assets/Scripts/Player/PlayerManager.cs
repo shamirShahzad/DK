@@ -5,15 +5,19 @@ namespace DK
 {
     public class PlayerManager : CharacterManager
     {
-        inputHandler inputHandler;
-        CameraHandler cameraHandler;
+        public inputHandler inputHandler;
+        public CameraHandler cameraHandler;
         Animator animator;
-        PlayerLocomotionManager playerLocomotion;
-        PlayerAnimatorManager playerAnimatorManager;
-        PlayerFXManager playerFXManager;
-        InteractableUi interactableUi;
-        PlayerStatsManager playerStatsManager;
-
+        public PlayerLocomotionManager playerLocomotion;
+        public PlayerAnimatorManager playerAnimatorManager;
+        public PlayerWeaponSlotManager playerWeaponSlotManager;
+        public PlayerFXManager playerFXManager;
+        public InteractableUi interactableUi;
+        public PlayerStatsManager playerStatsManager;
+        public PlayerCombatManager playerCombatManager;
+        public PlayerInventoryManager playerInventoryManager;
+        public PlayerEquipmentManager playerEquipmentManager;
+            
         public GameObject interactableUiGameObject;
         public GameObject itemInteractableGameobject;
         
@@ -32,6 +36,10 @@ namespace DK
             backStabCollider = GetComponentInChildren<CriticalDamageCollider>();
             playerAnimatorManager = GetComponent<PlayerAnimatorManager>();
             playerFXManager = GetComponent<PlayerFXManager>();
+            playerCombatManager = GetComponent<PlayerCombatManager>();
+            playerInventoryManager = GetComponent<PlayerInventoryManager>();
+            playerWeaponSlotManager = GetComponent<PlayerWeaponSlotManager>();
+            playerEquipmentManager = GetComponent<PlayerEquipmentManager>();
         }       
         void Update()
         {
@@ -39,8 +47,6 @@ namespace DK
 
             isInteracting = animator.GetBool("isInteracting");
             canDoCombo = animator.GetBool("canDoCombo");
-            isUsingRightHand = animator.GetBool("isUsingRightHand");
-            isUsingLeftHand = animator.GetBool("isUsingLeftHand");
             isInvulnerable = animator.GetBool("isInvulnerable");
             isFiringSpell = animator.GetBool("isFiringSpell");
             isHoldingArrow = animator.GetBool("isHoldingArrow");
@@ -49,8 +55,8 @@ namespace DK
             animator.SetBool("isTwoHanding", isTwoHanding);
             animator.SetBool("isDead", playerStatsManager.isDead);
             playerAnimatorManager.canRotate = animator.GetBool("canRotate");
-            inputHandler.TickInput(delta);
-            playerLocomotion.HandleRolling(delta);
+            inputHandler.TickInput();
+            playerLocomotion.HandleRolling();
             playerLocomotion.HandleJumping();
 
             playerStatsManager.RegenarateStamina();
@@ -62,11 +68,9 @@ namespace DK
         protected override void FixedUpdate()
         {
             base.FixedUpdate();
-            float delta = Time.fixedDeltaTime;
-
-            playerLocomotion.HandleFalling(delta, playerLocomotion.moveDirection);
-            playerLocomotion.HandleMovement(delta);
-            playerLocomotion.HandleRotation(delta);
+            playerLocomotion.HandleFalling(playerLocomotion.moveDirection);
+            playerLocomotion.HandleMovement();
+            playerLocomotion.HandleRotation();
             playerFXManager.HAndleAllBuildupEffects();
            
 
@@ -74,14 +78,8 @@ namespace DK
 
         private void LateUpdate()
         {
-            inputHandler.rollFlag = false;
-            inputHandler.rb_input = false;
-            inputHandler.rt_input = false;
-            inputHandler.lt_input = false;
+            
             inputHandler.a_input = false;
-            inputHandler.jump_input = false;
-
-            float delta = Time.deltaTime;
 
             if (cameraHandler != null)
             {
@@ -97,7 +95,7 @@ namespace DK
 
         }
 
-        #region Player Interactions
+
 
         public void OpenChestInteraction(Transform playerStandsHereWhenOpeningChest)
         {
@@ -158,7 +156,7 @@ namespace DK
 
             
         }
-        #endregion
+
 
 
     }

@@ -16,7 +16,6 @@ namespace DK
 
         [Header("Weapon Items")]
         public WeaponItem unarmedWeapon;
-        public WeaponItem attackingItem;
 
         [Header("Damage Colliders")]
         public DamageCollider leftDamageCollider;
@@ -180,7 +179,8 @@ namespace DK
 
         public virtual void GrantWeaponAttackingPoiseBonus()
         {
-            characterStatsManager.totalPoiseDefense = characterStatsManager.totalPoiseDefense + attackingItem.offensivePoiseBonus;
+            WeaponItem currentWeaponBeingUsed = characterInventoryManager.currentItemBeingUsed as WeaponItem;
+            characterStatsManager.totalPoiseDefense = characterStatsManager.totalPoiseDefense + currentWeaponBeingUsed.offensivePoiseBonus;
         }
 
         public virtual void ResetWeaponAttackingPoiseBonus()

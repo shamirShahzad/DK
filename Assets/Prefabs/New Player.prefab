@@ -69640,14 +69640,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2554598858980644462}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalRotation: {x: -0.009715583, y: 0.98497194, z: -0.053482555, w: -0.16393763}
+  m_LocalPosition: {x: 2.6, y: -6.3, z: 2.7}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 813698120123594242}
   m_RootOrder: 3
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 6.231, y: 198.894, z: -0.092}
 --- !u!1 &2554598859002233712
 GameObject:
   m_ObjectHideFlags: 0
@@ -69972,11 +69972,13 @@ MonoBehaviour:
   a_input: 0
   y_input: 0
   x_input: 0
-  rb_input: 0
+  tap_rb_input: 0
   lb_input: 0
-  rt_input: 0
-  lt_input: 0
+  tap_lb_input: 0
+  tap_rt_input: 0
+  tap_lt_input: 0
   hold_rt_Input: 0
+  hold_rb_Input: 0
   jump_input: 0
   lockOnInput: 0
   right_Stick_Right_Input: 0
@@ -70058,6 +70060,17 @@ MonoBehaviour:
   isInAir: 0
   isGrounded: 0
   isInteracting: 0
+  inputHandler: {fileID: 0}
+  cameraHandler: {fileID: 0}
+  playerLocomotion: {fileID: 0}
+  playerAnimatorManager: {fileID: 0}
+  playerWeaponSlotManager: {fileID: 0}
+  playerFXManager: {fileID: 0}
+  interactableUi: {fileID: 0}
+  playerStatsManager: {fileID: 0}
+  playerCombatManager: {fileID: 0}
+  playerInventoryManager: {fileID: 0}
+  playerEquipmentManager: {fileID: 0}
   interactableUiGameObject: {fileID: 0}
   itemInteractableGameobject: {fileID: 0}
   fogWallCollider: {fileID: 0}
@@ -70074,14 +70087,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6ad425d25d85769469d01d92bd7cf158, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  currentItemBeingUsed: {fileID: 0}
   weaponItemsRight:
   - {fileID: 11400000, guid: 2035fcc6b5e5956428f3213594734d88, type: 2}
   - {fileID: 11400000, guid: a404a8288789d5e45aca00b24d8dd057, type: 2}
   - {fileID: 11400000, guid: 69ae6967547257341ba37b25fe3d6b3f, type: 2}
   weaponItemsLeft:
-  - {fileID: 11400000, guid: 32fd7bee58f37c94193429903d6da805, type: 2}
   - {fileID: 11400000, guid: 69ae6967547257341ba37b25fe3d6b3f, type: 2}
-  - {fileID: 11400000, guid: 32fd7bee58f37c94193429903d6da805, type: 2}
+  - {fileID: 11400000, guid: 69ae6967547257341ba37b25fe3d6b3f, type: 2}
+  - {fileID: 11400000, guid: 77c4d10d35ab5b54d82b108604760b06, type: 2}
   currentHelmetEquipment: {fileID: 11400000, guid: 482700fa87faf3e45915730f780ce9e7, type: 2}
   currentTorsoEquipment: {fileID: 11400000, guid: 35e4e1c4dd4c4514290593c159080a16, type: 2}
   currentLegEquipment: {fileID: 11400000, guid: 20a28d4d8ad02004d8ee1669dd17b5ca, type: 2}
@@ -70107,7 +70121,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   unarmedWeapon: {fileID: 0}
-  attackingItem: {fileID: 0}
   leftDamageCollider: {fileID: 0}
   rightDamageCollider: {fileID: 0}
   leftHandSlot: {fileID: 0}
@@ -70135,6 +70148,19 @@ MonoBehaviour:
     m_Bits: 8192
   lastAttack: 
   isStabbing: 0
+  OH_Light_Attack_01: OH_Light_Attack_01
+  OH_Light_Attack_02: OH_Light_Attack_02
+  OH_Heavy_Attack_01: OH_Heavy_Attack_01
+  OH_Heavy_Attack_02: OH_Heavy_Attack_02
+  OH_Running_Attack_01: OH_Running_Attack_01
+  OH_Jumping_Attack_01: OH_Jumping_Attack_01
+  TH_Heavy_Attack_01: TH_Heavy_Attack_01
+  TH_Heavy_Attack_02: TH_Heavy_Attack_02
+  TH_Light_Attack_01: TH_Light_Attack_01
+  TH_Light_Attack_02: TH_Light_Attack_02
+  TH_Jumping_Attack_01: TH_Jumping_Attack_01
+  TH_Running_Attack_01: TH_Running_Attack_01
+  weaponArtShield: Parry
 --- !u!114 &5161199277288787835
 MonoBehaviour:
   m_ObjectHideFlags: 0

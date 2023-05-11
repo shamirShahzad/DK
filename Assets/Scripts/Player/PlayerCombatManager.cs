@@ -5,7 +5,7 @@ namespace DK
 {
     public class PlayerCombatManager : MonoBehaviour
     {
-        PlayerAnimatorManager playerAnimtorManager;
+        PlayerAnimatorManager playerAnimatorManager;
         PlayerEquipmentManager playerEquipmentManager;
         PlayerManager playerManager;
         inputHandler inputHandler;
@@ -23,24 +23,24 @@ namespace DK
         public bool isStabbing;
 
         [Header("Attack Animations")]
-        string OH_Light_Attack_01 = "OH_Light_Attack_01";
-        string OH_Light_Attack_02 = "OH_Light_Attack_02";
-        string OH_Heavy_Attack_01 = "OH_Heavy_Attack_01";
-        string OH_Heavy_Attack_02 = "OH_Heavy_Attack_02";
-        string OH_Running_Attack_01 = "OH_Running_Attack_01";
-        string OH_Jumping_Attack_01 = "OH_Jumping_Attack_01";
-        string TH_Heavy_Attack_01 = "TH_Heavy_Attack_01";
-        string TH_Heavy_Attack_02 = "TH_Heavy_Attack_02";
-        string TH_Light_Attack_01 = "TH_Light_Attack_01";
-        string TH_Light_Attack_02 = "TH_Light_Attack_02";
-        string TH_Jumping_Attack_01 = "TH_Jumping_Attack_01";
-        string TH_Running_Attack_01 = "TH_Running_Attack_01";
-        string weaponArtShield = "Parry";
+        public string OH_Light_Attack_01 = "OH_Light_Attack_01";
+        public string OH_Light_Attack_02 = "OH_Light_Attack_02";
+        public string OH_Heavy_Attack_01 = "OH_Heavy_Attack_01";
+        public string OH_Heavy_Attack_02 = "OH_Heavy_Attack_02";
+        public string OH_Running_Attack_01 = "OH_Running_Attack_01";
+        public string OH_Jumping_Attack_01 = "OH_Jumping_Attack_01";
+        public string TH_Heavy_Attack_01 = "TH_Heavy_Attack_01";
+        public string TH_Heavy_Attack_02 = "TH_Heavy_Attack_02";
+        public string TH_Light_Attack_01 = "TH_Light_Attack_01";
+        public string TH_Light_Attack_02 = "TH_Light_Attack_02";
+        public string TH_Jumping_Attack_01 = "TH_Jumping_Attack_01";
+        public string TH_Running_Attack_01 = "TH_Running_Attack_01";
+        public string weaponArtShield = "Parry";
 
 
         private void Awake()
         {
-            playerAnimtorManager = GetComponent<PlayerAnimatorManager>();
+            playerAnimatorManager = GetComponent<PlayerAnimatorManager>();
             inputHandler = GetComponent<inputHandler>();
             playerStatsManager = GetComponent<PlayerStatsManager>();
             playerWeaponSlotManager = GetComponent<PlayerWeaponSlotManager>();
@@ -50,357 +50,7 @@ namespace DK
             playerFXManager = GetComponent<PlayerFXManager>();
             cameraHandler = FindObjectOfType<CameraHandler>();
         }
-        private void HandleLightWeaponCombo(WeaponItem weapon)
-        {
-            if (playerStatsManager.currentStamina <= 0)
-                return;
-            if (inputHandler.comboFlag)
-            {
-                playerAnimtorManager.animator.SetBool("canDoCombo", false);
-
-                if (lastAttack == OH_Light_Attack_01)
-                {
-                    playerAnimtorManager.PlayTargetAnimation(OH_Light_Attack_02, true);
-                    playerFXManager.PlayWeaponFX(false);
-                }
-                else if (lastAttack == TH_Light_Attack_01)
-                {
-                    playerAnimtorManager.PlayTargetAnimation(TH_Light_Attack_02, true);
-                }
-            }
-            
-        }
-
-        private void HandleHeavyWeaponCombo(WeaponItem weapon)
-        {
-            if (playerStatsManager.currentStamina <= 0)
-                return;
-            if (inputHandler.comboFlag)
-            {
-                playerAnimtorManager.animator.SetBool("canDoCombo", false);
-
-                if (lastAttack == OH_Heavy_Attack_01)
-                {
-                    playerAnimtorManager.PlayTargetAnimation(OH_Heavy_Attack_02, true);
-                    playerFXManager.PlayWeaponFX(false);
-                }
-                else if (lastAttack == TH_Heavy_Attack_01)
-                {
-                    playerAnimtorManager.PlayTargetAnimation(TH_Heavy_Attack_02, true);
-                }
-            }
-        }
-        private void HandleLightAttack(WeaponItem weapon)
-        {
-            if (playerStatsManager.currentStamina <= 0)
-                return;
-            playerWeaponSlotManager.attackingItem = weapon;
-            if (inputHandler.twoHandFlag)
-            {
-                playerAnimtorManager.PlayTargetAnimation(TH_Light_Attack_01, true);
-                lastAttack = TH_Light_Attack_01;
-                playerFXManager.PlayWeaponFX(false);
-            }
-            else
-            {
                
-                playerAnimtorManager.PlayTargetAnimation(OH_Light_Attack_01, true);
-                lastAttack = OH_Light_Attack_01;
-                playerFXManager.PlayWeaponFX(false);
-            }
-           
-        }
-
-        private void HandleHeavyAttack(WeaponItem weapon)
-        {
-            if (playerStatsManager.currentStamina <= 0 || playerManager.isInteracting)
-                return;
-            playerWeaponSlotManager.attackingItem = weapon;
-            if (inputHandler.twoHandFlag)
-            {
-                playerAnimtorManager.PlayTargetAnimation(TH_Heavy_Attack_01, true);
-                lastAttack = TH_Heavy_Attack_01;
-            }
-            else
-            {
-                
-                playerAnimtorManager.PlayTargetAnimation(OH_Heavy_Attack_01, true);
-                lastAttack = OH_Heavy_Attack_01;
-            }
-            
-        }
-
-        public void HandleRBAction()
-        {
-            playerAnimtorManager.EraseHandIKfromWeapon();
-            if (playerInventoryManager.rightWeapon.weaponTypes == WeaponTypes.StraightSword ||
-                playerInventoryManager.rightWeapon.weaponTypes == WeaponTypes.Unarmed)
-            {
-                PerformRBMeleeAction();
-            }
-            else if (playerInventoryManager.rightWeapon.weaponTypes == WeaponTypes.SpellCaster|| 
-                playerInventoryManager.rightWeapon.weaponTypes == WeaponTypes.FaithCaster ||
-                playerInventoryManager.rightWeapon.weaponTypes == WeaponTypes.PyromancyCaster)
-            {
-                PerformMagicAction(playerInventoryManager.rightWeapon,playerManager.isUsingLeftHand);
-            }    
-        }
-
-        public void HandleRTAction()
-        {
-            playerAnimtorManager.EraseHandIKfromWeapon();
-            if (playerInventoryManager.rightWeapon.weaponTypes == WeaponTypes.StraightSword ||
-                playerInventoryManager.rightWeapon.weaponTypes == WeaponTypes.Unarmed)
-            {
-                PerformRTMeleeAction();
-            }
-            else if (playerInventoryManager.rightWeapon.weaponTypes == WeaponTypes.SpellCaster ||
-                playerInventoryManager.rightWeapon.weaponTypes == WeaponTypes.FaithCaster ||
-                playerInventoryManager.rightWeapon.weaponTypes == WeaponTypes.PyromancyCaster)
-            {
-                PerformMagicAction(playerInventoryManager.rightWeapon, playerManager.isUsingLeftHand);
-            }
-        }
-        public void HandleLBAaction()
-        {
-           // PerformLBBlockAction();
-
-            if (playerManager.isTwoHanding)
-            {
-                if (playerInventoryManager.rightWeapon.weaponTypes == WeaponTypes.Bow)
-                {
-                    PerformLBAimingAction();
-                }
-            }
-            else
-            {
-                if (playerInventoryManager.leftWeapon.weaponTypes == WeaponTypes.Shield ||
-                    playerInventoryManager.leftWeapon.weaponTypes == WeaponTypes.StraightSword)
-                {
-                    PerformLBBlockAction();
-                }
-                else if(playerInventoryManager.leftWeapon.weaponTypes == WeaponTypes.FaithCaster || 
-                    playerInventoryManager.leftWeapon.weaponTypes == WeaponTypes.PyromancyCaster)
-                {
-                    PerformMagicAction(playerInventoryManager.leftWeapon, true);
-                    playerAnimtorManager.animator.SetBool("isUsingLeftHand", true);
-                }
-            }
-        }
-
-
-        private void HandleRunningAttack(WeaponItem weapon)
-        {
-            if (playerStatsManager.currentStamina <= 0)
-                return;
-            playerWeaponSlotManager.attackingItem = weapon;
-            if (inputHandler.twoHandFlag)
-            {
-                playerAnimtorManager.PlayTargetAnimation(TH_Running_Attack_01, true);
-                lastAttack = TH_Running_Attack_01;
-                playerFXManager.PlayWeaponFX(false);
-            }
-            else
-            {
-
-                playerAnimtorManager.PlayTargetAnimation(OH_Running_Attack_01, true);
-                lastAttack =OH_Running_Attack_01;
-                playerFXManager.PlayWeaponFX(false);
-            }
-
-        }
-
-        private void HandleJumpingAttack(WeaponItem weapon)
-        {
-            if (playerStatsManager.currentStamina <= 0)
-                return;
-            playerWeaponSlotManager.attackingItem = weapon;
-            if (inputHandler.twoHandFlag)
-            {
-                playerAnimtorManager.PlayTargetAnimation(TH_Jumping_Attack_01, true);
-                lastAttack = TH_Jumping_Attack_01;
-                playerFXManager.PlayWeaponFX(false);
-            }
-            else
-            {
-
-                playerAnimtorManager.PlayTargetAnimation(OH_Jumping_Attack_01, true);
-                lastAttack = OH_Jumping_Attack_01;
-                playerFXManager.PlayWeaponFX(false);
-            }
-        }
-
-        public void HandleLTAction()
-        {
-            if (playerInventoryManager.leftWeapon.weaponTypes == WeaponTypes.Shield ||
-                playerInventoryManager.leftWeapon.weaponTypes == WeaponTypes.Unarmed)
-            {
-                PerformLTWeaponArt(inputHandler.twoHandFlag);
-
-            }
-            else if (playerInventoryManager.leftWeapon.weaponTypes == WeaponTypes.StraightSword)
-            {
-
-            }
-        }
-
-      
-        private void PerformRBMeleeAction()
-        {
-            playerAnimtorManager.animator.SetBool("isUsingRightHand", true);
-            if (playerManager.isSprinting)
-            {
-                HandleRunningAttack(playerInventoryManager.rightWeapon);
-                return;
-            }
-
-            if (playerManager.canDoCombo)
-            {
-                inputHandler.comboFlag = true;
-                HandleLightWeaponCombo(playerInventoryManager.rightWeapon);
-                inputHandler.comboFlag = false;
-            }
-            else
-            {
-                if (playerManager.isInteracting)
-                    return;
-                if (playerManager.canDoCombo)
-                    return;
-                
-                HandleLightAttack(playerInventoryManager.rightWeapon);
-            }
-
-            
-        }
-
-        private void PerformRTMeleeAction()
-        {
-            playerAnimtorManager.animator.SetBool("isUsingRightHand", true);
-            if (playerManager.isSprinting)
-            {
-                HandleJumpingAttack(playerInventoryManager.rightWeapon);
-                return;
-            }
-
-            if (playerManager.canDoCombo)
-            {
-                inputHandler.comboFlag = true;
-                HandleHeavyWeaponCombo(playerInventoryManager.rightWeapon);
-                inputHandler.comboFlag = false;
-            }
-            else
-            {
-                if (playerManager.isInteracting)
-                    return;
-                if (playerManager.canDoCombo)
-                    return;
-
-                HandleHeavyAttack(playerInventoryManager.rightWeapon);
-            }
-
-        }
-
-        public void HandleHoldRTAction()
-        {
-            if (playerManager.isTwoHanding)
-            {
-                PerformRTTRangedAction();
-            }
-            else
-            {
-
-            }
-        }
-        private void DrawArrowAction()
-        {
-            playerAnimtorManager.animator.SetBool("isHoldingArrow", true);
-            playerAnimtorManager.PlayTargetAnimation("Bow_TH_Draw_01_R",true);
-            GameObject loadedArrow = Instantiate(playerInventoryManager.currentAmmo.loadedItemModel, playerWeaponSlotManager.leftHandSlot.transform);
-            Animator bowAnimator = playerWeaponSlotManager.rightHandSlot.GetComponentInChildren<Animator>();
-            bowAnimator.SetBool("isDrawn", true);
-            bowAnimator.Play("Bow_TH_Draw_01");
-            //activate aim button
-            playerFXManager.currentRangeFX = loadedArrow;
-        }
-
-        public void FireArrowAction()
-        {
-            ArrowInstantiationLocation arrowInstantiationLocation;
-            arrowInstantiationLocation = playerWeaponSlotManager.rightHandSlot.GetComponentInChildren<ArrowInstantiationLocation>();
-
-            Animator bowAnimator = playerWeaponSlotManager.rightHandSlot.GetComponentInChildren<Animator>();
-            bowAnimator.SetBool("isDrawn", false);
-            //Deactivate aim button
-            bowAnimator.Play("Bow_TH_Fire_01");
-            Destroy(playerFXManager.currentRangeFX);//Destroy Loaded arrow
-
-            playerAnimtorManager.PlayTargetAnimation("Bow_TH_Fire_01_R",true);
-            playerAnimtorManager.animator.SetBool("isHoldingArrow", false);
-
-            GameObject liveArrow = Instantiate(playerInventoryManager.currentAmmo.liveModel, arrowInstantiationLocation.transform.position, cameraHandler.cameraPivotTransform.rotation);
-            Rigidbody rigidBody = liveArrow.GetComponentInChildren<Rigidbody>();
-            RangedProjectileDamageCollider damageCollider= liveArrow.GetComponentInChildren<RangedProjectileDamageCollider>();
-
-            if (playerManager.isAiming)
-            {
-                Ray ray = cameraHandler.cameraObject.ViewportPointToRay(new Vector3(0.5f, 0.5f, 0));
-                RaycastHit hitPoint;
-                if(Physics.Raycast(ray,out hitPoint, 100.0f))
-                {
-                    liveArrow.transform.LookAt(hitPoint.point);
-                }
-                else
-                {
-                    liveArrow.transform.rotation = Quaternion.Euler(cameraHandler.cameraTransform.localEulerAngles.x, playerManager.lockOnTransform.eulerAngles.y, 0);
-                }
-            }
-            else
-            {
-                if (cameraHandler.currentLockOnTarget != null)
-                {
-                    Quaternion arrowRotaion = Quaternion.LookRotation(cameraHandler.currentLockOnTarget.lockOnTransform.position - liveArrow.gameObject.transform.position);
-                    liveArrow.transform.rotation = arrowRotaion;
-                }
-                else
-                {
-                    liveArrow.transform.rotation = Quaternion.Euler(cameraHandler.cameraPivotTransform.eulerAngles.x, playerManager.lockOnTransform.eulerAngles.y, 0);
-                }
-            }
-
-           
-            rigidBody.AddForce(liveArrow.transform.forward * playerInventoryManager.currentAmmo.forwardVelocity);
-            rigidBody.AddForce(liveArrow.transform.up * playerInventoryManager.currentAmmo.upWardVelocity);
-            rigidBody.useGravity = playerInventoryManager.currentAmmo.useGravity;
-            rigidBody.mass = playerInventoryManager.currentAmmo.ammoMass;
-            liveArrow.transform.parent = null;
-
-            damageCollider.characterManager = playerManager;
-            damageCollider.ammoItem = playerInventoryManager.currentAmmo;
-            damageCollider.weaponDamage = playerInventoryManager.currentAmmo.physicalDamage;
-
-
-        }
-        private void PerformRTTRangedAction()
-        {
-            if(playerStatsManager.currentStamina <= 0)
-            {
-                return;
-            }
-            playerAnimtorManager.EraseHandIKfromWeapon();
-            playerAnimtorManager.animator.SetBool("isUsingRightHand", true);
-            if (!playerManager.isHoldingArrow)
-            {
-                if (playerInventoryManager.currentAmmo != null)
-                {
-                    DrawArrowAction();
-                }
-                else
-                {
-                    playerAnimtorManager.PlayTargetAnimation("Failed Cast", true);
-                }
-            }
-        }
-
 
         public void AttemptBackStabOrRiposte()
         {
@@ -428,7 +78,7 @@ namespace DK
                     int criticalDamage = playerInventoryManager.rightWeapon.criticalDamageMultiplier * rightWeapon.weaponDamage;
                     enemycharacterManager.pendingCriticalDamage = criticalDamage;
 
-                    playerAnimtorManager.PlayTargetAnimation("Back Stab",true);
+                    playerAnimatorManager.PlayTargetAnimation("Back Stab",true);
                     enemycharacterManager.GetComponentInChildren<CharacterAnimatorManager>().PlayTargetAnimationWithRootrotation("Back Stabbed",true);
                 }
             }
@@ -452,101 +102,16 @@ namespace DK
 
                     int criticalDamage = playerInventoryManager.rightWeapon.criticalDamageMultiplier * rightWeapon.weaponDamage;
                     enemycharacterManager.pendingCriticalDamage = criticalDamage;
-                    playerAnimtorManager.PlayTargetAnimation("Riposte", true);
+                    playerAnimatorManager.PlayTargetAnimation("Riposte", true);
                     enemycharacterManager.GetComponentInChildren<CharacterAnimatorManager>().PlayTargetAnimation("Riposted", true);
                 }
             }
         }
 
-        private void PerformLBAimingAction()
-        {
-            if (playerManager.isAiming)
-            {
-                return;
-            }
-            inputHandler.uIManager.aimCrosshair.SetActive(true);
-            playerManager.isAiming = true;
-        }
-
-        private void PerformMagicAction(WeaponItem weapon,bool isLeftHanded)
-        {
-            if (playerManager.isInteracting)
-                return;
-            if (weapon.weaponTypes == WeaponTypes.PyromancyCaster ||
-                       weapon.weaponTypes == WeaponTypes.FaithCaster
-                       )
-            {
-                playerInventoryManager.currentSpell = weapon.spellOfItem;
-            }
-            else
-            {
-                playerInventoryManager.currentSpell = null;
-            }
-            if (weapon.weaponTypes == WeaponTypes.FaithCaster)
-            {
-                if(playerInventoryManager.currentSpell != null && playerInventoryManager.currentSpell.isFaithSpell)
-                {
-                    if(playerStatsManager.currentFocus >= playerInventoryManager.currentSpell.focusPointCost){
-                        playerInventoryManager.currentSpell.AttemptToCastSpell(playerAnimtorManager, playerStatsManager,playerWeaponSlotManager,isLeftHanded,cameraHandler);
-                    }
-                    else
-                    {
-                        playerAnimtorManager.PlayTargetAnimation("Failed Cast", true);
-                    }
-                  
-                }
-            }
-            else if(weapon.weaponTypes == WeaponTypes.PyromancyCaster)
-            {
-                if (playerInventoryManager.currentSpell != null && playerInventoryManager.currentSpell.isPyroSpell)
-                {
-                    if (playerStatsManager.currentFocus >= playerInventoryManager.currentSpell.focusPointCost)
-                    {
-                        playerInventoryManager.currentSpell.AttemptToCastSpell(playerAnimtorManager, playerStatsManager, playerWeaponSlotManager,isLeftHanded,cameraHandler);
-                    }
-                    else
-                    {
-                        playerAnimtorManager.PlayTargetAnimation("Failed Cast", true);
-                    }
-
-                }
-            }
-        }
-
-        private void PerformLTWeaponArt(bool isTwoHanding)
-        {
-            if (playerManager.isInteracting)
-                return;
-            if (isTwoHanding)
-            {
-               
-            }
-            else
-            {
-                playerAnimtorManager.PlayTargetAnimation(weaponArtShield, true);
-
-            }
-
-
-        }
-
-        private void PerformLBBlockAction()
-        {
-            if (playerManager.isInteracting)
-                return;
-            if (playerManager.isBlocking)
-            {
-                return;
-            }
-            playerAnimtorManager.PlayTargetAnimation("Block Start", false, true);
-            playerEquipmentManager.OpenBlockingCollider();
-            playerManager.isBlocking = true;
-        }
-
         private void SuccessfullycastedSpell()
         {
-            playerInventoryManager.currentSpell.SuccessfullyCastedSpell(playerAnimtorManager, playerStatsManager,cameraHandler,playerWeaponSlotManager,playerManager.isUsingLeftHand);
-            playerAnimtorManager.animator.SetBool("isFiringSpell", true);
+            playerInventoryManager.currentSpell.SuccessfullyCastedSpell(playerAnimatorManager, playerStatsManager,cameraHandler,playerWeaponSlotManager,playerManager.isUsingLeftHand);
+            playerAnimatorManager.animator.SetBool("isFiringSpell", true);
         }
     }
 }
