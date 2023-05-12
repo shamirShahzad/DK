@@ -7,7 +7,7 @@ namespace DK
 {
     public class CharacterStatsManager : MonoBehaviour
     {
-        CharacterAnimatorManager characterAnimatorManager;
+        public CharacterManager character;
         [Header("Team ID")]
         public int teamIdNumber = 0;
 
@@ -28,13 +28,15 @@ namespace DK
         public int soulsAwardedOnDeath = 50;
 
         [Header("Levels")]
-        public int healthLevel = PlayerPrefs.GetInt("healthLevel");
-        public int staminaLevel = PlayerPrefs.GetInt("staminaLevel");
-        public int focusLevel = PlayerPrefs.GetInt("focusLevel");
-        public int strengthLevel = PlayerPrefs.GetInt("strengthLevel");
-        public int dexterityLevel = PlayerPrefs.GetInt("dexterityLevel");
-        public int intelligenceLevel = PlayerPrefs.GetInt("intelligenceLevel");
-        public int faithLevel = PlayerPrefs.GetInt("faithLevel");
+        public int playerLevel = 1;
+        public int healthLevel = 10;
+        public int staminaLevel = 10;
+        public int focusLevel = 10;
+        public int strengthLevel = 10;
+        public int dexterityLevel = 10;
+        public int poiseLevel = 10;
+        public int intelligenceLevel = 10;
+        public int faithLevel = 10;
 
         [Header("Poise")]
         public float totalPoiseDefense;//total poise 
@@ -48,12 +50,12 @@ namespace DK
         public float physicalDamageAbsorbtionTorso;
         public float physicalDamageAbsorbtionLegs;
         public float physicalDamageAbsorbtionHands;
-        
-        public bool isDead;
+
 
         protected virtual void Awake()
         {
-            characterAnimatorManager = GetComponent<CharacterAnimatorManager>();
+
+            character = GetComponent<CharacterManager>();
         }
 
         protected virtual void Update()
@@ -68,9 +70,9 @@ namespace DK
 
         public virtual void TakeDamage(int physicalDamage, string damageAnimation)
         {
-            if (isDead)
+            if (character.isDead)
                 return;
-            characterAnimatorManager.EraseHandIKfromWeapon();
+            character.characterAnimatorManager.EraseHandIKfromWeapon();
 
             float totalPhysicalDamageAbsorbtion = 1 - (1 - physicalDamageAbsorbtionHead / 100)*
                 (1-physicalDamageAbsorbtionTorso/100)*(1-physicalDamageAbsorbtionLegs/100)*
@@ -86,13 +88,13 @@ namespace DK
             if (currentHealth <= 0)
             {
                 currentHealth = 0;
-                isDead = true;
+                character.isDead = true;
             }
         }
 
         public virtual void TakeDamageNoAnimation(int damage)
         {
-            if (isDead)
+            if (character.isDead)
                 return;
             currentHealth = currentHealth - damage;
             if (currentHealth <= 0)
@@ -104,7 +106,7 @@ namespace DK
 
         public virtual void TakePoisonDamage(int damage)
         {
-            if (isDead)
+            if (character.isDead)
                 return;
             currentHealth = currentHealth - damage;
             if (currentHealth <= 0)
@@ -118,9 +120,30 @@ namespace DK
         {
             if (currentHealth <= 0)
             {
-                isDead = true;
+                character.isDead = true;
                 currentHealth = 0;
             }
+        }
+
+        public int SetMaxHealthFromHealthLevel()
+        {
+            maxHealth = healthLevel * 10;
+
+            return maxHealth;
+        }
+
+        public float SetMaxStaminaFromStaminaLevel()
+        {
+            maxStamina = staminaLevel * 10;
+
+            return maxStamina;
+        }
+
+        public float SetMaxFocusFromFocusLevel()
+        {
+            maxFocus = focusLevel * 10;
+
+            return maxFocus;
         }
 
 

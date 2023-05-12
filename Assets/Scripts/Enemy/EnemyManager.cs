@@ -21,10 +21,11 @@ namespace DK
         public float detectionRadius = 20;
         public float minimumDetectionAngle = -50;
         public float maximumDetectionAngle = 50;
-        EnemyLocomotionManager enemyLocomotionManager;
-        EnemyAnimatorManager enemyAnimatorManager;
-        EnemyStatsManager enemyStatsManager;
-        EnemyFXManager enemyFXManager;
+        public EnemyLocomotionManager enemyLocomotionManager;
+        public EnemyAnimatorManager enemyAnimatorManager;
+        public EnemyStatsManager enemyStatsManager;
+        public EnemyFXManager enemyFXManager;
+        public EnemyBossManager enemyBossManager;
 
         [Header("A.I Combat Settings")]
         public bool allowAIToPerformCombo;
@@ -38,6 +39,7 @@ namespace DK
         protected override void Awake()
         {
             base.Awake();
+            enemyBossManager = GetComponent<EnemyBossManager>();
             enemyLocomotionManager = GetComponent<EnemyLocomotionManager>();
             enemyAnimatorManager = GetComponent<EnemyAnimatorManager>();
             enemyFXManager = GetComponent<EnemyFXManager>();
@@ -56,13 +58,13 @@ namespace DK
 
             HandleRecoveryTimer();
             HandleStateMachine();
-            isRotatingWithRootMotion = enemyAnimatorManager.animator.GetBool("isRotatingWithRootMotion");
-            isInteracting = enemyAnimatorManager.animator.GetBool("isInteracting");
-            isPhaseShifting = enemyAnimatorManager.animator.GetBool("isPhaseShifting");
-            isInvulnerable = enemyAnimatorManager.animator.GetBool("isInvulnerable");
-            canRotate = enemyAnimatorManager.animator.GetBool("canRotate");
-            canDoCombo = enemyAnimatorManager.animator.GetBool("canDoCombo");
-            enemyAnimatorManager.animator.SetBool("isDead", enemyStatsManager.isDead);
+            isRotatingWithRootMotion = animator.GetBool("isRotatingWithRootMotion");
+            isInteracting = animator.GetBool("isInteracting");
+            isPhaseShifting = animator.GetBool("isPhaseShifting");
+            isInvulnerable = animator.GetBool("isInvulnerable");
+            canRotate = animator.GetBool("canRotate");
+            canDoCombo = animator.GetBool("canDoCombo");
+            animator.SetBool("isDead", isDead);
         }
 
         protected override void FixedUpdate()
@@ -80,7 +82,7 @@ namespace DK
         {
          if(currentState != null)
             {
-                State nextState = currentState.Tick(this, enemyStatsManager, enemyAnimatorManager);
+                State nextState = currentState.Tick(this);
                 if (nextState != null)
                 {
                     SwitchToNextState(nextState);

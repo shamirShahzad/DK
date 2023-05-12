@@ -587,6 +587,34 @@
                     "isPartOfComposite": false
                 }
             ]
+        },
+        {
+            "name": "Rotate Controls",
+            "id": "91551b9f-b83a-42f0-ba70-67c9cd4a3195",
+            "actions": [
+                {
+                    "name": "Delta X",
+                    "type": "PassThrough",
+                    "id": "1af7c7bb-5afe-43b0-99a8-170675b8896b",
+                    "expectedControlType": "Vector2",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "74e85fd1-689c-4a72-972e-0bbdecc030b5",
+                    "path": "<Touchscreen>/primaryTouch/delta",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Delta X",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
         }
     ],
     "controlSchemes": []

@@ -9,7 +9,7 @@ namespace DK
         [Header("Current Range FX")]
         public GameObject currentRangeFX;
 
-        CharacterStatsManager characterStatsManager;
+        CharacterManager character;
         [Header("Damage FX")]
         public GameObject bloodSplatterFX;
         [Header("Weapon Effects")]
@@ -30,7 +30,7 @@ namespace DK
 
         protected virtual void Awake()
         {
-            characterStatsManager = GetComponent<CharacterStatsManager>();
+            character = GetComponent<CharacterManager>();
         }
         public virtual void PlayWeaponFX(bool isLeft)
         {
@@ -74,14 +74,14 @@ namespace DK
                 }
                 else
                 {
-                    currentPoisonParticleFX = Instantiate(defaultPoisonParticleFX, characterStatsManager.transform);
+                    currentPoisonParticleFX = Instantiate(defaultPoisonParticleFX, character.transform);
                 }
             }
         }
 
         public virtual void HAndleAllBuildupEffects()
         {
-            if (characterStatsManager.isDead)
+            if (character.isDead)
                 return;
             HandlePoisonBuildup();
             HandleIsPoisnedEffect();
@@ -96,7 +96,7 @@ namespace DK
                     timer += Time.deltaTime;
                     if(timer >= poisonTimer)
                     {
-                        characterStatsManager.TakePoisonDamage(poisonDamage);
+                        character.characterStatsManager.TakePoisonDamage(poisonDamage);
                         timer = 0;
                     }
                     poisonAmount = poisonAmount - 5 * Time.deltaTime;

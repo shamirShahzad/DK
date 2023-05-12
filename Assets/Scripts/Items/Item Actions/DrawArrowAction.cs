@@ -12,7 +12,7 @@ namespace DK
                 return;
             if (player.isHoldingArrow)
                 return;
-            player.playerAnimatorManager.animator.SetBool("isHoldingArrow", true);
+            player.animator.SetBool("isHoldingArrow", true);
             player.playerAnimatorManager.PlayTargetAnimation("Bow_TH_Draw_01_R", true);
             GameObject loadedArrow = Instantiate(player.playerInventoryManager.currentAmmo.loadedItemModel, player.playerWeaponSlotManager.leftHandSlot.transform);
             player.playerFXManager.currentRangeFX = loadedArrow;

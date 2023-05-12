@@ -5,17 +5,17 @@ namespace DK
 {
     public class EnemyStatsManager : CharacterStatsManager
     {
-        EnemyAnimatorManager enemyAnimatorManager;
+
         public UiEnemyHealthBar enemyHealthBar;
-        EnemyBossManager enemyBossManager;
+        EnemyManager enemy;
         public bool isBoss;
         protected override void Awake()
         {
             base.Awake();
-            enemyAnimatorManager = GetComponent<EnemyAnimatorManager>();
-            enemyBossManager = GetComponent<EnemyBossManager>();
+            enemy = GetComponent<EnemyManager>();
             maxHealth = SetMaxHealthFromHealthLevel();
             currentHealth = maxHealth;
+
         }
 
         private void Start()
@@ -37,12 +37,7 @@ namespace DK
                 totalPoiseDefense = armorPoisebonus;
             }
         }
-        private int SetMaxHealthFromHealthLevel()
-        {
-            maxHealth = healthLevel * 10;
 
-            return maxHealth;
-        }
         public override void TakeDamageNoAnimation(int damage)
         {
 
@@ -51,39 +46,39 @@ namespace DK
             {
                 enemyHealthBar.setHealth(currentHealth);
             }
-            else if (isBoss && enemyBossManager != null)
+            else if (isBoss && enemy.enemyBossManager != null)
             {
-                enemyBossManager.UpdateBossHealth(currentHealth, maxHealth);
+                enemy.enemyBossManager.UpdateBossHealth(currentHealth, maxHealth);
             }
-            if (isDead)
+            if (character.isDead)
             {
-                enemyAnimatorManager.PlayTargetAnimation("Death", true);
+                enemy.enemyAnimatorManager.PlayTargetAnimation("Death", true);
             }
 
         }
         public override void TakePoisonDamage(int damage)
         {
-            if (isDead)
+            if (character.isDead)
                 return;
             base.TakePoisonDamage(damage);
             if (!isBoss)
             {
                 enemyHealthBar.setHealth(currentHealth);
             }
-            else if (isBoss && enemyBossManager != null)
+            else if (isBoss && enemy.enemyBossManager != null)
             {
-                enemyBossManager.UpdateBossHealth(currentHealth, maxHealth);
+                enemy.enemyBossManager.UpdateBossHealth(currentHealth, maxHealth);
             }
-            if (isDead)
+            if (enemy.isDead)
             {
-                enemyAnimatorManager.PlayTargetAnimation("Death", true);
+                enemy.enemyAnimatorManager.PlayTargetAnimation("Death", true);
             }
             if (currentHealth <= 0)
             {
-                isDead = true;
+                enemy.isDead = true;
 
                 currentHealth = 0;
-                enemyAnimatorManager.PlayTargetAnimation("Death", true);
+                enemy.enemyAnimatorManager.PlayTargetAnimation("Death", true);
                 // Ccollider.enabled = false;
 
             }
@@ -93,7 +88,7 @@ namespace DK
 
         public void BreakGuard()
         {
-            enemyAnimatorManager.PlayTargetAnimation("Break Guard", true);
+            enemy.enemyAnimatorManager.PlayTargetAnimation("Break Guard", true);
         }
 
         public override void TakeDamage(int damage,string damageAnimation)
@@ -103,15 +98,15 @@ namespace DK
             {
                 enemyHealthBar.setHealth(currentHealth);
             }
-            else if(isBoss && enemyBossManager!=null)
+            else if(isBoss && enemy.enemyBossManager !=null)
             {
-                enemyBossManager.UpdateBossHealth(currentHealth,maxHealth);
+                enemy.enemyBossManager.UpdateBossHealth(currentHealth,maxHealth);
             }
             
-            enemyAnimatorManager.PlayTargetAnimation(damageAnimation, true);
-            if (isDead)
+            enemy.enemyAnimatorManager.PlayTargetAnimation(damageAnimation, true);
+            if (character.isDead)
             {
-                enemyAnimatorManager.PlayTargetAnimation("Death", true);
+                enemy.enemyAnimatorManager.PlayTargetAnimation("Death", true);
             }
         }
     }

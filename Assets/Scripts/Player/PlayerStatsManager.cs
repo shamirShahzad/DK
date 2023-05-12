@@ -5,11 +5,22 @@ namespace DK
 {
     public class PlayerStatsManager : CharacterStatsManager
     {
- 
+        public string PLAYER_LEVEL = "Player_Level";
+        public string HEALTH_LEVEL = "HealthLevel";
+        public string STAMINA_LEVEL = "StaminaLevel";
+        public string POISE_LEVEL = "PoiseLevel";
+        public string STRENGTH_LEVEL = "StrengthLevel";
+        public string DEXTERITY_LEVEL = "DexterityLevel";
+        public string INTELLIGENCE_LEVEL = "IntelligenceLevel";
+        public string FAITH_LEVEL = "FaithLevel";
+        public string FOCUS_LEVEL = "FocusLevel";
+        public string SOUL_COUNT = "SoulCount";
+
+
         public int hitCount = 0;
 
-        PlayerAnimatorManager playerAnimatorManager;
-        PlayerManager playerManager;
+
+        PlayerManager player;
         public float staminaRegenarationAmount = 25;
         public float focusRegenarationAmount = 11;
         public float staminaRegenerationTimer = 0;
@@ -26,95 +37,135 @@ namespace DK
             healthBar = FindObjectOfType<HealthBar>();
             staminaBar = FindObjectOfType<StaminaBar>();
             focusPointBar = FindObjectOfType<FocusPointBar>();
-            playerAnimatorManager = GetComponent<PlayerAnimatorManager>();
-            playerManager = GetComponent<PlayerManager>();
-            //Ccollider = GameObject.FindGameObjectWithTag("Player").GetComponent<CapsuleCollider>();
+            player = GetComponent<PlayerManager>();
+            InitializePlayerPrefs();
+            SetPlayerPrefs();
             maxHealth = SetMaxHealthFromHealthLevel();
             maxStamina = SetMaxStaminaFromStaminaLevel();
             maxFocus = SetMaxFocusFromFocusLevel();
             currentHealth = maxHealth;
             currentStamina = maxStamina;
             currentFocus = maxFocus;
-            healthBar.SetMaxHealth(maxHealth);
-            staminaBar.SetMaxStamina(maxStamina);
-            focusPointBar.SetMaxFocus(maxFocus);
+            if(healthBar != null) 
+            {
+              healthBar.SetMaxHealth(maxHealth);
+            }
+            if (staminaBar != null)
+            {
+                staminaBar.SetMaxStamina(maxStamina);
+            }
+            if(focusPointBar != null)
+            {
+                focusPointBar.SetMaxFocus(maxFocus);
+            }
         }
 
+        public void SetPlayerPrefs()
+        {
+            playerLevel = PlayerPrefs.GetInt(PLAYER_LEVEL);
+            healthLevel = PlayerPrefs.GetInt(HEALTH_LEVEL);
+            staminaLevel = PlayerPrefs.GetInt(STAMINA_LEVEL);
+            poiseLevel = PlayerPrefs.GetInt(POISE_LEVEL);
+            strengthLevel = PlayerPrefs.GetInt(STRENGTH_LEVEL);
+            dexterityLevel = PlayerPrefs.GetInt(DEXTERITY_LEVEL);
+            intelligenceLevel = PlayerPrefs.GetInt(INTELLIGENCE_LEVEL);
+            faithLevel = PlayerPrefs.GetInt(FAITH_LEVEL);
+            focusLevel = PlayerPrefs.GetInt(FOCUS_LEVEL);
+        }
+        private void InitializePlayerPrefs()
+        {
+            if (PlayerPrefs.GetInt(PLAYER_LEVEL) == 0)
+            {
+                PlayerPrefs.SetInt(PLAYER_LEVEL, 1);
+            }
+            if(PlayerPrefs.GetInt(HEALTH_LEVEL) == 0)
+            {
+                PlayerPrefs.SetInt(HEALTH_LEVEL, 10);
+            }
+            if(PlayerPrefs.GetInt(STAMINA_LEVEL) == 0)
+            {
+                PlayerPrefs.SetInt(STAMINA_LEVEL, 10);
+            }
+            if(PlayerPrefs.GetInt(POISE_LEVEL) == 0)
+            {
+                PlayerPrefs.SetInt(POISE_LEVEL, 10);
+            }
+            if(PlayerPrefs.GetInt(STRENGTH_LEVEL) == 0)
+            {
+                PlayerPrefs.SetInt(STRENGTH_LEVEL, 10);
+            }
+            if(PlayerPrefs.GetInt(DEXTERITY_LEVEL) == 0)
+            {
+                PlayerPrefs.SetInt(DEXTERITY_LEVEL, 10);
+            }
+            if(PlayerPrefs.GetInt(INTELLIGENCE_LEVEL) == 0)
+            {
+                PlayerPrefs.SetInt(INTELLIGENCE_LEVEL, 10);
+            }
+            if(PlayerPrefs.GetInt(FOCUS_LEVEL) == 0)
+            {
+                PlayerPrefs.SetInt(FOCUS_LEVEL, 10);
+            }
+            if(PlayerPrefs.GetInt(FAITH_LEVEL) == 0)
+            {
+                PlayerPrefs.SetInt(FAITH_LEVEL, 10);
+            }
+
+        }
         public override void HandlePoiseResetTimer()
         {
             if (poiseResetTimer > 0)
             {
                 poiseResetTimer = poiseResetTimer - Time.deltaTime;
             }
-            else if(poiseResetTimer<=0 &&!playerManager.isInteracting)
+            else if(poiseResetTimer<=0 &&!player.isInteracting)
             {
                 totalPoiseDefense = armorPoisebonus;
             }
         }
 
-        private int SetMaxHealthFromHealthLevel()
-        {
-            maxHealth = healthLevel * 10;
-
-            return maxHealth;
-        }
-
-        private float SetMaxStaminaFromStaminaLevel()
-        {
-            maxStamina = staminaLevel * 10;
-
-            return maxStamina;
-        }
-
-        private float SetMaxFocusFromFocusLevel()
-        {
-            maxFocus = focusLevel* 10;
-
-            return maxFocus;
-        }
+      
         public override void TakeDamageNoAnimation(int damage)
         {
             base.TakeDamageNoAnimation(damage);
             healthBar.SetCurrentHealth(currentHealth);
-            if (isDead)
+            if (player.isDead)
             {
-              playerAnimatorManager.PlayTargetAnimation("Death", true);
+              player.playerAnimatorManager.PlayTargetAnimation("Death", true);
             }
         }
 
         public override void TakePoisonDamage(int damage)
         {
-            if (isDead)
+            if (player.isDead)
                 return;
             base.TakePoisonDamage(damage);
             healthBar.SetCurrentHealth(currentHealth);
             if (currentHealth <= 0)
             {
-                isDead = true;
+                player.isDead = true;
 
                 currentHealth = 0;
-                playerAnimatorManager.PlayTargetAnimation("Death", true);
-                // Ccollider.enabled = false;
+                player.playerAnimatorManager.PlayTargetAnimation("Death", true);
 
             }
         }
         public override void TakeDamage(int damage,string damageAnimation)
         {
-            if (playerManager.isInvulnerable)
+            if (player.isInvulnerable)
             {
                 return;
             }
             base.TakeDamage(damage, damageAnimation);
             healthBar.SetCurrentHealth(currentHealth);
-            playerAnimatorManager.PlayTargetAnimation(damageAnimation, true);
+            player.playerAnimatorManager.PlayTargetAnimation(damageAnimation, true);
 
             if(currentHealth <=0)
             {
-                isDead = true;
+                player.isDead = true;
 
                 currentHealth = 0;
-                playerAnimatorManager.PlayTargetAnimation("Death", true);
-               // Ccollider.enabled = false;
+                player.playerAnimatorManager.PlayTargetAnimation("Death", true);
                 
             }
         }
@@ -127,7 +178,7 @@ namespace DK
 
         public void RegenarateStamina()
         {
-            if (playerManager.isInteracting)
+            if (player.isInteracting)
             {
                 staminaRegenerationTimer = 0;
             }
@@ -145,7 +196,7 @@ namespace DK
 
         public void RegenarateFocus()
         {
-            if (playerManager.isInteracting)
+            if (player.isInteracting)
             {
                 focusRegenrationTimer = 0;
             }
@@ -185,6 +236,7 @@ namespace DK
         public void AddSouls(int souls)
         {
             soulCount = soulCount + souls;
+            PlayerPrefs.SetInt(SOUL_COUNT, soulCount);
         }
     }
 }

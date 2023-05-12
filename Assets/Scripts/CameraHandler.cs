@@ -5,7 +5,6 @@ namespace DK
 {
     public class CameraHandler : MonoBehaviour
     {
-        inputHandler inputHandler;
         PlayerManager playerManager;
 
         public Transform targetTransform;
@@ -59,7 +58,6 @@ namespace DK
             defaultPosition = cameraTransform.localPosition.z;
             ignoreLayers = ~(1 << 8 | 1<<9|1<<10|1<<13|1<<12);
             targetTransform = FindObjectOfType<PlayerManager>().transform;
-            inputHandler = FindObjectOfType<inputHandler>();
             playerManager = FindObjectOfType<PlayerManager>();
             cameraObject = GetComponentInChildren<Camera>();
         }
@@ -87,7 +85,7 @@ namespace DK
         //Rotate Camera
         public void HandleCameraRotation()
         {
-            if(inputHandler.lockOnFlag  && currentLockOnTarget != null)
+            if(playerManager.inputHandler.lockOnFlag  && currentLockOnTarget != null)
             {
                 HandleLockOnCameraRotation();
             }
@@ -103,8 +101,8 @@ namespace DK
 
         public void HandleStandardCameraRotation()
         {
-            leftAndRightAngle += inputHandler.mouseX * leftAndRightLookSpeed * Time.deltaTime;
-            upAndDownAngle -= inputHandler.mouseY * upAndDownLookSpeed * Time.deltaTime;
+            leftAndRightAngle += playerManager.inputHandler.mouseX * leftAndRightLookSpeed * Time.deltaTime;
+            upAndDownAngle -= playerManager.inputHandler.mouseY * upAndDownLookSpeed * Time.deltaTime;
             upAndDownAngle = Mathf.Clamp(upAndDownAngle, minimumLookUpAngle, maximumLookUpAngle);
 
             Vector3 rotation = Vector3.zero;
@@ -148,8 +146,8 @@ namespace DK
             Vector3 cameraRotationX = Vector3.zero;
             Vector3 cameraRotationY = Vector3.zero;
 
-            leftAndRightAngle += (inputHandler.mouseX * leftAndRightAimingLookSpeed) * Time.deltaTime;
-            upAndDownAngle -= (inputHandler.mouseY * upAndDownAimingLookSpeed) * Time.deltaTime;
+            leftAndRightAngle += (playerManager.inputHandler.mouseX * leftAndRightAimingLookSpeed) * Time.deltaTime;
+            upAndDownAngle -= (playerManager.inputHandler.mouseY * upAndDownAimingLookSpeed) * Time.deltaTime;
 
             cameraRotationY.y = leftAndRightAngle;
             targetRotationY = Quaternion.Euler(cameraRotationY);
@@ -232,14 +230,14 @@ namespace DK
                     shortestDistance = distanceFromTarget;
                     nearestLockOnTarget = availableTargets[k];
                 }
-                if (inputHandler.lockOnFlag)
+                if (playerManager.inputHandler.lockOnFlag)
                 {
                     /*  Vector3 relativeEnemyPosition = currentLockOnTarget.transform.
                           InverseTransformPoint(availableTargets[k].transform.position);
                       var distanceFromLeftTarget = currentLockOnTarget.transform.position.x - availableTargets[k].transform.position.x;
                       var distanceFromRightTarget = currentLockOnTarget.transform.position.x + availableTargets[k].transform.position.x;
   */
-                    Vector3 relativeEnemyPosition = inputHandler.transform.
+                    Vector3 relativeEnemyPosition = playerManager.inputHandler.transform.
                          InverseTransformPoint(availableTargets[k].transform.position);
                     var distanceFromLeftTarget = relativeEnemyPosition.x;
                     var distanceFromRightTarget = relativeEnemyPosition.x;

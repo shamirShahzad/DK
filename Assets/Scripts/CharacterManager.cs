@@ -5,8 +5,12 @@ namespace DK
 {
     public class CharacterManager : MonoBehaviour
     {
-        CharacterAnimatorManager characterAnimatorManager;
-        CharacterWeaponSlotManager characterWeaponSlotManager;
+        public CharacterAnimatorManager characterAnimatorManager;
+        public CharacterWeaponSlotManager characterWeaponSlotManager;
+        public CharacterStatsManager characterStatsManager;
+        public CharacterInventoryManager characterInventoryManager;
+        public CharacterFXManager characterFXManager;
+        public Animator animator;
         [Header("Lock On Transform")]
         public Transform lockOnTransform;
         [Header("Combat Colliders")]
@@ -27,6 +31,10 @@ namespace DK
         public bool isHoldingArrow;
         public bool isAiming;
 
+        [Header("Status dead")]
+
+        public bool isDead;
+
 
         [Header("Movement flag")]
         public bool isRotatingWithRootMotion;
@@ -41,6 +49,10 @@ namespace DK
         {
             characterAnimatorManager = GetComponent<CharacterAnimatorManager>();
             characterWeaponSlotManager = GetComponent<CharacterWeaponSlotManager>();
+            characterStatsManager = GetComponent<CharacterStatsManager>();
+            characterInventoryManager = GetComponent<CharacterInventoryManager>();
+            characterFXManager = GetComponent<CharacterFXManager>();
+            animator = GetComponent<Animator>();
         }
 
         protected virtual void FixedUpdate()

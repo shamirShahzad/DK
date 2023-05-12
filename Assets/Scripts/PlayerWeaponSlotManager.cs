@@ -6,21 +6,13 @@ namespace DK
     public class PlayerWeaponSlotManager : CharacterWeaponSlotManager
     {
    
-        inputHandler inputHandler;
-        PlayerManager playerManager;
-        PlayerInventoryManager playerInventoryManager;
-        PlayerAnimatorManager playerAnimatorManager;
-        PlayerStatsManager playerStatsManager;
-        PlayerFXManager playerFXManager;
+
+        PlayerManager player;
+
         protected override void Awake()
         {
             base.Awake();
-            playerManager = GetComponent<PlayerManager>();
-            inputHandler = GetComponent<inputHandler>();
-            playerStatsManager = GetComponent<PlayerStatsManager>();
-            playerInventoryManager = GetComponent<PlayerInventoryManager>();
-            playerFXManager = GetComponent<PlayerFXManager>();
-            playerAnimatorManager = GetComponent<PlayerAnimatorManager>();
+            player = GetComponent<PlayerManager>();
             LoadWeaponHolderSlots();
 
         }
@@ -36,15 +28,15 @@ namespace DK
 
                     leftHandSlot.LoadWeaponModel(weaponItem);
                     LoadLeftWeaponDamageCollider();
-                    playerAnimatorManager.PlayTargetAnimation(weaponItem.offHandIdleAnimation, false,true);
+                    player.playerAnimatorManager.PlayTargetAnimation(weaponItem.offHandIdleAnimation, false,true);
                 }
                 else
                 {
-                    if (inputHandler.twoHandFlag)
+                    if (player.inputHandler.twoHandFlag)
                     {
                         backSlot.LoadWeaponModel(leftHandSlot.currentWeapon);
                         leftHandSlot.UnloadWeaponAndDestroy();
-                        playerAnimatorManager.PlayTargetAnimation("Left Arm Empty", false, true);
+                        player.playerAnimatorManager.PlayTargetAnimation("Left Arm Empty", false, true);
                     }
                     else
                     {
@@ -53,7 +45,7 @@ namespace DK
                     rightHandSlot.currentWeapon = weaponItem;
                     rightHandSlot.LoadWeaponModel(weaponItem);
                     LoadRightWeaponDamageCollider();
-                    playerAnimatorManager.animator.runtimeAnimatorController = weaponItem.weaponController;
+                    player.animator.runtimeAnimatorController = weaponItem.weaponController;
                 }
             }
             else
@@ -61,19 +53,19 @@ namespace DK
                 weaponItem = unarmedWeapon;
                 if (isLeft)
                 {
-                    playerInventoryManager.leftWeapon = unarmedWeapon;
+                    player.playerInventoryManager.leftWeapon = unarmedWeapon;
                     leftHandSlot.currentWeapon = unarmedWeapon;
                     leftHandSlot.LoadWeaponModel(weaponItem);
                     LoadLeftWeaponDamageCollider();
-                    playerAnimatorManager.PlayTargetAnimation(weaponItem.offHandIdleAnimation, false, true);
+                    player.playerAnimatorManager.PlayTargetAnimation(weaponItem.offHandIdleAnimation, false, true);
                 }
                 else
                 {
-                    playerInventoryManager.rightWeapon = unarmedWeapon;
+                    player.playerInventoryManager.rightWeapon = unarmedWeapon;
                     rightHandSlot.currentWeapon = unarmedWeapon;
                     rightHandSlot.LoadWeaponModel(weaponItem);
                     LoadRightWeaponDamageCollider();
-                    playerAnimatorManager.animator.runtimeAnimatorController = weaponItem.weaponController;
+                    player.animator.runtimeAnimatorController = weaponItem.weaponController;
                 }
             }
         }

@@ -6,90 +6,88 @@ namespace DK
 {
     public class CharacterAnimatorManager : MonoBehaviour
     {
-        public Animator animator;
-        public CharacterManager characterManager;
-        protected CharacterStatsManager characterStatsManager;
-        public bool canRotate;
+        public CharacterManager character;
         protected RigBuilder rigBuilder;
         public TwoBoneIKConstraint leftHandConstraint;
         public TwoBoneIKConstraint rightHandConstraint;
+        public PlayerManager player;
 
         bool handleIKWeightsReset = false;
 
         protected virtual void Awake()
         {
-            characterManager = GetComponent<CharacterManager>();
-            characterStatsManager = GetComponent<CharacterStatsManager>();
+            character = GetComponent<CharacterManager>();
+            player = GetComponent<PlayerManager>();
         }
         public void PlayTargetAnimation(string targetAnim, bool isInteracting,bool canRotate = false,bool mirrorAnimation  = false)
         {
             rigBuilder = GetComponent<RigBuilder>();
-            animator.applyRootMotion = isInteracting;
-            animator.SetBool("canRotate", canRotate);
-            animator.SetBool("isInteracting", isInteracting);
-            animator.SetBool("isMirrored", mirrorAnimation);
-            animator.CrossFade(targetAnim, 0.2f);
+            character.animator.applyRootMotion = isInteracting;
+            character.animator.SetBool("canRotate", canRotate);
+            character.animator.SetBool("isInteracting", isInteracting);
+            character.animator.SetBool("isMirrored", mirrorAnimation);
+            character.animator.CrossFade(targetAnim, 0.2f);
             canRotate = false;
         }
 
         public void PlayTargetAnimationWithRootrotation(string targetAnim, bool isInteracting)
         {
-            animator.applyRootMotion = isInteracting;
-            animator.SetBool("isRotatingWithRootMotion", true);
-            animator.SetBool("isInteracting", isInteracting);
-            animator.CrossFade(targetAnim, 0.2f);
-            canRotate = false;
+            character.animator.applyRootMotion = isInteracting;
+            character.animator.SetBool("isRotatingWithRootMotion", true);
+            character.animator.SetBool("isInteracting", isInteracting);
+            character.animator.CrossFade(targetAnim, 0.2f);
+            player.canRotate = false;
         }
         public virtual void CanRotate()
         {
-            animator.SetBool("canRotate", true);
+            character.animator.SetBool("canRotate", true);
 
         }
 
         public virtual void StopRotate()
         {
-            animator.SetBool("canRotate", false);
+            character.animator.SetBool("canRotate", false);
         }
 
         public  virtual void EnableCombo()
         {
-            animator.SetBool("canDoCombo", true);
+            character.animator.SetBool("canDoCombo", true);
         }
         public virtual void DisableCombo()
         {
-            animator.SetBool("canDoCombo", false);
+            character.animator.SetBool("canDoCombo", false);
         }
 
         public virtual void EnableIsInvulnerable()
         {
-            animator.SetBool("isInvulnerable", true);
+            character.animator.SetBool("isInvulnerable", true);
         }
         public virtual void DisableIsInvulnerable()
         {
-            animator.SetBool("isInvulnerable", false);
+            character.animator.SetBool("isInvulnerable", false);
         }
         public virtual void EnableIsParrying()
         {
-            characterManager.isParrying = true;
+            character.isParrying = true;
         }
         public virtual void DisableIsParrying()
         {
-            characterManager.isParrying = false;
+            character.isParrying = false;
         }
 
         public virtual void EnableCanBeRiposted()
         {
-            characterManager.canBeRiposted = true;
+            character.canBeRiposted = true;
         }
         public virtual void DisableCanBeRiposted()
         {
-            characterManager.canBeRiposted = false;
+            character.canBeRiposted = false;
         }
 
         public virtual void TakeCriticalDamageAnimationEvent()
         {
-            characterStatsManager.TakeDamageNoAnimation(characterManager.pendingCriticalDamage);
-            characterManager.pendingCriticalDamage = 0;
+            character.characterStatsManager.TakeDamageNoAnimation(character.pendingCriticalDamage);
+            character.pendingCriticalDamage = 0;
         }
 
         public virtual void SetHandIKForWeapon(RightHandRigTarget rightHandRigTarget,LeftHandRigTarget leftHandRigTarget,bool isTwoHanding)
@@ -121,7 +119,7 @@ namespace DK
 
         public virtual void CheckHandIKWeight(RightHandRigTarget rightHandRigTarget,LeftHandRigTarget leftHandRigTarget, bool isTwoHanding)
         {
-            if (characterManager.isInteracting)
+            if (character.isInteracting)
             {
                 return;
             }

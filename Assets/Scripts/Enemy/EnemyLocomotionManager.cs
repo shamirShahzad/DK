@@ -6,8 +6,7 @@ namespace DK
 {
     public class EnemyLocomotionManager : MonoBehaviour
     {
-        EnemyManager enemyManager;
-        EnemyAnimatorManager enemyAnimatorManager;
+        EnemyManager enemy;
 
         public CapsuleCollider characterCollider;
         public CapsuleCollider characterCollisionBlocker;
@@ -16,8 +15,7 @@ namespace DK
 
         private void Awake()
         {
-            enemyManager = GetComponent<EnemyManager>();
-            enemyAnimatorManager = GetComponent<EnemyAnimatorManager>();
+            enemy = GetComponent<EnemyManager>();
            
         }
         private void Start()

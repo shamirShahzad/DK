@@ -5,8 +5,7 @@ namespace DK
 {
     public class PlayerFXManager : CharacterFXManager
     {
-        PlayerStatsManager playerStatsManager;
-        PlayerWeaponSlotManager playerWeaponSlotManager;
+        PlayerManager player;
         public GameObject currentParticleFX;
         public GameObject instantiatedFXModel;
         public GameObject healParticles;
@@ -20,8 +19,7 @@ namespace DK
         protected override void Awake()
         {
             base.Awake();
-            playerStatsManager = GetComponent<PlayerStatsManager>();
-            playerWeaponSlotManager = GetComponent<PlayerWeaponSlotManager>();
+            player = GetComponent<PlayerManager>();
             poisonBuildUpBar = FindObjectOfType<PoisonBuildUpBar>();
             poisonAmountBar = FindObjectOfType<PoisonAmountBar>();
         }
@@ -29,15 +27,15 @@ namespace DK
 
         public void HealPlayerFromEffect()
         {
-            playerStatsManager.healPlayer(amountToHealed);
-            healParticles = Instantiate(currentParticleFX, playerStatsManager.transform);
+            player.playerStatsManager.healPlayer(amountToHealed);
+            healParticles = Instantiate(currentParticleFX, player.playerStatsManager.transform);
             Destroy(instantiatedFXModel,0.8f);
         }
 
         public void DestroyHealEffects()
         {
             isDrinking = false;
-            playerWeaponSlotManager.LoadBothWeaponOnslot(); 
+            player.playerWeaponSlotManager.LoadBothWeaponOnslot(); 
             Destroy(healParticles,0.8f);
         }
 

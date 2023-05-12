@@ -7,8 +7,7 @@ namespace DK
     {
         public string bossName;
         UiBossHealthBar bossHealthBar;
-        EnemyStatsManager enemyStats;
-        EnemyAnimatorManager enemyAnimatorManager;
+        EnemyManager enemy;
         BossCombatStanceState bossCombatStanceState;
 
         [Header("Second phase FX")]
@@ -17,14 +16,13 @@ namespace DK
         private void Awake()
         {
             bossHealthBar = FindObjectOfType<UiBossHealthBar>();
-            enemyStats = GetComponent<EnemyStatsManager>();
-            enemyAnimatorManager = GetComponentInChildren<EnemyAnimatorManager>();
+            enemy = GetComponent<EnemyManager>();
             bossCombatStanceState = GetComponentInChildren<BossCombatStanceState>();
         }
         private void Start()
         {
             bossHealthBar.SetBossName(bossName);
-            bossHealthBar.SetBossMaxHealth(enemyStats.maxHealth);
+            bossHealthBar.SetBossMaxHealth(enemy.enemyStatsManager.maxHealth);
         }
 
         public void UpdateBossHealth(int currentHealth,int maxHealth)
@@ -43,9 +41,9 @@ namespace DK
 
         public void ShiftToSecondPhase()
         {
-            enemyAnimatorManager.animator.SetBool("isInvulnerable", true);
-            enemyAnimatorManager.animator.SetBool("isPhaseShifting", true);
-            enemyAnimatorManager.PlayTargetAnimation("Phase Shift", true);
+            enemy.animator.SetBool("isInvulnerable", true);
+            enemy.animator.SetBool("isPhaseShifting", true);
+            enemy.enemyAnimatorManager.PlayTargetAnimation("Phase Shift", true);
             bossCombatStanceState.hasPhaseShifted = true;
         }
     }

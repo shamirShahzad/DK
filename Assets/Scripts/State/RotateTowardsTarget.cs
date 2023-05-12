@@ -7,37 +7,37 @@ namespace DK
     {
         public CombatStanceState combatStanceState;
         public PursueTargetState pursueTargetState;
-        public override State Tick(EnemyManager enemyManager, EnemyStatsManager enemyStats, EnemyAnimatorManager enemyAnimatorManager)
+        public override State Tick(EnemyManager enemy)
         {
-            enemyAnimatorManager.animator.SetFloat("Vertical", 0);
-            enemyAnimatorManager.animator.SetFloat("Horizontal", 0);
+            enemy.animator.SetFloat("Vertical", 0);
+            enemy.animator.SetFloat("Horizontal", 0);
 
-            Vector3 targetDiection = enemyManager.currentTarget.transform.position - enemyManager.transform.position;
-            float viewableAngle = Vector3.SignedAngle(targetDiection, enemyManager.transform.forward, Vector3.up);
+            Vector3 targetDiection = enemy.currentTarget.transform.position - enemy.transform.position;
+            float viewableAngle = Vector3.SignedAngle(targetDiection, enemy.transform.forward, Vector3.up);
 
-            if (enemyManager.isInteracting)
+            if (enemy.isInteracting)
             {
                 return this;
             }
 
-            if(viewableAngle >=100 && viewableAngle<=180 && !enemyManager.isInteracting)
+            if(viewableAngle >=100 && viewableAngle<=180 && !enemy.isInteracting)
             {
-                enemyAnimatorManager.PlayTargetAnimationWithRootrotation("Turn Back",true);
+                enemy.enemyAnimatorManager.PlayTargetAnimationWithRootrotation("Turn Back",true);
                 return combatStanceState;
             }
-            else if (viewableAngle <=-101 && viewableAngle >=-180 && !enemyManager.isInteracting)
+            else if (viewableAngle <=-101 && viewableAngle >=-180 && !enemy.isInteracting)
             {
-                enemyAnimatorManager.PlayTargetAnimationWithRootrotation("Turn Back", true);
+                enemy.enemyAnimatorManager.PlayTargetAnimationWithRootrotation("Turn Back", true);
                 return combatStanceState;
             }
-            else if(viewableAngle<=-55 && viewableAngle>=-115 && !enemyManager.isInteracting)
+            else if(viewableAngle<=-55 && viewableAngle>=-115 && !enemy.isInteracting)
             {
-                enemyAnimatorManager.PlayTargetAnimationWithRootrotation("Turn Right", true);
+                enemy.enemyAnimatorManager.PlayTargetAnimationWithRootrotation("Turn Right", true);
                 return combatStanceState;
             }
-            else if(viewableAngle >=55 && viewableAngle<=115 && !enemyManager.isInteracting)
+            else if(viewableAngle >=55 && viewableAngle<=115 && !enemy.isInteracting)
             {
-                enemyAnimatorManager.PlayTargetAnimationWithRootrotation("Turn Left", true);
+                enemy.enemyAnimatorManager.PlayTargetAnimationWithRootrotation("Turn Left", true);
                 return combatStanceState;
             }
 

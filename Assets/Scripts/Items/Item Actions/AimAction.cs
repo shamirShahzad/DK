@@ -12,7 +12,7 @@ namespace DK
             {
                 return;
             }
-            player.inputHandler.uIManager.aimCrosshair.SetActive(true);
+            player.uIManager.aimCrosshair.SetActive(true);
             player.isAiming = true;
         }
     }

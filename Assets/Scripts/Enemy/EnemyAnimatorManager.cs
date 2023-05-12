@@ -6,29 +6,25 @@ namespace DK
 
  public class EnemyAnimatorManager : CharacterAnimatorManager
  {
-        EnemyBossManager enemyBossManager;
-        EnemyFXManager enemyFXManager;
-        EnemyManager enemyManager;
+
+        EnemyManager enemy;
         protected override void Awake()
         {
             base.Awake();
-            animator = GetComponent<Animator>();
-            enemyBossManager = GetComponent<EnemyBossManager>();
-            enemyManager = GetComponent<EnemyManager>();
-            enemyFXManager = GetComponent<EnemyFXManager>();
+            enemy = GetComponent<EnemyManager>();
         }
         private void OnAnimatorMove()
         {
             float delta = Time.deltaTime;
-            enemyManager.enemyRigidbody.drag = 0;
-            Vector3 deltaPosition = animator.deltaPosition;
+            enemy.enemyRigidbody.drag = 0;
+            Vector3 deltaPosition = enemy.animator.deltaPosition;
             deltaPosition.y = 0;
             Vector3 velocity = deltaPosition / delta;
-            enemyManager.enemyRigidbody.velocity = velocity /* * enemyLocomotionManager.moveSpeed*/;
+            enemy.enemyRigidbody.velocity = velocity /* * enemyLocomotionManager.moveSpeed*/;
 
-            if (enemyManager.isRotatingWithRootMotion)
+            if (enemy.isRotatingWithRootMotion)
             {
-                enemyManager.transform.rotation *= animator.deltaRotation;
+                enemy.transform.rotation *= enemy.animator.deltaRotation;
             }
         }
 
@@ -40,7 +36,7 @@ namespace DK
             
             if (playerStats != null)
             {
-                playerStats.AddSouls(characterStatsManager.soulsAwardedOnDeath);
+                playerStats.AddSouls(enemy.characterStatsManager.soulsAwardedOnDeath);
                 if (soulCountBar != null)
                 {
                     soulCountBar.SetSoulCountText(playerStats.soulCount);
@@ -51,13 +47,13 @@ namespace DK
 
         public void PlayWeaponTrailFX()
         {
-            enemyFXManager.PlayWeaponFX(false);
+            enemy.enemyFXManager.PlayWeaponFX(false);
         }
         public void InstantiataeBossParticleFX()
         {
             BossFxTransform bossFxTransform = GetComponentInChildren<BossFxTransform>();
 
-            GameObject phaseFX = Instantiate(enemyBossManager.particleFX, bossFxTransform.transform);
+            GameObject phaseFX = Instantiate(enemy.enemyBossManager.particleFX, bossFxTransform.transform);
         }
     }  
 }

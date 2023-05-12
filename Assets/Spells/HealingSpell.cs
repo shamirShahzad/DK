@@ -21,12 +21,11 @@ namespace DK
             Destroy(instanstiatedWarmupSpellFX, 1.5f);
         }
 
-        public override void SuccessfullyCastedSpell(PlayerAnimatorManager animatorHandler, PlayerStatsManager playerStats,
-            CameraHandler cameraHandler,PlayerWeaponSlotManager weaponSlotManager,bool isLeftHanded)
+        public override void SuccessfullyCastedSpell(PlayerManager player)
         {
-            base.SuccessfullyCastedSpell(animatorHandler, playerStats,cameraHandler,weaponSlotManager,isLeftHanded);
-            GameObject instansiatedSpellFX = Instantiate(spellCastEffect, animatorHandler.transform);
-            playerStats.healPlayer(healAmount);
+            base.SuccessfullyCastedSpell(player);
+            GameObject instansiatedSpellFX = Instantiate(spellCastEffect, player.playerAnimatorManager.transform);
+            player.playerStatsManager.healPlayer(healAmount);
             //Debug.Log("Success BABY");
             Destroy(instansiatedSpellFX, 1.5f);
         }

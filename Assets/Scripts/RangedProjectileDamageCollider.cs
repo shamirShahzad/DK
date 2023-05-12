@@ -30,7 +30,7 @@ namespace DK
                 }
                 if (enemyStats != null)
                 {
-                    if (enemyStats.teamIdNumber == teamIdNumber || enemyStats.isDead)
+                    if (enemyStats.teamIdNumber == teamIdNumber || enemyManager.isDead)
                         return;
                     if (hasBeenParried)
                         return;

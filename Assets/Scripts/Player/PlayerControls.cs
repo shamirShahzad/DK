@@ -609,6 +609,34 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
                     ""isPartOfComposite"": false
                 }
             ]
+        },
+        {
+            ""name"": ""Rotate Controls"",
+            ""id"": ""91551b9f-b83a-42f0-ba70-67c9cd4a3195"",
+            ""actions"": [
+                {
+                    ""name"": ""Delta X"",
+                    ""type"": ""PassThrough"",
+                    ""id"": ""1af7c7bb-5afe-43b0-99a8-170675b8896b"",
+                    ""expectedControlType"": ""Vector2"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                }
+            ],
+            ""bindings"": [
+                {
+                    ""name"": """",
+                    ""id"": ""74e85fd1-689c-4a72-972e-0bbdecc030b5"",
+                    ""path"": ""<Touchscreen>/primaryTouch/delta"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Delta X"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                }
+            ]
         }
     ],
     ""controlSchemes"": []
@@ -634,6 +662,9 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
         m_PlayerActions_LockOn = m_PlayerActions.FindAction("Lock On", throwIfNotFound: true);
         m_PlayerActions_X = m_PlayerActions.FindAction("X", throwIfNotFound: true);
         m_PlayerActions_TapLB = m_PlayerActions.FindAction("TapLB", throwIfNotFound: true);
+        // Rotate Controls
+        m_RotateControls = asset.FindActionMap("Rotate Controls", throwIfNotFound: true);
+        m_RotateControls_DeltaX = m_RotateControls.FindAction("Delta X", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -875,6 +906,39 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
         }
     }
     public PlayerActionsActions @PlayerActions => new PlayerActionsActions(this);
+
+    // Rotate Controls
+    private readonly InputActionMap m_RotateControls;
+    private IRotateControlsActions m_RotateControlsActionsCallbackInterface;
+    private readonly InputAction m_RotateControls_DeltaX;
+    public struct RotateControlsActions
+    {
+        private @PlayerControls m_Wrapper;
+        public RotateControlsActions(@PlayerControls wrapper) { m_Wrapper = wrapper; }
+        public InputAction @DeltaX => m_Wrapper.m_RotateControls_DeltaX;
+        public InputActionMap Get() { return m_Wrapper.m_RotateControls; }
+        public void Enable() { Get().Enable(); }
+        public void Disable() { Get().Disable(); }
+        public bool enabled => Get().enabled;
+        public static implicit operator InputActionMap(RotateControlsActions set) { return set.Get(); }
+        public void SetCallbacks(IRotateControlsActions instance)
+        {
+            if (m_Wrapper.m_RotateControlsActionsCallbackInterface != null)
+            {
+                @DeltaX.started -= m_Wrapper.m_RotateControlsActionsCallbackInterface.OnDeltaX;
+                @DeltaX.performed -= m_Wrapper.m_RotateControlsActionsCallbackInterface.OnDeltaX;
+                @DeltaX.canceled -= m_Wrapper.m_RotateControlsActionsCallbackInterface.OnDeltaX;
+            }
+            m_Wrapper.m_RotateControlsActionsCallbackInterface = instance;
+            if (instance != null)
+            {
+                @DeltaX.started += instance.OnDeltaX;
+                @DeltaX.performed += instance.OnDeltaX;
+                @DeltaX.canceled += instance.OnDeltaX;
+            }
+        }
+    }
+    public RotateControlsActions @RotateControls => new RotateControlsActions(this);
     public interface IPlayerMovementActions
     {
         void OnMovement(InputAction.CallbackContext context);
@@ -897,5 +961,9 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
         void OnLockOn(InputAction.CallbackContext context);
         void OnX(InputAction.CallbackContext context);
         void OnTapLB(InputAction.CallbackContext context);
+    }
+    public interface IRotateControlsActions
+    {
+        void OnDeltaX(InputAction.CallbackContext context);
     }
 }

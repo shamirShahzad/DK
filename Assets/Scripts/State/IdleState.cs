@@ -10,9 +10,9 @@ namespace DK
         public LayerMask obstructionLayer;
         public PursueTargetState pursueTargetState;
         Vector3 offset = new Vector3(0, 2, 0);
-        public override State Tick(EnemyManager enemyManager, EnemyStatsManager enemyStats, EnemyAnimatorManager enemyAnimatorManager)
+        public override State Tick(EnemyManager enemy)
         {
-            Collider[] colliders = Physics.OverlapSphere(transform.position, enemyManager.detectionRadius, detectionLayer);
+            Collider[] colliders = Physics.OverlapSphere(transform.position, enemy.detectionRadius, detectionLayer);
 
 
             for (int i = 0; i < colliders.Length; i++)
@@ -21,18 +21,18 @@ namespace DK
 
                 if (characterStats != null)
                 {
-                    if (characterStats.teamIdNumber != enemyStats.teamIdNumber)
+                    if (characterStats.teamIdNumber != enemy.enemyStatsManager.teamIdNumber)
                     {
                         Vector3 targetDirection = characterStats.transform.position - transform.position;
                         float distanceToTarget = Vector3.Distance(transform.position, characterStats.transform.position);
                         float viewableAngle = Vector3.Angle(targetDirection, transform.forward);
 
-                        if (viewableAngle > enemyManager.minimumDetectionAngle && viewableAngle < enemyManager.maximumDetectionAngle)
+                        if (viewableAngle > enemy.minimumDetectionAngle && viewableAngle < enemy.maximumDetectionAngle)
                         {
                             if (!Physics.Raycast(transform.position + offset, targetDirection, distanceToTarget, obstructionLayer))
-                                enemyManager.currentTarget = characterStats;
+                                enemy.currentTarget = characterStats;
                             else
-                                enemyManager.currentTarget = null;
+                                enemy.currentTarget = null;
 
                         }
                     }
@@ -40,7 +40,7 @@ namespace DK
                     
                 }
             }
-            if (enemyManager.currentTarget != null)
+            if (enemy.currentTarget != null)
             {
                 return pursueTargetState;
             }

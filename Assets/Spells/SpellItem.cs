@@ -34,13 +34,9 @@ namespace DK
 
         }
 
-        public virtual void SuccessfullyCastedSpell(PlayerAnimatorManager animatorHandler,
-            PlayerStatsManager playerStats,
-            CameraHandler cameraHandler,
-            PlayerWeaponSlotManager weaponSlotManager,
-            bool isLeftHanded)
+        public virtual void SuccessfullyCastedSpell(PlayerManager player)
         {
-            playerStats.DeductfocusPoints(focusPointCost);
+            player.playerStatsManager.DeductfocusPoints(focusPointCost);
         }
     }
 }

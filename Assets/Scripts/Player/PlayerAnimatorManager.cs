@@ -5,20 +5,13 @@ namespace DK
 {
     public class PlayerAnimatorManager : CharacterAnimatorManager
     {
-        inputHandler inputHandler;
-        PlayerLocomotionManager playerLocomotionManager;
-        PlayerManager playerManager;
+
         int vertical;
         int horizontal;
-
-
         protected override void Awake()
         {
             base.Awake();
-            animator = GetComponent<Animator>();
-            inputHandler = GetComponent<inputHandler>();
-            playerLocomotionManager = GetComponent<PlayerLocomotionManager>();
-            playerManager = GetComponent<PlayerManager>();
+            player = GetComponent<PlayerManager>();
             vertical = Animator.StringToHash("Vertical");
             horizontal = Animator.StringToHash("Horizontal");
         }
@@ -82,19 +75,19 @@ namespace DK
                 h = horizontalMovement;
             }
 
-            animator.SetFloat(vertical, v, 0.1f, Time.deltaTime);
-            animator.SetFloat(horizontal, h, 0.1f, Time.deltaTime);
+            player.animator.SetFloat(vertical, v, 0.1f, Time.deltaTime);
+            player.animator.SetFloat(horizontal, h, 0.1f, Time.deltaTime);
         }
 
         public void DisableCollision()
         {
-            playerManager.fogWallCollider.enabled = false;
-            playerManager.fogEntryCollider.enabled = false;
+            player.fogWallCollider.enabled = false;
+            player.fogEntryCollider.enabled = false;
         }
         public void EnableCollisison()
         {
-            playerManager.fogWallCollider.enabled = true;
-            playerManager.fogEntryCollider.enabled = true;
+            player.fogWallCollider.enabled = true;
+            player.fogEntryCollider.enabled = true;
         }
         public void AwardSoulsOnDeath()
         {
@@ -102,14 +95,14 @@ namespace DK
 
         private void OnAnimatorMove()
         {
-            if (characterManager.isInteracting == false)
+            if (character.isInteracting == false)
                 return;
             float delta = Time.deltaTime;
-            playerLocomotionManager.rigidbody.drag = 0;
-            Vector3 deltaPositions = animator.deltaPosition;
+            player.playerLocomotion.rigidbody.drag = 0;
+            Vector3 deltaPositions = player.animator.deltaPosition;
             deltaPositions.y = 0;
             Vector3 velocity = deltaPositions / delta;
-            playerLocomotionManager.rigidbody.velocity = velocity;
+            player.playerLocomotion.rigidbody.velocity = velocity;
 
         }
     }

@@ -13,41 +13,41 @@ namespace DK
         protected bool randomDestinatonSet = false;
         protected float verticalMovementValue = 0;
         protected float horizontalMovementValue = 0;
-        public override State Tick(EnemyManager enemyManager, EnemyStatsManager enemyStats, EnemyAnimatorManager enemyAnimatorManager)
+        public override State Tick(EnemyManager enemy)
         {
-            float distanceFromTarget = Vector3.Distance(enemyManager.currentTarget.transform.position, enemyManager.transform.position);
-            enemyAnimatorManager.animator.SetFloat("Vertical", verticalMovementValue, 0.2f,Time.deltaTime);
-            enemyAnimatorManager.animator.SetFloat("Horizontal", horizontalMovementValue, 0.2f,Time.deltaTime);
+            float distanceFromTarget = Vector3.Distance(enemy.currentTarget.transform.position, enemy.transform.position);
+            enemy.animator.SetFloat("Vertical", verticalMovementValue, 0.2f,Time.deltaTime);
+            enemy.animator.SetFloat("Horizontal", horizontalMovementValue, 0.2f,Time.deltaTime);
             attackState.hasPerformedAttack = false;
 
 
-            if (enemyManager.isInteracting)
+            if (enemy.isInteracting)
             {
-                enemyAnimatorManager.animator.SetFloat("Vertical", 0);
-                enemyAnimatorManager.animator.SetFloat("Horizontal", 0);
+                enemy.animator.SetFloat("Vertical", 0);
+                enemy.animator.SetFloat("Horizontal", 0);
                 return this; 
 
             }
-            if (distanceFromTarget > enemyManager.maximumAggroRadius)
+            if (distanceFromTarget > enemy.maximumAggroRadius)
             {
                 return pursueTargetState;
             }
             if (!randomDestinatonSet)
             {
                 randomDestinatonSet = true;
-                DecideCirclingAction(enemyAnimatorManager);
+                DecideCirclingAction(enemy);
             }
-            HandleRotateTowardsTarget(enemyManager, distanceFromTarget);
+            HandleRotateTowardsTarget(enemy, distanceFromTarget);
 
 
-            if(enemyManager.currentRecoveryTime <= 0 && attackState.currentAttack !=null)
+            if(enemy.currentRecoveryTime <= 0 && attackState.currentAttack !=null)
             {
                 randomDestinatonSet = false;
                 return attackState;
             }
             else
             {
-                GetNewAttack(enemyManager);
+                GetNewAttack(enemy);
             }
             return this;
         }
@@ -119,12 +119,12 @@ namespace DK
             }
         }
 
-        protected void DecideCirclingAction(EnemyAnimatorManager enemyAnimatorManager)
+        protected void DecideCirclingAction(EnemyManager enemy)
         {
-            WalkAroundTarget(enemyAnimatorManager);
+            WalkAroundTarget(enemy);
         }
 
-        protected void WalkAroundTarget(EnemyAnimatorManager enemyAnimatorManager)
+        protected void WalkAroundTarget(EnemyManager enemy)
         {
             verticalMovementValue = 0.5f;
 

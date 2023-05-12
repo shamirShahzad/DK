@@ -9,12 +9,12 @@ namespace DK
    
         public override void GrantWeaponAttackingPoiseBonus()
         {
-            characterStatsManager.totalPoiseDefense = characterStatsManager.totalPoiseDefense + characterStatsManager.offensivePoiseBonus;
+            character.characterStatsManager.totalPoiseDefense = character.characterStatsManager.totalPoiseDefense + character.characterStatsManager.offensivePoiseBonus;
         }
 
         public override void  ResetWeaponAttackingPoiseBonus()
         {
-            characterStatsManager.totalPoiseDefense = characterStatsManager.armorPoisebonus;
+            character.characterStatsManager.totalPoiseDefense = character.characterStatsManager.armorPoisebonus;
         }
 
 

@@ -7,7 +7,6 @@ namespace DK
     {
         public inputHandler inputHandler;
         public CameraHandler cameraHandler;
-        Animator animator;
         public PlayerLocomotionManager playerLocomotion;
         public PlayerAnimatorManager playerAnimatorManager;
         public PlayerWeaponSlotManager playerWeaponSlotManager;
@@ -17,6 +16,8 @@ namespace DK
         public PlayerCombatManager playerCombatManager;
         public PlayerInventoryManager playerInventoryManager;
         public PlayerEquipmentManager playerEquipmentManager;
+        public UIManager uIManager;
+        public BlockingCollider blockingCollider;
             
         public GameObject interactableUiGameObject;
         public GameObject itemInteractableGameobject;
@@ -28,9 +29,9 @@ namespace DK
         {
             base.Awake();
             cameraHandler = FindObjectOfType<CameraHandler>();
+            blockingCollider = GetComponentInChildren<BlockingCollider>();
             inputHandler = GetComponent<inputHandler>();
             playerLocomotion = GetComponent<PlayerLocomotionManager>();
-            animator = GetComponent<Animator>();
             interactableUi = FindObjectOfType<InteractableUi>();
             playerStatsManager = GetComponent<PlayerStatsManager>();
             backStabCollider = GetComponentInChildren<CriticalDamageCollider>();
@@ -40,33 +41,38 @@ namespace DK
             playerInventoryManager = GetComponent<PlayerInventoryManager>();
             playerWeaponSlotManager = GetComponent<PlayerWeaponSlotManager>();
             playerEquipmentManager = GetComponent<PlayerEquipmentManager>();
+            uIManager = FindObjectOfType<UIManager>();
         }       
         void Update()
         {
-            float delta = Time.deltaTime;
-
+            if (playerLocomotion == null)
+                return;
             isInteracting = animator.GetBool("isInteracting");
             canDoCombo = animator.GetBool("canDoCombo");
+            canRotate = animator.GetBool("canRotate");
             isInvulnerable = animator.GetBool("isInvulnerable");
             isFiringSpell = animator.GetBool("isFiringSpell");
             isHoldingArrow = animator.GetBool("isHoldingArrow");
             animator.SetBool("isBlocking",isBlocking);
             animator.SetBool("isInAir", isInAir);
             animator.SetBool("isTwoHanding", isTwoHanding);
-            animator.SetBool("isDead", playerStatsManager.isDead);
-            playerAnimatorManager.canRotate = animator.GetBool("canRotate");
+            animator.SetBool("isDead", isDead);
             inputHandler.TickInput();
             playerLocomotion.HandleRolling();
             playerLocomotion.HandleJumping();
 
             playerStatsManager.RegenarateStamina();
             playerStatsManager.RegenarateFocus();
+            if (cameraHandler == null)
+                return;
             CheckForInteractable();
 
         }
 
         protected override void FixedUpdate()
         {
+            if (playerLocomotion == null || playerLocomotion.enabled == false)
+                return;
             base.FixedUpdate();
             playerLocomotion.HandleFalling(playerLocomotion.moveDirection);
             playerLocomotion.HandleMovement();

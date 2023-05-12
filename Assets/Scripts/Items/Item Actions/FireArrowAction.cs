@@ -18,7 +18,7 @@ namespace DK
             Destroy(player.playerFXManager.currentRangeFX);//Destroy Loaded arrow
 
            player. playerAnimatorManager.PlayTargetAnimation("Bow_TH_Fire_01_R", true);
-            player.playerAnimatorManager.animator.SetBool("isHoldingArrow", false);
+            player.animator.SetBool("isHoldingArrow", false);
 
             GameObject liveArrow = Instantiate(player.playerInventoryManager.currentAmmo.liveModel, arrowInstantiationLocation.transform.position, player.cameraHandler.cameraPivotTransform.rotation);
             Rigidbody rigidBody = liveArrow.GetComponentInChildren<Rigidbody>();
