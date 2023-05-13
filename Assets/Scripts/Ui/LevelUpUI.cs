@@ -246,11 +246,20 @@ namespace DK
             projectedPlayerLevel = projectedPlayerLevel + Mathf.RoundToInt(faithSlider.value) - playerStatsManager.faithLevel;
             projectedPlayerLevel = projectedPlayerLevel + Mathf.RoundToInt(focusSlider.value) - playerStatsManager.focusLevel;
 
-            projectedPlayerLevelText.text = projectedPlayerLevel.ToString();
+            
 
-            CalculateSoulCostToLevelUP();
 
-            soulsRequiredToLevelUpText.text = Mathf.RoundToInt(requiredSoulsToLevelUp).ToString();
+            if (projectedPlayerLevel > currentPlayerLevel)
+            {
+                projectedPlayerLevelText.text = projectedPlayerLevel.ToString();
+                CalculateSoulCostToLevelUP();
+            }
+            else
+            {
+                projectedPlayerLevelText.text = 0.ToString();
+            }
+                soulsRequiredToLevelUpText.text = Mathf.RoundToInt(requiredSoulsToLevelUp).ToString();
+          
 
             if (playerStatsManager.soulCount < requiredSoulsToLevelUp)
             {
