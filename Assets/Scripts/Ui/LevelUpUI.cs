@@ -225,7 +225,7 @@ namespace DK
         { 
             for(int i = 0; i < projectedPlayerLevel; i++)
             {
-                requiredSoulsToLevelUp = requiredSoulsToLevelUp + Mathf.RoundToInt((projectedPlayerLevel * baseLevelUpCost) * 1.5f);
+                requiredSoulsToLevelUp += Mathf.RoundToInt((projectedPlayerLevel * baseLevelUpCost) * 1.5f);
             }
            
             

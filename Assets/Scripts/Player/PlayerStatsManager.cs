@@ -5,15 +5,25 @@ namespace DK
 {
     public class PlayerStatsManager : CharacterStatsManager
     {
+        [HideInInspector]
         public string PLAYER_LEVEL = "Player_Level";
+        [HideInInspector]
         public string HEALTH_LEVEL = "HealthLevel";
+        [HideInInspector]
         public string STAMINA_LEVEL = "StaminaLevel";
+        [HideInInspector]
         public string POISE_LEVEL = "PoiseLevel";
+        [HideInInspector]
         public string STRENGTH_LEVEL = "StrengthLevel";
+        [HideInInspector]
         public string DEXTERITY_LEVEL = "DexterityLevel";
+        [HideInInspector]
         public string INTELLIGENCE_LEVEL = "IntelligenceLevel";
+        [HideInInspector]
         public string FAITH_LEVEL = "FaithLevel";
+        [HideInInspector]
         public string FOCUS_LEVEL = "FocusLevel";
+        [HideInInspector]
         public string SOUL_COUNT = "SoulCount";
 
 
