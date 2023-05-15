@@ -59,7 +59,7 @@ namespace DK
 
             damageCollider.characterManager = player;
             damageCollider.ammoItem = player.playerInventoryManager.currentAmmo;
-            damageCollider.weaponDamage = player.playerInventoryManager.currentAmmo.physicalDamage;
+            damageCollider.physicalDamage = player.playerInventoryManager.currentAmmo.physicalDamage;
 
 
         }

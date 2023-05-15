@@ -60,7 +60,7 @@ namespace DK
                     Quaternion targetRotation = Quaternion.Slerp(player.transform.rotation, tr, 500 * Time.deltaTime);
                     player.transform.rotation = targetRotation;
 
-                    int criticalDamage = player.playerInventoryManager.rightWeapon.criticalDamageMultiplier * rightWeapon.weaponDamage;
+                    int criticalDamage = player.playerInventoryManager.rightWeapon.criticalDamageMultiplier * rightWeapon.physicalDamage;
                     enemycharacterManager.pendingCriticalDamage = criticalDamage;
 
                     player.playerAnimatorManager.PlayTargetAnimation("Back Stab",true);
@@ -85,7 +85,7 @@ namespace DK
                     Quaternion targetRotation = Quaternion.Slerp(player.transform.rotation, tr, 500 * Time.deltaTime);
                     player.transform.rotation = targetRotation;
 
-                    int criticalDamage = player.playerInventoryManager.rightWeapon.criticalDamageMultiplier * rightWeapon.weaponDamage;
+                    int criticalDamage = player.playerInventoryManager.rightWeapon.criticalDamageMultiplier * rightWeapon.physicalDamage;
                     enemycharacterManager.pendingCriticalDamage = criticalDamage;
                     player.playerAnimatorManager.PlayTargetAnimation("Riposte", true);
                     enemycharacterManager.GetComponentInChildren<CharacterAnimatorManager>().PlayTargetAnimation("Riposted", true);

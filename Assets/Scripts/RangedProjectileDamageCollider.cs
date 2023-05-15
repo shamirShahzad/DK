@@ -44,15 +44,12 @@ namespace DK
                     enemyFX.PlayBloodSplatterEffect(contactPoint);
                     if (enemyStats.totalPoiseDefense > poiseBreak)
                     {
-                        enemyStats.TakeDamageNoAnimation(weaponDamage);
+                        enemyStats.TakeDamageNoAnimation(physicalDamage,fireDamage);
                     }
                     else
                     {
-                        if (gameObject.tag == "Skeleton Sword")
-                        {
-                            enemyStats.TakeDamage(weaponDamage, "Skeleton Hit");
-                        }
-                        enemyStats.TakeDamage(weaponDamage, currentDamageAnimation);
+
+                        enemyStats.TakeDamage(physicalDamage,fireDamage, currentDamageAnimation);
                     }
                 }
             }

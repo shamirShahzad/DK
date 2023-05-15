@@ -18,12 +18,23 @@ MonoBehaviour:
   isUnarmed: 1
   weaponController: {fileID: 22100000, guid: d1f59d65d8fad124c996f49bc6f94529, type: 2}
   offHandIdleAnimation: Left Arm Empty
-  weaponTypes: 5
-  baseDamage: 25
-  criticalDamageMultiplier: 4
+  weaponTypes: 6
+  physicalDamage: 10
+  fireDamage: 0
+  criticalDamageMultiplier: 1
   poiseBreak: 0
   offensivePoiseBonus: 0
   physicalDamageAbsorbtion: 0
-  baseStaminaCost: 10
+  fireDamagAbsorbtion: 0
+  baseStaminaCost: 5
   lightAttackMultiplier: 1
-  heavyAttackMultiplier: 1.5
+  heavyAttackMultiplier: 1.1
+  spellOfItem: {fileID: 0}
+  hold_RB_Action: {fileID: 0}
+  tap_RB_Action: {fileID: 0}
+  tap_LB_Action: {fileID: 0}
+  hold_LB_Action: {fileID: 0}
+  hold_RT_Action: {fileID: 0}
+  tap_RT_Action: {fileID: 0}
+  tap_LT_Action: {fileID: 0}
+  hold_LT_Action: {fileID: 0}

@@ -5093,7 +5093,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   characterManager: {fileID: 0}
-  weaponDamage: 20
+  physicalDamage: 8
   enableOnstartup: 0
+  teamIdNumber: 1
   poiseBreak: 0
   offensivePoiseBonus: 0

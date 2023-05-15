@@ -17,7 +17,8 @@ namespace DK
         public WeaponTypes weaponTypes;
 
         [Header("Damage")]
-        public int baseDamage = 25;
+        public int physicalDamage = 25;
+        public int fireDamage = 20;
         public int criticalDamageMultiplier = 4;
 
         [Header("Poise")]
@@ -26,6 +27,7 @@ namespace DK
 
         [Header("Absorbtion")]
         public float physicalDamageAbsorbtion;
+        public float fireDamageAbsorbtion;
 
         [Header("Stamina Drain")]
         public int baseStaminaCost;

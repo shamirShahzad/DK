@@ -7,10 +7,14 @@ namespace DK
     {
 
         public CharacterManager characterManager;
-        Collider damageCollider;
-        [SerializeField]
-        public int weaponDamage = 8;
-        PlayerStatsManager myPlayerStats;
+        protected Collider damageCollider;
+        [Header("Damages")]
+        public int physicalDamage = 8;
+        public int fireDamage;
+        public int magicDamage;
+        public int lightningDamage;
+        public int darkDamage;
+
         public bool enableOnstartup = false;
         [Header("Team ID")]
         public int teamIdNumber = 0;
@@ -22,13 +26,12 @@ namespace DK
         protected bool hasBeenParried = false;
         protected string currentDamageAnimation;
 
-        private void Awake()
+        protected virtual void Awake()
         {
             damageCollider = GetComponent<Collider>();
             damageCollider.gameObject.SetActive(true);
             damageCollider.isTrigger = true;
             damageCollider.enabled = false;
-            myPlayerStats = FindObjectOfType<PlayerStatsManager>();
             damageCollider.enabled = enableOnstartup;
         }
 
@@ -78,130 +81,18 @@ namespace DK
                     enemyFX.PlayBloodSplatterEffect(contactPoint);
                     if(enemyStats.totalPoiseDefense > poiseBreak)
                     {
-                        enemyStats.TakeDamageNoAnimation(weaponDamage);
+                        enemyStats.TakeDamageNoAnimation(physicalDamage,0);
                     }
                     else
                     {
                         if(gameObject.tag == "Skeleton Sword")
                         {
-                            enemyStats.TakeDamage(weaponDamage, "Skeleton Hit");
+                            enemyStats.TakeDamage(physicalDamage,0, "Skeleton Hit");
                         }
-                        enemyStats.TakeDamage(weaponDamage,currentDamageAnimation);
+                        enemyStats.TakeDamage(physicalDamage,0,currentDamageAnimation);
                     }
                 }
             }
-
-
-
-            //if (collision.tag == "Player")
-            //{
-            //    shieldHasBeenHit = false;
-            //    hasBeenParried = false;
-            //    PlayerStatsManager playerStats = collision.GetComponentInParent<PlayerStatsManager>();
-            //    CharacterManager playerCharacterManager = collision.GetComponentInParent<CharacterManager>();
-            //    CharacterFXManager playerFXManager = collision.GetComponentInParent<CharacterFXManager>();
-            //    BlockingCollider shield = collision.transform.GetComponentInChildren<BlockingCollider>();
-
-            //    if (playerCharacterManager != null)
-            //    {
-            //        if (playerStats.teamIdNumber == teamIdNumber)
-            //            return;
-            //        CheckForParry(playerCharacterManager);
-            //        CheckForBlock(playerCharacterManager, shield, playerStats);
-            //    }
-
-
-            //    if (playerStats != null)
-            //    {
-
-            //        if (playerStats.isDead)
-            //            return;
-            //        playerStats.poiseResetTimer = playerStats.totalPoiseResetTime;
-            //        playerStats.totalPoiseDefense = playerStats.totalPoiseDefense - poiseBreak;
-            //        //Debug.Log("Players Poise is Currently" + playerStats.totalPoiseDefense);
-            //        Vector3 contactPoint = collision.GetComponent<Collider>().ClosestPointOnBounds(transform.position);
-            //        playerFXManager.PlayBloodSplatterEffect(contactPoint);
-            //        if (playerStats.totalPoiseDefense > poiseBreak)
-            //        {
-            //            playerStats.TakeDamageNoAnimation(weaponDamage);
-
-            //        }
-            //        else
-            //        {
-            //            if (gameObject.tag == "Skeleton Sword")
-            //            {
-            //                playerStats.TakeDamage(weaponDamage, "Skeleton Hit");
-            //            }
-            //            else
-            //            {
-            //                playerStats.TakeDamage(weaponDamage);
-            //            }
-            //        }
-            //    }
-
-            //}
-
-
-            //if (collision.tag == "Enemy")
-            //{
-            //    shieldHasBeenHit = false;
-            //    hasBeenParried = false;
-            //    EnemyStatsManager enemyStats = collision.GetComponent<EnemyStatsManager>();
-            //    CharacterManager enemyCharacterManager = collision.GetComponent<CharacterManager>();
-            //    CharacterFXManager enemyFXManager = collision.GetComponent<CharacterFXManager>();
-            //    BlockingCollider shield = collision.transform.GetComponentInChildren<BlockingCollider>();
-
-            //    if (enemyCharacterManager != null)
-            //    {
-            //        if (enemyStats.teamIdNumber == teamIdNumber)
-            //            return;
-            //        CheckForParry(enemyCharacterManager);
-            //        CheckForBlock(enemyCharacterManager, shield, enemyStats);
-            //    }
-            //    myPlayerStats.hitCount++;
-
-            //    if (enemyStats != null)
-            //    {
-            //        if (enemyStats.isDead || enemyStats.teamIdNumber == teamIdNumber)
-            //            return;
-            //        if (hasBeenParried)
-            //            return;
-            //        if (shieldHasBeenHit)
-            //            return;
-            //        enemyStats.poiseResetTimer = enemyStats.totalPoiseResetTime;
-            //        enemyStats.totalPoiseDefense = enemyStats.totalPoiseDefense - poiseBreak;
-            //        // Debug.Log("Enemy Poise is Currently" + enemyStats.totalPoiseDefense);
-            //        Vector3 contactPosition = collision.GetComponent<Collider>().ClosestPointOnBounds(transform.position);
-
-            //        enemyFXManager.PlayBloodSplatterEffect(contactPosition);
-
-            //        if (enemyStats.isBoss)
-            //        {
-            //            if (enemyStats.totalPoiseDefense > poiseBreak)
-            //            {
-            //                enemyStats.TakeDamageNoAnimation(weaponDamage);
-
-            //            }
-            //            else
-            //            {
-            //                enemyStats.TakeDamageNoAnimation(weaponDamage);
-            //                enemyStats.BreakGuard();
-            //            }
-            //        }
-            //        else
-            //        {
-            //            if (enemyStats.totalPoiseDefense > poiseBreak)
-            //            {
-            //                enemyStats.TakeDamageNoAnimation(weaponDamage);
-
-            //            }
-            //            else
-            //            {
-            //                enemyStats.TakeDamage(weaponDamage);
-            //            }
-            //        }
-            //    }
-            //}
             if (collision.tag == "Illusionary Wall")
             {
                 IllusionaryWall illusionaryWall = collision.GetComponent<IllusionaryWall>();
@@ -223,10 +114,11 @@ namespace DK
         {
               if (shield != null && characterManager.isBlocking)
             {
-                float physicalDamageAfterBlock = weaponDamage - (weaponDamage * shield.blockingPhysicalDamageAbsorbtion) / 100;
+                float physicalDamageAfterBlock = physicalDamage - (physicalDamage * shield.blockingPhysicalDamageAbsorbtion) / 100;
+                float fireDamageAfterBlock = fireDamage - (fireDamage * shield.blockingFireDamageAbsorbtion) / 100;
                 if (characterStatsManager != null)
                 {
-                    characterStatsManager.TakeDamage(Mathf.RoundToInt(physicalDamageAfterBlock), "Block Hit");
+                    characterStatsManager.TakeDamage(Mathf.RoundToInt(physicalDamageAfterBlock),Mathf.RoundToInt(fireDamageAfterBlock), "Block Hit");
                     shieldHasBeenHit = true;
                 }
             }

@@ -118,7 +118,8 @@ namespace DK
         protected virtual void LoadLeftWeaponDamageCollider()
         {
             leftDamageCollider = leftHandSlot.currentWeaponModel.GetComponentInChildren<DamageCollider>();
-            leftDamageCollider.weaponDamage = character.characterInventoryManager.leftWeapon.baseDamage;
+            leftDamageCollider.physicalDamage = character.characterInventoryManager.leftWeapon.physicalDamage;
+            leftDamageCollider.fireDamage = character.characterInventoryManager.leftWeapon.fireDamage;
             leftDamageCollider.characterManager = character;
             leftDamageCollider.poiseBreak = character.characterInventoryManager.leftWeapon.poiseBreak;
             leftDamageCollider.teamIdNumber = character.characterStatsManager.teamIdNumber;
@@ -130,7 +131,8 @@ namespace DK
             if (rightHandSlot.currentWeapon.weaponTypes != WeaponTypes.Bow)
             {
                 rightDamageCollider = rightHandSlot.currentWeaponModel.GetComponentInChildren<DamageCollider>();
-                rightDamageCollider.weaponDamage = character.characterInventoryManager.rightWeapon.baseDamage;
+                rightDamageCollider.physicalDamage = character.characterInventoryManager.rightWeapon.physicalDamage;
+                rightDamageCollider.fireDamage = character.characterInventoryManager.rightWeapon.fireDamage;
                 rightDamageCollider.characterManager = character;
                 rightDamageCollider.poiseBreak = character.characterInventoryManager.rightWeapon.poiseBreak;
                 rightDamageCollider.teamIdNumber = character.characterStatsManager.teamIdNumber;

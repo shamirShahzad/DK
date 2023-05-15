@@ -15,11 +15,6 @@ namespace DK
         CharacterStatsManager spellTarget;
        // Rigidbody rigidbody;
         Vector3 impactNormal;
-
-        private void Awake()
-        {
-           // rigidbody = GetComponent<Rigidbody>();
-        }
         private void Start()
         {
             projectileParticles = Instantiate(projectileParticles, transform.position, transform.rotation);
@@ -38,7 +33,7 @@ namespace DK
                 spellTarget = collision.transform.GetComponent<CharacterStatsManager>();
                 if (spellTarget != null && spellTarget.teamIdNumber !=teamIdNumber)
                 {
-                    spellTarget.TakeDamage(weaponDamage,currentDamageAnimation);
+                    spellTarget.TakeDamage(0,fireDamage,currentDamageAnimation);
                 }
                 hasCollded = true;
                 impactParticles = Instantiate(impactParticles, transform.position, Quaternion.FromToRotation(Vector3.up, impactNormal));

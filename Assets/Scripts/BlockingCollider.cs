@@ -8,6 +8,7 @@ namespace DK
         public BoxCollider blockingBoxCollider;
 
         public float blockingPhysicalDamageAbsorbtion;
+        public float blockingFireDamageAbsorbtion;
 
         private void Awake()
         {

@@ -32,6 +32,10 @@ namespace DK
         public float comboLikelyhood;
         public bool isPhaseShifting;
 
+        [Header("A.I Distance From target")]
+        public float distanceFromTarget;
+        public Vector3 targetDirection;
+        public float viewableAngle;
 
 
         public float currentRecoveryTime = 0;
@@ -65,6 +69,13 @@ namespace DK
             canRotate = animator.GetBool("canRotate");
             canDoCombo = animator.GetBool("canDoCombo");
             animator.SetBool("isDead", isDead);
+
+            if (currentTarget != null)
+            {
+                distanceFromTarget = Vector3.Distance(currentTarget.transform.position, transform.position);
+                targetDirection = currentTarget.transform.position - transform.position;
+                float viewableAngle = Vector3.Angle(targetDirection, transform.forward);
+            }
         }
 
         protected override void FixedUpdate()

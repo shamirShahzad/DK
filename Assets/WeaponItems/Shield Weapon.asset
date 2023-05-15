@@ -19,11 +19,13 @@ MonoBehaviour:
   weaponController: {fileID: 0}
   offHandIdleAnimation: Left_Arm_Idle
   weaponTypes: 3
-  baseDamage: 2
+  physicalDamage: 10
+  fireDamage: 0
   criticalDamageMultiplier: 1
   poiseBreak: 0
   offensivePoiseBonus: 0
-  physicalDamageAbsorbtion: 99
+  physicalDamageAbsorbtion: 67
+  fireDamagAbsorbtion: 20
   baseStaminaCost: 2
   lightAttackMultiplier: 1
   heavyAttackMultiplier: 2

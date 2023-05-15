@@ -9,5 +9,10 @@ namespace DK
         [Header("Defense bonuses")]
         public float physicalDefense;
 
+
+        [Header("Shop Specific Checks")]
+        public bool isPurchased;
+        public int goldRequiredToPurchase;
+
     }
 }

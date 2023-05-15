@@ -39,8 +39,8 @@ namespace DK
 
         private void AttackTarget( EnemyManager enemy)
         {
-            enemy.animator.SetBool("isUsingRightHand", currentAttack.isRightHandAction);
-            enemy.animator.SetBool("isUsingLeftHand", !currentAttack.isRightHandAction);
+            enemy.isUsingRightHand = currentAttack.isRightHandAction;
+            enemy.isUsingLeftHand = !currentAttack.isRightHandAction;
             enemy.enemyAnimatorManager.PlayTargetAnimation(currentAttack.actionAnimation, true);
             enemy.enemyAnimatorManager.PlayWeaponTrailFX();
             enemy.currentRecoveryTime = currentAttack.recoveryTime;
@@ -49,8 +49,8 @@ namespace DK
 
         private void AttackTargetWithCombo(EnemyManager enemy)
         {
-            enemy.animator.SetBool("isUsingRightHand", currentAttack.isRightHandAction);
-            enemy.animator.SetBool("isUsingLeftHand", !currentAttack.isRightHandAction);
+            enemy.isUsingRightHand = currentAttack.isRightHandAction;
+            enemy.isUsingLeftHand = !currentAttack.isRightHandAction;
             willDoComboOnNextAttack = false;
             enemy.enemyAnimatorManager.PlayTargetAnimation(currentAttack.actionAnimation, true);
             enemy.enemyAnimatorManager.PlayWeaponTrailFX();

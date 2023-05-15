@@ -36,7 +36,7 @@ namespace DK
             character.animator.SetBool("isRotatingWithRootMotion", true);
             character.animator.SetBool("isInteracting", isInteracting);
             character.animator.CrossFade(targetAnim, 0.2f);
-            player.canRotate = false;
+            character.canRotate = false;
         }
         public virtual void CanRotate()
         {
@@ -86,7 +86,7 @@ namespace DK
 
         public virtual void TakeCriticalDamageAnimationEvent()
         {
-            character.characterStatsManager.TakeDamageNoAnimation(character.pendingCriticalDamage);
+            character.characterStatsManager.TakeDamageNoAnimation(character.pendingCriticalDamage,0);
             character.pendingCriticalDamage = 0;
         }
 

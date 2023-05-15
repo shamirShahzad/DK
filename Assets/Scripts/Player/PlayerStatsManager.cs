@@ -1,10 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 namespace DK
 {
     public class PlayerStatsManager : CharacterStatsManager
     {
+        [SerializeField]
+        TextMeshProUGUI playerLevelText;
         [HideInInspector]
         public string PLAYER_LEVEL = "Player_Level";
         [HideInInspector]
@@ -68,6 +71,7 @@ namespace DK
             {
                 focusPointBar.SetMaxFocus(maxFocus);
             }
+
         }
 
         public void SetPlayerPrefs()
@@ -81,6 +85,10 @@ namespace DK
             intelligenceLevel = PlayerPrefs.GetInt(INTELLIGENCE_LEVEL);
             faithLevel = PlayerPrefs.GetInt(FAITH_LEVEL);
             focusLevel = PlayerPrefs.GetInt(FOCUS_LEVEL);
+            if (playerLevelText != null)
+            {
+                playerLevelText.text = playerLevel.ToString();
+            }
         }
         private void InitializePlayerPrefs()
         {
@@ -135,9 +143,9 @@ namespace DK
         }
 
       
-        public override void TakeDamageNoAnimation(int damage)
+        public override void TakeDamageNoAnimation(int physicalDamage,int fireDamage)
         {
-            base.TakeDamageNoAnimation(damage);
+            base.TakeDamageNoAnimation(physicalDamage,fireDamage);
             healthBar.SetCurrentHealth(currentHealth);
             if (player.isDead)
             {
@@ -160,13 +168,13 @@ namespace DK
 
             }
         }
-        public override void TakeDamage(int damage,string damageAnimation)
+        public override void TakeDamage(int physicalDamage,int fireDamage,string damageAnimation)
         {
             if (player.isInvulnerable)
             {
                 return;
             }
-            base.TakeDamage(damage, damageAnimation);
+            base.TakeDamage(physicalDamage, fireDamage, damageAnimation);
             healthBar.SetCurrentHealth(currentHealth);
             player.playerAnimatorManager.PlayTargetAnimation(damageAnimation, true);
 
