@@ -19,8 +19,8 @@ MonoBehaviour:
   fireDefense: 5
   lightningDefense: 2
   darkDefense: 1
-  isPurchased: 0
+  isPurchased: 1
   goldRequiredToPurchase: 450
   hipModelName: Male_Hip_2
-  leftLegModelName: Male_RightLeg_2
-  rightLegModelName: Male_Left_Leg_2
+  leftLegModelName: Male_LeftLeg_2
+  rightLegModelName: Male_RightLeg_2

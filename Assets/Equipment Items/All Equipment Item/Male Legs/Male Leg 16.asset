@@ -22,5 +22,5 @@ MonoBehaviour:
   isPurchased: 0
   goldRequiredToPurchase: 1550
   hipModelName: Male_Hip_25
-  leftLegModelName: Male_RightLeg_14
-  rightLegModelName: Male_LeftLeg_14
+  leftLegModelName: Male_LeftLeg_14
+  rightLegModelName: Male_RightLeg_14

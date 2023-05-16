@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 559bfc46358165c44baca44583474243, type: 3}
+  m_Name: Male Torso 3
+  m_EditorClassIdentifier: 
+  itemIcon: {fileID: 21300000, guid: 9cb65ca64ef840247bb4ab3859016707, type: 3}
+  itemName: Male Torso 3
+  physicalDefense: 15
+  magicDefense: 5
+  fireDefense: 5
+  lightningDefense: 3.25
+  darkDefense: 5
+  isPurchased: 0
+  goldRequiredToPurchase: 550
+  torsoModelName: Male_Torso_3
+  upperLeftArmModelName: Chr_ArmUpperLeft_Male_16
+  upperRightArmModelName: Chr_ArmUpperRight_Male_16

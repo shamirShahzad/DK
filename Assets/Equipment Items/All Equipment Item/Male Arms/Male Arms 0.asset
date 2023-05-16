@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ad327e47e9a9afd489522ae108cc86b8, type: 3}
   m_Name: Male Arms 0
   m_EditorClassIdentifier: 
-  itemIcon: {fileID: 21300000, guid: d01f621487244b942ae779c9f1603ea3, type: 3}
+  itemIcon: {fileID: 21300000, guid: 1dc52b374c8424bbea781e1b4dfd6cf0, type: 3}
   itemName: Male Arms 0
   physicalDefense: 0
   magicDefense: 0
@@ -23,5 +23,5 @@ MonoBehaviour:
   goldRequiredToPurchase: 0
   leftHandModelName: Chr_HandLeft_Male_00
   rightHandModelName: Chr_HandRight_Male_00
-  lowerLeftArmModelName: Chr_LowerArmLeft_Male_00
-  lowerRightArmModelName: Chr_LowerArmRight_Male_00
+  lowerLeftArmModelName: Chr_ArmLowerLeft_Male_00
+  lowerRightArmModelName: Chr_ArmLowerRight_Male_00

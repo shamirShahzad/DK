@@ -19,7 +19,7 @@ MonoBehaviour:
   fireDefense: 4
   lightningDefense: 4
   darkDefense: 10
-  isPurchased: 0
+  isPurchased: 1
   goldRequiredToPurchase: 500
   leftHandModelName: Chr_HandLeft_Male_11
   rightHandModelName: Chr_HandLeft_Male_11

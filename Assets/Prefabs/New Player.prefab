@@ -70132,6 +70132,62 @@ MonoBehaviour:
   - {fileID: 11400000, guid: a7ed8bd4ea0b167479250c79a4b094cc, type: 2}
   - {fileID: 11400000, guid: eb678dd81a05ef740b098444cce7c984, type: 2}
   - {fileID: 11400000, guid: d9e2817af1b36af43961cb59847426b8, type: 2}
+  armsInventory:
+  - {fileID: 11400000, guid: 0f2e2d5c2bbe85f4da2f2141cd25951b, type: 2}
+  - {fileID: 11400000, guid: 5bba3538b09604942a55ee412e87da2d, type: 2}
+  - {fileID: 11400000, guid: d4be990da9b8ff848814612b474d9b54, type: 2}
+  - {fileID: 11400000, guid: ad657d4f2368ba042822abfa2f79ed90, type: 2}
+  - {fileID: 11400000, guid: 167a9bffdda3122449a1782f34df2ae2, type: 2}
+  - {fileID: 11400000, guid: 459e37f413b005f46849ea340bec570b, type: 2}
+  - {fileID: 11400000, guid: cb0e6e4df2362e34ea6aa78280b02210, type: 2}
+  - {fileID: 11400000, guid: 2097ba663a45e2d49bcf593bc0dff9bd, type: 2}
+  - {fileID: 11400000, guid: c914984a8257dac4394cbc08a664d709, type: 2}
+  - {fileID: 11400000, guid: 716137171f0d62a4682c63c494bf1c31, type: 2}
+  - {fileID: 11400000, guid: 05d9810acb40fbb459edf7a235189cf8, type: 2}
+  - {fileID: 11400000, guid: 22de085663b90ba4aab8e7ca01afd47a, type: 2}
+  torsoInventory:
+  - {fileID: 11400000, guid: 2977c8b41c5178846ad5bdb34963904c, type: 2}
+  - {fileID: 11400000, guid: 6db177b75dd210d47812fc46bc567c9b, type: 2}
+  - {fileID: 11400000, guid: 3ad65c8a0404328498ee32124752ad32, type: 2}
+  - {fileID: 11400000, guid: 20357e5b20f06314cb42a83e7c1f38ba, type: 2}
+  - {fileID: 11400000, guid: 6f671d4d571f78641a94b81b4df34043, type: 2}
+  - {fileID: 11400000, guid: 4bbccac860c015240b6b693f67b31733, type: 2}
+  - {fileID: 11400000, guid: dc09766f9aa8d5642943e2be91e8ffdf, type: 2}
+  - {fileID: 11400000, guid: 624b6b6a983872546b3478e576339260, type: 2}
+  - {fileID: 11400000, guid: 9c4f102e8be1f9a4f86310be2f51e2e8, type: 2}
+  - {fileID: 11400000, guid: 142c03e0bb4fd274e8a26739495be295, type: 2}
+  - {fileID: 11400000, guid: 8fe20aa85ff1c6d4290582ca02a13cea, type: 2}
+  - {fileID: 11400000, guid: 91bd152c28541f447a3865ebb823aa2b, type: 2}
+  - {fileID: 11400000, guid: 2f1eb8ed60f98b342bda83ae670ccfef, type: 2}
+  - {fileID: 11400000, guid: a2dd255651a2b3b4b9fa19737780951b, type: 2}
+  - {fileID: 11400000, guid: d198d712e7f3a40418e9631a96cc84d5, type: 2}
+  - {fileID: 11400000, guid: 5fb4a071b98c05f47b21f6fea2dc288a, type: 2}
+  - {fileID: 11400000, guid: cae44e6217d56c9499016f6f6cd8d62e, type: 2}
+  - {fileID: 11400000, guid: 4ca6a16120f2e1447b38b462249ba3ba, type: 2}
+  - {fileID: 11400000, guid: ac1b56e48a3ac874e869573e366d10f7, type: 2}
+  - {fileID: 11400000, guid: 1d6d36cfdd422b844a3d33b3b1f4ea49, type: 2}
+  - {fileID: 11400000, guid: b7fe48ce6cf552f438651895a3537503, type: 2}
+  - {fileID: 11400000, guid: bf522ca5d326a0a45b545ecbf6fdc42f, type: 2}
+  - {fileID: 11400000, guid: 1fa3958d4d598ae4baec9818af309c97, type: 2}
+  - {fileID: 11400000, guid: 67f79c1dd7f99df4cb4e7f824e616d02, type: 2}
+  legInventory:
+  - {fileID: 11400000, guid: 212e1b37a15deac47a6f53109ac97bb4, type: 2}
+  - {fileID: 11400000, guid: 0571050afad41e74dbdf065d5a5f7c88, type: 2}
+  - {fileID: 11400000, guid: 20c9c97f5eab3b549a4811afe4269bed, type: 2}
+  - {fileID: 11400000, guid: 2878ddabbf4aeff4595dd05693030212, type: 2}
+  - {fileID: 11400000, guid: 3e13af7a2f4934a44984d175b2f0c1bf, type: 2}
+  - {fileID: 11400000, guid: 6f62aadaf5421e748a179612bda9b222, type: 2}
+  - {fileID: 11400000, guid: 6f62aadaf5421e748a179612bda9b222, type: 2}
+  - {fileID: 11400000, guid: a769c86b07a4fec4c9601ff2187b1fd3, type: 2}
+  - {fileID: 11400000, guid: 30006b953184b63408c424c92fa4d9f3, type: 2}
+  - {fileID: 11400000, guid: 0b1273a346dcbdb48bdf4f3c9d4aefa3, type: 2}
+  - {fileID: 11400000, guid: 1fa70c724ba8ab34bb5eb6ae065fe966, type: 2}
+  - {fileID: 11400000, guid: 470b0cc0cf6ee8a4dbeaf120a5e25b8a, type: 2}
+  - {fileID: 11400000, guid: e23b0ee97bac07b4a88550611ef97c31, type: 2}
+  - {fileID: 11400000, guid: b299e3bd2747f5042a8e61d14b6955e0, type: 2}
+  - {fileID: 11400000, guid: 4c283e18f8b4bdc4cac76e50d28dfff2, type: 2}
+  - {fileID: 11400000, guid: 219c7fb2754f1a44eb676b64627aabde, type: 2}
+  - {fileID: 11400000, guid: 5fd564ea86650df4cbb15b0529b31b2b, type: 2}
 --- !u!114 &5161199277288787833
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -70259,6 +70315,10 @@ MonoBehaviour:
   defaultEyebrow: {fileID: 811685260634502934}
   defaultHair: {fileID: 811428726809845982}
   defaultFacial: {fileID: 810697572624279536}
+  helmetIndexInPrefs: 0
+  armsIndexInPrefs: 0
+  torsoIndexInPrefs: 0
+  legEquipmentInPrefs: 0
 --- !u!114 &5161199277288787844
 MonoBehaviour:
   m_ObjectHideFlags: 0

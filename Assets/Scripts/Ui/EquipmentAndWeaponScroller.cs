@@ -14,11 +14,6 @@ namespace DK
         public Button buttonbackward;
         public Button selectButton;
 
-        [Header("Equipment Ui Images")]
-        public Image helmetImageInEquipmentUI;
-        public Image torsoImageInEquipmentUI;
-        public Image legsImageInEquipmentUI;
-        public Image armsImageInEquipmentUI;
 
         [SerializeField]
         List<EquipmentItem> ownedEquipmentItems = new List<EquipmentItem>();
@@ -95,36 +90,38 @@ namespace DK
             }
 
             displayImage.sprite = ownedEquipmentItems[currentIndex].itemIcon;
-            displayImage.preserveAspect = true;
+                displayImage.preserveAspect = true;
+            
         }
 
         public void Select()
         {
             if (equipmentUI.isHelmet)
             {
-                helmetImageInEquipmentUI.preserveAspect = true;
-                helmetImageInEquipmentUI.enabled = true;
-                helmetImageInEquipmentUI.sprite = ownedEquipmentItems[currentIndex].itemIcon;
+                equipmentUI.helmetImageInEquipmentUI.preserveAspect = true;
+                equipmentUI.helmetImageInEquipmentUI.enabled = true;
+                equipmentUI.helmetImageInEquipmentUI.sprite = ownedEquipmentItems[currentIndex].itemIcon;
             }
             if (equipmentUI.isTorso)
             {
-                torsoImageInEquipmentUI.preserveAspect = true;
-                torsoImageInEquipmentUI.enabled = true;
-                torsoImageInEquipmentUI.sprite = ownedEquipmentItems[currentIndex].itemIcon;
+                equipmentUI.torsoImageInEquipmentUI.preserveAspect = true;
+                equipmentUI.torsoImageInEquipmentUI.enabled = true;
+                equipmentUI.torsoImageInEquipmentUI.sprite = ownedEquipmentItems[currentIndex].itemIcon;
             }
             if (equipmentUI.isArms)
             {
-                armsImageInEquipmentUI.preserveAspect = true;
-                armsImageInEquipmentUI.enabled = true;
-                armsImageInEquipmentUI.sprite = ownedEquipmentItems[currentIndex].itemIcon;
+                equipmentUI.armsImageInEquipmentUI.preserveAspect = true;
+                equipmentUI.armsImageInEquipmentUI.enabled = true;
+                equipmentUI.armsImageInEquipmentUI.sprite = ownedEquipmentItems[currentIndex].itemIcon;
             }
             if (equipmentUI.isLegs)
             {
-                legsImageInEquipmentUI.preserveAspect = true;
-                legsImageInEquipmentUI.enabled = true;
-                legsImageInEquipmentUI.sprite = ownedEquipmentItems[currentIndex].itemIcon;
+                equipmentUI.legsImageInEquipmentUI.preserveAspect = true;
+                equipmentUI.legsImageInEquipmentUI.enabled = true;
+                equipmentUI.legsImageInEquipmentUI.sprite = ownedEquipmentItems[currentIndex].itemIcon;
             }
             equipmentUI.equipmentItemName = ownedEquipmentItems[currentIndex].itemName;
+            //equipmentUI.SetStatusBars();
         }
 
         
@@ -133,5 +130,7 @@ namespace DK
         {
             ownedEquipmentItems.Clear();
         }
+
+        
     }
 }
