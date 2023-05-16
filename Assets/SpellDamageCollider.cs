@@ -33,7 +33,7 @@ namespace DK
                 spellTarget = collision.transform.GetComponent<CharacterStatsManager>();
                 if (spellTarget != null && spellTarget.teamIdNumber !=teamIdNumber)
                 {
-                    spellTarget.TakeDamage(0,fireDamage,currentDamageAnimation);
+                    spellTarget.TakeDamage(0,fireDamage,magicDamage,0,0,currentDamageAnimation);
                 }
                 hasCollded = true;
                 impactParticles = Instantiate(impactParticles, transform.position, Quaternion.FromToRotation(Vector3.up, impactNormal));

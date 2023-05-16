@@ -81,15 +81,15 @@ namespace DK
                     enemyFX.PlayBloodSplatterEffect(contactPoint);
                     if(enemyStats.totalPoiseDefense > poiseBreak)
                     {
-                        enemyStats.TakeDamageNoAnimation(physicalDamage,0);
+                        enemyStats.TakeDamageNoAnimation(physicalDamage,fireDamage,magicDamage,lightningDamage,darkDamage);
                     }
                     else
                     {
                         if(gameObject.tag == "Skeleton Sword")
                         {
-                            enemyStats.TakeDamage(physicalDamage,0, "Skeleton Hit");
+                            enemyStats.TakeDamage(physicalDamage,fireDamage,magicDamage,lightningDamage,darkDamage, "Skeleton Hit");
                         }
-                        enemyStats.TakeDamage(physicalDamage,0,currentDamageAnimation);
+                        enemyStats.TakeDamage(physicalDamage,fireDamage,magicDamage,lightningDamage,darkDamage,currentDamageAnimation);
                     }
                 }
             }
@@ -116,9 +116,18 @@ namespace DK
             {
                 float physicalDamageAfterBlock = physicalDamage - (physicalDamage * shield.blockingPhysicalDamageAbsorbtion) / 100;
                 float fireDamageAfterBlock = fireDamage - (fireDamage * shield.blockingFireDamageAbsorbtion) / 100;
+                float magicDamageAfterBlock = magicDamage - (magicDamage * shield.blockingMagicDamageAbsorbtion) / 100;
+                float lightningDamageAfterBlock = lightningDamage - (lightningDamage * shield.blockingLightningDamageAbsorbtion) / 100;
+                float darkDamageAfterBlock = darkDamage - (darkDamage * shield.blockingDarkDamageAbsorbtion) / 100;
                 if (characterStatsManager != null)
                 {
-                    characterStatsManager.TakeDamage(Mathf.RoundToInt(physicalDamageAfterBlock),Mathf.RoundToInt(fireDamageAfterBlock), "Block Hit");
+                    characterStatsManager.TakeDamage(
+                        Mathf.RoundToInt(physicalDamageAfterBlock),
+                        Mathf.RoundToInt(fireDamageAfterBlock),
+                        Mathf.RoundToInt(magicDamageAfterBlock),
+                        Mathf.RoundToInt(lightningDamageAfterBlock),
+                        Mathf.RoundToInt(darkDamageAfterBlock),
+                        "Block Hit");
                     shieldHasBeenHit = true;
                 }
             }

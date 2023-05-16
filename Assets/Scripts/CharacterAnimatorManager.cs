@@ -86,7 +86,7 @@ namespace DK
 
         public virtual void TakeCriticalDamageAnimationEvent()
         {
-            character.characterStatsManager.TakeDamageNoAnimation(character.pendingCriticalDamage,0);
+            character.characterStatsManager.TakeDamageNoAnimation(character.pendingCriticalDamage,0,0,0,0);
             character.pendingCriticalDamage = 0;
         }
 

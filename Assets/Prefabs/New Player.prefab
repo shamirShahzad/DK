@@ -69785,6 +69785,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   blockingBoxCollider: {fileID: 2554598859294813358}
   blockingPhysicalDamageAbsorbtion: 0
+  blockingFireDamageAbsorbtion: 0
+  blockingMagicDamageAbsorbtion: 0
+  blockingLightningDamageAbsorbtion: 0
+  blockingDarkDamageAbsorbtion: 0
 --- !u!65 &2554598859294813358
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -69991,7 +69995,6 @@ MonoBehaviour:
   comboFlag: 0
   rollInputTimer: 0
   criticalAttackRaycastStartPoint: {fileID: 2554598859002233727}
-  uIManager: {fileID: 0}
 --- !u!114 &2554598860014443785
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -70005,8 +70008,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveDirection: {x: 0, y: 0, z: 0}
-  myTransform: {fileID: 0}
-  playerAnimatorManager: {fileID: 0}
   rigidbody: {fileID: 0}
   normalCamera: {fileID: 0}
   groundDetectionRayStartPoint: 0.5
@@ -70039,6 +70040,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f824e1ec92be3a941834e4001e91c0a2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  characterAnimatorManager: {fileID: 0}
+  characterWeaponSlotManager: {fileID: 0}
+  characterStatsManager: {fileID: 0}
+  characterInventoryManager: {fileID: 0}
+  characterFXManager: {fileID: 0}
+  animator: {fileID: 0}
   lockOnTransform: {fileID: 2554598860078321446}
   backStabCollider: {fileID: 2554598858767375702}
   riposteCollider: {fileID: 2554598859260908107}
@@ -70054,6 +70061,7 @@ MonoBehaviour:
   isTwoHanding: 0
   isHoldingArrow: 0
   isAiming: 0
+  isDead: 0
   isRotatingWithRootMotion: 0
   canRotate: 0
   isSprinting: 0
@@ -70071,6 +70079,8 @@ MonoBehaviour:
   playerCombatManager: {fileID: 0}
   playerInventoryManager: {fileID: 0}
   playerEquipmentManager: {fileID: 0}
+  uIManager: {fileID: 0}
+  blockingCollider: {fileID: 0}
   interactableUiGameObject: {fileID: 0}
   itemInteractableGameobject: {fileID: 0}
   fogWallCollider: {fileID: 0}
@@ -70108,6 +70118,20 @@ MonoBehaviour:
   leftWeapon: {fileID: 0}
   currentAmmo: {fileID: 11400000, guid: 97a09df18203b414bbc3f51629b09888, type: 2}
   weaponsInventory: []
+  helmetInventory:
+  - {fileID: 11400000, guid: dbe89e1326e3f7b4fa389375936cb95c, type: 2}
+  - {fileID: 11400000, guid: 598cbf5c158b09f4ea2640952bf83c56, type: 2}
+  - {fileID: 11400000, guid: 2fe6ca9fa2f04ad45be9f58e52978666, type: 2}
+  - {fileID: 11400000, guid: 06c05c85186a97d4495562328b3bd236, type: 2}
+  - {fileID: 11400000, guid: 0d9bfb7170ab9644c95ca150eae0339a, type: 2}
+  - {fileID: 11400000, guid: 98f812a304bf4e04c8580ba033af8459, type: 2}
+  - {fileID: 11400000, guid: ac99ac2808985a54f94c769153a29c18, type: 2}
+  - {fileID: 11400000, guid: 4c18dc0e49e480d4890a390df033a457, type: 2}
+  - {fileID: 11400000, guid: fb65a6c78f3a09644bd01d24360410d8, type: 2}
+  - {fileID: 11400000, guid: 604ad55613685b648b1638637d6bb0ac, type: 2}
+  - {fileID: 11400000, guid: a7ed8bd4ea0b167479250c79a4b094cc, type: 2}
+  - {fileID: 11400000, guid: eb678dd81a05ef740b098444cce7c984, type: 2}
+  - {fileID: 11400000, guid: d9e2817af1b36af43961cb59847426b8, type: 2}
 --- !u!114 &5161199277288787833
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -70173,11 +70197,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bd201342ce422ab4db15d20f001d4a8a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  animator: {fileID: 0}
-  characterManager: {fileID: 0}
-  canRotate: 0
+  character: {fileID: 0}
   leftHandConstraint: {fileID: 1586937714}
   rightHandConstraint: {fileID: 1691386194}
+  player: {fileID: 0}
 --- !u!114 &5161199277288787834
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -70221,7 +70244,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2cc352ef432ded14f9db435e918fc8eb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  blockingCollider: {fileID: 2554598859294813357}
+  helmetModelChanger: {fileID: 0}
   nakedTorso: Male_Torso_0
   nakedHip: Male_Hips_0
   nakedLeftLeg: Male_LeftLeg_0
@@ -70248,18 +70271,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dff893d7a3341244ab84b59424c04e77, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  character: {fileID: 0}
   teamIdNumber: 0
-  healthLevel: 10
   maxHealth: 0
   currentHealth: 0
-  staminaLevel: 10
   maxStamina: 0
   currentStamina: 0
-  focusLevel: 10
   maxFocus: 0
   currentFocus: 0
   soulCount: 0
   soulsAwardedOnDeath: 50
+  playerLevel: 1
+  healthLevel: 10
+  staminaLevel: 10
+  focusLevel: 10
+  strengthLevel: 10
+  dexterityLevel: 10
+  poiseLevel: 10
+  intelligenceLevel: 10
+  faithLevel: 10
   totalPoiseDefense: 0
   offensivePoiseBonus: 0
   armorPoisebonus: 0
@@ -70269,7 +70299,33 @@ MonoBehaviour:
   physicalDamageAbsorbtionTorso: 0
   physicalDamageAbsorbtionLegs: 0
   physicalDamageAbsorbtionHands: 0
-  isDead: 0
+  magicDamageAbsorbtionHead: 0
+  magicDamageAbsorbtionTorso: 0
+  magicDamageAbsorbtionLegs: 0
+  magicDamageAbsorbtionHands: 0
+  fireDamageAbsorbtionHead: 0
+  fireDamageAbsorbtionTorso: 0
+  fireDamageAbsorbtionLegs: 0
+  fireDamageAbsorbtionHands: 0
+  lightningDamageAbsorbtionHead: 0
+  lightningDamageAbsorbtionTorso: 0
+  lightningDamageAbsorbtionLegs: 0
+  lightningDamageAbsorbtionHands: 0
+  darkDamageAbsorbtionHead: 0
+  darkDamageAbsorbtionTorso: 0
+  darkDamageAbsorbtionLegs: 0
+  darkDamageAbsorbtionHands: 0
+  playerLevelText: {fileID: 0}
+  PLAYER_LEVEL: Player_Level
+  HEALTH_LEVEL: HealthLevel
+  STAMINA_LEVEL: StaminaLevel
+  POISE_LEVEL: PoiseLevel
+  STRENGTH_LEVEL: StrengthLevel
+  DEXTERITY_LEVEL: DexterityLevel
+  INTELLIGENCE_LEVEL: IntelligenceLevel
+  FAITH_LEVEL: FaithLevel
+  FOCUS_LEVEL: FocusLevel
+  SOUL_COUNT: SoulCount
   hitCount: 0
   staminaRegenarationAmount: 25
   focusRegenarationAmount: 11

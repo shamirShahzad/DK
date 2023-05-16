@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0d47a9a921b9f4f459cb6c2a33d7ab9e, type: 3}
+  m_Name: Male Leg 3
+  m_EditorClassIdentifier: 
+  itemIcon: {fileID: 21300000, guid: 9ed9521d8b730a44c84c693a9c85096f, type: 3}
+  itemName: Male Leg 3
+  physicalDefense: 4
+  magicDefense: 7
+  fireDefense: 3
+  lightningDefense: 3
+  darkDefense: 2
+  isPurchased: 0
+  goldRequiredToPurchase: 510
+  hipModelName: Male_Hip_3
+  leftLegModelName: Male_RightLeg_4
+  rightLegModelName: Male_LeftLeg_4

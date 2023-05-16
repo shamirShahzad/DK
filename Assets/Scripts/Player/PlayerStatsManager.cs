@@ -143,9 +143,9 @@ namespace DK
         }
 
       
-        public override void TakeDamageNoAnimation(int physicalDamage,int fireDamage)
+        public override void TakeDamageNoAnimation(int physicalDamage,int fireDamage,int magicDamage,int lightningDamage,int darkDamage)
         {
-            base.TakeDamageNoAnimation(physicalDamage,fireDamage);
+            base.TakeDamageNoAnimation(physicalDamage,fireDamage,magicDamage,lightningDamage,darkDamage);
             healthBar.SetCurrentHealth(currentHealth);
             if (player.isDead)
             {
@@ -168,13 +168,13 @@ namespace DK
 
             }
         }
-        public override void TakeDamage(int physicalDamage,int fireDamage,string damageAnimation)
+        public override void TakeDamage(int physicalDamage,int fireDamage,int magicDamage,int lightningDamage,int darkDamage,string damageAnimation)
         {
             if (player.isInvulnerable)
             {
                 return;
             }
-            base.TakeDamage(physicalDamage, fireDamage, damageAnimation);
+            base.TakeDamage(physicalDamage, fireDamage,magicDamage,lightningDamage,darkDamage, damageAnimation);
             healthBar.SetCurrentHealth(currentHealth);
             player.playerAnimatorManager.PlayTargetAnimation(damageAnimation, true);
 

@@ -44,12 +44,12 @@ namespace DK
                     enemyFX.PlayBloodSplatterEffect(contactPoint);
                     if (enemyStats.totalPoiseDefense > poiseBreak)
                     {
-                        enemyStats.TakeDamageNoAnimation(physicalDamage,fireDamage);
+                        enemyStats.TakeDamageNoAnimation(physicalDamage,fireDamage,magicDamage,lightningDamage,darkDamage);
                     }
                     else
                     {
 
-                        enemyStats.TakeDamage(physicalDamage,fireDamage, currentDamageAnimation);
+                        enemyStats.TakeDamage(physicalDamage,fireDamage,magicDamage,lightningDamage,darkDamage, currentDamageAnimation);
                     }
                 }
             }

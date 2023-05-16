@@ -5,5 +5,6 @@ namespace DK
     public class PlayerInventoryManager : CharacterInventoryManager
     {
         public List<WeaponItem> weaponsInventory;
+        public List<HelmetEquipment> helmetInventory;
     }
 }

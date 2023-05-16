@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ad327e47e9a9afd489522ae108cc86b8, type: 3}
+  m_Name: Male Arms 3
+  m_EditorClassIdentifier: 
+  itemIcon: {fileID: 21300000, guid: 5086bd782a9636b45b77dfaff198679e, type: 3}
+  itemName: Male Arms 3
+  physicalDefense: 7
+  magicDefense: 3
+  fireDefense: 1
+  lightningDefense: 2
+  darkDefense: 8
+  isPurchased: 0
+  goldRequiredToPurchase: 450
+  leftHandModelName: Chr_HandLeft_Male_01
+  rightHandModelName: Chr_HandRight_Male_01
+  lowerLeftArmModelName: Chr_ArmLowerLeft_Male_04
+  lowerRightArmModelName: Chr_ArmLowerRight_Male_04

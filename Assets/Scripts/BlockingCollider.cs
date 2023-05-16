@@ -9,6 +9,9 @@ namespace DK
 
         public float blockingPhysicalDamageAbsorbtion;
         public float blockingFireDamageAbsorbtion;
+        public float blockingMagicDamageAbsorbtion;
+        public float blockingLightningDamageAbsorbtion;
+        public float blockingDarkDamageAbsorbtion;
 
         private void Awake()
         {

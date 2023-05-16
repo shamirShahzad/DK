@@ -8,6 +8,10 @@ namespace DK
     {
         [Header("Defense bonuses")]
         public float physicalDefense;
+        public float magicDefense;
+        public float fireDefense;
+        public float lightningDefense;
+        public float darkDefense;
 
 
         [Header("Shop Specific Checks")]

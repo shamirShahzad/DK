@@ -51,10 +51,27 @@ namespace DK
         public float physicalDamageAbsorbtionLegs;
         public float physicalDamageAbsorbtionHands;
 
+        public float magicDamageAbsorbtionHead;
+        public float magicDamageAbsorbtionTorso;
+        public float magicDamageAbsorbtionLegs;
+        public float magicDamageAbsorbtionHands;
+
         public float fireDamageAbsorbtionHead;
         public float fireDamageAbsorbtionTorso;
         public float fireDamageAbsorbtionLegs;
         public float fireDamageAbsorbtionHands;
+
+        public float lightningDamageAbsorbtionHead;
+        public float lightningDamageAbsorbtionTorso;
+        public float lightningDamageAbsorbtionLegs;
+        public float lightningDamageAbsorbtionHands;
+
+        public float darkDamageAbsorbtionHead;
+        public float darkDamageAbsorbtionTorso;
+        public float darkDamageAbsorbtionLegs;
+        public float darkDamageAbsorbtionHands;
+
+
 
 
         protected virtual void Awake()
@@ -73,7 +90,7 @@ namespace DK
             totalPoiseDefense = armorPoisebonus;
         }
 
-        public virtual void TakeDamage(int physicalDamage,int fireDamage, string damageAnimation)
+        public virtual void TakeDamage(int physicalDamage,int fireDamage,int magicDamage,int lightningDamage,int darkDamage, string damageAnimation)
         {
             if (character.isDead)
                 return;
@@ -95,7 +112,29 @@ namespace DK
 
             fireDamage = Mathf.RoundToInt(fireDamage - (fireDamage * totalFireDamageAbsorbtion));
 
-            float finalDamage = physicalDamage * fireDamage;
+            float totalmagicDamageAbsorbtion =
+                1 - (1 - magicDamageAbsorbtionHead / 100) *
+                (1 - magicDamageAbsorbtionTorso / 100) *
+                (1 - magicDamageAbsorbtionLegs / 100) *
+                (1 - magicDamageAbsorbtionHands / 100);
+            magicDamage = Mathf.RoundToInt(magicDamage  - (magicDamage * totalmagicDamageAbsorbtion));
+
+            float totalLightningDamageAbsrbtion =
+                1 - (1 - lightningDamageAbsorbtionHead / 100) *
+                (1 - lightningDamageAbsorbtionTorso / 100) *
+                (1 - lightningDamageAbsorbtionLegs / 100) *
+                (1 - lightningDamageAbsorbtionHands / 100);
+            lightningDamage = Mathf.RoundToInt(lightningDamage - (lightningDamage * totalLightningDamageAbsrbtion));
+
+            float totalDarkDamageAbsorbtion =
+                1 - (1 - darkDamageAbsorbtionHead / 100) *
+                (1 - darkDamageAbsorbtionTorso / 100) *
+                (1 - darkDamageAbsorbtionLegs / 100) *
+                (1 - darkDamageAbsorbtionHands / 100);
+
+            darkDamage = Mathf.RoundToInt(darkDamage - (darkDamage * totalDarkDamageAbsorbtion));
+
+            float finalDamage = physicalDamage * fireDamage *magicDamage * lightningDamage * darkDamage;
 
             
 
@@ -107,7 +146,7 @@ namespace DK
             }
         }
 
-        public virtual void TakeDamageNoAnimation(int physicalDamage,int fireDamage)
+        public virtual void TakeDamageNoAnimation(int physicalDamage,int fireDamage,int magicDamage,int lightningDamage,int darkDamage)
         {
             if (character.isDead)
                 return;
@@ -129,8 +168,29 @@ namespace DK
 
             fireDamage = Mathf.RoundToInt(fireDamage - (fireDamage * totalFireDamageAbsorbtion));
 
-            float finalDamage = physicalDamage * fireDamage;
+            float totalmagicDamageAbsorbtion =
+                1 - (1 - magicDamageAbsorbtionHead / 100) *
+                (1 - magicDamageAbsorbtionTorso / 100) *
+                (1 - magicDamageAbsorbtionLegs / 100) *
+                (1 - magicDamageAbsorbtionHands / 100);
+            magicDamage = Mathf.RoundToInt(magicDamage - (magicDamage * totalmagicDamageAbsorbtion));
 
+            float totalLightningDamageAbsrbtion =
+                1 - (1 - lightningDamageAbsorbtionHead / 100) *
+                (1 - lightningDamageAbsorbtionTorso / 100) *
+                (1 - lightningDamageAbsorbtionLegs / 100) *
+                (1 - lightningDamageAbsorbtionHands / 100);
+            lightningDamage = Mathf.RoundToInt(lightningDamage - (lightningDamage * totalLightningDamageAbsrbtion));
+
+            float totalDarkDamageAbsorbtion =
+                1 - (1 - darkDamageAbsorbtionHead / 100) *
+                (1 - darkDamageAbsorbtionTorso / 100) *
+                (1 - darkDamageAbsorbtionLegs / 100) *
+                (1 - darkDamageAbsorbtionHands / 100);
+
+            darkDamage = Mathf.RoundToInt(darkDamage - (darkDamage * totalDarkDamageAbsorbtion));
+
+            float finalDamage = physicalDamage * fireDamage * magicDamage * lightningDamage * darkDamage;
 
 
             currentHealth = Mathf.RoundToInt(currentHealth - finalDamage);

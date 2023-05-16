@@ -5,6 +5,14 @@ namespace DK
 {
     public class PlayerEquipmentManager : MonoBehaviour
     {
+        [HideInInspector]
+        public static string HELMET_INDEX = "HelmetIndex";
+        public static string ARMS_INDEX = "ArmsIndex";
+        public static string TORSO_INDEX = "TorsoIndex";
+        public static string LEGS_INDEX = "LegIndex";
+
+
+
         PlayerManager player;
         [Header("Equipment Model Changer")]
         [SerializeField]
@@ -54,19 +62,29 @@ namespace DK
         {
             EquipAllEquipmentItemsOnStart();
         }
-
+        private void InitialisePlayerPrefs() 
+        {
+            PlayerPrefs.SetInt(HELMET_INDEX, -1);
+            PlayerPrefs.SetInt(ARMS_INDEX, -1);
+            PlayerPrefs.SetInt(TORSO_INDEX, -1);
+            PlayerPrefs.SetInt(LEGS_INDEX, -1);
+        }
         public void EquipAllEquipmentItemsOnStart()
         {
             //HElMET
             helmetModelChanger.UnequipAllHelmetModels();
-            if (player.playerInventoryManager.currentHelmetEquipment != null)
+            if (player.playerInventoryManager.helmetInventory != null && PlayerPrefs.GetInt("HelmetIndex")!=-1)
             {
                 defaultHead.SetActive(false);
                 defaultEyebrow.SetActive(false);
                 defaultFacial.SetActive(false);
                 defaultHair.SetActive(false);
-                helmetModelChanger.EquipHelmetModelByName(player.playerInventoryManager.currentHelmetEquipment.helmetModelName);
+                helmetModelChanger.EquipHelmetModelByName(player.playerInventoryManager.helmetInventory[PlayerPrefs.GetInt("HelmetIndex")].helmetModelName);
                 player.playerStatsManager.physicalDamageAbsorbtionHead = player.playerInventoryManager.currentHelmetEquipment.physicalDefense;
+                player.playerStatsManager.magicDamageAbsorbtionHead = player.playerInventoryManager.currentHelmetEquipment.magicDefense;
+                player.playerStatsManager.fireDamageAbsorbtionHead = player.playerInventoryManager.currentHelmetEquipment.fireDefense;
+                player.playerStatsManager.lightningDamageAbsorbtionHead = player.playerInventoryManager.currentHelmetEquipment.lightningDefense;
+                player.playerStatsManager.darkDamageAbsorbtionHead = player.playerInventoryManager.currentHelmetEquipment.darkDefense;
             }
             else
             {
@@ -75,6 +93,10 @@ namespace DK
                 defaultFacial.SetActive(true);
                 defaultHair.SetActive(true);
                 player.playerStatsManager.physicalDamageAbsorbtionHead = 0;
+                player.playerStatsManager.fireDamageAbsorbtionHead = 0;
+                player.playerStatsManager.magicDamageAbsorbtionHead = 0;
+                player.playerStatsManager.lightningDamageAbsorbtionHead = 0;
+                player.playerStatsManager.darkDamageAbsorbtionHead = 0;
             }
             //TORSO, UPPER ARM
             torsoModelChanger.UnequipAllTorsoModels();
@@ -86,6 +108,10 @@ namespace DK
                 upperArmLeftModelChanger.EquipUpperLeftArmModelByName(player.playerInventoryManager.currentTorsoEquipment.upperLeftArmModelName);
                 upperArmRightModelChanger.EquipUpperRightArmModelByName(player.playerInventoryManager.currentTorsoEquipment.upperRightArmModelName);
                 player.playerStatsManager.physicalDamageAbsorbtionTorso = player.playerInventoryManager.currentTorsoEquipment.physicalDefense;
+                player.playerStatsManager.magicDamageAbsorbtionTorso = player.playerInventoryManager.currentTorsoEquipment.magicDefense;
+                player.playerStatsManager.fireDamageAbsorbtionTorso = player.playerInventoryManager.currentTorsoEquipment.fireDefense;
+                player.playerStatsManager.lightningDamageAbsorbtionTorso = player.playerInventoryManager.currentTorsoEquipment.lightningDefense;
+                player.playerStatsManager.darkDamageAbsorbtionTorso = player.playerInventoryManager.currentTorsoEquipment.darkDefense;
             }
             else
             {
@@ -93,6 +119,10 @@ namespace DK
                 upperArmLeftModelChanger.EquipUpperLeftArmModelByName(nakedUpperLeftArm);
                 upperArmRightModelChanger.EquipUpperRightArmModelByName(nakedUpperRightArm);
                 player.playerStatsManager.physicalDamageAbsorbtionTorso = 0;
+                player.playerStatsManager.magicDamageAbsorbtionTorso = 0;
+                player.playerStatsManager.fireDamageAbsorbtionTorso = 0;
+                player.playerStatsManager.lightningDamageAbsorbtionTorso = 0;
+                player.playerStatsManager.darkDamageAbsorbtionTorso = 0;
             }
             //HIP LEGS
             hipModelChanger.UnequipAllHipModels();
@@ -105,6 +135,10 @@ namespace DK
                 leftLegModelChanger.EquipLeftLegModelByName(player.playerInventoryManager.currentLegEquipment.leftLegModelName);
                 rightLegModelChanger.EquipRightLegModelByName(player.playerInventoryManager.currentLegEquipment.rightLegModelName);
                 player.playerStatsManager.physicalDamageAbsorbtionLegs = player.playerInventoryManager.currentLegEquipment.physicalDefense;
+                player.playerStatsManager.magicDamageAbsorbtionLegs = player.playerInventoryManager.currentLegEquipment.magicDefense;
+                player.playerStatsManager.fireDamageAbsorbtionLegs = player.playerInventoryManager.currentLegEquipment.fireDefense;
+                player.playerStatsManager.lightningDamageAbsorbtionLegs = player.playerInventoryManager.currentLegEquipment.lightningDefense;
+                player.playerStatsManager.darkDamageAbsorbtionLegs = player.playerInventoryManager.currentLegEquipment.darkDefense;
             }
             else
             {
@@ -112,6 +146,10 @@ namespace DK
                 leftLegModelChanger.EquipLeftLegModelByName(nakedLeftLeg);
                 rightLegModelChanger.EquipRightLegModelByName(nakedRightLeg);
                 player.playerStatsManager.physicalDamageAbsorbtionLegs = 0;
+                player.playerStatsManager.magicDamageAbsorbtionLegs = 0;
+                player.playerStatsManager.fireDamageAbsorbtionLegs = 0;
+                player.playerStatsManager.lightningDamageAbsorbtionLegs = 0;
+                player.playerStatsManager.darkDamageAbsorbtionLegs = 0;
             }
             //HAND LOWER ARM
             rightHandModelChanger.UnequipAllRightHandModels();
@@ -125,6 +163,10 @@ namespace DK
                 leftHandModelChanger.EquipLeftHandModelByName(player.playerInventoryManager.currentHandEquipment.leftHandModelName);
                 lowerArmLeftModelChanger.EquipLowerLeftArmModelByName(player.playerInventoryManager.currentHandEquipment.lowerLeftArmModelName);
                 player.playerStatsManager.physicalDamageAbsorbtionHands = player.playerInventoryManager.currentHandEquipment.physicalDefense;
+                player.playerStatsManager.magicDamageAbsorbtionHands = player.playerInventoryManager.currentHandEquipment.magicDefense;
+                player.playerStatsManager.fireDamageAbsorbtionHands = player.playerInventoryManager.currentHandEquipment.fireDefense;
+                player.playerStatsManager.lightningDamageAbsorbtionHands = player.playerInventoryManager.currentHandEquipment.lightningDefense;
+                player.playerStatsManager.darkDamageAbsorbtionHands = player.playerInventoryManager.currentHandEquipment.darkDefense;
             }
             else
             {
@@ -133,6 +175,10 @@ namespace DK
                 leftHandModelChanger.EquipLeftHandModelByName(nakedLeftHand);
                 lowerArmLeftModelChanger.EquipLowerLeftArmModelByName(nakedLowerLeftArm);
                 player.playerStatsManager.physicalDamageAbsorbtionHands = 0;
+                player.playerStatsManager.magicDamageAbsorbtionHands = 0;
+                player.playerStatsManager.fireDamageAbsorbtionHands = 0;
+                player.playerStatsManager.lightningDamageAbsorbtionHands = 0;
+                player.playerStatsManager.darkDamageAbsorbtionHands = 0;
             }
             
         }
