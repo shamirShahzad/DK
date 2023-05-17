@@ -5094,7 +5094,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   characterManager: {fileID: 0}
   physicalDamage: 8
+  fireDamage: 0
+  magicDamage: 0
+  lightningDamage: 0
+  darkDamage: 0
   enableOnstartup: 0
   teamIdNumber: 1
-  poiseBreak: 0
+  poiseBreak: 100
   offensivePoiseBonus: 0

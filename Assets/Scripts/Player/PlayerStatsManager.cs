@@ -181,7 +181,6 @@ namespace DK
             if(currentHealth <=0)
             {
                 player.isDead = true;
-
                 currentHealth = 0;
                 player.playerAnimatorManager.PlayTargetAnimation("Death", true);
                 

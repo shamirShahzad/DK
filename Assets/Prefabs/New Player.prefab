@@ -24,7 +24,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 188501713}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 1.24}
+  m_LocalPosition: {x: 0, y: 0, z: 1.9}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -26503,7 +26503,7 @@ GameObject:
   - component: {fileID: 811011089889567889}
   m_Layer: 11
   m_Name: Spine_01
-  m_TagString: Player
+  m_TagString: Character
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -26534,10 +26534,10 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  m_Radius: 18.540648
+  m_Radius: 30.504807
   m_Height: 133.01108
   m_Direction: 0
-  m_Center: {x: -18.56852, y: 0.0000014349442, z: -0.18771201}
+  m_Center: {x: -18.56852, y: 0.0000019126826, z: 2.883801}
 --- !u!1 &811011404567684476
 GameObject:
   m_ObjectHideFlags: 0
@@ -70100,7 +70100,7 @@ MonoBehaviour:
   currentItemBeingUsed: {fileID: 0}
   weaponItemsRight:
   - {fileID: 11400000, guid: 2035fcc6b5e5956428f3213594734d88, type: 2}
-  - {fileID: 11400000, guid: a404a8288789d5e45aca00b24d8dd057, type: 2}
+  - {fileID: 11400000, guid: 69ae6967547257341ba37b25fe3d6b3f, type: 2}
   - {fileID: 11400000, guid: 69ae6967547257341ba37b25fe3d6b3f, type: 2}
   weaponItemsLeft:
   - {fileID: 11400000, guid: 69ae6967547257341ba37b25fe3d6b3f, type: 2}

@@ -134,7 +134,7 @@ namespace DK
 
             darkDamage = Mathf.RoundToInt(darkDamage - (darkDamage * totalDarkDamageAbsorbtion));
 
-            float finalDamage = physicalDamage * fireDamage *magicDamage * lightningDamage * darkDamage;
+            float finalDamage = physicalDamage + fireDamage + magicDamage + lightningDamage + darkDamage;
 
             
 
@@ -190,9 +190,9 @@ namespace DK
 
             darkDamage = Mathf.RoundToInt(darkDamage - (darkDamage * totalDarkDamageAbsorbtion));
 
-            float finalDamage = physicalDamage * fireDamage * magicDamage * lightningDamage * darkDamage;
+            float finalDamage = physicalDamage + fireDamage + magicDamage + lightningDamage + darkDamage;
 
-
+            Debug.Log("Final Damage:"+finalDamage);
             currentHealth = Mathf.RoundToInt(currentHealth - finalDamage);
             if (currentHealth <= 0)
             {

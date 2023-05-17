@@ -8,6 +8,7 @@ namespace DK
 
         public CharacterManager characterManager;
         protected Collider damageCollider;
+        public CharacterManager enemyManager;
         [Header("Damages")]
         public int physicalDamage = 8;
         public int fireDamage;
@@ -53,7 +54,7 @@ namespace DK
                 shieldHasBeenHit = false;
                 hasBeenParried = false;
                 CharacterStatsManager enemyStats = collision.GetComponent<CharacterStatsManager>();
-                CharacterManager enemyManager = collision.GetComponent<CharacterManager>();
+                enemyManager = collision.GetComponent<CharacterManager>();
                 CharacterFXManager enemyFX = collision.GetComponent<CharacterFXManager>();
                 BlockingCollider shield = collision.transform.GetComponentInChildren<BlockingCollider>();
 
@@ -90,6 +91,56 @@ namespace DK
                             enemyStats.TakeDamage(physicalDamage,fireDamage,magicDamage,lightningDamage,darkDamage, "Skeleton Hit");
                         }
                         enemyStats.TakeDamage(physicalDamage,fireDamage,magicDamage,lightningDamage,darkDamage,currentDamageAnimation);
+                    }
+                }
+            }
+            if (collision.tag == "Player")
+            {
+                shieldHasBeenHit = false;
+                hasBeenParried = false;
+                CharacterStatsManager enemyStats = collision.GetComponentInParent<CharacterStatsManager>();
+                enemyManager = collision.GetComponentInParent<CharacterManager>();
+                CharacterFXManager enemyFX = collision.GetComponentInParent<CharacterFXManager>();
+                BlockingCollider shield = collision.transform.GetComponentInParent<BlockingCollider>();
+
+                if(shield== null)
+                {
+                    Debug.Log("SHIELD NOT FOUND");
+                }
+
+                if (enemyManager != null)
+                {
+                    if (enemyStats.teamIdNumber == teamIdNumber)
+                        return;
+                    CheckForParry(enemyManager);
+                    CheckForBlock(enemyManager, shield, enemyStats);
+
+                }
+                if (enemyStats != null)
+                {
+                    if (enemyStats.teamIdNumber == teamIdNumber || enemyManager.isDead)
+                        return;
+                    if (hasBeenParried)
+                        return;
+                    if (shieldHasBeenHit)
+                        return;
+                    enemyStats.poiseResetTimer = enemyStats.totalPoiseResetTime;
+                    enemyStats.totalPoiseDefense -= poiseBreak;
+                    Vector3 contactPoint = collision.gameObject.GetComponent<Collider>().ClosestPointOnBounds(transform.position);
+                    float directionHitFrom = (Vector3.SignedAngle(characterManager.transform.forward, enemyManager.transform.forward, Vector3.up));
+                    ChooseWhichDirectionDamageCameFrom(directionHitFrom);
+                    enemyFX.PlayBloodSplatterEffect(contactPoint);
+                    if (enemyStats.totalPoiseDefense > poiseBreak)
+                    {
+                        enemyStats.TakeDamageNoAnimation(physicalDamage, fireDamage, magicDamage, lightningDamage, darkDamage);
+                    }
+                    else
+                    {
+                        if (gameObject.tag == "Skeleton Sword")
+                        {
+                            enemyStats.TakeDamage(physicalDamage, fireDamage, magicDamage, lightningDamage, darkDamage, "Skeleton Hit");
+                        }
+                        enemyStats.TakeDamage(physicalDamage, fireDamage, magicDamage, lightningDamage, darkDamage, currentDamageAnimation);
                     }
                 }
             }

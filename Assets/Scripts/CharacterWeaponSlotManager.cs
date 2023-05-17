@@ -120,6 +120,9 @@ namespace DK
             leftDamageCollider = leftHandSlot.currentWeaponModel.GetComponentInChildren<DamageCollider>();
             leftDamageCollider.physicalDamage = character.characterInventoryManager.leftWeapon.physicalDamage;
             leftDamageCollider.fireDamage = character.characterInventoryManager.leftWeapon.fireDamage;
+            leftDamageCollider.magicDamage = 0;//add Damage Types to weapons make sure they are 1 otherwise no damage will be applied
+            leftDamageCollider.lightningDamage = 0;//add Damage Types to weapons make sure they are 1 otherwise no damage will be applied
+            leftDamageCollider.darkDamage = 0;//add Damage Types to weapons make sure they are 1 otherwise no damage will be applied
             leftDamageCollider.characterManager = character;
             leftDamageCollider.poiseBreak = character.characterInventoryManager.leftWeapon.poiseBreak;
             leftDamageCollider.teamIdNumber = character.characterStatsManager.teamIdNumber;
@@ -133,6 +136,9 @@ namespace DK
                 rightDamageCollider = rightHandSlot.currentWeaponModel.GetComponentInChildren<DamageCollider>();
                 rightDamageCollider.physicalDamage = character.characterInventoryManager.rightWeapon.physicalDamage;
                 rightDamageCollider.fireDamage = character.characterInventoryManager.rightWeapon.fireDamage;
+                rightDamageCollider.magicDamage = 0;//add Damage Types to weapons make sure they are 1 otherwise no damage will be applied
+                rightDamageCollider.lightningDamage = 0;//add Damage Types to weapons make sure they are 1 otherwise no damage will be applied
+                rightDamageCollider.darkDamage = 0;//add Damage Types to weapons make sure they are 1 otherwise no damage will be applied
                 rightDamageCollider.characterManager = character;
                 rightDamageCollider.poiseBreak = character.characterInventoryManager.rightWeapon.poiseBreak;
                 rightDamageCollider.teamIdNumber = character.characterStatsManager.teamIdNumber;
