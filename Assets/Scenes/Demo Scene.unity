@@ -1661,8 +1661,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1272465758}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 10.095316, y: 3.1517766, z: 9.58}
-  m_LocalScale: {x: 1, y: 2.2584, z: 10.178871}
+  m_LocalPosition: {x: 10.095316, y: 2.7848, z: 9.58}
+  m_LocalScale: {x: 1, y: 1.52442, z: 10.178871}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1312873607}
@@ -6101,6 +6101,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1319789604, guid: ec545e5b29518014388cb554bb29607f, type: 3}
+      propertyPath: rightWeapon
+      value: 
+      objectReference: {fileID: 11400000, guid: 0060897fa98a2ef4d85f187644374df9, type: 2}
+    - target: {fileID: 1319789604, guid: ec545e5b29518014388cb554bb29607f, type: 3}
+      propertyPath: weaponItemsRight.Array.data[1]
+      value: 
+      objectReference: {fileID: 11400000, guid: 0060897fa98a2ef4d85f187644374df9, type: 2}
+    - target: {fileID: 1319789604, guid: ec545e5b29518014388cb554bb29607f, type: 3}
+      propertyPath: weaponItemsRight.Array.data[2]
+      value: 
+      objectReference: {fileID: 11400000, guid: 0060897fa98a2ef4d85f187644374df9, type: 2}
     - target: {fileID: 9000053290340805183, guid: ec545e5b29518014388cb554bb29607f, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
@@ -6170,6 +6182,30 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 810980244427182644, guid: 96e02eda9c2e03c479bcb5f17f34d8f3, type: 3}
+      propertyPath: m_TagString
+      value: Character
+      objectReference: {fileID: 0}
+    - target: {fileID: 811011089889567889, guid: 96e02eda9c2e03c479bcb5f17f34d8f3, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 811011089889567889, guid: 96e02eda9c2e03c479bcb5f17f34d8f3, type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 811011089889567890, guid: 96e02eda9c2e03c479bcb5f17f34d8f3, type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 811011089889567890, guid: 96e02eda9c2e03c479bcb5f17f34d8f3, type: 3}
+      propertyPath: m_TagString
+      value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 811675421301148232, guid: 96e02eda9c2e03c479bcb5f17f34d8f3, type: 3}
+      propertyPath: m_TagString
+      value: Character
+      objectReference: {fileID: 0}
     - target: {fileID: 2554598860014443786, guid: 96e02eda9c2e03c479bcb5f17f34d8f3, type: 3}
       propertyPath: fogWallCollider
       value: 
@@ -6233,6 +6269,10 @@ PrefabInstance:
     - target: {fileID: 2554598860014443894, guid: 96e02eda9c2e03c479bcb5f17f34d8f3, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2554598860160223604, guid: 96e02eda9c2e03c479bcb5f17f34d8f3, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5161199277288787844, guid: 96e02eda9c2e03c479bcb5f17f34d8f3, type: 3}
       propertyPath: playerLevelText
