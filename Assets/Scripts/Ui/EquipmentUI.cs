@@ -86,8 +86,6 @@ namespace DK {
             totalLightningDefense = 0;
             totalDarkDefense = 0;
 
-            Debug.Log(PlayerPrefs.GetInt("HelmetIndex"));
-
 
             //Physical defense calculation for slider
             totalPhysicalDefense += helmetList[PlayerPrefs.GetInt("HelmetIndex")].physicalDefense;

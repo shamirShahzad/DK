@@ -59935,6 +59935,7 @@ GameObject:
   - component: {fileID: 4754574488376629481}
   - component: {fileID: 4754574488376629480}
   - component: {fileID: 4754574488376629483}
+  - component: {fileID: 5651895251264316873}
   m_Layer: 11
   m_Name: Player For UI
   m_TagString: Character
@@ -60440,6 +60441,19 @@ MonoBehaviour:
   healthBar: {fileID: 0}
   staminaBar: {fileID: 0}
   focusPointBar: {fileID: 0}
+--- !u!114 &5651895251264316873
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4754574488376629484}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 69ecd965351b42044ba1ba9ac2fd7603, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 20
 --- !u!1 &4754574488376842873
 GameObject:
   m_ObjectHideFlags: 0

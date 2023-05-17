@@ -90,7 +90,7 @@ namespace DK
                 playerLevelText.text = playerLevel.ToString();
             }
         }
-        private void InitializePlayerPrefs()
+        public void InitializePlayerPrefs()
         {
             if (PlayerPrefs.GetInt(PLAYER_LEVEL) == 0)
             {
