@@ -7,6 +7,9 @@ namespace DK
         public bool isInvulnerableStatus = false;
         public string isInteractingBool = "isInteracting";
         public bool isInteractingStatus = false;
+        
+        public string isPerformingFullyChargedAttack = "isPerformingFullyChargedAttack";
+        public bool isPerformingFullyChargedAttackStatus = false;
 
         public string isFiringSpellBool = "isFiringSpell";
         public bool isFiringStatus = false;
@@ -38,6 +41,7 @@ namespace DK
             animator.SetBool(canRotateBool, canRotateStatus);
             animator.SetBool(isInvulnerable, isInvulnerableStatus);
             animator.SetBool(isMirrored, isMirroredStatus);
+            animator.SetBool(isPerformingFullyChargedAttack, isPerformingFullyChargedAttackStatus);
         }
 
     }

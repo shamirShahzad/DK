@@ -139,7 +139,6 @@ namespace DK
             Debug.Log("Damage Before:" + finalDamage);
             if (enemyCharacterDamagingMe.isPerformingFullyChargedAttack)
             {
-                enemyCharacterDamagingMe.isPerformingFullyChargedAttack = false;
                 finalDamage = finalDamage * 2f;
             }
             Debug.Log("Damage After:" + finalDamage);
