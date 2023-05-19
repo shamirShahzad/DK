@@ -136,12 +136,13 @@ namespace DK
             darkDamage = Mathf.RoundToInt(darkDamage - (darkDamage * totalDarkDamageAbsorbtion));
 
             float finalDamage = physicalDamage + fireDamage + magicDamage + lightningDamage + darkDamage;
+            Debug.Log("Damage Before:" + finalDamage);
             if (enemyCharacterDamagingMe.isPerformingFullyChargedAttack)
             {
                 enemyCharacterDamagingMe.isPerformingFullyChargedAttack = false;
-                finalDamage = finalDamage * 1.12f;
+                finalDamage = finalDamage * 2f;
             }
-
+            Debug.Log("Damage After:" + finalDamage);
 
             currentHealth = Mathf.RoundToInt(currentHealth - finalDamage);
             if (currentHealth <= 0)
