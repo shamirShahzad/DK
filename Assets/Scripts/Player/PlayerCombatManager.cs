@@ -22,12 +22,14 @@ namespace DK
         public string OH_Heavy_Attack_02 = "OH_Heavy_Attack_02";
         public string OH_Running_Attack_01 = "OH_Running_Attack_01";
         public string OH_Jumping_Attack_01 = "OH_Jumping_Attack_01";
+        public string OH_Charge_Attack_01 = "OH_Charging_Attack_Charge";
         public string TH_Heavy_Attack_01 = "TH_Heavy_Attack_01";
         public string TH_Heavy_Attack_02 = "TH_Heavy_Attack_02";
         public string TH_Light_Attack_01 = "TH_Light_Attack_01";
         public string TH_Light_Attack_02 = "TH_Light_Attack_02";
         public string TH_Jumping_Attack_01 = "TH_Jumping_Attack_01";
         public string TH_Running_Attack_01 = "TH_Running_Attack_01";
+        public string TH_Charge_Attack_01 = "TH_Charging_Attack_Charge";
         public string weaponArtShield = "Parry";
 
 

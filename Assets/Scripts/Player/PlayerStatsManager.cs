@@ -168,13 +168,13 @@ namespace DK
 
             }
         }
-        public override void TakeDamage(int physicalDamage,int fireDamage,int magicDamage,int lightningDamage,int darkDamage,string damageAnimation)
+        public override void TakeDamage(int physicalDamage,int fireDamage,int magicDamage,int lightningDamage,int darkDamage,string damageAnimation,CharacterManager enemyCharacterDamagingMe)
         {
             if (player.isInvulnerable)
             {
                 return;
             }
-            base.TakeDamage(physicalDamage, fireDamage,magicDamage,lightningDamage,darkDamage, damageAnimation);
+            base.TakeDamage(physicalDamage, fireDamage,magicDamage,lightningDamage,darkDamage, damageAnimation, enemyCharacterDamagingMe);
             healthBar.SetCurrentHealth(currentHealth);
             player.playerAnimatorManager.PlayTargetAnimation(damageAnimation, true);
 

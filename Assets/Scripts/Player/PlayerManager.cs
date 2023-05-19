@@ -53,6 +53,7 @@ namespace DK
             isInvulnerable = animator.GetBool("isInvulnerable");
             isFiringSpell = animator.GetBool("isFiringSpell");
             isHoldingArrow = animator.GetBool("isHoldingArrow");
+            isPerformingFullyChargedAttack = animator.GetBool("isPerformingFullyChargedAttack");
             animator.SetBool("isBlocking",isBlocking);
             animator.SetBool("isInAir", isInAir);
             animator.SetBool("isTwoHanding", isTwoHanding);

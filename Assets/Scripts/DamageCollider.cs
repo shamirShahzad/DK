@@ -88,9 +88,9 @@ namespace DK
                     {
                         if(gameObject.tag == "Skeleton Sword")
                         {
-                            enemyStats.TakeDamage(physicalDamage,fireDamage,magicDamage,lightningDamage,darkDamage, "Skeleton Hit");
+                            enemyStats.TakeDamage(physicalDamage,fireDamage,magicDamage,lightningDamage,darkDamage, "Skeleton Hit", characterManager);
                         }
-                        enemyStats.TakeDamage(physicalDamage,fireDamage,magicDamage,lightningDamage,darkDamage,currentDamageAnimation);
+                        enemyStats.TakeDamage(physicalDamage,fireDamage,magicDamage,lightningDamage,darkDamage,currentDamageAnimation, characterManager);
                     }
                 }
             }
@@ -138,9 +138,9 @@ namespace DK
                     {
                         if (gameObject.tag == "Skeleton Sword")
                         {
-                            enemyStats.TakeDamage(physicalDamage, fireDamage, magicDamage, lightningDamage, darkDamage, "Skeleton Hit");
+                            enemyStats.TakeDamage(physicalDamage, fireDamage, magicDamage, lightningDamage, darkDamage, "Skeleton Hit",characterManager);
                         }
-                        enemyStats.TakeDamage(physicalDamage, fireDamage, magicDamage, lightningDamage, darkDamage, currentDamageAnimation);
+                        enemyStats.TakeDamage(physicalDamage, fireDamage, magicDamage, lightningDamage, darkDamage, currentDamageAnimation,characterManager);
                     }
                 }
             }
@@ -161,9 +161,9 @@ namespace DK
             }
         }
 
-        protected virtual void CheckForBlock(CharacterManager characterManager,BlockingCollider shield,CharacterStatsManager characterStatsManager)
+        protected virtual void CheckForBlock(CharacterManager enemyManager,BlockingCollider shield,CharacterStatsManager characterStatsManager)
         {
-              if (shield != null && characterManager.isBlocking)
+              if (shield != null && enemyManager.isBlocking)
             {
                 float physicalDamageAfterBlock = physicalDamage - (physicalDamage * shield.blockingPhysicalDamageAbsorbtion) / 100;
                 float fireDamageAfterBlock = fireDamage - (fireDamage * shield.blockingFireDamageAbsorbtion) / 100;
@@ -178,7 +178,8 @@ namespace DK
                         Mathf.RoundToInt(magicDamageAfterBlock),
                         Mathf.RoundToInt(lightningDamageAfterBlock),
                         Mathf.RoundToInt(darkDamageAfterBlock),
-                        "Block Hit");
+                        "Block Hit",
+                        characterManager);
                     shieldHasBeenHit = true;
                 }
             }

@@ -91,9 +91,9 @@ namespace DK
             enemy.enemyAnimatorManager.PlayTargetAnimation("Break Guard", true);
         }
 
-        public override void TakeDamage(int physicalDamage,int fireDamage,int magicDamage,int lightningDamage,int darkDamage,string damageAnimation)
+        public override void TakeDamage(int physicalDamage,int fireDamage,int magicDamage,int lightningDamage,int darkDamage,string damageAnimation,CharacterManager enemyCharacterDamagingMe)
         {
-            base.TakeDamage(physicalDamage,fireDamage,magicDamage,lightningDamage,darkDamage,damageAnimation);
+            base.TakeDamage(physicalDamage,fireDamage,magicDamage,lightningDamage,darkDamage,damageAnimation, enemyCharacterDamagingMe);
             if (!isBoss)
             {
                 enemyHealthBar.setHealth(currentHealth);

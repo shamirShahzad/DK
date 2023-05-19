@@ -216,6 +216,7 @@ namespace DK
 
         private void HandleHoldRTInput()
         {
+            
             if (hold_rt_Input)
             {
                 if(player.playerInventoryManager.rightWeapon.hold_RT_Action != null)
@@ -230,14 +231,28 @@ namespace DK
 
         private void HandleHoldRBInput()
         {
+            player.animator.SetBool("isChargingAttack", hold_rb_Input);
             if (hold_rb_Input)
             {
-                if (player.playerInventoryManager.rightWeapon.hold_RB_Action != null)
-                {
+               
                     player.UpdateWhichHandCharacterIsUsing(true);
                     player.playerInventoryManager.currentItemBeingUsed = player.playerInventoryManager.rightWeapon;
-                    player.playerInventoryManager.rightWeapon.hold_RB_Action.PerformAction(player);
-                }
+                    
+                    if (player.isTwoHanding)
+                    {
+                        if (player.playerInventoryManager.rightWeapon.th_hold_RB_Action != null)
+                        {
+                            player.playerInventoryManager.rightWeapon.th_hold_RB_Action.PerformAction(player);
+                        }
+                    }
+                    else
+                    {
+                    if (player.playerInventoryManager.rightWeapon.hold_RB_Action != null)
+                    {
+                        player.playerInventoryManager.rightWeapon.hold_RB_Action.PerformAction(player);
+                    }
+                    }
+                
 
             }
         }

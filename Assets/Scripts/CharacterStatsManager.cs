@@ -90,10 +90,11 @@ namespace DK
             totalPoiseDefense = armorPoisebonus;
         }
 
-        public virtual void TakeDamage(int physicalDamage,int fireDamage,int magicDamage,int lightningDamage,int darkDamage, string damageAnimation)
+        public virtual void TakeDamage(int physicalDamage,int fireDamage,int magicDamage,int lightningDamage,int darkDamage, string damageAnimation,CharacterManager enemyCharacterDamagingMe)
         {
             if (character.isDead)
                 return;
+            
             character.characterAnimatorManager.EraseHandIKfromWeapon();
 
             float totalPhysicalDamageAbsorbtion =
@@ -135,8 +136,12 @@ namespace DK
             darkDamage = Mathf.RoundToInt(darkDamage - (darkDamage * totalDarkDamageAbsorbtion));
 
             float finalDamage = physicalDamage + fireDamage + magicDamage + lightningDamage + darkDamage;
+            if (enemyCharacterDamagingMe.isPerformingFullyChargedAttack)
+            {
+                enemyCharacterDamagingMe.isPerformingFullyChargedAttack = false;
+                finalDamage = finalDamage * 1.12f;
+            }
 
-            
 
             currentHealth = Mathf.RoundToInt(currentHealth - finalDamage);
             if (currentHealth <= 0)

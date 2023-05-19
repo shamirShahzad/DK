@@ -49,7 +49,7 @@ namespace DK
                     else
                     {
 
-                        enemyStats.TakeDamage(physicalDamage,fireDamage,magicDamage,lightningDamage,darkDamage, currentDamageAnimation);
+                        enemyStats.TakeDamage(physicalDamage,fireDamage,magicDamage,lightningDamage,darkDamage, currentDamageAnimation,characterManager);
                     }
                 }
             }

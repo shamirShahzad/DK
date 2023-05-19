@@ -30,6 +30,7 @@ namespace DK
         public bool isTwoHanding;
         public bool isHoldingArrow;
         public bool isAiming;
+        public bool isPerformingFullyChargedAttack;
 
         [Header("Status dead")]
 
