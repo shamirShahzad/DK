@@ -231,10 +231,10 @@ namespace DK
 
         private void HandleHoldRBInput()
         {
-            player.animator.SetBool("isChargingAttack", hold_rb_Input);
+            player.animator.SetBool("isCharging", hold_rb_Input);
             if (hold_rb_Input)
             {
-               
+              
                     player.UpdateWhichHandCharacterIsUsing(true);
                     player.playerInventoryManager.currentItemBeingUsed = player.playerInventoryManager.rightWeapon;
                     

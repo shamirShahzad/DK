@@ -19,16 +19,18 @@ MonoBehaviour:
   weaponController: {fileID: 22100000, guid: a617f19ae2c41674491c637a03405ff2, type: 2}
   offHandIdleAnimation: Left_Arm_Idle
   weaponTypes: 2
-  baseDamage: 10
+  physicalDamage: 25
+  fireDamage: 20
   criticalDamageMultiplier: 2
   poiseBreak: 20
   offensivePoiseBonus: 0
   physicalDamageAbsorbtion: 0
+  fireDamageAbsorbtion: 0
   baseStaminaCost: 20
   lightAttackMultiplier: 1
   heavyAttackMultiplier: 2
   spellOfItem: {fileID: 0}
-  hold_RB_Action: {fileID: 0}
+  hold_RB_Action: {fileID: 11400000, guid: 4c72ffdbdf53e994799ada1074bca577, type: 2}
   tap_RB_Action: {fileID: 11400000, guid: 7850ac8c110a7cb4a82941262c950f4a, type: 2}
   tap_LB_Action: {fileID: 0}
   hold_LB_Action: {fileID: 11400000, guid: fabcb96caa8970d40b87e10449fd339d, type: 2}
@@ -36,3 +38,11 @@ MonoBehaviour:
   tap_RT_Action: {fileID: 11400000, guid: 36648edf6ec7be1428c5ad86b1b37491, type: 2}
   tap_LT_Action: {fileID: 11400000, guid: 7850ac8c110a7cb4a82941262c950f4a, type: 2}
   hold_LT_Action: {fileID: 0}
+  th_hold_RB_Action: {fileID: 11400000, guid: 4c72ffdbdf53e994799ada1074bca577, type: 2}
+  th_tap_RB_Action: {fileID: 11400000, guid: 7850ac8c110a7cb4a82941262c950f4a, type: 2}
+  th_tap_LB_Action: {fileID: 0}
+  th_hold_LB_Action: {fileID: 0}
+  th_hold_RT_Action: {fileID: 0}
+  th_tap_RT_Action: {fileID: 11400000, guid: 36648edf6ec7be1428c5ad86b1b37491, type: 2}
+  th_tap_LT_Action: {fileID: 11400000, guid: 7850ac8c110a7cb4a82941262c950f4a, type: 2}
+  th_hold_LT_Action: {fileID: 0}
