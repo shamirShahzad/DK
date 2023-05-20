@@ -8,7 +8,6 @@ namespace DK
 
         public CharacterManager characterManager;
         protected Collider damageCollider;
-        public CharacterManager enemyManager;
         [Header("Damages")]
         public int physicalDamage = 8;
         public int fireDamage;
@@ -54,7 +53,7 @@ namespace DK
                 shieldHasBeenHit = false;
                 hasBeenParried = false;
                 CharacterStatsManager enemyStats = collision.GetComponent<CharacterStatsManager>();
-                enemyManager = collision.GetComponent<CharacterManager>();
+                CharacterManager enemyManager = collision.GetComponent<CharacterManager>();
                 CharacterFXManager enemyFX = collision.GetComponent<CharacterFXManager>();
                 BlockingCollider shield = collision.transform.GetComponentInChildren<BlockingCollider>();
 
@@ -80,18 +79,7 @@ namespace DK
                     float directionHitFrom = (Vector3.SignedAngle(characterManager.transform.forward, enemyManager.transform.forward, Vector3.up));
                     ChooseWhichDirectionDamageCameFrom(directionHitFrom);
                     enemyFX.PlayBloodSplatterEffect(contactPoint);
-                    if(enemyStats.totalPoiseDefense > poiseBreak)
-                    {
-                        enemyStats.TakeDamageNoAnimation(physicalDamage,fireDamage,magicDamage,lightningDamage,darkDamage);
-                    }
-                    else
-                    {
-                        if(gameObject.tag == "Skeleton Sword")
-                        {
-                            enemyStats.TakeDamage(physicalDamage,fireDamage,magicDamage,lightningDamage,darkDamage, "Skeleton Hit", characterManager);
-                        }
-                        enemyStats.TakeDamage(physicalDamage,fireDamage,magicDamage,lightningDamage,darkDamage,currentDamageAnimation, characterManager);
-                    }
+                    DealDamage(enemyStats);
                 }
             }
             if (collision.tag == "Player")
@@ -99,7 +87,7 @@ namespace DK
                 shieldHasBeenHit = false;
                 hasBeenParried = false;
                 CharacterStatsManager enemyStats = collision.GetComponentInParent<CharacterStatsManager>();
-                enemyManager = collision.GetComponentInParent<CharacterManager>();
+                CharacterManager enemyManager = collision.GetComponentInParent<CharacterManager>();
                 CharacterFXManager enemyFX = collision.GetComponentInParent<CharacterFXManager>();
                 BlockingCollider shield = collision.transform.GetComponentInParent<BlockingCollider>();
 
@@ -130,18 +118,7 @@ namespace DK
                     float directionHitFrom = (Vector3.SignedAngle(characterManager.transform.forward, enemyManager.transform.forward, Vector3.up));
                     ChooseWhichDirectionDamageCameFrom(directionHitFrom);
                     enemyFX.PlayBloodSplatterEffect(contactPoint);
-                    if (enemyStats.totalPoiseDefense > poiseBreak)
-                    {
-                        enemyStats.TakeDamageNoAnimation(physicalDamage, fireDamage, magicDamage, lightningDamage, darkDamage);
-                    }
-                    else
-                    {
-                        if (gameObject.tag == "Skeleton Sword")
-                        {
-                            enemyStats.TakeDamage(physicalDamage, fireDamage, magicDamage, lightningDamage, darkDamage, "Skeleton Hit",characterManager);
-                        }
-                        enemyStats.TakeDamage(physicalDamage, fireDamage, magicDamage, lightningDamage, darkDamage, currentDamageAnimation,characterManager);
-                    }
+                    DealDamage(enemyStats);
                 }
             }
             if (collision.tag == "Illusionary Wall")
@@ -152,11 +129,11 @@ namespace DK
             }
         }
 
-        protected virtual void CheckForParry(CharacterManager characterManager)
+        protected virtual void CheckForParry(CharacterManager enemyManager)
         {
-            if (characterManager.isParrying)
+            if (enemyManager.isParrying)
             {
-                characterManager.GetComponent<CharacterAnimatorManager>().PlayTargetAnimation("Parried", true);
+                enemyManager.GetComponent<CharacterAnimatorManager>().PlayTargetAnimation("Parried", true);
                 hasBeenParried = true;
             }
         }
@@ -182,6 +159,86 @@ namespace DK
                         characterManager);
                     shieldHasBeenHit = true;
                 }
+            }
+        }
+
+        protected virtual void DealDamage(CharacterStatsManager enemyStats)
+        {
+            float finalPhysicalDamage = physicalDamage;
+            if (characterManager.isUsingRightHand)
+            {
+                if (characterManager.characterCombatManager.currentAttackType == AttackType.Light)
+                {
+                    finalPhysicalDamage = physicalDamage * characterManager.characterInventoryManager.rightWeapon.lightAttackDamageModifier;
+                }
+                else if (characterManager.characterCombatManager.currentAttackType == AttackType.Heavy)
+                {
+                    finalPhysicalDamage = physicalDamage * characterManager.characterInventoryManager.rightWeapon.heavyAttackDamageModifier;
+                }
+                else if (characterManager.characterCombatManager.currentAttackType == AttackType.Light2)
+                {
+                    finalPhysicalDamage = physicalDamage * characterManager.characterInventoryManager.rightWeapon.lightAttack2DamageModifier;
+                }
+                else if(characterManager.characterCombatManager.currentAttackType == AttackType.Heavy2)
+                {
+                    finalPhysicalDamage = physicalDamage * characterManager.characterInventoryManager.rightWeapon.heavyAttack2DamageModifier;
+                }
+                else if(characterManager.characterCombatManager.currentAttackType == AttackType.Running)
+                {
+                    finalPhysicalDamage = physicalDamage * characterManager.characterInventoryManager.rightWeapon.runningAttackDamageModifier;
+                }
+                else if(characterManager.characterCombatManager.currentAttackType == AttackType.Jumping)
+                {
+                    finalPhysicalDamage = physicalDamage * characterManager.characterInventoryManager.rightWeapon.jumpingAttackDamageModifier;
+                }
+                else if (characterManager.characterCombatManager.currentAttackType == AttackType.Critical)
+                {
+                    finalPhysicalDamage = physicalDamage * characterManager.characterInventoryManager.rightWeapon.criticalDamageModifier;
+                }
+
+            }
+            else if(characterManager.isUsingLeftHand)
+            {
+                if (characterManager.characterCombatManager.currentAttackType == AttackType.Light)
+                {
+                    finalPhysicalDamage = physicalDamage * characterManager.characterInventoryManager.leftWeapon.lightAttackDamageModifier;
+                }
+                else if (characterManager.characterCombatManager.currentAttackType == AttackType.Heavy)
+                {
+                    finalPhysicalDamage = physicalDamage * characterManager.characterInventoryManager.leftWeapon.heavyAttackDamageModifier;
+                }
+                else if(characterManager.characterCombatManager.currentAttackType == AttackType.Light2)
+                {
+                    finalPhysicalDamage = physicalDamage * characterManager.characterInventoryManager.leftWeapon.lightAttack2DamageModifier;
+                }
+                else if (characterManager.characterCombatManager.currentAttackType == AttackType.Heavy2)
+                {
+                    finalPhysicalDamage = physicalDamage * characterManager.characterInventoryManager.leftWeapon.heavyAttack2DamageModifier;
+                }
+                else if (characterManager.characterCombatManager.currentAttackType == AttackType.Running)
+                {
+                    finalPhysicalDamage = physicalDamage * characterManager.characterInventoryManager.leftWeapon.runningAttackDamageModifier;
+                }
+                else if (characterManager.characterCombatManager.currentAttackType == AttackType.Jumping)
+                {
+                    finalPhysicalDamage = physicalDamage * characterManager.characterInventoryManager.leftWeapon.jumpingAttackDamageModifier ;
+                }
+                else if (characterManager.characterCombatManager.currentAttackType == AttackType.Critical)
+                {
+                    finalPhysicalDamage = physicalDamage * characterManager.characterInventoryManager.leftWeapon.criticalDamageModifier;
+                }
+            }
+            if (enemyStats.totalPoiseDefense > poiseBreak)
+            {
+                enemyStats.TakeDamageNoAnimation(Mathf.RoundToInt(finalPhysicalDamage), fireDamage, magicDamage, lightningDamage, darkDamage);
+            }
+            else
+            {
+                if (gameObject.tag == "Skeleton Sword")
+                {
+                    enemyStats.TakeDamage(Mathf.RoundToInt(finalPhysicalDamage), fireDamage, magicDamage, lightningDamage, darkDamage, "Skeleton Hit", characterManager);
+                }
+                enemyStats.TakeDamage(Mathf.RoundToInt(finalPhysicalDamage), fireDamage, magicDamage, lightningDamage, darkDamage, currentDamageAnimation, characterManager);
             }
         }
 

@@ -35,6 +35,7 @@ namespace DK
 
                 HandleHeavyAttack(player);
             }
+            
 
         }
         private void HandleHeavyAttack(PlayerManager player)
@@ -44,6 +45,7 @@ namespace DK
                 player.playerAnimatorManager.PlayTargetAnimation(player.playerCombatManager.OH_Heavy_Attack_01, true, false, true);
                 player.playerCombatManager.lastAttack = player.playerCombatManager.OH_Heavy_Attack_01;
                 player.playerFXManager.PlayWeaponFX(false);
+                player.playerCombatManager.currentAttackType = AttackType.Heavy;
             }
             else if (player.isUsingRightHand)
             {
@@ -52,6 +54,7 @@ namespace DK
                     player.playerAnimatorManager.PlayTargetAnimation(player.playerCombatManager.TH_Heavy_Attack_01, true);
                     player.playerCombatManager.lastAttack = player.playerCombatManager.TH_Heavy_Attack_01;
                     player.playerFXManager.PlayWeaponFX(false);
+                    player.playerCombatManager.currentAttackType = AttackType.Heavy;
                 }
                 else
                 {
@@ -59,6 +62,7 @@ namespace DK
                     player.playerAnimatorManager.PlayTargetAnimation(player.playerCombatManager.OH_Heavy_Attack_01, true);
                     player.playerCombatManager.lastAttack = player.playerCombatManager.OH_Heavy_Attack_01;
                     player.playerFXManager.PlayWeaponFX(false);
+                    player.playerCombatManager.currentAttackType = AttackType.Heavy;
                 }
             }
 
@@ -78,11 +82,13 @@ namespace DK
                         player.playerAnimatorManager.PlayTargetAnimation(player.playerCombatManager.OH_Heavy_Attack_02, true, false, true);
                         player.playerCombatManager.lastAttack = player.playerCombatManager.OH_Heavy_Attack_02;
                         player.playerFXManager.PlayWeaponFX(false);
+                        player.playerCombatManager.currentAttackType = AttackType.Heavy2;
                     }
                     else
                     {
                         player.playerAnimatorManager.PlayTargetAnimation(player.playerCombatManager.OH_Heavy_Attack_01, true, false, true);
                         player.playerCombatManager.lastAttack = player.playerCombatManager.OH_Heavy_Attack_01;
+                        player.playerCombatManager.currentAttackType = AttackType.Heavy;
                     }
                 }
                 else if (player.isUsingRightHand)
@@ -93,11 +99,13 @@ namespace DK
                         {
                             player.playerAnimatorManager.PlayTargetAnimation(player.playerCombatManager.TH_Heavy_Attack_02, true);
                             player.playerCombatManager.lastAttack = player.playerCombatManager.TH_Heavy_Attack_02;
+                            player.playerCombatManager.currentAttackType = AttackType.Heavy2;
                         }
                         else
                         {
                             player.playerAnimatorManager.PlayTargetAnimation(player.playerCombatManager.TH_Heavy_Attack_01, true);
                             player.playerCombatManager.lastAttack = player.playerCombatManager.TH_Heavy_Attack_01;
+                            player.playerCombatManager.currentAttackType = AttackType.Heavy;
                         }
                     }
                     else
@@ -107,11 +115,13 @@ namespace DK
                             player.playerAnimatorManager.PlayTargetAnimation(player.playerCombatManager.OH_Heavy_Attack_02, true);
                             player.playerCombatManager.lastAttack = player.playerCombatManager.OH_Heavy_Attack_02;
                             player.playerFXManager.PlayWeaponFX(false);
+                            player.playerCombatManager.currentAttackType = AttackType.Heavy2;
                         }
                         else
                         {
                             player.playerAnimatorManager.PlayTargetAnimation(player.playerCombatManager.OH_Heavy_Attack_01, true);
                             player.playerCombatManager.lastAttack = player.playerCombatManager.OH_Heavy_Attack_01;
+                            player.playerCombatManager.currentAttackType = AttackType.Heavy;
                         }
                     }
                 }
@@ -126,6 +136,7 @@ namespace DK
                 player.playerAnimatorManager.PlayTargetAnimation(player.playerCombatManager.OH_Jumping_Attack_01, true, false, true);
                 player.playerCombatManager.lastAttack = player.playerCombatManager.OH_Jumping_Attack_01;
                 player.playerFXManager.PlayWeaponFX(false);
+                player.playerCombatManager.currentAttackType = AttackType.Jumping;
             }
             else if (player.isUsingRightHand)
             {
@@ -134,6 +145,7 @@ namespace DK
                     player.playerAnimatorManager.PlayTargetAnimation(player.playerCombatManager.TH_Jumping_Attack_01, true);
                     player.playerCombatManager.lastAttack = player.playerCombatManager.TH_Jumping_Attack_01;
                     player.playerFXManager.PlayWeaponFX(false);
+                    player.playerCombatManager.currentAttackType = AttackType.Jumping;
                 }
                 else
                 {
@@ -141,6 +153,7 @@ namespace DK
                     player.playerAnimatorManager.PlayTargetAnimation(player.playerCombatManager.OH_Jumping_Attack_01, true);
                     player.playerCombatManager.lastAttack = player.playerCombatManager.OH_Jumping_Attack_01;
                     player.playerFXManager.PlayWeaponFX(false);
+                    player.playerCombatManager.currentAttackType = AttackType.Jumping;
                 }
             }
 

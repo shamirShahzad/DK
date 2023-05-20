@@ -153,7 +153,7 @@ namespace DK
                 speed = sprintSpeed;
                 player.isSprinting = true;
                 moveDirection *= speed;
-                player.playerStatsManager.TakeStaminaDamage(sprintStaminaCost);
+                player.playerStatsManager.DeductStamina(sprintStaminaCost);
             }
             else {
                 if (player.inputHandler.moveAmount <= 0.5f)
@@ -204,11 +204,11 @@ namespace DK
                     moveDirection.y = 0;
                     Quaternion rollRotation = Quaternion.LookRotation(moveDirection);
                     player.transform.rotation = rollRotation;
-                    player.playerStatsManager.TakeStaminaDamage(rollStaminaCost);
+                    player.playerStatsManager.DeductStamina(rollStaminaCost);
                 }
                 else {
                     player.playerAnimatorManager.PlayTargetAnimation("BackStep", true);
-                    player.playerStatsManager.TakeStaminaDamage(backStepStaminacost);
+                    player.playerStatsManager.DeductStamina(backStepStaminacost);
                     player.playerAnimatorManager.EraseHandIKfromWeapon();
                 }
             }
@@ -312,7 +312,7 @@ namespace DK
                     moveDirection.y = 0;
                     Quaternion jumpRotation = Quaternion.LookRotation(moveDirection);
                     player.transform.rotation = jumpRotation;
-                    player.playerStatsManager.TakeStaminaDamage(jumpStaminaCost);
+                    player.playerStatsManager.DeductStamina(jumpStaminaCost);
                 }
             }
         }

@@ -20,6 +20,17 @@ namespace DK
         Ammo,
         Bolt
     }
+
+    public enum AttackType
+    {
+        Light,
+        Heavy,
+        Light2,
+        Heavy2,
+        Jumping,
+        Running,
+        Critical
+    }
     public class Enum : MonoBehaviour
     {
         

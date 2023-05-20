@@ -10,7 +10,10 @@ namespace DK
         public CharacterStatsManager characterStatsManager;
         public CharacterInventoryManager characterInventoryManager;
         public CharacterFXManager characterFXManager;
+        public CharacterSFXManager characterSFXManager;
+        public CharacterCombatManager characterCombatManager;
         public Animator animator;
+        public inputHandler inputHandler;
         [Header("Lock On Transform")]
         public Transform lockOnTransform;
         [Header("Combat Colliders")]
@@ -54,6 +57,9 @@ namespace DK
             characterInventoryManager = GetComponent<CharacterInventoryManager>();
             characterFXManager = GetComponent<CharacterFXManager>();
             animator = GetComponent<Animator>();
+            inputHandler = GetComponent<inputHandler>();
+            characterSFXManager = GetComponent<CharacterSFXManager>();
+            characterCombatManager = GetComponent<CharacterCombatManager>();
         }
 
         protected virtual void FixedUpdate()

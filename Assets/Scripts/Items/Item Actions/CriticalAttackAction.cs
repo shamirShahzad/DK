@@ -11,6 +11,7 @@ namespace DK
             if (player.isInteracting)
                 return;
             player.playerCombatManager.AttemptBackStabOrRiposte();
+            player.playerCombatManager.currentAttackType = AttackType.Critical;
         }
     }
 }

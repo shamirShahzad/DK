@@ -24193,7 +24193,7 @@ GameObject:
   - component: {fileID: 813891252393139366}
   m_Layer: 10
   m_Name: Root
-  m_TagString: Untagged
+  m_TagString: Character
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -26503,7 +26503,7 @@ GameObject:
   - component: {fileID: 811011089889567889}
   m_Layer: 11
   m_Name: Spine_01
-  m_TagString: Character
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -62088,7 +62088,7 @@ GameObject:
   - component: {fileID: 813836086421693186}
   m_Layer: 0
   m_Name: Model
-  m_TagString: Untagged
+  m_TagString: Character
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -69890,6 +69890,7 @@ GameObject:
   - component: {fileID: 5161199277288787845}
   - component: {fileID: 5161199277288787844}
   - component: {fileID: 1368521021009723081}
+  - component: {fileID: 8154188209551204859}
   m_Layer: 11
   m_Name: New Player
   m_TagString: Character
@@ -69921,7 +69922,7 @@ Transform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!95 &5161199277288787847
 Animator:
-  serializedVersion: 4
+  serializedVersion: 5
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -69930,7 +69931,7 @@ Animator:
   m_Enabled: 1
   m_Avatar: {fileID: 9000000, guid: 038320a534bd8b444b43734860d1a211, type: 3}
   m_Controller: {fileID: 9100000, guid: 1ec0f754c137542448eee9888e2d83b9, type: 2}
-  m_CullingMode: 1
+  m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
@@ -69938,7 +69939,8 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!54 &2554598860014443895
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -70046,6 +70048,7 @@ MonoBehaviour:
   characterInventoryManager: {fileID: 0}
   characterFXManager: {fileID: 0}
   animator: {fileID: 0}
+  inputHandler: {fileID: 0}
   lockOnTransform: {fileID: 2554598860078321446}
   backStabCollider: {fileID: 2554598858767375702}
   riposteCollider: {fileID: 2554598859260908107}
@@ -70061,6 +70064,7 @@ MonoBehaviour:
   isTwoHanding: 0
   isHoldingArrow: 0
   isAiming: 0
+  isPerformingFullyChargedAttack: 0
   isDead: 0
   isRotatingWithRootMotion: 0
   canRotate: 0
@@ -70068,7 +70072,6 @@ MonoBehaviour:
   isInAir: 0
   isGrounded: 0
   isInteracting: 0
-  inputHandler: {fileID: 0}
   cameraHandler: {fileID: 0}
   playerLocomotion: {fileID: 0}
   playerAnimatorManager: {fileID: 0}
@@ -70234,12 +70237,14 @@ MonoBehaviour:
   OH_Heavy_Attack_02: OH_Heavy_Attack_02
   OH_Running_Attack_01: OH_Running_Attack_01
   OH_Jumping_Attack_01: OH_Jumping_Attack_01
+  OH_Charge_Attack_01: OH_Charging_Attack_Charge
   TH_Heavy_Attack_01: TH_Heavy_Attack_01
   TH_Heavy_Attack_02: TH_Heavy_Attack_02
   TH_Light_Attack_01: TH_Light_Attack_01
   TH_Light_Attack_02: TH_Light_Attack_02
   TH_Jumping_Attack_01: TH_Jumping_Attack_01
   TH_Running_Attack_01: TH_Running_Attack_01
+  TH_Charge_Attack_01: TH_Charging_Attack_Charge
   weaponArtShield: Parry
 --- !u!114 &5161199277288787835
 MonoBehaviour:
@@ -70375,6 +70380,12 @@ MonoBehaviour:
   darkDamageAbsorbtionTorso: 0
   darkDamageAbsorbtionLegs: 0
   darkDamageAbsorbtionHands: 0
+  lightAttackBaseDamage: 30
+  heavyAttackBaseDamage: 40
+  twoHandAttackModifier: 2
+  critcalAttacakModifier: 1.5
+  chargeAttackModifier: 1.1
+  chargeAttackFullModifier: 1.8
   playerLevelText: {fileID: 0}
   PLAYER_LEVEL: Player_Level
   HEALTH_LEVEL: HealthLevel
@@ -70410,6 +70421,102 @@ MonoBehaviour:
   - m_Rig: {fileID: 7485104252922035265}
     m_Active: 1
   m_Effectors: []
+--- !u!82 &8154188209551204859
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2554598860014443789}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &2554598860042538197
 GameObject:
   m_ObjectHideFlags: 0

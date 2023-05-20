@@ -16,7 +16,7 @@ MonoBehaviour:
   itemName: Enemy Sword 1
   modelPrefab: {fileID: 1318654436587029615, guid: 6a92d01f21ad25148be6b2a5fc69f9e9, type: 3}
   isUnarmed: 0
-  weaponController: {fileID: 22100000, guid: a617f19ae2c41674491c637a03405ff2, type: 2}
+  weaponController: {fileID: 22100000, guid: deb380515018c344e8f988eae4629218, type: 2}
   offHandIdleAnimation: Left_Arm_Idle
   weaponTypes: 2
   physicalDamage: 25
@@ -25,7 +25,7 @@ MonoBehaviour:
   poiseBreak: 0
   offensivePoiseBonus: 0
   physicalDamageAbsorbtion: 0
-  fireDamagAbsorbtion: 0
+  fireDamageAbsorbtion: 0
   baseStaminaCost: 0
   lightAttackMultiplier: 0
   heavyAttackMultiplier: 0
@@ -38,3 +38,11 @@ MonoBehaviour:
   tap_RT_Action: {fileID: 0}
   tap_LT_Action: {fileID: 0}
   hold_LT_Action: {fileID: 0}
+  th_hold_RB_Action: {fileID: 0}
+  th_tap_RB_Action: {fileID: 0}
+  th_tap_LB_Action: {fileID: 0}
+  th_hold_LB_Action: {fileID: 0}
+  th_hold_RT_Action: {fileID: 0}
+  th_tap_RT_Action: {fileID: 0}
+  th_tap_LT_Action: {fileID: 0}
+  th_hold_LT_Action: {fileID: 0}

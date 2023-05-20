@@ -5,7 +5,6 @@ namespace DK
 {
     public class PlayerManager : CharacterManager
     {
-        public inputHandler inputHandler;
         public CameraHandler cameraHandler;
         public PlayerLocomotionManager playerLocomotion;
         public PlayerAnimatorManager playerAnimatorManager;
@@ -61,6 +60,7 @@ namespace DK
             inputHandler.TickInput();
             playerLocomotion.HandleRolling();
             playerLocomotion.HandleJumping();
+            //playerStatsManager.DrainStaminaBasedOnAttackType();
 
             playerStatsManager.RegenarateStamina();
             playerStatsManager.RegenarateFocus();
@@ -79,6 +79,7 @@ namespace DK
             playerLocomotion.HandleMovement();
             playerLocomotion.HandleRotation();
             playerFXManager.HAndleAllBuildupEffects();
+            
            
 
         }
@@ -101,8 +102,6 @@ namespace DK
 
 
         }
-
-
 
         public void OpenChestInteraction(Transform playerStandsHereWhenOpeningChest)
         {
@@ -150,7 +149,6 @@ namespace DK
         public void PassThroughtFoggWallInteraction(Transform fogWallTransform,
             BoxCollider fogEnterCollider,BoxCollider fogBlockCollider)
         {
-
             playerLocomotion.rigidbody.velocity = Vector3.zero;
             Vector3 rotationDirection = fogWallTransform.transform.forward;
             Quaternion turnRotation = Quaternion.LookRotation(rotationDirection);
@@ -159,9 +157,7 @@ namespace DK
             fogEntryCollider = fogEnterCollider;
             //fogEntryCollider.enabled = false;
             //fogWallCollider.enabled = false;
-            playerAnimatorManager.PlayTargetAnimation("Pass Through Wall", true);
-
-            
+            playerAnimatorManager.PlayTargetAnimation("Pass Through Wall", true);     
         }
 
 

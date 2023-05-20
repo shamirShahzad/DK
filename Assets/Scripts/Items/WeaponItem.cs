@@ -19,7 +19,19 @@ namespace DK
         [Header("Damage")]
         public int physicalDamage = 25;
         public int fireDamage = 20;
-        public int criticalDamageMultiplier = 4;
+        public int magicDamage;
+        public int lightningDamage;
+        public int darkDamage;
+        
+
+        [Header("Damage Modifiers")]
+        public float lightAttackDamageModifier;
+        public float heavyAttackDamageModifier;
+        public float runningAttackDamageModifier;
+        public float jumpingAttackDamageModifier;
+        public float lightAttack2DamageModifier;
+        public float heavyAttack2DamageModifier;
+        public int criticalDamageModifier = 2;
 
         [Header("Poise")]
         public float poiseBreak;
@@ -31,8 +43,11 @@ namespace DK
 
         [Header("Stamina Drain")]
         public int baseStaminaCost;
-        public float lightAttackMultiplier;
-        public float heavyAttackMultiplier;
+        public float lightStaminaModifier;
+        public float heavyStaminaModifier;
+        public float criticalStaminaModifier;
+        public float jumppingStaminaModifier;
+        public float runningStaminaModifier;
         [Header("Spells")]
         public SpellItem spellOfItem;
 
@@ -55,6 +70,9 @@ namespace DK
         public ItemAction th_tap_RT_Action;
         public ItemAction th_tap_LT_Action;
         public ItemAction th_hold_LT_Action;
+
+        [Header("Sword Swoosh Sounds")]
+        public AudioClip[] weaponWooshes;
 
 
     }

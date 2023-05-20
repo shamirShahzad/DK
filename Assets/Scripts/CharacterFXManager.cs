@@ -53,6 +53,7 @@ namespace DK
         public virtual void PlayBloodSplatterEffect(Vector3 bloodSplatterLocation)
         {
             GameObject blood = Instantiate(bloodSplatterFX, bloodSplatterLocation,Quaternion.identity);
+            Destroy(blood, 2.5f);
         }
 
         protected virtual void HandlePoisonBuildup()

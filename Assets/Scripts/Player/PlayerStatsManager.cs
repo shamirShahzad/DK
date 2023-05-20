@@ -35,7 +35,7 @@ namespace DK
 
         PlayerManager player;
         public float staminaRegenarationAmount = 25;
-        public float focusRegenarationAmount = 11;
+        public float focusRegenarationAmount = 15;
         public float staminaRegenerationTimer = 0;
         public float focusRegenrationTimer = 0;
         //CapsuleCollider Ccollider;
@@ -187,9 +187,10 @@ namespace DK
             }
         }
 
-        public void TakeStaminaDamage(int damage)
+        public override void  DeductStamina(float staminsToBeDeducted)
         {
-            currentStamina = currentStamina - damage;
+            base.DeductStamina(staminsToBeDeducted);
+            currentStamina = currentStamina - staminsToBeDeducted;
             staminaBar.SetcurrentStamina(currentStamina);
         }
 

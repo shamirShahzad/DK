@@ -74,6 +74,7 @@ namespace DK
 
 
 
+
         protected virtual void Awake()
         {
 
@@ -136,19 +137,17 @@ namespace DK
             darkDamage = Mathf.RoundToInt(darkDamage - (darkDamage * totalDarkDamageAbsorbtion));
 
             float finalDamage = physicalDamage + fireDamage + magicDamage + lightningDamage + darkDamage;
-            Debug.Log("Damage Before:" + finalDamage);
             if (enemyCharacterDamagingMe.isPerformingFullyChargedAttack)
             {
                 finalDamage = finalDamage * 2f;
             }
-            Debug.Log("Damage After:" + finalDamage);
-
             currentHealth = Mathf.RoundToInt(currentHealth - finalDamage);
             if (currentHealth <= 0)
             {
                 currentHealth = 0;
                 character.isDead = true;
             }
+            character.characterSFXManager.PlayRandomDamageSoundEffect();
         }
 
         public virtual void TakeDamageNoAnimation(int physicalDamage,int fireDamage,int magicDamage,int lightningDamage,int darkDamage)
@@ -218,6 +217,11 @@ namespace DK
 
         }
 
+        public virtual void DeductStamina(float staminaToBeDeducted)
+        {
+            currentStamina -= staminaToBeDeducted;
+        }
+
         protected void HandleDeath()
         {
             if (currentHealth <= 0)
@@ -259,11 +263,6 @@ namespace DK
             {
                 totalPoiseDefense = armorPoisebonus;
             }
-        }
-
-        public void DrainStaminaBasedOnAttackType()
-        {
-
         }
     }
 }
