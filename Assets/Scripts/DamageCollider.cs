@@ -69,7 +69,7 @@ namespace DK
                 }
                 if (enemyStats != null)
                 {
-                    if (enemyStats.teamIdNumber == teamIdNumber || enemyManager.isDead)
+                    if (enemyStats.teamIdNumber == teamIdNumber)
                         return;
                     if (hasBeenParried)
                         return;
@@ -103,7 +103,7 @@ namespace DK
                 }
                 if (enemyStats != null)
                 {
-                    if (enemyStats.teamIdNumber == teamIdNumber || enemyManager.isDead)
+                    if (enemyStats.teamIdNumber == teamIdNumber)
                         return;
                     if (hasBeenParried)
                         return;
@@ -140,7 +140,7 @@ namespace DK
             CharacterStatsManager enemyShield = enemyManager.characterStatsManager;
             Vector3 directionFromPlayerToEnemy = (characterManager.transform.position - enemyManager.transform.position);
             float dotValueFromPlayerToEnemy = Vector3.Dot(directionFromPlayerToEnemy, enemyManager.transform.forward);
-              if (enemyManager.isBlocking && dotValueFromPlayerToEnemy > 0.55f)
+              if (enemyManager.isBlocking && dotValueFromPlayerToEnemy > 0.3f)
             {
                 shieldHasBeenHit = true;
                 float physicalDamageAfterBlock = physicalDamage - (physicalDamage * enemyShield.blockingPhysicalDamageAbsorbtion) / 100;

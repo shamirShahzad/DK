@@ -187,6 +187,20 @@ namespace DK
             }
         }
 
+        public override void TakeDamageAfterBlock(int physicalDamage, int fireDamage, int magicDamage, int lightningDamage, int darkDamage, CharacterManager enemyCharacterDamagingMe)
+        {
+            if (player.isInvulnerable)
+                return;
+            base.TakeDamageAfterBlock(physicalDamage, fireDamage, magicDamage, lightningDamage, darkDamage, enemyCharacterDamagingMe);
+            healthBar.SetCurrentHealth(currentHealth);
+            if (currentHealth <= 0)
+            {
+                player.isDead = true;
+                currentHealth = 0;
+                player.playerAnimatorManager.PlayTargetAnimation("Death", true);
+            }
+        }
+
         public override  void  DeductStamina(float damage)
         {
             currentStamina = currentStamina - damage;
