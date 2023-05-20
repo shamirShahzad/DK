@@ -209,23 +209,6 @@ namespace DK
             }
             
         }
-        public void OpenBlockingCollider()
-        {
-            if (player.inputHandler.twoHandFlag)
-            {
-                player.blockingCollider.SetColliderDamageAbsorbtion(player.playerInventoryManager.rightWeapon);
-            }
-            else
-            {
-                player.blockingCollider.SetColliderDamageAbsorbtion(player.playerInventoryManager.leftWeapon);
-            }
-            
-            player.blockingCollider.EnableBlockingCollider();
-        }
-
-        public void CloseBlockingCollider()
-        {
-            player.blockingCollider.DisableBlockingCollider();
-        }
+     
     }
 }

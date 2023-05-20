@@ -11,7 +11,7 @@ namespace DK
         public bool isUnarmed;
         [Header ("Animator Replacer")]
         public AnimatorOverrideController weaponController;
-        public string offHandIdleAnimation = "Left_Arm_Idle";
+       // public string offHandIdleAnimation = "Left_Arm_Idle";
 
         [Header("Weapon Type")]
         public WeaponTypes weaponTypes;
@@ -32,14 +32,21 @@ namespace DK
         public float lightAttack2DamageModifier;
         public float heavyAttack2DamageModifier;
         public int criticalDamageModifier = 2;
+        public float guardBreakModifier = 1;
 
         [Header("Poise")]
         public float poiseBreak;
         public float offensivePoiseBonus;
 
         [Header("Absorbtion")]
-        public float physicalDamageAbsorbtion;
-        public float fireDamageAbsorbtion;
+        public float physicalBlockingDamageAbsorbtion;
+        public float fireBlockingDamageAbsorbtion;
+        public float magicBlockingDamageAbsorbtion;
+        public float lightningBlockingDamageAbsorbtion;
+        public float darkBlockingDamageAbsorbtion;
+
+        [Header("Stability")]
+        public int stability = 67;
 
         [Header("Stamina Drain")]
         public int baseStaminaCost;

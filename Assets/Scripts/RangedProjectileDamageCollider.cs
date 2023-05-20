@@ -18,14 +18,14 @@ namespace DK
                 CharacterStatsManager enemyStats = collision.GetComponent<CharacterStatsManager>();
                 CharacterManager enemyManager = collision.GetComponent<CharacterManager>();
                 CharacterFXManager enemyFX = collision.GetComponent<CharacterFXManager>();
-                BlockingCollider shield = collision.transform.GetComponentInChildren<BlockingCollider>();
+               
 
                 if (enemyManager != null)
                 {
                     if (enemyStats.teamIdNumber == teamIdNumber)
                         return;
                     CheckForParry(enemyManager);
-                    CheckForBlock(enemyManager, shield, enemyStats);
+                    CheckForBlock(enemyManager);
 
                 }
                 if (enemyStats != null)

@@ -33,8 +33,9 @@ namespace DK
         public string weaponArtShield = "Parry";
 
 
-        private void Awake()
+        protected override void  Awake()
         {
+            base.Awake();
             player = GetComponent<PlayerManager>();
         }
                
@@ -167,6 +168,12 @@ namespace DK
                     player.playerStatsManager.DeductStamina(baseStamina * player.playerInventoryManager.leftWeapon.criticalStaminaModifier);
                 }
             }
+        }
+
+        public override void AttempBlock(DamageCollider attackingWeapon, float physicalDamage, float magicDamage, float fireDamage, float lightningDamage, float darkDamage, string blockAnimation)
+        {
+            base.AttempBlock(attackingWeapon, physicalDamage, magicDamage, fireDamage, lightningDamage, darkDamage, blockAnimation);
+            player.playerStatsManager.staminaBar.SetcurrentStamina(Mathf.RoundToInt(player.playerStatsManager.currentStamina));
         }
 
     }

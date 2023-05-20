@@ -16,19 +16,35 @@ MonoBehaviour:
   itemName: Shield
   modelPrefab: {fileID: 8366963446615378477, guid: b561f630c2f72424e9576486926a4bc0, type: 3}
   isUnarmed: 0
-  weaponController: {fileID: 0}
-  offHandIdleAnimation: Left_Arm_Idle
+  weaponController: {fileID: 22100000, guid: 8aa1e331a62451248954339f48dd127a, type: 2}
   weaponTypes: 3
   physicalDamage: 10
   fireDamage: 0
-  criticalDamageMultiplier: 1
+  magicDamage: 0
+  lightningDamage: 0
+  darkDamage: 0
+  lightAttackDamageModifier: 0
+  heavyAttackDamageModifier: 0
+  runningAttackDamageModifier: 0
+  jumpingAttackDamageModifier: 0
+  lightAttack2DamageModifier: 0
+  heavyAttack2DamageModifier: 0
+  criticalDamageModifier: 2
+  guardBreakModifier: 1
   poiseBreak: 0
   offensivePoiseBonus: 0
-  physicalDamageAbsorbtion: 67
-  fireDamagAbsorbtion: 20
+  physicalBlockingDamageAbsorbtion: 80
+  fireBlockingDamageAbsorbtion: 50
+  magicBlockingDamageAbsorbtion: 20
+  lightningBlockingDamageAbsorbtion: 10
+  darkBlockingDamageAbsorbtion: 1
+  stability: 67
   baseStaminaCost: 2
-  lightAttackMultiplier: 1
-  heavyAttackMultiplier: 2
+  lightStaminaModifier: 0
+  heavyStaminaModifier: 0
+  criticalStaminaModifier: 0
+  jumppingStaminaModifier: 0
+  runningStaminaModifier: 0
   spellOfItem: {fileID: 0}
   hold_RB_Action: {fileID: 0}
   tap_RB_Action: {fileID: 0}
@@ -38,3 +54,19 @@ MonoBehaviour:
   tap_RT_Action: {fileID: 0}
   tap_LT_Action: {fileID: 11400000, guid: b2a4b514b4eb2f449b37f4573f08b94e, type: 2}
   hold_LT_Action: {fileID: 0}
+  th_hold_RB_Action: {fileID: 0}
+  th_tap_RB_Action: {fileID: 0}
+  th_tap_LB_Action: {fileID: 0}
+  th_hold_LB_Action: {fileID: 0}
+  th_hold_RT_Action: {fileID: 0}
+  th_tap_RT_Action: {fileID: 0}
+  th_tap_LT_Action: {fileID: 0}
+  th_hold_LT_Action: {fileID: 0}
+  weaponWooshes:
+  - {fileID: 8300000, guid: 4fdda45943a62ca429f7e65664ee287b, type: 3}
+  - {fileID: 8300000, guid: df2f288ee9b6c5743869bea301448ebe, type: 3}
+  - {fileID: 8300000, guid: 39609d390b0917d48b6daefe87d114dc, type: 3}
+  - {fileID: 8300000, guid: 7892184ffe4be754396a5ceeb8beaca1, type: 3}
+  - {fileID: 8300000, guid: 7b00c0d6ed128b3428984f8911419a6f, type: 3}
+  - {fileID: 8300000, guid: 102dfcf151a17f44a8065ce89928bb1d, type: 3}
+  - {fileID: 8300000, guid: da48d50d766871e489a26e2c4dee78b3, type: 3}

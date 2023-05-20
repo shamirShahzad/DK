@@ -185,7 +185,7 @@ namespace DK
         public void HandleRolling() {
             if (this.enabled == false)
                 return;
-            if (player.animator.GetBool("isInteracting")) {
+            if (player.isInteracting) {
                 return;
             }
             if(player.playerStatsManager.currentStamina <= 0)

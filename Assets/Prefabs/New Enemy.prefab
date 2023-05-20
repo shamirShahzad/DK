@@ -5309,70 +5309,6 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 2048
   pursueTargetState: {fileID: 9000053291826532789}
---- !u!1 &9000053290888776045
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 9000053290888776046}
-  - component: {fileID: 9000053290888776032}
-  - component: {fileID: 9000053290888776047}
-  m_Layer: 9
-  m_Name: Blocking Collider
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &9000053290888776046
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9000053290888776045}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 9000053292072862908}
-  m_RootOrder: 3
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &9000053290888776032
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9000053290888776045}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.7846316, y: 1.1761374, z: 0.0272367}
-  m_Center: {x: 0.0031545162, y: 0.84665084, z: 0.15381777}
---- !u!114 &9000053290888776047
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9000053290888776045}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 573020a373bb948498a8b378cad01cb3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  blockingBoxCollider: {fileID: 0}
-  blockingPhysicalDamageAbsorbtion: 0
-  blockingFireDamageAbsorbtion: 0
-  blockingMagicDamageAbsorbtion: 0
-  blockingLightningDamageAbsorbtion: 0
-  blockingDarkDamageAbsorbtion: 0
 --- !u!1 &9000053291050601433
 GameObject:
   m_ObjectHideFlags: 0
@@ -6140,7 +6076,6 @@ Transform:
   - {fileID: 9000053291516885505}
   - {fileID: 9000053291050601434}
   - {fileID: 9000053291780973227}
-  - {fileID: 9000053290888776046}
   m_Father: {fileID: 9000053292317615552}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -6323,6 +6258,7 @@ GameObject:
   - component: {fileID: 1319789605}
   - component: {fileID: 203065885202228778}
   - component: {fileID: 483044554}
+  - component: {fileID: 3400318472958984295}
   m_Layer: 9
   m_Name: New Enemy
   m_TagString: Character
@@ -6476,6 +6412,7 @@ MonoBehaviour:
   characterInventoryManager: {fileID: 0}
   characterFXManager: {fileID: 0}
   characterSFXManager: {fileID: 0}
+  characterCombatManager: {fileID: 0}
   animator: {fileID: 0}
   inputHandler: {fileID: 0}
   lockOnTransform: {fileID: 9000053292233499978}
@@ -6579,12 +6516,11 @@ MonoBehaviour:
   darkDamageAbsorbtionTorso: 0
   darkDamageAbsorbtionLegs: 0
   darkDamageAbsorbtionHands: 0
-  lightAttackBaseDamage: 30
-  heavyAttackBaseDamage: 40
-  twoHandAttackModifier: 2
-  critcalAttacakModifier: 1.5
-  chargeAttackModifier: 1.1
-  chargeAttackFullModifier: 1.8
+  blockingPhysicalDamageAbsorbtion: 0
+  blockingMagicDamageAbsorbtion: 0
+  blockingFireDamageAbsorbtion: 0
+  blockingLightningDamageAbsorbtion: 0
+  blockingDarkDamageAbsorbtion: 0
   enemyHealthBar: {fileID: 9000053292083880270}
   isBoss: 0
 --- !u!114 &186067111658811817
@@ -6774,3 +6710,16 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 0a913c4b95187ed4b9dc91b58f53192c, type: 3}
   - {fileID: 8300000, guid: 5d2b5bf3407d35849ba2230fc435fec5, type: 3}
   - {fileID: 8300000, guid: 5ee299aec5a455c48a6f70a2c42796af, type: 3}
+--- !u!114 &3400318472958984295
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9000053292317615562}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ca3210e3d74bf4c46a8e55db9ac96f3f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentAttackType: 0

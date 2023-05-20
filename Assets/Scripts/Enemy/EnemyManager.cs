@@ -74,7 +74,7 @@ namespace DK
             {
                 distanceFromTarget = Vector3.Distance(currentTarget.transform.position, transform.position);
                 targetDirection = currentTarget.transform.position - transform.position;
-                float viewableAngle = Vector3.Angle(targetDirection, transform.forward);
+                viewableAngle = Vector3.Angle(targetDirection, transform.forward);
             }
         }
 

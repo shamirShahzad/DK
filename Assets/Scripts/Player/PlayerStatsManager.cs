@@ -187,10 +187,9 @@ namespace DK
             }
         }
 
-        public override void  DeductStamina(float staminsToBeDeducted)
+        public override  void  DeductStamina(float damage)
         {
-            base.DeductStamina(staminsToBeDeducted);
-            currentStamina = currentStamina - staminsToBeDeducted;
+            currentStamina = currentStamina - damage;
             staminaBar.SetcurrentStamina(currentStamina);
         }
 
@@ -203,10 +202,20 @@ namespace DK
             else 
             {
                 staminaRegenerationTimer += Time.deltaTime;
+
                 if (currentStamina < maxStamina && staminaRegenerationTimer >1f)
                 {
-                    currentStamina += staminaRegenarationAmount * Time.deltaTime;
-                    staminaBar.SetcurrentStamina(Mathf.RoundToInt(currentStamina));
+                    if (player.isBlocking)
+                    {
+                        currentStamina += 0;
+                        staminaBar.SetcurrentStamina(Mathf.RoundToInt(currentStamina));
+                    }
+                    else
+                    {
+                        currentStamina += staminaRegenarationAmount * Time.deltaTime;
+                        staminaBar.SetcurrentStamina(Mathf.RoundToInt(currentStamina));
+                    }
+                    
                 }
             }
            

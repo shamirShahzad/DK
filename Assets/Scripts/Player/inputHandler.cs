@@ -326,10 +326,10 @@ namespace DK
                     player.uIManager.aimCrosshair.SetActive(false);
                     player.cameraHandler.ResetAimCamRotations();
                 }
-                if (player.blockingCollider.blockingBoxCollider.enabled)
+                if (player.isBlocking)
                 {
                     player.isBlocking = false;
-                    player.blockingCollider.DisableBlockingCollider();
+                    
                 }
             }
         }

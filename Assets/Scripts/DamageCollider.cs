@@ -15,6 +15,8 @@ namespace DK
         public int lightningDamage;
         public int darkDamage;
 
+        public float guardBreakModifier ;
+
         public bool enableOnstartup = false;
         [Header("Team ID")]
         public int teamIdNumber = 0;
@@ -55,14 +57,14 @@ namespace DK
                 CharacterStatsManager enemyStats = collision.GetComponent<CharacterStatsManager>();
                 CharacterManager enemyManager = collision.GetComponent<CharacterManager>();
                 CharacterFXManager enemyFX = collision.GetComponent<CharacterFXManager>();
-                BlockingCollider shield = collision.transform.GetComponentInChildren<BlockingCollider>();
+                
 
                 if(enemyManager != null)
                 {
                     if (enemyStats.teamIdNumber == teamIdNumber)
                         return;
                     CheckForParry(enemyManager);
-                    CheckForBlock(enemyManager, shield, enemyStats);
+                    CheckForBlock(enemyManager);
 
                 }
                 if (enemyStats != null)
@@ -89,19 +91,14 @@ namespace DK
                 CharacterStatsManager enemyStats = collision.GetComponentInParent<CharacterStatsManager>();
                 CharacterManager enemyManager = collision.GetComponentInParent<CharacterManager>();
                 CharacterFXManager enemyFX = collision.GetComponentInParent<CharacterFXManager>();
-                BlockingCollider shield = collision.transform.GetComponentInParent<BlockingCollider>();
-
-                if(shield== null)
-                {
-                    Debug.Log("SHIELD NOT FOUND");
-                }
+                
 
                 if (enemyManager != null)
                 {
                     if (enemyStats.teamIdNumber == teamIdNumber)
                         return;
                     CheckForParry(enemyManager);
-                    CheckForBlock(enemyManager, shield, enemyStats);
+                    CheckForBlock(enemyManager);
 
                 }
                 if (enemyStats != null)
@@ -138,27 +135,28 @@ namespace DK
             }
         }
 
-        protected virtual void CheckForBlock(CharacterManager enemyManager,BlockingCollider shield,CharacterStatsManager characterStatsManager)
+        protected virtual void CheckForBlock(CharacterManager enemyManager)
         {
-              if (shield != null && enemyManager.isBlocking)
+            CharacterStatsManager enemyShield = enemyManager.characterStatsManager;
+            Vector3 directionFromPlayerToEnemy = (characterManager.transform.position - enemyManager.transform.position);
+            float dotValueFromPlayerToEnemy = Vector3.Dot(directionFromPlayerToEnemy, enemyManager.transform.forward);
+              if (enemyManager.isBlocking && dotValueFromPlayerToEnemy > 0.55f)
             {
-                float physicalDamageAfterBlock = physicalDamage - (physicalDamage * shield.blockingPhysicalDamageAbsorbtion) / 100;
-                float fireDamageAfterBlock = fireDamage - (fireDamage * shield.blockingFireDamageAbsorbtion) / 100;
-                float magicDamageAfterBlock = magicDamage - (magicDamage * shield.blockingMagicDamageAbsorbtion) / 100;
-                float lightningDamageAfterBlock = lightningDamage - (lightningDamage * shield.blockingLightningDamageAbsorbtion) / 100;
-                float darkDamageAfterBlock = darkDamage - (darkDamage * shield.blockingDarkDamageAbsorbtion) / 100;
-                if (characterStatsManager != null)
-                {
-                    characterStatsManager.TakeDamage(
-                        Mathf.RoundToInt(physicalDamageAfterBlock),
-                        Mathf.RoundToInt(fireDamageAfterBlock),
-                        Mathf.RoundToInt(magicDamageAfterBlock),
-                        Mathf.RoundToInt(lightningDamageAfterBlock),
-                        Mathf.RoundToInt(darkDamageAfterBlock),
-                        "Block Hit",
-                        characterManager);
-                    shieldHasBeenHit = true;
-                }
+                shieldHasBeenHit = true;
+                float physicalDamageAfterBlock = physicalDamage - (physicalDamage * enemyShield.blockingPhysicalDamageAbsorbtion) / 100;
+                float fireDamageAfterBlock = fireDamage - (fireDamage * enemyShield.blockingFireDamageAbsorbtion) / 100;
+                float magicDamageAfterBlock = magicDamage - (magicDamage * enemyShield.blockingMagicDamageAbsorbtion) / 100;
+                float lightningDamageAfterBlock = lightningDamage - (lightningDamage * enemyShield.blockingLightningDamageAbsorbtion) / 100;
+                float darkDamageAfterBlock = darkDamage - (darkDamage * enemyShield.blockingDarkDamageAbsorbtion) / 100;
+
+                enemyManager.characterCombatManager.AttempBlock(this, physicalDamage, magicDamage, fireDamage, lightningDamage, darkDamage, "Block Hit");
+                 enemyShield.TakeDamageAfterBlock(
+                   Mathf.RoundToInt(physicalDamageAfterBlock),
+                  Mathf.RoundToInt(fireDamageAfterBlock),
+                 Mathf.RoundToInt(magicDamageAfterBlock),
+                Mathf.RoundToInt(lightningDamageAfterBlock),
+                Mathf.RoundToInt(darkDamageAfterBlock),
+                characterManager);
             }
         }
 

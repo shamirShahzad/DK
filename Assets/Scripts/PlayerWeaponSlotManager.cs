@@ -28,7 +28,7 @@ namespace DK
 
                     leftHandSlot.LoadWeaponModel(weaponItem);
                     LoadLeftWeaponDamageCollider();
-                    player.playerAnimatorManager.PlayTargetAnimation(weaponItem.offHandIdleAnimation, false,true);
+                   // player.playerAnimatorManager.PlayTargetAnimation(weaponItem.offHandIdleAnimation, false,true);
                 }
                 else
                 {
@@ -57,7 +57,7 @@ namespace DK
                     leftHandSlot.currentWeapon = unarmedWeapon;
                     leftHandSlot.LoadWeaponModel(weaponItem);
                     LoadLeftWeaponDamageCollider();
-                    player.playerAnimatorManager.PlayTargetAnimation(weaponItem.offHandIdleAnimation, false, true);
+                   // player.playerAnimatorManager.PlayTargetAnimation(weaponItem.offHandIdleAnimation, false, true);
                 }
                 else
                 {

@@ -69738,70 +69738,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   criticalDamagerStandPosition: {fileID: 2554598860366144464}
---- !u!1 &2554598859294813344
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 2554598859294813359}
-  - component: {fileID: 2554598859294813357}
-  - component: {fileID: 2554598859294813358}
-  m_Layer: 9
-  m_Name: Blocking Collider
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &2554598859294813359
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2554598859294813344}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 2554598860160223603}
-  m_RootOrder: 3
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2554598859294813357
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2554598859294813344}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 573020a373bb948498a8b378cad01cb3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  blockingBoxCollider: {fileID: 2554598859294813358}
-  blockingPhysicalDamageAbsorbtion: 0
-  blockingFireDamageAbsorbtion: 0
-  blockingMagicDamageAbsorbtion: 0
-  blockingLightningDamageAbsorbtion: 0
-  blockingDarkDamageAbsorbtion: 0
---- !u!65 &2554598859294813358
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2554598859294813344}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1.0924876, y: 1.5331833, z: 0.07943535}
-  m_Center: {x: -0.01008442, y: 0.77151227, z: 0.1598115}
 --- !u!1 &2554598859508786791
 GameObject:
   m_ObjectHideFlags: 0
@@ -69891,6 +69827,7 @@ GameObject:
   - component: {fileID: 5161199277288787844}
   - component: {fileID: 1368521021009723081}
   - component: {fileID: 8154188209551204859}
+  - component: {fileID: 6715802046637684989}
   m_Layer: 11
   m_Name: New Player
   m_TagString: Character
@@ -69905,7 +69842,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2554598860014443789}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: -2.45}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -70047,6 +69984,8 @@ MonoBehaviour:
   characterStatsManager: {fileID: 0}
   characterInventoryManager: {fileID: 0}
   characterFXManager: {fileID: 0}
+  characterSFXManager: {fileID: 0}
+  characterCombatManager: {fileID: 0}
   animator: {fileID: 0}
   inputHandler: {fileID: 0}
   lockOnTransform: {fileID: 2554598860078321446}
@@ -70108,7 +70047,7 @@ MonoBehaviour:
   weaponItemsLeft:
   - {fileID: 11400000, guid: 69ae6967547257341ba37b25fe3d6b3f, type: 2}
   - {fileID: 11400000, guid: 69ae6967547257341ba37b25fe3d6b3f, type: 2}
-  - {fileID: 11400000, guid: 77c4d10d35ab5b54d82b108604760b06, type: 2}
+  - {fileID: 11400000, guid: 86513175fbf229344b21ec717ae7117a, type: 2}
   currentHelmetEquipment: {fileID: 11400000, guid: 482700fa87faf3e45915730f780ce9e7, type: 2}
   currentTorsoEquipment: {fileID: 11400000, guid: 35e4e1c4dd4c4514290593c159080a16, type: 2}
   currentLegEquipment: {fileID: 11400000, guid: 20a28d4d8ad02004d8ee1669dd17b5ca, type: 2}
@@ -70223,6 +70162,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 93083e1375f650946b996348ad3fa801, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  currentAttackType: 0
   backStabLayer:
     serializedVersion: 2
     m_Bits: 4096
@@ -70380,12 +70320,6 @@ MonoBehaviour:
   darkDamageAbsorbtionTorso: 0
   darkDamageAbsorbtionLegs: 0
   darkDamageAbsorbtionHands: 0
-  lightAttackBaseDamage: 30
-  heavyAttackBaseDamage: 40
-  twoHandAttackModifier: 2
-  critcalAttacakModifier: 1.5
-  chargeAttackModifier: 1.1
-  chargeAttackFullModifier: 1.8
   playerLevelText: {fileID: 0}
   PLAYER_LEVEL: Player_Level
   HEALTH_LEVEL: HealthLevel
@@ -70517,6 +70451,24 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &6715802046637684989
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2554598860014443789}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 786f01fb1f23dc0439ec851c627e22d6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  audioSource: {fileID: 0}
+  takingDamageSounds:
+  - {fileID: 8300000, guid: 48776a3fdaef0274c8d630e42d88c508, type: 3}
+  - {fileID: 8300000, guid: 0a913c4b95187ed4b9dc91b58f53192c, type: 3}
+  - {fileID: 8300000, guid: 5d2b5bf3407d35849ba2230fc435fec5, type: 3}
+  - {fileID: 8300000, guid: 5ee299aec5a455c48a6f70a2c42796af, type: 3}
 --- !u!1 &2554598860042538197
 GameObject:
   m_ObjectHideFlags: 0
@@ -70660,7 +70612,6 @@ Transform:
   - {fileID: 2554598858793991051}
   - {fileID: 2554598858767375720}
   - {fileID: 2554598859260908105}
-  - {fileID: 2554598859294813359}
   m_Father: {fileID: 2554598860014443894}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

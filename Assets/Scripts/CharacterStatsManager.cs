@@ -71,6 +71,14 @@ namespace DK
         public float darkDamageAbsorbtionLegs;
         public float darkDamageAbsorbtionHands;
 
+        [Header("Blocking absorbtions")]
+        public float blockingPhysicalDamageAbsorbtion;
+        public float blockingMagicDamageAbsorbtion;
+        public float blockingFireDamageAbsorbtion;
+        public float blockingLightningDamageAbsorbtion;
+        public float blockingDarkDamageAbsorbtion;
+        public float blockingStability;
+
 
 
 
@@ -148,6 +156,66 @@ namespace DK
                 character.isDead = true;
             }
             character.characterSFXManager.PlayRandomDamageSoundEffect();
+        }
+
+        public virtual void TakeDamageAfterBlock(int physicalDamage, int fireDamage, int magicDamage, int lightningDamage, int darkDamage, CharacterManager enemyCharacterDamagingMe)
+        {
+            if (character.isDead)
+                return;
+
+            character.characterAnimatorManager.EraseHandIKfromWeapon();
+
+            float totalPhysicalDamageAbsorbtion =
+                1 - (1 - physicalDamageAbsorbtionHead / 100) *
+                (1 - physicalDamageAbsorbtionTorso / 100) *
+                (1 - physicalDamageAbsorbtionLegs / 100) *
+                (1 - physicalDamageAbsorbtionHands / 100);
+
+            physicalDamage = Mathf.RoundToInt(physicalDamage - (physicalDamage * totalPhysicalDamageAbsorbtion));
+
+            float totalFireDamageAbsorbtion =
+                1 - (1 - fireDamageAbsorbtionHead / 100) *
+                (1 - fireDamageAbsorbtionTorso / 100) *
+                (1 - fireDamageAbsorbtionLegs / 100) *
+                (1 - fireDamageAbsorbtionHands / 100);
+
+            fireDamage = Mathf.RoundToInt(fireDamage - (fireDamage * totalFireDamageAbsorbtion));
+
+            float totalmagicDamageAbsorbtion =
+                1 - (1 - magicDamageAbsorbtionHead / 100) *
+                (1 - magicDamageAbsorbtionTorso / 100) *
+                (1 - magicDamageAbsorbtionLegs / 100) *
+                (1 - magicDamageAbsorbtionHands / 100);
+            magicDamage = Mathf.RoundToInt(magicDamage - (magicDamage * totalmagicDamageAbsorbtion));
+
+            float totalLightningDamageAbsrbtion =
+                1 - (1 - lightningDamageAbsorbtionHead / 100) *
+                (1 - lightningDamageAbsorbtionTorso / 100) *
+                (1 - lightningDamageAbsorbtionLegs / 100) *
+                (1 - lightningDamageAbsorbtionHands / 100);
+            lightningDamage = Mathf.RoundToInt(lightningDamage - (lightningDamage * totalLightningDamageAbsrbtion));
+
+            float totalDarkDamageAbsorbtion =
+                1 - (1 - darkDamageAbsorbtionHead / 100) *
+                (1 - darkDamageAbsorbtionTorso / 100) *
+                (1 - darkDamageAbsorbtionLegs / 100) *
+                (1 - darkDamageAbsorbtionHands / 100);
+
+            darkDamage = Mathf.RoundToInt(darkDamage - (darkDamage * totalDarkDamageAbsorbtion));
+
+            float finalDamage = physicalDamage + fireDamage + magicDamage + lightningDamage + darkDamage;
+            if (enemyCharacterDamagingMe.isPerformingFullyChargedAttack)
+            {
+                finalDamage = finalDamage * 2f;
+            }
+            currentHealth = Mathf.RoundToInt(currentHealth - finalDamage);
+            if (currentHealth <= 0)
+            {
+                currentHealth = 0;
+                character.isDead = true;
+            }
+            //Play Block Sound FX
+            //character.characterSFXManager.PlayRandomDamageSoundEffect();
         }
 
         public virtual void TakeDamageNoAnimation(int physicalDamage,int fireDamage,int magicDamage,int lightningDamage,int darkDamage)

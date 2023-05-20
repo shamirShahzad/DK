@@ -16,7 +16,7 @@ namespace DK
         public PlayerInventoryManager playerInventoryManager;
         public PlayerEquipmentManager playerEquipmentManager;
         public UIManager uIManager;
-        public BlockingCollider blockingCollider;
+        
             
         public GameObject interactableUiGameObject;
         public GameObject itemInteractableGameobject;
@@ -28,7 +28,6 @@ namespace DK
         {
             base.Awake();
             cameraHandler = FindObjectOfType<CameraHandler>();
-            blockingCollider = GetComponentInChildren<BlockingCollider>();
             inputHandler = GetComponent<inputHandler>();
             playerLocomotion = GetComponent<PlayerLocomotionManager>();
             interactableUi = FindObjectOfType<InteractableUi>();

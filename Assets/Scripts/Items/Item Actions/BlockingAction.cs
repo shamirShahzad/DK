@@ -14,8 +14,9 @@ namespace DK
             {
                 return;
             }
-            player.playerAnimatorManager.PlayTargetAnimation("Block Start", false, true);
-            player.playerEquipmentManager.OpenBlockingCollider();
+
+            player.playerCombatManager.SetBlockingAbsorbtionsFromBlockingWeapon();
+
             player.isBlocking = true;
         }
     }

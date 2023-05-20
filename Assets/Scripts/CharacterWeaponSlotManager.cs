@@ -71,7 +71,7 @@ namespace DK
                     leftHandSlot.LoadWeaponModel(weaponItem);
                     
                     LoadLeftWeaponDamageCollider();
-                    character.characterAnimatorManager.PlayTargetAnimation(weaponItem.offHandIdleAnimation, false, true);
+                   // character.characterAnimatorManager.PlayTargetAnimation(weaponItem.offHandIdleAnimation, false, true);
 
                 }
                 else
@@ -102,7 +102,7 @@ namespace DK
                     leftHandSlot.currentWeapon = unarmedWeapon;
                     leftHandSlot.LoadWeaponModel(weaponItem);
                     LoadLeftWeaponDamageCollider();
-                    character.characterAnimatorManager.PlayTargetAnimation(weaponItem.offHandIdleAnimation, false, true);
+                    //character.characterAnimatorManager.PlayTargetAnimation(weaponItem.offHandIdleAnimation, false, true);
                 }
                 else
                 {
@@ -123,6 +123,7 @@ namespace DK
             leftDamageCollider.magicDamage = character.characterInventoryManager.leftWeapon.magicDamage;//add Damage Types to weapons make sure they are 1 otherwise no damage will be applied
             leftDamageCollider.lightningDamage = character.characterInventoryManager.leftWeapon.lightningDamage;//add Damage Types to weapons make sure they are 1 otherwise no damage will be applied
             leftDamageCollider.darkDamage = character.characterInventoryManager.leftWeapon.darkDamage;//add Damage Types to weapons make sure they are 1 otherwise no damage will be applied
+            leftDamageCollider.guardBreakModifier = character.characterInventoryManager.leftWeapon.guardBreakModifier;
             leftDamageCollider.characterManager = character;
             leftDamageCollider.poiseBreak = character.characterInventoryManager.leftWeapon.poiseBreak;
             leftDamageCollider.teamIdNumber = character.characterStatsManager.teamIdNumber;
@@ -139,6 +140,7 @@ namespace DK
                 rightDamageCollider.magicDamage = character.characterInventoryManager.rightWeapon.magicDamage;//add Damage Types to weapons make sure they are 1 otherwise no damage will be applied
                 rightDamageCollider.lightningDamage = character.characterInventoryManager.rightWeapon.lightningDamage;//add Damage Types to weapons make sure they are 1 otherwise no damage will be applied
                 rightDamageCollider.darkDamage = character.characterInventoryManager.rightWeapon.darkDamage;//add Damage Types to weapons make sure they are 1 otherwise no damage will be applied
+                rightDamageCollider.guardBreakModifier = character.characterInventoryManager.rightWeapon.guardBreakModifier;
                 rightDamageCollider.characterManager = character;
                 rightDamageCollider.poiseBreak = character.characterInventoryManager.rightWeapon.poiseBreak;
                 rightDamageCollider.teamIdNumber = character.characterStatsManager.teamIdNumber;

@@ -5487,66 +5487,6 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 2048
   pursueTargetState: {fileID: 7983833999580673327}
---- !u!1 &7983833997846523383
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 7983833997846523380}
-  - component: {fileID: 7983833997846523386}
-  - component: {fileID: 7983833997846523381}
-  m_Layer: 9
-  m_Name: Blocking Collider
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &7983833997846523380
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7983833997846523383}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 7983833998759583782}
-  m_RootOrder: 3
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &7983833997846523386
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7983833997846523383}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.7846316, y: 1.1761374, z: 0.0272367}
-  m_Center: {x: 0.0031545162, y: 0.84665084, z: 0.15381777}
---- !u!114 &7983833997846523381
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7983833997846523383}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 573020a373bb948498a8b378cad01cb3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  blockingBoxCollider: {fileID: 0}
-  blockingPhysicalDamageAbsorbtion: 0
 --- !u!1 &7983833997933025633
 GameObject:
   m_ObjectHideFlags: 0
@@ -5817,7 +5757,6 @@ Transform:
   - {fileID: 7983833999269437083}
   - {fileID: 7983833997740273472}
   - {fileID: 7983833999542208049}
-  - {fileID: 7983833997846523380}
   m_Father: {fileID: 7983833999006744922}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -5901,7 +5840,7 @@ Rigidbody:
   m_CollisionDetection: 0
 --- !u!95 &4013606419465560983
 Animator:
-  serializedVersion: 4
+  serializedVersion: 5
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -5918,7 +5857,8 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!114 &4013606419465560981
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5931,9 +5871,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 24bf79c51b35fbc4680377c7c76353f2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  animator: {fileID: 0}
-  characterManager: {fileID: 0}
-  canRotate: 0
+  character: {fileID: 0}
+  leftHandConstraint: {fileID: 0}
+  rightHandConstraint: {fileID: 0}
+  player: {fileID: 0}
 --- !u!114 &4013606419465560980
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5952,8 +5893,8 @@ MonoBehaviour:
   leftHandSlot: {fileID: 0}
   rightHandSlot: {fileID: 0}
   backSlot: {fileID: 0}
-  rightHandWeapon: {fileID: 11400000, guid: 9d7ab9c34c1fc8549adf1387cd511440, type: 2}
-  leftHandWeapon: {fileID: 0}
+  rightHandIKTarget: {fileID: 0}
+  leftHandIKTarget: {fileID: 0}
 --- !u!114 &7983833999006744918
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5983,6 +5924,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 246b31a95860fd84abcbf8c06e22b22a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  characterAnimatorManager: {fileID: 0}
+  characterWeaponSlotManager: {fileID: 0}
+  characterStatsManager: {fileID: 0}
+  characterInventoryManager: {fileID: 0}
+  characterFXManager: {fileID: 0}
+  characterSFXManager: {fileID: 0}
+  characterCombatManager: {fileID: 0}
+  animator: {fileID: 0}
+  inputHandler: {fileID: 0}
   lockOnTransform: {fileID: 7983833999191523792}
   backStabCollider: {fileID: 7983833997740273473}
   riposteCollider: {fileID: 7983833999542208054}
@@ -5995,6 +5945,11 @@ MonoBehaviour:
   canDoCombo: 0
   isUsingRightHand: 0
   isUsingLeftHand: 0
+  isTwoHanding: 0
+  isHoldingArrow: 0
+  isAiming: 0
+  isPerformingFullyChargedAttack: 0
+  isDead: 0
   isRotatingWithRootMotion: 0
   canRotate: 0
   isSprinting: 0
@@ -6011,9 +5966,17 @@ MonoBehaviour:
   detectionRadius: 10
   minimumDetectionAngle: -50
   maximumDetectionAngle: 50
+  enemyLocomotionManager: {fileID: 0}
+  enemyAnimatorManager: {fileID: 0}
+  enemyStatsManager: {fileID: 0}
+  enemyFXManager: {fileID: 0}
+  enemyBossManager: {fileID: 0}
   allowAIToPerformCombo: 1
   comboLikelyhood: 100
   isPhaseShifting: 0
+  distanceFromTarget: 0
+  targetDirection: {x: 0, y: 0, z: 0}
+  viewableAngle: 0
   currentRecoveryTime: 0
 --- !u!114 &7983833999006744911
 MonoBehaviour:
@@ -6041,17 +6004,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 11af86c469e13714a808b4b99c0fbbc4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  healthLevel: 10
+  character: {fileID: 0}
+  teamIdNumber: 0
   maxHealth: 0
   currentHealth: 0
-  staminaLevel: 10
   maxStamina: 0
   currentStamina: 0
-  focusLevel: 10
   maxFocus: 0
   currentFocus: 0
   soulCount: 0
   soulsAwardedOnDeath: 50
+  playerLevel: 1
+  healthLevel: 10
+  staminaLevel: 10
+  focusLevel: 10
+  strengthLevel: 10
+  dexterityLevel: 10
+  poiseLevel: 10
+  intelligenceLevel: 10
+  faithLevel: 10
   totalPoiseDefense: 0
   offensivePoiseBonus: 0
   armorPoisebonus: 0
@@ -6061,7 +6032,28 @@ MonoBehaviour:
   physicalDamageAbsorbtionTorso: 0
   physicalDamageAbsorbtionLegs: 0
   physicalDamageAbsorbtionHands: 0
-  isDead: 0
+  magicDamageAbsorbtionHead: 0
+  magicDamageAbsorbtionTorso: 0
+  magicDamageAbsorbtionLegs: 0
+  magicDamageAbsorbtionHands: 0
+  fireDamageAbsorbtionHead: 0
+  fireDamageAbsorbtionTorso: 0
+  fireDamageAbsorbtionLegs: 0
+  fireDamageAbsorbtionHands: 0
+  lightningDamageAbsorbtionHead: 0
+  lightningDamageAbsorbtionTorso: 0
+  lightningDamageAbsorbtionLegs: 0
+  lightningDamageAbsorbtionHands: 0
+  darkDamageAbsorbtionHead: 0
+  darkDamageAbsorbtionTorso: 0
+  darkDamageAbsorbtionLegs: 0
+  darkDamageAbsorbtionHands: 0
+  blockingPhysicalDamageAbsorbtion: 0
+  blockingMagicDamageAbsorbtion: 0
+  blockingFireDamageAbsorbtion: 0
+  blockingLightningDamageAbsorbtion: 0
+  blockingDarkDamageAbsorbtion: 0
+  blockingStability: 0
   enemyHealthBar: {fileID: 0}
   isBoss: 0
 --- !u!1 &7983833999191523795
