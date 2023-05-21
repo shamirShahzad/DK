@@ -27,7 +27,7 @@ namespace DK
 
         public void HealPlayerFromEffect()
         {
-            player.playerStatsManager.healPlayer(amountToHealed);
+            player.playerStatsManager.healCharacter(amountToHealed);
             healParticles = Instantiate(currentParticleFX, player.playerStatsManager.transform);
             Destroy(instantiatedFXModel,0.8f);
         }

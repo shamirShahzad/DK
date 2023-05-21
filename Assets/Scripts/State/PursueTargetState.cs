@@ -9,7 +9,6 @@ namespace DK
 
 
         public CombatStanceState combatStanceState;
-        public RotateTowardsTarget rotateTowardsTargetState;
         public override State Tick(EnemyManager enemy)
         {
             

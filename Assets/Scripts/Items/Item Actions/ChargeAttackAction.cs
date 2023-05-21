@@ -7,44 +7,46 @@ namespace DK
     [CreateAssetMenu(menuName = "Item Actions/Charge Attack Action")]
     public class ChargeAttackAction : ItemAction
     {
-        public override void PerformAction(PlayerManager player)
+        
+        public override void PerformAction(CharacterManager character)
         {
-            if (player.playerStatsManager.currentStamina <= 0)
+            if (character.characterStatsManager.currentStamina <= 0)
             {
                 return;
             }
-            player.playerAnimatorManager.EraseHandIKfromWeapon();
-            player.playerFXManager.PlayWeaponFX(false);
-                if (player.isInteracting)
+            character.isAttacking = true;
+            character.characterAnimatorManager.EraseHandIKfromWeapon();
+            character.characterFXManager.PlayWeaponFX(false);
+                if (character.isInteracting)
                     return;
-                if (player.canDoCombo)
+                if (character.canDoCombo)
                     return;
 
-                HandleChargeAttack(player);
+                HandleChargeAttack(character);
             
 
         }
-        private void HandleChargeAttack(PlayerManager player)
+        private void HandleChargeAttack(CharacterManager character)
         {
-            if (player.isUsingLeftHand)
+            if (character.isUsingLeftHand)
             {
-                player.playerAnimatorManager.PlayTargetAnimation(player.playerCombatManager.OH_Charge_Attack_01, true, false, true);
-                player.playerCombatManager.lastAttack = player.playerCombatManager.OH_Charge_Attack_01;
-                player.playerFXManager.PlayWeaponFX(false);
+                character.characterAnimatorManager.PlayTargetAnimation(character.characterCombatManager.OH_Charge_Attack_01, true, false, true);
+                character.characterCombatManager.lastAttack = character.characterCombatManager.OH_Charge_Attack_01;
+                character.characterFXManager.PlayWeaponFX(false);
             }
-            else if (player.isUsingRightHand)
+            else if (character.isUsingRightHand)
             {
-                if (player.inputHandler.twoHandFlag)
+                if (character.isTwoHanding)
                 {
-                    player.playerAnimatorManager.PlayTargetAnimation(player.playerCombatManager.TH_Charge_Attack_01, true);
-                    player.playerCombatManager.lastAttack = player.playerCombatManager.TH_Charge_Attack_01;
-                    player.playerFXManager.PlayWeaponFX(false);
+                    character.characterAnimatorManager.PlayTargetAnimation(character.characterCombatManager.TH_Charge_Attack_01, true);
+                    character.characterCombatManager.lastAttack = character.characterCombatManager.TH_Charge_Attack_01;
+                    character.characterFXManager.PlayWeaponFX(false);
                 }
                 else
                 {
-                    player.playerAnimatorManager.PlayTargetAnimation(player.playerCombatManager.OH_Charge_Attack_01, true);
-                    player.playerCombatManager.lastAttack = player.playerCombatManager.OH_Charge_Attack_01;
-                    player.playerFXManager.PlayWeaponFX(false);
+                    character.characterAnimatorManager.PlayTargetAnimation(character.characterCombatManager.OH_Charge_Attack_01, true);
+                    character.characterCombatManager.lastAttack = character.characterCombatManager.OH_Charge_Attack_01;
+                    character.characterFXManager.PlayWeaponFX(false);
                 }
             }
 

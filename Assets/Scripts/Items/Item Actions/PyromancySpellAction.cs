@@ -6,28 +6,25 @@ namespace DK
     [CreateAssetMenu(menuName ="Item Actions/Pyromancy Item action")]
     public class PyromancySpellAction : ItemAction
     {
-        public override void PerformAction(PlayerManager player)
+        public override void PerformAction(CharacterManager character)
         {
-            if (player.isInteracting)
+            character.isAttacking = true;
+            if (character.isInteracting)
                 return;
-            WeaponItem weapon = player.playerInventoryManager.currentItemBeingUsed as WeaponItem;
+            WeaponItem weapon = character.characterInventoryManager.currentItemBeingUsed as WeaponItem;
             if(weapon.spellOfItem != null)
             {
-                player.playerInventoryManager.currentSpell = weapon.spellOfItem;
+                character.characterInventoryManager.currentSpell = weapon.spellOfItem;
             }
-            if (player.playerInventoryManager.currentSpell != null && player.playerInventoryManager.currentSpell.isPyroSpell)
+            if (character.characterInventoryManager.currentSpell != null && character.characterInventoryManager.currentSpell.isPyroSpell)
             {
-                if (player.playerStatsManager.currentFocus >= player.playerInventoryManager.currentSpell.focusPointCost)
+                if (character.characterStatsManager.currentFocus >= character.characterInventoryManager.currentSpell.focusPointCost)
                 {
-                    player.playerInventoryManager.currentSpell.AttemptToCastSpell(player.playerAnimatorManager,
-                        player.playerStatsManager,
-                        player.playerWeaponSlotManager,
-                        player.isUsingLeftHand,
-                        player.cameraHandler);
+                    character.characterInventoryManager.currentSpell.AttemptToCastSpell(character);
                 }
                 else
                 {
-                    player.playerAnimatorManager.PlayTargetAnimation("Failed Cast", true);
+                    character.characterAnimatorManager.PlayTargetAnimation("Failed Cast", true);
                 }
 
             }

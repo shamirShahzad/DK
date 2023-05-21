@@ -9,7 +9,7 @@ namespace DK
 
         public State currentState;
         public bool isPerformingAction;
-        public CharacterStatsManager currentTarget;
+        public CharacterManager currentTarget;
         public NavMeshAgent navMeshAgent;
         public Rigidbody enemyRigidbody;
 
@@ -18,7 +18,7 @@ namespace DK
  
 
         [Header("Settings")]
-        public float detectionRadius = 20;
+        public float detectionRadius = 5;
         public float minimumDetectionAngle = -50;
         public float maximumDetectionAngle = 50;
         public EnemyLocomotionManager enemyLocomotionManager;
@@ -31,12 +31,25 @@ namespace DK
         public bool allowAIToPerformCombo;
         public float comboLikelyhood;
         public bool isPhaseShifting;
+        public HumanAICombatStyle combatStyle;
 
         [Header("A.I Distance From target")]
         public float distanceFromTarget;
         public Vector3 targetDirection;
         public float viewableAngle;
 
+        //For the Betteer AI
+        [Header("Advance AI Settings")]
+        public bool allowAIToPerformBlock;
+        public int blockLikelyHood = 50;
+        public bool allowAIToPerformDodge;
+        public int dodgeLikelyHood = 50;
+        public bool allowAIToPerformParry;
+        public int parryLikelyHood = 50;
+
+        [Header("A.I Archery Settings")]
+        public float minimumTimeToAimAtTarget = 3;
+        public float maximumTimeToAimAtTarget = 5;
 
         public float currentRecoveryTime = 0;
 
@@ -67,8 +80,11 @@ namespace DK
             isPhaseShifting = animator.GetBool("isPhaseShifting");
             isInvulnerable = animator.GetBool("isInvulnerable");
             canRotate = animator.GetBool("canRotate");
+            isHoldingArrow = animator.GetBool("isHoldingArrow");
             canDoCombo = animator.GetBool("canDoCombo");
             animator.SetBool("isDead", isDead);
+            animator.SetBool("isBlocking", isBlocking);
+            animator.SetBool("isTwoHanding", isTwoHanding);
 
             if (currentTarget != null)
             {

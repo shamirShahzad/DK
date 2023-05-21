@@ -33,12 +33,12 @@ MonoBehaviour:
   guardBreakModifier: 1
   poiseBreak: 0
   offensivePoiseBonus: 0
-  physicalBlockingDamageAbsorbtion: 80
-  fireBlockingDamageAbsorbtion: 50
-  magicBlockingDamageAbsorbtion: 20
-  lightningBlockingDamageAbsorbtion: 10
-  darkBlockingDamageAbsorbtion: 1
-  stability: 67
+  physicalBlockingDamageAbsorbtion: 99
+  fireBlockingDamageAbsorbtion: 99
+  magicBlockingDamageAbsorbtion: 99
+  lightningBlockingDamageAbsorbtion: 99
+  darkBlockingDamageAbsorbtion: 99
+  stability: 60
   baseStaminaCost: 2
   lightStaminaModifier: 0
   heavyStaminaModifier: 0

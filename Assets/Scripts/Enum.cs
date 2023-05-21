@@ -31,6 +31,19 @@ namespace DK
         Running,
         Critical
     }
+
+    public enum HumanAICombatStyle
+    {
+        SwordAndShield,
+        Archer
+    }
+
+    public enum AIAttackActionType
+    {
+        MeleeAttackAction,
+        MagicAttackAction,
+        RangedAttackAction
+    }
     public class Enum : MonoBehaviour
     {
         

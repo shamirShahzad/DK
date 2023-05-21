@@ -10,37 +10,40 @@ namespace DK
         public LayerMask obstructionLayer;
         public PursueTargetState pursueTargetState;
         Vector3 offset = new Vector3(0, 2, 0);
-        public override State Tick(EnemyManager enemy)
+        public override State Tick(EnemyManager aiCharacter)
         {
-            Collider[] colliders = Physics.OverlapSphere(transform.position, enemy.detectionRadius, detectionLayer);
+            Collider[] colliders = Physics.OverlapSphere(transform.position, aiCharacter.detectionRadius, detectionLayer);
 
 
             for (int i = 0; i < colliders.Length; i++)
             {
-                CharacterStatsManager characterStats = colliders[i].transform.GetComponentInParent<CharacterStatsManager>();
+                CharacterManager character = colliders[i].transform.GetComponentInParent<CharacterManager>();
 
-                if (characterStats != null)
+                if (character != null)
                 {
-                    if (characterStats.teamIdNumber != enemy.enemyStatsManager.teamIdNumber)
+                    if (character.characterStatsManager.teamIdNumber != aiCharacter.enemyStatsManager.teamIdNumber)
                     {
-                        Vector3 targetDirection = characterStats.transform.position - transform.position;
-                        float distanceToTarget = Vector3.Distance(transform.position, characterStats.transform.position);
+                        Vector3 targetDirection = character.transform.position - transform.position;
+                        float distanceToTarget = Vector3.Distance(transform.position, character.transform.position);
                         float viewableAngle = Vector3.Angle(targetDirection, transform.forward);
 
-                        if (viewableAngle > enemy.minimumDetectionAngle && viewableAngle < enemy.maximumDetectionAngle)
+                        if (viewableAngle > aiCharacter.minimumDetectionAngle && viewableAngle < aiCharacter.maximumDetectionAngle)
                         {
-                            if (!Physics.Raycast(transform.position + offset, targetDirection, distanceToTarget, obstructionLayer))
-                                enemy.currentTarget = characterStats;
+                            if (Physics.Linecast(aiCharacter.lockOnTransform.position, character.lockOnTransform.position, obstructionLayer))
+                            {
+                                return this;
+                            }
                             else
-                                enemy.currentTarget = null;
-
+                            {
+                                aiCharacter.currentTarget = character;
+                            }
                         }
                     }
 
-                    
+
                 }
             }
-            if (enemy.currentTarget != null)
+            if (aiCharacter.currentTarget != null)
             {
                 return pursueTargetState;
             }

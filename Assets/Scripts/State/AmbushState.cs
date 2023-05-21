@@ -23,16 +23,16 @@ namespace DK
 
             for(int i =0; i < colliders.Length; i++)
             {
-                CharacterStatsManager characterStats = colliders[i].transform.GetComponentInParent<CharacterStatsManager>();
+                CharacterManager character = colliders[i].transform.GetComponentInParent<CharacterManager>();
 
-                if(characterStats != null)
+                if(character != null)
                 {  
-                    Vector3 targetDirection = characterStats.transform.position - enemy.transform.position;
+                    Vector3 targetDirection = character.transform.position - enemy.transform.position;
                     float viewableAngle = Vector3.Angle(targetDirection, enemy.transform.forward);
                     if(viewableAngle > enemy.minimumDetectionAngle &&
                         viewableAngle < enemy.maximumDetectionAngle)
                     {
-                        enemy.currentTarget = characterStats;
+                        enemy.currentTarget = character;
                         isSleeping = false;
                         enemy.enemyAnimatorManager.PlayTargetAnimation(wakeAnimation, true);
                     }

@@ -299,6 +299,17 @@ namespace DK
             }
         }
 
+        public virtual void healCharacter(int health)
+        {
+            currentHealth = currentHealth + health;
+
+            if (currentHealth > maxHealth)
+            {
+                currentHealth = maxHealth;
+            }
+
+        }
+
         public int SetMaxHealthFromHealthLevel()
         {
             maxHealth = healthLevel * 10;

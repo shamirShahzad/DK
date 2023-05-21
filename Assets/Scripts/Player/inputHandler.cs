@@ -37,9 +37,6 @@ namespace DK
         public bool comboFlag;
         public float rollInputTimer;
 
-        public Transform criticalAttackRaycastStartPoint;
-
-
         PlayerControls inputActions;
         PlayerManager player;
 

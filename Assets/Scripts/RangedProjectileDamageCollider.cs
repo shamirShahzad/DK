@@ -53,6 +53,49 @@ namespace DK
                     }
                 }
             }
+
+            if(collision.tag == "Player")
+            {
+                shieldHasBeenHit = false;
+                hasBeenParried = false;
+                CharacterStatsManager enemyStats = collision.GetComponentInParent<CharacterStatsManager>();
+                CharacterManager enemyManager = collision.GetComponentInParent<CharacterManager>();
+                CharacterFXManager enemyFX = collision.GetComponentInParent<CharacterFXManager>();
+
+
+                if (enemyManager != null)
+                {
+                    if (enemyStats.teamIdNumber == teamIdNumber)
+                        return;
+                    CheckForParry(enemyManager);
+                    CheckForBlock(enemyManager);
+
+                }
+                if (enemyStats != null)
+                {
+                    if (enemyStats.teamIdNumber == teamIdNumber || enemyManager.isDead)
+                        return;
+                    if (hasBeenParried)
+                        return;
+                    if (shieldHasBeenHit)
+                        return;
+                    enemyStats.poiseResetTimer = enemyStats.totalPoiseResetTime;
+                    enemyStats.totalPoiseDefense -= poiseBreak;
+                    Vector3 contactPoint = collision.gameObject.GetComponent<Collider>().ClosestPointOnBounds(transform.position);
+                    float directionHitFrom = (Vector3.SignedAngle(characterManager.transform.forward, enemyManager.transform.forward, Vector3.up));
+                    ChooseWhichDirectionDamageCameFrom(directionHitFrom);
+                    enemyFX.PlayBloodSplatterEffect(contactPoint);
+                    if (enemyStats.totalPoiseDefense > poiseBreak)
+                    {
+                        enemyStats.TakeDamageNoAnimation(physicalDamage, fireDamage, magicDamage, lightningDamage, darkDamage);
+                    }
+                    else
+                    {
+
+                        enemyStats.TakeDamage(physicalDamage, fireDamage, magicDamage, lightningDamage, darkDamage, currentDamageAnimation, characterManager);
+                    }
+                }
+            }
             if (collision.tag == "Illusionary Wall")
             {
                 IllusionaryWall illusionaryWall = collision.GetComponent<IllusionaryWall>();

@@ -142,7 +142,12 @@ namespace DK
             }
         }
 
-      
+        public override void healCharacter(int health)
+        {
+            base.healCharacter(health);
+            healthBar.SetCurrentHealth(currentHealth);
+        }
+
         public override void TakeDamageNoAnimation(int physicalDamage,int fireDamage,int magicDamage,int lightningDamage,int darkDamage)
         {
             base.TakeDamageNoAnimation(physicalDamage,fireDamage,magicDamage,lightningDamage,darkDamage);
@@ -251,17 +256,6 @@ namespace DK
                 }
             }
 
-        }
-
-        public void healPlayer(int health)
-        {
-            currentHealth = currentHealth + health;
-
-            if(currentHealth > maxHealth)
-            {
-                currentHealth = maxHealth;
-            }
-            healthBar.SetCurrentHealth(currentHealth);
         }
 
         public void DeductfocusPoints(float focusPoints)

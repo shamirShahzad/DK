@@ -6,17 +6,17 @@ namespace DK
     [CreateAssetMenu(menuName ="Item Actions/Draw Arrow Action")]
     public class DrawArrowAction : ItemAction
     {
-        public override void PerformAction(PlayerManager player)
+        public override void PerformAction(CharacterManager character)
         {
-            if (player.isInteracting)
+            if (character.isInteracting)
                 return;
-            if (player.isHoldingArrow)
+            if (character.isHoldingArrow)
                 return;
-            player.animator.SetBool("isHoldingArrow", true);
-            player.playerAnimatorManager.PlayTargetAnimation("Bow_TH_Draw_01_R", true);
-            GameObject loadedArrow = Instantiate(player.playerInventoryManager.currentAmmo.loadedItemModel, player.playerWeaponSlotManager.leftHandSlot.transform);
-            player.playerFXManager.currentRangeFX = loadedArrow;
-            Animator bowAnimator = player.playerWeaponSlotManager.rightHandSlot.GetComponentInChildren<Animator>();
+            character.animator.SetBool("isHoldingArrow", true);
+            character.characterAnimatorManager.PlayTargetAnimation("Bow_TH_Draw_01_R", true);
+            GameObject loadedArrow = Instantiate(character.characterInventoryManager.currentAmmo.loadedItemModel, character.characterWeaponSlotManager.leftHandSlot.transform);
+            character.characterFXManager.currentRangeFX = loadedArrow;
+            Animator bowAnimator = character.characterWeaponSlotManager.rightHandSlot.GetComponentInChildren<Animator>();
             bowAnimator.SetBool("isDrawn", true);
             bowAnimator.Play("Bow_TH_Draw_01");
             //activate aim button

@@ -16,9 +16,13 @@ namespace DK
         public inputHandler inputHandler;
         [Header("Lock On Transform")]
         public Transform lockOnTransform;
+        [Header("Raycast Transform")]
+        public Transform criticalAttackRaycastStartPoint;
+
         [Header("Combat Colliders")]
         public CriticalDamageCollider backStabCollider;
         public CriticalDamageCollider riposteCollider;
+
 
         [Header("Combat Flags")]
         public bool canBeRiposted;
@@ -34,6 +38,7 @@ namespace DK
         public bool isHoldingArrow;
         public bool isAiming;
         public bool isPerformingFullyChargedAttack;
+        public bool isAttacking;
 
         [Header("Status dead")]
 

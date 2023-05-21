@@ -47,11 +47,11 @@ MonoBehaviour:
   runningStaminaModifier: 0
   spellOfItem: {fileID: 0}
   hold_RB_Action: {fileID: 0}
-  tap_RB_Action: {fileID: 0}
+  tap_RB_Action: {fileID: 11400000, guid: 7850ac8c110a7cb4a82941262c950f4a, type: 2}
   tap_LB_Action: {fileID: 0}
   hold_LB_Action: {fileID: 0}
   hold_RT_Action: {fileID: 0}
-  tap_RT_Action: {fileID: 0}
+  tap_RT_Action: {fileID: 11400000, guid: 36648edf6ec7be1428c5ad86b1b37491, type: 2}
   tap_LT_Action: {fileID: 0}
   hold_LT_Action: {fileID: 0}
   th_hold_RB_Action: {fileID: 0}

@@ -6,23 +6,19 @@ namespace DK
     [CreateAssetMenu(menuName = "Item Actions/Magic Spell Action")]
     public class MagicSpellAction : ItemAction
     {
-        public override void PerformAction(PlayerManager player)
+        public override void PerformAction(CharacterManager character)
         {
-            if (player.isInteracting)
+            if (character.isInteracting)
                 return;
-            if (player.playerInventoryManager.currentSpell != null && player.playerInventoryManager.currentSpell.isMagicSpell)
+            if (character.characterInventoryManager.currentSpell != null && character.characterInventoryManager.currentSpell.isMagicSpell)
             {
-                if (player.playerStatsManager.currentFocus >= player.playerInventoryManager.currentSpell.focusPointCost)
+                if (character.characterStatsManager.currentFocus >= character.characterInventoryManager.currentSpell.focusPointCost)
                 {
-                    player.playerInventoryManager.currentSpell.AttemptToCastSpell(player.playerAnimatorManager,
-                        player.playerStatsManager,
-                        player.playerWeaponSlotManager,
-                        player.isUsingLeftHand,
-                        player.cameraHandler);
+                    character.characterInventoryManager.currentSpell.AttemptToCastSpell(character);
                 }
                 else
                 {
-                    player.playerAnimatorManager.PlayTargetAnimation("Failed Cast", true);
+                    character.characterAnimatorManager.PlayTargetAnimation("Failed Cast", true);
                 }
 
             }

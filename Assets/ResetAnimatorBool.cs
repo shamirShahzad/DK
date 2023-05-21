@@ -33,6 +33,10 @@ namespace DK
         {
             CharacterManager characterManager = animator.GetComponent<CharacterManager>();
 
+            characterManager.isAttacking = false;
+            characterManager.isUsingLeftHand = false;
+            characterManager.isUsingRightHand = false;
+
             characterManager.isUsingRightHand = false;
             characterManager.isUsingLeftHand = false;
             animator.SetBool(isInteractingBool, isInteractingStatus);

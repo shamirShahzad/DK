@@ -9,23 +9,20 @@ namespace DK
     public class HealingSpell : SpellItem
     {
         public int healAmount;
-        public override void AttemptToCastSpell(PlayerAnimatorManager animatorHandler,
-            PlayerStatsManager playerStats,
-            PlayerWeaponSlotManager weaponSlotManager,
-            bool isLeftHanded, CameraHandler cameraHandler)
+        public override void AttemptToCastSpell(CharacterManager character)
         {
-            base.AttemptToCastSpell(animatorHandler, playerStats,weaponSlotManager,isLeftHanded,cameraHandler);
-            GameObject instanstiatedWarmupSpellFX = Instantiate(spellWarmupEffect,animatorHandler.transform);
-            animatorHandler.PlayTargetAnimation(spellAnimation, true,false,isLeftHanded);
+            base.AttemptToCastSpell(character);
+            GameObject instanstiatedWarmupSpellFX = Instantiate(spellWarmupEffect,character.transform);
+            character.characterAnimatorManager.PlayTargetAnimation(spellAnimation, true,false,character.isUsingLeftHand);
            // Debug.Log("Attempting baaby..");
             Destroy(instanstiatedWarmupSpellFX, 1.5f);
         }
 
-        public override void SuccessfullyCastedSpell(PlayerManager player)
+        public override void SuccessfullyCastedSpell(CharacterManager character)
         {
-            base.SuccessfullyCastedSpell(player);
-            GameObject instansiatedSpellFX = Instantiate(spellCastEffect, player.playerAnimatorManager.transform);
-            player.playerStatsManager.healPlayer(healAmount);
+            base.SuccessfullyCastedSpell(character);
+            GameObject instansiatedSpellFX = Instantiate(spellCastEffect, character.transform);
+            character.characterStatsManager.healCharacter(healAmount);
             //Debug.Log("Success BABY");
             Destroy(instansiatedSpellFX, 1.5f);
         }

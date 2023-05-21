@@ -26,17 +26,16 @@ namespace DK
         [TextArea]
         public string spellDescription;
 
-        public virtual void AttemptToCastSpell(PlayerAnimatorManager animatorHandler,
-            PlayerStatsManager playerStats,
-            PlayerWeaponSlotManager weaponSlotManager,
-            bool isLeftHanded,CameraHandler cameraHandler)
+        public virtual void AttemptToCastSpell(CharacterManager character)
         {
 
         }
 
-        public virtual void SuccessfullyCastedSpell(PlayerManager player)
+        public virtual void SuccessfullyCastedSpell(CharacterManager character)
         {
-            player.playerStatsManager.DeductfocusPoints(focusPointCost);
+            PlayerManager player = character as PlayerManager;
+            if(player!=null)
+                player.playerStatsManager.DeductfocusPoints(focusPointCost);
         }
     }
 }
