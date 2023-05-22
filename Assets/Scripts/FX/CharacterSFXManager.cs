@@ -14,6 +14,9 @@ namespace DK
         private int lastGoreSound = -1;
         private int lastSwooshSound = -1;
 
+        [Header("BackStabORRiposte")]
+        public AudioClip backStabOrRiposte;
+
 
         protected virtual void Awake()
         {

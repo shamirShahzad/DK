@@ -6,8 +6,8 @@ namespace DK
 {
     public class CharacterFXManager : MonoBehaviour
     {
-        [Header("Current Range FX")]
-        public GameObject currentRangeFX;
+        [Header("Current FX")]
+        public GameObject instantiatedFXModel;
 
         CharacterManager character;
         [Header("Damage FX")]
@@ -108,6 +108,28 @@ namespace DK
                     poisonAmount = defaultPoisonAmount;
                     Destroy(currentPoisonParticleFX);
                 }
+            }
+        }
+
+        public virtual void InterruptEffect()
+        {
+            if (instantiatedFXModel != null)
+            {
+                Destroy(instantiatedFXModel);
+            }
+            if (character.isHoldingArrow)
+            {
+                character.animator.SetBool("isHoldingArrow",false);
+                Animator rangedWeaponAnimator = character.characterWeaponSlotManager.rightHandSlot.currentWeaponModel.GetComponentInChildren<Animator>();
+                if (rangedWeaponAnimator != null)
+                {
+                    rangedWeaponAnimator.SetBool("isDrawn", false);
+                    rangedWeaponAnimator.Play("Bow_TH_Fire_01");
+                }
+            }
+            if (character.isAiming)
+            {
+                character.animator.SetBool("isAiming", false);
             }
         }
     }

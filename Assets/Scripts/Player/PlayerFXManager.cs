@@ -7,7 +7,6 @@ namespace DK
     {
         PlayerManager player;
         public GameObject currentParticleFX;
-        public GameObject instantiatedFXModel;
         public GameObject healParticles;
         public int amountToHealed;
         public bool toBeInstantiated = true;

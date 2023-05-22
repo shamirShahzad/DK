@@ -17,7 +17,7 @@ namespace DK
             bowAnimator.SetBool("isDrawn", false);
             //Deactivate aim button
             bowAnimator.Play("Bow_TH_Fire_01");
-            Destroy(character.characterFXManager.currentRangeFX);//Destroy Loaded arrow
+            Destroy(character.characterFXManager.instantiatedFXModel);//Destroy Loaded arrow
 
            character.characterAnimatorManager.PlayTargetAnimation("Bow_TH_Fire_01_R", true);
             character.animator.SetBool("isHoldingArrow", false);

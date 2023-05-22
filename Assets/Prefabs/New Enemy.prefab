@@ -5090,7 +5090,7 @@ RectTransform:
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0.5}
@@ -5307,67 +5307,8 @@ MonoBehaviour:
   wakeAnimation: Get Up
   detectionLayer:
     serializedVersion: 2
-    m_Bits: 2048
+    m_Bits: 512
   pursueTargetState: {fileID: 9000053291826532789}
---- !u!1 &9000053291050601433
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 9000053291050601434}
-  - component: {fileID: 9000053291050601436}
-  - component: {fileID: 9000053291050601435}
-  m_Layer: 12
-  m_Name: Back Stab Collider
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &9000053291050601434
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9000053291050601433}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1.22, z: -0.315}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 9000053292072862908}
-  m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &9000053291050601436
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9000053291050601433}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.40971062, y: 0.41075718, z: 0.06720543}
-  m_Center: {x: 0.000701651, y: 0.04228276, z: 0.050043583}
---- !u!114 &9000053291050601435
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9000053291050601433}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f1ce75b09cd2b0044bfa3712584e7626, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  criticalDamagerStandPosition: {fileID: 9000053291220653394}
 --- !u!1 &9000053291072545428
 GameObject:
   m_ObjectHideFlags: 0
@@ -5840,65 +5781,6 @@ Transform:
   m_Father: {fileID: 8712038281048718959}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &9000053291780973226
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 9000053291780973227}
-  - component: {fileID: 9000053291780973229}
-  - component: {fileID: 9000053291780973228}
-  m_Layer: 13
-  m_Name: Riposte Collider
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &9000053291780973227
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9000053291780973226}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1.22, z: 0.24000001}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 9000053292072862908}
-  m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &9000053291780973229
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9000053291780973226}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.40971062, y: 0.41075718, z: 0.06720543}
-  m_Center: {x: 0.000701651, y: 0.04228276, z: 0.050043583}
---- !u!114 &9000053291780973228
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9000053291780973226}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f1ce75b09cd2b0044bfa3712584e7626, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  criticalDamagerStandPosition: {fileID: 9000053291243732476}
 --- !u!1 &9000053291785420741
 GameObject:
   m_ObjectHideFlags: 0
@@ -5994,7 +5876,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   detectionLayer:
     serializedVersion: 2
-    m_Bits: 2048
+    m_Bits: 512
   obstructionLayer:
     serializedVersion: 2
     m_Bits: 64
@@ -6044,7 +5926,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   combatStanceState: {fileID: 9000053290621313865}
-  rotateTowardsTargetState: {fileID: 1483523733}
 --- !u!1 &9000053292072862907
 GameObject:
   m_ObjectHideFlags: 0
@@ -6074,8 +5955,6 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 9000053291516885505}
-  - {fileID: 9000053291050601434}
-  - {fileID: 9000053291780973227}
   m_Father: {fileID: 9000053292317615552}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -6153,7 +6032,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9000053292233499977}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.004999995, y: 1.224, z: 0}
+  m_LocalPosition: {x: 0.018, y: 1.224, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -6265,7 +6144,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &9000053292317615552
 Transform:
   m_ObjectHideFlags: 0
@@ -6416,8 +6295,7 @@ MonoBehaviour:
   animator: {fileID: 0}
   inputHandler: {fileID: 0}
   lockOnTransform: {fileID: 9000053292233499978}
-  backStabCollider: {fileID: 9000053291050601435}
-  riposteCollider: {fileID: 9000053291780973228}
+  criticalAttackRaycastStartPoint: {fileID: 0}
   canBeRiposted: 0
   isParrying: 0
   isBlocking: 0
@@ -6431,6 +6309,11 @@ MonoBehaviour:
   isHoldingArrow: 0
   isAiming: 0
   isPerformingFullyChargedAttack: 0
+  isAttacking: 0
+  isBeingBackStabbed: 0
+  isBeingRiposted: 0
+  isPerformingBackStab: 0
+  isPerformingRiposte: 0
   isDead: 0
   isRotatingWithRootMotion: 0
   canRotate: 0
@@ -6456,9 +6339,18 @@ MonoBehaviour:
   allowAIToPerformCombo: 1
   comboLikelyhood: 100
   isPhaseShifting: 0
+  combatStyle: 0
   distanceFromTarget: 0
   targetDirection: {x: 0, y: 0, z: 0}
   viewableAngle: 0
+  allowAIToPerformBlock: 0
+  blockLikelyHood: 50
+  allowAIToPerformDodge: 0
+  dodgeLikelyHood: 50
+  allowAIToPerformParry: 0
+  parryLikelyHood: 50
+  minimumTimeToAimAtTarget: 3
+  maximumTimeToAimAtTarget: 5
   currentRecoveryTime: 0
 --- !u!114 &4413020848826425741
 MonoBehaviour:
@@ -6521,6 +6413,7 @@ MonoBehaviour:
   blockingFireDamageAbsorbtion: 0
   blockingLightningDamageAbsorbtion: 0
   blockingDarkDamageAbsorbtion: 0
+  blockingStability: 0
   enemyHealthBar: {fileID: 9000053292083880270}
   isBoss: 0
 --- !u!114 &186067111658811817
@@ -6535,7 +6428,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ae68d3449bedd6645b0b0f0174f5a7bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentRangeFX: {fileID: 0}
+  instantiatedFXModel: {fileID: 0}
   bloodSplatterFX: {fileID: 183679963054362320, guid: ed5d829a9e21a7c4cb440881091a79a9, type: 3}
   rightWeaponVFX: {fileID: 0}
   leftWeaponVFX: {fileID: 0}
@@ -6710,6 +6603,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 0a913c4b95187ed4b9dc91b58f53192c, type: 3}
   - {fileID: 8300000, guid: 5d2b5bf3407d35849ba2230fc435fec5, type: 3}
   - {fileID: 8300000, guid: 5ee299aec5a455c48a6f70a2c42796af, type: 3}
+  backStabOrRiposte: {fileID: 8300000, guid: 306dabd1c9cdc41479c38e7905c3fa35, type: 3}
 --- !u!114 &3400318472958984295
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6722,4 +6616,26 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ca3210e3d74bf4c46a8e55db9ac96f3f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  characterLayer:
+    serializedVersion: 2
+    m_Bits: 0
+  criticalAttackRange: 0.7
+  pendingCriticalDamage: 0
+  backStabReceiverTransform: {fileID: 0}
+  lastAttack: 
+  OH_Light_Attack_01: OH_Light_Attack_01
+  OH_Light_Attack_02: OH_Light_Attack_02
+  OH_Heavy_Attack_01: OH_Heavy_Attack_01
+  OH_Heavy_Attack_02: OH_Heavy_Attack_02
+  OH_Running_Attack_01: OH_Running_Attack_01
+  OH_Jumping_Attack_01: OH_Jumping_Attack_01
+  OH_Charge_Attack_01: OH_Charging_Attack_Charge
+  TH_Heavy_Attack_01: TH_Heavy_Attack_01
+  TH_Heavy_Attack_02: TH_Heavy_Attack_02
+  TH_Light_Attack_01: TH_Light_Attack_01
+  TH_Light_Attack_02: TH_Light_Attack_02
+  TH_Jumping_Attack_01: TH_Jumping_Attack_01
+  TH_Running_Attack_01: TH_Running_Attack_01
+  TH_Charge_Attack_01: TH_Charging_Attack_Charge
+  weaponArtShield: Parry
   currentAttackType: 0

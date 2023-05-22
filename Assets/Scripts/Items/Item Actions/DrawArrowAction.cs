@@ -15,7 +15,7 @@ namespace DK
             character.animator.SetBool("isHoldingArrow", true);
             character.characterAnimatorManager.PlayTargetAnimation("Bow_TH_Draw_01_R", true);
             GameObject loadedArrow = Instantiate(character.characterInventoryManager.currentAmmo.loadedItemModel, character.characterWeaponSlotManager.leftHandSlot.transform);
-            character.characterFXManager.currentRangeFX = loadedArrow;
+            character.characterFXManager.instantiatedFXModel = loadedArrow;
             Animator bowAnimator = character.characterWeaponSlotManager.rightHandSlot.GetComponentInChildren<Animator>();
             bowAnimator.SetBool("isDrawn", true);
             bowAnimator.Play("Bow_TH_Draw_01");

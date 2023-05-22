@@ -32,8 +32,7 @@ namespace DK
             playerLocomotion = GetComponent<PlayerLocomotionManager>();
             interactableUi = FindObjectOfType<InteractableUi>();
             playerStatsManager = GetComponent<PlayerStatsManager>();
-            backStabCollider = GetComponentInChildren<CriticalDamageCollider>();
-            playerAnimatorManager = GetComponent<PlayerAnimatorManager>();
+             playerAnimatorManager = GetComponent<PlayerAnimatorManager>();
             playerFXManager = GetComponent<PlayerFXManager>();
             playerCombatManager = GetComponent<PlayerCombatManager>();
             playerInventoryManager = GetComponent<PlayerInventoryManager>();
@@ -59,7 +58,6 @@ namespace DK
             inputHandler.TickInput();
             playerLocomotion.HandleRolling();
             playerLocomotion.HandleJumping();
-            //playerStatsManager.DrainStaminaBasedOnAttackType();
 
             playerStatsManager.RegenarateStamina();
             playerStatsManager.RegenarateFocus();

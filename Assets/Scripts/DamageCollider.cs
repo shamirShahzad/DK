@@ -81,6 +81,7 @@ namespace DK
                     float directionHitFrom = (Vector3.SignedAngle(characterManager.transform.forward, enemyManager.transform.forward, Vector3.up));
                     ChooseWhichDirectionDamageCameFrom(directionHitFrom);
                     enemyFX.PlayBloodSplatterEffect(contactPoint);
+                    enemyFX.InterruptEffect();
                     DealDamage(enemyStats);
                 }
             }
@@ -115,6 +116,7 @@ namespace DK
                     float directionHitFrom = (Vector3.SignedAngle(characterManager.transform.forward, enemyManager.transform.forward, Vector3.up));
                     ChooseWhichDirectionDamageCameFrom(directionHitFrom);
                     enemyFX.PlayBloodSplatterEffect(contactPoint);
+                    enemyFX.InterruptEffect();
                     DealDamage(enemyStats);
                 }
             }

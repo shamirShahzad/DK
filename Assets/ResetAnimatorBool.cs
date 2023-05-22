@@ -36,6 +36,10 @@ namespace DK
             characterManager.isAttacking = false;
             characterManager.isUsingLeftHand = false;
             characterManager.isUsingRightHand = false;
+            characterManager.isBeingBackStabbed = false;
+            characterManager.isBeingRiposted = false;
+            characterManager.isPerformingBackStab = false;
+            characterManager.isPerformingRiposte = false;
 
             characterManager.isUsingRightHand = false;
             characterManager.isUsingLeftHand = false;

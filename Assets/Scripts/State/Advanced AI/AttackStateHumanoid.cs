@@ -61,6 +61,11 @@ namespace DK
             
             if (enemy.isInteracting)
                 return this;
+            if (!enemy.isHoldingArrow)
+            {
+                ResetStateFlags();
+                return combatStanceState;
+            }
             if (enemy.currentTarget.isDead)
             {
                 ResetStateFlags();
@@ -123,7 +128,10 @@ namespace DK
                 Vector3 targetVelocity = enemy.enemyRigidbody.velocity;
 
                 enemy.navMeshAgent.enabled = true;
-                enemy.navMeshAgent.SetDestination(enemy.currentTarget.transform.position);
+                if (enemy.currentTarget != null)
+                {
+                    enemy.navMeshAgent.SetDestination(enemy.currentTarget.transform.position);
+                }
                 float rotoationToApplyToDynamicEnemy;
                 if (enemy.navMeshAgent.desiredVelocity.magnitude > 0)
                 {

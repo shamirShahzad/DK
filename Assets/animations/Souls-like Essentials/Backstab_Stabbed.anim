@@ -73672,7 +73672,7 @@ AnimationClip:
   m_HasMotionFloatCurves: 0
   m_Events:
   - time: 0.6333333
-    functionName: TakeCriticalDamageAnimationEvent
+    functionName: ApplyPendingDamage
     data: 
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0

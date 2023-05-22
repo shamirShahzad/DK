@@ -19,9 +19,7 @@ namespace DK
         [Header("Raycast Transform")]
         public Transform criticalAttackRaycastStartPoint;
 
-        [Header("Combat Colliders")]
-        public CriticalDamageCollider backStabCollider;
-        public CriticalDamageCollider riposteCollider;
+        
 
 
         [Header("Combat Flags")]
@@ -39,6 +37,10 @@ namespace DK
         public bool isAiming;
         public bool isPerformingFullyChargedAttack;
         public bool isAttacking;
+        public bool isBeingBackStabbed;
+        public bool isBeingRiposted;
+        public bool isPerformingBackStab;
+        public bool isPerformingRiposte;
 
         [Header("Status dead")]
 
