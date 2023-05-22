@@ -132,7 +132,7 @@ namespace DK
         {
             if (enemyManager.isParrying)
             {
-                enemyManager.GetComponent<CharacterAnimatorManager>().PlayTargetAnimation("Parried", true);
+                characterManager.characterAnimatorManager.PlayTargetAnimation("Parried", true);
                 hasBeenParried = true;
             }
         }

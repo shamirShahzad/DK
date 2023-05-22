@@ -21,6 +21,7 @@ namespace DK
 
         bool hasPerformedDodge = false;
         bool hasRandomDodgeDirection = false;
+        bool hasPerformedParry = false;
 
         Quaternion targetDodgeDirection;
         public override State Tick(EnemyManager enemy)
@@ -61,12 +62,21 @@ namespace DK
             }
 
             //Randomize AI movement when player is still and AI is aggroed
+            HandleRotateTowardsTarget(enemy);
             if (!randomDestinatonSet)
             {
                 randomDestinatonSet = true;
                 DecideCirclingAction(enemy);
             }
-            HandleRotateTowardsTarget(enemy);
+            if (enemy.allowAIToPerformParry)
+            {
+                if (enemy.currentTarget.canBeRiposted)
+                {
+                    CheckForRiposte(enemy);
+                    return this;
+                }
+            }
+            
             if (enemy.allowAIToPerformBlock)
             {
                 RollBlockChance(enemy);
@@ -79,6 +89,15 @@ namespace DK
             {
                 RollParryChance(enemy);
             }
+            if (enemy.currentTarget.isAttacking)
+            {
+                if (willPerformParry && !hasPerformedParry)
+                {
+                    ParryCurrentTarget(enemy);
+                    return this;
+                }
+            }
+            
 
             if (willPerformBlock)
             {
@@ -88,12 +107,9 @@ namespace DK
             {
                 DodgeWhenBeingAttacked(enemy);
             }
-            if (willPerformParry)
-            {
-                //PArry
-            }
 
             
+
 
 
             if (enemy.currentRecoveryTime <= 0 && attackState.currentAttack != null)
@@ -280,6 +296,19 @@ namespace DK
             }
         }
 
+        private void ParryCurrentTarget(EnemyManager enemy)
+        {
+            if (enemy.currentTarget.canBeParried)
+            {
+                if(enemy.distanceFromTarget <= 2)
+                {
+                    hasPerformedParry = true;
+                    enemy.isParrying = true;
+                    enemy.enemyAnimatorManager.PlayTargetAnimation("Parry", true);
+                }
+            }
+        }
+
         //AI ROlls
 
         private void RollBlockChance(EnemyManager enemy)
@@ -386,9 +415,37 @@ namespace DK
             float timeUntilAmmoShotAtTarget = Random.Range(enemy.minimumTimeToAimAtTarget,enemy.maximumTimeToAimAtTarget);
             enemy.currentRecoveryTime = timeUntilAmmoShotAtTarget;
         }
+
+        private void CheckForRiposte(EnemyManager enemy)
+        {
+            if (enemy.isInteracting)
+            {
+                enemy.animator.SetFloat("Horizontal", 0, 0.2f, Time.deltaTime);
+                enemy.animator.SetFloat("Vertical", 0, 0.2f, Time.deltaTime);
+                return;
+            }
+            if(enemy.distanceFromTarget >= 1)
+            {
+                HandleRotateTowardsTarget(enemy);
+                enemy.animator.SetFloat("Horizontal", 0, 0.2f, Time.deltaTime);
+                enemy.animator.SetFloat("Vertical", 1, 0.2f, Time.deltaTime);
+            }
+            else
+            {
+                enemy.isBlocking = false;
+                if(!enemy.isInteracting && !enemy.currentTarget.isBeingRiposted || !enemy.currentTarget.isBeingBackStabbed)
+                {
+                    enemy.enemyRigidbody.velocity = Vector3.zero;
+                    enemy.animator.SetFloat("Vertical", 0);
+                    enemy.characterCombatManager.AttemptBackStabOrRiposte();
+                }
+                
+            }
+        }
         //Called when exiting state
         private void ResetStateFlags()
         {
+            hasPerformedParry = false;
             hasAmmoLoaded = false;
             hasRandomDodgeDirection = false;
             hasPerformedDodge = false;

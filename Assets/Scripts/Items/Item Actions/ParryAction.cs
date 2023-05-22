@@ -13,6 +13,7 @@ namespace DK
             character.characterAnimatorManager.EraseHandIKfromWeapon();
 
             WeaponItem parryingWeapon = character.characterInventoryManager.currentItemBeingUsed as WeaponItem;
+            Debug.Log(parryingWeapon.itemName);
             if (parryingWeapon.weaponTypes == WeaponTypes.smallShield)
             {
                 character.characterAnimatorManager.PlayTargetAnimation("Parry Fast", true);

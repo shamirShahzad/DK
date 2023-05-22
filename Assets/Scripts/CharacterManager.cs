@@ -41,6 +41,7 @@ namespace DK
         public bool isBeingRiposted;
         public bool isPerformingBackStab;
         public bool isPerformingRiposte;
+        public bool canBeParried;
 
         [Header("Status dead")]
 

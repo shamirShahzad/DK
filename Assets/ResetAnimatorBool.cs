@@ -40,6 +40,9 @@ namespace DK
             characterManager.isBeingRiposted = false;
             characterManager.isPerformingBackStab = false;
             characterManager.isPerformingRiposte = false;
+            characterManager.canBeParried = false;
+            characterManager.canBeRiposted = false;
+            characterManager.characterWeaponSlotManager.CloseDamageCollider();
 
             characterManager.isUsingRightHand = false;
             characterManager.isUsingLeftHand = false;

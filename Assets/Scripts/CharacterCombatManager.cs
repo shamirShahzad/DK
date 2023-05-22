@@ -104,7 +104,7 @@ namespace DK
                 }
                 else
                 {
-                    enemyCharacter = hit.transform.GetComponent<EnemyManager>();
+                    enemyCharacter = hit.transform.GetComponent<CharacterManager>();
                 }
                 Vector3 directionFromCharacterToEnemy = transform.position - enemyCharacter.transform.position;
                 float dotValue = Vector3.Dot(directionFromCharacterToEnemy, enemyCharacter.transform.forward);
@@ -114,7 +114,8 @@ namespace DK
                 {
                     if(dotValue<=1.2f && dotValue >= 0.6f)
                     {
-                        //Attempt Risposte
+                        AttemptRiposte(enemyCharacter);
+                        return;
                     }
                 }
                 if(dotValue >= -0.9f && dotValue <= -0.8f)
@@ -124,7 +125,7 @@ namespace DK
             }
         }
 
-        IEnumerator ForceMoveCharcterTOEnemyBackStabPosition(CharacterManager charcterPerforingBackStabbed)
+        IEnumerator ForceMoveCharcterToEnemyBackStabPosition(CharacterManager charcterPerforingBackStabbed)
         {
             for (float timer = 0.05f; timer < 0.05f; timer+=0.05f)
             {
@@ -132,6 +133,19 @@ namespace DK
                 transform.rotation = Quaternion.Slerp(transform.rotation, backStabRotaion, 1);
                 transform.parent = charcterPerforingBackStabbed.characterCombatManager.backStabReceiverTransform;
                 transform.localPosition = charcterPerforingBackStabbed.characterCombatManager.backStabReceiverTransform.localPosition;
+                transform.parent = null;
+                yield return backStabTimer;
+            }
+        }
+
+        IEnumerator ForceMoveCharcterToEnemyRipostePosition(CharacterManager charcterPerformingRiposted)
+        {
+            for (float timer = 0.05f; timer < 0.05f; timer += 0.05f)
+            {
+                Quaternion riposteRotation = Quaternion.LookRotation(-charcterPerformingRiposted.transform.forward);
+                transform.rotation = Quaternion.Slerp(transform.rotation, riposteRotation, 1);
+                transform.parent = charcterPerformingRiposted.characterCombatManager.backStabReceiverTransform;
+                transform.localPosition = charcterPerformingRiposted.characterCombatManager.backStabReceiverTransform.localPosition;
                 transform.parent = null;
                 yield return backStabTimer;
             }
@@ -157,11 +171,39 @@ namespace DK
             
         }
 
+        private void AttemptRiposte(CharacterManager enemyCharacter)
+        {
+            if (enemyCharacter != null)
+            {
+                if (!enemyCharacter.isBeingBackStabbed || !enemyCharacter.isBeingRiposted)
+                {
+                    EnableIsInvulnerable();
+                    character.isPerformingRiposte = true;
+                    character.characterAnimatorManager.EraseHandIKfromWeapon();
+
+                    character.characterAnimatorManager.PlayTargetAnimation("Riposte", true);
+
+
+                    int criticalDamage = Mathf.RoundToInt((character.characterInventoryManager.rightWeapon.criticalDamageModifier * (character.characterInventoryManager.rightWeapon.physicalDamage)));
+                    enemyCharacter.characterCombatManager.pendingCriticalDamage = criticalDamage;
+                    enemyCharacter.characterCombatManager.GetRiposted(character);
+                }
+            }
+        }
+
+        private void GetRiposted(CharacterManager characterBeingRiposted)
+        {
+            characterBeingRiposted.characterSFXManager.audioSource.PlayOneShot(characterBeingRiposted.characterSFXManager.backStabOrRiposte);
+            character.isBeingRiposted = true;
+            StartCoroutine(ForceMoveCharcterToEnemyRipostePosition(characterBeingRiposted));
+            character.characterAnimatorManager.PlayTargetAnimationWithRootrotation("Riposted", true);
+        }
+
         private void GetBackStabbed(CharacterManager characterGettingBackstabed)
         {
             character.characterSFXManager.audioSource.PlayOneShot(character.characterSFXManager.backStabOrRiposte);
             character.isBeingBackStabbed = true;
-            StartCoroutine(ForceMoveCharcterTOEnemyBackStabPosition(characterGettingBackstabed));
+            StartCoroutine(ForceMoveCharcterToEnemyBackStabPosition(characterGettingBackstabed));
             character.characterAnimatorManager.PlayTargetAnimationWithRootrotation("Back Stabbed", true);
         }
 
@@ -173,6 +215,15 @@ namespace DK
         private void EnableIsInvulnerable()
         {
             character.animator.SetBool("isInvulnerable", true);
+        }
+
+        public void EnableCanBeParried()
+        {
+            character.canBeParried = true;
+        }
+        public void DisableCanBeParried()
+        {
+            character.canBeParried = false;
         }
 
         private void SuccessfullycastedSpell()
