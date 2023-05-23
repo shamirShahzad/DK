@@ -68,7 +68,7 @@ namespace DK
                     if (charactersDamagedDuringThisCalculation.Contains(enemy))
                        return;
                     charactersDamagedDuringThisCalculation.Add(enemy);
-                    if (enemy.characterStatsManager.teamIdNumber == teamIdNumber)
+                    if (enemy.characterStatsManager.teamIdNumber == teamIdNumber || enemy.isDead)
                         return;
                     CheckForParry(enemy);
                     CheckForBlock(enemy);

@@ -11,8 +11,6 @@ namespace DK
         public override State Tick(EnemyManager aiCharacter)
         {
             Collider[] colliders = Physics.OverlapSphere(transform.position, aiCharacter.detectionRadius, detectionLayer);
-
-
             for (int i = 0; i < colliders.Length; i++)
             {
                 CharacterManager character = colliders[i].transform.GetComponentInParent<CharacterManager>();

@@ -108,8 +108,6 @@ namespace DK
                 }
                 Vector3 directionFromCharacterToEnemy = transform.position - enemyCharacter.transform.position;
                 float dotValue = Vector3.Dot(directionFromCharacterToEnemy, enemyCharacter.transform.forward);
-
-                Debug.Log("CURRENT DOT VALUE IS:" + dotValue);
                 if (enemyCharacter.canBeRiposted)
                 {
                     if(dotValue<=1.2f && dotValue >= 0.6f)
