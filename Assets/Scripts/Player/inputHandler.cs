@@ -37,6 +37,12 @@ namespace DK
         public bool comboFlag;
         public float rollInputTimer;
 
+        public bool input_Has_Been_Qued;
+        public float current_Qued_Input_Timer;
+        public float default_Qued_Input_Time;
+        public bool qued_RB_Input;
+        public bool qued_RT_Input;
+
         PlayerControls inputActions;
         PlayerManager player;
 
@@ -83,6 +89,9 @@ namespace DK
                 inputActions.PlayerMovement.LockOnTargetLeft.performed += i => right_Stick_Left_Input = true;
                 inputActions.PlayerActions.Y.performed += i => y_input = true;
                 //inputActions.PlayerActions.CriticalAttack.performed += i => criticalAttackInput = true;
+
+                inputActions.PlayerActions.QuedRB.performed += i => QueInput(ref qued_RB_Input);
+                inputActions.PlayerActions.QuedRT.performed += i => QueInput(ref qued_RT_Input);
             }
 
             inputActions.Enable();
@@ -117,6 +126,7 @@ namespace DK
             HandleLockOnInput();
             HandleTwoHandInput();
             HandleConsumableInput();
+            HandleQuedInputs();
 
         }
 
@@ -432,6 +442,47 @@ namespace DK
                 if (player.playerFXManager.isDrinking)
                     return;
                 player.playerInventoryManager.currentConsumable.AttemptToConsumeItems(player.playerAnimatorManager, player.playerWeaponSlotManager, player.playerFXManager);
+            }
+        }
+
+        private void QueInput(ref bool quedInput)
+        {
+            qued_RB_Input = false;
+            qued_RT_Input = false;
+            if (player.isInteracting)
+            {
+                quedInput = true;
+                current_Qued_Input_Timer = default_Qued_Input_Time;
+                input_Has_Been_Qued = true;
+            }
+
+        }
+        private void HandleQuedInputs()
+        {
+            if (input_Has_Been_Qued)
+            {
+                if (current_Qued_Input_Timer > 0)
+                {
+                    current_Qued_Input_Timer -= Time.deltaTime;
+                    ProcessQuedInput();
+                }
+                else
+                {
+                    input_Has_Been_Qued = false;
+                    current_Qued_Input_Timer = 0;
+                }
+            }
+        }
+
+        private void ProcessQuedInput()
+        {
+            if (qued_RB_Input)
+            {
+                tap_rb_input = true;
+            }
+            if (qued_RT_Input)
+            {
+                tap_rt_input = true;
             }
         }
         
