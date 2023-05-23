@@ -26,8 +26,8 @@ TagManager:
   - Character
   - Character Collider Blocker
   - Player
-  - backStab
-  - riposte
+  - Damageable Character
+  - Damage Collider
   - Projectiles
   - 
   - 

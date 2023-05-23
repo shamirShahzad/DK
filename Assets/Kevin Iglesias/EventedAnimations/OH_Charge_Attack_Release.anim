@@ -28919,6 +28919,20 @@ AnimationClip:
     floatParameter: 0
     intParameter: 0
     messageOptions: 0
+  - time: 0.06666667
+    functionName: EnableCanBeParried
+    data: 
+    objectReferenceParameter: {fileID: 0}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0
+  - time: 0.1
+    functionName: OpenDamageCollider
+    data: 
+    objectReferenceParameter: {fileID: 0}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0
   - time: 0.13333334
     functionName: DrainStaminaBasedOnAttackTypes
     data: 
@@ -28927,13 +28941,13 @@ AnimationClip:
     intParameter: 0
     messageOptions: 0
   - time: 0.16666667
-    functionName: OpenDamageCollider
+    functionName: DisableCanBeParried
     data: 
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0
     intParameter: 0
     messageOptions: 0
-  - time: 0.3
+  - time: 0.2
     functionName: CloseDamageCollider
     data: 
     objectReferenceParameter: {fileID: 0}

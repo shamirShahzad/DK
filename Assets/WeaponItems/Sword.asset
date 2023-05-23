@@ -17,7 +17,6 @@ MonoBehaviour:
   modelPrefab: {fileID: 6525723783963476284, guid: fc674730e73f85e4c8fb0b6ddcb01fba, type: 3}
   isUnarmed: 0
   weaponController: {fileID: 22100000, guid: deb380515018c344e8f988eae4629218, type: 2}
-  offHandIdleAnimation: Left_Arm_Idle
   weaponTypes: 2
   physicalDamage: 25
   fireDamage: 2
@@ -31,10 +30,15 @@ MonoBehaviour:
   lightAttack2DamageModifier: 1.5
   heavyAttack2DamageModifier: 2.3
   criticalDamageModifier: 4
-  poiseBreak: 20
+  guardBreakModifier: 1
+  poiseBreak: 0
   offensivePoiseBonus: 0
-  physicalDamageAbsorbtion: 0
-  fireDamageAbsorbtion: 0
+  physicalBlockingDamageAbsorbtion: 0
+  fireBlockingDamageAbsorbtion: 0
+  magicBlockingDamageAbsorbtion: 0
+  lightningBlockingDamageAbsorbtion: 0
+  darkBlockingDamageAbsorbtion: 0
+  stability: 67
   baseStaminaCost: 20
   lightStaminaModifier: 1.1
   heavyStaminaModifier: 1.5

@@ -41591,6 +41591,13 @@ AnimationClip:
     floatParameter: 0
     intParameter: 0
     messageOptions: 0
+  - time: 0.26666668
+    functionName: EnableCanBeParried
+    data: 
+    objectReferenceParameter: {fileID: 0}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0
   - time: 0.33333334
     functionName: OpenDamageCollider
     data: 
@@ -41600,6 +41607,13 @@ AnimationClip:
     messageOptions: 0
   - time: 0.4
     functionName: DrainStaminaBasedOnAttackTypes
+    data: 
+    objectReferenceParameter: {fileID: 0}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0
+  - time: 0.43333334
+    functionName: DisableCanBeParried
     data: 
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0

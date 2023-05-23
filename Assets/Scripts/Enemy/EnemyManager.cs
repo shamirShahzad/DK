@@ -46,8 +46,10 @@ namespace DK
         public int dodgeLikelyHood = 50;
         public bool allowAIToPerformParry;
         public int parryLikelyHood = 50;
+        public float stoppingDistance = 3;
 
         [Header("A.I Archery Settings")]
+        public bool isStationaryArcher;
         public float minimumTimeToAimAtTarget = 3;
         public float maximumTimeToAimAtTarget = 5;
 

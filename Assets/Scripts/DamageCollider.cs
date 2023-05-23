@@ -28,6 +28,8 @@ namespace DK
         protected bool hasBeenParried = false;
         protected string currentDamageAnimation;
 
+        private List<CharacterManager> charactersDamagedDuringThisCalculation  = new List<CharacterManager>();
+
         protected virtual void Awake()
         {
             damageCollider = GetComponent<Collider>();
@@ -39,85 +41,55 @@ namespace DK
 
         public void EnableDamageCollider()
         {
+            
             damageCollider.enabled = true;
         }
 
         public void DisableDamageCollider()
         {
+            if(charactersDamagedDuringThisCalculation.Count > 0)
+            {
+                charactersDamagedDuringThisCalculation.Clear();
+            }
+            
             damageCollider.enabled = false;
         }
 
 
         protected virtual void OnTriggerEnter(Collider collision)
         {
-            if(collision.tag == "Character")
+            if(collision.gameObject.layer == LayerMask.NameToLayer("Damageable Character"))
             {
                 shieldHasBeenHit = false;
                 hasBeenParried = false;
-                CharacterStatsManager enemyStats = collision.GetComponent<CharacterStatsManager>();
-                CharacterManager enemyManager = collision.GetComponent<CharacterManager>();
-                CharacterFXManager enemyFX = collision.GetComponent<CharacterFXManager>();
-                
-
-                if(enemyManager != null)
+                CharacterManager enemy = collision.GetComponentInParent<CharacterManager>();
+                if(enemy != null)
                 {
-                    if (enemyStats.teamIdNumber == teamIdNumber)
+                    if (charactersDamagedDuringThisCalculation.Contains(enemy))
+                       return;
+                    charactersDamagedDuringThisCalculation.Add(enemy);
+                    if (enemy.characterStatsManager.teamIdNumber == teamIdNumber)
                         return;
-                    CheckForParry(enemyManager);
-                    CheckForBlock(enemyManager);
+                    CheckForParry(enemy);
+                    CheckForBlock(enemy);
 
                 }
-                if (enemyStats != null)
+                if (enemy.characterStatsManager != null)
                 {
-                    if (enemyStats.teamIdNumber == teamIdNumber)
+                    if (enemy.characterStatsManager.teamIdNumber == teamIdNumber)
                         return;
                     if (hasBeenParried)
                         return;
                     if (shieldHasBeenHit)
                         return;
-                    enemyStats.poiseResetTimer = enemyStats.totalPoiseResetTime;
-                    enemyStats.totalPoiseDefense -= poiseBreak;
+                    enemy.characterStatsManager.poiseResetTimer = enemy.characterStatsManager.totalPoiseResetTime;
+                    enemy.characterStatsManager.totalPoiseDefense -= poiseBreak;
                     Vector3 contactPoint = collision.gameObject.GetComponent<Collider>().ClosestPointOnBounds(transform.position);
-                    float directionHitFrom = (Vector3.SignedAngle(characterManager.transform.forward, enemyManager.transform.forward, Vector3.up));
+                    float directionHitFrom = (Vector3.SignedAngle(characterManager.transform.forward, enemy.transform.forward, Vector3.up));
                     ChooseWhichDirectionDamageCameFrom(directionHitFrom);
-                    enemyFX.PlayBloodSplatterEffect(contactPoint);
-                    enemyFX.InterruptEffect();
-                    DealDamage(enemyStats);
-                }
-            }
-            if (collision.tag == "Player")
-            {
-                shieldHasBeenHit = false;
-                hasBeenParried = false;
-                CharacterStatsManager enemyStats = collision.GetComponentInParent<CharacterStatsManager>();
-                CharacterManager enemyManager = collision.GetComponentInParent<CharacterManager>();
-                CharacterFXManager enemyFX = collision.GetComponentInParent<CharacterFXManager>();
-                
-
-                if (enemyManager != null)
-                {
-                    if (enemyStats.teamIdNumber == teamIdNumber)
-                        return;
-                    CheckForParry(enemyManager);
-                    CheckForBlock(enemyManager);
-
-                }
-                if (enemyStats != null)
-                {
-                    if (enemyStats.teamIdNumber == teamIdNumber)
-                        return;
-                    if (hasBeenParried)
-                        return;
-                    if (shieldHasBeenHit)
-                        return;
-                    enemyStats.poiseResetTimer = enemyStats.totalPoiseResetTime;
-                    enemyStats.totalPoiseDefense -= poiseBreak;
-                    Vector3 contactPoint = collision.gameObject.GetComponent<Collider>().ClosestPointOnBounds(transform.position);
-                    float directionHitFrom = (Vector3.SignedAngle(characterManager.transform.forward, enemyManager.transform.forward, Vector3.up));
-                    ChooseWhichDirectionDamageCameFrom(directionHitFrom);
-                    enemyFX.PlayBloodSplatterEffect(contactPoint);
-                    enemyFX.InterruptEffect();
-                    DealDamage(enemyStats);
+                    enemy.characterFXManager.PlayBloodSplatterEffect(contactPoint);
+                    enemy.characterFXManager.InterruptEffect();
+                    DealDamage(enemy.characterStatsManager);
                 }
             }
             if (collision.tag == "Illusionary Wall")

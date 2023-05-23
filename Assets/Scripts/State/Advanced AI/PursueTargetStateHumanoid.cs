@@ -8,8 +8,50 @@ namespace DK
         public CombatStanceStateHumanoid combatStanceStateHumanoid;
         public override State Tick(EnemyManager enemy)
         {
+            if(enemy.combatStyle == HumanAICombatStyle.SwordAndShield)
+            {
+                return ProcessSwordAndShieldCombatStyle(enemy);
+            }
+            else if(enemy.combatStyle == HumanAICombatStyle.Archer)
+            {
+                return ProcessArcherCombatStyle(enemy);
+            }
+            else
+            {
+                return this;
+            }
+        }
 
+        private State ProcessArcherCombatStyle(EnemyManager enemy)
+        {
+            HandleRotateTowardsTarget(enemy);
 
+            if (enemy.isInteracting)
+                return this;
+
+            if (enemy.isPerformingAction)
+            {
+                enemy.animator.SetFloat("Vertical", 0, 0.1f, Time.deltaTime);
+                return this;
+            }
+            if (enemy.distanceFromTarget > enemy.maximumAggroRadius)
+            {
+                if (!enemy.isStationaryArcher)
+                {
+                    enemy.animator.SetFloat("Vertical", 1, 0.2f, Time.deltaTime);
+                }
+            }
+            if (enemy.distanceFromTarget <= enemy.maximumAggroRadius)
+            {
+                return combatStanceStateHumanoid;
+            }
+            else
+            {
+                return this;
+            }
+        }
+        private State ProcessSwordAndShieldCombatStyle(EnemyManager enemy)
+        {
             HandleRotateTowardsTarget(enemy);
 
             if (enemy.isInteracting)
@@ -24,10 +66,6 @@ namespace DK
             {
                 enemy.animator.SetFloat("Vertical", 1, 0.1f, Time.deltaTime);
             }
-
-
-
-
             if (enemy.distanceFromTarget <= enemy.maximumAggroRadius)
             {
                 return combatStanceStateHumanoid;
@@ -36,9 +74,8 @@ namespace DK
             {
                 return this;
             }
-
-
         }
+
 
         private void HandleRotateTowardsTarget(EnemyManager enemy)
         {

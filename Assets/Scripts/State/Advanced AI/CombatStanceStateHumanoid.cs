@@ -45,8 +45,6 @@ namespace DK
 
         private State ProcessSwordAndShieldCombatStyle(EnemyManager enemy)
         {
-            enemy.animator.SetFloat("Vertical", verticalMovementValue, 0.2f, Time.deltaTime);
-            enemy.animator.SetFloat("Horizontal", horizontalMovementValue, 0.2f, Time.deltaTime);
             //IF AI is falling or performing action stop movement
             if (!enemy.isGrounded || enemy.isInteracting) 
             {
@@ -54,7 +52,6 @@ namespace DK
                 enemy.animator.SetFloat("Horizontal", 0);
                 return this;
             }
-
             //If AI is away from target pursue the target
             if (enemy.distanceFromTarget > enemy.maximumAggroRadius)
             {
@@ -62,7 +59,7 @@ namespace DK
             }
 
             //Randomize AI movement when player is still and AI is aggroed
-            HandleRotateTowardsTarget(enemy);
+            
             if (!randomDestinatonSet)
             {
                 randomDestinatonSet = true;
@@ -76,7 +73,6 @@ namespace DK
                     return this;
                 }
             }
-            
             if (enemy.allowAIToPerformBlock)
             {
                 RollBlockChance(enemy);
@@ -97,8 +93,6 @@ namespace DK
                     return this;
                 }
             }
-            
-
             if (willPerformBlock)
             {
                 BlockUsingOffHand(enemy);
@@ -107,11 +101,7 @@ namespace DK
             {
                 DodgeWhenBeingAttacked(enemy);
             }
-
-            
-
-
-
+            HandleRotateTowardsTarget(enemy);
             if (enemy.currentRecoveryTime <= 0 && attackState.currentAttack != null)
             {
                 ResetStateFlags();
@@ -121,13 +111,13 @@ namespace DK
             {
                 GetNewAttack(enemy);
             }
+            HandleMovement(enemy);
+            
             return this;
         }
 
         private State ProcessArcherCombatStyle(EnemyManager enemy)
         {
-            enemy.animator.SetFloat("Vertical", verticalMovementValue, 0.2f, Time.deltaTime);
-            enemy.animator.SetFloat("Horizontal", horizontalMovementValue, 0.2f, Time.deltaTime);
             //IF AI is falling or performing action stop movement
             if (!enemy.isGrounded || enemy.isInteracting)
             {
@@ -143,6 +133,7 @@ namespace DK
                 return pursueTargetState;
             }
 
+            
             //Randomize AI movement when player is still and AI is aggroed
             if (!randomDestinatonSet)
             {
@@ -160,6 +151,17 @@ namespace DK
                 ResetStateFlags();
                 return attackState;
             }
+
+            if (enemy.isStationaryArcher)
+            {
+                enemy.animator.SetFloat("Vertical", 0,0.2f,Time.deltaTime);
+                enemy.animator.SetFloat("Horizontal", 0, 0.2f, Time.deltaTime);
+            }
+            else
+            {
+                HandleMovement(enemy);
+            }
+    
 
             return this;
         }
@@ -440,6 +442,20 @@ namespace DK
                     enemy.characterCombatManager.AttemptBackStabOrRiposte();
                 }
                 
+            }
+        }
+
+        private void HandleMovement(EnemyManager enemy)
+        {
+            if(enemy.distanceFromTarget < enemy.stoppingDistance)
+            {
+                enemy.animator.SetFloat("Vertical", 0, 0.2f, Time.deltaTime);
+                enemy.animator.SetFloat("Horizontal", horizontalMovementValue, 0.2f, Time.deltaTime);
+            }
+            else
+            {
+                enemy.animator.SetFloat("Vertical", verticalMovementValue, 0.2f, Time.deltaTime);
+                enemy.animator.SetFloat("Horizontal", horizontalMovementValue, 0.2f, Time.deltaTime);
             }
         }
         //Called when exiting state

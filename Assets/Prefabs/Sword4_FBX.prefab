@@ -5038,9 +5038,9 @@ GameObject:
   - component: {fileID: 5834272039194720887}
   - component: {fileID: 7446882404246943186}
   - component: {fileID: 4664694979643179288}
-  - component: {fileID: 4620062532467491047}
   - component: {fileID: 3630023110375959903}
-  m_Layer: 0
+  - component: {fileID: 4489379876531680855}
+  m_Layer: 13
   m_Name: Sword4_FBX
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5113,19 +5113,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &4620062532467491047
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6610350968288682189}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.2577513, y: 1.4465145, z: 0.077064656}
-  m_Center: {x: -0.004306923, y: 0.98239267, z: 0.0000000033866274}
 --- !u!114 &3630023110375959903
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5139,11 +5126,30 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   characterManager: {fileID: 0}
-  weaponDamage: 20
+  physicalDamage: 8
+  fireDamage: 0
+  magicDamage: 0
+  lightningDamage: 0
+  darkDamage: 0
+  guardBreakModifier: 0
   enableOnstartup: 0
   teamIdNumber: 0
   poiseBreak: 0
   offensivePoiseBonus: 0
+--- !u!136 &4489379876531680855
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6610350968288682189}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  m_Radius: 0.28651723
+  m_Height: 1.6001933
+  m_Direction: 1
+  m_Center: {x: 0.008941958, y: 0.873919, z: 0.00000040879692}
 --- !u!1 &8836713628504816483
 GameObject:
   m_ObjectHideFlags: 0

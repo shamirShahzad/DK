@@ -100,7 +100,7 @@ namespace DK
                 CharacterManager enemyCharacter;
                 if(hit.transform.tag == "Player")
                 {
-                    enemyCharacter = hit.transform.GetComponentInParent<CharacterManager>();
+                    enemyCharacter = hit.transform.GetComponent<CharacterManager>();
                 }
                 else
                 {

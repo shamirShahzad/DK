@@ -26,8 +26,8 @@ namespace DK
             {
 
                 GameObject liveArrow = Instantiate(player.playerInventoryManager.currentAmmo.liveModel, arrowInstantiationLocation.transform.position, player.cameraHandler.cameraPivotTransform.rotation);
-                Rigidbody rigidBody = liveArrow.GetComponentInChildren<Rigidbody>();
-                RangedProjectileDamageCollider damageCollider = liveArrow.GetComponentInChildren<RangedProjectileDamageCollider>();
+                Rigidbody rigidBody = liveArrow.GetComponent<Rigidbody>();
+                RangedProjectileDamageCollider damageCollider = liveArrow.GetComponent<RangedProjectileDamageCollider>();
 
                 if (character.isAiming)
                 {
@@ -71,8 +71,8 @@ namespace DK
                 EnemyManager enemy = character as EnemyManager;
                 GameObject liveArrow = Instantiate(enemy.characterInventoryManager.currentAmmo.liveModel, arrowInstantiationLocation.transform.position,
                     Quaternion.identity);
-                Rigidbody rigidBody = liveArrow.GetComponentInChildren<Rigidbody>();
-                RangedProjectileDamageCollider damageCollider = liveArrow.GetComponentInChildren<RangedProjectileDamageCollider>();
+                Rigidbody rigidBody = liveArrow.GetComponent<Rigidbody>();
+                RangedProjectileDamageCollider damageCollider = liveArrow.GetComponent<RangedProjectileDamageCollider>();
 
                 if (enemy.currentTarget != null)
                 {
