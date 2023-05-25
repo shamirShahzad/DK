@@ -222,6 +222,12 @@ namespace DK {
 
             switch (selectedItemType)
             {
+                case "Left":
+                    FirebaseManager.instance.userData.leftArmWeapon = selectedItemIndex;
+                    break;
+                case "Right":
+                    FirebaseManager.instance.userData.rightArmWeapon = selectedItemIndex;
+                    break;
                 case "Helmet":
                     FirebaseManager.instance.userData.helmetIndex = selectedItemIndex;
                     break;

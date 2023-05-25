@@ -349,7 +349,8 @@ namespace DK {
 
         private IEnumerator UpdatePlayerEquipmentToFireBase()
         {
-
+            equipment["leftArmWeapon"] = userData.leftArmWeapon;
+            equipment["rightArmWeapon"] = userData.rightArmWeapon;
             equipment["helmetIndex"] = userData.helmetIndex;
             equipment["torsoIndex"] = userData.torsoIndex;
             equipment["armIndex"] = userData.armIndex;
