@@ -13,6 +13,8 @@ namespace DK
         public float lightningDefense;
         public float darkDefense;
 
+        [Header("Index of Item In main Array")]
+        public int indexOfItemInMainList;
 
         [Header("Shop Specific Checks")]
         public bool isPurchased;

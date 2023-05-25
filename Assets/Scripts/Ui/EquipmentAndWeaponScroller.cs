@@ -121,7 +121,6 @@ namespace DK
                 equipmentUI.legsImageInEquipmentUI.sprite = ownedEquipmentItems[currentIndex].itemIcon;
             }
             equipmentUI.equipmentItemName = ownedEquipmentItems[currentIndex].itemName;
-            //equipmentUI.SetStatusBars();
         }
 
         

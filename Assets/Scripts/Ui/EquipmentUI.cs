@@ -51,6 +51,13 @@ namespace DK {
         public Image legsImageInEquipmentUI;
         public Image armsImageInEquipmentUI;
 
+        //14 12 17 24
+        [Header("Arrays that we get from Database")]
+        [SerializeField] int[] helmetArray = new int[14];
+        [SerializeField] int[] torsoArray = new int[24];
+        [SerializeField] int[] armsArray = new int[12];
+        [SerializeField] int[] legsArray = new int[17];
+
 
         float totalPhysicalDefense  = 0;
         float totalMagicDefense = 0;

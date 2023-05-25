@@ -8,28 +8,6 @@ namespace DK
     {
         [SerializeField]
         TextMeshProUGUI playerLevelText;
-        [HideInInspector]
-        public string PLAYER_LEVEL = "Player_Level";
-        [HideInInspector]
-        public string HEALTH_LEVEL = "HealthLevel";
-        [HideInInspector]
-        public string STAMINA_LEVEL = "StaminaLevel";
-        [HideInInspector]
-        public string POISE_LEVEL = "PoiseLevel";
-        [HideInInspector]
-        public string STRENGTH_LEVEL = "StrengthLevel";
-        [HideInInspector]
-        public string DEXTERITY_LEVEL = "DexterityLevel";
-        [HideInInspector]
-        public string INTELLIGENCE_LEVEL = "IntelligenceLevel";
-        [HideInInspector]
-        public string FAITH_LEVEL = "FaithLevel";
-        [HideInInspector]
-        public string FOCUS_LEVEL = "FocusLevel";
-        [HideInInspector]
-        public string SOUL_COUNT = "SoulCount";
-
-
         public int hitCount = 0;
 
 
@@ -38,11 +16,11 @@ namespace DK
         public float focusRegenarationAmount = 15;
         public float staminaRegenerationTimer = 0;
         public float focusRegenrationTimer = 0;
-        //CapsuleCollider Ccollider;
 
         public HealthBar healthBar;
         public StaminaBar staminaBar;
         public FocusPointBar focusPointBar;
+        private int goldAmountPlayerHas;
 
         protected override void Awake()
         {
@@ -51,7 +29,6 @@ namespace DK
             staminaBar = FindObjectOfType<StaminaBar>();
             focusPointBar = FindObjectOfType<FocusPointBar>();
             player = GetComponent<PlayerManager>();
-            InitializePlayerPrefs();
             SetPlayerPrefs();
             maxHealth = SetMaxHealthFromHealthLevel();
             maxStamina = SetMaxStaminaFromStaminaLevel();
@@ -76,60 +53,25 @@ namespace DK
 
         public void SetPlayerPrefs()
         {
-            playerLevel = PlayerPrefs.GetInt(PLAYER_LEVEL);
-            healthLevel = PlayerPrefs.GetInt(HEALTH_LEVEL);
-            staminaLevel = PlayerPrefs.GetInt(STAMINA_LEVEL);
-            poiseLevel = PlayerPrefs.GetInt(POISE_LEVEL);
-            strengthLevel = PlayerPrefs.GetInt(STRENGTH_LEVEL);
-            dexterityLevel = PlayerPrefs.GetInt(DEXTERITY_LEVEL);
-            intelligenceLevel = PlayerPrefs.GetInt(INTELLIGENCE_LEVEL);
-            faithLevel = PlayerPrefs.GetInt(FAITH_LEVEL);
-            focusLevel = PlayerPrefs.GetInt(FOCUS_LEVEL);
+                playerLevel = FirebaseManager.instance.userData.characterLevel;
+                healthLevel = FirebaseManager.instance.userData.healthLevel;
+                staminaLevel = FirebaseManager.instance.userData.staminaLevel;
+                poiseLevel = FirebaseManager.instance.userData.poiseLevel;
+                strengthLevel = FirebaseManager.instance.userData.strengthLevel;
+                dexterityLevel = FirebaseManager.instance.userData.dexterityLevel;
+                intelligenceLevel = FirebaseManager.instance.userData.intelligenceLevel;
+                faithLevel = FirebaseManager.instance.userData.faithLevel;
+                focusLevel = FirebaseManager.instance.userData.focusLevel;
+                soulCount = FirebaseManager.instance.userData.soulPlayersPosseses;
+                goldAmountPlayerHas = FirebaseManager.instance.userData.goldAmount;
+                
+
             if (playerLevelText != null)
             {
                 playerLevelText.text = playerLevel.ToString();
             }
         }
-        public void InitializePlayerPrefs()
-        {
-            if (PlayerPrefs.GetInt(PLAYER_LEVEL) == 0)
-            {
-                PlayerPrefs.SetInt(PLAYER_LEVEL, 1);
-            }
-            if(PlayerPrefs.GetInt(HEALTH_LEVEL) == 0)
-            {
-                PlayerPrefs.SetInt(HEALTH_LEVEL, 10);
-            }
-            if(PlayerPrefs.GetInt(STAMINA_LEVEL) == 0)
-            {
-                PlayerPrefs.SetInt(STAMINA_LEVEL, 10);
-            }
-            if(PlayerPrefs.GetInt(POISE_LEVEL) == 0)
-            {
-                PlayerPrefs.SetInt(POISE_LEVEL, 10);
-            }
-            if(PlayerPrefs.GetInt(STRENGTH_LEVEL) == 0)
-            {
-                PlayerPrefs.SetInt(STRENGTH_LEVEL, 10);
-            }
-            if(PlayerPrefs.GetInt(DEXTERITY_LEVEL) == 0)
-            {
-                PlayerPrefs.SetInt(DEXTERITY_LEVEL, 10);
-            }
-            if(PlayerPrefs.GetInt(INTELLIGENCE_LEVEL) == 0)
-            {
-                PlayerPrefs.SetInt(INTELLIGENCE_LEVEL, 10);
-            }
-            if(PlayerPrefs.GetInt(FOCUS_LEVEL) == 0)
-            {
-                PlayerPrefs.SetInt(FOCUS_LEVEL, 10);
-            }
-            if(PlayerPrefs.GetInt(FAITH_LEVEL) == 0)
-            {
-                PlayerPrefs.SetInt(FAITH_LEVEL, 10);
-            }
 
-        }
         public override void HandlePoiseResetTimer()
         {
             if (poiseResetTimer > 0)
@@ -271,7 +213,7 @@ namespace DK
         public void AddSouls(int souls)
         {
             soulCount = soulCount + souls;
-            PlayerPrefs.SetInt(SOUL_COUNT, soulCount);
+            FirebaseManager.instance.userData.soulPlayersPosseses = soulCount;
         }
     }
 }

@@ -65,12 +65,15 @@ namespace DK
         public TextMeshProUGUI projectedFocusLevelText;
 
         //Update all slider and text values in UI according to player current stats
-        public void OnEnable()
+        private void OnEnable()
         {
-           // player.playerStatsManager.InitializePlayerPrefs();
-            player.playerStatsManager.SetPlayerPrefs();
+            UpdatePlayerUi();
+        }
 
-
+       //Sets the sliders and the text when the level button is pressed
+        public void UpdatePlayerUi()
+    
+    {
             currentPlayerLevel = player.playerStatsManager.playerLevel;
             currentPlayerLevelText.text = currentPlayerLevel.ToString();
             projectedPlayerLevel = player.playerStatsManager.playerLevel;
@@ -87,41 +90,41 @@ namespace DK
             projectedStaminaLevelText.text = player.playerStatsManager.staminaLevel.ToString();
             staminaSlider.minValue = player.playerStatsManager.staminaLevel;
             staminaSlider.maxValue = 99;
-            
+
             poiseSlider.value = player.playerStatsManager.poiseLevel;
             currentPoiseLevelText.text = player.playerStatsManager.poiseLevel.ToString();
             projectedPoiseLevelText.text = player.playerStatsManager.poiseLevel.ToString();
             poiseSlider.minValue = player.playerStatsManager.poiseLevel;
             poiseSlider.maxValue = 99;
-            
+
             strengthSlider.value = player.playerStatsManager.strengthLevel;
             currentStrengthLevelText.text = player.playerStatsManager.strengthLevel.ToString();
             projectedStrengthLevelText.text = player.playerStatsManager.strengthLevel.ToString();
             strengthSlider.minValue = player.playerStatsManager.strengthLevel;
             strengthSlider.maxValue = 99;
-            
-            
+
+
             dexteritySlider.value = player.playerStatsManager.dexterityLevel;
             currentDexterityLevelText.text = player.playerStatsManager.dexterityLevel.ToString();
             projectedDexterityLevelText.text = player.playerStatsManager.dexterityLevel.ToString();
             dexteritySlider.minValue = player.playerStatsManager.dexterityLevel;
             dexteritySlider.maxValue = 99;
-            
-            
+
+
             intelligenceSlider.value = player.playerStatsManager.intelligenceLevel;
             currentIntelligenceLevelText.text = player.playerStatsManager.intelligenceLevel.ToString();
             projectedIntelligenceLevelText.text = player.playerStatsManager.intelligenceLevel.ToString();
             intelligenceSlider.minValue = player.playerStatsManager.intelligenceLevel;
             intelligenceSlider.maxValue = 99;
-            
-            
+
+
             faithSlider.value = player.playerStatsManager.faithLevel;
             currentFaithLevelText.text = player.playerStatsManager.faithLevel.ToString();
             projectedFaithLevelText.text = player.playerStatsManager.faithLevel.ToString();
             faithSlider.minValue = player.playerStatsManager.faithLevel;
             faithSlider.maxValue = 99;
-            
-            
+
+
             focusSlider.value = player.playerStatsManager.focusLevel;
             currentFocusLevelText.text = player.playerStatsManager.focusLevel.ToString();
             projectedFocusLevelText.text = player.playerStatsManager.focusLevel.ToString();
@@ -131,85 +134,23 @@ namespace DK
             currentSoulsText.text = player.playerStatsManager.soulCount.ToString();
 
             UpdateProjectedPlayerLevels();
-
         }
 
-      /*  public void RefreshUIInputs()
-        {
-
-            playerStatsManager.SetPlayerPrefs();
-
-            currentPlayerLevel = playerStatsManager.playerLevel;
-            currentPlayerLevelText.text = currentPlayerLevel.ToString();
-            projectedPlayerLevel = playerStatsManager.playerLevel;
-            projectedPlayerLevelText.text = projectedPlayerLevel.ToString();
-
-            healthSlider.value = playerStatsManager.healthLevel;
-            currentHealthLevelText.text = playerStatsManager.healthLevel.ToString();
-            projectedHealthLevelText.text = playerStatsManager.healthLevel.ToString();
-            healthSlider.minValue = playerStatsManager.healthLevel;
-            healthSlider.maxValue = 99;
-
-            staminaSlider.value = playerStatsManager.staminaLevel;
-            currentStaminaLevelText.text = playerStatsManager.staminaLevel.ToString();
-            projectedStaminaLevelText.text = playerStatsManager.staminaLevel.ToString();
-            staminaSlider.minValue = playerStatsManager.staminaLevel;
-            staminaSlider.maxValue = 99;
-
-            poiseSlider.value = playerStatsManager.poiseLevel;
-            currentPoiseLevelText.text = playerStatsManager.poiseLevel.ToString();
-            projectedPoiseLevelText.text = playerStatsManager.poiseLevel.ToString();
-            poiseSlider.minValue = playerStatsManager.poiseLevel;
-            poiseSlider.maxValue = 99;
-
-            strengthSlider.value = playerStatsManager.strengthLevel;
-            currentStrengthLevelText.text = playerStatsManager.strengthLevel.ToString();
-            projectedStrengthLevelText.text = playerStatsManager.strengthLevel.ToString();
-            strengthSlider.minValue = playerStatsManager.strengthLevel;
-            strengthSlider.maxValue = 99;
 
 
-            dexteritySlider.value = playerStatsManager.dexterityLevel;
-            currentDexterityLevelText.text = playerStatsManager.dexterityLevel.ToString();
-            projectedDexterityLevelText.text = playerStatsManager.dexterityLevel.ToString();
-            dexteritySlider.minValue = playerStatsManager.dexterityLevel;
-            dexteritySlider.maxValue = 99;
-
-
-            intelligenceSlider.value = playerStatsManager.intelligenceLevel;
-            currentIntelligenceLevelText.text = playerStatsManager.intelligenceLevel.ToString();
-            projectedIntelligenceLevelText.text = playerStatsManager.intelligenceLevel.ToString();
-            intelligenceSlider.minValue = playerStatsManager.intelligenceLevel;
-            intelligenceSlider.maxValue = 99;
-
-
-            faithSlider.value = playerStatsManager.faithLevel;
-            currentFaithLevelText.text = playerStatsManager.faithLevel.ToString();
-            projectedFaithLevelText.text = playerStatsManager.faithLevel.ToString();
-            faithSlider.minValue = playerStatsManager.faithLevel;
-            faithSlider.maxValue = 99;
-
-
-            focusSlider.value = playerStatsManager.focusLevel;
-            currentFocusLevelText.text = playerStatsManager.focusLevel.ToString();
-            projectedFocusLevelText.text = playerStatsManager.focusLevel.ToString();
-            focusSlider.minValue = playerStatsManager.focusLevel;
-            focusSlider.maxValue = 99;
-
-            UpdateProjectedPlayerLevels();
-        }*/
         //Update the player stats in the game 
         public void ConfirmPlayerStatsUpdate()
         {
-            PlayerPrefs.SetInt(player.playerStatsManager.PLAYER_LEVEL, projectedPlayerLevel);
-            PlayerPrefs.SetInt(player.playerStatsManager.HEALTH_LEVEL, Mathf.RoundToInt(healthSlider.value));
-            PlayerPrefs.SetInt(player.playerStatsManager.STAMINA_LEVEL, Mathf.RoundToInt(staminaSlider.value));
-            PlayerPrefs.SetInt(player.playerStatsManager.POISE_LEVEL, Mathf.RoundToInt(poiseSlider.value));
-            PlayerPrefs.SetInt(player.playerStatsManager.STRENGTH_LEVEL, Mathf.RoundToInt(strengthSlider.value));
-            PlayerPrefs.SetInt(player.playerStatsManager.DEXTERITY_LEVEL, Mathf.RoundToInt(dexteritySlider.value));
-            PlayerPrefs.SetInt(player.playerStatsManager.INTELLIGENCE_LEVEL, Mathf.RoundToInt(intelligenceSlider.value));
-            PlayerPrefs.SetInt(player.playerStatsManager.FAITH_LEVEL, Mathf.RoundToInt(faithSlider.value));
-            PlayerPrefs.SetInt(player.playerStatsManager.FOCUS_LEVEL, Mathf.RoundToInt(focusSlider.value));
+            FirebaseManager.instance.userData.characterLevel = projectedPlayerLevel;
+            FirebaseManager.instance.userData.healthLevel = Mathf.RoundToInt(healthSlider.value);
+            FirebaseManager.instance.userData.staminaLevel = Mathf.RoundToInt(staminaSlider.value);
+            FirebaseManager.instance.userData.poiseLevel = Mathf.RoundToInt(poiseSlider.value);
+            FirebaseManager.instance.userData.strengthLevel = Mathf.RoundToInt(strengthSlider.value);
+            FirebaseManager.instance.userData.dexterityLevel = Mathf.RoundToInt(dexteritySlider.value);
+            FirebaseManager.instance.userData.intelligenceLevel = Mathf.RoundToInt(intelligenceSlider.value);
+            FirebaseManager.instance.userData.faithLevel = Mathf.RoundToInt(faithSlider.value);
+            FirebaseManager.instance.userData.focusLevel = Mathf.RoundToInt(focusSlider.value);
+            
 
             player.playerStatsManager.SetPlayerPrefs();
 
@@ -218,16 +159,19 @@ namespace DK
             player.playerStatsManager.maxFocus = player.playerStatsManager.SetMaxFocusFromFocusLevel();
 
             player.playerStatsManager.soulCount = player.playerStatsManager.soulCount - requiredSoulsToLevelUp;
-            PlayerPrefs.SetInt(player.playerStatsManager.SOUL_COUNT, player.playerStatsManager.soulCount);
-
-
+            FirebaseManager.instance.userData.soulPlayersPosseses = player.playerStatsManager.soulCount;
+            //Player stats are updated int the firebase database
+           FirebaseManager.instance.UpdateLevels(player.playerStatsManager.healthLevel,player.playerStatsManager.staminaLevel,
+                player.playerStatsManager.focusLevel,player.playerStatsManager.strengthLevel,
+                player.playerStatsManager.dexterityLevel,player.playerStatsManager.poiseLevel,
+                player.playerStatsManager.intelligenceLevel,player.playerStatsManager.faithLevel,player.playerStatsManager.soulCount,projectedPlayerLevel);
         }
 
         private void CalculateSoulCostToLevelUP() 
         { 
             for(int i = 0; i < projectedPlayerLevel; i++)
             {
-                requiredSoulsToLevelUp += Mathf.RoundToInt((projectedPlayerLevel * baseLevelUpCost) * 1.5f);
+                requiredSoulsToLevelUp += Mathf.RoundToInt((projectedPlayerLevel * baseLevelUpCost) * 1.1f);
             }
            
             

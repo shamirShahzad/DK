@@ -1232,7 +1232,7 @@ GameObject:
   - component: {fileID: 767013903}
   - component: {fileID: 767013902}
   - component: {fileID: 767013901}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Cube (6)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5023,6 +5023,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 6210446726917716682, guid: ec545e5b29518014388cb554bb29607f, type: 3}
+      propertyPath: repeatPatrol
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6210446726917716682, guid: ec545e5b29518014388cb554bb29607f, type: 3}
+      propertyPath: endOfPatrolResetTime
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 6210446726917716682, guid: ec545e5b29518014388cb554bb29607f, type: 3}
       propertyPath: listOfPatrolDestinations.Array.data[0]
       value: 

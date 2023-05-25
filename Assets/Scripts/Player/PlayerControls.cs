@@ -155,6 +155,17 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": """",
+                    ""id"": ""a80fb5f4-de46-4da2-8de6-ad571144155f"",
+                    ""path"": ""<Touchscreen>/delta"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Camera"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
                     ""id"": ""208fe83d-a6e5-46ad-92cc-042cfebed240"",
                     ""path"": ""<Gamepad>/rightStick/left"",
                     ""interactions"": """",

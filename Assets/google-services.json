@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "173937934961",
+    "firebase_url": "https://dungeons-kin-default-rtdb.asia-southeast1.firebasedatabase.app/",
+    "project_id": "dungeons-kin",
+    "storage_bucket": "dungeons-kin.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:173937934961:android:090b6787f8dfe90ad411d0",
+        "android_client_info": {
+          "package_name": "com.shamir.DungeonsKin"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "173937934961-n5hq2idsq809pnav1020emo4aqm6bq6f.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAnFaHwAS0OZaY8kIiYNRt74MqNNcQkjl8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "173937934961-0ieuotbt5fb3g2859kf4ge6dk74ku1aq.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
