@@ -90,10 +90,10 @@ namespace DK
         }
         public void GetEquipmentPrefs()
         {
-            helmetIndexInPrefs = PlayerPrefs.GetInt(HELMET_INDEX);
-            armsIndexInPrefs = PlayerPrefs.GetInt(ARMS_INDEX);
-            torsoIndexInPrefs = PlayerPrefs.GetInt(TORSO_INDEX);
-            legEquipmentInPrefs = PlayerPrefs.GetInt(LEGS_INDEX);
+            helmetIndexInPrefs = FirebaseManager.instance.userData.helmetIndex;
+            armsIndexInPrefs = FirebaseManager.instance.userData.armIndex;
+            torsoIndexInPrefs = FirebaseManager.instance.userData.torsoIndex;
+            legEquipmentInPrefs = FirebaseManager.instance.userData.hipIndex;
         }
         public void EquipAllEquipmentItemsOnStart()
         {

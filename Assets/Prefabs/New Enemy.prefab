@@ -308,8 +308,8 @@ MonoBehaviour:
     m_Bits: 64
   pursueTargetState: {fileID: 9000053291826532789}
   patrolComplete: 0
-  repeatPatrol: 0
-  endOfPatrolResetTime: 0
+  repeatPatrol: 1
+  endOfPatrolResetTime: 5
   endOfPatrolTimer: 0
   hasPatrolDestination: 0
   patrolDesinationIndex: 0
@@ -6597,7 +6597,7 @@ MonoBehaviour:
   isInAir: 0
   isGrounded: 0
   isInteracting: 0
-  currentState: {fileID: 9000053291787366314}
+  currentState: {fileID: 6210446726917716682}
   isPerformingAction: 0
   currentTarget: {fileID: 0}
   navMeshAgent: {fileID: 9000053291340928878}

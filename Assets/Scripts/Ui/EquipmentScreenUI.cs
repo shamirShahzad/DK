@@ -10,7 +10,7 @@ namespace DK
 
         private void OnEnable()
         {
-            equipmentUI.SetFlagsForEquipment(false, false, false, false);
+            equipmentUI.SetFlagsForEquipment(false, false, false, false,false,false);
             equipmentUI.SetStatusBars();
             equipmentUI.SetImagesOfItemsOnEnable();
         }

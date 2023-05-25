@@ -15,6 +15,8 @@ namespace DK {
         public bool isArms;
         public bool isTorso;
         public bool isLegs;
+        public bool isLeft;
+        public bool isRight;
 
         [Header("Items List For Selection")]
         [SerializeField]
@@ -25,6 +27,10 @@ namespace DK {
         List<LegEquipment> legList = new List<LegEquipment>();
         [SerializeField]
         List<TorsoEquipment> torsoList = new List<TorsoEquipment>();
+        [SerializeField]
+        List<WeaponItem> leftWeaponItems = new List<WeaponItem>();
+        [SerializeField]
+        List<WeaponItem> rightWeaponItems = new List<WeaponItem>();
 
         [Header("Owned Equipment Items List")]
         [SerializeField]
@@ -35,6 +41,10 @@ namespace DK {
         public List<TorsoEquipment> ownedTorso = new List<TorsoEquipment>();
         [SerializeField]
         public List<HandEquipment> ownedArms = new List<HandEquipment>();
+        [SerializeField]
+        public List<WeaponItem> leftOwnedWeaponItems = new List<WeaponItem>();
+        [SerializeField]
+        public List<WeaponItem> rightOwnedWeaponItems = new List<WeaponItem>();
 
 
         [Header("Status Sliders")]
@@ -50,6 +60,9 @@ namespace DK {
         public Image torsoImageInEquipmentUI;
         public Image legsImageInEquipmentUI;
         public Image armsImageInEquipmentUI;
+        public Image leftWeaponImageInEquipmentUI;
+        public Image rightWeaponImageInEquipmentUI;
+
 
         //14 12 17 24
         [Header("Arrays that we get from Database")]
@@ -58,7 +71,7 @@ namespace DK {
         [SerializeField] int[] armsArray = new int[12];
         [SerializeField] int[] legsArray = new int[17];
 
-
+        float totalDamage = 0;
         float totalPhysicalDefense  = 0;
         float totalMagicDefense = 0;
         float totalFireDefense = 0;
@@ -67,22 +80,30 @@ namespace DK {
 
         public void SetImagesOfItemsOnEnable()
         {
+            //Set Left Weapon Icon
+            leftWeaponImageInEquipmentUI.enabled = true;
+            leftWeaponImageInEquipmentUI.preserveAspect = true;
+            leftWeaponImageInEquipmentUI.sprite = leftWeaponItems[FirebaseManager.instance.userData.leftArmWeapon].itemIcon;
+            //Set Right Weapon Icon
+            rightWeaponImageInEquipmentUI.enabled = true;
+            rightWeaponImageInEquipmentUI.preserveAspect = true;
+            rightWeaponImageInEquipmentUI.sprite = rightWeaponItems[FirebaseManager.instance.userData.rightArmWeapon].itemIcon;
             //Set Helmet Icon
             helmetImageInEquipmentUI.enabled = true;
             helmetImageInEquipmentUI.preserveAspect = true;
-            helmetImageInEquipmentUI.sprite = helmetList[PlayerPrefs.GetInt("HelmetIndex")].itemIcon;
+            helmetImageInEquipmentUI.sprite = helmetList[FirebaseManager.instance.userData.helmetIndex].itemIcon;
             //Set Arms Icon
             armsImageInEquipmentUI.enabled = true;
             armsImageInEquipmentUI.preserveAspect = true;
-            armsImageInEquipmentUI.sprite = armsList[PlayerPrefs.GetInt("ArmsIndex")].itemIcon;
+            armsImageInEquipmentUI.sprite = armsList[FirebaseManager.instance.userData.armIndex].itemIcon;
             //Set Torso Icon
             torsoImageInEquipmentUI.enabled = true;
             torsoImageInEquipmentUI.preserveAspect = true;
-            torsoImageInEquipmentUI.sprite = torsoList[PlayerPrefs.GetInt("TorsoIndex")].itemIcon;
-            //Set LEgs Icon
+            torsoImageInEquipmentUI.sprite = torsoList[FirebaseManager.instance.userData.torsoIndex].itemIcon;
+            //Set Legs Icon
             legsImageInEquipmentUI.enabled = true;
             legsImageInEquipmentUI.preserveAspect = true;
-            legsImageInEquipmentUI.sprite = legList[PlayerPrefs.GetInt("LegIndex")].itemIcon;
+            legsImageInEquipmentUI.sprite = legList[FirebaseManager.instance.userData.hipIndex].itemIcon;
         }
 
         public void SetStatusBars()
@@ -95,30 +116,30 @@ namespace DK {
 
 
             //Physical defense calculation for slider
-            totalPhysicalDefense += helmetList[PlayerPrefs.GetInt("HelmetIndex")].physicalDefense;
-            totalPhysicalDefense += armsList[PlayerPrefs.GetInt("ArmsIndex")].physicalDefense;
-            totalPhysicalDefense += torsoList[PlayerPrefs.GetInt("TorsoIndex")].physicalDefense;
-            totalPhysicalDefense += legList[PlayerPrefs.GetInt("LegIndex")].physicalDefense;
+            totalPhysicalDefense += helmetList[FirebaseManager.instance.userData.helmetIndex].physicalDefense;
+            totalPhysicalDefense += armsList[FirebaseManager.instance.userData.armIndex].physicalDefense;
+            totalPhysicalDefense += torsoList[FirebaseManager.instance.userData.torsoIndex].physicalDefense;
+            totalPhysicalDefense += legList[FirebaseManager.instance.userData.hipIndex].physicalDefense;
             //Magic defense calculation for slider
-            totalMagicDefense += helmetList[PlayerPrefs.GetInt("HelmetIndex")].magicDefense;
-            totalMagicDefense += armsList[PlayerPrefs.GetInt("ArmsIndex")].magicDefense;
-            totalMagicDefense += torsoList[PlayerPrefs.GetInt("TorsoIndex")].magicDefense;
-            totalMagicDefense += legList[PlayerPrefs.GetInt("LegIndex")].magicDefense;
+            totalMagicDefense += helmetList[FirebaseManager.instance.userData.helmetIndex].magicDefense;
+            totalMagicDefense += armsList[FirebaseManager.instance.userData.armIndex].magicDefense;
+            totalMagicDefense += torsoList[FirebaseManager.instance.userData.torsoIndex].magicDefense;
+            totalMagicDefense += legList[FirebaseManager.instance.userData.hipIndex].magicDefense;
             //Fire defense calculation for slider
-            totalFireDefense += helmetList[PlayerPrefs.GetInt("HelmetIndex")].fireDefense;
-            totalFireDefense += armsList[PlayerPrefs.GetInt("ArmsIndex")].fireDefense;
-            totalFireDefense += torsoList[PlayerPrefs.GetInt("TorsoIndex")].fireDefense;
-            totalFireDefense += legList[PlayerPrefs.GetInt("LegIndex")].fireDefense;
+            totalFireDefense += helmetList[FirebaseManager.instance.userData.helmetIndex].fireDefense;
+            totalFireDefense += armsList[FirebaseManager.instance.userData.armIndex].fireDefense;
+            totalFireDefense += torsoList[FirebaseManager.instance.userData.torsoIndex].fireDefense;
+            totalFireDefense += legList[FirebaseManager.instance.userData.hipIndex].fireDefense;
             //Lightning defense calculation for slider
-            totalLightningDefense += helmetList[PlayerPrefs.GetInt("HelmetIndex")].lightningDefense;
-            totalLightningDefense += armsList[PlayerPrefs.GetInt("ArmsIndex")].lightningDefense;
-            totalLightningDefense += torsoList[PlayerPrefs.GetInt("TorsoIndex")].lightningDefense;
-            totalLightningDefense += legList[PlayerPrefs.GetInt("LegIndex")].lightningDefense;
+            totalLightningDefense += helmetList[FirebaseManager.instance.userData.helmetIndex].lightningDefense;
+            totalLightningDefense += armsList[FirebaseManager.instance.userData.armIndex].lightningDefense;
+            totalLightningDefense += torsoList[FirebaseManager.instance.userData.torsoIndex].lightningDefense;
+            totalLightningDefense += legList[FirebaseManager.instance.userData.hipIndex].lightningDefense;
             //dark defense calculation for slider
-            totalDarkDefense += helmetList[PlayerPrefs.GetInt("HelmetIndex")].darkDefense;
-            totalDarkDefense += armsList[PlayerPrefs.GetInt("ArmsIndex")].darkDefense;
-            totalDarkDefense += torsoList[PlayerPrefs.GetInt("TorsoIndex")].darkDefense;
-            totalDarkDefense += legList[PlayerPrefs.GetInt("LegIndex")].darkDefense;
+            totalDarkDefense += helmetList[FirebaseManager.instance.userData.helmetIndex].darkDefense;
+            totalDarkDefense += armsList[FirebaseManager.instance.userData.armIndex].darkDefense;
+            totalDarkDefense += torsoList[FirebaseManager.instance.userData.torsoIndex].darkDefense;
+            totalDarkDefense += legList[FirebaseManager.instance.userData.hipIndex].darkDefense;
 
             physicalDefenseStatSlider.value = totalPhysicalDefense / 100;
             magicDefenseStatSlider.value = totalMagicDefense / 100;
@@ -127,18 +148,19 @@ namespace DK {
             darkDefenseStatSlider.value = totalDarkDefense / 100;
         }
 
-        public void SetFlagsForEquipment(bool helmetItem, bool armItem, bool torsoItem, bool legsItem)
+        public void SetFlagsForEquipment(bool helmetItem, bool armItem, bool torsoItem, bool legsItem,bool leftItem,bool rightItem)
         {
             isHelmet = helmetItem;
             isArms = armItem;
             isTorso = torsoItem;
             isLegs = legsItem;
+            isLeft = leftItem;
+            isRight = rightItem;
         }
-
 
         public void onHelmetClick()
         {
-            SetFlagsForEquipment(true, false, false, false);
+            SetFlagsForEquipment(true, false, false, false,false,false);
             for(int i = 0; i < helmetList.Count; i++)
             {
                 if (helmetList[i].isPurchased)
@@ -150,7 +172,7 @@ namespace DK {
 
         public void onLegsClick()
         {
-            SetFlagsForEquipment(false, false, false, true);
+            SetFlagsForEquipment(false, false, false, true,false,false);
             for(int i = 0; i < legList.Count; i++)
             {
                 if (legList[i].isPurchased)
@@ -162,7 +184,7 @@ namespace DK {
 
         public void onTorsoClick()
         {
-            SetFlagsForEquipment(false, false, true, false);
+            SetFlagsForEquipment(false, false, true, false,false,false);
             for (int i = 0; i < torsoList.Count; i++)
             {
                 if (torsoList[i].isPurchased)
@@ -174,7 +196,7 @@ namespace DK {
 
         public void onArmsClick()
         {
-            SetFlagsForEquipment(false, true, false, false);
+            SetFlagsForEquipment(false, true, false, false,false,false);
             for(int i = 0; i < armsList.Count; i++)
             {
                 if (armsList[i].isPurchased)
@@ -182,6 +204,14 @@ namespace DK {
                     ownedArms.Add(armsList[i]);
                 }
             }
+        }
+        public void onLeftClick()
+        {
+            SetFlagsForEquipment(false, true, false, false, true, false);
+        }
+        public void onRightClick()
+        {
+            SetFlagsForEquipment(false, true, false, false, false, true);
         }
 
         public void FindTypeAndNumberOfItem()
@@ -193,21 +223,21 @@ namespace DK {
             switch (selectedItemType)
             {
                 case "Helmet":
-                    PlayerPrefs.SetInt("HelmetIndex", selectedItemIndex);
+                    FirebaseManager.instance.userData.helmetIndex = selectedItemIndex;
                     break;
                 case "Torso":
-                    PlayerPrefs.SetInt("TorsoIndex", selectedItemIndex);
+                    FirebaseManager.instance.userData.torsoIndex = selectedItemIndex;
                     break;
                 case "Arms":
-                    PlayerPrefs.SetInt("ArmsIndex", selectedItemIndex);
+                    FirebaseManager.instance.userData.armIndex = selectedItemIndex;
                     break;
                 case "Leg":
-                    PlayerPrefs.SetInt("LegIndex", selectedItemIndex);
+                    FirebaseManager.instance.userData.hipIndex = selectedItemIndex;
                     break;
                 default:
                     break;
             };
-            
+            FirebaseManager.instance.UpdatePlayerEquipment();
         }
 
         public void SetPlayerEquipment()

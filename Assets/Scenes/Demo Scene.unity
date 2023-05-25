@@ -4950,6 +4950,18 @@ PrefabInstance:
       propertyPath: itemInteractableGameobject
       value: 
       objectReference: {fileID: 739727966212714576}
+    - target: {fileID: 2554598860014443788, guid: 96e02eda9c2e03c479bcb5f17f34d8f3, type: 3}
+      propertyPath: weaponItemsLeft.Array.data[0]
+      value: 
+      objectReference: {fileID: 11400000, guid: 86513175fbf229344b21ec717ae7117a, type: 2}
+    - target: {fileID: 2554598860014443788, guid: 96e02eda9c2e03c479bcb5f17f34d8f3, type: 3}
+      propertyPath: weaponItemsLeft.Array.data[1]
+      value: 
+      objectReference: {fileID: 11400000, guid: 86513175fbf229344b21ec717ae7117a, type: 2}
+    - target: {fileID: 2554598860014443788, guid: 96e02eda9c2e03c479bcb5f17f34d8f3, type: 3}
+      propertyPath: weaponItemsRight.Array.data[0]
+      value: 
+      objectReference: {fileID: 11400000, guid: 69ae6967547257341ba37b25fe3d6b3f, type: 2}
     - target: {fileID: 2554598860014443789, guid: 96e02eda9c2e03c479bcb5f17f34d8f3, type: 3}
       propertyPath: m_Name
       value: Player Tpose
@@ -5023,14 +5035,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 6210446726917716682, guid: ec545e5b29518014388cb554bb29607f, type: 3}
-      propertyPath: repeatPatrol
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6210446726917716682, guid: ec545e5b29518014388cb554bb29607f, type: 3}
-      propertyPath: endOfPatrolResetTime
-      value: 5
-      objectReference: {fileID: 0}
+    - target: {fileID: 1319789604, guid: ec545e5b29518014388cb554bb29607f, type: 3}
+      propertyPath: weaponItemsRight.Array.data[0]
+      value: 
+      objectReference: {fileID: 11400000, guid: 0060897fa98a2ef4d85f187644374df9, type: 2}
     - target: {fileID: 6210446726917716682, guid: ec545e5b29518014388cb554bb29607f, type: 3}
       propertyPath: listOfPatrolDestinations.Array.data[0]
       value: 
@@ -5103,10 +5111,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Enemy T pose
       objectReference: {fileID: 0}
-    - target: {fileID: 9000053292317615563, guid: ec545e5b29518014388cb554bb29607f, type: 3}
-      propertyPath: currentState
-      value: 
-      objectReference: {fileID: 6925733626833268008}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ec545e5b29518014388cb554bb29607f, type: 3}
 --- !u!224 &2635181857651651018
@@ -6702,17 +6706,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e5d5249ffe1425046ad0362f8c541dbb, type: 3}
---- !u!114 &6925733626833268008 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 6210446726917716682, guid: ec545e5b29518014388cb554bb29607f, type: 3}
-  m_PrefabInstance: {fileID: 1891285664451270460}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3affd13b5d4fc4a4086304b8090f5f25, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &8184204028464732690
 PrefabInstance:
   m_ObjectHideFlags: 0

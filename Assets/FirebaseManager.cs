@@ -46,6 +46,7 @@ namespace DK {
         public static FirebaseManager instance;
 
         Dictionary<string, Object> levels = new Dictionary<string, Object>();
+        Dictionary<string, Object> equipment = new Dictionary<string, Object>();
         private void Awake()
         {
             if(instance!=null && instance != this)
@@ -344,6 +345,35 @@ namespace DK {
         {
             StartCoroutine(UpdatePlayerLevelsToFireBase(healthLevel,staminaLevel,focusLevel,strengthLevel,
             dexterityLevel,poiseLevel,intelligenceLevel,faithLevel,soulPlayersPosseses,characterLevel));
+        }
+
+        private IEnumerator UpdatePlayerEquipmentToFireBase()
+        {
+
+            equipment["helmetIndex"] = userData.helmetIndex;
+            equipment["torsoIndex"] = userData.torsoIndex;
+            equipment["armIndex"] = userData.armIndex;
+            equipment["hipIndex"] = userData.hipIndex;
+            User = auth.CurrentUser;
+
+            var EquipmentTask = reference.Child("Users").Child(User.UserId).UpdateChildrenAsync(equipment);
+
+            yield return new WaitUntil(predicate: () => EquipmentTask.IsCompleted);
+
+            if (EquipmentTask.Exception != null)
+            {
+                Debug.LogWarning(message: $"Failed Equipment Loading with {EquipmentTask.Exception}");
+            }
+            else
+            {
+                Debug.Log("Task Completed Successfully");
+            }
+
+        }
+
+        public void UpdatePlayerEquipment()
+        {
+            StartCoroutine(UpdatePlayerEquipmentToFireBase());
         }
 
         private IEnumerator GetDataFromFireBase()
