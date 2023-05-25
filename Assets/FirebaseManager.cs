@@ -29,6 +29,7 @@ namespace DK {
         [Header("Popups")]
         public GameObject warningPopup;
         public GameObject successPopup;
+        public GameObject successPopupRegistration;
         //public GameObject networkErrorPopup;
         public GameObject registerPopup;
         public GameObject loginPopup;
@@ -70,9 +71,10 @@ namespace DK {
 
 
 
-        
+        object levelChar;
 
- 
+
+
 
         private void Awake()
         {
@@ -263,8 +265,8 @@ namespace DK {
                         }
                         else
                         {
-                            successPopup.SetActive(true);
-                            successPopup.GetComponentInChildren<TextMeshProUGUI>().text = "Registered Succesfully";
+                            successPopupRegistration.SetActive(true);
+                            successPopupRegistration.GetComponentInChildren<TextMeshProUGUI>().text = "Registered Succesfully";
                             loginPopup.SetActive(false);
                             registerPopup.SetActive(false);
                             buttonLoginOnTitleScreen.SetActive(true);
@@ -416,36 +418,45 @@ namespace DK {
                 SoulsPlayerPosseses = snapshot.Child("soulPlayersPosseses").Value.ToString();
                 GoldAmount = snapshot.Child("goldAmount").Value.ToString();
                 LevelsCompleted = snapshot.Child("levelsCompleted").Value.ToString();
+                Debug.Log("Finished Fethincg data");
             }
         }
 
         public void GetDataFromDatabase()
         {
-            StartCoroutine(GetDataFromFireBase());
-            SetCharacterLevels();
+            Task t = new Task(GetDataFromFireBase());
+            t.Finished += delegate (bool manual)
+              {
+                  if (!manual)
+                  {
+                      Debug.Log("Setting Data");
+                      SetCharacterLevels();
+                  }
+              };
+           
         }
 
         private void SetCharacterLevels()
         {
-            userData.characterLevel = int.Parse(CharacterLevel);
-            userData.helmetIndex = int.Parse(HelmetIndex);
-            userData.torsoIndex = int.Parse(TorsoIndex);
-            userData.armIndex = int.Parse(ArmsIndex);
-            userData.hipIndex = int.Parse(HipIndex);
-            userData.consumableItemIndex = int.Parse(ConsumableItemIndex);
-            userData.leftArmWeapon = int.Parse(LeftWeaponIndex);
-            userData.rightArmWeapon = int.Parse(RighteaponIndex);
-            userData.healthLevel = int.Parse(HealthLevel);
-            userData.staminaLevel = int.Parse(StaminaLevel);
-            userData.focusLevel = int.Parse(FocusLevel);
-            userData.strengthLevel = int.Parse(StrengthLevel);
-            userData.dexterityLevel = int.Parse(DexterityLevel);
-            userData.poiseLevel = int.Parse(PoiseLevel);
-            userData.intelligenceLevel = int.Parse(IntelligenceLevel);
-            userData.faithLevel = int.Parse(FaithLevel);
-            userData.soulPlayersPosseses = int.Parse(SoulsPlayerPosseses);
-            userData.goldAmount = int.Parse(GoldAmount);
-            userData.levelsCompleted = int.Parse(LevelsCompleted);
+            userData.characterLevel = Convert.ToInt32(CharacterLevel);
+            userData.helmetIndex = Convert.ToInt32(HelmetIndex);
+            userData.torsoIndex = Convert.ToInt32(TorsoIndex);
+            userData.armIndex = Convert.ToInt32(ArmsIndex);
+            userData.hipIndex = Convert.ToInt32(HipIndex);
+            userData.consumableItemIndex = Convert.ToInt32(ConsumableItemIndex);
+            userData.leftArmWeapon = Convert.ToInt32(LeftWeaponIndex);
+            userData.rightArmWeapon = Convert.ToInt32(RighteaponIndex);
+            userData.healthLevel = Convert.ToInt32(HealthLevel);
+            userData.staminaLevel = Convert.ToInt32(StaminaLevel);
+            userData.focusLevel = Convert.ToInt32(FocusLevel);
+            userData.strengthLevel = Convert.ToInt32(StrengthLevel);
+            userData.dexterityLevel = Convert.ToInt32(DexterityLevel);
+            userData.poiseLevel = Convert.ToInt32(PoiseLevel);
+            userData.intelligenceLevel = Convert.ToInt32(IntelligenceLevel);
+            userData.faithLevel = Convert.ToInt32(FaithLevel);
+            userData.soulPlayersPosseses = Convert.ToInt32(SoulsPlayerPosseses);
+            userData.goldAmount = Convert.ToInt32(GoldAmount);
+            userData.levelsCompleted = Convert.ToInt32(LevelsCompleted);
         }
     }
 }
