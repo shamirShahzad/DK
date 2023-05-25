@@ -45,37 +45,7 @@ namespace DK {
 
         public static FirebaseManager instance;
 
-        [Header("String Levels From Database")]
-        [HideInInspector] string CharacterLevel;
-        [HideInInspector] string HealthLevel;
-        [HideInInspector] string StaminaLevel;
-        [HideInInspector] string FocusLevel;
-        [HideInInspector] string StrengthLevel;
-        [HideInInspector] string DexterityLevel;
-        [HideInInspector] string PoiseLevel;
-        [HideInInspector] string IntelligenceLevel;
-        [HideInInspector] string FaithLevel;
-        [HideInInspector] string SoulsPlayerPosseses;
-        [HideInInspector] string GoldAmount;
-        [HideInInspector] string LevelsCompleted;
-        [HideInInspector] string HelmetIndex;
-        [HideInInspector] string TorsoIndex;
-        [HideInInspector] string ArmsIndex;
-        [HideInInspector] string HipIndex;
-        [HideInInspector] string ConsumableItemIndex;
-        [HideInInspector] string LeftWeaponIndex;
-        [HideInInspector] string RighteaponIndex;
-
         Dictionary<string, Object> levels = new Dictionary<string, Object>();
-
-
-
-
-        object levelChar;
-
-
-
-
         private void Awake()
         {
             if(instance!=null && instance != this)
@@ -107,7 +77,6 @@ namespace DK {
 
         private void InitializeFireBase()
         {
-            Debug.Log("Setting Up Firebase Auth");
             auth = FirebaseAuth.DefaultInstance;
             reference = FirebaseDatabase.DefaultInstance.RootReference;
 
@@ -390,73 +359,40 @@ namespace DK {
             }
             else if (dbTask.Result.Value == null)
             {
-                Debug.Log("Saving Data");
                 StartSaveDataCoroutine();
             }
             else
             {
-                Debug.Log("Retreiving data");
                 DataSnapshot snapshot = dbTask.Result;
                 userData.characterName = snapshot.Child("characterName").Value.ToString();
                 userData.Email = snapshot.Child("Email").Value.ToString();
-                CharacterLevel = snapshot.Child("characterLevel").Value.ToString();
-                HelmetIndex = snapshot.Child("helmetIndex").Value.ToString();
-                TorsoIndex = snapshot.Child("torsoIndex").Value.ToString();
-                ArmsIndex = snapshot.Child("armIndex").Value.ToString();
-                HipIndex = snapshot.Child("hipIndex").Value.ToString();
-                ConsumableItemIndex = snapshot.Child("consumableItemIndex").Value.ToString();
-                LeftWeaponIndex = snapshot.Child("leftArmWeapon").Value.ToString();
-                RighteaponIndex = snapshot.Child("rightArmWeapon").Value.ToString();
-                HealthLevel = snapshot.Child("healthLevel").Value.ToString();
-                StaminaLevel = snapshot.Child("staminaLevel").Value.ToString();
-                FocusLevel = snapshot.Child("focusLevel").Value.ToString();
-                StrengthLevel = snapshot.Child("strengthLevel").Value.ToString();
-                DexterityLevel = snapshot.Child("dexterityLevel").Value.ToString();
-                PoiseLevel = snapshot.Child("poiseLevel").Value.ToString();
-                IntelligenceLevel = snapshot.Child("intelligenceLevel").Value.ToString();
-                FaithLevel = snapshot.Child("faithLevel").Value.ToString();
-                SoulsPlayerPosseses = snapshot.Child("soulPlayersPosseses").Value.ToString();
-                GoldAmount = snapshot.Child("goldAmount").Value.ToString();
-                LevelsCompleted = snapshot.Child("levelsCompleted").Value.ToString();
-                Debug.Log("Finished Fethincg data");
+                userData.characterLevel = Convert.ToInt32(snapshot.Child("characterLevel").Value);
+                userData.helmetIndex = Convert.ToInt32(snapshot.Child("helmetIndex").Value);
+                userData.torsoIndex = Convert.ToInt32(snapshot.Child("torsoIndex").Value);
+                userData.armIndex = Convert.ToInt32(snapshot.Child("armIndex").Value);
+                userData.hipIndex = Convert.ToInt32(snapshot.Child("hipIndex").Value);
+                userData.consumableItemIndex = Convert.ToInt32(snapshot.Child("consumableItemIndex").Value);
+                userData.leftArmWeapon = Convert.ToInt32(snapshot.Child("leftArmWeapon").Value);
+                userData.rightArmWeapon = Convert.ToInt32(snapshot.Child("rightArmWeapon").Value);
+                userData.healthLevel = Convert.ToInt32(snapshot.Child("healthLevel").Value);
+                userData.staminaLevel = Convert.ToInt32(snapshot.Child("staminaLevel").Value);
+                userData.focusLevel = Convert.ToInt32(snapshot.Child("focusLevel").Value);
+                userData.strengthLevel = Convert.ToInt32(snapshot.Child("strengthLevel").Value);
+                userData.dexterityLevel= Convert.ToInt32(snapshot.Child("dexterityLevel").Value);
+                userData.poiseLevel = Convert.ToInt32(snapshot.Child("poiseLevel").Value);
+                userData.intelligenceLevel = Convert.ToInt32(snapshot.Child("intelligenceLevel").Value);
+                userData.faithLevel = Convert.ToInt32(snapshot.Child("faithLevel").Value);
+                userData.soulPlayersPosseses = Convert.ToInt32(snapshot.Child("soulPlayersPosseses").Value);
+                userData.goldAmount = Convert.ToInt32(snapshot.Child("goldAmount").Value);
+                userData.levelsCompleted = Convert.ToInt32(snapshot.Child("levelsCompleted").Value);
             }
         }
 
         public void GetDataFromDatabase()
         {
-            Task t = new Task(GetDataFromFireBase());
-            t.Finished += delegate (bool manual)
-              {
-                  if (!manual)
-                  {
-                      Debug.Log("Setting Data");
-                      SetCharacterLevels();
-                  }
-              };
-           
+            StartCoroutine(GetDataFromFireBase());
         }
 
-        private void SetCharacterLevels()
-        {
-            userData.characterLevel = Convert.ToInt32(CharacterLevel);
-            userData.helmetIndex = Convert.ToInt32(HelmetIndex);
-            userData.torsoIndex = Convert.ToInt32(TorsoIndex);
-            userData.armIndex = Convert.ToInt32(ArmsIndex);
-            userData.hipIndex = Convert.ToInt32(HipIndex);
-            userData.consumableItemIndex = Convert.ToInt32(ConsumableItemIndex);
-            userData.leftArmWeapon = Convert.ToInt32(LeftWeaponIndex);
-            userData.rightArmWeapon = Convert.ToInt32(RighteaponIndex);
-            userData.healthLevel = Convert.ToInt32(HealthLevel);
-            userData.staminaLevel = Convert.ToInt32(StaminaLevel);
-            userData.focusLevel = Convert.ToInt32(FocusLevel);
-            userData.strengthLevel = Convert.ToInt32(StrengthLevel);
-            userData.dexterityLevel = Convert.ToInt32(DexterityLevel);
-            userData.poiseLevel = Convert.ToInt32(PoiseLevel);
-            userData.intelligenceLevel = Convert.ToInt32(IntelligenceLevel);
-            userData.faithLevel = Convert.ToInt32(FaithLevel);
-            userData.soulPlayersPosseses = Convert.ToInt32(SoulsPlayerPosseses);
-            userData.goldAmount = Convert.ToInt32(GoldAmount);
-            userData.levelsCompleted = Convert.ToInt32(LevelsCompleted);
-        }
+        
     }
 }
