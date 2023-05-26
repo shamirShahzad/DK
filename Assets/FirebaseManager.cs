@@ -7,6 +7,7 @@ using Firebase.Database;
 using TMPro;
 using System;
 using Object = System.Object;
+using System.Linq;
 
 namespace DK {
     public class FirebaseManager : MonoBehaviour
@@ -41,6 +42,7 @@ namespace DK {
         public GameObject titleLoginScene;
         [Header("Firebase Database")]
         public CharacterSaveData userData = new CharacterSaveData();
+        public ItemsSaveData itemData = new ItemsSaveData();
         public DatabaseReference reference;
 
         public static FirebaseManager instance;
@@ -162,6 +164,8 @@ namespace DK {
                 passwordLoginField.text = "";
                 loginPopup.SetActive(false);
                 GetDataFromDatabase();
+                GetItemDataCoroutineCaller();
+                
             }
         }
 
@@ -252,36 +256,36 @@ namespace DK {
             }
         }
 
-        public void SaveDataToFirebase(int level, int hIndex, int tIndex, int aIndex, int lIndex, int cIIndex, int lWIndex, int rWindex,
-                                       int healthLevel, int staminaLevel, int focusLevel, int strengthLevel, int dexterityLevel, int poiseLevel,
-                                       int intlligenceLevel, int faithLevel, int souls, int gold, int levelCompleted)
-        {
-            userData.characterLevel = level;
-            userData.helmetIndex = hIndex;
-            userData.torsoIndex = tIndex;
-            userData.armIndex = aIndex;
-            userData.hipIndex = lIndex;
-            userData.consumableItemIndex = cIIndex;
-            userData.leftArmWeapon = lWIndex;
-            userData.rightArmWeapon = rWindex;
-            userData.healthLevel = healthLevel;
-            userData.staminaLevel = staminaLevel;
-            userData.focusLevel = focusLevel;
-            userData.strengthLevel = strengthLevel;
-            userData.dexterityLevel = dexterityLevel;
-            userData.poiseLevel = poiseLevel;
-            userData.intelligenceLevel = intlligenceLevel;
-            userData.faithLevel = faithLevel;
-            userData.soulPlayersPosseses = souls;
-            userData.goldAmount = gold;
-            userData.levelsCompleted = levelCompleted;
+        //public void SaveDataToFirebase(int level, int hIndex, int tIndex, int aIndex, int lIndex, int cIIndex, int lWIndex, int rWindex,
+        //                               int healthLevel, int staminaLevel, int focusLevel, int strengthLevel, int dexterityLevel, int poiseLevel,
+        //                               int intlligenceLevel, int faithLevel, int souls, int gold, int levelCompleted)
+        //{
+        //    userData.characterLevel = level;
+        //    userData.helmetIndex = hIndex;
+        //    userData.torsoIndex = tIndex;
+        //    userData.armIndex = aIndex;
+        //    userData.hipIndex = lIndex;
+        //    userData.consumableItemIndex = cIIndex;
+        //    userData.leftArmWeapon = lWIndex;
+        //    userData.rightArmWeapon = rWindex;
+        //    userData.healthLevel = healthLevel;
+        //    userData.staminaLevel = staminaLevel;
+        //    userData.focusLevel = focusLevel;
+        //    userData.strengthLevel = strengthLevel;
+        //    userData.dexterityLevel = dexterityLevel;
+        //    userData.poiseLevel = poiseLevel;
+        //    userData.intelligenceLevel = intlligenceLevel;
+        //    userData.faithLevel = faithLevel;
+        //    userData.soulPlayersPosseses = souls;
+        //    userData.goldAmount = gold;
+        //    userData.levelsCompleted = levelCompleted;
 
-            string json = JsonUtility.ToJson(userData);
+        //    string json = JsonUtility.ToJson(userData);
 
-            reference.Child("Users").Child(User.UserId).SetRawJsonValueAsync(json);
+        //    reference.Child("Users").Child(User.UserId).SetRawJsonValueAsync(json);
 
 
-        }
+        //}
 
         private IEnumerator SaveDataToFirebase()
         {
@@ -301,6 +305,27 @@ namespace DK {
             {
                 Debug.Log("Login Succesfully");
             }
+        }
+
+        private IEnumerator SaveItemDataToFirebase()
+        {
+            string json = JsonUtility.ToJson(itemData);
+            User = auth.CurrentUser;
+            var saveItemDataTask = reference.Child("Items").Child(User.UserId).SetRawJsonValueAsync(json);
+            yield return new WaitUntil(predicate: () => saveItemDataTask.IsCompleted);
+            if (saveItemDataTask.Exception != null)
+            {
+                Debug.LogWarning(message: $"Failed To add item data tast with{saveItemDataTask.Exception}");
+            }
+            else
+            {
+                Debug.Log("Item data saved Succesfully");
+            }
+        }
+
+        public void SaveItemDataCoroutineCaller()
+        {
+            StartCoroutine(SaveItemDataToFirebase());
         }
 
         public void StartSaveDataCoroutine()
@@ -422,6 +447,59 @@ namespace DK {
         public void GetDataFromDatabase()
         {
             StartCoroutine(GetDataFromFireBase());
+            
+        }
+
+        private IEnumerator GetItemDataFromFirebase()
+        {
+            User = auth.CurrentUser;
+            var dbItemTask = reference.Child("Items").Child(User.UserId).GetValueAsync();
+
+            yield return new WaitUntil(predicate:()=> dbItemTask.IsCompleted);
+
+            if (dbItemTask.Exception != null)
+            {
+                Debug.LogWarning(message: $"Failed to complete get task with{dbItemTask.Exception}");
+            }
+            else if(dbItemTask.Result.Value == null)
+            {
+                itemData.helmetPurchased.Add(0);
+                itemData.armsPurchased.Add(0);
+                itemData.torsoPurchased.Add(0);
+                itemData.legsPurchased.Add(0);
+                itemData.leftWeaponsPurchased.Add(0);
+                itemData.rightWeaponsPurchased.Add(0);
+                itemData.rightWeaponsPurchased.Add(1);
+                itemData.leftWeaponsPurchased.Add(1);
+                SaveItemDataCoroutineCaller();
+            }
+            else
+            {
+                
+                Debug.Log("Start Getting Data");
+                DataSnapshot snapshot = dbItemTask.Result;
+                Debug.Log(snapshot.Child("helmetPurchased").Value);
+
+                string json = snapshot.GetRawJsonValue();
+                itemData = JsonUtility.FromJson<ItemsSaveData>(json);
+                Debug.Log("Got DATA");
+                
+                 
+
+               
+            }
+        }
+
+        public void GetItemDataCoroutineCaller()
+        {
+            StartCoroutine(GetItemDataFromFirebase());
+        }
+
+        public void testButton()
+        {
+            itemData.helmetPurchased.Add(4);
+            SaveItemDataCoroutineCaller();
+            GetItemDataCoroutineCaller();
         }
 
         

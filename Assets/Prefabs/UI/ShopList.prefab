@@ -344,6 +344,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   equipment: {fileID: 0}
+  sucessPopup: {fileID: 0}
+  warningPopup: {fileID: 0}
+  playerGoldAmount: 9000
 --- !u!1 &1876055320310370318
 GameObject:
   m_ObjectHideFlags: 0
@@ -433,7 +436,7 @@ GameObject:
   - component: {fileID: 1876055321112736595}
   - component: {fileID: 1876055321112736594}
   m_Layer: 5
-  m_Name: Button_Price_Dollar
+  m_Name: Button_Price_Gold
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

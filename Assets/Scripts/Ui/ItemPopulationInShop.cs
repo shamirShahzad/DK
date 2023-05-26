@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 namespace DK
 {
     public class ItemPopulationInShop : MonoBehaviour
@@ -55,6 +56,7 @@ namespace DK
                     //put player gold amount here same as above for all on click events
 
                     uiItem.transform.GetChild(3).GetChild(1).GetComponent<Image>().sprite = notPurchasedHelmets[i].itemIcon;
+                    uiItem.transform.GetChild(4).GetComponentInChildren<TextMeshProUGUI>().text = notPurchasedHelmets[i].goldRequiredToPurchase.ToString();
                     //Do other things with the prefab here
 
                     uiItem.transform.SetParent(contentTransform);
@@ -88,6 +90,7 @@ namespace DK
                     uiItem.GetComponent<PrefabButtonAccessScript>().sucessPopup = sucessPopup;
                     uiItem.GetComponent<PrefabButtonAccessScript>().warningPopup = warningPopup;
                     uiItem.transform.GetChild(3).GetChild(1).GetComponent<Image>().sprite = notPurchasedArms[i].itemIcon;
+                    uiItem.transform.GetChild(4).GetComponentInChildren<TextMeshProUGUI>().text = notPurchasedArms[i].goldRequiredToPurchase.ToString();
                     //Do other things with the prefab here
 
                     uiItem.transform.SetParent(contentTransform);
@@ -120,6 +123,7 @@ namespace DK
                     uiItem.GetComponent<PrefabButtonAccessScript>().sucessPopup = sucessPopup;
                     uiItem.GetComponent<PrefabButtonAccessScript>().warningPopup = warningPopup;
                     uiItem.transform.GetChild(3).GetChild(1).GetComponent<Image>().sprite = notPurchasedTorso[i].itemIcon;
+                    uiItem.transform.GetChild(4).GetComponentInChildren<TextMeshProUGUI>().text = notPurchasedTorso[i].goldRequiredToPurchase.ToString();
                     //Do other things with the prefab here
 
                     uiItem.transform.SetParent(contentTransform);
@@ -152,6 +156,7 @@ namespace DK
                     uiItem.GetComponent<PrefabButtonAccessScript>().sucessPopup = sucessPopup;
                     uiItem.GetComponent<PrefabButtonAccessScript>().warningPopup = warningPopup;
                     uiItem.transform.GetChild(3).GetChild(1).GetComponent<Image>().sprite = notPurchasedLegs[i].itemIcon;
+                    uiItem.transform.GetChild(4).GetComponentInChildren<TextMeshProUGUI>().text = notPurchasedLegs[i].goldRequiredToPurchase.ToString();
                     //Do other things with the prefab here
 
                     uiItem.transform.SetParent(contentTransform);
