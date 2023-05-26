@@ -20,17 +20,22 @@ namespace DK
 
         [SerializeField] GameObject[] lineFocuses = new GameObject[4];
 
-        [SerializeField]List<HelmetEquipment> notPurchasedHelmets = new List<HelmetEquipment>();
+        [SerializeField] GameObject sucessPopup;
+        [SerializeField] GameObject warningPopup;
+
+        
 
         private void OnEnable()
         {
             onHelmetClick();
+            lineFocuses[0].SetActive(true);
         }
         public void onHelmetClick()
         {
             DisableAllFocusLines();
             DestroyAnyOtherChildPresentInContentObject();
-            for(int i = 0; i < helmetEquipmentList.Count; i++)
+            List<HelmetEquipment> notPurchasedHelmets = new List<HelmetEquipment>();
+            for (int i = 0; i < helmetEquipmentList.Count; i++)
             {
                 if (!helmetEquipmentList[i].isPurchased)
                 {
@@ -42,6 +47,12 @@ namespace DK
                 for (int i = 0; i < notPurchasedHelmets.Count; i++)
                 {
                     uiItem = Instantiate(shopItems);
+
+                    //The prefab has a script that takes a item as argument and displays its values when butto is pressed
+                    uiItem.GetComponent<PrefabButtonAccessScript>().equipment = notPurchasedHelmets[i] as EquipmentItem;
+                    uiItem.GetComponent<PrefabButtonAccessScript>().sucessPopup = sucessPopup;
+                    uiItem.GetComponent<PrefabButtonAccessScript>().warningPopup = warningPopup;
+                    //put player gold amount here same as above for all on click events
 
                     uiItem.transform.GetChild(3).GetChild(1).GetComponent<Image>().sprite = notPurchasedHelmets[i].itemIcon;
                     //Do other things with the prefab here
@@ -55,7 +66,7 @@ namespace DK
 
         public void onArmsClick()
         {
-
+            
             DisableAllFocusLines();
             DestroyAnyOtherChildPresentInContentObject();
             List<HandEquipment> notPurchasedArms = new List<HandEquipment>();
@@ -72,6 +83,10 @@ namespace DK
                 {
                     uiItem = Instantiate(shopItems);
 
+                    //The prefab has a script that takes a item as argument and displays its values when butto is pressed
+                    uiItem.GetComponent<PrefabButtonAccessScript>().equipment = notPurchasedArms[i] as EquipmentItem;
+                    uiItem.GetComponent<PrefabButtonAccessScript>().sucessPopup = sucessPopup;
+                    uiItem.GetComponent<PrefabButtonAccessScript>().warningPopup = warningPopup;
                     uiItem.transform.GetChild(3).GetChild(1).GetComponent<Image>().sprite = notPurchasedArms[i].itemIcon;
                     //Do other things with the prefab here
 
@@ -100,6 +115,10 @@ namespace DK
                 {
                     uiItem = Instantiate(shopItems);
 
+                    //The prefab has a script that takes a item as argument and displays its values when butto is pressed
+                    uiItem.GetComponent<PrefabButtonAccessScript>().equipment = notPurchasedTorso[i] as EquipmentItem;
+                    uiItem.GetComponent<PrefabButtonAccessScript>().sucessPopup = sucessPopup;
+                    uiItem.GetComponent<PrefabButtonAccessScript>().warningPopup = warningPopup;
                     uiItem.transform.GetChild(3).GetChild(1).GetComponent<Image>().sprite = notPurchasedTorso[i].itemIcon;
                     //Do other things with the prefab here
 
@@ -128,6 +147,10 @@ namespace DK
                 {
                     uiItem = Instantiate(shopItems);
 
+                    //The prefab has a script that takes a item as argument and displays its values when butto is pressed
+                    uiItem.GetComponent<PrefabButtonAccessScript>().equipment = notPurchasedLegs[i] as EquipmentItem;
+                    uiItem.GetComponent<PrefabButtonAccessScript>().sucessPopup = sucessPopup;
+                    uiItem.GetComponent<PrefabButtonAccessScript>().warningPopup = warningPopup;
                     uiItem.transform.GetChild(3).GetChild(1).GetComponent<Image>().sprite = notPurchasedLegs[i].itemIcon;
                     //Do other things with the prefab here
 
