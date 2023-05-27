@@ -35,6 +35,8 @@ namespace DK
         public int goldAmount = 10000000;
         [Header("Level Progress")]
         public int levelsCompleted = 0;
+        [Header("Player Deth Count")]
+        public int deathCount;
        
     }
 }

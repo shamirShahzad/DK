@@ -7,7 +7,6 @@ using Firebase.Database;
 using TMPro;
 using System;
 using Object = System.Object;
-using System.Linq;
 
 namespace DK {
     public class FirebaseManager : MonoBehaviour
@@ -47,11 +46,17 @@ namespace DK {
 
         [SerializeField] GameObject loadingPopup;
         [SerializeField] TextMeshProUGUI textForLoadingTitle;
+        [SerializeField] TextMeshProUGUI usernameTextinHomeScene;
 
         public static FirebaseManager instance;
 
         Dictionary<string, Object> levels = new Dictionary<string, Object>();
         Dictionary<string, Object> equipment = new Dictionary<string, Object>();
+
+        public LeaderBoard  myLeaderBoardData= new LeaderBoard();
+ 
+
+        public List<LeaderBoard> leadaerBoardList= new();
         private void Awake()
         {
             if(instance!=null && instance != this)
@@ -178,6 +183,7 @@ namespace DK {
         {
             titleLoginScene.SetActive(false);
             homeScene.SetActive(true);
+            usernameTextinHomeScene.text = User.DisplayName;
             successPopup.SetActive(false);
         }
 
@@ -313,6 +319,68 @@ namespace DK {
             }
         }
 
+        private IEnumerator SaveLeaderboardData()
+        {
+            
+            User = auth.CurrentUser;
+            myLeaderBoardData.name = User.DisplayName;
+            myLeaderBoardData.deaths = userData.deathCount;
+            myLeaderBoardData.timestamp = ServerValue.Timestamp;
+            string json = JsonUtility.ToJson(myLeaderBoardData);
+            var saveDataTask = reference.Child("Leaderboard").Child(User.UserId).SetRawJsonValueAsync(json);
+
+            yield return new WaitUntil(predicate:()=> saveDataTask.IsCompleted);
+            if (saveDataTask.Exception != null)
+            {
+                Debug.LogWarning(message: $"Failed to save leaderboard with {saveDataTask.Exception}");
+            }
+            else
+            {
+                Debug.Log("saved leaderboard data");
+            }
+
+        }
+
+        private IEnumerator GetLeaderBoardData()
+        {
+            User = auth.CurrentUser;
+            var getDataTask = reference.Child("Leaderboard").OrderByChild("deaths").LimitToFirst(10).GetValueAsync();
+
+            yield return new WaitUntil(predicate: () => getDataTask.IsCompleted);
+            if (getDataTask.Exception != null)
+            {
+                Debug.LogWarning(message: $"Failed retreiving leaderboard data with{getDataTask.Exception}");
+            }
+            else
+            {
+                int i = 0;
+                DataSnapshot snapshot = getDataTask.Result;
+                LeaderBoard temp = new LeaderBoard();
+                foreach(DataSnapshot snap in snapshot.Children)
+                {
+                    temp = JsonUtility.FromJson<LeaderBoard>(snap.GetRawJsonValue());
+                    temp.uid = snap.Key;
+                    temp.rank = i + 1;
+                    leadaerBoardList.Add(temp);
+                    i++;
+                }
+
+                Debug.Log(leadaerBoardList[0].name);
+                Debug.Log("First Index"+ leadaerBoardList[0].rank);
+                Debug.Log(leadaerBoardList[1].name);
+            }
+        }
+
+        public void GetLeaderBoardDataCoroutineCaller()
+        {
+            StartCoroutine(GetLeaderBoardData());
+        }
+
+        public void SaveleaderBoardCoroutineCaller()
+        {
+            StartCoroutine(SaveLeaderboardData());
+        }
+
         private IEnumerator SaveItemDataToFirebase()
         {
             string json = JsonUtility.ToJson(itemData);
@@ -352,7 +420,7 @@ namespace DK {
                 levels["poiseLevel"] = poiseLevel;
                 levels["intelligenceLevel"] = intelligenceLevel;
                 levels["faithLevel"] = faithLevel;
-            User = auth.CurrentUser;
+                User = auth.CurrentUser;
 
             var updateTask = reference.Child("Users").Child(User.UserId).UpdateChildrenAsync(levels);
 

@@ -24,7 +24,7 @@ namespace DK
 
         [SerializeField] GameObject sucessPopup;
         [SerializeField] GameObject warningPopup;
-        [SerializeField] GameObject loadingPopup;
+        
 
         [Header("Flags For Checking which item is picked")]
         public bool isHelmet;
