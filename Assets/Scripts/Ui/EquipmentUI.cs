@@ -250,7 +250,54 @@ namespace DK {
         {
             player.playerEquipmentManager.EquipAllEquipmentItemsOnStart();
         }
+        private void SetArmPurchased()
+        {
+            if (FirebaseManager.instance.itemData.armsPurchased.Count > 0)
+            {
+                for (int i = 0; i < FirebaseManager.instance.itemData.armsPurchased.Count; i++)
+                {
+                    armsList[FirebaseManager.instance.itemData.armsPurchased[i]].isPurchased = true;
+                }
+            }
+        }
+        private void SetTorsoPurchased()
+        {
+            if (FirebaseManager.instance.itemData.torsoPurchased.Count > 0)
+            {
+                for (int i = 0; i < FirebaseManager.instance.itemData.torsoPurchased.Count; i++)
+                {
+                    torsoList[FirebaseManager.instance.itemData.torsoPurchased[i]].isPurchased = true;
+                }
+            }
+        }
+        private void SetHelmetPurchased()
+        {
+            if (FirebaseManager.instance.itemData.helmetPurchased.Count > 0)
+            {
+                for (int i = 0; i < FirebaseManager.instance.itemData.helmetPurchased.Count; i++)
+                {
+                    helmetList[FirebaseManager.instance.itemData.helmetPurchased[i]].isPurchased = true;
+                }
+            }
+        }
+        private void SetLegsPurchased()
+        {
+            if (FirebaseManager.instance.itemData.legsPurchased.Count > 0)
+            {
+                for (int i = 0; i < FirebaseManager.instance.itemData.legsPurchased.Count; i++)
+                {
+                    legList [FirebaseManager.instance.itemData.legsPurchased[i]].isPurchased = true;
+                }
+            }
+        }
 
+        public void SetAllPurchasedItems()
+        {
+            SetHelmetPurchased();
+            SetArmPurchased();
+            SetTorsoPurchased();
+            SetLegsPurchased();
+        }
 
     }
 

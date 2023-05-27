@@ -8,6 +8,7 @@ namespace DK
     public class HelmetEquipment : EquipmentItem
     {
         public string helmetModelName;
+        
 
     }
 }

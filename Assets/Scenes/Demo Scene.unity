@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.4449696, g: 0.4945492, b: 0.57367945, a: 1}
+  m_IndirectSpecularColor: {r: 0.44243947, g: 0.4913246, b: 0.5711156, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -4966,7 +4966,7 @@ PrefabInstance:
     - target: {fileID: 2554598860014443788, guid: 96e02eda9c2e03c479bcb5f17f34d8f3, type: 3}
       propertyPath: weaponItemsRight.Array.data[0]
       value: 
-      objectReference: {fileID: 11400000, guid: a404a8288789d5e45aca00b24d8dd057, type: 2}
+      objectReference: {fileID: 11400000, guid: 69ae6967547257341ba37b25fe3d6b3f, type: 2}
     - target: {fileID: 2554598860014443789, guid: 96e02eda9c2e03c479bcb5f17f34d8f3, type: 3}
       propertyPath: m_Name
       value: Player Tpose

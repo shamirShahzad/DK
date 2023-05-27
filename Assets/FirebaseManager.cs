@@ -45,6 +45,9 @@ namespace DK {
         public ItemsSaveData itemData = new ItemsSaveData();
         public DatabaseReference reference;
 
+        [SerializeField] GameObject loadingPopup;
+        [SerializeField] TextMeshProUGUI textForLoadingTitle;
+
         public static FirebaseManager instance;
 
         Dictionary<string, Object> levels = new Dictionary<string, Object>();
@@ -121,8 +124,10 @@ namespace DK {
         private IEnumerator Login(string email,string password)
         {
             var LoginTask = auth.SignInWithEmailAndPasswordAsync(email, password);
+            loadingPopup.SetActive(true);
+            textForLoadingTitle.text = "Logging In";
             yield return new WaitUntil(predicate: () => LoginTask.IsCompleted);
-
+            loadingPopup.SetActive(false);
             if (LoginTask.Exception != null)
             {
                 Debug.LogWarning(message: $"Failed To Register tassk with {LoginTask.Exception}");
@@ -191,9 +196,10 @@ namespace DK {
             else
             {
                 var RegisterTask = auth.CreateUserWithEmailAndPasswordAsync(email, password);
-
+                loadingPopup.SetActive(true);
+                textForLoadingTitle.text = "Registering User";
                 yield return new WaitUntil(predicate: () => RegisterTask.IsCompleted);
-
+                loadingPopup.SetActive(false);
                 if (RegisterTask.Exception != null)
                 {
                     Debug.LogWarning(message: $"Failed to registertask with{RegisterTask.Exception}");

@@ -7,6 +7,7 @@ namespace DK
 {
     public class ItemPopulationInShop : MonoBehaviour
     {
+        [SerializeField] TextMeshProUGUI goldAmountText;
         [SerializeField] Transform contentTransform;
         [SerializeField] GameObject shopItems;
         private GameObject uiItem;
@@ -23,17 +24,29 @@ namespace DK
 
         [SerializeField] GameObject sucessPopup;
         [SerializeField] GameObject warningPopup;
+        [SerializeField] GameObject loadingPopup;
 
-        
+        [Header("Flags For Checking which item is picked")]
+        public bool isHelmet;
+        public bool isArms;
+        public bool isTorso;
+        public bool isLegs;
+        public bool isLeft;
+        public bool isRight;
+
+
 
         private void OnEnable()
         {
+            goldAmountText.text = FirebaseManager.instance.userData.goldAmount.ToString();
             onHelmetClick();
             lineFocuses[0].SetActive(true);
         }
         public void onHelmetClick()
         {
+            SetFlagsForEquipment(true, false, false, false, false, false);
             DisableAllFocusLines();
+            lineFocuses[0].SetActive(true);
             DestroyAnyOtherChildPresentInContentObject();
             List<HelmetEquipment> notPurchasedHelmets = new List<HelmetEquipment>();
             for (int i = 0; i < helmetEquipmentList.Count; i++)
@@ -53,6 +66,7 @@ namespace DK
                     uiItem.GetComponent<PrefabButtonAccessScript>().equipment = notPurchasedHelmets[i] as EquipmentItem;
                     uiItem.GetComponent<PrefabButtonAccessScript>().sucessPopup = sucessPopup;
                     uiItem.GetComponent<PrefabButtonAccessScript>().warningPopup = warningPopup;
+                    uiItem.GetComponent<PrefabButtonAccessScript>().shop = this;
                     //put player gold amount here same as above for all on click events
 
                     uiItem.transform.GetChild(3).GetChild(1).GetComponent<Image>().sprite = notPurchasedHelmets[i].itemIcon;
@@ -68,8 +82,9 @@ namespace DK
 
         public void onArmsClick()
         {
-            
+            SetFlagsForEquipment(false, true, false, false, false, false);
             DisableAllFocusLines();
+            lineFocuses[2].SetActive(true);
             DestroyAnyOtherChildPresentInContentObject();
             List<HandEquipment> notPurchasedArms = new List<HandEquipment>();
             for (int i = 0; i < armsEquipmentList.Count; i++)
@@ -89,6 +104,7 @@ namespace DK
                     uiItem.GetComponent<PrefabButtonAccessScript>().equipment = notPurchasedArms[i] as EquipmentItem;
                     uiItem.GetComponent<PrefabButtonAccessScript>().sucessPopup = sucessPopup;
                     uiItem.GetComponent<PrefabButtonAccessScript>().warningPopup = warningPopup;
+                    uiItem.GetComponent<PrefabButtonAccessScript>().shop = this;
                     uiItem.transform.GetChild(3).GetChild(1).GetComponent<Image>().sprite = notPurchasedArms[i].itemIcon;
                     uiItem.transform.GetChild(4).GetComponentInChildren<TextMeshProUGUI>().text = notPurchasedArms[i].goldRequiredToPurchase.ToString();
                     //Do other things with the prefab here
@@ -102,7 +118,9 @@ namespace DK
 
         public void onTorsoClick()
         {
+            SetFlagsForEquipment(false, false, true, false, false, false);
             DisableAllFocusLines();
+            lineFocuses[1].SetActive(true);
             DestroyAnyOtherChildPresentInContentObject();
             List<TorsoEquipment> notPurchasedTorso = new List<TorsoEquipment>();
             for (int i = 0; i < torsoEquipmentList.Count; i++)
@@ -122,6 +140,7 @@ namespace DK
                     uiItem.GetComponent<PrefabButtonAccessScript>().equipment = notPurchasedTorso[i] as EquipmentItem;
                     uiItem.GetComponent<PrefabButtonAccessScript>().sucessPopup = sucessPopup;
                     uiItem.GetComponent<PrefabButtonAccessScript>().warningPopup = warningPopup;
+                    uiItem.GetComponent<PrefabButtonAccessScript>().shop = this;
                     uiItem.transform.GetChild(3).GetChild(1).GetComponent<Image>().sprite = notPurchasedTorso[i].itemIcon;
                     uiItem.transform.GetChild(4).GetComponentInChildren<TextMeshProUGUI>().text = notPurchasedTorso[i].goldRequiredToPurchase.ToString();
                     //Do other things with the prefab here
@@ -135,7 +154,9 @@ namespace DK
 
         public void onLegsClick()
         {
+            SetFlagsForEquipment(false, false, false, true, false, false);
             DisableAllFocusLines();
+            lineFocuses[3].SetActive(true);
             DestroyAnyOtherChildPresentInContentObject();
             List<LegEquipment> notPurchasedLegs = new List<LegEquipment>();
             for (int i = 0; i < legEquipmentList.Count; i++)
@@ -155,6 +176,7 @@ namespace DK
                     uiItem.GetComponent<PrefabButtonAccessScript>().equipment = notPurchasedLegs[i] as EquipmentItem;
                     uiItem.GetComponent<PrefabButtonAccessScript>().sucessPopup = sucessPopup;
                     uiItem.GetComponent<PrefabButtonAccessScript>().warningPopup = warningPopup;
+                    uiItem.GetComponent<PrefabButtonAccessScript>().shop = this;
                     uiItem.transform.GetChild(3).GetChild(1).GetComponent<Image>().sprite = notPurchasedLegs[i].itemIcon;
                     uiItem.transform.GetChild(4).GetComponentInChildren<TextMeshProUGUI>().text = notPurchasedLegs[i].goldRequiredToPurchase.ToString();
                     //Do other things with the prefab here
@@ -164,6 +186,16 @@ namespace DK
                     uiItem.transform.localPosition = Vector3.zero;
                 }
             }
+        }
+
+        public void SetFlagsForEquipment(bool helmetItem, bool armItem, bool torsoItem, bool legsItem, bool leftItem, bool rightItem)
+        {
+            isHelmet = helmetItem;
+            isArms = armItem;
+            isTorso = torsoItem;
+            isLegs = legsItem;
+            isLeft = leftItem;
+            isRight = rightItem;
         }
         private void DestroyAnyOtherChildPresentInContentObject()
         {
@@ -183,6 +215,11 @@ namespace DK
             {
                 lineFocus.SetActive(false);
             }
+        }
+
+        public void SetGoldAmountOnPurchase()
+        {
+            goldAmountText.text = FirebaseManager.instance.userData.goldAmount.ToString();
         }
 
     }

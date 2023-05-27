@@ -14,12 +14,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemIcon: {fileID: 21300000, guid: 982739521453a84488fc7cb8ff0b1aca, type: 3}
   itemName: Male Leg 4
+  actualName: 
   physicalDefense: 4
   magicDefense: 3
   fireDefense: 3
   lightningDefense: 3
   darkDefense: 7
-  isPurchased: 1
+  indexOfItemInMainList: 0
+  isPurchased: 0
   goldRequiredToPurchase: 550
   hipModelName: Male_Hip_4
   leftLegModelName: Male_LeftLeg_4

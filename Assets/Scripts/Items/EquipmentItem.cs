@@ -6,6 +6,7 @@ namespace DK
 {
     public class EquipmentItem : Item
     {
+        public string actualName;
         [Header("Defense bonuses")]
         public float physicalDefense;
         public float magicDefense;

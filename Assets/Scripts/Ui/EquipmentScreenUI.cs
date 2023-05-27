@@ -13,6 +13,7 @@ namespace DK
             equipmentUI.SetFlagsForEquipment(false, false, false, false,false,false);
             equipmentUI.SetStatusBars();
             equipmentUI.SetImagesOfItemsOnEnable();
+            equipmentUI.SetAllPurchasedItems();
         }
     }
 }

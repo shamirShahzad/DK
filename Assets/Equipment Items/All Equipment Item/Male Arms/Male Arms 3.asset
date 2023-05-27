@@ -14,12 +14,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemIcon: {fileID: 21300000, guid: 5086bd782a9636b45b77dfaff198679e, type: 3}
   itemName: Male Arms 3
+  actualName: 
   physicalDefense: 7
   magicDefense: 3
   fireDefense: 1
   lightningDefense: 2
   darkDefense: 8
-  isPurchased: 1
+  indexOfItemInMainList: 0
+  isPurchased: 0
   goldRequiredToPurchase: 450
   leftHandModelName: Chr_HandLeft_Male_01
   rightHandModelName: Chr_HandRight_Male_01

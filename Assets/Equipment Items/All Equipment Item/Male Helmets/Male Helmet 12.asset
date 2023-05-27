@@ -14,11 +14,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemIcon: {fileID: 21300000, guid: 694ef79a472fa514084c5c4e92fc1757, type: 3}
   itemName: Male Helmet 12
+  actualName: 
   physicalDefense: 5
   magicDefense: 5
   fireDefense: 5
   lightningDefense: 5
   darkDefense: 5
+  indexOfItemInMainList: 12
   isPurchased: 0
   goldRequiredToPurchase: 1200
   helmetModelName: Male_Helmet_12
