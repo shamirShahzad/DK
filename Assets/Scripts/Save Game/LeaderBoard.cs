@@ -11,7 +11,7 @@ namespace DK
         public int rank;
         public string name;
         public int deaths;
-        public DateTime timestamp;
+        public object timestamp;
 
         public LeaderBoard(string name,int deaths)
         {
