@@ -1,11 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Networking;
 using Firebase;
 using Firebase.Auth;
 using Firebase.Database;
 using TMPro;
 using System;
+using System.Net;
+using System.Net.Sockets;
 using Object = System.Object;
 
 namespace DK
@@ -68,6 +71,8 @@ namespace DK
         public TextMeshProUGUI userNameinLeaderboard;
         public TextMeshProUGUI userDeathsinLeaderboard;
         public TextMeshProUGUI userRankinLeaderboard;
+
+        public long timeMilliseconds;
         private void Awake()
         {
             if (instance != null && instance != this)
@@ -92,8 +97,39 @@ namespace DK
                     //networkErrorPopup.SetActive(true);
                     Debug.LogError("Could Not Resolve all Firebase Dependencies:" + dependencyStatus);
                 }
-                Debug.Log(reference);
             });
+            
+        }
+
+        private void Start()
+        {
+            RequestTimeCoroutineCaller();
+        }
+        private IEnumerator requestTime()
+        {
+            var response = UnityWebRequest.Get("http://worldtimeapi.org/api/timezone/Europe/London");
+
+            
+
+                yield return response.SendWebRequest();
+            if (response.error != null)
+            {
+                Debug.LogWarning("Something wentt wrong");
+            }
+            else
+            {
+                string json = response.downloadHandler.text;
+                WorldTimeResponse timeResponse = JsonUtility.FromJson<WorldTimeResponse>(json);
+                DateTime internetTime = DateTime.Parse(timeResponse.utc_datetime);
+                timeMilliseconds = new DateTimeOffset(internetTime).ToUnixTimeMilliseconds();
+                
+            }
+        }
+
+
+        public void RequestTimeCoroutineCaller()
+        {
+            StartCoroutine(requestTime());
         }
 
 
