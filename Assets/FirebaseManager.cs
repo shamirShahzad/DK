@@ -8,7 +8,8 @@ using TMPro;
 using System;
 using Object = System.Object;
 
-namespace DK {
+namespace DK
+{
     public class FirebaseManager : MonoBehaviour
     {
         [Header("Fire Base Aauthorization Variables")]
@@ -30,6 +31,9 @@ namespace DK {
         public GameObject warningPopup;
         public GameObject successPopup;
         public GameObject successPopupRegistration;
+        public GameObject LeaderBoardSaveLoading;
+        public GameObject LeaderBoardSaveDataPopup;
+        public GameObject leaderBoardWarningPopup;
         //public GameObject networkErrorPopup;
         public GameObject registerPopup;
         public GameObject loginPopup;
@@ -53,13 +57,20 @@ namespace DK {
         Dictionary<string, Object> levels = new Dictionary<string, Object>();
         Dictionary<string, Object> equipment = new Dictionary<string, Object>();
 
-        public LeaderBoard  myLeaderBoardData= new LeaderBoard();
- 
+        [Header("Leaderboard UI")]
+        public LeaderBoard myLeaderBoardData = new LeaderBoard();
+        public LeaderBoard userLeaderBoard = new LeaderBoard();
 
-        public List<LeaderBoard> leadaerBoardList= new();
+        public List<LeaderBoard> leaderBoardList = new();
+        public TextMeshProUGUI[] nameInLeaderboard= new TextMeshProUGUI[10];
+        public TextMeshProUGUI[] deathsInLeaderboard= new TextMeshProUGUI[10];
+
+        public TextMeshProUGUI userNameinLeaderboard;
+        public TextMeshProUGUI userDeathsinLeaderboard;
+        public TextMeshProUGUI userRankinLeaderboard;
         private void Awake()
         {
-            if(instance!=null && instance != this)
+            if (instance != null && instance != this)
             {
                 Destroy(instance);
             }
@@ -72,7 +83,7 @@ namespace DK {
             FirebaseApp.CheckAndFixDependenciesAsync().ContinueWith(task =>
             {
                 dependencyStatus = task.Result;
-                if(dependencyStatus == DependencyStatus.Available)
+                if (dependencyStatus == DependencyStatus.Available)
                 {
                     InitializeFireBase();
                 }
@@ -84,7 +95,7 @@ namespace DK {
                 Debug.Log(reference);
             });
         }
-        
+
 
         private void InitializeFireBase()
         {
@@ -126,7 +137,7 @@ namespace DK {
             User = auth.CurrentUser;
         }
 
-        private IEnumerator Login(string email,string password)
+        private IEnumerator Login(string email, string password)
         {
             var LoginTask = auth.SignInWithEmailAndPasswordAsync(email, password);
             loadingPopup.SetActive(true);
@@ -167,7 +178,7 @@ namespace DK {
             else
             {
                 User = auth.CurrentUser;
-                Debug.LogFormat("User signed in succesfully:{0} ({1})", User.DisplayName, User.Email,User.UserId);
+                Debug.LogFormat("User signed in succesfully:{0} ({1})", User.DisplayName, User.Email, User.UserId);
                 successPopup.SetActive(true);
                 successPopup.GetComponentInChildren<TextMeshProUGUI>().text = "Login Succesfully";
                 emailLoginField.text = "";
@@ -175,7 +186,7 @@ namespace DK {
                 loginPopup.SetActive(false);
                 GetDataFromDatabase();
                 GetItemDataCoroutineCaller();
-                
+
             }
         }
 
@@ -187,9 +198,9 @@ namespace DK {
             successPopup.SetActive(false);
         }
 
-        private IEnumerator Register(string email,string password,string username)
+        private IEnumerator Register(string email, string password, string username)
         {
-            if(username == "")
+            if (username == "")
             {
                 warningPopup.SetActive(true);
                 warningPopup.GetComponentInChildren<TextMeshProUGUI>().text = "Missing Username";
@@ -236,7 +247,7 @@ namespace DK {
                     User = auth.CurrentUser;
                     if (User != null)
                     {
-                        UserProfile profile = new UserProfile { DisplayName = username};
+                        UserProfile profile = new UserProfile { DisplayName = username };
                         var profileTask = User.UpdateUserProfileAsync(profile);
 
                         yield return new WaitUntil(predicate: () => profileTask.IsCompleted);
@@ -321,22 +332,32 @@ namespace DK {
 
         private IEnumerator SaveLeaderboardData()
         {
-            
-            User = auth.CurrentUser;
-            myLeaderBoardData.name = User.DisplayName;
-            myLeaderBoardData.deaths = userData.deathCount;
-            myLeaderBoardData.timestamp = ServerValue.Timestamp;
-            string json = JsonUtility.ToJson(myLeaderBoardData);
-            var saveDataTask = reference.Child("Leaderboard").Child(User.UserId).SetRawJsonValueAsync(json);
-
-            yield return new WaitUntil(predicate:()=> saveDataTask.IsCompleted);
-            if (saveDataTask.Exception != null)
+            if (userData.deathCount <= 0)
             {
-                Debug.LogWarning(message: $"Failed to save leaderboard with {saveDataTask.Exception}");
+                leaderBoardWarningPopup.SetActive(true);
+
             }
             else
             {
-                Debug.Log("saved leaderboard data");
+                User = auth.CurrentUser;
+                myLeaderBoardData.uid = User.UserId;
+                myLeaderBoardData.name = User.DisplayName;
+                myLeaderBoardData.deaths = userData.deathCount;
+                myLeaderBoardData.timestamp = ServerValue.Timestamp;
+                string json = JsonUtility.ToJson(myLeaderBoardData);
+                var saveDataTask = reference.Child("Leaderboard").Child(User.UserId).SetRawJsonValueAsync(json);
+                LeaderBoardSaveLoading.SetActive(true);
+                yield return new WaitUntil(predicate: () => saveDataTask.IsCompleted);
+                LeaderBoardSaveLoading.SetActive(false);
+                if (saveDataTask.Exception != null)
+                {
+                    leaderBoardWarningPopup.SetActive(true);
+                    Debug.LogWarning(message: $"Failed to save leaderboard with {saveDataTask.Exception}");
+                }
+                else
+                {
+                    GetLeaderBoardDataCoroutineCaller();
+                }
             }
 
         }
@@ -344,30 +365,30 @@ namespace DK {
         private IEnumerator GetLeaderBoardData()
         {
             User = auth.CurrentUser;
-            var getDataTask = reference.Child("Leaderboard").OrderByChild("deaths").LimitToFirst(10).GetValueAsync();
-
+            var getDataTask = reference.Child("Leaderboard").OrderByChild("deaths").GetValueAsync();
+            LeaderBoardSaveLoading.SetActive(true);
             yield return new WaitUntil(predicate: () => getDataTask.IsCompleted);
+            LeaderBoardSaveLoading.SetActive(false);
             if (getDataTask.Exception != null)
             {
+                leaderBoardWarningPopup.SetActive(true);
                 Debug.LogWarning(message: $"Failed retreiving leaderboard data with{getDataTask.Exception}");
             }
             else
             {
+                LeaderBoardSaveLoading.SetActive(true);
                 int i = 0;
                 DataSnapshot snapshot = getDataTask.Result;
                 LeaderBoard temp = new LeaderBoard();
-                foreach(DataSnapshot snap in snapshot.Children)
+                foreach (DataSnapshot snap in snapshot.Children)
                 {
                     temp = JsonUtility.FromJson<LeaderBoard>(snap.GetRawJsonValue());
-                    temp.uid = snap.Key;
                     temp.rank = i + 1;
-                    leadaerBoardList.Add(temp);
+                    leaderBoardList.Add(temp);
                     i++;
                 }
-
-                Debug.Log(leadaerBoardList[0].name);
-                Debug.Log("First Index"+ leadaerBoardList[0].rank);
-                Debug.Log(leadaerBoardList[1].name);
+                LeaderBoardSaveLoading.SetActive(false);
+                SetLeaderboardData();
             }
         }
 
@@ -407,20 +428,20 @@ namespace DK {
             StartCoroutine(SaveDataToFirebase());
         }
 
-        private IEnumerator UpdatePlayerLevelsToFireBase(int healthLevel,int staminaLevel,int focusLevel,int strengthLevel,
-            int dexterityLevel,int poiseLevel, int intelligenceLevel,int faithLevel,int soulPlayersPosseses,int characterLevel)
+        private IEnumerator UpdatePlayerLevelsToFireBase(int healthLevel, int staminaLevel, int focusLevel, int strengthLevel,
+            int dexterityLevel, int poiseLevel, int intelligenceLevel, int faithLevel, int soulPlayersPosseses, int characterLevel)
         {
-                levels["soulPlayersPosseses"] = soulPlayersPosseses;
-                levels["characterLevel"] = characterLevel;
-                levels["healthLevel"] = healthLevel;
-                levels["staminaLevel"] = staminaLevel;
-                levels["focusLevel"] = focusLevel;
-                levels["strengthLevel"] = strengthLevel;
-                levels["dexterityLevel"] = dexterityLevel;
-                levels["poiseLevel"] = poiseLevel;
-                levels["intelligenceLevel"] = intelligenceLevel;
-                levels["faithLevel"] = faithLevel;
-                User = auth.CurrentUser;
+            levels["soulPlayersPosseses"] = soulPlayersPosseses;
+            levels["characterLevel"] = characterLevel;
+            levels["healthLevel"] = healthLevel;
+            levels["staminaLevel"] = staminaLevel;
+            levels["focusLevel"] = focusLevel;
+            levels["strengthLevel"] = strengthLevel;
+            levels["dexterityLevel"] = dexterityLevel;
+            levels["poiseLevel"] = poiseLevel;
+            levels["intelligenceLevel"] = intelligenceLevel;
+            levels["faithLevel"] = faithLevel;
+            User = auth.CurrentUser;
 
             var updateTask = reference.Child("Users").Child(User.UserId).UpdateChildrenAsync(levels);
 
@@ -436,14 +457,14 @@ namespace DK {
                 Debug.Log("Updated values Succesfully");
             }
 
-            
+
         }
 
         public void UpdateLevels(int healthLevel, int staminaLevel, int focusLevel, int strengthLevel,
             int dexterityLevel, int poiseLevel, int intelligenceLevel, int faithLevel, int soulPlayersPosseses, int characterLevel)
         {
-            StartCoroutine(UpdatePlayerLevelsToFireBase(healthLevel,staminaLevel,focusLevel,strengthLevel,
-            dexterityLevel,poiseLevel,intelligenceLevel,faithLevel,soulPlayersPosseses,characterLevel));
+            StartCoroutine(UpdatePlayerLevelsToFireBase(healthLevel, staminaLevel, focusLevel, strengthLevel,
+            dexterityLevel, poiseLevel, intelligenceLevel, faithLevel, soulPlayersPosseses, characterLevel));
         }
 
         private IEnumerator UpdatePlayerEquipmentToFireBase()
@@ -508,7 +529,7 @@ namespace DK {
                 userData.staminaLevel = Convert.ToInt32(snapshot.Child("staminaLevel").Value);
                 userData.focusLevel = Convert.ToInt32(snapshot.Child("focusLevel").Value);
                 userData.strengthLevel = Convert.ToInt32(snapshot.Child("strengthLevel").Value);
-                userData.dexterityLevel= Convert.ToInt32(snapshot.Child("dexterityLevel").Value);
+                userData.dexterityLevel = Convert.ToInt32(snapshot.Child("dexterityLevel").Value);
                 userData.poiseLevel = Convert.ToInt32(snapshot.Child("poiseLevel").Value);
                 userData.intelligenceLevel = Convert.ToInt32(snapshot.Child("intelligenceLevel").Value);
                 userData.faithLevel = Convert.ToInt32(snapshot.Child("faithLevel").Value);
@@ -521,7 +542,7 @@ namespace DK {
         public void GetDataFromDatabase()
         {
             StartCoroutine(GetDataFromFireBase());
-            
+
         }
 
         private IEnumerator GetItemDataFromFirebase()
@@ -529,13 +550,13 @@ namespace DK {
             User = auth.CurrentUser;
             var dbItemTask = reference.Child("Items").Child(User.UserId).GetValueAsync();
 
-            yield return new WaitUntil(predicate:()=> dbItemTask.IsCompleted);
+            yield return new WaitUntil(predicate: () => dbItemTask.IsCompleted);
 
             if (dbItemTask.Exception != null)
             {
                 Debug.LogWarning(message: $"Failed to complete get task with{dbItemTask.Exception}");
             }
-            else if(dbItemTask.Result.Value == null)
+            else if (dbItemTask.Result.Value == null)
             {
                 itemData.helmetPurchased.Add(0);
                 itemData.armsPurchased.Add(0);
@@ -549,7 +570,7 @@ namespace DK {
             }
             else
             {
-                
+
                 Debug.Log("Start Getting Data");
                 DataSnapshot snapshot = dbItemTask.Result;
                 Debug.Log(snapshot.Child("helmetPurchased").Value);
@@ -557,10 +578,10 @@ namespace DK {
                 string json = snapshot.GetRawJsonValue();
                 itemData = JsonUtility.FromJson<ItemsSaveData>(json);
                 Debug.Log("Got DATA");
-                
-                 
 
-               
+
+
+
             }
         }
 
@@ -569,13 +590,48 @@ namespace DK {
             StartCoroutine(GetItemDataFromFirebase());
         }
 
-        public void testButton()
+        public void SetLeaderboardData()
         {
-            itemData.helmetPurchased.Add(4);
-            SaveItemDataCoroutineCaller();
-            GetItemDataCoroutineCaller();
-        }
+            bool found = false;
+            for (int i = 0; i < leaderBoardList.Count; i++)
+            {
+                if (leaderBoardList[i].uid == User.UserId)
+                {
+                    userLeaderBoard.rank = leaderBoardList[i].rank;
+                    userLeaderBoard.name = leaderBoardList[i].name;
+                    userLeaderBoard.deaths = leaderBoardList[i].deaths;
+                    found = true;
+                    break;
+                }
+            }
+            if (!found)
+            {
+                LeaderBoardSaveDataPopup.SetActive(true);
+            }
+            else
+            {
+                userRankinLeaderboard.text = userLeaderBoard.rank.ToString();
+                userNameinLeaderboard.text = userLeaderBoard.name;
+                userDeathsinLeaderboard.text = userLeaderBoard.deaths.ToString();
+            }
+            if (leaderBoardList.Count >= 10)
+            {
+                for (int i = 0; i < 10; i++)
+                {
+                    nameInLeaderboard[i].text = leaderBoardList[i].name;
+                    deathsInLeaderboard[i].text = leaderBoardList[i].deaths.ToString();
+                }
+            }
+            else
+            {
+                for (int i = 0; i < leaderBoardList.Count; i++)
+                {
+                    nameInLeaderboard[i].text = leaderBoardList[i].name;
+                    deathsInLeaderboard[i].text = leaderBoardList[i].deaths.ToString();
+                }
+            }
 
-        
+
+        }
     }
 }
