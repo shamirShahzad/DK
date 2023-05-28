@@ -98,12 +98,8 @@ namespace DK
                     Debug.LogError("Could Not Resolve all Firebase Dependencies:" + dependencyStatus);
                 }
             });
-            
-        }
-
-        private void Start()
-        {
             RequestTimeCoroutineCaller();
+
         }
         private IEnumerator requestTime()
         {
@@ -122,7 +118,7 @@ namespace DK
                 WorldTimeResponse timeResponse = JsonUtility.FromJson<WorldTimeResponse>(json);
                 DateTime internetTime = DateTime.Parse(timeResponse.utc_datetime);
                 timeMilliseconds = new DateTimeOffset(internetTime).ToUnixTimeMilliseconds();
-                
+                Debug.Log(timeMilliseconds);
             }
         }
 
@@ -130,6 +126,7 @@ namespace DK
         public void RequestTimeCoroutineCaller()
         {
             StartCoroutine(requestTime());
+            
         }
 
 
