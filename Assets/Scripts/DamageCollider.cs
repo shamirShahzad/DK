@@ -94,6 +94,7 @@ namespace DK
             }
             if (collision.tag == "Illusionary Wall")
             {
+                Debug.Log("Wall hit");
                 IllusionaryWall illusionaryWall = collision.GetComponent<IllusionaryWall>();
 
                 illusionaryWall.wallhasBeenHit = true;

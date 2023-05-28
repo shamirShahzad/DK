@@ -311,38 +311,6 @@ namespace DK
                 }
             }
         }
-
-        //public void SaveDataToFirebase(int level, int hIndex, int tIndex, int aIndex, int lIndex, int cIIndex, int lWIndex, int rWindex,
-        //                               int healthLevel, int staminaLevel, int focusLevel, int strengthLevel, int dexterityLevel, int poiseLevel,
-        //                               int intlligenceLevel, int faithLevel, int souls, int gold, int levelCompleted)
-        //{
-        //    userData.characterLevel = level;
-        //    userData.helmetIndex = hIndex;
-        //    userData.torsoIndex = tIndex;
-        //    userData.armIndex = aIndex;
-        //    userData.hipIndex = lIndex;
-        //    userData.consumableItemIndex = cIIndex;
-        //    userData.leftArmWeapon = lWIndex;
-        //    userData.rightArmWeapon = rWindex;
-        //    userData.healthLevel = healthLevel;
-        //    userData.staminaLevel = staminaLevel;
-        //    userData.focusLevel = focusLevel;
-        //    userData.strengthLevel = strengthLevel;
-        //    userData.dexterityLevel = dexterityLevel;
-        //    userData.poiseLevel = poiseLevel;
-        //    userData.intelligenceLevel = intlligenceLevel;
-        //    userData.faithLevel = faithLevel;
-        //    userData.soulPlayersPosseses = souls;
-        //    userData.goldAmount = gold;
-        //    userData.levelsCompleted = levelCompleted;
-
-        //    string json = JsonUtility.ToJson(userData);
-
-        //    reference.Child("Users").Child(User.UserId).SetRawJsonValueAsync(json);
-
-
-        //}
-
         private IEnumerator SaveDataToFirebase()
         {
             userData.characterName = User.DisplayName;

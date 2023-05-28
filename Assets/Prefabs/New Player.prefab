@@ -70252,6 +70252,11 @@ MonoBehaviour:
   sprintFlag: 0
   comboFlag: 0
   rollInputTimer: 0
+  input_Has_Been_Qued: 0
+  current_Qued_Input_Timer: 0
+  default_Qued_Input_Time: 0.3
+  qued_RB_Input: 0
+  qued_RT_Input: 0
 --- !u!114 &2554598860014443785
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -70363,12 +70368,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentItemBeingUsed: {fileID: 0}
   weaponItemsRight:
-  - {fileID: 11400000, guid: 2035fcc6b5e5956428f3213594734d88, type: 2}
+  - {fileID: 11400000, guid: 69ae6967547257341ba37b25fe3d6b3f, type: 2}
   - {fileID: 11400000, guid: 69ae6967547257341ba37b25fe3d6b3f, type: 2}
   - {fileID: 11400000, guid: 69ae6967547257341ba37b25fe3d6b3f, type: 2}
   weaponItemsLeft:
-  - {fileID: 11400000, guid: 69ae6967547257341ba37b25fe3d6b3f, type: 2}
-  - {fileID: 11400000, guid: 69ae6967547257341ba37b25fe3d6b3f, type: 2}
+  - {fileID: 11400000, guid: 86513175fbf229344b21ec717ae7117a, type: 2}
+  - {fileID: 11400000, guid: 86513175fbf229344b21ec717ae7117a, type: 2}
   - {fileID: 11400000, guid: 86513175fbf229344b21ec717ae7117a, type: 2}
   currentHelmetEquipment: {fileID: 11400000, guid: 482700fa87faf3e45915730f780ce9e7, type: 2}
   currentTorsoEquipment: {fileID: 11400000, guid: 35e4e1c4dd4c4514290593c159080a16, type: 2}
@@ -70648,16 +70653,6 @@ MonoBehaviour:
   blockingDarkDamageAbsorbtion: 0
   blockingStability: 0
   playerLevelText: {fileID: 0}
-  PLAYER_LEVEL: Player_Level
-  HEALTH_LEVEL: HealthLevel
-  STAMINA_LEVEL: StaminaLevel
-  POISE_LEVEL: PoiseLevel
-  STRENGTH_LEVEL: StrengthLevel
-  DEXTERITY_LEVEL: DexterityLevel
-  INTELLIGENCE_LEVEL: IntelligenceLevel
-  FAITH_LEVEL: FaithLevel
-  FOCUS_LEVEL: FocusLevel
-  SOUL_COUNT: SoulCount
   hitCount: 0
   staminaRegenarationAmount: 25
   focusRegenarationAmount: 11
@@ -70673,7 +70668,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2554598860014443789}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fff0960ef4ea6e04eac66b4a7fd2189d, type: 3}
   m_Name: 
@@ -70808,9 +70803,9 @@ CapsuleCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   m_Radius: 0.27
-  m_Height: 0.82
+  m_Height: 1.360717
   m_Direction: 1
-  m_Center: {x: 0, y: 1.43, z: 0}
+  m_Center: {x: 0, y: 1.1596414, z: 0}
 --- !u!1 &2554598860042538197
 GameObject:
   m_ObjectHideFlags: 0

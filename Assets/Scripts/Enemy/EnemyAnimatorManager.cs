@@ -31,15 +31,14 @@ namespace DK
 
         public void AwardSoulsOnDeath()
         {
-            PlayerStatsManager playerStats = FindObjectOfType<PlayerStatsManager>();
-            SoulCountBar soulCountBar = FindObjectOfType<SoulCountBar>();
-            
-            if (playerStats != null)
+            PlayerManager player = FindObjectOfType<PlayerManager>();
+            if (player != null)
             {
-                playerStats.AddSouls(enemy.characterStatsManager.soulsAwardedOnDeath);
-                if (soulCountBar != null)
+
+                player.playerStatsManager.AddSouls(enemy.characterStatsManager.soulsAwardedOnDeath);
+                if (player.uIManager.soulCountBar != null)
                 {
-                    soulCountBar.SetSoulCountText(playerStats.soulCount);
+                    player.uIManager.soulCountBar.SetSoulCountText(player.playerStatsManager.soulCount);
                 }
             }
            
