@@ -2412,21 +2412,6 @@ PrefabInstance:
       propertyPath: itemInteractableGameobject
       value: 
       objectReference: {fileID: 739727966212714576}
-<<<<<<< Updated upstream
-=======
-    - target: {fileID: 2554598860014443788, guid: 96e02eda9c2e03c479bcb5f17f34d8f3, type: 3}
-      propertyPath: weaponItemsLeft.Array.data[0]
-      value: 
-      objectReference: {fileID: 11400000, guid: 86513175fbf229344b21ec717ae7117a, type: 2}
-    - target: {fileID: 2554598860014443788, guid: 96e02eda9c2e03c479bcb5f17f34d8f3, type: 3}
-      propertyPath: weaponItemsLeft.Array.data[1]
-      value: 
-      objectReference: {fileID: 11400000, guid: 86513175fbf229344b21ec717ae7117a, type: 2}
-    - target: {fileID: 2554598860014443788, guid: 96e02eda9c2e03c479bcb5f17f34d8f3, type: 3}
-      propertyPath: weaponItemsRight.Array.data[0]
-      value: 
-      objectReference: {fileID: 11400000, guid: 69ae6967547257341ba37b25fe3d6b3f, type: 2}
->>>>>>> Stashed changes
     - target: {fileID: 2554598860014443789, guid: 96e02eda9c2e03c479bcb5f17f34d8f3, type: 3}
       propertyPath: m_Name
       value: Player Tpose
@@ -2766,10 +2751,6 @@ PrefabInstance:
     - target: {fileID: 8056325251144874706, guid: cca7daa654f58ad4f9a14b4d6534deb0, type: 3}
       propertyPath: m_IsActive
       value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8056325251144874707, guid: cca7daa654f58ad4f9a14b4d6534deb0, type: 3}
-      propertyPath: parryLikelyHood
-      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 8056325251144874712, guid: cca7daa654f58ad4f9a14b4d6534deb0, type: 3}
       propertyPath: m_RootOrder
