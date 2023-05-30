@@ -41,8 +41,14 @@ namespace DK
             {
                 wallMesh.enabled = false;
                 illusionaryWallMaterial.color = wallMat.color;
-                Destroy(this);
+                gameObject.SetActive(false);
             }
+        }
+
+        private void OnDisable()
+        {
+            Color a = new Color(1, 1, 1, 255);
+            illusionaryWallMaterial.color = a;
         }
     }
 }

@@ -71,6 +71,8 @@ namespace DK
         public TextMeshProUGUI userNameinLeaderboard;
         public TextMeshProUGUI userDeathsinLeaderboard;
         public TextMeshProUGUI userRankinLeaderboard;
+        [Header("Daily reward")]
+        public DailyRewardSave userDailyRewardsClaimed;
 
         public long timeMilliseconds;
         private void Awake()
@@ -121,23 +123,17 @@ namespace DK
                 Debug.Log(timeMilliseconds);
             }
         }
-
-
         public void RequestTimeCoroutineCaller()
         {
             StartCoroutine(requestTime());
             
         }
-
-
         private void InitializeFireBase()
         {
             auth = FirebaseAuth.DefaultInstance;
             reference = FirebaseDatabase.DefaultInstance.RootReference;
 
         }
-
-
         public void LoginButton()
         {
             StartCoroutine(Login(emailLoginField.text, passwordLoginField.text));
@@ -150,7 +146,6 @@ namespace DK
         {
             StartCoroutine(Anonymous());
         }
-
         private IEnumerator Anonymous()
         {
             var loginTask = auth.SignInAnonymouslyAsync();
@@ -169,7 +164,6 @@ namespace DK
             }
             User = auth.CurrentUser;
         }
-
         private IEnumerator Login(string email, string password)
         {
             var LoginTask = auth.SignInWithEmailAndPasswordAsync(email, password);
@@ -219,10 +213,10 @@ namespace DK
                 loginPopup.SetActive(false);
                 GetDataFromDatabase();
                 GetItemDataCoroutineCaller();
+                GetRewardsCoroutineCaller();
 
             }
         }
-
         public void onSucessClick()
         {
             titleLoginScene.SetActive(false);
@@ -633,6 +627,67 @@ namespace DK
             }
 
 
+        }
+
+        private IEnumerator SaveDailyRewardsBool()
+        {
+            for(int i = 0; i < 7; i++)
+            {
+                userDailyRewardsClaimed.rewardsCollected.Add(false);
+            }
+
+            User = auth.CurrentUser;
+
+            string json = JsonUtility.ToJson(userDailyRewardsClaimed);
+
+            var task = reference.Child("DailyRewards").Child(User.UserId).SetRawJsonValueAsync(json);
+
+            yield return new WaitUntil(predicate: () => task.IsCompleted);
+
+            if (task.Exception != null)
+            {
+                Debug.LogWarning(message: $"Task Failed with{task.Exception}");
+            }
+            else
+            {
+                Debug.Log("Task Completed Successfully");
+            }
+            
+        }
+
+        public void  SaveRewardsCoroutineCaller()
+        {
+            StartCoroutine(SaveDailyRewardsBool());
+        }
+
+        private IEnumerator GetRewardsFromFireBase()
+        {
+            var task = reference.Child("DailyRewards").Child(User.UserId).GetValueAsync();
+
+            yield return new WaitUntil(predicate: () => task.IsCompleted);
+
+            if (task.Exception != null)
+            {
+                Debug.LogWarning(message: $"Task failed with{task.Exception}");
+            }
+            else if(task.Result.Value == null)
+            {
+                SaveRewardsCoroutineCaller();
+            }
+            else
+            {
+                DataSnapshot snapshot = task.Result;
+
+                string json = snapshot.GetRawJsonValue();
+
+                userDailyRewardsClaimed = JsonUtility.FromJson<DailyRewardSave>(json);
+
+            }
+        }
+
+        public void GetRewardsCoroutineCaller()
+        {
+            StartCoroutine(GetRewardsFromFireBase());
         }
     }
 }
