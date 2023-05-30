@@ -7,7 +7,7 @@ namespace DK
     public class PursueTargetState : State
     {
 
-
+        public StopState stopState;
         public CombatStanceState combatStanceState;
         public override State Tick(EnemyManager enemy)
         {
@@ -26,6 +26,11 @@ namespace DK
             if (enemy.distanceFromTarget > enemy.maximumAggroRadius)
             {
                 enemy.animator.SetFloat("Vertical", 1, 0.1f, Time.deltaTime);
+            }
+            if(enemy.distanceFromTarget > enemy.stopAggroRadius)
+            {
+                
+                return stopState;
             }
 
 

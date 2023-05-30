@@ -42,7 +42,15 @@ namespace DK
 
 
                 }
+                
+                
             }
+            if(aiCharacter.currentTarget == null)
+            {
+                aiCharacter.animator.SetFloat("Vertical", 0, 0.5f, Time.deltaTime);
+            }
+
+
             if (aiCharacter.currentTarget != null)
             {
                 return pursueTargetState;

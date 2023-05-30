@@ -15,7 +15,8 @@ namespace DK
 
         public float rotationSpeed = 15f;
         public float maximumAggroRadius = 1.5f;
- 
+        public float stopAggroRadius = 20f;
+
 
         [Header("Settings")]
         public float detectionRadius = 5;
