@@ -2,17 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class RewardsObject : MonoBehaviour
+namespace DK
 {
-    // Start is called before the first frame update
-    void Start()
+    [CreateAssetMenu(menuName = "RewardType")]
+    public class RewardsObject :ScriptableObject
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        public RewardType rewardType;
+        public int amount;
     }
 }

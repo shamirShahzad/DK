@@ -44,6 +44,12 @@ namespace DK
         MagicAttackAction,
         RangedAttackAction
     }
+
+    public enum RewardType
+    {
+        Gold,
+        Souls
+    }
     public class Enum : MonoBehaviour
     {
         
