@@ -200,6 +200,51 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   combatStanceState: {fileID: 9000053290621313865}
   pursueTargetState: {fileID: 9000053291826532789}
+--- !u!1 &1790371407
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1790371408}
+  - component: {fileID: 1790371409}
+  m_Layer: 9
+  m_Name: Stop State
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1790371408
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1790371407}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 9000053291232228946}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1790371409
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1790371407}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 66596ad70b8b0f44b80d03ef32572876, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  idleState: {fileID: 9000053291787366314}
 --- !u!1 &1975350684
 GameObject:
   m_ObjectHideFlags: 0
@@ -5740,6 +5785,7 @@ Transform:
   - {fileID: 9000053290846048681}
   - {fileID: 1483523734}
   - {fileID: 8457057865863712061}
+  - {fileID: 1790371408}
   m_Father: {fileID: 9000053292317615552}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -6200,6 +6246,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a9776d7f60f9f545b80e60847681833, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  stopState: {fileID: 1790371409}
   combatStanceState: {fileID: 9000053290621313865}
 --- !u!1 &9000053292072862907
 GameObject:
@@ -6547,7 +6594,7 @@ MonoBehaviour:
   characterCollisionBlocker: {fileID: 9000053291516885506}
   detectionLayer:
     serializedVersion: 2
-    m_Bits: 2048
+    m_Bits: 512
 --- !u!114 &9000053292317615563
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6597,14 +6644,15 @@ MonoBehaviour:
   isInAir: 0
   isGrounded: 0
   isInteracting: 0
-  currentState: {fileID: 6210446726917716682}
+  currentState: {fileID: 9000053291787366314}
   isPerformingAction: 0
   currentTarget: {fileID: 0}
   navMeshAgent: {fileID: 9000053291340928878}
   enemyRigidbody: {fileID: 9000053292317615566}
   rotationSpeed: 15
   maximumAggroRadius: 5
-  detectionRadius: 10
+  stopAggroRadius: 15
+  detectionRadius: 8
   minimumDetectionAngle: -50
   maximumDetectionAngle: 50
   enemyLocomotionManager: {fileID: 9000053292317615564}
@@ -6733,7 +6781,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentItemBeingUsed: {fileID: 0}
   weaponItemsRight:
-  - {fileID: 11400000, guid: 2035fcc6b5e5956428f3213594734d88, type: 2}
+  - {fileID: 11400000, guid: 0060897fa98a2ef4d85f187644374df9, type: 2}
   - {fileID: 11400000, guid: 0060897fa98a2ef4d85f187644374df9, type: 2}
   - {fileID: 11400000, guid: 0060897fa98a2ef4d85f187644374df9, type: 2}
   weaponItemsLeft:
@@ -6788,7 +6836,7 @@ AudioSource:
   Priority: 128
   DopplerLevel: 1
   MinDistance: 1
-  MaxDistance: 500
+  MaxDistance: 527.6571
   Pan2D: 0
   rolloffMode: 0
   BypassEffects: 0

@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: Souls
   m_EditorClassIdentifier: 
   rewardType: 1
-  amount: 0
+  amount: 100

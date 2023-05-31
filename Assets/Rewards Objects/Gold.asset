@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: Gold
   m_EditorClassIdentifier: 
   rewardType: 0
-  amount: 0
+  amount: 300

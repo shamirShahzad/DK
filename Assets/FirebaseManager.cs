@@ -59,7 +59,8 @@ namespace DK
 
         Dictionary<string, Object> levels = new Dictionary<string, Object>();
         Dictionary<string, Object> equipment = new Dictionary<string, Object>();
-
+        Dictionary<string, Object> gold = new Dictionary<string, Object>();
+        Dictionary<string, Object> souls = new Dictionary<string, Object>();
         [Header("Leaderboard UI")]
         public LeaderBoard myLeaderBoardData = new LeaderBoard();
         public LeaderBoard userLeaderBoard = new LeaderBoard();
@@ -73,6 +74,7 @@ namespace DK
         public TextMeshProUGUI userRankinLeaderboard;
         [Header("Daily reward")]
         public DailyRewardSave userDailyRewardsClaimed;
+        public GameObject timeErrorPopup;
 
         public long timeMilliseconds;
         private void Awake()
@@ -100,10 +102,9 @@ namespace DK
                     Debug.LogError("Could Not Resolve all Firebase Dependencies:" + dependencyStatus);
                 }
             });
-            RequestTimeCoroutineCaller();
 
         }
-        private IEnumerator requestTime()
+        public IEnumerator requestTime()
         {
             var response = UnityWebRequest.Get("http://worldtimeapi.org/api/timezone/Europe/London");
 
@@ -112,7 +113,9 @@ namespace DK
                 yield return response.SendWebRequest();
             if (response.error != null)
             {
-                Debug.LogWarning("Something wentt wrong");
+                timeErrorPopup.SetActive(true);
+                Debug.LogWarning("Something went wrong");
+                timeMilliseconds = 0;
             }
             else
             {
@@ -120,13 +123,13 @@ namespace DK
                 WorldTimeResponse timeResponse = JsonUtility.FromJson<WorldTimeResponse>(json);
                 DateTime internetTime = DateTime.Parse(timeResponse.utc_datetime);
                 timeMilliseconds = new DateTimeOffset(internetTime).ToUnixTimeMilliseconds();
-                Debug.Log(timeMilliseconds);
+                
             }
         }
+
         public void RequestTimeCoroutineCaller()
         {
             StartCoroutine(requestTime());
-            
         }
         private void InitializeFireBase()
         {
@@ -629,10 +632,14 @@ namespace DK
 
         }
 
-        private IEnumerator SaveDailyRewardsBool()
+        private IEnumerator SaveDailyRewardsBoolFirstEntry()
         {
             for(int i = 0; i < 7; i++)
             {
+                if(i == 0)
+                {
+                    userDailyRewardsClaimed.rewardsCollected.Add(true);
+                }
                 userDailyRewardsClaimed.rewardsCollected.Add(false);
             }
 
@@ -657,9 +664,31 @@ namespace DK
 
         public void  SaveRewardsCoroutineCaller()
         {
-            StartCoroutine(SaveDailyRewardsBool());
+            StartCoroutine(SaveDailyRewardsBoolFirstEntry());
         }
 
+        private IEnumerator SaveDailyRewardsBool()
+        {
+            User = auth.CurrentUser;
+            string json = JsonUtility.ToJson(userDailyRewardsClaimed);
+            var task = reference.Child("DailyRewards").Child(User.UserId).SetRawJsonValueAsync(json);
+
+            yield return new WaitUntil(predicate: () => task.IsCompleted);
+
+            if (task.Exception != null)
+            {
+                Debug.LogWarning(message: $"Task failed with{task.Exception}");
+            }
+            else
+            {
+                Debug.Log("Tasked completed successfully");
+            }
+        }
+
+        public void SaveRewardsCoroutineCallerOverride()
+        {
+            StartCoroutine(SaveDailyRewardsBool());
+        }
         private IEnumerator GetRewardsFromFireBase()
         {
             var task = reference.Child("DailyRewards").Child(User.UserId).GetValueAsync();
@@ -688,6 +717,54 @@ namespace DK
         public void GetRewardsCoroutineCaller()
         {
             StartCoroutine(GetRewardsFromFireBase());
+        }
+
+        private IEnumerator UpdateGoldCurrency(int goldAmount)
+        {
+            goldAmount += userData.goldAmount;
+            gold["goldAmount"] = goldAmount;
+            User = auth.CurrentUser;
+
+            var task = reference.Child("Users").Child(User.UserId).UpdateChildrenAsync(gold);
+
+            yield return new WaitUntil(predicate: () => task.IsCompleted);
+            if (task.Exception != null)
+            {
+                Debug.LogWarning(message: $"Task failed with{task.Exception}");
+            }
+            else
+            {
+                Debug.Log("Task Success");
+            }
+        }
+
+        public void UpdateGold(int goldAmount)
+        {
+            StartCoroutine(UpdateGoldCurrency(goldAmount));
+        }
+
+        private IEnumerator UpdateSoulsCurrency(int soulsPlayerPosseses)
+        {
+            soulsPlayerPosseses += userData.soulPlayersPosseses;
+            souls["soulPlayersPosseses"] = soulsPlayerPosseses;
+            User = auth.CurrentUser;
+
+            var task = reference.Child("Users").Child(User.UserId).UpdateChildrenAsync(souls);
+
+            yield return new WaitUntil(predicate: () => task.IsCompleted);
+            if (task.Exception != null)
+            {
+                Debug.LogWarning(message: $"Task failed with{task.Exception}");
+            }
+            else
+            {
+                Debug.Log("Task Success");
+            }
+        }
+
+        public void UpdateSouls(int soulPlayersPosseses)
+        {
+            StartCoroutine(UpdateSoulsCurrency(soulPlayersPosseses));
         }
     }
 }
