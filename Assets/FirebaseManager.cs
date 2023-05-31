@@ -37,6 +37,7 @@ namespace DK
         public GameObject LeaderBoardSaveLoading;
         public GameObject LeaderBoardSaveDataPopup;
         public GameObject leaderBoardWarningPopup;
+        public GameObject SignOutLoadingPopup;
         //public GameObject networkErrorPopup;
         public GameObject registerPopup;
         public GameObject loginPopup;
@@ -766,5 +767,36 @@ namespace DK
         {
             StartCoroutine(UpdateSoulsCurrency(soulPlayersPosseses));
         }
+
+        public float randomNumber()
+        {
+            float num = UnityEngine.Random.Range(0, 5) + 1;
+            Debug.Log(num);
+            return num;
+        }
+
+        private IEnumerator RandomAmountWaitTime()
+        {
+            SignOutLoadingPopup.SetActive(true);
+            yield return new WaitForSeconds(randomNumber());
+            SignOutLoadingPopup.SetActive(false);
+        }
+
+        private IEnumerator SignOut()
+        {
+            yield return StartCoroutine(RandomAmountWaitTime());
+            homeScene.SetActive(false);
+            titleLoginScene.SetActive(true);
+            buttonLoginOnTitleScreen.SetActive(true);
+            buttonRegisterOnTitleScreen.SetActive(true);
+        }
+        public void SignOutButtonClick()
+        {
+            StartCoroutine(SignOut());
+            auth.SignOut();
+            Debug.Log(auth.CurrentUser);
+        }
     }
+
+   
 }
