@@ -29,10 +29,14 @@ namespace DK
         private void Awake()
         {
             characterWeaponSlotManager = GetComponent<CharacterWeaponSlotManager>();
-            selectedWeaponIndexLeft = PlayerPrefs.GetInt("SelectedWeaponIndexLeft", 0);
-            selectedWeaponIndexRight = PlayerPrefs.GetInt("SelectedWeaponIndexRight", 0);
-            rightWeapon = weaponItemsRight[selectedWeaponIndexRight];
-            leftWeapon = weaponItemsLeft[selectedWeaponIndexLeft];
+            rightWeapon = weaponItemsRight[FirebaseManager.instance.userData.rightArmWeapon];
+            leftWeapon = weaponItemsLeft[FirebaseManager.instance.userData.leftArmWeapon];
+        }
+
+        public void SetWeapons()
+        {
+            rightWeapon = weaponItemsRight[FirebaseManager.instance.userData.rightArmWeapon];
+            leftWeapon = weaponItemsLeft[FirebaseManager.instance.userData.leftArmWeapon];
         }
 
         private void Start()

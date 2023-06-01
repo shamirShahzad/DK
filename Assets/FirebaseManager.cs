@@ -794,7 +794,6 @@ namespace DK
         {
             StartCoroutine(SignOut());
             auth.SignOut();
-            Debug.Log(auth.CurrentUser);
         }
     }
 

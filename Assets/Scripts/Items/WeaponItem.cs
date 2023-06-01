@@ -80,6 +80,10 @@ namespace DK
 
         [Header("Sword Swoosh Sounds")]
         public AudioClip[] weaponWooshes;
+        [Header("Shop checks")]
+        public bool isPurchased;
+        public int goldRequiredToPurchase;
+        public int indexOfItemInMainList;
 
 
     }

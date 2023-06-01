@@ -19,8 +19,12 @@ namespace DK
         List<TorsoEquipment> torsoEquipmentList = new List<TorsoEquipment>();
         [SerializeField]
         List<LegEquipment> legEquipmentList = new List<LegEquipment>();
+        [SerializeField]
+        List<WeaponItem> rightWeapons = new List<WeaponItem>();
+        [SerializeField]
+        List<WeaponItem> leftWeapons = new List<WeaponItem>();
 
-        [SerializeField] GameObject[] lineFocuses = new GameObject[4];
+        [SerializeField] GameObject[] lineFocuses = new GameObject[6];
 
         [SerializeField] GameObject sucessPopup;
         [SerializeField] GameObject warningPopup;
@@ -180,6 +184,76 @@ namespace DK
                     uiItem.transform.GetChild(3).GetChild(1).GetComponent<Image>().sprite = notPurchasedLegs[i].itemIcon;
                     uiItem.transform.GetChild(4).GetComponentInChildren<TextMeshProUGUI>().text = notPurchasedLegs[i].goldRequiredToPurchase.ToString();
                     //Do other things with the prefab here
+
+                    uiItem.transform.SetParent(contentTransform);
+                    uiItem.transform.localScale = Vector3.one;
+                    uiItem.transform.localPosition = Vector3.zero;
+                }
+            }
+        }
+
+        public void onRightClick()
+        {
+            SetFlagsForEquipment(false, false, false, false, false, true);
+            DisableAllFocusLines();
+            lineFocuses[4].SetActive(true);
+            DestroyAnyOtherChildPresentInContentObject();
+            List<WeaponItem> notPurchasedRightHandWeapons = new List<WeaponItem>();
+
+            for (int i = 0; i < rightWeapons.Count; i++)
+            {
+                if (!rightWeapons[i].isPurchased)
+                {
+                    notPurchasedRightHandWeapons.Add(rightWeapons[i]);
+                }
+            }
+            if (notPurchasedRightHandWeapons.Count > 0)
+            {
+                for (int i = 0; i < notPurchasedRightHandWeapons.Count; i++)
+                {
+                    uiItem = Instantiate(shopItems);
+                    uiItem.GetComponent<PrefabButtonAccessScript>().weapon = notPurchasedRightHandWeapons[i];
+                    uiItem.GetComponent<PrefabButtonAccessScript>().sucessPopup = sucessPopup;
+                    uiItem.GetComponent<PrefabButtonAccessScript>().warningPopup = warningPopup;
+                    uiItem.GetComponent<PrefabButtonAccessScript>().shop = this;
+
+                    uiItem.transform.GetChild(3).GetChild(1).GetComponent<Image>().sprite = notPurchasedRightHandWeapons[i].itemIcon;
+                    uiItem.transform.GetChild(4).GetComponentInChildren<TextMeshProUGUI>().text = notPurchasedRightHandWeapons[i].goldRequiredToPurchase.ToString();
+
+                    uiItem.transform.SetParent(contentTransform);
+                    uiItem.transform.localScale = Vector3.one;
+                    uiItem.transform.localPosition = Vector3.zero;
+                }
+            }
+        }
+
+        public void onLeftClick()
+        {
+            SetFlagsForEquipment(false, false, false, false, true, false);
+            DisableAllFocusLines();
+            lineFocuses[5].SetActive(true);
+            DestroyAnyOtherChildPresentInContentObject();
+            List<WeaponItem> notPurchasedLeftHandWeapons = new List<WeaponItem>();
+
+            for (int i = 0; i < leftWeapons.Count; i++)
+            {
+                if (!leftWeapons[i].isPurchased)
+                {
+                    notPurchasedLeftHandWeapons.Add(leftWeapons[i]);
+                }
+            }
+            if (notPurchasedLeftHandWeapons.Count > 0)
+            {
+                for (int i = 0; i < notPurchasedLeftHandWeapons.Count; i++)
+                {
+                    uiItem = Instantiate(shopItems);
+                    uiItem.GetComponent<PrefabButtonAccessScript>().weapon = notPurchasedLeftHandWeapons[i];
+                    uiItem.GetComponent<PrefabButtonAccessScript>().sucessPopup = sucessPopup;
+                    uiItem.GetComponent<PrefabButtonAccessScript>().warningPopup = warningPopup;
+                    uiItem.GetComponent<PrefabButtonAccessScript>().shop = this;
+
+                    uiItem.transform.GetChild(3).GetChild(1).GetComponent<Image>().sprite = notPurchasedLeftHandWeapons[i].itemIcon;
+                    uiItem.transform.GetChild(4).GetComponentInChildren<TextMeshProUGUI>().text = notPurchasedLeftHandWeapons[i].goldRequiredToPurchase.ToString();
 
                     uiItem.transform.SetParent(contentTransform);
                     uiItem.transform.localScale = Vector3.one;

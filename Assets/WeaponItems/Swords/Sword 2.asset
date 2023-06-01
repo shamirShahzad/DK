@@ -1,0 +1,75 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dab8148e7e0a0e3479699140684fc527, type: 3}
+  m_Name: Sword 2
+  m_EditorClassIdentifier: 
+  itemIcon: {fileID: 21300000, guid: a133fc52c6bbd6d4f8e4b7c2bf05c534, type: 3}
+  itemName: Weapon Right 2
+  modelPrefab: {fileID: 7410578415894140402, guid: b221fca3edb9a1a40a6f0dc3cff066ef, type: 3}
+  isUnarmed: 0
+  weaponController: {fileID: 22100000, guid: deb380515018c344e8f988eae4629218, type: 2}
+  weaponTypes: 2
+  physicalDamage: 11
+  fireDamage: 0
+  magicDamage: 7
+  lightningDamage: 0
+  darkDamage: 0
+  lightAttackDamageModifier: 1
+  heavyAttackDamageModifier: 2
+  runningAttackDamageModifier: 1.1
+  jumpingAttackDamageModifier: 1.8
+  lightAttack2DamageModifier: 1.5
+  heavyAttack2DamageModifier: 2.3
+  criticalDamageModifier: 4
+  guardBreakModifier: 1
+  poiseBreak: 1.8
+  offensivePoiseBonus: 1.2
+  physicalBlockingDamageAbsorbtion: 0
+  fireBlockingDamageAbsorbtion: 0
+  magicBlockingDamageAbsorbtion: 0
+  lightningBlockingDamageAbsorbtion: 0
+  darkBlockingDamageAbsorbtion: 0
+  stability: 20
+  baseStaminaCost: 18
+  lightStaminaModifier: 1.1
+  heavyStaminaModifier: 1.5
+  criticalStaminaModifier: 3
+  jumppingStaminaModifier: 2
+  runningStaminaModifier: 1.8
+  spellOfItem: {fileID: 0}
+  hold_RB_Action: {fileID: 11400000, guid: 4c72ffdbdf53e994799ada1074bca577, type: 2}
+  tap_RB_Action: {fileID: 11400000, guid: 7850ac8c110a7cb4a82941262c950f4a, type: 2}
+  tap_LB_Action: {fileID: 11400000, guid: 7850ac8c110a7cb4a82941262c950f4a, type: 2}
+  hold_LB_Action: {fileID: 11400000, guid: fabcb96caa8970d40b87e10449fd339d, type: 2}
+  hold_RT_Action: {fileID: 11400000, guid: 0e2c254abf0b67541ae44dfa512fd176, type: 2}
+  tap_RT_Action: {fileID: 11400000, guid: 36648edf6ec7be1428c5ad86b1b37491, type: 2}
+  tap_LT_Action: {fileID: 11400000, guid: 7850ac8c110a7cb4a82941262c950f4a, type: 2}
+  hold_LT_Action: {fileID: 0}
+  th_hold_RB_Action: {fileID: 11400000, guid: 4c72ffdbdf53e994799ada1074bca577, type: 2}
+  th_tap_RB_Action: {fileID: 11400000, guid: 7850ac8c110a7cb4a82941262c950f4a, type: 2}
+  th_tap_LB_Action: {fileID: 0}
+  th_hold_LB_Action: {fileID: 0}
+  th_hold_RT_Action: {fileID: 0}
+  th_tap_RT_Action: {fileID: 11400000, guid: 36648edf6ec7be1428c5ad86b1b37491, type: 2}
+  th_tap_LT_Action: {fileID: 0}
+  th_hold_LT_Action: {fileID: 0}
+  weaponWooshes:
+  - {fileID: 8300000, guid: 4fdda45943a62ca429f7e65664ee287b, type: 3}
+  - {fileID: 8300000, guid: df2f288ee9b6c5743869bea301448ebe, type: 3}
+  - {fileID: 8300000, guid: 39609d390b0917d48b6daefe87d114dc, type: 3}
+  - {fileID: 8300000, guid: 7892184ffe4be754396a5ceeb8beaca1, type: 3}
+  - {fileID: 8300000, guid: 7b00c0d6ed128b3428984f8911419a6f, type: 3}
+  - {fileID: 8300000, guid: 102dfcf151a17f44a8065ce89928bb1d, type: 3}
+  - {fileID: 8300000, guid: da48d50d766871e489a26e2c4dee78b3, type: 3}
+  isPurchased: 0
+  goldRequiredToPurchase: 350
+  indexOfItemInMainList: 2

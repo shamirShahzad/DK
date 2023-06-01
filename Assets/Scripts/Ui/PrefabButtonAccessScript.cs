@@ -7,6 +7,7 @@ namespace DK
     public class PrefabButtonAccessScript : MonoBehaviour
     {
         public EquipmentItem equipment;
+        public WeaponItem weapon;
         public GameObject sucessPopup;
         public GameObject warningPopup;
         public ItemPopulationInShop shop;
@@ -16,17 +17,35 @@ namespace DK
         public void onButtonClick()
         {
             playerGoldAmount = FirebaseManager.instance.userData.goldAmount;
-            if(playerGoldAmount >= equipment.goldRequiredToPurchase)
+            if (equipment != null)
             {
-                sucessPopup.SetActive(true);
-                equipment.isPurchased = true;
-                FirebaseManager.instance.userData.goldAmount -= equipment.goldRequiredToPurchase;
-                shop.SetGoldAmountOnPurchase();
-                SetScreenInShop();
+                if (playerGoldAmount >= equipment.goldRequiredToPurchase)
+                {
+                    sucessPopup.SetActive(true);
+                    equipment.isPurchased = true;
+                    FirebaseManager.instance.userData.goldAmount -= equipment.goldRequiredToPurchase;
+                    shop.SetGoldAmountOnPurchase();
+                    SetScreenInShop();
+                }
+                else
+                {
+                    warningPopup.SetActive(true);
+                }
             }
             else
             {
-                warningPopup.SetActive(true);
+                if (playerGoldAmount >= weapon.goldRequiredToPurchase)
+                {
+                    sucessPopup.SetActive(true);
+                    weapon.isPurchased = true;
+                    FirebaseManager.instance.userData.goldAmount -= weapon.goldRequiredToPurchase;
+                    shop.SetGoldAmountOnPurchase();
+                    SetScreenInShop();
+                }
+                else
+                {
+                    warningPopup.SetActive(true);
+                }
             }
         }
 
@@ -56,6 +75,18 @@ namespace DK
                 FirebaseManager.instance.itemData.legsPurchased.Add(equipment.indexOfItemInMainList);
                 FirebaseManager.instance.SaveItemDataCoroutineCaller();
                 shop.onLegsClick();
+            }
+            else if (shop.isRight)
+            {
+                FirebaseManager.instance.itemData.rightWeaponsPurchased.Add(weapon.indexOfItemInMainList);
+                FirebaseManager.instance.SaveItemDataCoroutineCaller();
+                shop.onRightClick();
+            }
+            else if (shop.isLeft)
+            {
+                FirebaseManager.instance.itemData.leftWeaponsPurchased.Add(weapon.indexOfItemInMainList);
+                FirebaseManager.instance.SaveItemDataCoroutineCaller();
+                shop.onLeftClick();
             }
         }
     }

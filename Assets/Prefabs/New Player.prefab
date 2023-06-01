@@ -70368,9 +70368,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentItemBeingUsed: {fileID: 0}
   weaponItemsRight:
+  - {fileID: 11400000, guid: 2035fcc6b5e5956428f3213594734d88, type: 2}
   - {fileID: 11400000, guid: 69ae6967547257341ba37b25fe3d6b3f, type: 2}
-  - {fileID: 11400000, guid: 69ae6967547257341ba37b25fe3d6b3f, type: 2}
-  - {fileID: 11400000, guid: 69ae6967547257341ba37b25fe3d6b3f, type: 2}
+  - {fileID: 11400000, guid: c23ffee36a6d4904ca5b4171ac5b57ac, type: 2}
+  - {fileID: 11400000, guid: 218a0567aeab8d04288e918da158cbe6, type: 2}
+  - {fileID: 11400000, guid: a9da9ce5bf086104dab6a55b3f3d3fd4, type: 2}
+  - {fileID: 11400000, guid: c63a6031128c1f0448feabeb10cc9f55, type: 2}
+  - {fileID: 11400000, guid: 9841557e612cbd84291132cd4f3b0912, type: 2}
   weaponItemsLeft:
   - {fileID: 11400000, guid: 86513175fbf229344b21ec717ae7117a, type: 2}
   - {fileID: 11400000, guid: 86513175fbf229344b21ec717ae7117a, type: 2}
@@ -70383,7 +70387,7 @@ MonoBehaviour:
   selectedWeaponIndexRight: 1
   currentConsumable: {fileID: 11400000, guid: 53742d759b6041441978e9fa78b03368, type: 2}
   currentSpell: {fileID: 0}
-  rightWeapon: {fileID: 11400000, guid: 69ae6967547257341ba37b25fe3d6b3f, type: 2}
+  rightWeapon: {fileID: 0}
   leftWeapon: {fileID: 11400000, guid: 86513175fbf229344b21ec717ae7117a, type: 2}
   currentAmmo: {fileID: 11400000, guid: 97a09df18203b414bbc3f51629b09888, type: 2}
   weaponsInventory: []

@@ -108,13 +108,25 @@ namespace DK {
 
         public void SetStatusBars()
         {
+            totalDamage = 0;
             totalPhysicalDefense = 0;
             totalMagicDefense = 0;
             totalFireDefense = 0;
             totalLightningDefense = 0;
             totalDarkDefense = 0;
 
-
+            //Damage Calculation for left and right weapon
+            totalDamage += leftWeaponItems[FirebaseManager.instance.userData.leftArmWeapon].physicalDamage;
+            totalDamage += leftWeaponItems[FirebaseManager.instance.userData.leftArmWeapon].fireDamage;
+            totalDamage += leftWeaponItems[FirebaseManager.instance.userData.leftArmWeapon].magicDamage;
+            totalDamage += leftWeaponItems[FirebaseManager.instance.userData.leftArmWeapon].lightningDamage;
+            totalDamage += leftWeaponItems[FirebaseManager.instance.userData.leftArmWeapon].darkDamage;
+            //Right Weapon
+            totalDamage += rightWeaponItems[FirebaseManager.instance.userData.rightArmWeapon].physicalDamage;
+            totalDamage += rightWeaponItems[FirebaseManager.instance.userData.rightArmWeapon].fireDamage;
+            totalDamage += rightWeaponItems[FirebaseManager.instance.userData.rightArmWeapon].magicDamage;
+            totalDamage += rightWeaponItems[FirebaseManager.instance.userData.rightArmWeapon].lightningDamage;
+            totalDamage += rightWeaponItems[FirebaseManager.instance.userData.rightArmWeapon].darkDamage;
             //Physical defense calculation for slider
             totalPhysicalDefense += helmetList[FirebaseManager.instance.userData.helmetIndex].physicalDefense;
             totalPhysicalDefense += armsList[FirebaseManager.instance.userData.armIndex].physicalDefense;
@@ -141,6 +153,7 @@ namespace DK {
             totalDarkDefense += torsoList[FirebaseManager.instance.userData.torsoIndex].darkDefense;
             totalDarkDefense += legList[FirebaseManager.instance.userData.hipIndex].darkDefense;
 
+            damageStatSlider.value = totalDamage / 100;
             physicalDefenseStatSlider.value = totalPhysicalDefense / 100;
             magicDefenseStatSlider.value = totalMagicDefense / 100;
             fireDefenseStatSlider.value = totalFireDefense / 100;
@@ -207,11 +220,25 @@ namespace DK {
         }
         public void onLeftClick()
         {
-            SetFlagsForEquipment(false, true, false, false, true, false);
+            SetFlagsForEquipment(false, false, false, false, true, false);
+            for(int i = 0; i < leftWeaponItems.Count; i++)
+            {
+                if (leftWeaponItems[i].isPurchased)
+                {
+                    leftOwnedWeaponItems.Add(leftWeaponItems[i]);
+                }
+            }
         }
         public void onRightClick()
         {
-            SetFlagsForEquipment(false, true, false, false, false, true);
+            SetFlagsForEquipment(false, false, false, false, false, true);
+            for (int i = 0; i < rightWeaponItems.Count; i++)
+            {
+                if (rightWeaponItems[i].isPurchased)
+                {
+                    rightOwnedWeaponItems.Add(rightWeaponItems[i]);
+                }
+            }
         }
 
         public void FindTypeAndNumberOfItem()
@@ -249,6 +276,8 @@ namespace DK {
         public void SetPlayerEquipment()
         {
             player.playerEquipmentManager.EquipAllEquipmentItemsOnStart();
+            player.playerWeaponSlotManager.LoadBothWeaponOnslot();
+            player.characterInventoryManager.SetWeapons();
         }
         private void SetArmPurchased()
         {
@@ -291,12 +320,36 @@ namespace DK {
             }
         }
 
+        private void SetLeftPurchased()
+        {
+            if (FirebaseManager.instance.itemData.leftWeaponsPurchased.Count > 0)
+            {
+                for (int i = 0; i < FirebaseManager.instance.itemData.leftWeaponsPurchased.Count; i++)
+                {
+                    leftWeaponItems[FirebaseManager.instance.itemData.leftWeaponsPurchased[i]].isPurchased = true;
+                }
+            }
+        }
+
+        private void SetRightPurchased()
+        {
+            if (FirebaseManager.instance.itemData.rightWeaponsPurchased.Count > 0)
+            {
+                for (int i = 0; i < FirebaseManager.instance.itemData.rightWeaponsPurchased.Count; i++)
+                {
+                    rightWeaponItems[FirebaseManager.instance.itemData.rightWeaponsPurchased[i]].isPurchased = true;
+                }
+            }
+        }
+
         public void SetAllPurchasedItems()
         {
             SetHelmetPurchased();
             SetArmPurchased();
             SetTorsoPurchased();
             SetLegsPurchased();
+            SetLeftPurchased();
+            SetRightPurchased();
         }
 
     }

@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Shield Weapon
   m_EditorClassIdentifier: 
   itemIcon: {fileID: 21300000, guid: 8a34529e59d6b864cb2fe7a86427075a, type: 3}
-  itemName: Shield
+  itemName: Weapon Left 1
   modelPrefab: {fileID: 8366963446615378477, guid: b561f630c2f72424e9576486926a4bc0, type: 3}
   isUnarmed: 0
   weaponController: {fileID: 22100000, guid: 8aa1e331a62451248954339f48dd127a, type: 2}
@@ -70,3 +70,6 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 7b00c0d6ed128b3428984f8911419a6f, type: 3}
   - {fileID: 8300000, guid: 102dfcf151a17f44a8065ce89928bb1d, type: 3}
   - {fileID: 8300000, guid: da48d50d766871e489a26e2c4dee78b3, type: 3}
+  isPurchased: 1
+  goldRequiredToPurchase: 0
+  indexOfItemInMainList: 0
