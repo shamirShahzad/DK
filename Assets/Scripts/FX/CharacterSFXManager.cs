@@ -22,6 +22,7 @@ namespace DK
         {
             audioSource = GetComponent<AudioSource>();
             character = GetComponent<CharacterManager>();
+            soundVolume = PlayerPrefs.GetFloat("FXVolume");
         }
 
         public virtual void PlayRandomDamageSoundEffect()

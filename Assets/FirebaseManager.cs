@@ -7,14 +7,20 @@ using Firebase.Auth;
 using Firebase.Database;
 using TMPro;
 using System;
-using System.Net;
-using System.Net.Sockets;
+using UnityEngine.Advertisements;
 using Object = System.Object;
 
 namespace DK
 {
-    public class FirebaseManager : MonoBehaviour
+    public class FirebaseManager : MonoBehaviour, IUnityAdsInitializationListener
     {
+        [Header("Ads Initializer")]
+        [SerializeField] string androidId;
+        [SerializeField] string IOSId;
+        [SerializeField] bool test = true;
+        [SerializeField] RewardedAdsButton rewardedAdsButton;
+        public bool isInitialized = false;
+        private string gameId;
         [Header("Fire Base Aauthorization Variables")]
         public DependencyStatus dependencyStatus;
         public FirebaseAuth auth;
@@ -76,6 +82,7 @@ namespace DK
         [Header("Daily reward")]
         public DailyRewardSave userDailyRewardsClaimed;
         public GameObject timeErrorPopup;
+        
 
         public long timeMilliseconds;
         private void Awake()
@@ -103,7 +110,11 @@ namespace DK
                     Debug.LogError("Could Not Resolve all Firebase Dependencies:" + dependencyStatus);
                 }
             });
-
+            
+        }
+        private void Start()
+        {
+            InitializeAds();
         }
         public IEnumerator requestTime()
         {
@@ -572,7 +583,6 @@ namespace DK
 
                 Debug.Log("Start Getting Data");
                 DataSnapshot snapshot = dbItemTask.Result;
-                Debug.Log(snapshot.Child("helmetPurchased").Value);
 
                 string json = snapshot.GetRawJsonValue();
                 itemData = JsonUtility.FromJson<ItemsSaveData>(json);
@@ -794,6 +804,35 @@ namespace DK
         {
             StartCoroutine(SignOut());
             auth.SignOut();
+        }
+
+        public void InitializeAds()
+        {
+            #if UNITY_IOS
+                gameId = IOSId;
+            #elif UNITY_ANDROID
+                gameId = androidId;
+            #elif UNITY_EDITOR
+                gameId = androidId;
+            #endif
+
+            if(!Advertisement.isInitialized && Advertisement.isSupported)
+            {
+                Advertisement.Initialize(gameId, test, this);
+            }
+            
+        }
+
+        public void OnInitializationComplete()
+        {
+            Debug.Log("Unity Ads Initialization Complete");
+            isInitialized = true;
+            rewardedAdsButton.LoadAd();
+        }
+        public void OnInitializationFailed(UnityAdsInitializationError error,string message)
+        {
+            Debug.LogWarning($"Ads Initialization Failed with{error.ToString()} - {message}");
+            isInitialized = false;
         }
     }
 

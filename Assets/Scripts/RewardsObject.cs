@@ -5,7 +5,7 @@ using UnityEngine;
 namespace DK
 {
     [CreateAssetMenu(menuName = "RewardType")]
-    public class RewardsObject :ScriptableObject
+    public class RewardsObject :Item
     {
         public RewardType rewardType;
         public int amount;
