@@ -9,7 +9,7 @@ namespace DK
         [SerializeField] RewardedAdsButton rewardedAdsButton;
         string RewardedAdTimeString;
         long RewardedAdTime = 0;
-        long oneHourInSeconds = 30;
+        long oneHourInSeconds = 3600;
         private void OnEnable()
         {
             RewardedAdTimeString = PlayerPrefs.GetString("RewardedTime");
