@@ -14,11 +14,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemIcon: {fileID: 21300000, guid: ec97cb8222bafce43afd0bc82d251f55, type: 3}
   itemName: Male Torso 10
+  actualName: Light Knight Chest
   physicalDefense: 20
   magicDefense: 7
   fireDefense: 10
   lightningDefense: 10
   darkDefense: 8.5
+  indexOfItemInMainList: 10
   isPurchased: 0
   goldRequiredToPurchase: 980
   torsoModelName: Male_Torso_11

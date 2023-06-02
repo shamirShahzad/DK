@@ -14,11 +14,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemIcon: {fileID: 21300000, guid: a8ddd809ef4244f419efbc3269bd3dbf, type: 3}
   itemName: Male Leg 14
+  actualName: Heavy Knight Leggings
   physicalDefense: 15
   magicDefense: 7.9
   fireDefense: 13
   lightningDefense: 13
   darkDefense: 9
+  indexOfItemInMainList: 14
   isPurchased: 0
   goldRequiredToPurchase: 999
   hipModelName: Male_Hip_18

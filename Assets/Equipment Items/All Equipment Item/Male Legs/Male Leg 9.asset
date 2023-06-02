@@ -14,11 +14,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemIcon: {fileID: 21300000, guid: e15508921349f4a44ba9f5784b866d5d, type: 3}
   itemName: Male Leg 9
+  actualName: Holy Plated Leggings
   physicalDefense: 10
   magicDefense: 10
   fireDefense: 5
   lightningDefense: 6.5
   darkDefense: 7
+  indexOfItemInMainList: 9
   isPurchased: 0
   goldRequiredToPurchase: 850
   hipModelName: Male_Hip_9

@@ -14,13 +14,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemIcon: {fileID: 21300000, guid: 7d40c10764ec7e746b568c804ab0f050, type: 3}
   itemName: Male Leg 2
-  actualName: 
+  actualName: Novice Knight Leggings
   physicalDefense: 7
   magicDefense: 5
   fireDefense: 5
   lightningDefense: 2
   darkDefense: 1
-  indexOfItemInMainList: 0
+  indexOfItemInMainList: 2
   isPurchased: 0
   goldRequiredToPurchase: 450
   hipModelName: Male_Hip_2

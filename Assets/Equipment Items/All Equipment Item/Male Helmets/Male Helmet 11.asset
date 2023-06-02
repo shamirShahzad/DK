@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemIcon: {fileID: 21300000, guid: 9707ca51a143987488be05ac8ac49461, type: 3}
   itemName: Male Helmet 11
-  actualName: 
+  actualName: Holy Knight's Helm
   physicalDefense: 2.7
   magicDefense: 5
   fireDefense: 5

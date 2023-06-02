@@ -14,11 +14,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemIcon: {fileID: 21300000, guid: bf55883777efe8e46a7ab860d6813371, type: 3}
   itemName: Male Torso 5
+  actualName: Gatherer Chest
   physicalDefense: 13
   magicDefense: 8
   fireDefense: 8
   lightningDefense: 8
   darkDefense: 5
+  indexOfItemInMainList: 5
   isPurchased: 0
   goldRequiredToPurchase: 530
   torsoModelName: Male_Torso_5

@@ -38,7 +38,7 @@ MonoBehaviour:
   magicBlockingDamageAbsorbtion: 0
   lightningBlockingDamageAbsorbtion: 0
   darkBlockingDamageAbsorbtion: 0
-  stability: 20
+  stability: 30
   baseStaminaCost: 18
   lightStaminaModifier: 1.1
   heavyStaminaModifier: 1.5
@@ -73,3 +73,4 @@ MonoBehaviour:
   isPurchased: 0
   goldRequiredToPurchase: 350
   indexOfItemInMainList: 2
+  actualName: Silver Hunter

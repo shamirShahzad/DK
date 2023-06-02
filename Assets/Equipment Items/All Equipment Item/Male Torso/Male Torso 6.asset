@@ -14,11 +14,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemIcon: {fileID: 21300000, guid: 9b9fec6a1ea31174390f4608ab9d83c2, type: 3}
   itemName: Male Torso 6
+  actualName: Assasin Garb
   physicalDefense: 12
   magicDefense: 15
   fireDefense: 8
   lightningDefense: 8
   darkDefense: 15
+  indexOfItemInMainList: 6
   isPurchased: 0
   goldRequiredToPurchase: 900
   torsoModelName: Male_Torso_6

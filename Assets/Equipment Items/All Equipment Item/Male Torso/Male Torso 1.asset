@@ -14,11 +14,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemIcon: {fileID: 21300000, guid: d9730d23d73b64843a7b8239f80734a3, type: 3}
   itemName: Male Torso 1
+  actualName: Straped Chest
   physicalDefense: 9
   magicDefense: 1
   fireDefense: 1
   lightningDefense: 1
   darkDefense: 1
+  indexOfItemInMainList: 1
   isPurchased: 0
   goldRequiredToPurchase: 350
   torsoModelName: Male_Torso_1

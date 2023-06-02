@@ -14,11 +14,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemIcon: {fileID: 21300000, guid: 9cb65ca64ef840247bb4ab3859016707, type: 3}
   itemName: Male Torso 3
+  actualName: Explorer Chest
   physicalDefense: 15
   magicDefense: 5
   fireDefense: 5
   lightningDefense: 3.25
   darkDefense: 5
+  indexOfItemInMainList: 3
   isPurchased: 0
   goldRequiredToPurchase: 550
   torsoModelName: Male_Torso_3

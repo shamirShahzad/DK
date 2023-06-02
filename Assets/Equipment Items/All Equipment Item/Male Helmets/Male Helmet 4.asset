@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemIcon: {fileID: 21300000, guid: cdbd27ec9fe5b1749af451ef88ffe116, type: 3}
   itemName: Male Helmet 4
-  actualName: 
+  actualName: Dark Steel Helm
   physicalDefense: 4
   magicDefense: 5
   fireDefense: 1

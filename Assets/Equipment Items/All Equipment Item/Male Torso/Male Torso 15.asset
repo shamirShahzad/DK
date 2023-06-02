@@ -14,11 +14,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemIcon: {fileID: 21300000, guid: 4608ac7df82643b43b6f8c73473be46f, type: 3}
   itemName: Male Torso 15
+  actualName: Dark Knight Chest
   physicalDefense: 28
   magicDefense: 18
   fireDefense: 18
   lightningDefense: 18
   darkDefense: 20
+  indexOfItemInMainList: 15
   isPurchased: 0
   goldRequiredToPurchase: 1500
   torsoModelName: Male_Torso_16

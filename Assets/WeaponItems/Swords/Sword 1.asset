@@ -38,7 +38,7 @@ MonoBehaviour:
   magicBlockingDamageAbsorbtion: 0
   lightningBlockingDamageAbsorbtion: 0
   darkBlockingDamageAbsorbtion: 0
-  stability: 67
+  stability: 10
   baseStaminaCost: 20
   lightStaminaModifier: 1.1
   heavyStaminaModifier: 1.5
@@ -73,3 +73,4 @@ MonoBehaviour:
   isPurchased: 1
   goldRequiredToPurchase: 0
   indexOfItemInMainList: 1
+  actualName: Bsic Sword

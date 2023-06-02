@@ -14,11 +14,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemIcon: {fileID: 21300000, guid: 2bbfa2b10def01c4c85ccd0d5d69e578, type: 3}
   itemName: Male Leg 10
+  actualName: Leather Cloth Leggings
   physicalDefense: 6.5
   magicDefense: 5
   fireDefense: 3
   lightningDefense: 3
   darkDefense: 10
+  indexOfItemInMainList: 10
   isPurchased: 0
   goldRequiredToPurchase: 790
   hipModelName: Male_Hip_10

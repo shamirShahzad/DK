@@ -14,11 +14,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemIcon: {fileID: 21300000, guid: edb1709d979ae3d49838415d47497e0c, type: 3}
   itemName: Male Arms 9
+  actualName: Agility Choir
   physicalDefense: 8.5
   magicDefense: 4
   fireDefense: 6
   lightningDefense: 10
   darkDefense: 10
+  indexOfItemInMainList: 9
   isPurchased: 0
   goldRequiredToPurchase: 790
   leftHandModelName: Chr_HandLeft_Male_11

@@ -10,15 +10,15 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: dab8148e7e0a0e3479699140684fc527, type: 3}
-  m_Name: Shield Weapon
+  m_Name: Shield Weapon 3
   m_EditorClassIdentifier: 
-  itemIcon: {fileID: 21300000, guid: 8a34529e59d6b864cb2fe7a86427075a, type: 3}
-  itemName: Weapon Left 1
-  modelPrefab: {fileID: 8366963446615378477, guid: b561f630c2f72424e9576486926a4bc0, type: 3}
+  itemIcon: {fileID: 21300000, guid: 0388800547cdd1046a7786ef01589e98, type: 3}
+  itemName: Weapon Left 3
+  modelPrefab: {fileID: 2368785064658300303, guid: e4a3800e18dad42439631da90d926d87, type: 3}
   isUnarmed: 0
   weaponController: {fileID: 22100000, guid: 8aa1e331a62451248954339f48dd127a, type: 2}
   weaponTypes: 3
-  physicalDamage: 10
+  physicalDamage: 0
   fireDamage: 0
   magicDamage: 0
   lightningDamage: 0
@@ -33,12 +33,12 @@ MonoBehaviour:
   guardBreakModifier: 1
   poiseBreak: 0
   offensivePoiseBonus: 0
-  physicalBlockingDamageAbsorbtion: 99
-  fireBlockingDamageAbsorbtion: 99
-  magicBlockingDamageAbsorbtion: 99
-  lightningBlockingDamageAbsorbtion: 99
-  darkBlockingDamageAbsorbtion: 99
-  stability: 60
+  physicalBlockingDamageAbsorbtion: 51
+  fireBlockingDamageAbsorbtion: 20
+  magicBlockingDamageAbsorbtion: 1
+  lightningBlockingDamageAbsorbtion: 1
+  darkBlockingDamageAbsorbtion: 1
+  stability: 50
   baseStaminaCost: 2
   lightStaminaModifier: 0
   heavyStaminaModifier: 0
@@ -70,6 +70,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 7b00c0d6ed128b3428984f8911419a6f, type: 3}
   - {fileID: 8300000, guid: 102dfcf151a17f44a8065ce89928bb1d, type: 3}
   - {fileID: 8300000, guid: da48d50d766871e489a26e2c4dee78b3, type: 3}
-  isPurchased: 1
-  goldRequiredToPurchase: 0
-  indexOfItemInMainList: 0
+  isPurchased: 0
+  goldRequiredToPurchase: 780
+  indexOfItemInMainList: 3
+  actualName: Knight's Shield

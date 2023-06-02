@@ -14,11 +14,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemIcon: {fileID: 21300000, guid: 691522b82e1785644b7497cbfd12afda, type: 3}
   itemName: Male Leg 8
+  actualName: Plated Paladin Leggings
   physicalDefense: 10
   magicDefense: 10
   fireDefense: 5
   lightningDefense: 6
   darkDefense: 5
+  indexOfItemInMainList: 8
   isPurchased: 0
   goldRequiredToPurchase: 800
   hipModelName: Male_Hip_8

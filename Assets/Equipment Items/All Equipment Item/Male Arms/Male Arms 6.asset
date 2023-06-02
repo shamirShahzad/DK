@@ -14,11 +14,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemIcon: {fileID: 21300000, guid: 37dbf5e63b4906f4aa61dffc3c55486a, type: 3}
   itemName: Male Arms 6
+  actualName: Knights Choir
   physicalDefense: 10
   magicDefense: 8
   fireDefense: 5
   lightningDefense: 5
   darkDefense: 7
+  indexOfItemInMainList: 6
   isPurchased: 0
   goldRequiredToPurchase: 710
   leftHandModelName: Chr_HandLeft_Male_06

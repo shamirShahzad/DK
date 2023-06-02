@@ -14,11 +14,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemIcon: {fileID: 21300000, guid: e7b1bdfed404a0148b725a2e5ef43694, type: 3}
   itemName: Male Torso 2
+  actualName: Barbarian Armor
   physicalDefense: 12
   magicDefense: 1
   fireDefense: 1
   lightningDefense: 1
   darkDefense: 1
+  indexOfItemInMainList: 2
   isPurchased: 0
   goldRequiredToPurchase: 400
   torsoModelName: Male_Torso_2

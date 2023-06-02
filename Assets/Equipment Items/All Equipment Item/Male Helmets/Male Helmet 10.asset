@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemIcon: {fileID: 21300000, guid: 164904b1a1dc3f645922783f79ef7679, type: 3}
   itemName: Male Helmet 10
-  actualName: 
+  actualName: Destructor Helm
   physicalDefense: 5
   magicDefense: 3
   fireDefense: 3.5

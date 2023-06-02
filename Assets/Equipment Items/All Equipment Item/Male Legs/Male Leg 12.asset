@@ -14,11 +14,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemIcon: {fileID: 21300000, guid: 66b50160c6a800f45aabb77245f0f2d9, type: 3}
   itemName: Male leg 12
+  actualName: Knight Leggings
   physicalDefense: 15
   magicDefense: 15
   fireDefense: 15
   lightningDefense: 15
   darkDefense: 15
+  indexOfItemInMainList: 12
   isPurchased: 0
   goldRequiredToPurchase: 2100
   hipModelName: Male_Hip_15

@@ -14,11 +14,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemIcon: {fileID: 21300000, guid: 35b4686937c21324a85ba5d50b6e1585, type: 3}
   itemName: Male Leg 15
+  actualName: Holy Knight Leggings
   physicalDefense: 15
   magicDefense: 15
   fireDefense: 13
   lightningDefense: 14
   darkDefense: 10
+  indexOfItemInMainList: 15
   isPurchased: 0
   goldRequiredToPurchase: 1900
   hipModelName: Male_Hip_20

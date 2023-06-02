@@ -1,0 +1,76 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dab8148e7e0a0e3479699140684fc527, type: 3}
+  m_Name: Shield Weapon 2
+  m_EditorClassIdentifier: 
+  itemIcon: {fileID: 21300000, guid: 4e1c740bd2724a74099000c43823b0eb, type: 3}
+  itemName: Weapon Left 2
+  modelPrefab: {fileID: 1839404917758774715, guid: 228ec897e03a3404ea12ec7ca09ac104, type: 3}
+  isUnarmed: 0
+  weaponController: {fileID: 22100000, guid: 8aa1e331a62451248954339f48dd127a, type: 2}
+  weaponTypes: 3
+  physicalDamage: 0
+  fireDamage: 0
+  magicDamage: 0
+  lightningDamage: 0
+  darkDamage: 0
+  lightAttackDamageModifier: 0
+  heavyAttackDamageModifier: 0
+  runningAttackDamageModifier: 0
+  jumpingAttackDamageModifier: 0
+  lightAttack2DamageModifier: 0
+  heavyAttack2DamageModifier: 0
+  criticalDamageModifier: 2
+  guardBreakModifier: 1
+  poiseBreak: 0
+  offensivePoiseBonus: 0
+  physicalBlockingDamageAbsorbtion: 25
+  fireBlockingDamageAbsorbtion: 60
+  magicBlockingDamageAbsorbtion: 18
+  lightningBlockingDamageAbsorbtion: 30
+  darkBlockingDamageAbsorbtion: 15
+  stability: 60
+  baseStaminaCost: 2
+  lightStaminaModifier: 0
+  heavyStaminaModifier: 0
+  criticalStaminaModifier: 0
+  jumppingStaminaModifier: 0
+  runningStaminaModifier: 0
+  spellOfItem: {fileID: 0}
+  hold_RB_Action: {fileID: 0}
+  tap_RB_Action: {fileID: 0}
+  tap_LB_Action: {fileID: 0}
+  hold_LB_Action: {fileID: 11400000, guid: fabcb96caa8970d40b87e10449fd339d, type: 2}
+  hold_RT_Action: {fileID: 0}
+  tap_RT_Action: {fileID: 0}
+  tap_LT_Action: {fileID: 11400000, guid: b2a4b514b4eb2f449b37f4573f08b94e, type: 2}
+  hold_LT_Action: {fileID: 0}
+  th_hold_RB_Action: {fileID: 0}
+  th_tap_RB_Action: {fileID: 0}
+  th_tap_LB_Action: {fileID: 0}
+  th_hold_LB_Action: {fileID: 0}
+  th_hold_RT_Action: {fileID: 0}
+  th_tap_RT_Action: {fileID: 0}
+  th_tap_LT_Action: {fileID: 0}
+  th_hold_LT_Action: {fileID: 0}
+  weaponWooshes:
+  - {fileID: 8300000, guid: 4fdda45943a62ca429f7e65664ee287b, type: 3}
+  - {fileID: 8300000, guid: df2f288ee9b6c5743869bea301448ebe, type: 3}
+  - {fileID: 8300000, guid: 39609d390b0917d48b6daefe87d114dc, type: 3}
+  - {fileID: 8300000, guid: 7892184ffe4be754396a5ceeb8beaca1, type: 3}
+  - {fileID: 8300000, guid: 7b00c0d6ed128b3428984f8911419a6f, type: 3}
+  - {fileID: 8300000, guid: 102dfcf151a17f44a8065ce89928bb1d, type: 3}
+  - {fileID: 8300000, guid: da48d50d766871e489a26e2c4dee78b3, type: 3}
+  isPurchased: 0
+  goldRequiredToPurchase: 560
+  indexOfItemInMainList: 2
+  actualName: Diamond Shield

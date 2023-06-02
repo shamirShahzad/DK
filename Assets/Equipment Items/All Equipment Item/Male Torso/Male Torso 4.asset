@@ -14,11 +14,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemIcon: {fileID: 21300000, guid: b10e0cffd8c43a642b554cba094df455, type: 3}
   itemName: Male Torso 4
+  actualName: Novice Knight Chest
   physicalDefense: 19
   magicDefense: 7
   fireDefense: 10
   lightningDefense: 10
   darkDefense: 8
+  indexOfItemInMainList: 4
   isPurchased: 0
   goldRequiredToPurchase: 850
   torsoModelName: Male_Torso_4

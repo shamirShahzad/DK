@@ -14,13 +14,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemIcon: {fileID: 21300000, guid: 054e093ae9403ea42bb210f39d30be87, type: 3}
   itemName: Male Arms 4
-  actualName: 
+  actualName: 'Wrist Plated '
   physicalDefense: 5.9
   magicDefense: 5
   fireDefense: 4
   lightningDefense: 4
   darkDefense: 10
-  indexOfItemInMainList: 0
+  indexOfItemInMainList: 4
   isPurchased: 0
   goldRequiredToPurchase: 500
   leftHandModelName: Chr_HandLeft_Male_11

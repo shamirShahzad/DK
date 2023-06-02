@@ -75,6 +75,7 @@ namespace DK
 
                     uiItem.transform.GetChild(3).GetChild(1).GetComponent<Image>().sprite = notPurchasedHelmets[i].itemIcon;
                     uiItem.transform.GetChild(4).GetComponentInChildren<TextMeshProUGUI>().text = notPurchasedHelmets[i].goldRequiredToPurchase.ToString();
+                    uiItem.transform.GetChild(2).GetComponent<TextMeshProUGUI>().text = notPurchasedHelmets[i].actualName;
                     //Do other things with the prefab here
 
                     uiItem.transform.SetParent(contentTransform);
@@ -111,6 +112,7 @@ namespace DK
                     uiItem.GetComponent<PrefabButtonAccessScript>().shop = this;
                     uiItem.transform.GetChild(3).GetChild(1).GetComponent<Image>().sprite = notPurchasedArms[i].itemIcon;
                     uiItem.transform.GetChild(4).GetComponentInChildren<TextMeshProUGUI>().text = notPurchasedArms[i].goldRequiredToPurchase.ToString();
+                    uiItem.transform.GetChild(2).GetComponent<TextMeshProUGUI>().text = notPurchasedArms[i].actualName;
                     //Do other things with the prefab here
 
                     uiItem.transform.SetParent(contentTransform);
@@ -147,6 +149,7 @@ namespace DK
                     uiItem.GetComponent<PrefabButtonAccessScript>().shop = this;
                     uiItem.transform.GetChild(3).GetChild(1).GetComponent<Image>().sprite = notPurchasedTorso[i].itemIcon;
                     uiItem.transform.GetChild(4).GetComponentInChildren<TextMeshProUGUI>().text = notPurchasedTorso[i].goldRequiredToPurchase.ToString();
+                    uiItem.transform.GetChild(2).GetComponent<TextMeshProUGUI>().text = notPurchasedTorso[i].actualName;
                     //Do other things with the prefab here
 
                     uiItem.transform.SetParent(contentTransform);
@@ -183,6 +186,7 @@ namespace DK
                     uiItem.GetComponent<PrefabButtonAccessScript>().shop = this;
                     uiItem.transform.GetChild(3).GetChild(1).GetComponent<Image>().sprite = notPurchasedLegs[i].itemIcon;
                     uiItem.transform.GetChild(4).GetComponentInChildren<TextMeshProUGUI>().text = notPurchasedLegs[i].goldRequiredToPurchase.ToString();
+                    uiItem.transform.GetChild(2).GetComponent<TextMeshProUGUI>().text = notPurchasedLegs[i].actualName;
                     //Do other things with the prefab here
 
                     uiItem.transform.SetParent(contentTransform);
@@ -219,7 +223,7 @@ namespace DK
 
                     uiItem.transform.GetChild(3).GetChild(1).GetComponent<Image>().sprite = notPurchasedRightHandWeapons[i].itemIcon;
                     uiItem.transform.GetChild(4).GetComponentInChildren<TextMeshProUGUI>().text = notPurchasedRightHandWeapons[i].goldRequiredToPurchase.ToString();
-
+                    uiItem.transform.GetChild(2).GetComponent<TextMeshProUGUI>().text = notPurchasedRightHandWeapons[i].actualName;
                     uiItem.transform.SetParent(contentTransform);
                     uiItem.transform.localScale = Vector3.one;
                     uiItem.transform.localPosition = Vector3.zero;
@@ -254,7 +258,7 @@ namespace DK
 
                     uiItem.transform.GetChild(3).GetChild(1).GetComponent<Image>().sprite = notPurchasedLeftHandWeapons[i].itemIcon;
                     uiItem.transform.GetChild(4).GetComponentInChildren<TextMeshProUGUI>().text = notPurchasedLeftHandWeapons[i].goldRequiredToPurchase.ToString();
-
+                    uiItem.transform.GetChild(2).GetComponent<TextMeshProUGUI>().text = notPurchasedLeftHandWeapons[i].actualName;
                     uiItem.transform.SetParent(contentTransform);
                     uiItem.transform.localScale = Vector3.one;
                     uiItem.transform.localPosition = Vector3.zero;

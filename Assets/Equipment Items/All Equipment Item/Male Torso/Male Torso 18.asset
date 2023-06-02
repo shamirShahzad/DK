@@ -14,11 +14,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemIcon: {fileID: 21300000, guid: 4836e02ccb115f84bbf229c0ee1da97c, type: 3}
   itemName: Male Torso 18
+  actualName: Holy Knight Chest
   physicalDefense: 30
   magicDefense: 25
   fireDefense: 20
   lightningDefense: 20
   darkDefense: 10
+  indexOfItemInMainList: 18
   isPurchased: 0
   goldRequiredToPurchase: 2300
   torsoModelName: Male_Torso_19

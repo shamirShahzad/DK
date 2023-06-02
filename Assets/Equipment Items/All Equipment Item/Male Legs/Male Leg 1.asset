@@ -14,11 +14,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemIcon: {fileID: 21300000, guid: f1094c7ed67620540b6f0f0dddf17d0e, type: 3}
   itemName: Male Leg 1
+  actualName: Scraped Leggings
   physicalDefense: 3
   magicDefense: 0
   fireDefense: 0
   lightningDefense: 0
   darkDefense: 0
+  indexOfItemInMainList: 1
   isPurchased: 0
   goldRequiredToPurchase: 300
   hipModelName: Male_Hip_1

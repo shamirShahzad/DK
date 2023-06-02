@@ -14,11 +14,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemIcon: {fileID: 21300000, guid: e8d54d1a56910da4792a59fa9c28d24b, type: 3}
   itemName: Male Torso 9
+  actualName: Dark Plated Chest
   physicalDefense: 15
   magicDefense: 8.75
   fireDefense: 10
   lightningDefense: 10
   darkDefense: 14
+  indexOfItemInMainList: 9
   isPurchased: 0
   goldRequiredToPurchase: 1000
   torsoModelName: Male_Torso_9

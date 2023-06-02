@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemIcon: {fileID: 21300000, guid: 314e6fad608ae1647aa4f2736c52eef5, type: 3}
   itemName: Male Helmet 13
-  actualName: 
+  actualName: Cheese Grater
   physicalDefense: 5
   magicDefense: 1
   fireDefense: 5

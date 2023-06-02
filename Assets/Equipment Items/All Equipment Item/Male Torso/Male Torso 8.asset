@@ -14,11 +14,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemIcon: {fileID: 21300000, guid: 5932416cb83efab458be8c2086a033f7, type: 3}
   itemName: Male Torso 8
+  actualName: Cleric Garb
   physicalDefense: 6
   magicDefense: 20
   fireDefense: 8
   lightningDefense: 7
   darkDefense: 3
+  indexOfItemInMainList: 8
   isPurchased: 0
   goldRequiredToPurchase: 940
   torsoModelName: Male_Torso_9

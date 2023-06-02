@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemIcon: {fileID: 21300000, guid: f795a55fcfc0169468e9361125c1e687, type: 3}
   itemName: Male Helmet 6
-  actualName: 
+  actualName: Scared Knights's Helm
   physicalDefense: 3
   magicDefense: 1
   fireDefense: 3

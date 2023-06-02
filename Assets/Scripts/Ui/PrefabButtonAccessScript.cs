@@ -25,6 +25,7 @@ namespace DK
                     equipment.isPurchased = true;
                     FirebaseManager.instance.userData.goldAmount -= equipment.goldRequiredToPurchase;
                     shop.SetGoldAmountOnPurchase();
+                    FirebaseManager.instance.UpdateGold(FirebaseManager.instance.userData.goldAmount);
                     SetScreenInShop();
                 }
                 else

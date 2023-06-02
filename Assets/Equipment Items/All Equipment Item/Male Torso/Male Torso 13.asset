@@ -14,11 +14,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemIcon: {fileID: 21300000, guid: a9472b9dcd816cc48ba944dd81bb7979, type: 3}
   itemName: Male Torso 13
+  actualName: Leather Garb
   physicalDefense: 12
   magicDefense: 0
   fireDefense: 15
   lightningDefense: 15
   darkDefense: 8
+  indexOfItemInMainList: 13
   isPurchased: 0
   goldRequiredToPurchase: 850
   torsoModelName: Male_Torso_14

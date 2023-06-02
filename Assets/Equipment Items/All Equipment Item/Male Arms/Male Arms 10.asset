@@ -14,11 +14,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemIcon: {fileID: 21300000, guid: ec85cae3ed19a964b93d9caaaeba6594, type: 3}
   itemName: Male Arms 10
+  actualName: Jungle Choir
   physicalDefense: 4
   magicDefense: 0.38
   fireDefense: 0.75
   lightningDefense: 0.75
   darkDefense: 0.2
+  indexOfItemInMainList: 10
   isPurchased: 0
   goldRequiredToPurchase: 230
   leftHandModelName: Chr_HandLeft_Male_08

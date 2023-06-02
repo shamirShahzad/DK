@@ -84,6 +84,7 @@ namespace DK
         public bool isPurchased;
         public int goldRequiredToPurchase;
         public int indexOfItemInMainList;
+        public string actualName;
 
 
     }

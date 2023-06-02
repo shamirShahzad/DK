@@ -14,11 +14,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemIcon: {fileID: 21300000, guid: 1a8f11ece6166234d8248f152bb8a0d3, type: 3}
   itemName: Male Leg 5
+  actualName: Paladin Leggings
   physicalDefense: 7
   magicDefense: 10
   fireDefense: 3
   lightningDefense: 3
   darkDefense: 5
+  indexOfItemInMainList: 5
   isPurchased: 0
   goldRequiredToPurchase: 600
   hipModelName: Male_Hip_5

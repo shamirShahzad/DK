@@ -14,11 +14,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemIcon: {fileID: 21300000, guid: 6f11f4d7e00062a41b45176c9be6292e, type: 3}
   itemName: Male Torso 11
+  actualName: Soldier Chest
   physicalDefense: 21
   magicDefense: 10
   fireDefense: 8
   lightningDefense: 8
   darkDefense: 10
+  indexOfItemInMainList: 11
   isPurchased: 0
   goldRequiredToPurchase: 980
   torsoModelName: Male_Torso_12

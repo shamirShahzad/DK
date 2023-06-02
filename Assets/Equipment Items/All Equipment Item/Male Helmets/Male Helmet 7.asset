@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemIcon: {fileID: 21300000, guid: 4942962ac47e6c649b8511d6a66a4502, type: 3}
   itemName: Male Helmet 7
-  actualName: 
+  actualName: Paladin Helm
   physicalDefense: 3
   magicDefense: 3.5
   fireDefense: 1

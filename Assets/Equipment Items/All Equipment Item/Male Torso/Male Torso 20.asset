@@ -14,13 +14,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemIcon: {fileID: 21300000, guid: b786a01b5894a14498ae49b9eb428c20, type: 3}
   itemName: Male Torso 20
-  actualName: 
+  actualName: Tank Chest
   physicalDefense: 30
   magicDefense: 15
   fireDefense: 20
   lightningDefense: 19
   darkDefense: 12
-  indexOfItemInMainList: 0
+  indexOfItemInMainList: 20
   isPurchased: 0
   goldRequiredToPurchase: 2100
   torsoModelName: Male_Torso_21

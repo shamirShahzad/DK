@@ -14,11 +14,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemIcon: {fileID: 21300000, guid: 6975b204ba69fdd42aed060be5d647e8, type: 3}
   itemName: Male Torso 7
+  actualName: Archer Garb
   physicalDefense: 13
   magicDefense: 6.5
   fireDefense: 10
   lightningDefense: 10
   darkDefense: 6
+  indexOfItemInMainList: 7
   isPurchased: 0
   goldRequiredToPurchase: 650
   torsoModelName: Male_Torso_8

@@ -14,11 +14,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemIcon: {fileID: 21300000, guid: 4ca7d750ca32d5645b65609eae109cfc, type: 3}
   itemName: Male Arms 8
+  actualName: Tank Guards
   physicalDefense: 6
   magicDefense: 4
   fireDefense: 9
   lightningDefense: 9
   darkDefense: 3
+  indexOfItemInMainList: 8
   isPurchased: 0
   goldRequiredToPurchase: 710
   leftHandModelName: Chr_HandLeft_Male_11

@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemIcon: {fileID: 21300000, guid: 0acff7ac6068f46f9824956e4ba566bc, type: 3}
   itemName: Male Torso 0
-  actualName: 
+  actualName: Basic
   physicalDefense: 0
   magicDefense: 0
   fireDefense: 0

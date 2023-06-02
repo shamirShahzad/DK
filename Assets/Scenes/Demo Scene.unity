@@ -2432,6 +2432,22 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2554598860014443788, guid: 96e02eda9c2e03c479bcb5f17f34d8f3, type: 3}
+      propertyPath: selectedWeaponIndexLeft
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2554598860014443788, guid: 96e02eda9c2e03c479bcb5f17f34d8f3, type: 3}
+      propertyPath: selectedWeaponIndexRight
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2554598860014443788, guid: 96e02eda9c2e03c479bcb5f17f34d8f3, type: 3}
+      propertyPath: weaponItemsLeft.Array.data[0]
+      value: 
+      objectReference: {fileID: 11400000, guid: b0a708b7a8a886449bfcbf984608feb9, type: 2}
+    - target: {fileID: 2554598860014443788, guid: 96e02eda9c2e03c479bcb5f17f34d8f3, type: 3}
+      propertyPath: weaponItemsRight.Array.data[0]
+      value: 
+      objectReference: {fileID: 11400000, guid: c63a6031128c1f0448feabeb10cc9f55, type: 2}
     - target: {fileID: 2554598860014443789, guid: 96e02eda9c2e03c479bcb5f17f34d8f3, type: 3}
       propertyPath: m_Name
       value: Player Tpose

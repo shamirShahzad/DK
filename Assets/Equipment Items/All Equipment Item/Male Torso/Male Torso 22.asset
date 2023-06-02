@@ -14,13 +14,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemIcon: {fileID: 21300000, guid: 18b0eb86b95852c4e83285dddb091703, type: 3}
   itemName: Male Torso 22
-  actualName: 
+  actualName: Lion's Bane
   physicalDefense: 30
   magicDefense: 30
   fireDefense: 30
   lightningDefense: 30
   darkDefense: 30
-  indexOfItemInMainList: 0
+  indexOfItemInMainList: 22
   isPurchased: 0
   goldRequiredToPurchase: 3500
   torsoModelName: Male_Torso_23

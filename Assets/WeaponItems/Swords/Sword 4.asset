@@ -73,3 +73,4 @@ MonoBehaviour:
   isPurchased: 0
   goldRequiredToPurchase: 360
   indexOfItemInMainList: 4
+  actualName: Lightning Sword

@@ -23,8 +23,8 @@ MonoBehaviour:
   magicDamage: 0
   lightningDamage: 0
   darkDamage: 0
-  lightAttackDamageModifier: 0
-  heavyAttackDamageModifier: 0
+  lightAttackDamageModifier: 1
+  heavyAttackDamageModifier: 1.1
   runningAttackDamageModifier: 0
   jumpingAttackDamageModifier: 0
   lightAttack2DamageModifier: 0
@@ -47,12 +47,12 @@ MonoBehaviour:
   runningStaminaModifier: 0
   spellOfItem: {fileID: 0}
   hold_RB_Action: {fileID: 0}
-  tap_RB_Action: {fileID: 11400000, guid: 7850ac8c110a7cb4a82941262c950f4a, type: 2}
-  tap_LB_Action: {fileID: 0}
+  tap_RB_Action: {fileID: 0}
+  tap_LB_Action: {fileID: 11400000, guid: 7850ac8c110a7cb4a82941262c950f4a, type: 2}
   hold_LB_Action: {fileID: 0}
   hold_RT_Action: {fileID: 0}
-  tap_RT_Action: {fileID: 11400000, guid: 36648edf6ec7be1428c5ad86b1b37491, type: 2}
-  tap_LT_Action: {fileID: 0}
+  tap_RT_Action: {fileID: 0}
+  tap_LT_Action: {fileID: 11400000, guid: 36648edf6ec7be1428c5ad86b1b37491, type: 2}
   hold_LT_Action: {fileID: 0}
   th_hold_RB_Action: {fileID: 0}
   th_tap_RB_Action: {fileID: 0}
@@ -62,6 +62,15 @@ MonoBehaviour:
   th_tap_RT_Action: {fileID: 0}
   th_tap_LT_Action: {fileID: 0}
   th_hold_LT_Action: {fileID: 0}
-  weaponWooshes: []
+  weaponWooshes:
+  - {fileID: 8300000, guid: 78e53d3ff58fab44084c92f36fb5de5d, type: 3}
+  - {fileID: 8300000, guid: a1d579ffa44e43b4680cd5638643d54b, type: 3}
+  - {fileID: 8300000, guid: 54a9b384221c9f84a825ec7bb5996516, type: 3}
+  - {fileID: 8300000, guid: e4ed6f8a97c592c4cadf2f89a4a5f121, type: 3}
+  - {fileID: 8300000, guid: c149e31035a34964fa9c8a754b8d3db4, type: 3}
+  - {fileID: 8300000, guid: 2de8277ecc7466a48a814df820ed625e, type: 3}
+  - {fileID: 8300000, guid: 8427eb2652cb9f44e86e837d5313d2f9, type: 3}
   isPurchased: 1
   goldRequiredToPurchase: 0
+  indexOfItemInMainList: 0
+  actualName: 

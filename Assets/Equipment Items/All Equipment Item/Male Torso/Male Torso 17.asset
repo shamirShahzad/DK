@@ -14,11 +14,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemIcon: {fileID: 21300000, guid: 8b18d6aa46bdaf8458ebb10e9fdbdf9d, type: 3}
   itemName: Male Torso 17
+  actualName: Heavy Knight Chest
   physicalDefense: 28
   magicDefense: 17
   fireDefense: 10
   lightningDefense: 10
   darkDefense: 9
+  indexOfItemInMainList: 17
   isPurchased: 0
   goldRequiredToPurchase: 1550
   torsoModelName: Male_Torso_18

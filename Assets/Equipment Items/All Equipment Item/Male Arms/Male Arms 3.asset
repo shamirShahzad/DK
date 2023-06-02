@@ -14,13 +14,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemIcon: {fileID: 21300000, guid: 5086bd782a9636b45b77dfaff198679e, type: 3}
   itemName: Male Arms 3
-  actualName: 
+  actualName: Plated Leather
   physicalDefense: 7
   magicDefense: 3
   fireDefense: 1
   lightningDefense: 2
   darkDefense: 8
-  indexOfItemInMainList: 0
+  indexOfItemInMainList: 3
   isPurchased: 0
   goldRequiredToPurchase: 450
   leftHandModelName: Chr_HandLeft_Male_01

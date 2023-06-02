@@ -14,11 +14,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemIcon: {fileID: 21300000, guid: 98d46c96fae0e814b913a6033e44aa7d, type: 3}
   itemName: Male Torso 12
+  actualName: Leather Chest
   physicalDefense: 21
   magicDefense: 10
   fireDefense: 10
   lightningDefense: 10
   darkDefense: 20
+  indexOfItemInMainList: 12
   isPurchased: 0
   goldRequiredToPurchase: 1300
   torsoModelName: Male_Torso_13

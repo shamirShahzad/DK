@@ -14,11 +14,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemIcon: {fileID: 21300000, guid: 8f967595effe815458e9070e8bf40b8c, type: 3}
   itemName: Male Arms 7
+  actualName: Dark Choir
   physicalDefense: 7
   magicDefense: 2
   fireDefense: 5
   lightningDefense: 5
   darkDefense: 10
+  indexOfItemInMainList: 7
   isPurchased: 0
   goldRequiredToPurchase: 475
   leftHandModelName: Chr_HandLeft_Male_12

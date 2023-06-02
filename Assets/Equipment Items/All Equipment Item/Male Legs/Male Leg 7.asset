@@ -14,11 +14,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemIcon: {fileID: 21300000, guid: 33daf46a10e68db4bad85ed2bcba49aa, type: 3}
   itemName: Male Leg 7
+  actualName: Plated Leggings
   physicalDefense: 10
   magicDefense: 7
   fireDefense: 5
   lightningDefense: 5
   darkDefense: 10
+  indexOfItemInMainList: 7
   isPurchased: 0
   goldRequiredToPurchase: 700
   hipModelName: Male_Hip_7
