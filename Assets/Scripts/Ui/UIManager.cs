@@ -9,10 +9,23 @@ namespace DK
         public GameObject aimCrosshair;
 
         public SoulCountBar soulCountBar;
+        public PlayerManager player;
+        [SerializeField] GameObject deathPanel;
         private void Awake()
         {
             soulCountBar = FindObjectOfType<SoulCountBar>();
             soulCountBar.SetSoulCountText(FirebaseManager.instance.userData.soulPlayersPosseses);
+            player = FindObjectOfType<PlayerManager>();
         }
+
+        public void playerDeath()
+        {
+            if (player.isDead)
+            {
+                deathPanel.SetActive(true);
+            }
+        }
+
+
     }
 }

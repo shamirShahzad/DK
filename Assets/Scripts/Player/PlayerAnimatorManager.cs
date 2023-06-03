@@ -102,7 +102,10 @@ namespace DK
             Vector3 deltaPositions = player.animator.deltaPosition;
             deltaPositions.y = 0;
             Vector3 velocity = deltaPositions / delta;
-            player.playerLocomotion.rigidbody.velocity = velocity;
+            if (Time.timeScale == 1)
+            {
+                player.playerLocomotion.rigidbody.velocity = velocity;
+            }
 
         }
     }

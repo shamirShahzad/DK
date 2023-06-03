@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 
 namespace DK
@@ -290,13 +291,22 @@ namespace DK
             currentStamina -= staminaToBeDeducted;
         }
 
-        protected void HandleDeath()
+        protected virtual void HandleDeath()
         {
             if (currentHealth <= 0)
             {
                 character.isDead = true;
                 currentHealth = 0;
+                StartCoroutine(FinishPlayingDeathAnimation());
+                
             }
+        }
+
+        private IEnumerator FinishPlayingDeathAnimation()
+        {
+            character.characterAnimatorManager.PlayTargetAnimation("Death", true);
+            yield return new WaitForSeconds(2f);
+            Time.timeScale = 0;
         }
 
         public virtual void healCharacter(int health)

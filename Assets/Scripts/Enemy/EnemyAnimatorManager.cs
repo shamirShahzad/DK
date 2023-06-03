@@ -20,7 +20,10 @@ namespace DK
             Vector3 deltaPosition = enemy.animator.deltaPosition;
             deltaPosition.y = 0;
             Vector3 velocity = deltaPosition / delta;
-            enemy.enemyRigidbody.velocity = velocity /* * enemyLocomotionManager.moveSpeed*/;
+            if (Time.timeScale == 1)
+            {
+                enemy.enemyRigidbody.velocity = velocity /* * enemyLocomotionManager.moveSpeed*/;
+            }
 
             if (enemy.isRotatingWithRootMotion)
             {

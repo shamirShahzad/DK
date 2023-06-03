@@ -94,10 +94,7 @@ namespace DK
         {
             base.TakeDamageNoAnimation(physicalDamage,fireDamage,magicDamage,lightningDamage,darkDamage);
             healthBar.SetCurrentHealth(currentHealth);
-            if (player.isDead)
-            {
-              player.playerAnimatorManager.PlayTargetAnimation("Death", true);
-            }
+            HandleDeath();
         }
 
         public override void TakePoisonDamage(int damage)
@@ -125,13 +122,13 @@ namespace DK
             healthBar.SetCurrentHealth(currentHealth);
             player.playerAnimatorManager.PlayTargetAnimation(damageAnimation, true);
 
-            if(currentHealth <=0)
-            {
-                player.isDead = true;
-                currentHealth = 0;
-                player.playerAnimatorManager.PlayTargetAnimation("Death", true);
-                
-            }
+            HandleDeath();
+        }
+
+        protected override void HandleDeath()
+        {
+            base.HandleDeath();
+            player.uIManager.playerDeath();
         }
 
         public override void TakeDamageAfterBlock(int physicalDamage, int fireDamage, int magicDamage, int lightningDamage, int darkDamage, CharacterManager enemyCharacterDamagingMe)
@@ -140,13 +137,10 @@ namespace DK
                 return;
             base.TakeDamageAfterBlock(physicalDamage, fireDamage, magicDamage, lightningDamage, darkDamage, enemyCharacterDamagingMe);
             healthBar.SetCurrentHealth(currentHealth);
-            if (currentHealth <= 0)
-            {
-                player.isDead = true;
-                currentHealth = 0;
-                player.playerAnimatorManager.PlayTargetAnimation("Death", true);
-            }
+            HandleDeath();
         }
+
+
 
         public override  void  DeductStamina(float damage)
         {
