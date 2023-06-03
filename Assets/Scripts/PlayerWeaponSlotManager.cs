@@ -17,6 +17,13 @@ namespace DK
 
         }
 
+        public override void LoadBothWeaponOnslot()
+        {
+            
+            LoadWeaponOnSlot(character.characterInventoryManager.weaponItemsRight[FirebaseManager.instance.userData.rightArmWeapon], false);
+            LoadWeaponOnSlot(character.characterInventoryManager.weaponItemsLeft[FirebaseManager.instance.userData.leftArmWeapon], true);
+        }
+
         public override void LoadWeaponOnSlot(WeaponItem weaponItem,bool isLeft)
         {
             if (weaponItem != null)

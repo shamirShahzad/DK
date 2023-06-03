@@ -70376,9 +70376,10 @@ MonoBehaviour:
   - {fileID: 11400000, guid: c63a6031128c1f0448feabeb10cc9f55, type: 2}
   - {fileID: 11400000, guid: 9841557e612cbd84291132cd4f3b0912, type: 2}
   weaponItemsLeft:
+  - {fileID: 11400000, guid: 32fd7bee58f37c94193429903d6da805, type: 2}
   - {fileID: 11400000, guid: 86513175fbf229344b21ec717ae7117a, type: 2}
-  - {fileID: 11400000, guid: 86513175fbf229344b21ec717ae7117a, type: 2}
-  - {fileID: 11400000, guid: 86513175fbf229344b21ec717ae7117a, type: 2}
+  - {fileID: 11400000, guid: 4bb2933dbb1793341bf8ead96ac7bf5b, type: 2}
+  - {fileID: 11400000, guid: b0a708b7a8a886449bfcbf984608feb9, type: 2}
   currentHelmetEquipment: {fileID: 11400000, guid: 482700fa87faf3e45915730f780ce9e7, type: 2}
   currentTorsoEquipment: {fileID: 11400000, guid: 35e4e1c4dd4c4514290593c159080a16, type: 2}
   currentLegEquipment: {fileID: 11400000, guid: 20a28d4d8ad02004d8ee1669dd17b5ca, type: 2}

@@ -56,8 +56,8 @@ namespace DK
         }
         public virtual  void LoadBothWeaponOnslot()
         {
-            LoadWeaponOnSlot(character.characterInventoryManager.weaponItemsRight[FirebaseManager.instance.userData.rightArmWeapon], false);
-            LoadWeaponOnSlot(character.characterInventoryManager.weaponItemsLeft[FirebaseManager.instance.userData.leftArmWeapon], true);
+            LoadWeaponOnSlot(character.characterInventoryManager.weaponItemsRight[0], false);
+            LoadWeaponOnSlot(character.characterInventoryManager.weaponItemsLeft[0], true);
         }
 
         public virtual void LoadWeaponOnSlot(WeaponItem weaponItem, bool isLeft)

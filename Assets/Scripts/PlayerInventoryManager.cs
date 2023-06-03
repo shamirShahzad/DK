@@ -9,5 +9,12 @@ namespace DK
         public List<HandEquipment> armsInventory;
         public List<TorsoEquipment> torsoInventory;
         public List<LegEquipment> legInventory;
+
+        protected override void Awake()
+        {
+            base.Awake();
+            rightWeapon = weaponItemsRight[FirebaseManager.instance.userData.rightArmWeapon];
+            leftWeapon = weaponItemsLeft[FirebaseManager.instance.userData.leftArmWeapon];
+        }
     }
 }

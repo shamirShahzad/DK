@@ -26,11 +26,11 @@ namespace DK
 
         public RangedAmmoItem currentAmmo;
 
-        private void Awake()
+        protected virtual void Awake()
         {
             characterWeaponSlotManager = GetComponent<CharacterWeaponSlotManager>();
-            rightWeapon = weaponItemsRight[FirebaseManager.instance.userData.rightArmWeapon];
-            leftWeapon = weaponItemsLeft[FirebaseManager.instance.userData.leftArmWeapon];
+            rightWeapon = weaponItemsRight[0];
+            leftWeapon = weaponItemsLeft[0];
         }
 
         public void SetWeapons()
