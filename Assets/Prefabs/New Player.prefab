@@ -70169,7 +70169,6 @@ MonoBehaviour:
   twoHandFlag: 0
   fireFlag: 0
   rollFlag: 0
-  sprintFlag: 0
   comboFlag: 0
   rollInputTimer: 0
   input_Has_Been_Qued: 0
@@ -70197,8 +70196,8 @@ MonoBehaviour:
   yVelocity: {x: 0, y: 0, z: 0}
   groundedYVelocity: -20
   fallStartYVelocity: -7
-  gravityForce: -20
-  groundCheckSphereRadius: 1
+  gravityForce: -10
+  groundCheckSphereRadius: 0.3
   rigidbody: {fileID: 0}
   normalCamera: {fileID: 0}
   movementSpeed: 5
@@ -70257,7 +70256,6 @@ MonoBehaviour:
   isRotatingWithRootMotion: 0
   canRotate: 1
   isSprinting: 0
-  isInAir: 0
   isGrounded: 1
   isInteracting: 0
   cameraHandler: {fileID: 0}
@@ -70623,7 +70621,7 @@ AudioSource:
   SpatializePostEffects: 0
   Priority: 128
   DopplerLevel: 1
-  MinDistance: 1
+  MinDistance: 0.98245704
   MaxDistance: 500
   Pan2D: 0
   rolloffMode: 0
@@ -70729,13 +70727,13 @@ CharacterController:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Height: 2
-  m_Radius: 0.38
+  m_Height: 1.88
+  m_Radius: 0.28
   m_SlopeLimit: 45
-  m_StepOffset: 0.3
-  m_SkinWidth: 0.08
+  m_StepOffset: 0.4
+  m_SkinWidth: 0.03
   m_MinMoveDistance: 0.001
-  m_Center: {x: 0, y: 1, z: 0}
+  m_Center: {x: 0, y: 0.91, z: 0}
 --- !u!54 &2041694304714721951
 Rigidbody:
   m_ObjectHideFlags: 0

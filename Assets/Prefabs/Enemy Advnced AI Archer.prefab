@@ -578,7 +578,7 @@ Transform:
   m_Children:
   - {fileID: 7555172499308692043}
   m_Father: {fileID: 7555172498638518817}
-  m_RootOrder: 6
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &7555172497518177621
 GameObject:
@@ -1910,38 +1910,6 @@ SkinnedMeshRenderer:
     m_Center: {x: -0.020824432, y: 88.89549, z: -6.3268356}
     m_Extent: {x: 102.57242, y: 98.76335, z: 26.494034}
   m_DirtyAABB: 0
---- !u!1 &7555172497938465070
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 7555172497938465071}
-  m_Layer: 9
-  m_Name: Combat Collider
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &7555172497938465071
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7555172497938465070}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 7555172498199785896}
-  m_Father: {fileID: 7555172498638518817}
-  m_RootOrder: 5
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &7555172497949918170
 GameObject:
   m_ObjectHideFlags: 0
@@ -2590,7 +2558,7 @@ RectTransform:
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
+  m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0.5}
@@ -2973,69 +2941,6 @@ CapsuleCollider:
   m_Height: 37.922363
   m_Direction: 0
   m_Center: {x: 17.528425, y: -0.000000016810656, z: 0.52054137}
---- !u!1 &7555172498199785895
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 7555172498199785896}
-  - component: {fileID: 7555172498199785898}
-  - component: {fileID: 7555172498199785897}
-  m_Layer: 10
-  m_Name: Character Collider Blocker
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &7555172498199785896
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7555172498199785895}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 7555172497938465071}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!54 &7555172498199785898
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7555172498199785895}
-  serializedVersion: 2
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_UseGravity: 0
-  m_IsKinematic: 1
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
---- !u!136 &7555172498199785897
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7555172498199785895}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  m_Radius: 0.5
-  m_Height: 1.8644971
-  m_Direction: 1
-  m_Center: {x: 0, y: 0.8426004, z: 0}
 --- !u!1 &7555172498246789082
 GameObject:
   m_ObjectHideFlags: 0
@@ -3164,7 +3069,7 @@ Transform:
   - {fileID: 7555172499035438736}
   - {fileID: 7555172498508688809}
   m_Father: {fileID: 7555172498638518817}
-  m_RootOrder: 8
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &7555172498346337730
 MonoBehaviour:
@@ -3422,7 +3327,7 @@ RectTransform:
   m_Children:
   - {fileID: 7555172497921890580}
   m_Father: {fileID: 7555172498638518817}
-  m_RootOrder: 7
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -3983,7 +3888,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7555172498638518817}
-  - component: {fileID: 7555172498638518816}
   - component: {fileID: 7555172498638518847}
   - component: {fileID: 7555172498638518846}
   - component: {fileID: 7555172498638518845}
@@ -3997,13 +3901,14 @@ GameObject:
   - component: {fileID: 7555172498638518837}
   - component: {fileID: 7555172498638518836}
   - component: {fileID: 7555172498638518835}
+  - component: {fileID: 3843877680433134211}
   m_Layer: 9
   m_Name: Enemy Advnced AI Archer
   m_TagString: Character
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &7555172498638518817
 Transform:
   m_ObjectHideFlags: 0
@@ -4021,7 +3926,6 @@ Transform:
   - {fileID: 7555172498861777930}
   - {fileID: 7555172499338720586}
   - {fileID: 7555172497862941932}
-  - {fileID: 7555172497938465071}
   - {fileID: 7555172497513585916}
   - {fileID: 7555172498479051849}
   - {fileID: 7555172498346337731}
@@ -4029,20 +3933,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!136 &7555172498638518816
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7555172498638518834}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  m_Radius: 0.359278
-  m_Height: 1.8957735
-  m_Direction: 1
-  m_Center: {x: 0.0013271272, y: 0.8656946, z: 0}
 --- !u!54 &7555172498638518847
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -4054,9 +3944,9 @@ Rigidbody:
   m_Mass: 1
   m_Drag: 0
   m_AngularDrag: 0.05
-  m_UseGravity: 1
-  m_IsKinematic: 0
-  m_Interpolate: 0
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 1
   m_Constraints: 112
   m_CollisionDetection: 0
 --- !u!95 &7555172498638518846
@@ -4128,11 +4018,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e9303a71cdfff2644b4eaba569a7fd1b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  characterCollider: {fileID: 7555172498638518816}
-  characterCollisionBlocker: {fileID: 7555172498199785897}
-  detectionLayer:
+  moveDirection: {x: 0, y: 0, z: 0}
+  groundLayer:
     serializedVersion: 2
-    m_Bits: 2048
+    m_Bits: 1
+  inAirTimer: 0
+  yVelocity: {x: 0, y: 0, z: 0}
+  groundedYVelocity: -20
+  fallStartYVelocity: -7
+  gravityForce: -20
+  groundCheckSphereRadius: 0.3
 --- !u!114 &7555172498638518842
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4145,6 +4040,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 246b31a95860fd84abcbf8c06e22b22a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  characterController: {fileID: 0}
+  characterLocomotionManager: {fileID: 0}
   characterAnimatorManager: {fileID: 7555172498638518845}
   characterWeaponSlotManager: {fileID: 7555172498638518844}
   characterStatsManager: {fileID: 7555172498638518841}
@@ -4179,7 +4076,6 @@ MonoBehaviour:
   isRotatingWithRootMotion: 0
   canRotate: 1
   isSprinting: 0
-  isInAir: 0
   isGrounded: 1
   isInteracting: 0
   currentState: {fileID: 7555172499447215018}
@@ -4189,6 +4085,7 @@ MonoBehaviour:
   enemyRigidbody: {fileID: 7555172498638518847}
   rotationSpeed: 15
   maximumAggroRadius: 5
+  stopAggroRadius: 20
   detectionRadius: 10
   minimumDetectionAngle: -50
   maximumDetectionAngle: 50
@@ -4502,6 +4399,24 @@ MonoBehaviour:
   TH_Charge_Attack_01: TH_Charging_Attack_Charge
   weaponArtShield: Parry
   currentAttackType: 0
+--- !u!143 &3843877680433134211
+CharacterController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7555172498638518834}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Height: 1.94
+  m_Radius: 0.26
+  m_SlopeLimit: 45
+  m_StepOffset: 0.3
+  m_SkinWidth: 0.08
+  m_MinMoveDistance: 0.001
+  m_Center: {x: 0, y: 0.87, z: 0}
 --- !u!1 &7555172498656233921
 GameObject:
   m_ObjectHideFlags: 0
@@ -6999,7 +6914,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 7555172498638518817}
-  m_RootOrder: 9
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &7555172499596169443
 GameObject:

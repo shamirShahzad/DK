@@ -92,6 +92,15 @@ namespace DK
         public void AwardSoulsOnDeath()
         {
         }
+        public void DisableCharacterController()
+        {
+            player.characterController.GetComponentInChildren<CapsuleCollider>().enabled = false;
+        }
+        public void EnableCharacterController()
+        {
+
+            player.characterController.GetComponentInChildren<CapsuleCollider>().enabled = true;
+        }
 
         
     }

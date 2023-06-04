@@ -63,10 +63,7 @@ namespace DK
             character.characterController.Move(yVelocity * Time.deltaTime);
         }
 
-        private void OnDrawGizmosSelected()
-        {
-            Gizmos.DrawSphere(transform.position, groundCheckSphereRadius);
-        }
+
 
     }
 }

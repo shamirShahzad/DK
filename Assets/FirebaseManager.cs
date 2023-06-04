@@ -56,6 +56,7 @@ namespace DK
         [Header("Firebase Database")]
         public CharacterSaveData userData = new CharacterSaveData();
         public ItemsSaveData itemData = new ItemsSaveData();
+        public List<LevelProgress> levelProgresses = new List<LevelProgress>();
         public DatabaseReference reference;
 
         [SerializeField] GameObject loadingPopup;
@@ -97,24 +98,34 @@ namespace DK
                 DontDestroyOnLoad(gameObject);
             }
 
-            FirebaseApp.CheckAndFixDependenciesAsync().ContinueWith(task =>
-            {
-                dependencyStatus = task.Result;
-                if (dependencyStatus == DependencyStatus.Available)
-                {
-                    InitializeFireBase();
-                }
-                else
-                {
-                    //networkErrorPopup.SetActive(true);
-                    Debug.LogError("Could Not Resolve all Firebase Dependencies:" + dependencyStatus);
-                }
-            });
+            
             
         }
         private void Start()
         {
+            StartCoroutine(FirebaseDependancyCoroutineCaller());
             InitializeAds();
+        }
+
+        private IEnumerator FirebaseDependancyCheck()
+        {
+            var task = FirebaseApp.CheckAndFixDependenciesAsync();
+            yield return new WaitUntil(predicate: () => task.IsCompleted);
+            dependencyStatus = task.Result;
+            if(dependencyStatus == DependencyStatus.Available)
+            {
+                InitializeFireBase();
+                Debug.Log("Dependancy OK");
+            }
+            else
+            {
+                Debug.LogError("Could not resolve all FireBase Dependencies" + dependencyStatus);
+            }
+        }
+
+        public IEnumerator FirebaseDependancyCoroutineCaller()
+        {
+            yield return StartCoroutine(FirebaseDependancyCheck());
         }
         public IEnumerator requestTime()
         {
@@ -146,9 +157,76 @@ namespace DK
         private void InitializeFireBase()
         {
             auth = FirebaseAuth.DefaultInstance;
+
+            StartCoroutine(CheckAutoLogin());
+            auth.StateChanged += AuthStateChanged;
+            AuthStateChanged(this, null);
+            
+
+
             reference = FirebaseDatabase.DefaultInstance.RootReference;
 
         }
+        private void AuthStateChanged(Object sender, System.EventArgs eventArgs)
+        {
+            if(auth.CurrentUser != User)
+            {
+                bool signedIn = User != auth.CurrentUser && auth.CurrentUser != null;
+
+                if(!signedIn && User != null)
+                {
+                    Debug.Log("Signed Out");
+                }
+
+                User = auth.CurrentUser;
+
+                if (signedIn)
+                {
+                    Debug.Log("Signed in");
+                }
+            }
+        }
+
+        private IEnumerator CheckAutoLogin()
+        {
+            yield return new WaitForEndOfFrame();
+            Debug.Log("Auto login Check");
+            if (User != null)
+            {
+                Debug.Log("We auto logging");
+                var reloadTask = User.ReloadAsync();
+
+                yield return new WaitUntil(predicate: () => reloadTask.IsCompleted);
+
+
+                
+                AutoLogin();
+            }
+            else
+            {
+                Debug.Log("We not auto logging");
+                titleLoginScene.SetActive(true);
+            }
+        }
+
+        private void AutoLogin()
+        {
+            if (User != null)
+            {
+                titleLoginScene.SetActive(false);
+                homeScene.SetActive(true);
+                GetDataFromDatabase();
+                GetItemDataCoroutineCaller();
+                GetRewardsCoroutineCaller();
+                GetLevelProgressDataCoroutineCaller();
+            }
+            else
+            {
+                homeScene.SetActive(false);
+                titleLoginScene.SetActive(true);
+            }
+        }
+
         public void LoginButton()
         {
             StartCoroutine(Login(emailLoginField.text, passwordLoginField.text));
@@ -229,6 +307,7 @@ namespace DK
                 GetDataFromDatabase();
                 GetItemDataCoroutineCaller();
                 GetRewardsCoroutineCaller();
+                GetLevelProgressDataCoroutineCaller();
 
             }
         }
@@ -545,7 +624,6 @@ namespace DK
                 userData.faithLevel = Convert.ToInt32(snapshot.Child("faithLevel").Value);
                 userData.soulPlayersPosseses = Convert.ToInt32(snapshot.Child("soulPlayersPosseses").Value);
                 userData.goldAmount = Convert.ToInt32(snapshot.Child("goldAmount").Value);
-                userData.levelsCompleted = Convert.ToInt32(snapshot.Child("levelsCompleted").Value);
             }
         }
 
@@ -776,6 +854,83 @@ namespace DK
         public void UpdateSouls(int soulPlayersPosseses)
         {
             StartCoroutine(UpdateSoulsCurrency(soulPlayersPosseses));
+        }
+
+        private IEnumerator SetLevelDataAtFirstOccurence()
+        {
+
+            levelProgresses.Add(new LevelProgress(-1,0));
+            string json = JsonUtility.ToJson(levelProgresses);
+            var taskSetLevelData = reference.Child("LevelProgress").Child(User.UserId).SetRawJsonValueAsync(json);
+            yield return new WaitUntil(predicate: () => taskSetLevelData.IsCompleted);
+
+            if (taskSetLevelData.Exception != null)
+            {
+                Debug.LogWarning(message: $"Tak failed with{taskSetLevelData.Exception}");
+            }
+            else
+            {
+                Debug.Log("LEvelProgress added");
+            }
+        }
+
+        public void LeveldataSetterCaller()
+        {
+            StartCoroutine(SetLevelDataAtFirstOccurence());
+        }
+
+
+        private IEnumerator SetLevelProgressData(int level,int stars)
+        {
+            levelProgresses.Add(new LevelProgress(level, stars));
+            string json = JsonUtility.ToJson(levelProgresses);
+            var taskSetLevelData = reference.Child("LevelProgress").Child(User.UserId).SetRawJsonValueAsync(json);
+            yield return new WaitUntil(predicate: () => taskSetLevelData.IsCompleted);
+
+            if (taskSetLevelData.Exception != null)
+            {
+                Debug.LogWarning(message: $"Task failed with{taskSetLevelData.Exception}");
+            }
+            else
+            {
+                Debug.Log("LevelProgress added");
+            }
+        }
+
+        public void SetLevelProgressCoroutineCaller(int level,int stars)
+        {
+            StartCoroutine(SetLevelProgressData(level, stars));
+        }
+        private IEnumerator GetLevelProgressData()
+        {
+            var taskGetData = reference.Child("LevelProgress").Child(User.UserId).GetValueAsync();
+
+            yield return new WaitUntil(predicate: () => taskGetData.IsCompleted);
+            if (taskGetData.Exception != null)
+            {
+                Debug.LogWarning(message: $"Task failed With {taskGetData.Exception}");
+            }
+            else if (taskGetData.Result.Value == null)
+            {
+                LeveldataSetterCaller();
+            }
+            else
+            {
+                DataSnapshot snapshot = taskGetData.Result;
+
+                LevelProgress temp = new LevelProgress();
+                foreach (DataSnapshot snap in snapshot.Children)
+                {
+                    temp =JsonUtility.FromJson<LevelProgress>(snap.GetRawJsonValue());
+                    levelProgresses.Add(temp);
+                }
+                
+            }
+        }
+
+        public void GetLevelProgressDataCoroutineCaller()
+        {
+            StartCoroutine(GetLevelProgressData());
         }
 
         public float randomNumber()

@@ -14,16 +14,18 @@ namespace DK
         {
             RewardedAdTimeString = PlayerPrefs.GetString("RewardedTime");
              long.TryParse(RewardedAdTimeString, out RewardedAdTime);
-            Debug.Log(RewardedAdTime);
             if (RewardedAdTime != 0)
             {
 
                 DateTime currentTime = DateTime.Now;
                 long currentTimeinSeconds = new DateTimeOffset(currentTime).ToUnixTimeSeconds();
-                Debug.Log(currentTimeinSeconds);
                 if(currentTimeinSeconds - RewardedAdTime >= oneHourInSeconds && FirebaseManager.instance.isInitialized)
                 {
                     rewardedAdsButton.LoadAd();
+                }
+                else if (currentTimeinSeconds - RewardedAdTime >=120 && !FirebaseManager.instance.isInitialized)
+                {
+                    FirebaseManager.instance.InitializeAds();
                 }
             }
 

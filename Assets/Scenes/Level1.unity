@@ -117,7 +117,7 @@ NavMeshSettings:
     cellSize: 0.120000005
     manualTileSize: 0
     tileSize: 256
-    accuratePlacement: 0
+    accuratePlacement: 1
     maxJobWorkers: 0
     preserveTilesOutsideBounds: 0
     debug:
@@ -27375,8 +27375,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 5.000002, y: 0.09791671, z: 4.455474}
-  m_Center: {x: -2.500001, y: 0.045907862, z: 2.227737}
+  m_Size: {x: 5.000002, y: 0.09791671, z: 4.9916744}
+  m_Center: {x: -2.500001, y: 0.045907862, z: 2.4958372}
 --- !u!65 &65793550019624505
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -27882,8 +27882,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 5.000002, y: 0.09791671, z: 4.46957}
-  m_Center: {x: -2.500001, y: 0.045907862, z: 2.234785}
+  m_Size: {x: 5.000002, y: 0.09791671, z: 5.028167}
+  m_Center: {x: -2.500001, y: 0.045907862, z: 2.5140834}
 --- !u!65 &65793551541815794
 BoxCollider:
   m_ObjectHideFlags: 0
