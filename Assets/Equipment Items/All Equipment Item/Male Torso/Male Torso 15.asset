@@ -25,4 +25,4 @@ MonoBehaviour:
   goldRequiredToPurchase: 1500
   torsoModelName: Male_Torso_16
   upperLeftArmModelName: Chr_ArmUpperLeft_Male_07
-  upperRightArmModelName: Chr_ArmUpperLeft_Male_07
+  upperRightArmModelName: Chr_ArmUpperRight_Male_07

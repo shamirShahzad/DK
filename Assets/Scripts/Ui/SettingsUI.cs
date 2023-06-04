@@ -17,13 +17,13 @@ namespace DK
 
         private void OnEnable()
         {
-            sliderFX.value = PlayerPrefs.GetFloat("FXVolume");
-            sliderMusic.value = PlayerPrefs.GetFloat("MusicVolume");
+            sliderFX.value = PlayerPrefs.GetFloat("FXVolume" + FirebaseManager.instance.User.DisplayName);
+            sliderMusic.value = PlayerPrefs.GetFloat("MusicVolume" + FirebaseManager.instance.User.DisplayName);
         }
 
         public void onValuesChangedFX()
         {
-            PlayerPrefs.SetFloat("FXVolume", sliderFX.value);
+            PlayerPrefs.SetFloat("FXVolume" + FirebaseManager.instance.User.DisplayName, sliderFX.value);
 
             if (sliderFX.value <= 0)
             {
@@ -38,7 +38,7 @@ namespace DK
         }
         public void onValuesChangedMusic()
         {
-            PlayerPrefs.SetFloat("MusicVolume", sliderMusic.value);
+            PlayerPrefs.SetFloat("MusicVolume" + FirebaseManager.instance.User.DisplayName, sliderMusic.value);
             if (sliderMusic.value <= 0)
             {
                 musicMuteIcon.SetActive(true);

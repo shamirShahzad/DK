@@ -42,10 +42,86 @@ namespace DK
 
         private void OnEnable()
         {
+            SetAllPurchasedItems();
             goldAmountText.text = FirebaseManager.instance.userData.goldAmount.ToString();
             onHelmetClick();
             lineFocuses[0].SetActive(true);
+            
         }
+
+        private void SetArmPurchased()
+        {
+            if (FirebaseManager.instance.itemData.armsPurchased.Count > 0)
+            {
+                for (int i = 0; i < FirebaseManager.instance.itemData.armsPurchased.Count; i++)
+                {
+                    armsEquipmentList[FirebaseManager.instance.itemData.armsPurchased[i]].isPurchased = true;
+                }
+            }
+        }
+        private void SetTorsoPurchased()
+        {
+            if (FirebaseManager.instance.itemData.torsoPurchased.Count > 0)
+            {
+                for (int i = 0; i < FirebaseManager.instance.itemData.torsoPurchased.Count; i++)
+                {
+                    torsoEquipmentList[FirebaseManager.instance.itemData.torsoPurchased[i]].isPurchased = true;
+                }
+            }
+        }
+        private void SetHelmetPurchased()
+        {
+            if (FirebaseManager.instance.itemData.helmetPurchased.Count > 0)
+            {
+                for (int i = 0; i < FirebaseManager.instance.itemData.helmetPurchased.Count; i++)
+                {
+                    helmetEquipmentList[FirebaseManager.instance.itemData.helmetPurchased[i]].isPurchased = true;
+                }
+            }
+        }
+        private void SetLegsPurchased()
+        {
+            if (FirebaseManager.instance.itemData.legsPurchased.Count > 0)
+            {
+                for (int i = 0; i < FirebaseManager.instance.itemData.legsPurchased.Count; i++)
+                {
+                    legEquipmentList[FirebaseManager.instance.itemData.legsPurchased[i]].isPurchased = true;
+                }
+            }
+        }
+
+        private void SetLeftPurchased()
+        {
+            if (FirebaseManager.instance.itemData.leftWeaponsPurchased.Count > 0)
+            {
+                for (int i = 0; i < FirebaseManager.instance.itemData.leftWeaponsPurchased.Count; i++)
+                {
+                    leftWeapons[FirebaseManager.instance.itemData.leftWeaponsPurchased[i]].isPurchased = true;
+                }
+            }
+        }
+
+        private void SetRightPurchased()
+        {
+            if (FirebaseManager.instance.itemData.rightWeaponsPurchased.Count > 0)
+            {
+                for (int i = 0; i < FirebaseManager.instance.itemData.rightWeaponsPurchased.Count; i++)
+                {
+                    rightWeapons[FirebaseManager.instance.itemData.rightWeaponsPurchased[i]].isPurchased = true;
+                }
+            }
+        }
+
+        public void SetAllPurchasedItems()
+        {
+            SetHelmetPurchased();
+            SetArmPurchased();
+            SetTorsoPurchased();
+            SetLegsPurchased();
+            SetLeftPurchased();
+            SetRightPurchased();
+        }
+
         public void onHelmetClick()
         {
             SetFlagsForEquipment(true, false, false, false, false, false);

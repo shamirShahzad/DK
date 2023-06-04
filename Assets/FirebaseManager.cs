@@ -53,6 +53,7 @@ namespace DK
         [Header("Scenes Panels")]
         public GameObject homeScene;
         public GameObject titleLoginScene;
+        public GameObject titleTaptoStart;
         [Header("Firebase Database")]
         public CharacterSaveData userData = new CharacterSaveData();
         public ItemsSaveData itemData = new ItemsSaveData();
@@ -103,8 +104,9 @@ namespace DK
         }
         private void Start()
         {
-            StartCoroutine(FirebaseDependancyCoroutineCaller());
             InitializeAds();
+            StartCoroutine(FirebaseDependancyCoroutineCaller());
+            
         }
 
         private IEnumerator FirebaseDependancyCheck()
@@ -209,16 +211,22 @@ namespace DK
             }
         }
 
+        public void onTapStart()
+        {
+            titleTaptoStart.SetActive(false);
+            homeScene.SetActive(true);
+        }
         private void AutoLogin()
         {
             if (User != null)
             {
-                titleLoginScene.SetActive(false);
-                homeScene.SetActive(true);
                 GetDataFromDatabase();
                 GetItemDataCoroutineCaller();
                 GetRewardsCoroutineCaller();
                 GetLevelProgressDataCoroutineCaller();
+                titleLoginScene.SetActive(false);
+                titleTaptoStart.SetActive(true);
+                usernameTextinHomeScene.text = User.DisplayName;
             }
             else
             {

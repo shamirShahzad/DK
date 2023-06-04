@@ -21,7 +21,7 @@ MonoBehaviour:
   lightningDefense: 0
   darkDefense: 0
   indexOfItemInMainList: 0
-  isPurchased: 1
+  isPurchased: 0
   goldRequiredToPurchase: 0
   leftHandModelName: Chr_HandLeft_Male_00
   rightHandModelName: Chr_HandRight_Male_00

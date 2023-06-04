@@ -25,5 +25,5 @@ MonoBehaviour:
   goldRequiredToPurchase: 790
   leftHandModelName: Chr_HandLeft_Male_11
   rightHandModelName: Chr_HandRight_Male_11
-  lowerLeftArmModelName: Chr_LowerArmLeft_Male_12
-  lowerRightArmModelName: Chr_LowerArmRight_Male_12
+  lowerLeftArmModelName: Chr_ArmLowerLeft_Male_12
+  lowerRightArmModelName: Chr_ArmLowerRight_Male_12

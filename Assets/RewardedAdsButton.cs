@@ -65,7 +65,7 @@ namespace DK {
                 Debug.Log("Unity Ads Rewarded Ad Completed");
                 DateTime time = DateTime.Now;
                 long timeMillisecondsForReward = new DateTimeOffset(time).ToUnixTimeSeconds();
-                PlayerPrefs.SetString("RewardedTime", timeMillisecondsForReward.ToString());
+                PlayerPrefs.SetString("RewardedTime"+FirebaseManager.instance.User.DisplayName, timeMillisecondsForReward.ToString());
                 popupRewards.SetActive(true);
 
             }

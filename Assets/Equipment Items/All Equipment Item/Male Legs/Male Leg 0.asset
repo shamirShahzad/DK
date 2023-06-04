@@ -21,7 +21,7 @@ MonoBehaviour:
   lightningDefense: 0
   darkDefense: 0
   indexOfItemInMainList: 0
-  isPurchased: 1
+  isPurchased: 0
   goldRequiredToPurchase: 0
   hipModelName: Male_Hips_0
   leftLegModelName: Male_LeftLeg_0

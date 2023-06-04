@@ -22,7 +22,7 @@ namespace DK
         {
             audioSource = GetComponent<AudioSource>();
             character = GetComponent<CharacterManager>();
-            soundVolume = PlayerPrefs.GetFloat("FXVolume");
+            soundVolume = PlayerPrefs.GetFloat("FXVolume" + FirebaseManager.instance.User.DisplayName);
         }
 
         public virtual void PlayRandomDamageSoundEffect()

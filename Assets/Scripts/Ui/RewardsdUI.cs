@@ -39,9 +39,9 @@ namespace DK
                 amountTextList[i].text = rewardList[i].amount.ToString();
             }
 
-            if (PlayerPrefs.GetString("ClaimedTime") != "")
+            if (PlayerPrefs.GetString("ClaimedTime"+ FirebaseManager.instance.User.DisplayName) != "")
             {
-                lastClaimedTime = long.Parse(PlayerPrefs.GetString("ClaimedTime"));
+                lastClaimedTime = long.Parse(PlayerPrefs.GetString("ClaimedTime"+ FirebaseManager.instance.User.DisplayName));
                 dayMilliseconds = 86400000;
             }
             else
@@ -57,9 +57,9 @@ namespace DK
         }
         public void onClaimClick()
         {
-            if (PlayerPrefs.GetString("ClaimedTime") != "")
+            if (PlayerPrefs.GetString("ClaimedTime" + FirebaseManager.instance.User.DisplayName) != "")
             {
-                lastClaimedTime = long.Parse(PlayerPrefs.GetString("ClaimedTime"));
+                lastClaimedTime = long.Parse(PlayerPrefs.GetString("ClaimedTime"+FirebaseManager.instance.User.DisplayName));
                 dayMilliseconds = 86400000;
             }
             
@@ -97,7 +97,7 @@ namespace DK
                 FirebaseManager.instance.SaveRewardsCoroutineCallerOverride();
 
                 lastClaimedTime = timer;
-                PlayerPrefs.SetString("ClaimedTime", lastClaimedTime.ToString());
+                PlayerPrefs.SetString("ClaimedTime"+FirebaseManager.instance.User.DisplayName, lastClaimedTime.ToString());
                 PlayerPrefs.Save();
             }
             else

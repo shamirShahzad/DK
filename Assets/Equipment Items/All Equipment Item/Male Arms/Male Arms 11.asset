@@ -25,5 +25,5 @@ MonoBehaviour:
   goldRequiredToPurchase: 320
   leftHandModelName: Chr_HandLeft_Male_08
   rightHandModelName: Chr_HandRight_Male_08
-  lowerLeftArmModelName: Chr_LowerArmRight_Male_15
-  lowerRightArmModelName: Chr_LowerArmRight_Male_15
+  lowerLeftArmModelName: Chr_ArmLowerLeft_Male_15
+  lowerRightArmModelName: Chr_ArmLowerRight_Male_15

@@ -21,6 +21,6 @@ MonoBehaviour:
   lightningDefense: 1
   darkDefense: 1
   indexOfItemInMainList: 4
-  isPurchased: 1
+  isPurchased: 0
   goldRequiredToPurchase: 450
   helmetModelName: Male_Helmet_4
