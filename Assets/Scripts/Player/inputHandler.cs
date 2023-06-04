@@ -33,7 +33,6 @@ namespace DK
         public bool twoHandFlag;
         public bool fireFlag;
         public bool rollFlag;
-        public bool sprintFlag;
         public bool comboFlag;
         public float rollInputTimer;
 
@@ -170,17 +169,17 @@ namespace DK
                 if (player.playerStatsManager.currentStamina<=0)
                 {
                     b_input = false; 
-                    sprintFlag = false;           
+                    player.isSprinting = false;
                 }
                 if (moveAmount > 0.5 && player.playerStatsManager.currentStamina > 0)
                 {
-                    sprintFlag = true;
+                    player.isSprinting = true;
                 }
 
             }
             else
             {
-                sprintFlag = false;
+                player.isSprinting = false;
                 if (rollInputTimer >0  && rollInputTimer<0.5f)
                 {
                     rollFlag = true;
@@ -295,7 +294,7 @@ namespace DK
 
         private void HandleHoldLBInput()
         {
-            if (player.isInAir || player.isSprinting ||
+            if (!player.isGrounded || player.isSprinting ||
                 player.isFiringSpell)
             {
                 lb_input = false;

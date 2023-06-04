@@ -76,7 +76,7 @@ namespace DK
 
                 enemy.navMeshAgent.enabled = true;
                 enemy.navMeshAgent.SetDestination(enemy.currentTarget.transform.position);
-                 float rotoationToApplyToDynamicEnemy;
+                float rotoationToApplyToDynamicEnemy;
                 if (enemy.navMeshAgent.desiredVelocity.magnitude > 0)
                 {
                     rotoationToApplyToDynamicEnemy = Quaternion.Angle(enemy.transform.rotation,
@@ -86,6 +86,9 @@ namespace DK
                 {
                     rotoationToApplyToDynamicEnemy = float.Epsilon;
                 }
+
+
+
                 if (enemy.distanceFromTarget > 5)
                 {
                     enemy.navMeshAgent.angularSpeed = 500f;

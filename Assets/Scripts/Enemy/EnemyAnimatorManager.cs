@@ -13,22 +13,17 @@ namespace DK
             base.Awake();
             enemy = GetComponent<EnemyManager>();
         }
-        private void OnAnimatorMove()
+        protected override void OnAnimatorMove()
         {
-            float delta = Time.deltaTime;
-            enemy.enemyRigidbody.drag = 0;
-            Vector3 deltaPosition = enemy.animator.deltaPosition;
-            deltaPosition.y = 0;
-            Vector3 velocity = deltaPosition / delta;
-            if (Time.timeScale == 1)
-            {
-                enemy.enemyRigidbody.velocity = velocity /* * enemyLocomotionManager.moveSpeed*/;
-            }
-
+            
+            Vector3 velocity = enemy.animator.deltaPosition;
+            enemy.characterController.Move(velocity);
+            
             if (enemy.isRotatingWithRootMotion)
             {
                 enemy.transform.rotation *= enemy.animator.deltaRotation;
             }
+            
         }
 
 

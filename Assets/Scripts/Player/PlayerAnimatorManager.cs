@@ -93,20 +93,6 @@ namespace DK
         {
         }
 
-        private void OnAnimatorMove()
-        {
-            if (character.isInteracting == false)
-                return;
-            float delta = Time.deltaTime;
-            player.playerLocomotion.rigidbody.drag = 0;
-            Vector3 deltaPositions = player.animator.deltaPosition;
-            deltaPositions.y = 0;
-            Vector3 velocity = deltaPositions / delta;
-            if (Time.timeScale == 1)
-            {
-                player.playerLocomotion.rigidbody.velocity = velocity;
-            }
-
-        }
+        
     }
 }

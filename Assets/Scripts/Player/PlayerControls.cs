@@ -155,8 +155,8 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": """",
-                    ""id"": ""a80fb5f4-de46-4da2-8de6-ad571144155f"",
-                    ""path"": ""<Touchscreen>/delta"",
+                    ""id"": ""7082da8d-ec34-47a9-bc48-fcc1457e334c"",
+                    ""path"": ""<AndroidJoystick>/stick"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",

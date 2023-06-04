@@ -138,7 +138,7 @@ Transform:
   - {fileID: 1975350685}
   - {fileID: 271809539}
   m_Father: {fileID: 9000053292317615552}
-  m_RootOrder: 8
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1106178719
 MonoBehaviour:
@@ -5822,7 +5822,7 @@ RectTransform:
   m_Children:
   - {fileID: 9000053292083880269}
   m_Father: {fileID: 9000053292317615552}
-  m_RootOrder: 7
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -5952,7 +5952,7 @@ Transform:
   - {fileID: 9000053291220653394}
   - {fileID: 9000053291243732476}
   m_Father: {fileID: 9000053292317615552}
-  m_RootOrder: 6
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &9000053291340928876
 GameObject:
@@ -6008,69 +6008,6 @@ NavMeshAgent:
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
---- !u!1 &9000053291516885504
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 9000053291516885505}
-  - component: {fileID: 9000053291516885507}
-  - component: {fileID: 9000053291516885506}
-  m_Layer: 10
-  m_Name: Character Collider Blocker
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &9000053291516885505
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9000053291516885504}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 9000053292072862908}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!54 &9000053291516885507
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9000053291516885504}
-  serializedVersion: 2
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_UseGravity: 0
-  m_IsKinematic: 1
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
---- !u!136 &9000053291516885506
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9000053291516885504}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  m_Radius: 0.5
-  m_Height: 1.8644971
-  m_Direction: 1
-  m_Center: {x: 0, y: 0.8426004, z: 0}
 --- !u!1 &9000053291607954542
 GameObject:
   m_ObjectHideFlags: 0
@@ -6248,38 +6185,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   stopState: {fileID: 1790371409}
   combatStanceState: {fileID: 9000053290621313865}
---- !u!1 &9000053292072862907
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 9000053292072862908}
-  m_Layer: 9
-  m_Name: Combat Collider
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &9000053292072862908
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9000053292072862907}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 9000053291516885505}
-  m_Father: {fileID: 9000053292317615552}
-  m_RootOrder: 5
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &9000053292083880268
 GameObject:
   m_ObjectHideFlags: 0
@@ -6446,8 +6351,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 9000053292317615552}
-  - component: {fileID: 9000053292317615567}
-  - component: {fileID: 9000053292317615566}
   - component: {fileID: 6021831069042900677}
   - component: {fileID: 6021831069042900679}
   - component: {fileID: 6021831069042900678}
@@ -6460,6 +6363,8 @@ GameObject:
   - component: {fileID: 203065885202228778}
   - component: {fileID: 483044554}
   - component: {fileID: 3400318472958984295}
+  - component: {fileID: 3846842075632884863}
+  - component: {fileID: 2965048601718374137}
   m_Layer: 9
   m_Name: New Enemy
   m_TagString: Character
@@ -6484,43 +6389,12 @@ Transform:
   - {fileID: 9000053292233499978}
   - {fileID: 9000053291340928877}
   - {fileID: 9000053291232228946}
-  - {fileID: 9000053292072862908}
   - {fileID: 9000053291332774269}
   - {fileID: 9000053291239317975}
   - {fileID: 1106178720}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!136 &9000053292317615567
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9000053292317615562}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  m_Radius: 0.359278
-  m_Height: 1.8957735
-  m_Direction: 1
-  m_Center: {x: 0.0013271272, y: 0.8656946, z: 0}
---- !u!54 &9000053292317615566
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9000053292317615562}
-  serializedVersion: 2
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_UseGravity: 1
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 112
-  m_CollisionDetection: 0
 --- !u!95 &6021831069042900677
 Animator:
   serializedVersion: 5
@@ -6590,11 +6464,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e9303a71cdfff2644b4eaba569a7fd1b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  characterCollider: {fileID: 9000053292317615567}
-  characterCollisionBlocker: {fileID: 9000053291516885506}
-  detectionLayer:
+  moveDirection: {x: 0, y: 0, z: 0}
+  groundLayer:
     serializedVersion: 2
-    m_Bits: 512
+    m_Bits: 1
+  inAirTimer: 0
+  yVelocity: {x: 0, y: 0, z: 0}
+  groundedYVelocity: -20
+  fallStartYVelocity: -7
+  gravityForce: -20
+  groundCheckSphereRadius: 0.3
 --- !u!114 &9000053292317615563
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6607,6 +6486,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 246b31a95860fd84abcbf8c06e22b22a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  characterController: {fileID: 0}
+  characterLocomotionManager: {fileID: 0}
   characterAnimatorManager: {fileID: 6021831069042900679}
   characterWeaponSlotManager: {fileID: 6021831069042900678}
   characterStatsManager: {fileID: 4413020848826425741}
@@ -6648,7 +6529,7 @@ MonoBehaviour:
   isPerformingAction: 0
   currentTarget: {fileID: 0}
   navMeshAgent: {fileID: 9000053291340928878}
-  enemyRigidbody: {fileID: 9000053292317615566}
+  enemyRigidbody: {fileID: 0}
   rotationSpeed: 15
   maximumAggroRadius: 5
   stopAggroRadius: 15
@@ -6965,3 +6846,37 @@ MonoBehaviour:
   TH_Charge_Attack_01: TH_Charging_Attack_Charge
   weaponArtShield: Parry
   currentAttackType: 0
+--- !u!143 &3846842075632884863
+CharacterController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9000053292317615562}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Height: 1.94
+  m_Radius: 0.26
+  m_SlopeLimit: 45
+  m_StepOffset: 0.3
+  m_SkinWidth: 0.08
+  m_MinMoveDistance: 0.001
+  m_Center: {x: 0, y: 0.87, z: 0}
+--- !u!54 &2965048601718374137
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9000053292317615562}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 1
+  m_Constraints: 112
+  m_CollisionDetection: 0

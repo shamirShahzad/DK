@@ -22,6 +22,8 @@ namespace DK
         public FocusPointBar focusPointBar;
         private int goldAmountPlayerHas;
 
+        private float sprintingTimer = 0;
+
         protected override void Awake()
         {
             base.Awake();
@@ -147,10 +149,29 @@ namespace DK
             currentStamina = currentStamina - damage;
             staminaBar.SetcurrentStamina(currentStamina);
         }
+        public void DeductSprintingStamina(float damage)
+        {
+            if (player.isSprinting)
+            {
+                sprintingTimer += Time.deltaTime;
+                if (sprintingTimer > 0.1f)
+                {
+                    sprintingTimer = 0;
+                    currentStamina -= damage;
+                    staminaBar.SetcurrentStamina(currentStamina);
+                }
+            }
+            else
+            {
+                sprintingTimer = 0;
+            }
+            
+            
+        }
 
         public void RegenarateStamina()
         {
-            if (player.isInteracting)
+            if (player.isInteracting || player.isSprinting)
             {
                 staminaRegenerationTimer = 0;
             }

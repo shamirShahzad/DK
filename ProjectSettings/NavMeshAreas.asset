@@ -76,7 +76,7 @@ NavMeshProjectSettings:
     agentRadius: 0.2922526
     agentHeight: 1.932661
     agentSlope: 45
-    agentClimb: 0.48
+    agentClimb: 0.78
     ledgeDropHeight: 0
     maxJumpAcrossDistance: 0
     minRegionArea: 2

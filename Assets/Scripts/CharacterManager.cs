@@ -5,6 +5,8 @@ namespace DK
 {
     public class CharacterManager : MonoBehaviour
     {
+        public CharacterController characterController;
+        public CharacterLocomotionManager characterLocomotionManager;
         public CharacterAnimatorManager characterAnimatorManager;
         public CharacterWeaponSlotManager characterWeaponSlotManager;
         public CharacterStatsManager characterStatsManager;
@@ -52,13 +54,14 @@ namespace DK
         public bool isRotatingWithRootMotion;
         public bool canRotate;
         public bool isSprinting;
-        public bool isInAir;
         public bool isGrounded;
         public bool isInteracting;
 
 
         protected virtual void Awake()
         {
+            characterController = GetComponent<CharacterController>();
+            characterLocomotionManager = GetComponent<CharacterLocomotionManager>();
             characterAnimatorManager = GetComponent<CharacterAnimatorManager>();
             characterWeaponSlotManager = GetComponent<CharacterWeaponSlotManager>();
             characterStatsManager = GetComponent<CharacterStatsManager>();

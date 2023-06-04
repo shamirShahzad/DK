@@ -23,7 +23,8 @@ namespace DK
 
         public float leftAndRightLookSpeed = 250f;
         public float leftAndRightAimingLookSpeed = 25f;
-        public float followspeed = 1f;
+        public float groundedFollowSpeed = 1f;
+        public float aerialFollowSpeed = 2f;
         public float upAndDownLookSpeed = 250f;
         public float upAndDownAimingLookSpeed = 25f;
 
@@ -71,13 +72,22 @@ namespace DK
         {
             if (playerManager.isAiming)
             {
-                Vector3 targetPosition = Vector3.SmoothDamp(transform.position, targetTransformWhileAiming.position, ref cameraFollowVelocity, Time.deltaTime * followspeed);
+                Vector3 targetPosition = Vector3.SmoothDamp(transform.position, targetTransformWhileAiming.position, ref cameraFollowVelocity, groundedFollowSpeed * Time.deltaTime);
                 transform.position = targetPosition;
             }
             else
             {
-                Vector3 targetPosition = Vector3.SmoothDamp(transform.position, targetTransform.position, ref cameraFollowVelocity, Time.deltaTime * followspeed);
-                transform.position = targetPosition;
+                if (playerManager.isGrounded)
+                {
+                    Vector3 targetPosition = Vector3.SmoothDamp(transform.position, targetTransform.position, ref cameraFollowVelocity, groundedFollowSpeed * Time.deltaTime);
+                    transform.position = targetPosition;
+                }
+                else
+                {
+                    Vector3 targetPosition = Vector3.SmoothDamp(transform.position, targetTransform.position, ref cameraFollowVelocity, aerialFollowSpeed * Time.deltaTime);
+                    transform.position = targetPosition;
+                }
+                
             }
             HandleCameraCollisions();
            

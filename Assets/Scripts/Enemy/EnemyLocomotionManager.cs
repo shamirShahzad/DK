@@ -4,23 +4,9 @@ using UnityEngine;
 using UnityEngine.AI;
 namespace DK
 {
-    public class EnemyLocomotionManager : MonoBehaviour
+    public class EnemyLocomotionManager : CharacterLocomotionManager
     {
-        EnemyManager enemy;
+       
 
-        public CapsuleCollider characterCollider;
-        public CapsuleCollider characterCollisionBlocker;
-
-        public LayerMask detectionLayer;
-
-        private void Awake()
-        {
-            enemy = GetComponent<EnemyManager>();
-           
-        }
-        private void Start()
-        {
-            Physics.IgnoreCollision(characterCollider, characterCollisionBlocker, true);
-        }
     }
 }

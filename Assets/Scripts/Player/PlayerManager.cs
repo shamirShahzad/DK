@@ -52,7 +52,6 @@ namespace DK
             isHoldingArrow = animator.GetBool("isHoldingArrow");
             isPerformingFullyChargedAttack = animator.GetBool("isPerformingFullyChargedAttack");
             animator.SetBool("isBlocking",isBlocking);
-            animator.SetBool("isInAir", isInAir);
             animator.SetBool("isTwoHanding", isTwoHanding);
             animator.SetBool("isDead", isDead);
             inputHandler.TickInput();
@@ -61,9 +60,12 @@ namespace DK
 
             playerStatsManager.RegenarateStamina();
             playerStatsManager.RegenarateFocus();
+            playerLocomotion.HandleGroundedMovement();
+            playerLocomotion.HandleRotation();
+            CheckForInteractable();
             if (cameraHandler == null)
                 return;
-            CheckForInteractable();
+            
 
         }
 
@@ -72,9 +74,7 @@ namespace DK
             if (playerLocomotion == null || playerLocomotion.enabled == false)
                 return;
             base.FixedUpdate();
-            playerLocomotion.HandleFalling(playerLocomotion.moveDirection);
-            playerLocomotion.HandleMovement();
-            playerLocomotion.HandleRotation();
+            
             playerFXManager.HAndleAllBuildupEffects();
             
            
@@ -91,13 +91,6 @@ namespace DK
                 cameraHandler.FollowTarget();
                 cameraHandler.HandleCameraRotation();
             }
-
-            if (isInAir)
-            {
-                playerLocomotion.inAirTimer = playerLocomotion.inAirTimer + Time.deltaTime;
-            }
-
-
         }
 
         public void OpenChestInteraction(Transform playerStandsHereWhenOpeningChest)
