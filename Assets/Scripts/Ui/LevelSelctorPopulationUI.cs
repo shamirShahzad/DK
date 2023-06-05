@@ -8,7 +8,7 @@ namespace DK
     public class LevelSelctorPopulationUI : MonoBehaviour
     {
         [SerializeField]List<LevelObject> levels= new();
-        [SerializeField] List<LevelProgress> levelProgressDataBase = new();
+        [SerializeField]LevelProgress levelProgressDataBase = new();
         [SerializeField] Transform contentTransform;
         [SerializeField] GameObject levelPrefab;
         GameObject instantiatedObject;
@@ -16,21 +16,13 @@ namespace DK
         private void OnEnable()
         {
             DestroyAllObjectsAlreadyPresentInParent();
-            levelProgressDataBase = FirebaseManager.instance.levelProgresses;
+            levelProgressDataBase = FirebaseManager.instance.levelProgress;
             SetLevelsCompleted();
             FillContents();
         }
 
         private void SetLevelsCompleted()
         {
-            if (levelProgressDataBase[0].level >= 0)
-            {
-                for(int  i = 0; i < levelProgressDataBase.Count; i++)
-                {
-                    levels[levelProgressDataBase[i].level - 1].isCompleted = true;
-                    levels[levelProgressDataBase[i].level - 1].numStars = levelProgressDataBase[i].numberOfStars;
-                }
-            }
         }
 
         private void FillContents()

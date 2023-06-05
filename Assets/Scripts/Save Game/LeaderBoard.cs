@@ -4,7 +4,7 @@ using UnityEngine;
 using System;
 namespace DK
 {
-    [System.Serializable]
+    [Serializable]
     public class LeaderBoard
     {
         public string uid;
