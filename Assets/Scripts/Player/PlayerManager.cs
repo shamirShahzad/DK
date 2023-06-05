@@ -96,7 +96,6 @@ namespace DK
 
         public void OpenChestInteraction(Transform playerStandsHereWhenOpeningChest)
         {
-            playerLocomotion.rigidbody.velocity = Vector3.zero;
             transform.position = playerStandsHereWhenOpeningChest.transform.position;
             playerAnimatorManager.PlayTargetAnimation("Open Chest", true);
             objectiveManager.chestsFound++;

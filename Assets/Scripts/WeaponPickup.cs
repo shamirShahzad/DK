@@ -18,17 +18,10 @@ namespace DK
 
         private void PickUpItem(PlayerManager playerManager)
         {
-            PlayerInventoryManager playerInventory;
-            PlayerLocomotionManager playerLocomotion;
-            PlayerAnimatorManager animatorHandler;
-            playerInventory = playerManager.GetComponent<PlayerInventoryManager>();
-            playerLocomotion = playerManager.GetComponent<PlayerLocomotionManager>();
-            animatorHandler = playerManager.GetComponentInChildren<PlayerAnimatorManager>();
+            
+            playerManager.playerAnimatorManager.PlayTargetAnimation("Pick Up Item",true);
 
-            playerLocomotion.rigidbody.velocity = Vector3.zero;
-            animatorHandler.PlayTargetAnimation("Pick Up Item",true);
-
-            playerInventory.weaponsInventory.Add(weapon);
+            playerManager.playerInventoryManager.weaponsInventory.Add(weapon);
             playerManager.itemInteractableGameobject.GetComponentInChildren<TextMeshProUGUI>().text = weapon.itemName;
             playerManager.itemInteractableGameobject.SetActive(true);
 

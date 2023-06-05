@@ -1,22 +1,11 @@
+using System.Collections;
+using System.Collections.Generic;
+using System;
 namespace DK
 {
-    [System.Serializable]
+    [Serializable]
     public class LevelProgress
     {
-        public int level;
-        public int numberOfStars;
-        public bool isCompleted;
-
-
-        public LevelProgress(int level,int stars)
-        {
-            this.level = level;
-            this.numberOfStars = stars;
-        }
-
-        public LevelProgress()
-        {
-
-        }
+        public List<SingleLevelProgress> playerLevelProgress= new List<SingleLevelProgress>();
     }
 }
