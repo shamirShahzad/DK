@@ -546,13 +546,19 @@ namespace DK
             StartCoroutine(SaveLevelProgressFirstOccurence());
         }
 
-        private IEnumerator SaveLevelProgress(int level,int stars,bool isCompleted)
+        private IEnumerator SaveLevelProgress(int index,int level,int stars,bool isCompleted)
         {
             singleLevelProgress.level = level;
             singleLevelProgress.numberOfStars = stars;
             singleLevelProgress.isCompleted = isCompleted;
-
-            levelProgress.playerLevelProgress.Add(singleLevelProgress);
+            try
+            {
+                levelProgress.playerLevelProgress[index] = singleLevelProgress;
+            }
+            catch(IndexOutOfRangeException)
+            {
+                levelProgress.playerLevelProgress.Add(singleLevelProgress);
+            }
 
             string json = JsonUtility.ToJson(levelProgress);
             var task = reference.Child("LevelProgress").Child(User.UserId).SetRawJsonValueAsync(json);
@@ -570,9 +576,9 @@ namespace DK
 
         }
 
-        public void SaveLevelProgressCoroutineCaller(int level,int stars,bool isCompleted)
+        public void SaveLevelProgressCoroutineCaller(int index,int level,int stars,bool isCompleted)
         {
-            StartCoroutine(SaveLevelProgress(level, stars, isCompleted));
+            StartCoroutine(SaveLevelProgress(index,level, stars, isCompleted));
         }
 
         private IEnumerator GetLevelProgressData()

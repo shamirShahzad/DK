@@ -30,10 +30,14 @@ namespace DK
         List<WeaponItem> rightWeapons = new List<WeaponItem>();
         [SerializeField]
         List<WeaponItem> leftWeapons = new List<WeaponItem>();
+        [Header("Levels")]
+        [SerializeField]
+        List<LevelObject> levels = new List<LevelObject>();
 
         private void OnEnable()
         {
             SetAllToUnpurchased();
+            SetAllLockedAndNotCompleted();
             goldText.text = FirebaseManager.instance.userData.goldAmount.ToString();
             soulsText.text = FirebaseManager.instance.userData.soulPlayersPosseses.ToString();
             RewardedAdTimeString = PlayerPrefs.GetString("RewardedTime"+FirebaseManager.instance.User.DisplayName);
@@ -83,7 +87,24 @@ namespace DK
             }
         }
 
-
+        private void SetAllLockedAndNotCompleted()
+        {
+            for(int i = 0; i < levels.Count; i++)
+            {
+                if(i == 0)
+                {
+                    levels[i].isCompleted = false;
+                    levels[i].isLocked = false;
+                    levels[i].numStars = 0;
+                }
+                else
+                {
+                    levels[i].isCompleted = false;
+                    levels[i].isLocked = true;
+                    levels[i].numStars = 0;
+                }
+            }
+        }
 
     }
 }

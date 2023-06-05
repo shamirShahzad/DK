@@ -8,7 +8,6 @@ namespace DK
     public class LevelSelctorPopulationUI : MonoBehaviour
     {
         [SerializeField]List<LevelObject> levels= new();
-        [SerializeField]LevelProgress levelProgressDataBase = new();
         [SerializeField] Transform contentTransform;
         [SerializeField] GameObject levelPrefab;
         GameObject instantiatedObject;
@@ -16,13 +15,29 @@ namespace DK
         private void OnEnable()
         {
             DestroyAllObjectsAlreadyPresentInParent();
-            levelProgressDataBase = FirebaseManager.instance.levelProgress;
-            SetLevelsCompleted();
+            SetCompletedLevels();
+            UnlockLevelsBasedOnPreviousCompleted();
             FillContents();
         }
 
-        private void SetLevelsCompleted()
+        private void UnlockLevelsBasedOnPreviousCompleted()
         {
+            for(int i = 1; i < levels.Count; i++)
+            {
+                if (levels[i - 1].isCompleted)
+                {
+                    levels[i].isLocked = false;
+                }
+            }
+        }
+
+        private void SetCompletedLevels()
+        {
+            for(int i = 0; i < FirebaseManager.instance.levelProgress.playerLevelProgress.Count; i++)
+            {
+                levels[i].isCompleted = FirebaseManager.instance.levelProgress.playerLevelProgress[i].isCompleted;
+                levels[i].numStars = FirebaseManager.instance.levelProgress.playerLevelProgress[i].numberOfStars;
+            }
         }
 
         private void FillContents()
@@ -32,6 +47,8 @@ namespace DK
                 instantiatedObject = Instantiate(levelPrefab);
 
                 instantiatedObject.GetComponent<LevelSelectionButtonScript>().levelObject = levels[i];
+                //instantiatedObject.GetComponent<LevelSelectionButtonScript>().singleLevelProgress;
+
 
                 instantiatedObject.GetComponentInChildren<TextMeshProUGUI>().text = levels[i].levelNumber.ToString();
 

@@ -7,6 +7,7 @@ namespace DK
     public class LevelSelectionButtonScript : MonoBehaviour
     {
         public LevelObject levelObject;
+        public SingleLevelProgress singleLevelProgress;
         [SerializeField] Slider starsSlider;
         [SerializeField] TextMeshProUGUI levelNumberText;
         [SerializeField] Image lockIcon;
