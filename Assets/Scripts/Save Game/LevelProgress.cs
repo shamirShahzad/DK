@@ -5,6 +5,7 @@ namespace DK
     {
         public int level;
         public int numberOfStars;
+        public bool isCompleted;
 
 
         public LevelProgress(int level,int stars)

@@ -32,6 +32,7 @@ namespace DK
 
         protected virtual void Awake()
         {
+            //characterManager.GetComponentInParent<CharacterManager>();
             damageCollider = GetComponent<Collider>();
             damageCollider.gameObject.SetActive(true);
             damageCollider.isTrigger = true;
@@ -82,6 +83,7 @@ namespace DK
                         return;
                     if (shieldHasBeenHit)
                         return;
+                    
                     enemy.characterStatsManager.poiseResetTimer = enemy.characterStatsManager.totalPoiseResetTime;
                     enemy.characterStatsManager.totalPoiseDefense -= poiseBreak;
                     Vector3 contactPoint = collision.gameObject.GetComponent<Collider>().ClosestPointOnBounds(transform.position);
@@ -90,6 +92,11 @@ namespace DK
                     enemy.characterFXManager.PlayBloodSplatterEffect(contactPoint);
                     enemy.characterFXManager.InterruptEffect();
                     DealDamage(enemy.characterStatsManager);
+                    if (enemy.characterStatsManager.currentHealth <= 0)
+                    {
+                        characterManager.characterStatsManager.killCount++;
+                        characterManager.objectiveManager.SetEnemiesKilled(characterManager.characterStatsManager.killCount);
+                    }
                 }
             }
             if (collision.tag == "Illusionary Wall")

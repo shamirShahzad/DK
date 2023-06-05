@@ -18,13 +18,15 @@ namespace DK
             {
                 lockIcon.gameObject.SetActive(true);
                 starsSlider.gameObject.SetActive(false);
-                levelNumberText.gameObject.SetActive(false) ;
+                levelNumberText.gameObject.SetActive(false);
+                gameObject.GetComponent<Button>().interactable = false;
             }
             else if (!levelObject.isLocked)
             {
                 lockIcon.gameObject.SetActive(false);
                 starsSlider.gameObject.SetActive(true);
                 levelNumberText.gameObject.SetActive(true) ;
+                gameObject.GetComponent<Button>().interactable = true;
             }
 
 

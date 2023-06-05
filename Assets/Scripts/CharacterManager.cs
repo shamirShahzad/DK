@@ -6,6 +6,7 @@ namespace DK
     public class CharacterManager : MonoBehaviour
     {
         public CharacterController characterController;
+        public ObjectiveManager objectiveManager; 
         public CharacterLocomotionManager characterLocomotionManager;
         public CharacterAnimatorManager characterAnimatorManager;
         public CharacterWeaponSlotManager characterWeaponSlotManager;
@@ -61,6 +62,7 @@ namespace DK
         protected virtual void Awake()
         {
             characterController = GetComponent<CharacterController>();
+            objectiveManager = GetComponent<ObjectiveManager>();
             characterLocomotionManager = GetComponent<CharacterLocomotionManager>();
             characterAnimatorManager = GetComponent<CharacterAnimatorManager>();
             characterWeaponSlotManager = GetComponent<CharacterWeaponSlotManager>();

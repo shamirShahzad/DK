@@ -163,7 +163,11 @@ namespace DK
 
         private void HandleRollingInput() {
 
-            
+            if (player.isInteracting)
+            {
+                b_input = false;
+                return;
+            }
             if (b_input) {
                 rollInputTimer += Time.deltaTime;
                 if (player.playerStatsManager.currentStamina<=0)

@@ -70084,6 +70084,7 @@ GameObject:
   - component: {fileID: 6715802046637684989}
   - component: {fileID: 93901283758628418}
   - component: {fileID: 2041694304714721951}
+  - component: {fileID: -8716354990826950485}
   m_Layer: 9
   m_Name: New Player
   m_TagString: Character
@@ -70259,6 +70260,7 @@ MonoBehaviour:
   isGrounded: 1
   isInteracting: 0
   cameraHandler: {fileID: 0}
+  objectiveManager: {fileID: 0}
   playerLocomotion: {fileID: 2554598860014443785}
   playerAnimatorManager: {fileID: 5161199277288787835}
   playerWeaponSlotManager: {fileID: 5161199277288787833}
@@ -70530,6 +70532,7 @@ MonoBehaviour:
   teamIdNumber: 0
   maxHealth: 100
   currentHealth: 100
+  killCount: 0
   maxStamina: 100
   currentStamina: 100
   maxFocus: 100
@@ -70750,6 +70753,20 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 80
   m_CollisionDetection: 0
+--- !u!114 &-8716354990826950485
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2554598860014443789}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 987cb0cae9b761344bfc6430064075b1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemiesKilled: 0
+  chestsFound: 0
 --- !u!1 &2554598860042538197
 GameObject:
   m_ObjectHideFlags: 0

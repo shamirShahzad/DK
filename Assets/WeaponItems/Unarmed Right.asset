@@ -18,13 +18,13 @@ MonoBehaviour:
   isUnarmed: 1
   weaponController: {fileID: 22100000, guid: d1f59d65d8fad124c996f49bc6f94529, type: 2}
   weaponTypes: 6
-  physicalDamage: 1
+  physicalDamage: 5
   fireDamage: 0
   magicDamage: 0
   lightningDamage: 0
   darkDamage: 0
-  lightAttackDamageModifier: 0
-  heavyAttackDamageModifier: 0
+  lightAttackDamageModifier: 1
+  heavyAttackDamageModifier: 1.2
   runningAttackDamageModifier: 0
   jumpingAttackDamageModifier: 0
   lightAttack2DamageModifier: 0
@@ -70,7 +70,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: e4ed6f8a97c592c4cadf2f89a4a5f121, type: 3}
   - {fileID: 8300000, guid: c149e31035a34964fa9c8a754b8d3db4, type: 3}
   - {fileID: 8300000, guid: 2de8277ecc7466a48a814df820ed625e, type: 3}
-  isPurchased: 1
+  isPurchased: 0
   goldRequiredToPurchase: 0
   indexOfItemInMainList: 0
   actualName: 

@@ -16,6 +16,8 @@ namespace DK
         
         public int maxHealth;
         public int currentHealth;
+        public int killCount = 0;
+        public int deathCount = FirebaseManager.instance.userData.deathCount;
 
         
         public float maxStamina;
@@ -269,7 +271,8 @@ namespace DK
             currentHealth = Mathf.RoundToInt(currentHealth - finalDamage);
             if (currentHealth <= 0)
             {
-                HandleDeath();
+                character.isDead = true;
+                currentHealth = 0;
             }
 
         }
@@ -297,6 +300,8 @@ namespace DK
             {
                 character.isDead = true;
                 currentHealth = 0;
+                deathCount++;
+                FirebaseManager.instance.DeathUpdaterCoroutineCaller(deathCount);
                 StartCoroutine(FinishPlayingDeathAnimation());
                 
             }

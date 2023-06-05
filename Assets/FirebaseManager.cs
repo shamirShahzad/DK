@@ -70,6 +70,7 @@ namespace DK
         Dictionary<string, Object> equipment = new Dictionary<string, Object>();
         Dictionary<string, Object> gold = new Dictionary<string, Object>();
         Dictionary<string, Object> souls = new Dictionary<string, Object>();
+        Dictionary<string, Object> deaths = new Dictionary<string, Object>();
         [Header("Leaderboard UI")]
         public LeaderBoard myLeaderBoardData = new LeaderBoard();
         public LeaderBoard userLeaderBoard = new LeaderBoard();
@@ -220,6 +221,7 @@ namespace DK
         {
             if (User != null)
             {
+                InitializeAds();
                 GetDataFromDatabase();
                 GetItemDataCoroutineCaller();
                 GetRewardsCoroutineCaller();
@@ -814,6 +816,29 @@ namespace DK
         public void GetRewardsCoroutineCaller()
         {
             StartCoroutine(GetRewardsFromFireBase());
+        }
+
+        private IEnumerator UpdateDeathCount(int deathCount)
+        {
+            userData.deathCount = deathCount;
+            deaths["deathCount"] = deathCount;
+            User = auth.CurrentUser;
+            var task = reference.Child("Users").Child(User.UserId).UpdateChildrenAsync(deaths);
+
+            yield return new WaitUntil(predicate: () => task.IsCompleted);
+            if (task.Exception != null)
+            {
+                Debug.LogWarning(message: $"taks failed with {task.Exception}");
+            }
+            else
+            {
+                Debug.Log("Success");
+            }
+        }
+
+        public void DeathUpdaterCoroutineCaller(int deathCount)
+        {
+            StartCoroutine(UpdateDeathCount(deathCount));
         }
 
         private IEnumerator UpdateGoldCurrency(int goldAmount)

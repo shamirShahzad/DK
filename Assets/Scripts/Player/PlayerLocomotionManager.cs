@@ -201,7 +201,10 @@ namespace DK
             if (this.enabled == false || this.gameObject == null)
                 return;
             if (player.isInteracting)
+            {
+                player.inputHandler.jump_input = false;
                 return;
+            }
             if (player.playerStatsManager.currentStamina <= 0)
                 return;
 

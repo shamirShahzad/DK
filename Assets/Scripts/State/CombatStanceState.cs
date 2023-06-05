@@ -48,6 +48,7 @@ namespace DK
             {
                 GetNewAttack(enemy);
             }
+            HandleMovement(enemy);
             return this;
         }
 
@@ -138,6 +139,20 @@ namespace DK
             else if(horizontalMovementValue >=-1 && horizontalMovementValue < 0)
             {
                 horizontalMovementValue = -0.5f;
+            }
+        }
+
+        private void HandleMovement(EnemyManager enemy)
+        {
+            if (enemy.distanceFromTarget < enemy.stoppingDistance)
+            {
+                enemy.animator.SetFloat("Vertical", 0, 0.2f, Time.deltaTime);
+                enemy.animator.SetFloat("Horizontal", horizontalMovementValue, 0.2f, Time.deltaTime);
+            }
+            else
+            {
+                enemy.animator.SetFloat("Vertical", verticalMovementValue, 0.2f, Time.deltaTime);
+                enemy.animator.SetFloat("Horizontal", horizontalMovementValue, 0.2f, Time.deltaTime);
             }
         }
 
