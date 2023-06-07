@@ -2,6 +2,7 @@ using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using System.Collections;
 namespace DK
 {
     public class LevelSelectionButtonScript : MonoBehaviour
@@ -11,10 +12,16 @@ namespace DK
         [SerializeField] Slider starsSlider;
         [SerializeField] TextMeshProUGUI levelNumberText;
         [SerializeField] Image lockIcon;
+        public GameObject loadingScreen;
+        public GameObject panelStage;
+        public GameObject panelHome;
+        Slider loadingScreenSlider;
 
         private void OnEnable()
         {
+            
             levelNumberText.text = levelObject.levelNumber.ToString();
+            loadingScreenSlider = loadingScreen.GetComponentInChildren<Slider>();
             if (levelObject.isLocked)
             {
                 lockIcon.gameObject.SetActive(true);
@@ -43,7 +50,24 @@ namespace DK
 
         public void OnClick()
         {
-            SceneManager.LoadSceneAsync(levelObject.levelScene.name, LoadSceneMode.Single);
+            StartCoroutine(LoadScene());
+        }
+
+        IEnumerator LoadScene()
+        {
+            AsyncOperation task = SceneManager.LoadSceneAsync(levelObject.levelScene.name, LoadSceneMode.Additive);
+            Time.timeScale = 1;
+            loadingScreen.SetActive(true);
+            while (!task.isDone)
+            {
+                float progressValue = Mathf.Clamp01(task.progress / 0.9f);
+                loadingScreenSlider.value = progressValue;
+                yield return null;
+            }
+            loadingScreenSlider.value = 0;
+            loadingScreen.SetActive(false);
+            panelHome.SetActive(true);
+            panelStage.SetActive(false);
         }
     }
 }

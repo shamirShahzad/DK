@@ -194,10 +194,12 @@ namespace DK
             if (User != null)
             {
                 Debug.Log("We auto logging");
+                LeaderBoardSaveLoading.SetActive(true);
                 var reloadTask = User.ReloadAsync();
 
                 yield return new WaitUntil(predicate: () => reloadTask.IsCompleted);
                 AutoLogin();
+                LeaderBoardSaveLoading.SetActive(false);
             }
             else
             {
@@ -572,6 +574,7 @@ namespace DK
             else
             {
                 Debug.Log("Success In Saving Levele Progress");
+                GetLevelProgressCoroutineCaller();
             }
 
         }
@@ -933,6 +936,7 @@ namespace DK
         private IEnumerator UpdateGoldCurrency(int goldAmount)
         {
             goldAmount += userData.goldAmount;
+            userData.goldAmount = goldAmount;
             gold["goldAmount"] = goldAmount;
             User = auth.CurrentUser;
 

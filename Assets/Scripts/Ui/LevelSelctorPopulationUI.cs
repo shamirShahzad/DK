@@ -10,6 +10,9 @@ namespace DK
         [SerializeField]List<LevelObject> levels= new();
         [SerializeField] Transform contentTransform;
         [SerializeField] GameObject levelPrefab;
+        [SerializeField] GameObject loadingScreen;
+        [SerializeField] GameObject panelStage;
+        [SerializeField] GameObject panelHome;
         GameObject instantiatedObject;
 
         private void OnEnable()
@@ -30,7 +33,6 @@ namespace DK
                 }
             }
         }
-
         private void SetCompletedLevels()
         {
             for(int i = 0; i < FirebaseManager.instance.levelProgress.playerLevelProgress.Count; i++)
@@ -48,9 +50,10 @@ namespace DK
 
                 instantiatedObject.GetComponent<LevelSelectionButtonScript>().levelObject = levels[i];
                 //instantiatedObject.GetComponent<LevelSelectionButtonScript>().singleLevelProgress;
-
-
                 instantiatedObject.GetComponentInChildren<TextMeshProUGUI>().text = levels[i].levelNumber.ToString();
+                instantiatedObject.GetComponent<LevelSelectionButtonScript>().loadingScreen =  loadingScreen;
+                instantiatedObject.GetComponent<LevelSelectionButtonScript>().panelStage =  panelStage;
+                instantiatedObject.GetComponent<LevelSelectionButtonScript>().panelHome =  panelHome;
 
                 instantiatedObject.transform.SetParent(contentTransform);
                 instantiatedObject.transform.localScale = Vector3.one;
