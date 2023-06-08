@@ -13,6 +13,9 @@ namespace DK
         public AudioClip[] takingDamageSounds;
         private int lastGoreSound = -1;
         private int lastSwooshSound = -1;
+        [Header("Footstep Sound")]
+        private int lastFootstepSound;
+        public AudioClip[] footsteps;
 
         [Header("BackStabORRiposte")]
         public AudioClip backStabOrRiposte;
@@ -37,6 +40,20 @@ namespace DK
             {
                 audioSource.PlayOneShot(takingDamageSounds[randomValue],soundVolume);
                 lastGoreSound = randomValue;
+            }
+        }
+
+        public virtual void PlayRandomFootstepSound()
+        {
+            int randomValue = Random.Range(0, footsteps.Length);
+            if(randomValue == lastFootstepSound)
+            {
+                PlayRandomFootstepSound();
+            }
+            else
+            {
+                audioSource.PlayOneShot(footsteps[randomValue], soundVolume);
+                lastFootstepSound = randomValue;
             }
         }
 

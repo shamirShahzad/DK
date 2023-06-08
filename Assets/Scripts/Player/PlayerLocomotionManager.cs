@@ -15,7 +15,7 @@ namespace DK
         public new Rigidbody rigidbody;
         public GameObject normalCamera;
 
-        
+
 
         [Header("Stats")]
         [SerializeField]
@@ -133,6 +133,8 @@ namespace DK
             moveDirection = moveDirection + player.cameraHandler.transform.right * player.inputHandler.horizontal;
             moveDirection.Normalize();
             moveDirection.y = 0;
+            player.characterSFXManager.PlayRandomFootstepSound();
+            
 
             if (player.isSprinting && player.inputHandler.moveAmount > 0.5f)
             {
