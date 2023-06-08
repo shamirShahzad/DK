@@ -166,10 +166,15 @@ namespace DK
             if (this.enabled == false)
                 return;
             if (player.isInteracting) {
+                player.inputHandler.rollFlag = false;
                 return;
             }
             if(player.playerStatsManager.currentStamina <= 0)
+            {
+                player.inputHandler.rollFlag = false;
                 return;
+            }
+                
 
 
             if(player.inputHandler.rollFlag)

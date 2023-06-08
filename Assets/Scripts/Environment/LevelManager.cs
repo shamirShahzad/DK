@@ -6,7 +6,7 @@ namespace DK
 {
     public class LevelManager : MonoBehaviour
     {
-        ObjectiveManager objectiveManager;
+        public ObjectiveManager objectiveManager;
         [SerializeField] int numberOfEnemiesInLevel;
         [SerializeField] int numberOfChestsInLevel;
         [SerializeField] LevelObject thisLevel;
@@ -21,6 +21,7 @@ namespace DK
             objectiveManager = FindObjectOfType<ObjectiveManager>();
             isEnabled = false;
             isCompleted = false;
+            numberStars = 0;
         }
         private void Update()
         {
@@ -30,8 +31,8 @@ namespace DK
 
         private void CalculateTheNumberOfStars()
         {
-            if (objectiveManager.enemiesKilled == numberOfEnemiesInLevel &&
-                objectiveManager.chestsFound == numberOfChestsInLevel)
+            if (objectiveManager.enemiesKilled >= numberOfEnemiesInLevel &&
+                objectiveManager.chestsFound >= numberOfChestsInLevel)
             {
                 numberStars = 3;
             }

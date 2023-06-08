@@ -174,6 +174,7 @@ namespace DK
                 {
                     b_input = false; 
                     player.isSprinting = false;
+                    return;
                 }
                 if (moveAmount > 0.5 && player.playerStatsManager.currentStamina > 0)
                 {

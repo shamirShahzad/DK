@@ -194,12 +194,12 @@ namespace DK
             if (User != null)
             {
                 Debug.Log("We auto logging");
-                LeaderBoardSaveLoading.SetActive(true);
+                loadingPopup.SetActive(true);
                 var reloadTask = User.ReloadAsync();
 
                 yield return new WaitUntil(predicate: () => reloadTask.IsCompleted);
                 AutoLogin();
-                LeaderBoardSaveLoading.SetActive(false);
+                loadingPopup.SetActive(false);
             }
             else
             {
@@ -557,7 +557,7 @@ namespace DK
             {
                 levelProgress.playerLevelProgress[index] = singleLevelProgress;
             }
-            catch(IndexOutOfRangeException)
+            catch(ArgumentOutOfRangeException)
             {
                 levelProgress.playerLevelProgress.Add(singleLevelProgress);
             }

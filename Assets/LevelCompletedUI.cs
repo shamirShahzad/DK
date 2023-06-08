@@ -30,6 +30,8 @@ namespace DK
                 goldBonus.SetActive(true);
                 goldBonusAmount = Random.Range(10, 21);
                 goldBonusText.text = goldBonusAmount.ToString();
+                soulsAmount = Random.Range(100, 301);
+                soulsText.text = soulsAmount.ToString();
 
             }
             else if(bonus == 0)
