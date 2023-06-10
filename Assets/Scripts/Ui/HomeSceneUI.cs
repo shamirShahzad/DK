@@ -15,6 +15,7 @@ namespace DK
 
         [SerializeField] TextMeshProUGUI goldText;
         [SerializeField] TextMeshProUGUI soulsText;
+        [SerializeField] TextMeshProUGUI playerLevelInHomeScene;
 
 
         [Header("Lists of Equipments and Weapons")]
@@ -40,6 +41,7 @@ namespace DK
             SetAllLockedAndNotCompleted();
             goldText.text = FirebaseManager.instance.userData.goldAmount.ToString();
             soulsText.text = FirebaseManager.instance.userData.soulPlayersPosseses.ToString();
+            playerLevelInHomeScene.text = FirebaseManager.instance.userData.characterLevel.ToString();
             RewardedAdTimeString = PlayerPrefs.GetString("RewardedTime"+FirebaseManager.instance.User.DisplayName);
              long.TryParse(RewardedAdTimeString, out RewardedAdTime);
             if (RewardedAdTime != 0)

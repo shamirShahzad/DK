@@ -64,7 +64,7 @@ namespace DK
         [SerializeField] GameObject loadingPopup;
         [SerializeField] TextMeshProUGUI textForLoadingTitle;
         [SerializeField] TextMeshProUGUI usernameTextinHomeScene;
-        [SerializeField] TextMeshProUGUI userLevelinHomeScene;
+        
 
         public static FirebaseManager instance;
 
@@ -230,7 +230,7 @@ namespace DK
                 titleLoginScene.SetActive(false);
                 titleTaptoStart.SetActive(true);
                 usernameTextinHomeScene.text = User.DisplayName;
-                userLevelinHomeScene.text = userData.characterLevel.ToString();
+                
             }
             else
             {
