@@ -526,6 +526,7 @@ namespace DK
 
         private IEnumerator SaveLevelProgressFirstOccurence()
         {
+            levelProgress.playerLevelProgress.Clear();
             levelProgress.playerLevelProgress.Add(singleLevelProgress);
             string json = JsonUtility.ToJson(levelProgress);
             var task = reference.Child("LevelProgress").Child(User.UserId).SetRawJsonValueAsync(json);
