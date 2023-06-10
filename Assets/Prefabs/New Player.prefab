@@ -70720,18 +70720,26 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 5d2b5bf3407d35849ba2230fc435fec5, type: 3}
   - {fileID: 8300000, guid: 5ee299aec5a455c48a6f70a2c42796af, type: 3}
   footsteps:
-  - {fileID: 8300000, guid: deeda5b79ae4f8b42b0572cb44a94ef3, type: 3}
-  - {fileID: 8300000, guid: 04d66cb986a63ab41958c8935c8ce376, type: 3}
-  - {fileID: 8300000, guid: 9d6b63ce7fe55a54c97b82466232fb18, type: 3}
-  - {fileID: 8300000, guid: 7eb7aae1bff9fe54bbd65e48991fa45a, type: 3}
-  - {fileID: 8300000, guid: 9251cab6290aeca4894516ce7d93f056, type: 3}
-  - {fileID: 8300000, guid: 177d6b984becac74ba6986603a166150, type: 3}
-  - {fileID: 8300000, guid: 5b05e6919f0cf0241961e888761e553b, type: 3}
-  - {fileID: 8300000, guid: f504414b22cf346498cfad42077a6442, type: 3}
-  - {fileID: 8300000, guid: c2774b4ddf78eab4abac4f6beed48d4c, type: 3}
-  - {fileID: 8300000, guid: 1aa8debd1f68db04cb6f1832b87a68f7, type: 3}
-  - {fileID: 8300000, guid: 3e1bfee9017743b44996de6b4ad34fa4, type: 3}
-  - {fileID: 8300000, guid: cb7378e779dca0d42846c0fd442bf6ff, type: 3}
+  - {fileID: 8300000, guid: ab3cde3cfbd9659449d11f53439e3780, type: 3}
+  - {fileID: 8300000, guid: fcaa9ef145eec6d49bf26e30ccefe761, type: 3}
+  - {fileID: 8300000, guid: 86500edbb5e571f46afdaea9748d7dfa, type: 3}
+  - {fileID: 8300000, guid: 2f3d4c7cd8f9f8b4dbe8994898db8cca, type: 3}
+  - {fileID: 8300000, guid: ab78f999a5ff07048abbb9cce9117dde, type: 3}
+  - {fileID: 8300000, guid: 16222c6c470687f4b80f85f8c1bb9800, type: 3}
+  - {fileID: 8300000, guid: b074be0db4fce754496e4d6fee77cc9b, type: 3}
+  - {fileID: 8300000, guid: 3a800d2b35020f04ba3e386f80c15465, type: 3}
+  - {fileID: 8300000, guid: 6f53296966a954e44a48b10c3ce2e6da, type: 3}
+  - {fileID: 8300000, guid: d433f7d00f9e05a4bb94a3887986fc67, type: 3}
+  - {fileID: 8300000, guid: 4007550b9a8c74641a72e2c6da6c334e, type: 3}
+  - {fileID: 8300000, guid: 21539b79d236fa94c9770e91572eff8e, type: 3}
+  - {fileID: 8300000, guid: 98dd08d3a8779db43bb986a401a889fc, type: 3}
+  - {fileID: 8300000, guid: 2f30cb490f9887946b5e5f21e0de7ece, type: 3}
+  - {fileID: 8300000, guid: a2a4494069023bf499f1f1c8597fc4b6, type: 3}
+  - {fileID: 8300000, guid: 716b4dd1676eee247a2a07706219afba, type: 3}
+  - {fileID: 8300000, guid: 9481b5c64040d6f46a1de7e56b828d1b, type: 3}
+  - {fileID: 8300000, guid: 52c60a3c5a12d964c94ab90ca7ec80dd, type: 3}
+  - {fileID: 8300000, guid: 353b792b71777a5498fbb1fb22fc6ae5, type: 3}
+  - {fileID: 8300000, guid: 4bac77427b425c9428c771c71f3f44fa, type: 3}
   backStabOrRiposte: {fileID: 8300000, guid: 306dabd1c9cdc41479c38e7905c3fa35, type: 3}
 --- !u!143 &93901283758628418
 CharacterController:
