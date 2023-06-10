@@ -13,9 +13,11 @@ namespace DK
         public AudioClip[] takingDamageSounds;
         private int lastGoreSound = -1;
         private int lastSwooshSound = -1;
+
         [Header("Footstep Sound")]
         private int lastFootstepSound;
         public AudioClip[] footsteps;
+        int randomFootstep;
 
         [Header("BackStabORRiposte")]
         public AudioClip backStabOrRiposte;
@@ -45,17 +47,27 @@ namespace DK
 
         public virtual void PlayRandomFootstepSound()
         {
-            int randomValue = Random.Range(0, footsteps.Length);
-            if(randomValue == lastFootstepSound)
-            {
-                PlayRandomFootstepSound();
-            }
-            else
-            {
+            int randomValue = Random.Range(0, 12);
+            if(character.animator.GetFloat("Vertical") >0.1 && character.animator.GetFloat("Vertical") <=0.5 || character.animator.GetFloat("Vertical") <-0.1 && character.animator.GetFloat("Vertical") >=-0.5)
+            audioSource.PlayOneShot(footsteps[randomValue],soundVolume);
+            if(character.animator.GetFloat("Horizontal") < -0.1 && character.animator.GetFloat("Horizontal") >=-0.5 || character.animator.GetFloat("Horizontal") > 0.1 && character.animator.GetFloat("Horizontal") <=0.5)
                 audioSource.PlayOneShot(footsteps[randomValue], soundVolume);
-                lastFootstepSound = randomValue;
-            }
         }
+        public virtual void PlayRandomFootstepRunningSound()
+        {
+            int randomValue = Random.Range(0, 12);
+            if (character.animator.GetFloat("Vertical") > 0.6 || character.animator.GetFloat("Vertical") < -0.5)
+                audioSource.PlayOneShot(footsteps[randomValue], soundVolume);
+            if (character.animator.GetFloat("Horizontal") < -0.5||character.animator.GetFloat("Horizontal")>0.5)
+                audioSource.PlayOneShot(footsteps[randomValue], soundVolume);
+        }
+        public virtual void PlayRandomFootstepSprintingSound()
+        {
+            int randomValue = Random.Range(0, 12);
+            if(character.animator.GetFloat("Vertical") >1 && character.animator.GetFloat("Vertical") <=2 )
+                audioSource.PlayOneShot(footsteps[randomValue], soundVolume+0.15f);
+        }
+
 
         public virtual void PlayRandomWeaponSwoosh()
         {

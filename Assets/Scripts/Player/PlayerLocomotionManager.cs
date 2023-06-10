@@ -132,9 +132,7 @@ namespace DK
             moveDirection = player.cameraHandler.transform.forward * player.inputHandler.vertical;
             moveDirection = moveDirection + player.cameraHandler.transform.right * player.inputHandler.horizontal;
             moveDirection.Normalize();
-            moveDirection.y = 0;
-            player.characterSFXManager.PlayRandomFootstepSound();
-            
+            moveDirection.y = 0;            
 
             if (player.isSprinting && player.inputHandler.moveAmount > 0.5f)
             {
