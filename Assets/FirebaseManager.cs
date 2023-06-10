@@ -64,6 +64,7 @@ namespace DK
         [SerializeField] GameObject loadingPopup;
         [SerializeField] TextMeshProUGUI textForLoadingTitle;
         [SerializeField] TextMeshProUGUI usernameTextinHomeScene;
+        [SerializeField] TextMeshProUGUI userLevelinHomeScene;
 
         public static FirebaseManager instance;
 
@@ -86,6 +87,7 @@ namespace DK
         [Header("Daily reward")]
         public DailyRewardSave userDailyRewardsClaimed;
         public GameObject timeErrorPopup;
+        public GameObject notificationCircle;
         
 
         public long timeMilliseconds;
@@ -217,15 +219,18 @@ namespace DK
         {
             if (User != null)
             {
-                InitializeAds();
+                
                 GetDataFromDatabase();
                 GetItemDataCoroutineCaller();
                 GetRewardsCoroutineCaller();
                 GetLevelProgressCoroutineCaller();
-                
+                InitializeAds();
+                RequestTimeCoroutineCaller();
+
                 titleLoginScene.SetActive(false);
                 titleTaptoStart.SetActive(true);
                 usernameTextinHomeScene.text = User.DisplayName;
+                userLevelinHomeScene.text = userData.characterLevel.ToString();
             }
             else
             {
@@ -1038,6 +1043,25 @@ namespace DK
         {
             Debug.LogWarning($"Ads Initialization Failed with{error.ToString()} - {message}");
             isInitialized = false;
+        }
+
+        public void SetNotificationForRewards()
+        {
+            
+            if (PlayerPrefs.GetString("ClaimedTime" + User.DisplayName) != "")
+            {
+                string lastRewardTimeString = PlayerPrefs.GetString("ClaimedTime" + User.DisplayName);
+                long lastRewardTime = long.Parse(lastRewardTimeString);
+                if(timeMilliseconds - lastRewardTime > 86400000)
+                {
+                    notificationCircle.SetActive(true);
+                }
+                else
+                {
+                    notificationCircle.SetActive(false);
+                }
+            }
+                
         }
     }
 

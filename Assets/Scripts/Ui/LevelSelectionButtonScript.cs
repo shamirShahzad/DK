@@ -12,6 +12,7 @@ namespace DK
         [SerializeField] Slider starsSlider;
         [SerializeField] TextMeshProUGUI levelNumberText;
         [SerializeField] Image lockIcon;
+        public AudioSource audioSource;
         public GameObject loadingScreen;
         public GameObject panelStage;
         public GameObject panelHome;
@@ -50,6 +51,7 @@ namespace DK
 
         public void OnClick()
         {
+            audioSource.Play();
             StartCoroutine(LoadScene());
         }
 

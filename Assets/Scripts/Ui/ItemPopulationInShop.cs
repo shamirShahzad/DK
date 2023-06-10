@@ -28,7 +28,7 @@ namespace DK
 
         [SerializeField] GameObject sucessPopup;
         [SerializeField] GameObject warningPopup;
-        
+        AudioSource audioSource;
 
         [Header("Flags For Checking which item is picked")]
         public bool isHelmet;
@@ -46,7 +46,9 @@ namespace DK
             goldAmountText.text = FirebaseManager.instance.userData.goldAmount.ToString();
             onHelmetClick();
             lineFocuses[0].SetActive(true);
-            
+            audioSource = GetComponent<AudioSource>();
+            audioSource.volume = PlayerPrefs.GetFloat("FXVolume" + FirebaseManager.instance.User.DisplayName);
+
         }
 
         private void SetArmPurchased()
@@ -147,6 +149,7 @@ namespace DK
                     uiItem.GetComponent<PrefabButtonAccessScript>().sucessPopup = sucessPopup;
                     uiItem.GetComponent<PrefabButtonAccessScript>().warningPopup = warningPopup;
                     uiItem.GetComponent<PrefabButtonAccessScript>().shop = this;
+                    uiItem.GetComponent<PrefabButtonAccessScript>().audioSource = audioSource;
                     //put player gold amount here same as above for all on click events
 
                     uiItem.transform.GetChild(3).GetChild(1).GetComponent<Image>().sprite = notPurchasedHelmets[i].itemIcon;
@@ -186,6 +189,7 @@ namespace DK
                     uiItem.GetComponent<PrefabButtonAccessScript>().sucessPopup = sucessPopup;
                     uiItem.GetComponent<PrefabButtonAccessScript>().warningPopup = warningPopup;
                     uiItem.GetComponent<PrefabButtonAccessScript>().shop = this;
+                    uiItem.GetComponent<PrefabButtonAccessScript>().audioSource = audioSource;
                     uiItem.transform.GetChild(3).GetChild(1).GetComponent<Image>().sprite = notPurchasedArms[i].itemIcon;
                     uiItem.transform.GetChild(4).GetComponentInChildren<TextMeshProUGUI>().text = notPurchasedArms[i].goldRequiredToPurchase.ToString();
                     uiItem.transform.GetChild(2).GetComponent<TextMeshProUGUI>().text = notPurchasedArms[i].actualName;
@@ -223,6 +227,7 @@ namespace DK
                     uiItem.GetComponent<PrefabButtonAccessScript>().sucessPopup = sucessPopup;
                     uiItem.GetComponent<PrefabButtonAccessScript>().warningPopup = warningPopup;
                     uiItem.GetComponent<PrefabButtonAccessScript>().shop = this;
+                    uiItem.GetComponent<PrefabButtonAccessScript>().audioSource = audioSource;
                     uiItem.transform.GetChild(3).GetChild(1).GetComponent<Image>().sprite = notPurchasedTorso[i].itemIcon;
                     uiItem.transform.GetChild(4).GetComponentInChildren<TextMeshProUGUI>().text = notPurchasedTorso[i].goldRequiredToPurchase.ToString();
                     uiItem.transform.GetChild(2).GetComponent<TextMeshProUGUI>().text = notPurchasedTorso[i].actualName;
@@ -260,6 +265,7 @@ namespace DK
                     uiItem.GetComponent<PrefabButtonAccessScript>().sucessPopup = sucessPopup;
                     uiItem.GetComponent<PrefabButtonAccessScript>().warningPopup = warningPopup;
                     uiItem.GetComponent<PrefabButtonAccessScript>().shop = this;
+                    uiItem.GetComponent<PrefabButtonAccessScript>().audioSource = audioSource;
                     uiItem.transform.GetChild(3).GetChild(1).GetComponent<Image>().sprite = notPurchasedLegs[i].itemIcon;
                     uiItem.transform.GetChild(4).GetComponentInChildren<TextMeshProUGUI>().text = notPurchasedLegs[i].goldRequiredToPurchase.ToString();
                     uiItem.transform.GetChild(2).GetComponent<TextMeshProUGUI>().text = notPurchasedLegs[i].actualName;
@@ -296,7 +302,7 @@ namespace DK
                     uiItem.GetComponent<PrefabButtonAccessScript>().sucessPopup = sucessPopup;
                     uiItem.GetComponent<PrefabButtonAccessScript>().warningPopup = warningPopup;
                     uiItem.GetComponent<PrefabButtonAccessScript>().shop = this;
-
+                    uiItem.GetComponent<PrefabButtonAccessScript>().audioSource = audioSource;
                     uiItem.transform.GetChild(3).GetChild(1).GetComponent<Image>().sprite = notPurchasedRightHandWeapons[i].itemIcon;
                     uiItem.transform.GetChild(4).GetComponentInChildren<TextMeshProUGUI>().text = notPurchasedRightHandWeapons[i].goldRequiredToPurchase.ToString();
                     uiItem.transform.GetChild(2).GetComponent<TextMeshProUGUI>().text = notPurchasedRightHandWeapons[i].actualName;
@@ -331,7 +337,7 @@ namespace DK
                     uiItem.GetComponent<PrefabButtonAccessScript>().sucessPopup = sucessPopup;
                     uiItem.GetComponent<PrefabButtonAccessScript>().warningPopup = warningPopup;
                     uiItem.GetComponent<PrefabButtonAccessScript>().shop = this;
-
+                    uiItem.GetComponent<PrefabButtonAccessScript>().audioSource = audioSource;
                     uiItem.transform.GetChild(3).GetChild(1).GetComponent<Image>().sprite = notPurchasedLeftHandWeapons[i].itemIcon;
                     uiItem.transform.GetChild(4).GetComponentInChildren<TextMeshProUGUI>().text = notPurchasedLeftHandWeapons[i].goldRequiredToPurchase.ToString();
                     uiItem.transform.GetChild(2).GetComponent<TextMeshProUGUI>().text = notPurchasedLeftHandWeapons[i].actualName;

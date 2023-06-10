@@ -13,6 +13,7 @@ namespace DK
         [SerializeField] GameObject loadingScreen;
         [SerializeField] GameObject panelStage;
         [SerializeField] GameObject panelHome;
+        AudioSource audioSource;
         GameObject instantiatedObject;
 
         private void OnEnable()
@@ -21,6 +22,8 @@ namespace DK
             SetCompletedLevels();
             UnlockLevelsBasedOnPreviousCompleted();
             FillContents();
+            audioSource = GetComponent<AudioSource>();
+            audioSource.volume = PlayerPrefs.GetFloat("FXVolume" + FirebaseManager.instance.User.DisplayName);
         }
 
         private void UnlockLevelsBasedOnPreviousCompleted()
@@ -54,6 +57,7 @@ namespace DK
                 instantiatedObject.GetComponent<LevelSelectionButtonScript>().loadingScreen =  loadingScreen;
                 instantiatedObject.GetComponent<LevelSelectionButtonScript>().panelStage =  panelStage;
                 instantiatedObject.GetComponent<LevelSelectionButtonScript>().panelHome =  panelHome;
+                instantiatedObject.GetComponent<LevelSelectionButtonScript>().audioSource =  audioSource;
 
                 instantiatedObject.transform.SetParent(contentTransform);
                 instantiatedObject.transform.localScale = Vector3.one;

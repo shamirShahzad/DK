@@ -11,6 +11,7 @@ namespace DK
         public GameObject sucessPopup;
         public GameObject warningPopup;
         public ItemPopulationInShop shop;
+        public AudioSource audioSource;
         public int playerGoldAmount;
 
 
@@ -21,6 +22,7 @@ namespace DK
             {
                 if (playerGoldAmount >= equipment.goldRequiredToPurchase)
                 {
+                    audioSource.Play();
                     sucessPopup.SetActive(true);
                     equipment.isPurchased = true;
                     FirebaseManager.instance.userData.goldAmount -= equipment.goldRequiredToPurchase;
