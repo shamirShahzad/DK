@@ -13,11 +13,13 @@ namespace DK
         [SerializeField] GameObject deathPanel;
         public GameObject focusButton;
         [SerializeField] GameObject pausePanel;
+        [SerializeField] AudioSource audioSource;
         private void Awake()
         {
             soulCountBar = FindObjectOfType<SoulCountBar>();
             soulCountBar.SetSoulCountText(FirebaseManager.instance.userData.soulPlayersPosseses);
             player = FindObjectOfType<PlayerManager>();
+            audioSource = GetComponent<AudioSource>();
         }
 
         public void playerDeath()
@@ -31,6 +33,16 @@ namespace DK
         {
             pausePanel.SetActive(true);
             Time.timeScale = 0;
+        }
+        public void ContinueClick()
+        {
+            pausePanel.SetActive(false);
+            Time.timeScale = 1;
+        }
+
+        public void PlaySound(AudioClip clip)
+        {
+            audioSource.PlayOneShot(clip, PlayerPrefs.GetFloat("FxVolume" + FirebaseManager.instance.userData.characterName));
         }
 
 

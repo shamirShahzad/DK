@@ -38146,6 +38146,30 @@ PrefabInstance:
       propertyPath: audioSource
       value: 
       objectReference: {fileID: 1318440664}
+    - target: {fileID: 4734482973810033988, guid: b224f8ee074729445b3532a555b5504a, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1318440663}
+    - target: {fileID: 4734482973810033988, guid: b224f8ee074729445b3532a555b5504a, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: PlaySound
+      objectReference: {fileID: 0}
+    - target: {fileID: 4734482973810033988, guid: b224f8ee074729445b3532a555b5504a, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: DK.ButtonSounds, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 5003898971901004229, guid: b224f8ee074729445b3532a555b5504a, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1318440663}
+    - target: {fileID: 5003898971901004229, guid: b224f8ee074729445b3532a555b5504a, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: PlaySound
+      objectReference: {fileID: 0}
+    - target: {fileID: 5003898971901004229, guid: b224f8ee074729445b3532a555b5504a, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: DK.ButtonSounds, Assembly-CSharp
+      objectReference: {fileID: 0}
     - target: {fileID: 5138247244368749843, guid: b224f8ee074729445b3532a555b5504a, type: 3}
       propertyPath: audioSource
       value: 
@@ -38253,6 +38277,30 @@ PrefabInstance:
     - target: {fileID: 8197537059292626461, guid: b224f8ee074729445b3532a555b5504a, type: 3}
       propertyPath: m_Name
       value: Canvas
+      objectReference: {fileID: 0}
+    - target: {fileID: 8541400287949933550, guid: b224f8ee074729445b3532a555b5504a, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1318440663}
+    - target: {fileID: 8541400287949933550, guid: b224f8ee074729445b3532a555b5504a, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: PlaySound
+      objectReference: {fileID: 0}
+    - target: {fileID: 8541400287949933550, guid: b224f8ee074729445b3532a555b5504a, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: DK.ButtonSounds, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 8560156505133319929, guid: b224f8ee074729445b3532a555b5504a, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1318440663}
+    - target: {fileID: 8560156505133319929, guid: b224f8ee074729445b3532a555b5504a, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: PlaySound
+      objectReference: {fileID: 0}
+    - target: {fileID: 8560156505133319929, guid: b224f8ee074729445b3532a555b5504a, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: DK.ButtonSounds, Assembly-CSharp
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b224f8ee074729445b3532a555b5504a, type: 3}
