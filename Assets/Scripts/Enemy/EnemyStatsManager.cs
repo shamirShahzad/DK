@@ -107,6 +107,8 @@ namespace DK
             if (character.isDead)
             {
                 enemy.enemyAnimatorManager.PlayTargetAnimation("Death", true);
+                enemyCharacterDamagingMe.inputHandler.lockOnFlag = false;
+                enemy.uIManager.focusButton.SetActive(false);
             }
         }
     }

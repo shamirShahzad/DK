@@ -11,6 +11,8 @@ namespace DK
         public SoulCountBar soulCountBar;
         public PlayerManager player;
         [SerializeField] GameObject deathPanel;
+        public GameObject focusButton;
+        [SerializeField] GameObject pausePanel;
         private void Awake()
         {
             soulCountBar = FindObjectOfType<SoulCountBar>();
@@ -24,6 +26,11 @@ namespace DK
             {
                 deathPanel.SetActive(true);
             }
+        }
+        public void OnPauseClick()
+        {
+            pausePanel.SetActive(true);
+            Time.timeScale = 0;
         }
 
 

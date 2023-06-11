@@ -10,6 +10,7 @@ namespace DK {
         [SerializeField] string _androidAdUnitId = "Rewarded_Android";
         [SerializeField] string _iOSAdUnitId = "Rewarded_iOS";
         [SerializeField] GameObject popupRewards;
+        [SerializeField] AudioSource musicSource;
         string _adUnitId = null; // This will remain null for unsupported platforms
 
         void Awake()
@@ -53,6 +54,8 @@ namespace DK {
         {
             // Disable the button:
             _showAdButton.interactable = false;
+            //Before showing add stop music
+            musicSource.Stop();
             // Then show the ad:
             Advertisement.Show(_adUnitId, this);
         }

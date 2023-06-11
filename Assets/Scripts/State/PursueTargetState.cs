@@ -11,10 +11,9 @@ namespace DK
         public CombatStanceState combatStanceState;
         public override State Tick(EnemyManager enemy)
         {
+            if (enemy.isDead)
+                return stopState;
 
-
-
-            
             if (enemy.isInteracting)
                 return this;
 
@@ -23,12 +22,12 @@ namespace DK
                 enemy.animator.SetFloat("Vertical", 0, 0.1f, Time.deltaTime);
                 return this;
             }
+            HandleRotateTowardsTarget(enemy);
             if (enemy.distanceFromTarget > enemy.maximumAggroRadius)
             {
                 enemy.animator.SetFloat("Vertical", 1, 0.1f, Time.deltaTime);
                 
             }
-            HandleRotateTowardsTarget(enemy);
 
             if (enemy.distanceFromTarget <=enemy.maximumAggroRadius)
             {
@@ -36,7 +35,7 @@ namespace DK
             }
             if (enemy.distanceFromTarget > enemy.stopAggroRadius)
             {
-
+                enemy.uIManager.focusButton.SetActive(false);
                 return stopState;
             }
             else

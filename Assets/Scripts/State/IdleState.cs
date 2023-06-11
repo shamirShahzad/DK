@@ -9,7 +9,6 @@ namespace DK
         public LayerMask detectionLayer;
         public LayerMask obstructionLayer;
         public PursueTargetState pursueTargetState;
-        Vector3 offset = new Vector3(0, 2, 0);
         public override State Tick(EnemyManager aiCharacter)
         {
             Collider[] colliders = Physics.OverlapSphere(transform.position, aiCharacter.detectionRadius, detectionLayer);
@@ -36,6 +35,7 @@ namespace DK
                             else
                             {
                                 aiCharacter.currentTarget = character;
+                                aiCharacter.uIManager.focusButton.SetActive(true);
                             }
                         }
                     }

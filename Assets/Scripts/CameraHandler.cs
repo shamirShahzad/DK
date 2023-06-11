@@ -219,9 +219,13 @@ namespace DK
                         {
                             Debug.DrawLine(playerManager.lockOnTransform.position, character.lockOnTransform.position);
 
-                            if (!(hit.transform.gameObject.layer == environmentLayer))
+                            if (!(hit.transform.gameObject.layer == environmentLayer) && !character.isDead)
                             {
                                 availableTargets.Add(character);
+                            }
+                            if (character.isDead)
+                            {
+                                availableTargets.Remove(character);
                             }
                            
                             
@@ -242,11 +246,7 @@ namespace DK
                 }
                 if (playerManager.inputHandler.lockOnFlag)
                 {
-                    /*  Vector3 relativeEnemyPosition = currentLockOnTarget.transform.
-                          InverseTransformPoint(availableTargets[k].transform.position);
-                      var distanceFromLeftTarget = currentLockOnTarget.transform.position.x - availableTargets[k].transform.position.x;
-                      var distanceFromRightTarget = currentLockOnTarget.transform.position.x + availableTargets[k].transform.position.x;
-  */
+                   
                     Vector3 relativeEnemyPosition = playerManager.inputHandler.transform.
                          InverseTransformPoint(availableTargets[k].transform.position);
                     var distanceFromLeftTarget = relativeEnemyPosition.x;

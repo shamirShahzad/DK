@@ -16,6 +16,7 @@ namespace DK
         public float rotationSpeed = 15f;
         public float maximumAggroRadius = 1.5f;
         public float stopAggroRadius = 20f;
+        public UIManager uIManager;
 
 
         [Header("Settings")]
@@ -59,6 +60,7 @@ namespace DK
         protected override void Awake()
         {
             base.Awake();
+            uIManager = FindObjectOfType<UIManager>();
             enemyBossManager = GetComponent<EnemyBossManager>();
             enemyLocomotionManager = GetComponent<EnemyLocomotionManager>();
             enemyAnimatorManager = GetComponent<EnemyAnimatorManager>();
