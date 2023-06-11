@@ -88,7 +88,9 @@ namespace DK
         public DailyRewardSave userDailyRewardsClaimed;
         public GameObject timeErrorPopup;
         public GameObject notificationCircle;
-        
+
+
+        [SerializeField] AudioSource musicSource;
 
         public long timeMilliseconds;
         private void Awake()
@@ -1062,6 +1064,11 @@ namespace DK
                 }
             }
                 
+        }
+
+        public void PlayMusic()
+        {
+            musicSource.Play();
         }
     }
 

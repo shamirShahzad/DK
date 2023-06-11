@@ -134,6 +134,7 @@ namespace DK
         }
         public void OnCloseClick()
         {
+            FirebaseManager.instance.PlayMusic();
             StartCoroutine(UnloadCurrentScene());
         }
         private IEnumerator UnloadCurrentScene()

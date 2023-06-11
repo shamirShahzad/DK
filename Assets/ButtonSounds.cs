@@ -19,6 +19,10 @@ namespace DK
             soundVolume = PlayerPrefs.GetFloat("FXVolume" + FirebaseManager.instance.User.DisplayName);
             audioSource.PlayOneShot(clip, soundVolume);
         }
+        public void PlaySoundFullVolume(AudioClip clip)
+        {
+            audioSource.PlayOneShot(clip, 1);
+        }
 
     }
 }

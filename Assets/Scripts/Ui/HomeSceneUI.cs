@@ -61,9 +61,12 @@ namespace DK
                     FirebaseManager.instance.InitializeAds();
                 }
             }
-            musicSource.Play();
             FirebaseManager.instance.SetNotificationForRewards();
 
+        }
+        private void Awake()
+        {
+            musicSource.Play();
         }
 
         private void Update()
