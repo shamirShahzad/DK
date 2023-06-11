@@ -61,13 +61,16 @@ namespace DK
                     FirebaseManager.instance.InitializeAds();
                 }
             }
-
-            musicSound = PlayerPrefs.GetFloat("MusicVolume" + FirebaseManager.instance.User.DisplayName);
-            musicSource.volume = musicSound;
             musicSource.Play();
+            FirebaseManager.instance.SetNotificationForRewards();
 
         }
 
+        private void Update()
+        {
+            musicSound = PlayerPrefs.GetFloat("MusicVolume" + FirebaseManager.instance.User.DisplayName);
+            musicSource.volume = musicSound;
+        }
         private void SetAllToUnpurchased()
         {
             foreach (HandEquipment equipment in armsEquipmentList)
