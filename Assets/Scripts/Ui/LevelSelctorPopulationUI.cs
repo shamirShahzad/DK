@@ -14,6 +14,7 @@ namespace DK
         [SerializeField] GameObject panelStage;
         [SerializeField] GameObject panelHome;
         AudioSource audioSource;
+        [SerializeField] AudioSource musicSource;
         GameObject instantiatedObject;
 
         private void OnEnable()
@@ -58,6 +59,7 @@ namespace DK
                 instantiatedObject.GetComponent<LevelSelectionButtonScript>().panelStage =  panelStage;
                 instantiatedObject.GetComponent<LevelSelectionButtonScript>().panelHome =  panelHome;
                 instantiatedObject.GetComponent<LevelSelectionButtonScript>().audioSource =  audioSource;
+                instantiatedObject.GetComponent<LevelSelectionButtonScript>().musicSource =  musicSource;
 
                 instantiatedObject.transform.SetParent(contentTransform);
                 instantiatedObject.transform.localScale = Vector3.one;

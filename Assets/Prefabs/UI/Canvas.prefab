@@ -54891,7 +54891,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6d54531977ecb194c95e2d3aa7a5d72a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_ControlPath: <Keyboard>/a
+  m_ControlPath: <Gamepad>/buttonWest
 --- !u!1 &4392524969692778882
 GameObject:
   m_ObjectHideFlags: 0
@@ -159490,7 +159490,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6d54531977ecb194c95e2d3aa7a5d72a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_ControlPath: <Keyboard>/a
+  m_ControlPath: <Gamepad>/buttonWest
 --- !u!1 &8197537058670124314
 GameObject:
   m_ObjectHideFlags: 0

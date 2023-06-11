@@ -17,6 +17,7 @@ namespace DK
         public GameObject panelStage;
         public GameObject panelHome;
         Slider loadingScreenSlider;
+        public AudioSource musicSource;
 
         private void OnEnable()
         {
@@ -51,6 +52,7 @@ namespace DK
 
         public void OnClick()
         {
+            musicSource.Stop();
             audioSource.Play();
             StartCoroutine(LoadScene());
         }
