@@ -13,7 +13,7 @@ namespace DK
         [SerializeField] GameObject loadingScreen;
         [SerializeField] GameObject panelStage;
         [SerializeField] GameObject panelHome;
-        AudioSource audioSource;
+        [SerializeField] AudioSource audioSource;
         [SerializeField] AudioSource musicSource;
         GameObject instantiatedObject;
 
@@ -23,7 +23,6 @@ namespace DK
             SetCompletedLevels();
             UnlockLevelsBasedOnPreviousCompleted();
             FillContents();
-            audioSource = GetComponent<AudioSource>();
             audioSource.volume = PlayerPrefs.GetFloat("FXVolume" + FirebaseManager.instance.User.DisplayName);
         }
 
