@@ -122,6 +122,7 @@ namespace DK
         {
             FirebaseManager.instance.UpdateGold(levelCompletedUI.goldBonusAmount);
             FirebaseManager.instance.UpdateSouls(levelCompletedUI.soulsAmount);
+            FirebaseManager.instance.StartSaveDataCoroutine();
             StartCoroutine(UnloadCurrentScene());
         }
 

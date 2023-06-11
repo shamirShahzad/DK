@@ -16,6 +16,9 @@ namespace DK
         [SerializeField] TextMeshProUGUI goldText;
         [SerializeField] TextMeshProUGUI soulsText;
         [SerializeField] TextMeshProUGUI playerLevelInHomeScene;
+        [SerializeField] AudioSource musicSource;
+        float musicSound;
+
 
 
         [Header("Lists of Equipments and Weapons")]
@@ -58,6 +61,10 @@ namespace DK
                     FirebaseManager.instance.InitializeAds();
                 }
             }
+
+            musicSound = PlayerPrefs.GetFloat("MusicVolume" + FirebaseManager.instance.User.DisplayName);
+            musicSource.volume = musicSound;
+            musicSource.Play();
 
         }
 

@@ -12,10 +12,11 @@ namespace DK
         private void Awake()
         {
             audioSource = GetComponent<AudioSource>();
-            soundVolume = PlayerPrefs.GetFloat("FXVolume" + FirebaseManager.instance.User.DisplayName);
+            
         }
         public void PlaySound(AudioClip clip)
         {
+            soundVolume = PlayerPrefs.GetFloat("FXVolume" + FirebaseManager.instance.User.DisplayName);
             audioSource.PlayOneShot(clip, soundVolume);
         }
 

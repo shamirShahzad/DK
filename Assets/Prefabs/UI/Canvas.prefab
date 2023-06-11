@@ -296,9 +296,9 @@ RectTransform:
   m_Father: {fileID: 1959944524670711333}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 28.5, y: -41.97209}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 57, y: 54}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &146584176273193716
@@ -350,6 +350,7 @@ GameObject:
   - component: {fileID: 146584176608954626}
   - component: {fileID: 146584176608954624}
   - component: {fileID: 146584176608954627}
+  - component: {fileID: 3915123164153543638}
   m_Layer: 5
   m_Name: Popup Bonfire Active
   m_TagString: Untagged
@@ -416,6 +417,20 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &3915123164153543638
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 146584176608954629}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 335e3c3fd74c1ce499300176cdcb8c8d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  audioSource: {fileID: 0}
+  audioClip: {fileID: 8300000, guid: 39eaefaeb9fafda4da46b6ed1536ad80, type: 3}
 --- !u!1 &146584176946964094
 GameObject:
   m_ObjectHideFlags: 0
@@ -538,6 +553,18 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: DK.ButtonSounds, Assembly-CSharp
+        m_MethodName: PlaySound
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 8300000, guid: 76c58fa9f4f22264fad53b340d39aee5, type: 3}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioClip, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
       - m_Target: {fileID: 1959944525059459860}
         m_TargetAssemblyTypeName: DK.RewardedAdsButtonFailed, Assembly-CSharp
         m_MethodName: onGoldClick
@@ -561,6 +588,7 @@ GameObject:
   - component: {fileID: 146584177063523094}
   - component: {fileID: 146584177063523092}
   - component: {fileID: 146584177063523095}
+  - component: {fileID: 5138247244368749843}
   m_Layer: 5
   m_Name: Popup Low Gold
   m_TagString: Untagged
@@ -627,6 +655,20 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &5138247244368749843
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 146584177063523097}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 335e3c3fd74c1ce499300176cdcb8c8d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  audioSource: {fileID: 0}
+  audioClip: {fileID: 8300000, guid: f41d3c774b0daf94fa9fb58e3a3a7c05, type: 3}
 --- !u!1 &500741349125437095
 GameObject:
   m_ObjectHideFlags: 0
@@ -21789,6 +21831,18 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: DK.ButtonSounds, Assembly-CSharp
+        m_MethodName: PlaySound
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 8300000, guid: 3567cc159f41a344b999d9bb439bdc7e, type: 3}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioClip, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
       - m_Target: {fileID: 1959944525059459860}
         m_TargetAssemblyTypeName: DK.RewardedAdsButtonFailed, Assembly-CSharp
         m_MethodName: OnCloseClick
@@ -21839,7 +21893,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 26.551, y: 3.4}
-  m_SizeDelta: {x: 178.92734, y: 83.94418}
+  m_SizeDelta: {x: 0, y: 83.94418}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1959944524670711335
 MonoBehaviour:
@@ -26873,6 +26927,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1959944524914117168}
   - component: {fileID: 146584177124536660}
+  - component: {fileID: 3915123163763917701}
   m_Layer: 5
   m_Name: PlayScene_Result
   m_TagString: Untagged
@@ -26898,7 +26953,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -0.5899658, y: 10.25}
+  m_AnchoredPosition: {x: -0.58984375, y: 10.25}
   m_SizeDelta: {x: 1920.0001, y: 1080}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &146584177124536660
@@ -26923,6 +26978,20 @@ MonoBehaviour:
   soulsText: {fileID: 5138247245406733708}
   goldBonusAmount: 0
   soulsAmount: 0
+--- !u!114 &3915123163763917701
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1959944524914117169}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 335e3c3fd74c1ce499300176cdcb8c8d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  audioSource: {fileID: 0}
+  audioClip: {fileID: 8300000, guid: 13ba813e57dfe13438266104b2f021e7, type: 3}
 --- !u!1 &1959944524932462479
 GameObject:
   m_ObjectHideFlags: 0
@@ -32579,7 +32648,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1959944525233320538}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: DK.ButtonSounds, Assembly-CSharp
+        m_MethodName: PlaySound
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 8300000, guid: 76c58fa9f4f22264fad53b340d39aee5, type: 3}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioClip, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1959944525322599582
 GameObject:
   m_ObjectHideFlags: 0
@@ -42662,9 +42743,9 @@ RectTransform:
   m_Father: {fileID: 1959944524670711333}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 127.96367, y: -41.97209}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 101.92734, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1959944525368287257
@@ -42796,10 +42877,10 @@ RectTransform:
   m_Father: {fileID: 1959944524021879426}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 305, y: -69}
-  m_SizeDelta: {x: 130, y: 138}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 385, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1959944525375767605
 GameObject:
@@ -53714,6 +53795,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1959944525930142896}
+  - component: {fileID: 5138247244368749844}
   m_Layer: 5
   m_Name: PlayScene_Continue
   m_TagString: Untagged
@@ -53742,6 +53824,20 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &5138247244368749844
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1959944525930142910}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 335e3c3fd74c1ce499300176cdcb8c8d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  audioSource: {fileID: 0}
+  audioClip: {fileID: 8300000, guid: 00b430a7223794c4fa444eb2176b9042, type: 3}
 --- !u!1 &2004046383313762289
 GameObject:
   m_ObjectHideFlags: 0
@@ -152993,7 +153089,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -0.5899658, y: 10.25}
+  m_AnchoredPosition: {x: -0.58984375, y: 10.25}
   m_SizeDelta: {x: 1920.0001, y: 1080}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &7630673766473458441
@@ -158704,11 +158800,11 @@ RectTransform:
   m_Father: {fileID: 8197537059292626449}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 833, y: -198}
-  m_SizeDelta: {x: 140.9146, y: 140.9146}
-  m_Pivot: {x: 0.5, y: 0.5}
+  m_AnchorMin: {x: 1, y: 0.5}
+  m_AnchorMax: {x: 1, y: 0.5}
+  m_AnchoredPosition: {x: -56.54248, y: -198}
+  m_SizeDelta: {x: 140.91455, y: 140.9146}
+  m_Pivot: {x: 1, y: 0.5}
 --- !u!222 &8197537057826933479
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -158840,11 +158936,11 @@ RectTransform:
   m_Father: {fileID: 8197537059292626449}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 652, y: -206}
-  m_SizeDelta: {x: 140.9146, y: 140.9146}
-  m_Pivot: {x: 0.5, y: 0.5}
+  m_AnchorMin: {x: 1, y: 0.5}
+  m_AnchorMax: {x: 1, y: 0.5}
+  m_AnchoredPosition: {x: -237.54266, y: -206}
+  m_SizeDelta: {x: 140.91455, y: 140.9146}
+  m_Pivot: {x: 1, y: 0.5}
 --- !u!222 &8197537057833878456
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -159204,11 +159300,11 @@ RectTransform:
   m_Father: {fileID: 8197537059292626449}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 621, y: -368.87}
-  m_SizeDelta: {x: 140.9146, y: 140.9146}
-  m_Pivot: {x: 0.5, y: 0.5}
+  m_AnchorMin: {x: 1, y: 0.5}
+  m_AnchorMax: {x: 1, y: 0.5}
+  m_AnchoredPosition: {x: -268.54266, y: -368.87003}
+  m_SizeDelta: {x: 140.91455, y: 140.91461}
+  m_Pivot: {x: 1, y: 0.5}
 --- !u!222 &8197537058135991984
 CanvasRenderer:
   m_ObjectHideFlags: 0

@@ -113,8 +113,11 @@ namespace DK
                 rightHandConstraint.data.target = null;
                 leftHandConstraint.data.target = null;
             }
-
-            rigBuilder.Build();
+            if (rigBuilder != null)
+            {
+                rigBuilder.Build();
+            }
+            
         }
 
         public virtual void CheckHandIKWeight(RightHandRigTarget rightHandRigTarget,LeftHandRigTarget leftHandRigTarget, bool isTwoHanding)
