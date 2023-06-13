@@ -25,9 +25,8 @@ namespace DK
                     audioSource.Play();
                     sucessPopup.SetActive(true);
                     equipment.isPurchased = true;
-                    FirebaseManager.instance.userData.goldAmount -= equipment.goldRequiredToPurchase;
+                    FirebaseManager.instance.UpdateGold((-1 * equipment.goldRequiredToPurchase));
                     shop.SetGoldAmountOnPurchase();
-                    FirebaseManager.instance.UpdateGold(FirebaseManager.instance.userData.goldAmount);
                     SetScreenInShop();
                 }
                 else
@@ -41,7 +40,7 @@ namespace DK
                 {
                     sucessPopup.SetActive(true);
                     weapon.isPurchased = true;
-                    FirebaseManager.instance.userData.goldAmount -= weapon.goldRequiredToPurchase;
+                    FirebaseManager.instance.UpdateGold((-1*weapon.goldRequiredToPurchase));
                     shop.SetGoldAmountOnPurchase();
                     SetScreenInShop();
                 }
