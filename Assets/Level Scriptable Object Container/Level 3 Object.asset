@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 50f509ec8e6a8f44d886cc410914b6e6, type: 3}
   m_Name: Level 3 Object
   m_EditorClassIdentifier: 
-  isLocked: 1
+  isLocked: 0
   isCompleted: 0
   numStars: 0
   levelNumber: 3
-  levelScene: {fileID: 102900000, guid: d97949635cb513a4b89acff65207bc7e, type: 3}
+  levelScene: {fileID: 102900000, guid: e3e2b6cc1479c0e48b2f701d2fe5d621, type: 3}

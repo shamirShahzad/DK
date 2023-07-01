@@ -5858,6 +5858,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   characterController: {fileID: 0}
+  objectiveManager: {fileID: 0}
   characterLocomotionManager: {fileID: 0}
   characterAnimatorManager: {fileID: 4664210352641450463}
   characterWeaponSlotManager: {fileID: 4664210352641450462}
@@ -5903,6 +5904,7 @@ MonoBehaviour:
   rotationSpeed: 15
   maximumAggroRadius: 5
   stopAggroRadius: 20
+  uIManager: {fileID: 0}
   detectionRadius: 10
   minimumDetectionAngle: -50
   maximumDetectionAngle: 50
@@ -5945,6 +5947,8 @@ MonoBehaviour:
   teamIdNumber: 1
   maxHealth: 100
   currentHealth: 100
+  killCount: 0
+  deathCount: 0
   maxStamina: 0
   currentStamina: 500
   maxFocus: 0
@@ -6180,6 +6184,19 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 0a913c4b95187ed4b9dc91b58f53192c, type: 3}
   - {fileID: 8300000, guid: 5d2b5bf3407d35849ba2230fc435fec5, type: 3}
   - {fileID: 8300000, guid: 5ee299aec5a455c48a6f70a2c42796af, type: 3}
+  footsteps:
+  - {fileID: 8300000, guid: aa3306338ca30314a899c9c7a8ad8e6c, type: 3}
+  - {fileID: 8300000, guid: ff170c7442405f947b7b3a7846e5b72d, type: 3}
+  - {fileID: 8300000, guid: b96cc80cce19bbc469634e96d03406e1, type: 3}
+  - {fileID: 8300000, guid: e5b462db5ae725c4ebb1484a3ad96e07, type: 3}
+  - {fileID: 8300000, guid: 1632a1f189605a645a1f8944931adc16, type: 3}
+  - {fileID: 8300000, guid: 25cbf36ce2ea5204da296b79fc8eb57d, type: 3}
+  - {fileID: 8300000, guid: 6e8ce1bf0dd65bc498a016b40b9b5eb0, type: 3}
+  - {fileID: 8300000, guid: b116808cf7f00bc41906fbeffc5f9786, type: 3}
+  - {fileID: 8300000, guid: 8729cec92282c0e41af923fa4081373b, type: 3}
+  - {fileID: 8300000, guid: 8a43577c200166d4c8e090bee920ddb6, type: 3}
+  - {fileID: 8300000, guid: 5aa07eb4b81fdef40abc28bb69ac9c73, type: 3}
+  - {fileID: 8300000, guid: ddf888242fb56b9449933363e2d663c2, type: 3}
   backStabOrRiposte: {fileID: 8300000, guid: 306dabd1c9cdc41479c38e7905c3fa35, type: 3}
 --- !u!114 &4331079981829037951
 MonoBehaviour:
