@@ -1843,10 +1843,10 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  m_Radius: 24.1
-  m_Height: 69.17856
+  m_Radius: 33.808605
+  m_Height: 71.71993
   m_Direction: 0
-  m_Center: {x: 20.760754, y: -3.2699997, z: 0.00000026992015}
+  m_Center: {x: 19.490084, y: -3.269998, z: 1.4479572}
 --- !u!1 &8712038281048951069
 GameObject:
   m_ObjectHideFlags: 0
@@ -3817,6 +3817,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8712038281048633203}
+  - component: {fileID: 191864903}
   m_Layer: 12
   m_Name: Spine_02
   m_TagString: Untagged
@@ -3843,6 +3844,20 @@ Transform:
   m_Father: {fileID: 8712038281048694803}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!136 &191864903
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8712038281048987975}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 13.456706
+  m_Height: 47.2785
+  m_Direction: 1
+  m_Center: {x: -10.182564, y: 0.0000007642315, z: 3.1752353}
 --- !u!1 &8712038281048990209
 GameObject:
   m_ObjectHideFlags: 0
@@ -6585,7 +6600,7 @@ MonoBehaviour:
   soulCount: 0
   soulsAwardedOnDeath: 50
   playerLevel: 1
-  healthLevel: 10
+  healthLevel: 12
   staminaLevel: 10
   focusLevel: 10
   strengthLevel: 10
