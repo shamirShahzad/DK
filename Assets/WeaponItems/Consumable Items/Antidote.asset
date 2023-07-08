@@ -15,7 +15,7 @@ MonoBehaviour:
   itemIcon: {fileID: 21300000, guid: 268ac875f9668439f9a1c8d5e6922839, type: 3}
   itemName: Antidote
   maxItemAmount: 20
-  currentItemAmount: 5
+  currentItemAmount: 8
   itemModel: {fileID: 8913546806052282275, guid: 382431a62dec46b40814c4570c41aaf2, type: 3}
   consumableAnimation: Potion_Drink
   isInteracing: 0

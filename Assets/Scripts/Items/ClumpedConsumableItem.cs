@@ -18,7 +18,7 @@ namespace DK
             if (playerFXManager.toBeInstantiated)
             {
                 GameObject clump = Instantiate(itemModel, weaponSlotManager.rightHandSlot.transform);
-                clump.transform.localScale = new Vector3(100, 100, 100);
+                clump.transform.localScale = new Vector3(10, 10, 10);
                 playerFXManager.currentParticleFX = clumpConsumeFx;
                 playerFXManager.instantiatedFXModel = clump;
                 if (curePoison)
