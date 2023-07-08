@@ -124,7 +124,7 @@ namespace DK
             HandleHoldLBInput();
             HandleLockOnInput();
             HandleTwoHandInput();
-            HandleConsumableInput();
+           // HandleConsumableInput();
             HandleQuedInputs();
 
         }
@@ -438,7 +438,7 @@ namespace DK
             }
         }
 
-        private void HandleConsumableInput()
+        public void HandleConsumableInput()
         {
             if (x_input)
             {

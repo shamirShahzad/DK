@@ -24,6 +24,7 @@ namespace DK
                 playerAnimatorManager.PlayTargetAnimation(consumableAnimation, isInteracing,true);
                 playerFXManager.toBeInstantiated = true;
                 playerFXManager.isDrinking = true;
+                currentItemAmount--;
             }
             else
             {

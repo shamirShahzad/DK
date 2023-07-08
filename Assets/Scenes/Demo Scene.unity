@@ -2688,11 +2688,11 @@ PrefabInstance:
       objectReference: {fileID: 722398614}
     - target: {fileID: 9000053290340805183, guid: ec545e5b29518014388cb554bb29607f, type: 3}
       propertyPath: m_AnchorMax.x
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 9000053290340805183, guid: ec545e5b29518014388cb554bb29607f, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 9000053292317615552, guid: ec545e5b29518014388cb554bb29607f, type: 3}
       propertyPath: m_RootOrder
@@ -2744,7 +2744,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9000053292317615562, guid: ec545e5b29518014388cb554bb29607f, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ec545e5b29518014388cb554bb29607f, type: 3}
@@ -2873,10 +2873,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1381283373908540220, guid: cca7daa654f58ad4f9a14b4d6534deb0, type: 3}
-      propertyPath: weaponItemsRight.Array.data[0]
-      value: 
-      objectReference: {fileID: 11400000, guid: 0060897fa98a2ef4d85f187644374df9, type: 2}
     - target: {fileID: 5047102012166800941, guid: cca7daa654f58ad4f9a14b4d6534deb0, type: 3}
       propertyPath: listOfPatrolDestinations.Array.data[0]
       value: 
@@ -2893,57 +2889,9 @@ PrefabInstance:
       propertyPath: listOfPatrolDestinations.Array.data[3]
       value: 
       objectReference: {fileID: 722398614}
-    - target: {fileID: 7767633217973460029, guid: cca7daa654f58ad4f9a14b4d6534deb0, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7767633217973469121, guid: cca7daa654f58ad4f9a14b4d6534deb0, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7767633217973472829, guid: cca7daa654f58ad4f9a14b4d6534deb0, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7767633217973477753, guid: cca7daa654f58ad4f9a14b4d6534deb0, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7767633217973481191, guid: cca7daa654f58ad4f9a14b4d6534deb0, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7767633217973494013, guid: cca7daa654f58ad4f9a14b4d6534deb0, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7767633217973501999, guid: cca7daa654f58ad4f9a14b4d6534deb0, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7767633217973515387, guid: cca7daa654f58ad4f9a14b4d6534deb0, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7767633217973565087, guid: cca7daa654f58ad4f9a14b4d6534deb0, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7767633217973579607, guid: cca7daa654f58ad4f9a14b4d6534deb0, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7767633217973583415, guid: cca7daa654f58ad4f9a14b4d6534deb0, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 8056325251144874706, guid: cca7daa654f58ad4f9a14b4d6534deb0, type: 3}
       propertyPath: m_Name
       value: Enemy Advanced AI Sword and Shield Tpose
-      objectReference: {fileID: 0}
-    - target: {fileID: 8056325251144874706, guid: cca7daa654f58ad4f9a14b4d6534deb0, type: 3}
-      propertyPath: m_IsActive
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8056325251144874712, guid: cca7daa654f58ad4f9a14b4d6534deb0, type: 3}
       propertyPath: m_RootOrder

@@ -19,6 +19,8 @@ namespace DK
         public HandEquipment currentHandEquipment;
         public int selectedWeaponIndexLeft;
         public int selectedWeaponIndexRight;
+        public ConsumableItem estusFlask;
+        public ConsumableItem antidote;
         public ConsumableItem currentConsumable;
         public SpellItem currentSpell;
         public WeaponItem rightWeapon = null;

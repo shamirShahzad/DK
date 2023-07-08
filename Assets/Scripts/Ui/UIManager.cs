@@ -18,8 +18,11 @@ namespace DK
         {
             soulCountBar = FindObjectOfType<SoulCountBar>();
             soulCountBar.SetSoulCountText(FirebaseManager.instance.userData.soulPlayersPosseses);
-            player = FindObjectOfType<PlayerManager>();
             audioSource = GetComponent<AudioSource>();
+        }
+        private void Start()
+        {
+            player = FindObjectOfType<PlayerManager>();
         }
 
         public void playerDeath()
@@ -27,6 +30,19 @@ namespace DK
             if (player.isDead)
             {
                 deathPanel.SetActive(true);
+            }
+        }
+        public void SetConsumable(bool isFlask)
+        {
+            if (isFlask)
+            {
+                player.playerInventoryManager.currentConsumable = player.playerInventoryManager.estusFlask;
+                player.inputHandler.HandleConsumableInput();
+            }
+            else
+            {
+                player.playerInventoryManager.currentConsumable = player.playerInventoryManager.antidote;
+                player.inputHandler.HandleConsumableInput();
             }
         }
         public void OnPauseClick()

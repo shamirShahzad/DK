@@ -822,7 +822,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &7767633217973201185
 Transform:
   m_ObjectHideFlags: 0
@@ -3113,7 +3113,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &7767633217973213601
 Transform:
   m_ObjectHideFlags: 0
@@ -6036,7 +6036,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentItemBeingUsed: {fileID: 0}
   weaponItemsRight:
-  - {fileID: 11400000, guid: 2035fcc6b5e5956428f3213594734d88, type: 2}
+  - {fileID: 11400000, guid: 0060897fa98a2ef4d85f187644374df9, type: 2}
   - {fileID: 11400000, guid: 0060897fa98a2ef4d85f187644374df9, type: 2}
   - {fileID: 11400000, guid: 0060897fa98a2ef4d85f187644374df9, type: 2}
   weaponItemsLeft:
@@ -6645,7 +6645,7 @@ NavMeshAgent:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8056325252137142388}
-  m_Enabled: 0
+  m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.359278
   m_Speed: 3.5
