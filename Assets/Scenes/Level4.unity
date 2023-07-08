@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0.44402185, g: 0.49316466, b: 0.57223153, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -122,7 +122,7 @@ NavMeshSettings:
     preserveTilesOutsideBounds: 0
     debug:
       m_Flags: 0
-  m_NavMeshData: {fileID: 0}
+  m_NavMeshData: {fileID: 23800000, guid: 409a4a153ae7c6143a0cc413deb79e90, type: 2}
 --- !u!1001 &423099
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -133,6 +133,10 @@ PrefabInstance:
     - target: {fileID: 169968, guid: 292d28922523dca4a9d538af4cfdb1a1, type: 3}
       propertyPath: m_Name
       value: SM_Env_Tiles_Texture_04 (83)
+      objectReference: {fileID: 0}
+    - target: {fileID: 169968, guid: 292d28922523dca4a9d538af4cfdb1a1, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 473022, guid: 292d28922523dca4a9d538af4cfdb1a1, type: 3}
       propertyPath: m_RootOrder
@@ -190,6 +194,14 @@ PrefabInstance:
     - target: {fileID: 165716, guid: 780bc58852e53a34784cfcb8d82264af, type: 3}
       propertyPath: m_Name
       value: SM_Env_Wall_01_Alt_Texture (16)
+      objectReference: {fileID: 0}
+    - target: {fileID: 165716, guid: 780bc58852e53a34784cfcb8d82264af, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 165716, guid: 780bc58852e53a34784cfcb8d82264af, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 405382, guid: 780bc58852e53a34784cfcb8d82264af, type: 3}
       propertyPath: m_RootOrder
@@ -258,6 +270,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Env_Tiles_Texture_04 (72)
       objectReference: {fileID: 0}
+    - target: {fileID: 169968, guid: 292d28922523dca4a9d538af4cfdb1a1, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 473022, guid: 292d28922523dca4a9d538af4cfdb1a1, type: 3}
       propertyPath: m_RootOrder
       value: 94
@@ -314,6 +330,10 @@ PrefabInstance:
     - target: {fileID: 169968, guid: 292d28922523dca4a9d538af4cfdb1a1, type: 3}
       propertyPath: m_Name
       value: SM_Env_Tiles_Texture_04 (50)
+      objectReference: {fileID: 0}
+    - target: {fileID: 169968, guid: 292d28922523dca4a9d538af4cfdb1a1, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 473022, guid: 292d28922523dca4a9d538af4cfdb1a1, type: 3}
       propertyPath: m_RootOrder
@@ -377,6 +397,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Env_Tiles_Texture_04 (51)
       objectReference: {fileID: 0}
+    - target: {fileID: 169968, guid: 292d28922523dca4a9d538af4cfdb1a1, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 473022, guid: 292d28922523dca4a9d538af4cfdb1a1, type: 3}
       propertyPath: m_RootOrder
       value: 73
@@ -433,6 +457,14 @@ PrefabInstance:
     - target: {fileID: 165716, guid: 780bc58852e53a34784cfcb8d82264af, type: 3}
       propertyPath: m_Name
       value: SM_Env_Wall_01_Alt_Texture (14)
+      objectReference: {fileID: 0}
+    - target: {fileID: 165716, guid: 780bc58852e53a34784cfcb8d82264af, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 165716, guid: 780bc58852e53a34784cfcb8d82264af, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 405382, guid: 780bc58852e53a34784cfcb8d82264af, type: 3}
       propertyPath: m_RootOrder
@@ -495,6 +527,10 @@ PrefabInstance:
     - target: {fileID: 179390, guid: a2e4cdc587395c04cba2cad21f37b658, type: 3}
       propertyPath: m_Name
       value: SM_Prop_Crate_Wood_03 (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 179390, guid: a2e4cdc587395c04cba2cad21f37b658, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 454586, guid: a2e4cdc587395c04cba2cad21f37b658, type: 3}
       propertyPath: m_RootOrder
@@ -573,6 +609,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Env_Tiles_Texture_04 (42)
       objectReference: {fileID: 0}
+    - target: {fileID: 169968, guid: 292d28922523dca4a9d538af4cfdb1a1, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 473022, guid: 292d28922523dca4a9d538af4cfdb1a1, type: 3}
       propertyPath: m_RootOrder
       value: 42
@@ -634,6 +674,14 @@ PrefabInstance:
     - target: {fileID: 165716, guid: 780bc58852e53a34784cfcb8d82264af, type: 3}
       propertyPath: m_Name
       value: SM_Env_Wall_01_Alt_Texture (42)
+      objectReference: {fileID: 0}
+    - target: {fileID: 165716, guid: 780bc58852e53a34784cfcb8d82264af, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 165716, guid: 780bc58852e53a34784cfcb8d82264af, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 405382, guid: 780bc58852e53a34784cfcb8d82264af, type: 3}
       propertyPath: m_RootOrder
@@ -703,7 +751,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9000053292317615552, guid: ec545e5b29518014388cb554bb29607f, type: 3}
       propertyPath: m_RootOrder
-      value: 13
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 9000053292317615552, guid: ec545e5b29518014388cb554bb29607f, type: 3}
       propertyPath: m_LocalPosition.x
@@ -762,6 +810,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Env_Tiles_Texture_04 (64)
       objectReference: {fileID: 0}
+    - target: {fileID: 169968, guid: 292d28922523dca4a9d538af4cfdb1a1, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 473022, guid: 292d28922523dca4a9d538af4cfdb1a1, type: 3}
       propertyPath: m_RootOrder
       value: 86
@@ -818,6 +870,14 @@ PrefabInstance:
     - target: {fileID: 165716, guid: 780bc58852e53a34784cfcb8d82264af, type: 3}
       propertyPath: m_Name
       value: SM_Env_Wall_01_Alt_Texture (54)
+      objectReference: {fileID: 0}
+    - target: {fileID: 165716, guid: 780bc58852e53a34784cfcb8d82264af, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 165716, guid: 780bc58852e53a34784cfcb8d82264af, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 405382, guid: 780bc58852e53a34784cfcb8d82264af, type: 3}
       propertyPath: m_RootOrder
@@ -881,6 +941,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Env_Wall_01_Alt_Texture (55)
       objectReference: {fileID: 0}
+    - target: {fileID: 165716, guid: 780bc58852e53a34784cfcb8d82264af, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 165716, guid: 780bc58852e53a34784cfcb8d82264af, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 405382, guid: 780bc58852e53a34784cfcb8d82264af, type: 3}
       propertyPath: m_RootOrder
       value: 55
@@ -942,6 +1010,10 @@ PrefabInstance:
     - target: {fileID: 169968, guid: 292d28922523dca4a9d538af4cfdb1a1, type: 3}
       propertyPath: m_Name
       value: SM_Env_Tiles_Texture_04 (14)
+      objectReference: {fileID: 0}
+    - target: {fileID: 169968, guid: 292d28922523dca4a9d538af4cfdb1a1, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 473022, guid: 292d28922523dca4a9d538af4cfdb1a1, type: 3}
       propertyPath: m_RootOrder
@@ -1010,6 +1082,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Prop_Crate_Wood_03 (7)
       objectReference: {fileID: 0}
+    - target: {fileID: 179390, guid: a2e4cdc587395c04cba2cad21f37b658, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 454586, guid: a2e4cdc587395c04cba2cad21f37b658, type: 3}
       propertyPath: m_RootOrder
       value: 62
@@ -1071,6 +1147,14 @@ PrefabInstance:
     - target: {fileID: 165716, guid: 780bc58852e53a34784cfcb8d82264af, type: 3}
       propertyPath: m_Name
       value: SM_Env_Wall_01_Alt_Texture (35)
+      objectReference: {fileID: 0}
+    - target: {fileID: 165716, guid: 780bc58852e53a34784cfcb8d82264af, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 165716, guid: 780bc58852e53a34784cfcb8d82264af, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 405382, guid: 780bc58852e53a34784cfcb8d82264af, type: 3}
       propertyPath: m_RootOrder
@@ -1174,6 +1258,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Env_Tiles_Texture_04 (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 169968, guid: 292d28922523dca4a9d538af4cfdb1a1, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 473022, guid: 292d28922523dca4a9d538af4cfdb1a1, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -1240,6 +1328,10 @@ PrefabInstance:
     - target: {fileID: 195242, guid: c34daa6d7ae26f243b4ceaf341d6ae9b, type: 3}
       propertyPath: m_Name
       value: SM_Prop_Vase_Broken_01
+      objectReference: {fileID: 0}
+    - target: {fileID: 195242, guid: c34daa6d7ae26f243b4ceaf341d6ae9b, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 459182, guid: c34daa6d7ae26f243b4ceaf341d6ae9b, type: 3}
       propertyPath: m_RootOrder
@@ -1308,6 +1400,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Env_Tiles_Texture_04 (12)
       objectReference: {fileID: 0}
+    - target: {fileID: 169968, guid: 292d28922523dca4a9d538af4cfdb1a1, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 473022, guid: 292d28922523dca4a9d538af4cfdb1a1, type: 3}
       propertyPath: m_RootOrder
       value: 12
@@ -1375,6 +1471,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Env_Tiles_Texture_04 (21)
       objectReference: {fileID: 0}
+    - target: {fileID: 169968, guid: 292d28922523dca4a9d538af4cfdb1a1, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 473022, guid: 292d28922523dca4a9d538af4cfdb1a1, type: 3}
       propertyPath: m_RootOrder
       value: 21
@@ -1431,6 +1531,10 @@ PrefabInstance:
     - target: {fileID: 169968, guid: 292d28922523dca4a9d538af4cfdb1a1, type: 3}
       propertyPath: m_Name
       value: SM_Env_Tiles_Texture_04 (69)
+      objectReference: {fileID: 0}
+    - target: {fileID: 169968, guid: 292d28922523dca4a9d538af4cfdb1a1, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 473022, guid: 292d28922523dca4a9d538af4cfdb1a1, type: 3}
       propertyPath: m_RootOrder
@@ -1494,6 +1598,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Env_Tiles_Texture_04 (41)
       objectReference: {fileID: 0}
+    - target: {fileID: 169968, guid: 292d28922523dca4a9d538af4cfdb1a1, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 473022, guid: 292d28922523dca4a9d538af4cfdb1a1, type: 3}
       propertyPath: m_RootOrder
       value: 41
@@ -1555,6 +1663,14 @@ PrefabInstance:
     - target: {fileID: 165716, guid: 780bc58852e53a34784cfcb8d82264af, type: 3}
       propertyPath: m_Name
       value: SM_Env_Wall_01_Alt_Texture (24)
+      objectReference: {fileID: 0}
+    - target: {fileID: 165716, guid: 780bc58852e53a34784cfcb8d82264af, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 165716, guid: 780bc58852e53a34784cfcb8d82264af, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 405382, guid: 780bc58852e53a34784cfcb8d82264af, type: 3}
       propertyPath: m_RootOrder
@@ -1628,6 +1744,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Env_Tiles_Texture_04 (16)
       objectReference: {fileID: 0}
+    - target: {fileID: 169968, guid: 292d28922523dca4a9d538af4cfdb1a1, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 473022, guid: 292d28922523dca4a9d538af4cfdb1a1, type: 3}
       propertyPath: m_RootOrder
       value: 16
@@ -1684,6 +1804,14 @@ PrefabInstance:
     - target: {fileID: 165716, guid: 780bc58852e53a34784cfcb8d82264af, type: 3}
       propertyPath: m_Name
       value: SM_Env_Wall_01_Alt_Texture (58)
+      objectReference: {fileID: 0}
+    - target: {fileID: 165716, guid: 780bc58852e53a34784cfcb8d82264af, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 165716, guid: 780bc58852e53a34784cfcb8d82264af, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 405382, guid: 780bc58852e53a34784cfcb8d82264af, type: 3}
       propertyPath: m_RootOrder
@@ -1742,6 +1870,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Env_Tiles_Texture_04 (78)
       objectReference: {fileID: 0}
+    - target: {fileID: 169968, guid: 292d28922523dca4a9d538af4cfdb1a1, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 473022, guid: 292d28922523dca4a9d538af4cfdb1a1, type: 3}
       propertyPath: m_RootOrder
       value: 100
@@ -1799,6 +1931,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Env_Wall_01_Alt_Texture
       objectReference: {fileID: 0}
+    - target: {fileID: 165716, guid: 780bc58852e53a34784cfcb8d82264af, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 165716, guid: 780bc58852e53a34784cfcb8d82264af, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 405382, guid: 780bc58852e53a34784cfcb8d82264af, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -1855,6 +1995,10 @@ PrefabInstance:
     - target: {fileID: 169968, guid: 292d28922523dca4a9d538af4cfdb1a1, type: 3}
       propertyPath: m_Name
       value: SM_Env_Tiles_Texture_04 (35)
+      objectReference: {fileID: 0}
+    - target: {fileID: 169968, guid: 292d28922523dca4a9d538af4cfdb1a1, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 473022, guid: 292d28922523dca4a9d538af4cfdb1a1, type: 3}
       propertyPath: m_RootOrder
@@ -1923,6 +2067,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Env_Wall_01_Alt_Texture (60)
       objectReference: {fileID: 0}
+    - target: {fileID: 165716, guid: 780bc58852e53a34784cfcb8d82264af, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 165716, guid: 780bc58852e53a34784cfcb8d82264af, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 405382, guid: 780bc58852e53a34784cfcb8d82264af, type: 3}
       propertyPath: m_RootOrder
       value: 60
@@ -1980,6 +2132,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Env_Tiles_Texture_04 (71)
       objectReference: {fileID: 0}
+    - target: {fileID: 169968, guid: 292d28922523dca4a9d538af4cfdb1a1, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 473022, guid: 292d28922523dca4a9d538af4cfdb1a1, type: 3}
       propertyPath: m_RootOrder
       value: 93
@@ -2036,6 +2192,14 @@ PrefabInstance:
     - target: {fileID: 165716, guid: 780bc58852e53a34784cfcb8d82264af, type: 3}
       propertyPath: m_Name
       value: SM_Env_Wall_01_Alt_Texture (10)
+      objectReference: {fileID: 0}
+    - target: {fileID: 165716, guid: 780bc58852e53a34784cfcb8d82264af, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 165716, guid: 780bc58852e53a34784cfcb8d82264af, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 405382, guid: 780bc58852e53a34784cfcb8d82264af, type: 3}
       propertyPath: m_RootOrder
@@ -2099,6 +2263,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Env_Wall_01_Alt_Texture (36)
       objectReference: {fileID: 0}
+    - target: {fileID: 165716, guid: 780bc58852e53a34784cfcb8d82264af, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 165716, guid: 780bc58852e53a34784cfcb8d82264af, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 405382, guid: 780bc58852e53a34784cfcb8d82264af, type: 3}
       propertyPath: m_RootOrder
       value: 36
@@ -2161,6 +2333,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Env_Tiles_Texture_04 (91)
       objectReference: {fileID: 0}
+    - target: {fileID: 169968, guid: 292d28922523dca4a9d538af4cfdb1a1, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 473022, guid: 292d28922523dca4a9d538af4cfdb1a1, type: 3}
       propertyPath: m_RootOrder
       value: 113
@@ -2217,6 +2393,14 @@ PrefabInstance:
     - target: {fileID: 165716, guid: 780bc58852e53a34784cfcb8d82264af, type: 3}
       propertyPath: m_Name
       value: SM_Env_Wall_01_Alt_Texture (26)
+      objectReference: {fileID: 0}
+    - target: {fileID: 165716, guid: 780bc58852e53a34784cfcb8d82264af, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 165716, guid: 780bc58852e53a34784cfcb8d82264af, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 405382, guid: 780bc58852e53a34784cfcb8d82264af, type: 3}
       propertyPath: m_RootOrder
@@ -2275,6 +2459,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Env_Wall_01_Alt_Texture (31)
       objectReference: {fileID: 0}
+    - target: {fileID: 165716, guid: 780bc58852e53a34784cfcb8d82264af, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 165716, guid: 780bc58852e53a34784cfcb8d82264af, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 405382, guid: 780bc58852e53a34784cfcb8d82264af, type: 3}
       propertyPath: m_RootOrder
       value: 31
@@ -2331,6 +2523,14 @@ PrefabInstance:
     - target: {fileID: 165716, guid: 780bc58852e53a34784cfcb8d82264af, type: 3}
       propertyPath: m_Name
       value: SM_Env_Wall_01_Alt_Texture (46)
+      objectReference: {fileID: 0}
+    - target: {fileID: 165716, guid: 780bc58852e53a34784cfcb8d82264af, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 165716, guid: 780bc58852e53a34784cfcb8d82264af, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 405382, guid: 780bc58852e53a34784cfcb8d82264af, type: 3}
       propertyPath: m_RootOrder
@@ -2389,6 +2589,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Env_Wall_01_Alt_Texture (28)
       objectReference: {fileID: 0}
+    - target: {fileID: 165716, guid: 780bc58852e53a34784cfcb8d82264af, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 165716, guid: 780bc58852e53a34784cfcb8d82264af, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 405382, guid: 780bc58852e53a34784cfcb8d82264af, type: 3}
       propertyPath: m_RootOrder
       value: 28
@@ -2446,6 +2654,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Env_Wall_01_Alt_Texture (33)
       objectReference: {fileID: 0}
+    - target: {fileID: 165716, guid: 780bc58852e53a34784cfcb8d82264af, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 165716, guid: 780bc58852e53a34784cfcb8d82264af, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 405382, guid: 780bc58852e53a34784cfcb8d82264af, type: 3}
       propertyPath: m_RootOrder
       value: 33
@@ -2502,6 +2718,10 @@ PrefabInstance:
     - target: {fileID: 169968, guid: 292d28922523dca4a9d538af4cfdb1a1, type: 3}
       propertyPath: m_Name
       value: SM_Env_Tiles_Texture_04 (25)
+      objectReference: {fileID: 0}
+    - target: {fileID: 169968, guid: 292d28922523dca4a9d538af4cfdb1a1, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 473022, guid: 292d28922523dca4a9d538af4cfdb1a1, type: 3}
       propertyPath: m_RootOrder
@@ -2565,6 +2785,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Env_Wall_01_Alt_Texture (56)
       objectReference: {fileID: 0}
+    - target: {fileID: 165716, guid: 780bc58852e53a34784cfcb8d82264af, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 165716, guid: 780bc58852e53a34784cfcb8d82264af, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 405382, guid: 780bc58852e53a34784cfcb8d82264af, type: 3}
       propertyPath: m_RootOrder
       value: 56
@@ -2626,6 +2854,10 @@ PrefabInstance:
     - target: {fileID: 169968, guid: 292d28922523dca4a9d538af4cfdb1a1, type: 3}
       propertyPath: m_Name
       value: SM_Env_Tiles_Texture_04 (58)
+      objectReference: {fileID: 0}
+    - target: {fileID: 169968, guid: 292d28922523dca4a9d538af4cfdb1a1, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 473022, guid: 292d28922523dca4a9d538af4cfdb1a1, type: 3}
       propertyPath: m_RootOrder
@@ -2689,6 +2921,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Prop_Toture_StretchTable_01
       objectReference: {fileID: 0}
+    - target: {fileID: 149048, guid: 999fe1eecd3902b4ca516ecbfac9efd3, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 405356, guid: 999fe1eecd3902b4ca516ecbfac9efd3, type: 3}
       propertyPath: m_RootOrder
       value: 53
@@ -2746,6 +2982,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Env_Tiles_Texture_04 (79)
       objectReference: {fileID: 0}
+    - target: {fileID: 169968, guid: 292d28922523dca4a9d538af4cfdb1a1, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 473022, guid: 292d28922523dca4a9d538af4cfdb1a1, type: 3}
       propertyPath: m_RootOrder
       value: 101
@@ -2802,6 +3042,10 @@ PrefabInstance:
     - target: {fileID: 169968, guid: 292d28922523dca4a9d538af4cfdb1a1, type: 3}
       propertyPath: m_Name
       value: SM_Env_Tiles_Texture_04 (65)
+      objectReference: {fileID: 0}
+    - target: {fileID: 169968, guid: 292d28922523dca4a9d538af4cfdb1a1, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 473022, guid: 292d28922523dca4a9d538af4cfdb1a1, type: 3}
       propertyPath: m_RootOrder
@@ -2875,6 +3119,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Env_Wall_01_Alt_Texture (15)
       objectReference: {fileID: 0}
+    - target: {fileID: 165716, guid: 780bc58852e53a34784cfcb8d82264af, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 165716, guid: 780bc58852e53a34784cfcb8d82264af, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 405382, guid: 780bc58852e53a34784cfcb8d82264af, type: 3}
       propertyPath: m_RootOrder
       value: 15
@@ -2931,6 +3183,14 @@ PrefabInstance:
     - target: {fileID: 165716, guid: 780bc58852e53a34784cfcb8d82264af, type: 3}
       propertyPath: m_Name
       value: SM_Env_Wall_01_Alt_Texture (5)
+      objectReference: {fileID: 0}
+    - target: {fileID: 165716, guid: 780bc58852e53a34784cfcb8d82264af, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 165716, guid: 780bc58852e53a34784cfcb8d82264af, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 405382, guid: 780bc58852e53a34784cfcb8d82264af, type: 3}
       propertyPath: m_RootOrder
@@ -2994,6 +3254,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Env_Wall_01_Alt_Texture (9)
       objectReference: {fileID: 0}
+    - target: {fileID: 165716, guid: 780bc58852e53a34784cfcb8d82264af, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 165716, guid: 780bc58852e53a34784cfcb8d82264af, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 405382, guid: 780bc58852e53a34784cfcb8d82264af, type: 3}
       propertyPath: m_RootOrder
       value: 9
@@ -3050,6 +3318,10 @@ PrefabInstance:
     - target: {fileID: 169968, guid: 292d28922523dca4a9d538af4cfdb1a1, type: 3}
       propertyPath: m_Name
       value: SM_Env_Tiles_Texture_04 (60)
+      objectReference: {fileID: 0}
+    - target: {fileID: 169968, guid: 292d28922523dca4a9d538af4cfdb1a1, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 473022, guid: 292d28922523dca4a9d538af4cfdb1a1, type: 3}
       propertyPath: m_RootOrder
@@ -3108,6 +3380,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Env_Wall_01_Alt_Texture (66)
       objectReference: {fileID: 0}
+    - target: {fileID: 165716, guid: 780bc58852e53a34784cfcb8d82264af, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 165716, guid: 780bc58852e53a34784cfcb8d82264af, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 405382, guid: 780bc58852e53a34784cfcb8d82264af, type: 3}
       propertyPath: m_RootOrder
       value: 66
@@ -3161,13 +3441,33 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2554598860014443786, guid: 96e02eda9c2e03c479bcb5f17f34d8f3, type: 3}
+      propertyPath: uIManager
+      value: 
+      objectReference: {fileID: 1603212294}
+    - target: {fileID: 2554598860014443786, guid: 96e02eda9c2e03c479bcb5f17f34d8f3, type: 3}
+      propertyPath: cameraHandler
+      value: 
+      objectReference: {fileID: 1118764017}
+    - target: {fileID: 2554598860014443786, guid: 96e02eda9c2e03c479bcb5f17f34d8f3, type: 3}
+      propertyPath: interactableUi
+      value: 
+      objectReference: {fileID: 1603212297}
+    - target: {fileID: 2554598860014443786, guid: 96e02eda9c2e03c479bcb5f17f34d8f3, type: 3}
+      propertyPath: interactableUiGameObject
+      value: 
+      objectReference: {fileID: 1603212296}
+    - target: {fileID: 2554598860014443786, guid: 96e02eda9c2e03c479bcb5f17f34d8f3, type: 3}
+      propertyPath: itemInteractableGameobject
+      value: 
+      objectReference: {fileID: 1603212295}
     - target: {fileID: 2554598860014443789, guid: 96e02eda9c2e03c479bcb5f17f34d8f3, type: 3}
       propertyPath: m_Name
       value: New Player
       objectReference: {fileID: 0}
     - target: {fileID: 2554598860014443894, guid: 96e02eda9c2e03c479bcb5f17f34d8f3, type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2554598860014443894, guid: 96e02eda9c2e03c479bcb5f17f34d8f3, type: 3}
       propertyPath: m_LocalPosition.x
@@ -3211,6 +3511,28 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 96e02eda9c2e03c479bcb5f17f34d8f3, type: 3}
+--- !u!114 &506985301 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: -8716354990826950485, guid: 96e02eda9c2e03c479bcb5f17f34d8f3, type: 3}
+  m_PrefabInstance: {fileID: 506985300}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 987cb0cae9b761344bfc6430064075b1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &506985302 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2554598860014443786, guid: 96e02eda9c2e03c479bcb5f17f34d8f3, type: 3}
+  m_PrefabInstance: {fileID: 506985300}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f824e1ec92be3a941834e4001e91c0a2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &507922305
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3221,6 +3543,10 @@ PrefabInstance:
     - target: {fileID: 169968, guid: 292d28922523dca4a9d538af4cfdb1a1, type: 3}
       propertyPath: m_Name
       value: SM_Env_Tiles_Texture_04 (63)
+      objectReference: {fileID: 0}
+    - target: {fileID: 169968, guid: 292d28922523dca4a9d538af4cfdb1a1, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 473022, guid: 292d28922523dca4a9d538af4cfdb1a1, type: 3}
       propertyPath: m_RootOrder
@@ -3278,6 +3604,14 @@ PrefabInstance:
     - target: {fileID: 165716, guid: 780bc58852e53a34784cfcb8d82264af, type: 3}
       propertyPath: m_Name
       value: SM_Env_Wall_01_Alt_Texture (25)
+      objectReference: {fileID: 0}
+    - target: {fileID: 165716, guid: 780bc58852e53a34784cfcb8d82264af, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 165716, guid: 780bc58852e53a34784cfcb8d82264af, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 405382, guid: 780bc58852e53a34784cfcb8d82264af, type: 3}
       propertyPath: m_RootOrder
@@ -3351,6 +3685,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Env_Tiles_Texture_04 (15)
       objectReference: {fileID: 0}
+    - target: {fileID: 169968, guid: 292d28922523dca4a9d538af4cfdb1a1, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 473022, guid: 292d28922523dca4a9d538af4cfdb1a1, type: 3}
       propertyPath: m_RootOrder
       value: 15
@@ -3413,6 +3751,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Env_Tiles_Texture_04 (52)
       objectReference: {fileID: 0}
+    - target: {fileID: 169968, guid: 292d28922523dca4a9d538af4cfdb1a1, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 473022, guid: 292d28922523dca4a9d538af4cfdb1a1, type: 3}
       propertyPath: m_RootOrder
       value: 74
@@ -3469,6 +3811,10 @@ PrefabInstance:
     - target: {fileID: 182310, guid: 8788f886876d4024aaa163027861ee95, type: 3}
       propertyPath: m_Name
       value: SM_Prop_Tech_Pipe_02 (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 182310, guid: 8788f886876d4024aaa163027861ee95, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 428498, guid: 8788f886876d4024aaa163027861ee95, type: 3}
       propertyPath: m_RootOrder
@@ -3537,6 +3883,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Prop_Skeleton_Knight_Throne_01
       objectReference: {fileID: 0}
+    - target: {fileID: 143142, guid: bbe9251e064bbde42ab22c6eeacf7e1c, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 456828, guid: bbe9251e064bbde42ab22c6eeacf7e1c, type: 3}
       propertyPath: m_RootOrder
       value: 51
@@ -3594,6 +3944,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Env_Tiles_Texture_04 (56)
       objectReference: {fileID: 0}
+    - target: {fileID: 169968, guid: 292d28922523dca4a9d538af4cfdb1a1, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 473022, guid: 292d28922523dca4a9d538af4cfdb1a1, type: 3}
       propertyPath: m_RootOrder
       value: 78
@@ -3650,6 +4004,14 @@ PrefabInstance:
     - target: {fileID: 165716, guid: 780bc58852e53a34784cfcb8d82264af, type: 3}
       propertyPath: m_Name
       value: SM_Env_Wall_01_Alt_Texture (64)
+      objectReference: {fileID: 0}
+    - target: {fileID: 165716, guid: 780bc58852e53a34784cfcb8d82264af, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 165716, guid: 780bc58852e53a34784cfcb8d82264af, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 405382, guid: 780bc58852e53a34784cfcb8d82264af, type: 3}
       propertyPath: m_RootOrder
@@ -3713,6 +4075,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Env_Wall_01_Alt_Texture (22)
       objectReference: {fileID: 0}
+    - target: {fileID: 165716, guid: 780bc58852e53a34784cfcb8d82264af, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 165716, guid: 780bc58852e53a34784cfcb8d82264af, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 405382, guid: 780bc58852e53a34784cfcb8d82264af, type: 3}
       propertyPath: m_RootOrder
       value: 22
@@ -3769,6 +4139,10 @@ PrefabInstance:
     - target: {fileID: 179390, guid: a2e4cdc587395c04cba2cad21f37b658, type: 3}
       propertyPath: m_Name
       value: SM_Prop_Crate_Wood_03 (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 179390, guid: a2e4cdc587395c04cba2cad21f37b658, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 454586, guid: a2e4cdc587395c04cba2cad21f37b658, type: 3}
       propertyPath: m_RootOrder
@@ -3857,6 +4231,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Env_Wall_01_Alt_Texture (8)
       objectReference: {fileID: 0}
+    - target: {fileID: 165716, guid: 780bc58852e53a34784cfcb8d82264af, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 165716, guid: 780bc58852e53a34784cfcb8d82264af, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 405382, guid: 780bc58852e53a34784cfcb8d82264af, type: 3}
       propertyPath: m_RootOrder
       value: 8
@@ -3924,6 +4306,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Env_Wall_01_Alt_Texture (61)
       objectReference: {fileID: 0}
+    - target: {fileID: 165716, guid: 780bc58852e53a34784cfcb8d82264af, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 165716, guid: 780bc58852e53a34784cfcb8d82264af, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 405382, guid: 780bc58852e53a34784cfcb8d82264af, type: 3}
       propertyPath: m_RootOrder
       value: 61
@@ -3980,6 +4370,10 @@ PrefabInstance:
     - target: {fileID: 141250, guid: 668e6a33e8614334c822a49aa47f9729, type: 3}
       propertyPath: m_Name
       value: SM_Prop_Vase_Group_01
+      objectReference: {fileID: 0}
+    - target: {fileID: 141250, guid: 668e6a33e8614334c822a49aa47f9729, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 499200, guid: 668e6a33e8614334c822a49aa47f9729, type: 3}
       propertyPath: m_RootOrder
@@ -4038,6 +4432,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Env_Wall_01_Alt_Texture (59)
       objectReference: {fileID: 0}
+    - target: {fileID: 165716, guid: 780bc58852e53a34784cfcb8d82264af, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 165716, guid: 780bc58852e53a34784cfcb8d82264af, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 405382, guid: 780bc58852e53a34784cfcb8d82264af, type: 3}
       propertyPath: m_RootOrder
       value: 59
@@ -4094,6 +4496,10 @@ PrefabInstance:
     - target: {fileID: 169968, guid: 292d28922523dca4a9d538af4cfdb1a1, type: 3}
       propertyPath: m_Name
       value: SM_Env_Tiles_Texture_04 (80)
+      objectReference: {fileID: 0}
+    - target: {fileID: 169968, guid: 292d28922523dca4a9d538af4cfdb1a1, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 473022, guid: 292d28922523dca4a9d538af4cfdb1a1, type: 3}
       propertyPath: m_RootOrder
@@ -4177,6 +4583,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Prop_Crate_Wood_03 (6)
       objectReference: {fileID: 0}
+    - target: {fileID: 179390, guid: a2e4cdc587395c04cba2cad21f37b658, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 454586, guid: a2e4cdc587395c04cba2cad21f37b658, type: 3}
       propertyPath: m_RootOrder
       value: 61
@@ -4242,7 +4652,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3947758178294609997, guid: fdcceb368caa6a64bb02a25b9b7e2999, type: 3}
       propertyPath: m_RootOrder
-      value: 5
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 3947758178294609997, guid: fdcceb368caa6a64bb02a25b9b7e2999, type: 3}
       propertyPath: m_LocalPosition.x
@@ -4306,6 +4716,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Env_Wall_01_Alt_Texture (52)
       objectReference: {fileID: 0}
+    - target: {fileID: 165716, guid: 780bc58852e53a34784cfcb8d82264af, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 165716, guid: 780bc58852e53a34784cfcb8d82264af, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 405382, guid: 780bc58852e53a34784cfcb8d82264af, type: 3}
       propertyPath: m_RootOrder
       value: 52
@@ -4362,6 +4780,10 @@ PrefabInstance:
     - target: {fileID: 169968, guid: 292d28922523dca4a9d538af4cfdb1a1, type: 3}
       propertyPath: m_Name
       value: SM_Env_Tiles_Texture_04 (54)
+      objectReference: {fileID: 0}
+    - target: {fileID: 169968, guid: 292d28922523dca4a9d538af4cfdb1a1, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 473022, guid: 292d28922523dca4a9d538af4cfdb1a1, type: 3}
       propertyPath: m_RootOrder
@@ -4429,6 +4851,14 @@ PrefabInstance:
     - target: {fileID: 165716, guid: 780bc58852e53a34784cfcb8d82264af, type: 3}
       propertyPath: m_Name
       value: SM_Env_Wall_01_Alt_Texture (29)
+      objectReference: {fileID: 0}
+    - target: {fileID: 165716, guid: 780bc58852e53a34784cfcb8d82264af, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 165716, guid: 780bc58852e53a34784cfcb8d82264af, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 405382, guid: 780bc58852e53a34784cfcb8d82264af, type: 3}
       propertyPath: m_RootOrder
@@ -4512,6 +4942,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Env_Wall_01_Alt_Texture (51)
       objectReference: {fileID: 0}
+    - target: {fileID: 165716, guid: 780bc58852e53a34784cfcb8d82264af, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 165716, guid: 780bc58852e53a34784cfcb8d82264af, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 405382, guid: 780bc58852e53a34784cfcb8d82264af, type: 3}
       propertyPath: m_RootOrder
       value: 51
@@ -4594,6 +5032,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Env_Tiles_Texture_04 (59)
       objectReference: {fileID: 0}
+    - target: {fileID: 169968, guid: 292d28922523dca4a9d538af4cfdb1a1, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 473022, guid: 292d28922523dca4a9d538af4cfdb1a1, type: 3}
       propertyPath: m_RootOrder
       value: 81
@@ -4651,6 +5093,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Env_Tiles_Texture_04 (85)
       objectReference: {fileID: 0}
+    - target: {fileID: 169968, guid: 292d28922523dca4a9d538af4cfdb1a1, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 473022, guid: 292d28922523dca4a9d538af4cfdb1a1, type: 3}
       propertyPath: m_RootOrder
       value: 107
@@ -4707,6 +5153,14 @@ PrefabInstance:
     - target: {fileID: 165716, guid: 780bc58852e53a34784cfcb8d82264af, type: 3}
       propertyPath: m_Name
       value: SM_Env_Wall_01_Alt_Texture (27)
+      objectReference: {fileID: 0}
+    - target: {fileID: 165716, guid: 780bc58852e53a34784cfcb8d82264af, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 165716, guid: 780bc58852e53a34784cfcb8d82264af, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 405382, guid: 780bc58852e53a34784cfcb8d82264af, type: 3}
       propertyPath: m_RootOrder
@@ -4856,7 +5310,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
 --- !u!1001 &914838684
 PrefabInstance:
@@ -4868,6 +5322,10 @@ PrefabInstance:
     - target: {fileID: 169968, guid: 292d28922523dca4a9d538af4cfdb1a1, type: 3}
       propertyPath: m_Name
       value: SM_Env_Tiles_Texture_04 (23)
+      objectReference: {fileID: 0}
+    - target: {fileID: 169968, guid: 292d28922523dca4a9d538af4cfdb1a1, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 473022, guid: 292d28922523dca4a9d538af4cfdb1a1, type: 3}
       propertyPath: m_RootOrder
@@ -4925,6 +5383,14 @@ PrefabInstance:
     - target: {fileID: 165716, guid: 780bc58852e53a34784cfcb8d82264af, type: 3}
       propertyPath: m_Name
       value: SM_Env_Wall_01_Alt_Texture (44)
+      objectReference: {fileID: 0}
+    - target: {fileID: 165716, guid: 780bc58852e53a34784cfcb8d82264af, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 165716, guid: 780bc58852e53a34784cfcb8d82264af, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 405382, guid: 780bc58852e53a34784cfcb8d82264af, type: 3}
       propertyPath: m_RootOrder
@@ -4998,6 +5464,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Env_Wall_01_Alt_Texture (65)
       objectReference: {fileID: 0}
+    - target: {fileID: 165716, guid: 780bc58852e53a34784cfcb8d82264af, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 165716, guid: 780bc58852e53a34784cfcb8d82264af, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 405382, guid: 780bc58852e53a34784cfcb8d82264af, type: 3}
       propertyPath: m_RootOrder
       value: 65
@@ -5065,6 +5539,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Prop_Crate_Ornate_01 (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 140248, guid: c44fafd591a0f624c9d8a67a72cc6652, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 486684, guid: c44fafd591a0f624c9d8a67a72cc6652, type: 3}
       propertyPath: m_RootOrder
       value: 64
@@ -5127,6 +5605,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Prop_Crate_Wood_03
       objectReference: {fileID: 0}
+    - target: {fileID: 179390, guid: a2e4cdc587395c04cba2cad21f37b658, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 454586, guid: a2e4cdc587395c04cba2cad21f37b658, type: 3}
       propertyPath: m_RootOrder
       value: 55
@@ -5183,6 +5665,10 @@ PrefabInstance:
     - target: {fileID: 169968, guid: 292d28922523dca4a9d538af4cfdb1a1, type: 3}
       propertyPath: m_Name
       value: SM_Env_Tiles_Texture_04 (61)
+      objectReference: {fileID: 0}
+    - target: {fileID: 169968, guid: 292d28922523dca4a9d538af4cfdb1a1, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 473022, guid: 292d28922523dca4a9d538af4cfdb1a1, type: 3}
       propertyPath: m_RootOrder
@@ -5241,6 +5727,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Env_Tiles_Texture_04 (34)
       objectReference: {fileID: 0}
+    - target: {fileID: 169968, guid: 292d28922523dca4a9d538af4cfdb1a1, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 473022, guid: 292d28922523dca4a9d538af4cfdb1a1, type: 3}
       propertyPath: m_RootOrder
       value: 34
@@ -5297,6 +5787,14 @@ PrefabInstance:
     - target: {fileID: 165716, guid: 780bc58852e53a34784cfcb8d82264af, type: 3}
       propertyPath: m_Name
       value: SM_Env_Wall_01_Alt_Texture (37)
+      objectReference: {fileID: 0}
+    - target: {fileID: 165716, guid: 780bc58852e53a34784cfcb8d82264af, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 165716, guid: 780bc58852e53a34784cfcb8d82264af, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 405382, guid: 780bc58852e53a34784cfcb8d82264af, type: 3}
       propertyPath: m_RootOrder
@@ -5360,6 +5858,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Env_Tiles_Texture_04 (7)
       objectReference: {fileID: 0}
+    - target: {fileID: 169968, guid: 292d28922523dca4a9d538af4cfdb1a1, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 473022, guid: 292d28922523dca4a9d538af4cfdb1a1, type: 3}
       propertyPath: m_RootOrder
       value: 7
@@ -5422,6 +5924,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Prop_Crate_Wood_03 (5)
       objectReference: {fileID: 0}
+    - target: {fileID: 179390, guid: a2e4cdc587395c04cba2cad21f37b658, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 454586, guid: a2e4cdc587395c04cba2cad21f37b658, type: 3}
       propertyPath: m_RootOrder
       value: 60
@@ -5478,6 +5984,14 @@ PrefabInstance:
     - target: {fileID: 165716, guid: 780bc58852e53a34784cfcb8d82264af, type: 3}
       propertyPath: m_Name
       value: SM_Env_Wall_01_Alt_Texture (18)
+      objectReference: {fileID: 0}
+    - target: {fileID: 165716, guid: 780bc58852e53a34784cfcb8d82264af, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 165716, guid: 780bc58852e53a34784cfcb8d82264af, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 405382, guid: 780bc58852e53a34784cfcb8d82264af, type: 3}
       propertyPath: m_RootOrder
@@ -5542,7 +6056,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9000053292317615552, guid: ec545e5b29518014388cb554bb29607f, type: 3}
       propertyPath: m_RootOrder
-      value: 11
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 9000053292317615552, guid: ec545e5b29518014388cb554bb29607f, type: 3}
       propertyPath: m_LocalPosition.x
@@ -5601,6 +6115,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Env_Tiles_Texture_04 (87)
       objectReference: {fileID: 0}
+    - target: {fileID: 169968, guid: 292d28922523dca4a9d538af4cfdb1a1, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 473022, guid: 292d28922523dca4a9d538af4cfdb1a1, type: 3}
       propertyPath: m_RootOrder
       value: 109
@@ -5658,6 +6176,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Env_Wall_01_Alt_Texture (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 165716, guid: 780bc58852e53a34784cfcb8d82264af, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 165716, guid: 780bc58852e53a34784cfcb8d82264af, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 405382, guid: 780bc58852e53a34784cfcb8d82264af, type: 3}
       propertyPath: m_RootOrder
       value: 2
@@ -5714,6 +6240,10 @@ PrefabInstance:
     - target: {fileID: 169968, guid: 292d28922523dca4a9d538af4cfdb1a1, type: 3}
       propertyPath: m_Name
       value: SM_Env_Tiles_Texture_04 (68)
+      objectReference: {fileID: 0}
+    - target: {fileID: 169968, guid: 292d28922523dca4a9d538af4cfdb1a1, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 473022, guid: 292d28922523dca4a9d538af4cfdb1a1, type: 3}
       propertyPath: m_RootOrder
@@ -5777,6 +6307,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Env_Tiles_Texture_04
       objectReference: {fileID: 0}
+    - target: {fileID: 169968, guid: 292d28922523dca4a9d538af4cfdb1a1, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 473022, guid: 292d28922523dca4a9d538af4cfdb1a1, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -5834,6 +6368,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Env_Tiles_Texture_04 (47)
       objectReference: {fileID: 0}
+    - target: {fileID: 169968, guid: 292d28922523dca4a9d538af4cfdb1a1, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 473022, guid: 292d28922523dca4a9d538af4cfdb1a1, type: 3}
       propertyPath: m_RootOrder
       value: 69
@@ -5890,6 +6428,14 @@ PrefabInstance:
     - target: {fileID: 165716, guid: 780bc58852e53a34784cfcb8d82264af, type: 3}
       propertyPath: m_Name
       value: SM_Env_Wall_01_Alt_Texture (57)
+      objectReference: {fileID: 0}
+    - target: {fileID: 165716, guid: 780bc58852e53a34784cfcb8d82264af, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 165716, guid: 780bc58852e53a34784cfcb8d82264af, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 405382, guid: 780bc58852e53a34784cfcb8d82264af, type: 3}
       propertyPath: m_RootOrder
@@ -5958,6 +6504,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Env_Wall_01_Alt_Texture (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 165716, guid: 780bc58852e53a34784cfcb8d82264af, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 165716, guid: 780bc58852e53a34784cfcb8d82264af, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 405382, guid: 780bc58852e53a34784cfcb8d82264af, type: 3}
       propertyPath: m_RootOrder
       value: 4
@@ -6013,7 +6567,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3947758178294609997, guid: fdcceb368caa6a64bb02a25b9b7e2999, type: 3}
       propertyPath: m_RootOrder
-      value: 6
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 3947758178294609997, guid: fdcceb368caa6a64bb02a25b9b7e2999, type: 3}
       propertyPath: m_LocalPosition.x
@@ -6077,6 +6631,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Prop_Crate_Wood_03 (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 179390, guid: a2e4cdc587395c04cba2cad21f37b658, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 454586, guid: a2e4cdc587395c04cba2cad21f37b658, type: 3}
       propertyPath: m_RootOrder
       value: 56
@@ -6139,6 +6697,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Env_Tiles_Texture_04 (40)
       objectReference: {fileID: 0}
+    - target: {fileID: 169968, guid: 292d28922523dca4a9d538af4cfdb1a1, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 473022, guid: 292d28922523dca4a9d538af4cfdb1a1, type: 3}
       propertyPath: m_RootOrder
       value: 40
@@ -6185,6 +6747,74 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 292d28922523dca4a9d538af4cfdb1a1, type: 3}
+--- !u!1001 &1118764016
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 314712891529277280, guid: f928aaed31038c94eaf4225e6a7be07c, type: 3}
+      propertyPath: m_RootOrder
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 314712891529277280, guid: f928aaed31038c94eaf4225e6a7be07c, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 314712891529277280, guid: f928aaed31038c94eaf4225e6a7be07c, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 314712891529277280, guid: f928aaed31038c94eaf4225e6a7be07c, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 314712891529277280, guid: f928aaed31038c94eaf4225e6a7be07c, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 314712891529277280, guid: f928aaed31038c94eaf4225e6a7be07c, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 314712891529277280, guid: f928aaed31038c94eaf4225e6a7be07c, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 314712891529277280, guid: f928aaed31038c94eaf4225e6a7be07c, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 314712891529277280, guid: f928aaed31038c94eaf4225e6a7be07c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 314712891529277280, guid: f928aaed31038c94eaf4225e6a7be07c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 314712891529277280, guid: f928aaed31038c94eaf4225e6a7be07c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 314712891529277286, guid: f928aaed31038c94eaf4225e6a7be07c, type: 3}
+      propertyPath: m_Name
+      value: CameraHolder
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: f928aaed31038c94eaf4225e6a7be07c, type: 3}
+--- !u!114 &1118764017 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 314712891529277287, guid: f928aaed31038c94eaf4225e6a7be07c, type: 3}
+  m_PrefabInstance: {fileID: 1118764016}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa1f4f9a2f1c3764a8aba9525a59901a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &1124973939 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 405382, guid: 780bc58852e53a34784cfcb8d82264af, type: 3}
@@ -6200,6 +6830,10 @@ PrefabInstance:
     - target: {fileID: 169968, guid: 292d28922523dca4a9d538af4cfdb1a1, type: 3}
       propertyPath: m_Name
       value: SM_Env_Tiles_Texture_04 (36)
+      objectReference: {fileID: 0}
+    - target: {fileID: 169968, guid: 292d28922523dca4a9d538af4cfdb1a1, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 473022, guid: 292d28922523dca4a9d538af4cfdb1a1, type: 3}
       propertyPath: m_RootOrder
@@ -6257,6 +6891,10 @@ PrefabInstance:
     - target: {fileID: 169968, guid: 292d28922523dca4a9d538af4cfdb1a1, type: 3}
       propertyPath: m_Name
       value: SM_Env_Tiles_Texture_04 (27)
+      objectReference: {fileID: 0}
+    - target: {fileID: 169968, guid: 292d28922523dca4a9d538af4cfdb1a1, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 473022, guid: 292d28922523dca4a9d538af4cfdb1a1, type: 3}
       propertyPath: m_RootOrder
@@ -6320,6 +6958,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Prop_Toture_StretchTable_01 (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 149048, guid: 999fe1eecd3902b4ca516ecbfac9efd3, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 405356, guid: 999fe1eecd3902b4ca516ecbfac9efd3, type: 3}
       propertyPath: m_RootOrder
       value: 54
@@ -6376,6 +7018,10 @@ PrefabInstance:
     - target: {fileID: 169968, guid: 292d28922523dca4a9d538af4cfdb1a1, type: 3}
       propertyPath: m_Name
       value: SM_Env_Tiles_Texture_04 (86)
+      objectReference: {fileID: 0}
+    - target: {fileID: 169968, guid: 292d28922523dca4a9d538af4cfdb1a1, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 473022, guid: 292d28922523dca4a9d538af4cfdb1a1, type: 3}
       propertyPath: m_RootOrder
@@ -6444,6 +7090,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Env_Tiles_Texture_04 (90)
       objectReference: {fileID: 0}
+    - target: {fileID: 169968, guid: 292d28922523dca4a9d538af4cfdb1a1, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 473022, guid: 292d28922523dca4a9d538af4cfdb1a1, type: 3}
       propertyPath: m_RootOrder
       value: 112
@@ -6500,6 +7150,10 @@ PrefabInstance:
     - target: {fileID: 182310, guid: 8788f886876d4024aaa163027861ee95, type: 3}
       propertyPath: m_Name
       value: SM_Prop_Tech_Pipe_02
+      objectReference: {fileID: 0}
+    - target: {fileID: 182310, guid: 8788f886876d4024aaa163027861ee95, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 428498, guid: 8788f886876d4024aaa163027861ee95, type: 3}
       propertyPath: m_RootOrder
@@ -6563,6 +7217,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Env_Tiles_Texture_04 (75)
       objectReference: {fileID: 0}
+    - target: {fileID: 169968, guid: 292d28922523dca4a9d538af4cfdb1a1, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 473022, guid: 292d28922523dca4a9d538af4cfdb1a1, type: 3}
       propertyPath: m_RootOrder
       value: 97
@@ -6625,6 +7283,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Env_Wall_01_Alt_Texture (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 165716, guid: 780bc58852e53a34784cfcb8d82264af, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 165716, guid: 780bc58852e53a34784cfcb8d82264af, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 405382, guid: 780bc58852e53a34784cfcb8d82264af, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -6682,6 +7348,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Env_Tiles_Texture_04 (22)
       objectReference: {fileID: 0}
+    - target: {fileID: 169968, guid: 292d28922523dca4a9d538af4cfdb1a1, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 473022, guid: 292d28922523dca4a9d538af4cfdb1a1, type: 3}
       propertyPath: m_RootOrder
       value: 22
@@ -6728,90 +7398,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 292d28922523dca4a9d538af4cfdb1a1, type: 3}
---- !u!1 &1202828025
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1202828028}
-  - component: {fileID: 1202828027}
-  - component: {fileID: 1202828026}
-  m_Layer: 0
-  m_Name: Main Camera
-  m_TagString: MainCamera
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!81 &1202828026
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1202828025}
-  m_Enabled: 1
---- !u!20 &1202828027
-Camera:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1202828025}
-  m_Enabled: 1
-  serializedVersion: 2
-  m_ClearFlags: 1
-  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
-  m_projectionMatrixMode: 1
-  m_GateFitMode: 2
-  m_FOVAxisMode: 0
-  m_SensorSize: {x: 36, y: 24}
-  m_LensShift: {x: 0, y: 0}
-  m_FocalLength: 50
-  m_NormalizedViewPortRect:
-    serializedVersion: 2
-    x: 0
-    y: 0
-    width: 1
-    height: 1
-  near clip plane: 0.3
-  far clip plane: 1000
-  field of view: 60
-  orthographic: 0
-  orthographic size: 5
-  m_Depth: -1
-  m_CullingMask:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_RenderingPath: -1
-  m_TargetTexture: {fileID: 0}
-  m_TargetDisplay: 0
-  m_TargetEye: 3
-  m_HDR: 1
-  m_AllowMSAA: 1
-  m_AllowDynamicResolution: 0
-  m_ForceIntoRT: 0
-  m_OcclusionCulling: 1
-  m_StereoConvergence: 10
-  m_StereoSeparation: 0.022
---- !u!4 &1202828028
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1202828025}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 2.033, z: -7.26}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &1206049459 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 473022, guid: 292d28922523dca4a9d538af4cfdb1a1, type: 3}
@@ -6832,6 +7418,14 @@ PrefabInstance:
     - target: {fileID: 165716, guid: 780bc58852e53a34784cfcb8d82264af, type: 3}
       propertyPath: m_Name
       value: SM_Env_Wall_01_Alt_Texture (23)
+      objectReference: {fileID: 0}
+    - target: {fileID: 165716, guid: 780bc58852e53a34784cfcb8d82264af, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 165716, guid: 780bc58852e53a34784cfcb8d82264af, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 405382, guid: 780bc58852e53a34784cfcb8d82264af, type: 3}
       propertyPath: m_RootOrder
@@ -6900,6 +7494,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Prop_Skeleton_Knight_Throne_01 (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 143142, guid: bbe9251e064bbde42ab22c6eeacf7e1c, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 456828, guid: bbe9251e064bbde42ab22c6eeacf7e1c, type: 3}
       propertyPath: m_RootOrder
       value: 52
@@ -6956,6 +7554,10 @@ PrefabInstance:
     - target: {fileID: 169968, guid: 292d28922523dca4a9d538af4cfdb1a1, type: 3}
       propertyPath: m_Name
       value: SM_Env_Tiles_Texture_04 (55)
+      objectReference: {fileID: 0}
+    - target: {fileID: 169968, guid: 292d28922523dca4a9d538af4cfdb1a1, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 473022, guid: 292d28922523dca4a9d538af4cfdb1a1, type: 3}
       propertyPath: m_RootOrder
@@ -7019,6 +7621,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Prop_Vase_Broken_01 (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 195242, guid: c34daa6d7ae26f243b4ceaf341d6ae9b, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 459182, guid: c34daa6d7ae26f243b4ceaf341d6ae9b, type: 3}
       propertyPath: m_RootOrder
       value: 46
@@ -7080,6 +7686,14 @@ PrefabInstance:
     - target: {fileID: 165716, guid: 780bc58852e53a34784cfcb8d82264af, type: 3}
       propertyPath: m_Name
       value: SM_Env_Wall_01_Alt_Texture (62)
+      objectReference: {fileID: 0}
+    - target: {fileID: 165716, guid: 780bc58852e53a34784cfcb8d82264af, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 165716, guid: 780bc58852e53a34784cfcb8d82264af, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 405382, guid: 780bc58852e53a34784cfcb8d82264af, type: 3}
       propertyPath: m_RootOrder
@@ -7144,7 +7758,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9000053292317615552, guid: ec545e5b29518014388cb554bb29607f, type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 9000053292317615552, guid: ec545e5b29518014388cb554bb29607f, type: 3}
       propertyPath: m_LocalPosition.x
@@ -7203,6 +7817,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Env_Tiles_Texture_04 (81)
       objectReference: {fileID: 0}
+    - target: {fileID: 169968, guid: 292d28922523dca4a9d538af4cfdb1a1, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 473022, guid: 292d28922523dca4a9d538af4cfdb1a1, type: 3}
       propertyPath: m_RootOrder
       value: 103
@@ -7259,6 +7877,10 @@ PrefabInstance:
     - target: {fileID: 169968, guid: 292d28922523dca4a9d538af4cfdb1a1, type: 3}
       propertyPath: m_Name
       value: SM_Env_Tiles_Texture_04 (45)
+      objectReference: {fileID: 0}
+    - target: {fileID: 169968, guid: 292d28922523dca4a9d538af4cfdb1a1, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 473022, guid: 292d28922523dca4a9d538af4cfdb1a1, type: 3}
       propertyPath: m_RootOrder
@@ -7317,6 +7939,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Env_Tiles_Texture_04 (49)
       objectReference: {fileID: 0}
+    - target: {fileID: 169968, guid: 292d28922523dca4a9d538af4cfdb1a1, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 473022, guid: 292d28922523dca4a9d538af4cfdb1a1, type: 3}
       propertyPath: m_RootOrder
       value: 71
@@ -7373,6 +7999,10 @@ PrefabInstance:
     - target: {fileID: 169968, guid: 292d28922523dca4a9d538af4cfdb1a1, type: 3}
       propertyPath: m_Name
       value: SM_Env_Tiles_Texture_04 (18)
+      objectReference: {fileID: 0}
+    - target: {fileID: 169968, guid: 292d28922523dca4a9d538af4cfdb1a1, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 473022, guid: 292d28922523dca4a9d538af4cfdb1a1, type: 3}
       propertyPath: m_RootOrder
@@ -7446,6 +8076,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Env_Wall_01_Alt_Texture (21)
       objectReference: {fileID: 0}
+    - target: {fileID: 165716, guid: 780bc58852e53a34784cfcb8d82264af, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 165716, guid: 780bc58852e53a34784cfcb8d82264af, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 405382, guid: 780bc58852e53a34784cfcb8d82264af, type: 3}
       propertyPath: m_RootOrder
       value: 21
@@ -7502,6 +8140,10 @@ PrefabInstance:
     - target: {fileID: 169968, guid: 292d28922523dca4a9d538af4cfdb1a1, type: 3}
       propertyPath: m_Name
       value: SM_Env_Tiles_Texture_04 (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 169968, guid: 292d28922523dca4a9d538af4cfdb1a1, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 473022, guid: 292d28922523dca4a9d538af4cfdb1a1, type: 3}
       propertyPath: m_RootOrder
@@ -7574,6 +8216,10 @@ PrefabInstance:
     - target: {fileID: 113466, guid: 28c6a09d0f7dd13488875bb56d3d0fb3, type: 3}
       propertyPath: m_Name
       value: SM_Prop_Vase_04
+      objectReference: {fileID: 0}
+    - target: {fileID: 113466, guid: 28c6a09d0f7dd13488875bb56d3d0fb3, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 454302, guid: 28c6a09d0f7dd13488875bb56d3d0fb3, type: 3}
       propertyPath: m_RootOrder
@@ -7652,6 +8298,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Env_Tiles_Texture_04 (17)
       objectReference: {fileID: 0}
+    - target: {fileID: 169968, guid: 292d28922523dca4a9d538af4cfdb1a1, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 473022, guid: 292d28922523dca4a9d538af4cfdb1a1, type: 3}
       propertyPath: m_RootOrder
       value: 17
@@ -7713,6 +8363,10 @@ PrefabInstance:
     - target: {fileID: 169968, guid: 292d28922523dca4a9d538af4cfdb1a1, type: 3}
       propertyPath: m_Name
       value: SM_Env_Tiles_Texture_04 (76)
+      objectReference: {fileID: 0}
+    - target: {fileID: 169968, guid: 292d28922523dca4a9d538af4cfdb1a1, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 473022, guid: 292d28922523dca4a9d538af4cfdb1a1, type: 3}
       propertyPath: m_RootOrder
@@ -7776,6 +8430,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Env_Tiles_Texture_04 (5)
       objectReference: {fileID: 0}
+    - target: {fileID: 169968, guid: 292d28922523dca4a9d538af4cfdb1a1, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 473022, guid: 292d28922523dca4a9d538af4cfdb1a1, type: 3}
       propertyPath: m_RootOrder
       value: 5
@@ -7832,6 +8490,14 @@ PrefabInstance:
     - target: {fileID: 165716, guid: 780bc58852e53a34784cfcb8d82264af, type: 3}
       propertyPath: m_Name
       value: SM_Env_Wall_01_Alt_Texture (34)
+      objectReference: {fileID: 0}
+    - target: {fileID: 165716, guid: 780bc58852e53a34784cfcb8d82264af, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 165716, guid: 780bc58852e53a34784cfcb8d82264af, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 405382, guid: 780bc58852e53a34784cfcb8d82264af, type: 3}
       propertyPath: m_RootOrder
@@ -7896,7 +8562,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9000053292317615552, guid: ec545e5b29518014388cb554bb29607f, type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 9000053292317615552, guid: ec545e5b29518014388cb554bb29607f, type: 3}
       propertyPath: m_LocalPosition.x
@@ -7954,6 +8620,10 @@ PrefabInstance:
     - target: {fileID: 169968, guid: 292d28922523dca4a9d538af4cfdb1a1, type: 3}
       propertyPath: m_Name
       value: SM_Env_Tiles_Texture_04 (29)
+      objectReference: {fileID: 0}
+    - target: {fileID: 169968, guid: 292d28922523dca4a9d538af4cfdb1a1, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 473022, guid: 292d28922523dca4a9d538af4cfdb1a1, type: 3}
       propertyPath: m_RootOrder
@@ -8022,6 +8692,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Env_Tiles_Texture_04 (10)
       objectReference: {fileID: 0}
+    - target: {fileID: 169968, guid: 292d28922523dca4a9d538af4cfdb1a1, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 473022, guid: 292d28922523dca4a9d538af4cfdb1a1, type: 3}
       propertyPath: m_RootOrder
       value: 10
@@ -8078,6 +8752,14 @@ PrefabInstance:
     - target: {fileID: 165716, guid: 780bc58852e53a34784cfcb8d82264af, type: 3}
       propertyPath: m_Name
       value: SM_Env_Wall_01_Alt_Texture (13)
+      objectReference: {fileID: 0}
+    - target: {fileID: 165716, guid: 780bc58852e53a34784cfcb8d82264af, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 165716, guid: 780bc58852e53a34784cfcb8d82264af, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 405382, guid: 780bc58852e53a34784cfcb8d82264af, type: 3}
       propertyPath: m_RootOrder
@@ -8136,6 +8818,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Env_Tiles_Texture_04 (13)
       objectReference: {fileID: 0}
+    - target: {fileID: 169968, guid: 292d28922523dca4a9d538af4cfdb1a1, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 473022, guid: 292d28922523dca4a9d538af4cfdb1a1, type: 3}
       propertyPath: m_RootOrder
       value: 13
@@ -8192,6 +8878,10 @@ PrefabInstance:
     - target: {fileID: 169968, guid: 292d28922523dca4a9d538af4cfdb1a1, type: 3}
       propertyPath: m_Name
       value: SM_Env_Tiles_Texture_04 (57)
+      objectReference: {fileID: 0}
+    - target: {fileID: 169968, guid: 292d28922523dca4a9d538af4cfdb1a1, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 473022, guid: 292d28922523dca4a9d538af4cfdb1a1, type: 3}
       propertyPath: m_RootOrder
@@ -8254,6 +8944,10 @@ PrefabInstance:
     - target: {fileID: 169968, guid: 292d28922523dca4a9d538af4cfdb1a1, type: 3}
       propertyPath: m_Name
       value: SM_Env_Tiles_Texture_04 (88)
+      objectReference: {fileID: 0}
+    - target: {fileID: 169968, guid: 292d28922523dca4a9d538af4cfdb1a1, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 473022, guid: 292d28922523dca4a9d538af4cfdb1a1, type: 3}
       propertyPath: m_RootOrder
@@ -8323,7 +9017,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9000053292317615552, guid: ec545e5b29518014388cb554bb29607f, type: 3}
       propertyPath: m_RootOrder
-      value: 15
+      value: 14
       objectReference: {fileID: 0}
     - target: {fileID: 9000053292317615552, guid: ec545e5b29518014388cb554bb29607f, type: 3}
       propertyPath: m_LocalPosition.x
@@ -8382,6 +9076,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Env_Tiles_Texture_04 (53)
       objectReference: {fileID: 0}
+    - target: {fileID: 169968, guid: 292d28922523dca4a9d538af4cfdb1a1, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 473022, guid: 292d28922523dca4a9d538af4cfdb1a1, type: 3}
       propertyPath: m_RootOrder
       value: 75
@@ -8438,6 +9136,10 @@ PrefabInstance:
     - target: {fileID: 169968, guid: 292d28922523dca4a9d538af4cfdb1a1, type: 3}
       propertyPath: m_Name
       value: SM_Env_Tiles_Texture_04 (46)
+      objectReference: {fileID: 0}
+    - target: {fileID: 169968, guid: 292d28922523dca4a9d538af4cfdb1a1, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 473022, guid: 292d28922523dca4a9d538af4cfdb1a1, type: 3}
       propertyPath: m_RootOrder
@@ -8516,6 +9218,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Env_Tiles_Texture_04 (24)
       objectReference: {fileID: 0}
+    - target: {fileID: 169968, guid: 292d28922523dca4a9d538af4cfdb1a1, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 473022, guid: 292d28922523dca4a9d538af4cfdb1a1, type: 3}
       propertyPath: m_RootOrder
       value: 24
@@ -8588,6 +9294,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Env_Tiles_Texture_04 (67)
       objectReference: {fileID: 0}
+    - target: {fileID: 169968, guid: 292d28922523dca4a9d538af4cfdb1a1, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 473022, guid: 292d28922523dca4a9d538af4cfdb1a1, type: 3}
       propertyPath: m_RootOrder
       value: 89
@@ -8644,6 +9354,14 @@ PrefabInstance:
     - target: {fileID: 165716, guid: 780bc58852e53a34784cfcb8d82264af, type: 3}
       propertyPath: m_Name
       value: SM_Env_Wall_01_Alt_Texture (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 165716, guid: 780bc58852e53a34784cfcb8d82264af, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 165716, guid: 780bc58852e53a34784cfcb8d82264af, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 405382, guid: 780bc58852e53a34784cfcb8d82264af, type: 3}
       propertyPath: m_RootOrder
@@ -8712,6 +9430,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Env_Wall_01_Alt_Texture (11)
       objectReference: {fileID: 0}
+    - target: {fileID: 165716, guid: 780bc58852e53a34784cfcb8d82264af, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 165716, guid: 780bc58852e53a34784cfcb8d82264af, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 405382, guid: 780bc58852e53a34784cfcb8d82264af, type: 3}
       propertyPath: m_RootOrder
       value: 11
@@ -8769,6 +9495,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Env_Tiles_Texture_04 (9)
       objectReference: {fileID: 0}
+    - target: {fileID: 169968, guid: 292d28922523dca4a9d538af4cfdb1a1, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 473022, guid: 292d28922523dca4a9d538af4cfdb1a1, type: 3}
       propertyPath: m_RootOrder
       value: 9
@@ -8825,6 +9555,10 @@ PrefabInstance:
     - target: {fileID: 169968, guid: 292d28922523dca4a9d538af4cfdb1a1, type: 3}
       propertyPath: m_Name
       value: SM_Env_Tiles_Texture_04 (44)
+      objectReference: {fileID: 0}
+    - target: {fileID: 169968, guid: 292d28922523dca4a9d538af4cfdb1a1, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 473022, guid: 292d28922523dca4a9d538af4cfdb1a1, type: 3}
       propertyPath: m_RootOrder
@@ -8888,6 +9622,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Env_Tiles_Texture_04 (74)
       objectReference: {fileID: 0}
+    - target: {fileID: 169968, guid: 292d28922523dca4a9d538af4cfdb1a1, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 473022, guid: 292d28922523dca4a9d538af4cfdb1a1, type: 3}
       propertyPath: m_RootOrder
       value: 96
@@ -8950,6 +9688,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Env_Wall_01_Alt_Texture (20)
       objectReference: {fileID: 0}
+    - target: {fileID: 165716, guid: 780bc58852e53a34784cfcb8d82264af, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 165716, guid: 780bc58852e53a34784cfcb8d82264af, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 405382, guid: 780bc58852e53a34784cfcb8d82264af, type: 3}
       propertyPath: m_RootOrder
       value: 20
@@ -9006,6 +9752,14 @@ PrefabInstance:
     - target: {fileID: 165716, guid: 780bc58852e53a34784cfcb8d82264af, type: 3}
       propertyPath: m_Name
       value: SM_Env_Wall_01_Alt_Texture (7)
+      objectReference: {fileID: 0}
+    - target: {fileID: 165716, guid: 780bc58852e53a34784cfcb8d82264af, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 165716, guid: 780bc58852e53a34784cfcb8d82264af, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 405382, guid: 780bc58852e53a34784cfcb8d82264af, type: 3}
       propertyPath: m_RootOrder
@@ -9074,6 +9828,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Env_Tiles_Texture_04 (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 169968, guid: 292d28922523dca4a9d538af4cfdb1a1, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 473022, guid: 292d28922523dca4a9d538af4cfdb1a1, type: 3}
       propertyPath: m_RootOrder
       value: 4
@@ -9130,6 +9888,14 @@ PrefabInstance:
     - target: {fileID: 165716, guid: 780bc58852e53a34784cfcb8d82264af, type: 3}
       propertyPath: m_Name
       value: SM_Env_Wall_01_Alt_Texture (39)
+      objectReference: {fileID: 0}
+    - target: {fileID: 165716, guid: 780bc58852e53a34784cfcb8d82264af, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 165716, guid: 780bc58852e53a34784cfcb8d82264af, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 405382, guid: 780bc58852e53a34784cfcb8d82264af, type: 3}
       propertyPath: m_RootOrder
@@ -9203,6 +9969,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Env_Tiles_Texture_04 (84)
       objectReference: {fileID: 0}
+    - target: {fileID: 169968, guid: 292d28922523dca4a9d538af4cfdb1a1, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 473022, guid: 292d28922523dca4a9d538af4cfdb1a1, type: 3}
       propertyPath: m_RootOrder
       value: 106
@@ -9265,6 +10035,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Env_Wall_01_Alt_Texture (67)
       objectReference: {fileID: 0}
+    - target: {fileID: 165716, guid: 780bc58852e53a34784cfcb8d82264af, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 165716, guid: 780bc58852e53a34784cfcb8d82264af, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 405382, guid: 780bc58852e53a34784cfcb8d82264af, type: 3}
       propertyPath: m_RootOrder
       value: 67
@@ -9321,6 +10099,10 @@ PrefabInstance:
     - target: {fileID: 169968, guid: 292d28922523dca4a9d538af4cfdb1a1, type: 3}
       propertyPath: m_Name
       value: SM_Env_Tiles_Texture_04 (11)
+      objectReference: {fileID: 0}
+    - target: {fileID: 169968, guid: 292d28922523dca4a9d538af4cfdb1a1, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 473022, guid: 292d28922523dca4a9d538af4cfdb1a1, type: 3}
       propertyPath: m_RootOrder
@@ -9379,6 +10161,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Env_Wall_01_Alt_Texture (48)
       objectReference: {fileID: 0}
+    - target: {fileID: 165716, guid: 780bc58852e53a34784cfcb8d82264af, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 165716, guid: 780bc58852e53a34784cfcb8d82264af, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 405382, guid: 780bc58852e53a34784cfcb8d82264af, type: 3}
       propertyPath: m_RootOrder
       value: 48
@@ -9436,6 +10226,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Env_Wall_01_Alt_Texture (47)
       objectReference: {fileID: 0}
+    - target: {fileID: 165716, guid: 780bc58852e53a34784cfcb8d82264af, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 165716, guid: 780bc58852e53a34784cfcb8d82264af, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 405382, guid: 780bc58852e53a34784cfcb8d82264af, type: 3}
       propertyPath: m_RootOrder
       value: 47
@@ -9489,6 +10287,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 146584176608954629, guid: b224f8ee074729445b3532a555b5504a, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 500741349125437094, guid: b224f8ee074729445b3532a555b5504a, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
@@ -9496,6 +10298,18 @@ PrefabInstance:
     - target: {fileID: 500741349125437094, guid: b224f8ee074729445b3532a555b5504a, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1959944525059459860, guid: b224f8ee074729445b3532a555b5504a, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 506985302}
+    - target: {fileID: 1959944525059459860, guid: b224f8ee074729445b3532a555b5504a, type: 3}
+      propertyPath: SceneName
+      value: Level4
+      objectReference: {fileID: 0}
+    - target: {fileID: 1959944525920472289, guid: b224f8ee074729445b3532a555b5504a, type: 3}
+      propertyPath: SceneName
+      value: Level4
       objectReference: {fileID: 0}
     - target: {fileID: 2892714763660158300, guid: b224f8ee074729445b3532a555b5504a, type: 3}
       propertyPath: m_AnchorMax.x
@@ -9521,6 +10335,26 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3915123163763917701, guid: b224f8ee074729445b3532a555b5504a, type: 3}
+      propertyPath: audioSource
+      value: 
+      objectReference: {fileID: 1755770697}
+    - target: {fileID: 3915123164153543638, guid: b224f8ee074729445b3532a555b5504a, type: 3}
+      propertyPath: audioSource
+      value: 
+      objectReference: {fileID: 1755770697}
+    - target: {fileID: 5138247244368749843, guid: b224f8ee074729445b3532a555b5504a, type: 3}
+      propertyPath: audioSource
+      value: 
+      objectReference: {fileID: 1755770697}
+    - target: {fileID: 5138247244368749844, guid: b224f8ee074729445b3532a555b5504a, type: 3}
+      propertyPath: audioSource
+      value: 
+      objectReference: {fileID: 1755770697}
+    - target: {fileID: 7290851500132965365, guid: b224f8ee074729445b3532a555b5504a, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 506985302}
     - target: {fileID: 8028304487487479753, guid: b224f8ee074729445b3532a555b5504a, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
@@ -9539,7 +10373,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8197537059292626449, guid: b224f8ee074729445b3532a555b5504a, type: 3}
       propertyPath: m_RootOrder
-      value: 7
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 8197537059292626449, guid: b224f8ee074729445b3532a555b5504a, type: 3}
       propertyPath: m_AnchorMax.x
@@ -9619,6 +10453,54 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b224f8ee074729445b3532a555b5504a, type: 3}
+--- !u!114 &1603212292 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 146584177124536660, guid: b224f8ee074729445b3532a555b5504a, type: 3}
+  m_PrefabInstance: {fileID: 1603212291}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 45b901fc893eb504285759b625847595, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!1 &1603212293 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 146584176608954629, guid: b224f8ee074729445b3532a555b5504a, type: 3}
+  m_PrefabInstance: {fileID: 1603212291}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1603212294 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7290851500132965365, guid: b224f8ee074729445b3532a555b5504a, type: 3}
+  m_PrefabInstance: {fileID: 1603212291}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a798e2a0b1528374d902cbed32dd9005, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!1 &1603212295 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8197537058181291661, guid: b224f8ee074729445b3532a555b5504a, type: 3}
+  m_PrefabInstance: {fileID: 1603212291}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1603212296 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4392524969241145702, guid: b224f8ee074729445b3532a555b5504a, type: 3}
+  m_PrefabInstance: {fileID: 1603212291}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1603212297 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8197537058917300547, guid: b224f8ee074729445b3532a555b5504a, type: 3}
+  m_PrefabInstance: {fileID: 1603212291}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 516884ae04fab0640a1836436d22ae18, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &1604769829 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 473022, guid: 292d28922523dca4a9d538af4cfdb1a1, type: 3}
@@ -9644,6 +10526,10 @@ PrefabInstance:
     - target: {fileID: 169968, guid: 292d28922523dca4a9d538af4cfdb1a1, type: 3}
       propertyPath: m_Name
       value: SM_Env_Tiles_Texture_04 (26)
+      objectReference: {fileID: 0}
+    - target: {fileID: 169968, guid: 292d28922523dca4a9d538af4cfdb1a1, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 473022, guid: 292d28922523dca4a9d538af4cfdb1a1, type: 3}
       propertyPath: m_RootOrder
@@ -9706,6 +10592,14 @@ PrefabInstance:
     - target: {fileID: 165716, guid: 780bc58852e53a34784cfcb8d82264af, type: 3}
       propertyPath: m_Name
       value: SM_Env_Wall_01_Alt_Texture (53)
+      objectReference: {fileID: 0}
+    - target: {fileID: 165716, guid: 780bc58852e53a34784cfcb8d82264af, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 165716, guid: 780bc58852e53a34784cfcb8d82264af, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 405382, guid: 780bc58852e53a34784cfcb8d82264af, type: 3}
       propertyPath: m_RootOrder
@@ -9779,6 +10673,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Env_Tiles_Texture_04 (39)
       objectReference: {fileID: 0}
+    - target: {fileID: 169968, guid: 292d28922523dca4a9d538af4cfdb1a1, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 473022, guid: 292d28922523dca4a9d538af4cfdb1a1, type: 3}
       propertyPath: m_RootOrder
       value: 39
@@ -9835,6 +10733,10 @@ PrefabInstance:
     - target: {fileID: 169968, guid: 292d28922523dca4a9d538af4cfdb1a1, type: 3}
       propertyPath: m_Name
       value: SM_Env_Tiles_Texture_04 (37)
+      objectReference: {fileID: 0}
+    - target: {fileID: 169968, guid: 292d28922523dca4a9d538af4cfdb1a1, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 473022, guid: 292d28922523dca4a9d538af4cfdb1a1, type: 3}
       propertyPath: m_RootOrder
@@ -9897,6 +10799,14 @@ PrefabInstance:
     - target: {fileID: 165716, guid: 780bc58852e53a34784cfcb8d82264af, type: 3}
       propertyPath: m_Name
       value: SM_Env_Wall_01_Alt_Texture (50)
+      objectReference: {fileID: 0}
+    - target: {fileID: 165716, guid: 780bc58852e53a34784cfcb8d82264af, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 165716, guid: 780bc58852e53a34784cfcb8d82264af, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 405382, guid: 780bc58852e53a34784cfcb8d82264af, type: 3}
       propertyPath: m_RootOrder
@@ -9990,6 +10900,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Env_Wall_01_Alt_Texture (40)
       objectReference: {fileID: 0}
+    - target: {fileID: 165716, guid: 780bc58852e53a34784cfcb8d82264af, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 165716, guid: 780bc58852e53a34784cfcb8d82264af, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 405382, guid: 780bc58852e53a34784cfcb8d82264af, type: 3}
       propertyPath: m_RootOrder
       value: 40
@@ -10046,6 +10964,10 @@ PrefabInstance:
     - target: {fileID: 169968, guid: 292d28922523dca4a9d538af4cfdb1a1, type: 3}
       propertyPath: m_Name
       value: SM_Env_Tiles_Texture_04 (73)
+      objectReference: {fileID: 0}
+    - target: {fileID: 169968, guid: 292d28922523dca4a9d538af4cfdb1a1, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 473022, guid: 292d28922523dca4a9d538af4cfdb1a1, type: 3}
       propertyPath: m_RootOrder
@@ -10114,6 +11036,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Env_Wall_01_Alt_Texture (30)
       objectReference: {fileID: 0}
+    - target: {fileID: 165716, guid: 780bc58852e53a34784cfcb8d82264af, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 165716, guid: 780bc58852e53a34784cfcb8d82264af, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 405382, guid: 780bc58852e53a34784cfcb8d82264af, type: 3}
       propertyPath: m_RootOrder
       value: 30
@@ -10174,7 +11104,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 5175527109352170415, guid: 170787018ac39e140b33b3216371beba, type: 3}
       propertyPath: m_RootOrder
-      value: 9
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 5175527109352170415, guid: 170787018ac39e140b33b3216371beba, type: 3}
       propertyPath: m_LocalPosition.x
@@ -10222,6 +11152,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 170787018ac39e140b33b3216371beba, type: 3}
+--- !u!82 &1755770697 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 5175527109352170414, guid: 170787018ac39e140b33b3216371beba, type: 3}
+  m_PrefabInstance: {fileID: 1755770696}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1781451926 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 473022, guid: 292d28922523dca4a9d538af4cfdb1a1, type: 3}
@@ -10237,6 +11172,10 @@ PrefabInstance:
     - target: {fileID: 169968, guid: 292d28922523dca4a9d538af4cfdb1a1, type: 3}
       propertyPath: m_Name
       value: SM_Env_Tiles_Texture_04 (48)
+      objectReference: {fileID: 0}
+    - target: {fileID: 169968, guid: 292d28922523dca4a9d538af4cfdb1a1, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 473022, guid: 292d28922523dca4a9d538af4cfdb1a1, type: 3}
       propertyPath: m_RootOrder
@@ -10294,6 +11233,10 @@ PrefabInstance:
     - target: {fileID: 169968, guid: 292d28922523dca4a9d538af4cfdb1a1, type: 3}
       propertyPath: m_Name
       value: SM_Env_Tiles_Texture_04 (33)
+      objectReference: {fileID: 0}
+    - target: {fileID: 169968, guid: 292d28922523dca4a9d538af4cfdb1a1, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 473022, guid: 292d28922523dca4a9d538af4cfdb1a1, type: 3}
       propertyPath: m_RootOrder
@@ -10357,6 +11300,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Env_Wall_01_Alt_Texture (43)
       objectReference: {fileID: 0}
+    - target: {fileID: 165716, guid: 780bc58852e53a34784cfcb8d82264af, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 165716, guid: 780bc58852e53a34784cfcb8d82264af, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 405382, guid: 780bc58852e53a34784cfcb8d82264af, type: 3}
       propertyPath: m_RootOrder
       value: 43
@@ -10414,6 +11365,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Prop_Crate_Wood_03 (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 179390, guid: a2e4cdc587395c04cba2cad21f37b658, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 454586, guid: a2e4cdc587395c04cba2cad21f37b658, type: 3}
       propertyPath: m_RootOrder
       value: 59
@@ -10470,6 +11425,10 @@ PrefabInstance:
     - target: {fileID: 140248, guid: c44fafd591a0f624c9d8a67a72cc6652, type: 3}
       propertyPath: m_Name
       value: SM_Prop_Crate_Ornate_01
+      objectReference: {fileID: 0}
+    - target: {fileID: 140248, guid: c44fafd591a0f624c9d8a67a72cc6652, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 486684, guid: c44fafd591a0f624c9d8a67a72cc6652, type: 3}
       propertyPath: m_RootOrder
@@ -10538,6 +11497,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Env_Wall_01_Alt_Texture (32)
       objectReference: {fileID: 0}
+    - target: {fileID: 165716, guid: 780bc58852e53a34784cfcb8d82264af, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 165716, guid: 780bc58852e53a34784cfcb8d82264af, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 405382, guid: 780bc58852e53a34784cfcb8d82264af, type: 3}
       propertyPath: m_RootOrder
       value: 32
@@ -10598,7 +11565,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &1837119123
 Transform:
@@ -10727,7 +11694,7 @@ Transform:
   - {fileID: 1064383467}
   - {fileID: 700255893}
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1837760123
 PrefabInstance:
@@ -10739,6 +11706,10 @@ PrefabInstance:
     - target: {fileID: 169968, guid: 292d28922523dca4a9d538af4cfdb1a1, type: 3}
       propertyPath: m_Name
       value: SM_Env_Tiles_Texture_04 (6)
+      objectReference: {fileID: 0}
+    - target: {fileID: 169968, guid: 292d28922523dca4a9d538af4cfdb1a1, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 473022, guid: 292d28922523dca4a9d538af4cfdb1a1, type: 3}
       propertyPath: m_RootOrder
@@ -10797,6 +11768,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Env_Wall_01_Alt_Texture (17)
       objectReference: {fileID: 0}
+    - target: {fileID: 165716, guid: 780bc58852e53a34784cfcb8d82264af, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 165716, guid: 780bc58852e53a34784cfcb8d82264af, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 405382, guid: 780bc58852e53a34784cfcb8d82264af, type: 3}
       propertyPath: m_RootOrder
       value: 17
@@ -10853,6 +11832,10 @@ PrefabInstance:
     - target: {fileID: 169968, guid: 292d28922523dca4a9d538af4cfdb1a1, type: 3}
       propertyPath: m_Name
       value: SM_Env_Tiles_Texture_04 (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 169968, guid: 292d28922523dca4a9d538af4cfdb1a1, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 473022, guid: 292d28922523dca4a9d538af4cfdb1a1, type: 3}
       propertyPath: m_RootOrder
@@ -10916,6 +11899,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Env_Wall_01_Alt_Texture (41)
       objectReference: {fileID: 0}
+    - target: {fileID: 165716, guid: 780bc58852e53a34784cfcb8d82264af, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 165716, guid: 780bc58852e53a34784cfcb8d82264af, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 405382, guid: 780bc58852e53a34784cfcb8d82264af, type: 3}
       propertyPath: m_RootOrder
       value: 41
@@ -10973,6 +11964,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Env_Wall_01_Alt_Texture (63)
       objectReference: {fileID: 0}
+    - target: {fileID: 165716, guid: 780bc58852e53a34784cfcb8d82264af, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 165716, guid: 780bc58852e53a34784cfcb8d82264af, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 405382, guid: 780bc58852e53a34784cfcb8d82264af, type: 3}
       propertyPath: m_RootOrder
       value: 63
@@ -11019,6 +12018,72 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 780bc58852e53a34784cfcb8d82264af, type: 3}
+--- !u!1001 &1851763878
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1004140468555133672, guid: d2c437808c89fc64d9062cb279b23b99, type: 3}
+      propertyPath: m_RootOrder
+      value: 16
+      objectReference: {fileID: 0}
+    - target: {fileID: 1004140468555133672, guid: d2c437808c89fc64d9062cb279b23b99, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -27
+      objectReference: {fileID: 0}
+    - target: {fileID: 1004140468555133672, guid: d2c437808c89fc64d9062cb279b23b99, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.03
+      objectReference: {fileID: 0}
+    - target: {fileID: 1004140468555133672, guid: d2c437808c89fc64d9062cb279b23b99, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 18.06
+      objectReference: {fileID: 0}
+    - target: {fileID: 1004140468555133672, guid: d2c437808c89fc64d9062cb279b23b99, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1004140468555133672, guid: d2c437808c89fc64d9062cb279b23b99, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1004140468555133672, guid: d2c437808c89fc64d9062cb279b23b99, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1004140468555133672, guid: d2c437808c89fc64d9062cb279b23b99, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1004140468555133672, guid: d2c437808c89fc64d9062cb279b23b99, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1004140468555133672, guid: d2c437808c89fc64d9062cb279b23b99, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1004140468555133672, guid: d2c437808c89fc64d9062cb279b23b99, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1004140468555413196, guid: d2c437808c89fc64d9062cb279b23b99, type: 3}
+      propertyPath: m_Name
+      value: Bonfire Exit
+      objectReference: {fileID: 0}
+    - target: {fileID: 1004140468555413196, guid: d2c437808c89fc64d9062cb279b23b99, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: d2c437808c89fc64d9062cb279b23b99, type: 3}
+--- !u!1 &1851763879 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1004140468555413196, guid: d2c437808c89fc64d9062cb279b23b99, type: 3}
+  m_PrefabInstance: {fileID: 1851763878}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1862833191 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 405382, guid: 780bc58852e53a34784cfcb8d82264af, type: 3}
@@ -11034,6 +12099,10 @@ PrefabInstance:
     - target: {fileID: 169968, guid: 292d28922523dca4a9d538af4cfdb1a1, type: 3}
       propertyPath: m_Name
       value: SM_Env_Tiles_Texture_04 (8)
+      objectReference: {fileID: 0}
+    - target: {fileID: 169968, guid: 292d28922523dca4a9d538af4cfdb1a1, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 473022, guid: 292d28922523dca4a9d538af4cfdb1a1, type: 3}
       propertyPath: m_RootOrder
@@ -11092,6 +12161,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Env_Tiles_Texture_04 (82)
       objectReference: {fileID: 0}
+    - target: {fileID: 169968, guid: 292d28922523dca4a9d538af4cfdb1a1, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 473022, guid: 292d28922523dca4a9d538af4cfdb1a1, type: 3}
       propertyPath: m_RootOrder
       value: 104
@@ -11148,6 +12221,10 @@ PrefabInstance:
     - target: {fileID: 169968, guid: 292d28922523dca4a9d538af4cfdb1a1, type: 3}
       propertyPath: m_Name
       value: SM_Env_Tiles_Texture_04 (30)
+      objectReference: {fileID: 0}
+    - target: {fileID: 169968, guid: 292d28922523dca4a9d538af4cfdb1a1, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 473022, guid: 292d28922523dca4a9d538af4cfdb1a1, type: 3}
       propertyPath: m_RootOrder
@@ -11206,6 +12283,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Env_Wall_01_Alt_Texture (38)
       objectReference: {fileID: 0}
+    - target: {fileID: 165716, guid: 780bc58852e53a34784cfcb8d82264af, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 165716, guid: 780bc58852e53a34784cfcb8d82264af, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 405382, guid: 780bc58852e53a34784cfcb8d82264af, type: 3}
       propertyPath: m_RootOrder
       value: 38
@@ -11262,6 +12347,10 @@ PrefabInstance:
     - target: {fileID: 169968, guid: 292d28922523dca4a9d538af4cfdb1a1, type: 3}
       propertyPath: m_Name
       value: SM_Env_Tiles_Texture_04 (43)
+      objectReference: {fileID: 0}
+    - target: {fileID: 169968, guid: 292d28922523dca4a9d538af4cfdb1a1, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 473022, guid: 292d28922523dca4a9d538af4cfdb1a1, type: 3}
       propertyPath: m_RootOrder
@@ -11330,6 +12419,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Prop_Vase_Group_01 (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 141250, guid: 668e6a33e8614334c822a49aa47f9729, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 499200, guid: 668e6a33e8614334c822a49aa47f9729, type: 3}
       propertyPath: m_RootOrder
       value: 49
@@ -11386,6 +12479,14 @@ PrefabInstance:
     - target: {fileID: 165716, guid: 780bc58852e53a34784cfcb8d82264af, type: 3}
       propertyPath: m_Name
       value: SM_Env_Wall_01_Alt_Texture (19)
+      objectReference: {fileID: 0}
+    - target: {fileID: 165716, guid: 780bc58852e53a34784cfcb8d82264af, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 165716, guid: 780bc58852e53a34784cfcb8d82264af, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 405382, guid: 780bc58852e53a34784cfcb8d82264af, type: 3}
       propertyPath: m_RootOrder
@@ -11444,6 +12545,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Env_Tiles_Texture_04 (38)
       objectReference: {fileID: 0}
+    - target: {fileID: 169968, guid: 292d28922523dca4a9d538af4cfdb1a1, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 473022, guid: 292d28922523dca4a9d538af4cfdb1a1, type: 3}
       propertyPath: m_RootOrder
       value: 38
@@ -11500,6 +12605,14 @@ PrefabInstance:
     - target: {fileID: 165716, guid: 780bc58852e53a34784cfcb8d82264af, type: 3}
       propertyPath: m_Name
       value: SM_Env_Wall_01_Alt_Texture (49)
+      objectReference: {fileID: 0}
+    - target: {fileID: 165716, guid: 780bc58852e53a34784cfcb8d82264af, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 165716, guid: 780bc58852e53a34784cfcb8d82264af, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 405382, guid: 780bc58852e53a34784cfcb8d82264af, type: 3}
       propertyPath: m_RootOrder
@@ -11568,6 +12681,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Env_Tiles_Texture_04 (32)
       objectReference: {fileID: 0}
+    - target: {fileID: 169968, guid: 292d28922523dca4a9d538af4cfdb1a1, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 473022, guid: 292d28922523dca4a9d538af4cfdb1a1, type: 3}
       propertyPath: m_RootOrder
       value: 32
@@ -11630,6 +12747,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Env_Tiles_Texture_04 (19)
       objectReference: {fileID: 0}
+    - target: {fileID: 169968, guid: 292d28922523dca4a9d538af4cfdb1a1, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 473022, guid: 292d28922523dca4a9d538af4cfdb1a1, type: 3}
       propertyPath: m_RootOrder
       value: 19
@@ -11686,6 +12807,10 @@ PrefabInstance:
     - target: {fileID: 169968, guid: 292d28922523dca4a9d538af4cfdb1a1, type: 3}
       propertyPath: m_Name
       value: SM_Env_Tiles_Texture_04 (77)
+      objectReference: {fileID: 0}
+    - target: {fileID: 169968, guid: 292d28922523dca4a9d538af4cfdb1a1, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 473022, guid: 292d28922523dca4a9d538af4cfdb1a1, type: 3}
       propertyPath: m_RootOrder
@@ -11747,7 +12872,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3947758178294609997, guid: fdcceb368caa6a64bb02a25b9b7e2999, type: 3}
       propertyPath: m_RootOrder
-      value: 4
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 3947758178294609997, guid: fdcceb368caa6a64bb02a25b9b7e2999, type: 3}
       propertyPath: m_LocalPosition.x
@@ -11805,6 +12930,10 @@ PrefabInstance:
     - target: {fileID: 169968, guid: 292d28922523dca4a9d538af4cfdb1a1, type: 3}
       propertyPath: m_Name
       value: SM_Env_Tiles_Texture_04 (66)
+      objectReference: {fileID: 0}
+    - target: {fileID: 169968, guid: 292d28922523dca4a9d538af4cfdb1a1, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 473022, guid: 292d28922523dca4a9d538af4cfdb1a1, type: 3}
       propertyPath: m_RootOrder
@@ -11868,6 +12997,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Env_Tiles_Texture_04 (89)
       objectReference: {fileID: 0}
+    - target: {fileID: 169968, guid: 292d28922523dca4a9d538af4cfdb1a1, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 473022, guid: 292d28922523dca4a9d538af4cfdb1a1, type: 3}
       propertyPath: m_RootOrder
       value: 111
@@ -11925,6 +13058,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Prop_Vase_04 (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 113466, guid: 28c6a09d0f7dd13488875bb56d3d0fb3, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 454302, guid: 28c6a09d0f7dd13488875bb56d3d0fb3, type: 3}
       propertyPath: m_RootOrder
       value: 44
@@ -11980,12 +13117,12 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2012345765}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Walls
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &2012345765
 Transform:
@@ -12068,7 +13205,7 @@ Transform:
   - {fileID: 1321725663}
   - {fileID: 810508551}
   m_Father: {fileID: 0}
-  m_RootOrder: 12
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &2022352294
 PrefabInstance:
@@ -12080,6 +13217,10 @@ PrefabInstance:
     - target: {fileID: 169968, guid: 292d28922523dca4a9d538af4cfdb1a1, type: 3}
       propertyPath: m_Name
       value: SM_Env_Tiles_Texture_04 (70)
+      objectReference: {fileID: 0}
+    - target: {fileID: 169968, guid: 292d28922523dca4a9d538af4cfdb1a1, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 473022, guid: 292d28922523dca4a9d538af4cfdb1a1, type: 3}
       propertyPath: m_RootOrder
@@ -12138,6 +13279,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Env_Tiles_Texture_04 (20)
       objectReference: {fileID: 0}
+    - target: {fileID: 169968, guid: 292d28922523dca4a9d538af4cfdb1a1, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 473022, guid: 292d28922523dca4a9d538af4cfdb1a1, type: 3}
       propertyPath: m_RootOrder
       value: 20
@@ -12195,6 +13340,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Env_Tiles_Texture_04 (31)
       objectReference: {fileID: 0}
+    - target: {fileID: 169968, guid: 292d28922523dca4a9d538af4cfdb1a1, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 473022, guid: 292d28922523dca4a9d538af4cfdb1a1, type: 3}
       propertyPath: m_RootOrder
       value: 31
@@ -12241,6 +13390,60 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 292d28922523dca4a9d538af4cfdb1a1, type: 3}
+--- !u!1 &2045213529
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2045213531}
+  - component: {fileID: 2045213530}
+  m_Layer: 0
+  m_Name: LevelManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &2045213530
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2045213529}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 33e8f2ca95c5a384db33dce26cbfb799, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objectiveManager: {fileID: 506985301}
+  numberOfEnemiesInLevel: 6
+  numberOfChestsInLevel: 3
+  thisLevel: {fileID: 11400000, guid: d2a649c5f0c19584aaadcc1d9bcfb3f2, type: 2}
+  ExitBonfire: {fileID: 1851763879}
+  PopupBonfireEnabled: {fileID: 1603212293}
+  isEnabled: 0
+  isCompleted: 0
+  levelCompletedPopup: {fileID: 1603212292}
+  numberStars: 0
+--- !u!4 &2045213531
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2045213529}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.7804117, y: 0.23301268, z: 30.75662}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 17
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &2045406344
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -12251,6 +13454,10 @@ PrefabInstance:
     - target: {fileID: 169968, guid: 292d28922523dca4a9d538af4cfdb1a1, type: 3}
       propertyPath: m_Name
       value: SM_Env_Tiles_Texture_04 (62)
+      objectReference: {fileID: 0}
+    - target: {fileID: 169968, guid: 292d28922523dca4a9d538af4cfdb1a1, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 473022, guid: 292d28922523dca4a9d538af4cfdb1a1, type: 3}
       propertyPath: m_RootOrder
@@ -12318,6 +13525,14 @@ PrefabInstance:
     - target: {fileID: 165716, guid: 780bc58852e53a34784cfcb8d82264af, type: 3}
       propertyPath: m_Name
       value: SM_Env_Wall_01_Alt_Texture (12)
+      objectReference: {fileID: 0}
+    - target: {fileID: 165716, guid: 780bc58852e53a34784cfcb8d82264af, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 165716, guid: 780bc58852e53a34784cfcb8d82264af, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 405382, guid: 780bc58852e53a34784cfcb8d82264af, type: 3}
       propertyPath: m_RootOrder
@@ -12396,6 +13611,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Env_Tiles_Texture_04 (28)
       objectReference: {fileID: 0}
+    - target: {fileID: 169968, guid: 292d28922523dca4a9d538af4cfdb1a1, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 473022, guid: 292d28922523dca4a9d538af4cfdb1a1, type: 3}
       propertyPath: m_RootOrder
       value: 28
@@ -12457,6 +13676,14 @@ PrefabInstance:
     - target: {fileID: 165716, guid: 780bc58852e53a34784cfcb8d82264af, type: 3}
       propertyPath: m_Name
       value: SM_Env_Wall_01_Alt_Texture (6)
+      objectReference: {fileID: 0}
+    - target: {fileID: 165716, guid: 780bc58852e53a34784cfcb8d82264af, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 165716, guid: 780bc58852e53a34784cfcb8d82264af, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 405382, guid: 780bc58852e53a34784cfcb8d82264af, type: 3}
       propertyPath: m_RootOrder
@@ -12525,6 +13752,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Env_Wall_01_Alt_Texture (45)
       objectReference: {fileID: 0}
+    - target: {fileID: 165716, guid: 780bc58852e53a34784cfcb8d82264af, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 165716, guid: 780bc58852e53a34784cfcb8d82264af, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 405382, guid: 780bc58852e53a34784cfcb8d82264af, type: 3}
       propertyPath: m_RootOrder
       value: 45
@@ -12588,7 +13823,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9000053292317615552, guid: ec545e5b29518014388cb554bb29607f, type: 3}
       propertyPath: m_RootOrder
-      value: 14
+      value: 13
       objectReference: {fileID: 0}
     - target: {fileID: 9000053292317615552, guid: ec545e5b29518014388cb554bb29607f, type: 3}
       propertyPath: m_LocalPosition.x
