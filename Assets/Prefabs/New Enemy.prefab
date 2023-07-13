@@ -6693,6 +6693,8 @@ MonoBehaviour:
   currentHandEquipment: {fileID: 0}
   selectedWeaponIndexLeft: 2
   selectedWeaponIndexRight: 1
+  estusFlask: {fileID: 0}
+  antidote: {fileID: 0}
   currentConsumable: {fileID: 0}
   currentSpell: {fileID: 0}
   rightWeapon: {fileID: 11400000, guid: 0060897fa98a2ef4d85f187644374df9, type: 2}
@@ -6734,7 +6736,7 @@ AudioSource:
   SpatializePostEffects: 0
   Priority: 128
   DopplerLevel: 1
-  MinDistance: 1
+  MinDistance: 0.21746445
   MaxDistance: 527.6571
   Pan2D: 0
   rolloffMode: 0

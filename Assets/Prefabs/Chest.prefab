@@ -153,6 +153,7 @@ MonoBehaviour:
   playerStandingPosition: {fileID: 6622432342107237572}
   itemSpawner: {fileID: 9051286534061063573, guid: 4a6ca026486caf847bd6835c6b6b2b6e, type: 3}
   itemInChest: {fileID: 11400000, guid: 69ae6967547257341ba37b25fe3d6b3f, type: 2}
+  objectiveManager: {fileID: 0}
 --- !u!95 &2423829742026955765
 Animator:
   serializedVersion: 5

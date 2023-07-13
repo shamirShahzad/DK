@@ -73,8 +73,6 @@ namespace DK
 
         public  void SetLevelProgressInFirebase()
         {
-            
-
             try
             {
                 if (numberStars > FirebaseManager.instance.levelProgress.playerLevelProgress[thisLevel.levelNumber - 1].numberOfStars)

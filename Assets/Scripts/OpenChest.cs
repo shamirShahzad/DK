@@ -10,6 +10,7 @@ namespace DK
         Transform playerStandingPosition;
         public GameObject itemSpawner;
         public WeaponItem itemInChest;
+        public ObjectiveManager objectiveManager;
         OpenChest openChest;
 
         private void Awake()
@@ -49,6 +50,10 @@ namespace DK
             yield return new WaitForSeconds(1f);
             Instantiate(itemSpawner, transform);
             Destroy(openChest);
+        }
+        public void AddChestToObjectiveManager()
+        {
+            objectiveManager.chestsFound++;
         }
     }
 }

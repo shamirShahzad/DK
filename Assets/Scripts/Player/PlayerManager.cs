@@ -98,7 +98,6 @@ namespace DK
         {
             transform.position = playerStandsHereWhenOpeningChest.transform.position;
             playerAnimatorManager.PlayTargetAnimation("Open Chest", true);
-            objectiveManager.chestsFound++;
         }
 
         public void CheckForInteractable()

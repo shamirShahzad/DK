@@ -372,7 +372,7 @@ RectTransform:
   m_Children:
   - {fileID: 5138247244735367992}
   m_Father: {fileID: 8197537059292626449}
-  m_RootOrder: 19
+  m_RootOrder: 20
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
@@ -610,7 +610,7 @@ RectTransform:
   m_Children:
   - {fileID: 5138247245403656125}
   m_Father: {fileID: 8197537059292626449}
-  m_RootOrder: 18
+  m_RootOrder: 19
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
@@ -27808,7 +27808,7 @@ RectTransform:
   m_Children:
   - {fileID: 1959944524833456521}
   m_Father: {fileID: 8197537059292626449}
-  m_RootOrder: 16
+  m_RootOrder: 17
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -33145,7 +33145,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 8197537059292626449}
-  m_RootOrder: 12
+  m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -43545,7 +43545,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 8197537059292626449}
-  m_RootOrder: 14
+  m_RootOrder: 15
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -54619,7 +54619,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 8197537059292626449}
-  m_RootOrder: 15
+  m_RootOrder: 16
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -54676,7 +54676,7 @@ RectTransform:
   m_Children:
   - {fileID: 1959944524530226998}
   m_Father: {fileID: 8197537059292626449}
-  m_RootOrder: 13
+  m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -55427,7 +55427,7 @@ RectTransform:
   m_Children:
   - {fileID: 7721840190584081234}
   m_Father: {fileID: 8197537059292626449}
-  m_RootOrder: 21
+  m_RootOrder: 22
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -56174,7 +56174,7 @@ MonoBehaviour:
     m_SelectOnDown: {fileID: 0}
     m_SelectOnLeft: {fileID: 0}
     m_SelectOnRight: {fileID: 0}
-  m_Transition: 2
+  m_Transition: 3
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
     m_HighlightedColor: {r: 1, g: 1, b: 1, a: 1}
@@ -56258,7 +56258,7 @@ RectTransform:
   m_Children:
   - {fileID: 5405972060326044801}
   m_Father: {fileID: 8197537059292626449}
-  m_RootOrder: 17
+  m_RootOrder: 18
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}
@@ -57124,7 +57124,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 8197537059292626449}
-  m_RootOrder: 22
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
@@ -162069,7 +162069,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 8197537059292626449}
-  m_RootOrder: 11
+  m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -162641,7 +162641,6 @@ GameObject:
   - component: {fileID: 8197537057790239014}
   - component: {fileID: 8197537057790239012}
   - component: {fileID: 8197537057790239013}
-  - component: {fileID: 8197537057790239035}
   m_Layer: 5
   m_Name: CameraStick
   m_TagString: Untagged
@@ -162758,19 +162757,6 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!114 &8197537057790239035
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8197537057790239008}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6d54531977ecb194c95e2d3aa7a5d72a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_ControlPath: <Gamepad>/rightStickPress
 --- !u!1 &8197537057826933484
 GameObject:
   m_ObjectHideFlags: 0
@@ -163904,6 +163890,7 @@ RectTransform:
   - {fileID: 55272349}
   - {fileID: 8028304487190316478}
   - {fileID: 8028304487728421861}
+  - {fileID: 5940140313970111300}
   - {fileID: 8028304487011417418}
   - {fileID: 1959944525059459861}
   - {fileID: 1959944525930142896}
@@ -163915,7 +163902,6 @@ RectTransform:
   - {fileID: 146584176608954626}
   - {fileID: 6672097438632620643}
   - {fileID: 6446394458216738025}
-  - {fileID: 5940140313970111300}
   - {fileID: 4788229833317008123}
   - {fileID: 7705082154581428476}
   - {fileID: 9076637833840736260}
@@ -164706,7 +164692,7 @@ RectTransform:
   m_Children:
   - {fileID: 397593423743983973}
   m_Father: {fileID: 8197537059292626449}
-  m_RootOrder: 20
+  m_RootOrder: 21
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 0, y: 0.5}

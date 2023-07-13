@@ -12,13 +12,14 @@ GameObject:
   - component: {fileID: 1004140468556526374}
   - component: {fileID: 1004140468557556678}
   - component: {fileID: 2361030679094350618}
+  - component: {fileID: 1688304382}
   m_Layer: 0
   m_Name: Bonfire Exit
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1004140468555133672
 Transform:
   m_ObjectHideFlags: 0
@@ -28,7 +29,7 @@ Transform:
   m_GameObject: {fileID: 1004140468555413196}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -3.809515, y: 0, z: 52.84181}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.9899, y: 1.9899, z: 1.9899}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 3732659008036976284}
@@ -96,8 +97,23 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 2.7564301, y: 2.2933285, z: 3.509056}
-  m_Center: {x: -0.14830852, y: 1.1466643, z: 0.0059814453}
+  m_Size: {x: 1.7822655, y: 1.3805087, z: 1.9038365}
+  m_Center: {x: 0.012151692, y: 0.69025433, z: 0.019447008}
+--- !u!114 &1688304382
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1004140468555413196}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8be0d296cdaf5cd41bf2bf3133dd66be, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  LevelEndAnimation: Bonfire_Start
+  LevelClearPopup: {fileID: 0}
+  levelManager: {fileID: 0}
 --- !u!1 &3732659008036976281
 GameObject:
   m_ObjectHideFlags: 0
