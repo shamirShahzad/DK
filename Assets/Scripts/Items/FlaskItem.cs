@@ -18,6 +18,12 @@ namespace DK
         [Header("Recovery FX")]
         public GameObject recoverFx;
 
+        public PlayerManager playerManager;
+        private void Awake()
+        {
+            healthRecoverAmount = playerManager.playerStatsManager.healthLevel * 2;    
+        }
+
 
         public override void AttemptToConsumeItems(PlayerAnimatorManager playerAnimatorManager,PlayerWeaponSlotManager weaponSlotManager, PlayerFXManager playerFXManager)
         {

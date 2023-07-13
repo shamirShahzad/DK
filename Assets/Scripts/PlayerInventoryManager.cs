@@ -4,7 +4,7 @@ namespace DK
 {
     public class PlayerInventoryManager : CharacterInventoryManager
     {
-        public List<WeaponItem> weaponsInventory;
+        public ConsumableItem consumableItem;
         public List<HelmetEquipment> helmetInventory;
         public List<HandEquipment> armsInventory;
         public List<TorsoEquipment> torsoInventory;

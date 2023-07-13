@@ -17226,6 +17226,17 @@ PrefabInstance:
       objectReference: {fileID: 5138247244368749840}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 96e02eda9c2e03c479bcb5f17f34d8f3, type: 3}
+--- !u!114 &1646726411 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: -8716354990826950485, guid: 96e02eda9c2e03c479bcb5f17f34d8f3, type: 3}
+  m_PrefabInstance: {fileID: 1646726410}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 987cb0cae9b761344bfc6430064075b1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &1650128268
 Transform:
   m_ObjectHideFlags: 0
@@ -32323,8 +32334,9 @@ MonoBehaviour:
   radius: 1
   interactableText: Open Chest
   playerStandingPosition: {fileID: 6622432342244027449}
-  itemSpawner: {fileID: 9051286534061063573, guid: 4a6ca026486caf847bd6835c6b6b2b6e, type: 3}
-  itemInChest: {fileID: 11400000, guid: 69ae6967547257341ba37b25fe3d6b3f, type: 2}
+  itemSpawner: {fileID: 9051286534061063573, guid: af8ab08d64d71f64cb2c44ec5a544f8f, type: 3}
+  itemInChest: {fileID: 11400000, guid: 97e5084faed789046a1d83a06f42fa0d, type: 2}
+  objectiveManager: {fileID: 1646726411}
 --- !u!114 &2863320857719441676
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -32340,8 +32352,9 @@ MonoBehaviour:
   radius: 1
   interactableText: Open Chest
   playerStandingPosition: {fileID: 6622432341848262474}
-  itemSpawner: {fileID: 9051286534061063573, guid: 4a6ca026486caf847bd6835c6b6b2b6e, type: 3}
-  itemInChest: {fileID: 11400000, guid: 69ae6967547257341ba37b25fe3d6b3f, type: 2}
+  itemSpawner: {fileID: 9051286534061063573, guid: af8ab08d64d71f64cb2c44ec5a544f8f, type: 3}
+  itemInChest: {fileID: 11400000, guid: 97e5084faed789046a1d83a06f42fa0d, type: 2}
+  objectiveManager: {fileID: 1646726411}
 --- !u!114 &2863320857829015402
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -32357,8 +32370,9 @@ MonoBehaviour:
   radius: 1
   interactableText: Open Chest
   playerStandingPosition: {fileID: 6622432341738680620}
-  itemSpawner: {fileID: 9051286534061063573, guid: 4a6ca026486caf847bd6835c6b6b2b6e, type: 3}
-  itemInChest: {fileID: 11400000, guid: 69ae6967547257341ba37b25fe3d6b3f, type: 2}
+  itemSpawner: {fileID: 9051286534061063573, guid: 7cee41a0e875e74469bc0197f92b1da1, type: 3}
+  itemInChest: {fileID: 11400000, guid: 97e5084faed789046a1d83a06f42fa0d, type: 2}
+  objectiveManager: {fileID: 1646726411}
 --- !u!122 &2869388806735098130
 Halo:
   m_ObjectHideFlags: 0
@@ -38150,26 +38164,10 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1318440663}
-    - target: {fileID: 4734482973810033988, guid: b224f8ee074729445b3532a555b5504a, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: PlaySound
-      objectReference: {fileID: 0}
-    - target: {fileID: 4734482973810033988, guid: b224f8ee074729445b3532a555b5504a, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: DK.ButtonSounds, Assembly-CSharp
-      objectReference: {fileID: 0}
     - target: {fileID: 5003898971901004229, guid: b224f8ee074729445b3532a555b5504a, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1318440663}
-    - target: {fileID: 5003898971901004229, guid: b224f8ee074729445b3532a555b5504a, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: PlaySound
-      objectReference: {fileID: 0}
-    - target: {fileID: 5003898971901004229, guid: b224f8ee074729445b3532a555b5504a, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: DK.ButtonSounds, Assembly-CSharp
-      objectReference: {fileID: 0}
     - target: {fileID: 5138247244368749843, guid: b224f8ee074729445b3532a555b5504a, type: 3}
       propertyPath: audioSource
       value: 
@@ -38282,26 +38280,10 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1318440663}
-    - target: {fileID: 8541400287949933550, guid: b224f8ee074729445b3532a555b5504a, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: PlaySound
-      objectReference: {fileID: 0}
-    - target: {fileID: 8541400287949933550, guid: b224f8ee074729445b3532a555b5504a, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: DK.ButtonSounds, Assembly-CSharp
-      objectReference: {fileID: 0}
     - target: {fileID: 8560156505133319929, guid: b224f8ee074729445b3532a555b5504a, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1318440663}
-    - target: {fileID: 8560156505133319929, guid: b224f8ee074729445b3532a555b5504a, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: PlaySound
-      objectReference: {fileID: 0}
-    - target: {fileID: 8560156505133319929, guid: b224f8ee074729445b3532a555b5504a, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: DK.ButtonSounds, Assembly-CSharp
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b224f8ee074729445b3532a555b5504a, type: 3}
 --- !u!114 &5138247244368749840 stripped

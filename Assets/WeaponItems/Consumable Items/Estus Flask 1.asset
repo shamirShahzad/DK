@@ -7,15 +7,15 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d01bc9428e27fb64595db0d12464bb7e, type: 3}
-  m_Name: Estus Flask
+  m_Name: Estus Flask 1
   m_EditorClassIdentifier: 
   itemIcon: {fileID: 21300000, guid: 79b6da8b67c0d4130b619d38ee221bf2, type: 3}
   itemName: Health Flask
   maxItemAmount: 15
-  currentItemAmount: 7
+  currentItemAmount: 0
   itemModel: {fileID: 7172700985510971644, guid: 2838060b804921e439a9690ce4b80017, type: 3}
   consumableAnimation: Potion_Drink
   isInteracing: 0
@@ -24,3 +24,4 @@ MonoBehaviour:
   healthRecoverAmount: 20
   focusPointRecoveryAmount: 0
   recoverFx: {fileID: 5590350490807349559, guid: f292c13fc6e16b941b4741c8b1d547ca, type: 3}
+  playerManager: {fileID: 0}

@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c0cd1a4739a86bd469777dd112f93a2d, type: 3}
-  m_Name: Antidote
+  m_Name: Antidote 1
   m_EditorClassIdentifier: 
   itemIcon: {fileID: 21300000, guid: 3fc94290871e74ad9b05c1549dae1423, type: 3}
   itemName: Antidote Capsule MIx

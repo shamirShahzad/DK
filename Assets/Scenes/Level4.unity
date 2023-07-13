@@ -1930,6 +1930,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 780bc58852e53a34784cfcb8d82264af, type: 3}
+--- !u!1 &314305632 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1959944524914117169, guid: b224f8ee074729445b3532a555b5504a, type: 3}
+  m_PrefabInstance: {fileID: 1603212291}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &325174784
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4756,6 +4761,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 626198990}
     m_Modifications:
     - target: {fileID: 2863320857460417154, guid: fdcceb368caa6a64bb02a25b9b7e2999, type: 3}
+      propertyPath: itemInChest
+      value: 
+      objectReference: {fileID: 11400000, guid: 97e5084faed789046a1d83a06f42fa0d, type: 2}
+    - target: {fileID: 2863320857460417154, guid: fdcceb368caa6a64bb02a25b9b7e2999, type: 3}
       propertyPath: objectiveManager
       value: 
       objectReference: {fileID: 506985301}
@@ -6162,11 +6171,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 9000053290340805183, guid: ec545e5b29518014388cb554bb29607f, type: 3}
       propertyPath: m_AnchorMax.x
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 9000053290340805183, guid: ec545e5b29518014388cb554bb29607f, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 9000053292317615552, guid: ec545e5b29518014388cb554bb29607f, type: 3}
       propertyPath: m_RootOrder
@@ -6215,6 +6224,10 @@ PrefabInstance:
     - target: {fileID: 9000053292317615562, guid: ec545e5b29518014388cb554bb29607f, type: 3}
       propertyPath: m_Name
       value: New Enemy (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 9000053292317615562, guid: ec545e5b29518014388cb554bb29607f, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ec545e5b29518014388cb554bb29607f, type: 3}
@@ -6684,6 +6697,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 626198990}
     m_Modifications:
+    - target: {fileID: 2863320857460417154, guid: fdcceb368caa6a64bb02a25b9b7e2999, type: 3}
+      propertyPath: itemInChest
+      value: 
+      objectReference: {fileID: 11400000, guid: 97e5084faed789046a1d83a06f42fa0d, type: 2}
     - target: {fileID: 2863320857460417154, guid: fdcceb368caa6a64bb02a25b9b7e2999, type: 3}
       propertyPath: objectiveManager
       value: 
@@ -10533,10 +10550,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 146584176608954629, guid: b224f8ee074729445b3532a555b5504a, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 500741349125437094, guid: b224f8ee074729445b3532a555b5504a, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
@@ -10549,14 +10562,6 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 506985302}
-    - target: {fileID: 1959944525059459860, guid: b224f8ee074729445b3532a555b5504a, type: 3}
-      propertyPath: SceneName
-      value: Level4
-      objectReference: {fileID: 0}
-    - target: {fileID: 1959944525920472289, guid: b224f8ee074729445b3532a555b5504a, type: 3}
-      propertyPath: SceneName
-      value: Level4
-      objectReference: {fileID: 0}
     - target: {fileID: 2892714763660158300, guid: b224f8ee074729445b3532a555b5504a, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
@@ -10704,7 +10709,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 146584177124536660, guid: b224f8ee074729445b3532a555b5504a, type: 3}
   m_PrefabInstance: {fileID: 1603212291}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 314305632}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 45b901fc893eb504285759b625847595, type: 3}
@@ -12274,6 +12279,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1688304382, guid: d2c437808c89fc64d9062cb279b23b99, type: 3}
+      propertyPath: levelManager
+      value: 
+      objectReference: {fileID: 2045213530}
+    - target: {fileID: 1688304382, guid: d2c437808c89fc64d9062cb279b23b99, type: 3}
+      propertyPath: LevelClearPopup
+      value: 
+      objectReference: {fileID: 314305632}
     - target: {fileID: 1004140468555133672, guid: d2c437808c89fc64d9062cb279b23b99, type: 3}
       propertyPath: m_RootOrder
       value: 7
@@ -12321,10 +12334,6 @@ PrefabInstance:
     - target: {fileID: 1004140468555413196, guid: d2c437808c89fc64d9062cb279b23b99, type: 3}
       propertyPath: m_Name
       value: Bonfire Exit
-      objectReference: {fileID: 0}
-    - target: {fileID: 1004140468555413196, guid: d2c437808c89fc64d9062cb279b23b99, type: 3}
-      propertyPath: m_IsActive
-      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d2c437808c89fc64d9062cb279b23b99, type: 3}
@@ -13119,6 +13128,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 626198990}
     m_Modifications:
+    - target: {fileID: 2863320857460417154, guid: fdcceb368caa6a64bb02a25b9b7e2999, type: 3}
+      propertyPath: itemInChest
+      value: 
+      objectReference: {fileID: 11400000, guid: 97e5084faed789046a1d83a06f42fa0d, type: 2}
     - target: {fileID: 2863320857460417154, guid: fdcceb368caa6a64bb02a25b9b7e2999, type: 3}
       propertyPath: objectiveManager
       value: 

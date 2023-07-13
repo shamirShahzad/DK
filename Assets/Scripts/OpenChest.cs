@@ -9,7 +9,7 @@ namespace DK
         [SerializeField]
         Transform playerStandingPosition;
         public GameObject itemSpawner;
-        public WeaponItem itemInChest;
+        public ConsumableItem itemInChest;
         public ObjectiveManager objectiveManager;
         OpenChest openChest;
 
@@ -40,7 +40,7 @@ namespace DK
 
             if (weaponPickup != null)
             {
-                weaponPickup.weapon = itemInChest;
+                weaponPickup.consumableItem = itemInChest;
             }
 
 
