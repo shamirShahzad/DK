@@ -43,7 +43,6 @@ GameObject:
   - component: {fileID: 2874412987911091168}
   - component: {fileID: 1970513549543210}
   - component: {fileID: 4044866082908597670}
-  - component: {fileID: 2863320857460417154}
   - component: {fileID: 2423829742026955765}
   - component: {fileID: 1193631559}
   m_Layer: 0
@@ -67,6 +66,7 @@ Transform:
   m_Children:
   - {fileID: 8001216277039876997}
   - {fileID: 6622432342107237572}
+  - {fileID: 5687830494637635648}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -136,24 +136,6 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: -69760931014144829, guid: 1bf63c0899d49114e9e0a11b3dbb5187, type: 3}
---- !u!114 &2863320857460417154
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4666558327117510209}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cd8374da7c2c03c49935ce0a909907d1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  radius: 0.3
-  interactableText: Open Chest
-  playerStandingPosition: {fileID: 6622432342107237572}
-  itemSpawner: {fileID: 9051286534061063573, guid: af8ab08d64d71f64cb2c44ec5a544f8f, type: 3}
-  itemInChest: {fileID: 11400000, guid: 53742d759b6041441978e9fa78b03368, type: 2}
-  objectiveManager: {fileID: 0}
 --- !u!95 &2423829742026955765
 Animator:
   serializedVersion: 5
@@ -191,6 +173,56 @@ NavMeshObstacle:
   m_CarveOnlyStationary: 1
   m_Center: {x: 0, y: 0.231, z: 0.012}
   m_TimeToStationary: 0.5
+--- !u!1 &4666883578909385592
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5687830494637635648}
+  - component: {fileID: 3140536715180846784}
+  m_Layer: 0
+  m_Name: GameObject
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5687830494637635648
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4666883578909385592}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0.299, z: -0.016}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 3947758178294609997}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3140536715180846784
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4666883578909385592}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cd8374da7c2c03c49935ce0a909907d1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  radius: 0.6
+  interactableText: Open Chest
+  playerStandingPosition: {fileID: 6622432342107237572}
+  itemSpawner: {fileID: 9051286534061063573, guid: af8ab08d64d71f64cb2c44ec5a544f8f, type: 3}
+  itemInChest: {fileID: 11400000, guid: 53742d759b6041441978e9fa78b03368, type: 2}
+  objectiveManager: {fileID: 0}
 --- !u!1 &7224292098935705919
 GameObject:
   m_ObjectHideFlags: 0

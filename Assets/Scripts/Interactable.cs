@@ -8,6 +8,7 @@ namespace DK
         [SerializeField]
         float radius = 0.6f;
         public string interactableText;
+        public bool isIntro;
         private void OnDrawGizmosSelected()
         {
             Gizmos.color = Color.blue;

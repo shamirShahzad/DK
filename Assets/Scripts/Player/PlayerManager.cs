@@ -112,10 +112,18 @@ namespace DK
 
                     if (interactableObject != null)
                     {
-                        string interactableText = interactableObject.interactableText;
-                        interactableUi.interactableText.text = interactableText;
-                        interactableUiGameObject.SetActive(true);
-
+                        if (interactableObject.isIntro)
+                        {
+                            string interactableText = interactableObject.interactableText;
+                            interactableUi.interactableText.text = interactableText;
+                            interactableUiGameObject.SetActive(true);
+                        }
+                        else
+                        {
+                            string interactableText = interactableObject.interactableText;
+                            interactableUi.interactableText.text = interactableText;
+                            interactableUiGameObject.SetActive(true);
+                        }
                         if (inputHandler.a_input)
                         {
                             hit.collider.GetComponent<Interactable>().Interact(this);

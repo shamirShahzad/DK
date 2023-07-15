@@ -8,7 +8,7 @@ namespace DK
     public class InteractableUi : MonoBehaviour
     {
       public TextMeshProUGUI interactableText;
-        public TextMeshProUGUI itemText;
+      public TextMeshProUGUI itemText;
 
 
     }
