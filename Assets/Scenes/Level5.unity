@@ -1478,6 +1478,22 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 170787018ac39e140b33b3216371beba, type: 3}
+--- !u!82 &26644686 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 5175527109352170414, guid: 170787018ac39e140b33b3216371beba, type: 3}
+  m_PrefabInstance: {fileID: 26644685}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &26644687 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5175527109352170417, guid: 170787018ac39e140b33b3216371beba, type: 3}
+  m_PrefabInstance: {fileID: 26644685}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c4dc7154001525d49bb5e3ebf369c3c6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!23 &28015194
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -7957,6 +7973,10 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1959944525920472289, guid: b224f8ee074729445b3532a555b5504a, type: 3}
+      propertyPath: SceneName
+      value: Level5
+      objectReference: {fileID: 0}
     - target: {fileID: 2892714763660158300, guid: b224f8ee074729445b3532a555b5504a, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
@@ -7981,6 +8001,30 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3915123163763917701, guid: b224f8ee074729445b3532a555b5504a, type: 3}
+      propertyPath: audioSource
+      value: 
+      objectReference: {fileID: 26644686}
+    - target: {fileID: 3915123164153543638, guid: b224f8ee074729445b3532a555b5504a, type: 3}
+      propertyPath: audioSource
+      value: 
+      objectReference: {fileID: 26644686}
+    - target: {fileID: 4734482973810033988, guid: b224f8ee074729445b3532a555b5504a, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 26644687}
+    - target: {fileID: 4734482973810033988, guid: b224f8ee074729445b3532a555b5504a, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: PlaySound
+      objectReference: {fileID: 0}
+    - target: {fileID: 5138247244368749843, guid: b224f8ee074729445b3532a555b5504a, type: 3}
+      propertyPath: audioSource
+      value: 
+      objectReference: {fileID: 26644686}
+    - target: {fileID: 5138247244368749844, guid: b224f8ee074729445b3532a555b5504a, type: 3}
+      propertyPath: audioSource
+      value: 
+      objectReference: {fileID: 26644686}
     - target: {fileID: 8028304487487479753, guid: b224f8ee074729445b3532a555b5504a, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
@@ -8076,6 +8120,22 @@ PrefabInstance:
     - target: {fileID: 8197537059292626461, guid: b224f8ee074729445b3532a555b5504a, type: 3}
       propertyPath: m_Name
       value: Canvas
+      objectReference: {fileID: 0}
+    - target: {fileID: 8541400287949933550, guid: b224f8ee074729445b3532a555b5504a, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 26644687}
+    - target: {fileID: 8541400287949933550, guid: b224f8ee074729445b3532a555b5504a, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: PlaySound
+      objectReference: {fileID: 0}
+    - target: {fileID: 8560156505133319929, guid: b224f8ee074729445b3532a555b5504a, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 26644687}
+    - target: {fileID: 8560156505133319929, guid: b224f8ee074729445b3532a555b5504a, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: PlaySound
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b224f8ee074729445b3532a555b5504a, type: 3}
