@@ -5345,7 +5345,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 33e8f2ca95c5a384db33dce26cbfb799, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objectiveManager: {fileID: 0}
+  objectiveManager: {fileID: 1646726411}
   numberOfEnemiesInLevel: 6
   numberOfChestsInLevel: 3
   thisLevel: {fileID: 11400000, guid: 38ce43aaa777cf8499657221e3654b48, type: 2}
@@ -31941,6 +31941,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   radius: 1
   interactableText: Open Chest
+  isIntro: 0
   playerStandingPosition: {fileID: 6622432342244027449}
   itemSpawner: {fileID: 9051286534061063573, guid: af8ab08d64d71f64cb2c44ec5a544f8f, type: 3}
   itemInChest: {fileID: 11400000, guid: 97e5084faed789046a1d83a06f42fa0d, type: 2}
@@ -31959,6 +31960,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   radius: 1
   interactableText: Open Chest
+  isIntro: 0
   playerStandingPosition: {fileID: 6622432341848262474}
   itemSpawner: {fileID: 9051286534061063573, guid: af8ab08d64d71f64cb2c44ec5a544f8f, type: 3}
   itemInChest: {fileID: 11400000, guid: 97e5084faed789046a1d83a06f42fa0d, type: 2}
@@ -31977,6 +31979,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   radius: 1
   interactableText: Open Chest
+  isIntro: 0
   playerStandingPosition: {fileID: 6622432341738680620}
   itemSpawner: {fileID: 9051286534061063573, guid: 7cee41a0e875e74469bc0197f92b1da1, type: 3}
   itemInChest: {fileID: 11400000, guid: 97e5084faed789046a1d83a06f42fa0d, type: 2}
