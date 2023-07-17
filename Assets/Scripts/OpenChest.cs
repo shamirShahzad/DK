@@ -16,7 +16,7 @@ namespace DK
         private void Awake()
         {
             openChest = GetComponent<OpenChest>();
-            animator = GetComponent <Animator>();
+            animator = GetComponentInParent <Animator>();
         }
 
         public override void Interact(PlayerManager playerManager)
