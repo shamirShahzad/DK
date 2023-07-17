@@ -4842,7 +4842,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   radius: 0.1
   interactableText: Pick up item
-  weapon: {fileID: 11400000, guid: 69ae6967547257341ba37b25fe3d6b3f, type: 2}
+  isIntro: 0
+  consumableItem: {fileID: 11400000, guid: 97e5084faed789046a1d83a06f42fa0d, type: 2}
+  numberOfItems: 4
 --- !u!212 &9051286534061063583
 SpriteRenderer:
   m_ObjectHideFlags: 0

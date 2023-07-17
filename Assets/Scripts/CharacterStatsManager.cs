@@ -11,9 +11,9 @@ namespace DK
         public CharacterManager character;
         [Header("Team ID")]
         public int teamIdNumber = 0;
+        public EnemyBossDeath enemyBossDeath;
 
 
-        
         public int maxHealth;
         public int currentHealth;
         public int killCount = 0;

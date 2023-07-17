@@ -6941,6 +6941,18 @@ PrefabInstance:
       propertyPath: audioSource
       value: 
       objectReference: {fileID: 321832996}
+    - target: {fileID: 3915123164153543638, guid: b224f8ee074729445b3532a555b5504a, type: 3}
+      propertyPath: audioSource
+      value: 
+      objectReference: {fileID: 321832996}
+    - target: {fileID: 4734482973810033988, guid: b224f8ee074729445b3532a555b5504a, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 321832995}
+    - target: {fileID: 4734482973810033988, guid: b224f8ee074729445b3532a555b5504a, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: PlaySound
+      objectReference: {fileID: 0}
     - target: {fileID: 5072582832132421687, guid: b224f8ee074729445b3532a555b5504a, type: 3}
       propertyPath: m_SizeDelta.x
       value: 151.2707
@@ -6961,6 +6973,10 @@ PrefabInstance:
       propertyPath: m_Color.r
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5138247244368749843, guid: b224f8ee074729445b3532a555b5504a, type: 3}
+      propertyPath: audioSource
+      value: 
+      objectReference: {fileID: 321832996}
     - target: {fileID: 5138247244368749844, guid: b224f8ee074729445b3532a555b5504a, type: 3}
       propertyPath: audioSource
       value: 
@@ -7072,6 +7088,22 @@ PrefabInstance:
     - target: {fileID: 8197537059292626461, guid: b224f8ee074729445b3532a555b5504a, type: 3}
       propertyPath: m_Name
       value: Canvas
+      objectReference: {fileID: 0}
+    - target: {fileID: 8541400287949933550, guid: b224f8ee074729445b3532a555b5504a, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 321832995}
+    - target: {fileID: 8541400287949933550, guid: b224f8ee074729445b3532a555b5504a, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: PlaySound
+      objectReference: {fileID: 0}
+    - target: {fileID: 8560156505133319929, guid: b224f8ee074729445b3532a555b5504a, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 321832995}
+    - target: {fileID: 8560156505133319929, guid: b224f8ee074729445b3532a555b5504a, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: PlaySound
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b224f8ee074729445b3532a555b5504a, type: 3}

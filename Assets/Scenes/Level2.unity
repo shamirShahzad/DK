@@ -1338,6 +1338,10 @@ PrefabInstance:
       propertyPath: objectiveManager
       value: 
       objectReference: {fileID: 1328899610}
+    - target: {fileID: 3140536715180846784, guid: fdcceb368caa6a64bb02a25b9b7e2999, type: 3}
+      propertyPath: objectiveManager
+      value: 
+      objectReference: {fileID: 1328899610}
     - target: {fileID: 3947758178294609997, guid: fdcceb368caa6a64bb02a25b9b7e2999, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -7999,6 +8003,10 @@ PrefabInstance:
       propertyPath: objectiveManager
       value: 
       objectReference: {fileID: 1328899610}
+    - target: {fileID: 3140536715180846784, guid: fdcceb368caa6a64bb02a25b9b7e2999, type: 3}
+      propertyPath: objectiveManager
+      value: 
+      objectReference: {fileID: 1328899610}
     - target: {fileID: 3947758178294609997, guid: fdcceb368caa6a64bb02a25b9b7e2999, type: 3}
       propertyPath: m_RootOrder
       value: 2
@@ -13019,6 +13027,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 9051286534061063573, guid: 7cee41a0e875e74469bc0197f92b1da1, type: 3}
     - target: {fileID: 2863320857460417154, guid: fdcceb368caa6a64bb02a25b9b7e2999, type: 3}
+      propertyPath: objectiveManager
+      value: 
+      objectReference: {fileID: 1328899610}
+    - target: {fileID: 3140536715180846784, guid: fdcceb368caa6a64bb02a25b9b7e2999, type: 3}
       propertyPath: objectiveManager
       value: 
       objectReference: {fileID: 1328899610}

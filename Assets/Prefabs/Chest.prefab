@@ -183,9 +183,10 @@ GameObject:
   m_Component:
   - component: {fileID: 5687830494637635648}
   - component: {fileID: 3140536715180846784}
+  - component: {fileID: 1437043028}
   m_Layer: 0
   m_Name: GameObject
-  m_TagString: Untagged
+  m_TagString: Interactable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -217,12 +218,26 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cd8374da7c2c03c49935ce0a909907d1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  radius: 0.6
+  radius: 1
   interactableText: Open Chest
+  isIntro: 0
   playerStandingPosition: {fileID: 6622432342107237572}
   itemSpawner: {fileID: 9051286534061063573, guid: af8ab08d64d71f64cb2c44ec5a544f8f, type: 3}
   itemInChest: {fileID: 11400000, guid: 53742d759b6041441978e9fa78b03368, type: 2}
   objectiveManager: {fileID: 0}
+--- !u!135 &1437043028
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4666883578909385592}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.5
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &7224292098935705919
 GameObject:
   m_ObjectHideFlags: 0

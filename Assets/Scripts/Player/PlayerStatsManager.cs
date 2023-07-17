@@ -16,7 +16,6 @@ namespace DK
         public float focusRegenarationAmount = 15;
         public float staminaRegenerationTimer = 0;
         public float focusRegenrationTimer = 0;
-
         public HealthBar healthBar;
         public StaminaBar staminaBar;
         public FocusPointBar focusPointBar;

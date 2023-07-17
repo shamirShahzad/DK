@@ -31,8 +31,8 @@ namespace DK
         public int intelligenceLevel = 10;
         public int faithLevel = 10;
         [Header("Currency")]
-        public int soulPlayersPosseses = 10000000;
-        public int goldAmount = 10000000;
+        public int soulPlayersPosseses = 100;
+        public int goldAmount = 100;
         [Header("Player Deth Count")]
         public int deathCount;
        
