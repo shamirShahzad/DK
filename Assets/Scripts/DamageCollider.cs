@@ -94,7 +94,12 @@ namespace DK
                     DealDamage(enemy.characterStatsManager);
                     if (enemy.characterStatsManager.currentHealth <= 0)
                     {
+                        
                         characterManager.characterStatsManager.killCount++;
+                        if (characterManager.characterStatsManager.enemyBossDeath!=null)
+                        {
+                            characterManager.characterStatsManager.enemyBossDeath.SpawnChest();
+                        }
                         characterManager.objectiveManager.SetEnemiesKilled(characterManager.characterStatsManager.killCount);
                     }
                 }

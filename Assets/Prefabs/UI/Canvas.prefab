@@ -150366,7 +150366,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1955536122800292601
 RectTransform:
   m_ObjectHideFlags: 0
@@ -156029,7 +156029,7 @@ GameObject:
   - component: {fileID: 6851525203008353279}
   - component: {fileID: 6851525203008353271}
   m_Layer: 5
-  m_Name: Slider_Red
+  m_Name: Health bar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -156249,7 +156249,7 @@ GameObject:
   - component: {fileID: 6851525203698333060}
   - component: {fileID: 6851525203698333083}
   m_Layer: 5
-  m_Name: Slider_Green
+  m_Name: Stamina
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -156466,7 +156466,7 @@ GameObject:
   - component: {fileID: 6851525204008424355}
   - component: {fileID: 6851525204008424354}
   m_Layer: 5
-  m_Name: FrameIcon1
+  m_Name: Background
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -156796,7 +156796,7 @@ GameObject:
   - component: {fileID: 6851525204757029320}
   - component: {fileID: 6851525204757029335}
   m_Layer: 5
-  m_Name: FrameIcon3
+  m_Name: Level
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
