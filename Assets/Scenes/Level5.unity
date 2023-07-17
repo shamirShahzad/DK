@@ -7965,6 +7965,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 146584177124536660, guid: b224f8ee074729445b3532a555b5504a, type: 3}
+      propertyPath: levelManager
+      value: 
+      objectReference: {fileID: 1781591028}
     - target: {fileID: 500741349125437094, guid: b224f8ee074729445b3532a555b5504a, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
@@ -7972,6 +7976,14 @@ PrefabInstance:
     - target: {fileID: 500741349125437094, guid: b224f8ee074729445b3532a555b5504a, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1959944525059459860, guid: b224f8ee074729445b3532a555b5504a, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 1222719676}
+    - target: {fileID: 1959944525059459860, guid: b224f8ee074729445b3532a555b5504a, type: 3}
+      propertyPath: SceneName
+      value: Level5
       objectReference: {fileID: 0}
     - target: {fileID: 1959944525920472289, guid: b224f8ee074729445b3532a555b5504a, type: 3}
       propertyPath: SceneName
@@ -8025,6 +8037,18 @@ PrefabInstance:
       propertyPath: audioSource
       value: 
       objectReference: {fileID: 26644686}
+    - target: {fileID: 5805027380293657085, guid: b224f8ee074729445b3532a555b5504a, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 26644687}
+    - target: {fileID: 5805027380293657085, guid: b224f8ee074729445b3532a555b5504a, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: PlaySound
+      objectReference: {fileID: 0}
+    - target: {fileID: 7290851500132965365, guid: b224f8ee074729445b3532a555b5504a, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 1222719676}
     - target: {fileID: 8028304487487479753, guid: b224f8ee074729445b3532a555b5504a, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
@@ -15064,6 +15088,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 987cb0cae9b761344bfc6430064075b1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1222719676 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2554598860014443786, guid: 96e02eda9c2e03c479bcb5f17f34d8f3, type: 3}
+  m_PrefabInstance: {fileID: 1222719674}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1558872077}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f824e1ec92be3a941834e4001e91c0a2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!4 &1234253435

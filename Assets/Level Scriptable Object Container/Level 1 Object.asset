@@ -14,5 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isLocked: 0
   isCompleted: 0
+  numStars: 0
   levelNumber: 1
-  levelScene: {fileID: 102900000, guid: d97949635cb513a4b89acff65207bc7e, type: 3}
+  levelScene: {fileID: 102900000, guid: b5e9ac189888cbf4b8d5d8853dda352b, type: 3}
