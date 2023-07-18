@@ -17046,6 +17046,18 @@ PrefabInstance:
       propertyPath: itemInteractableGameobject
       value: 
       objectReference: {fileID: 5016458905602042973}
+    - target: {fileID: 2554598860014443788, guid: 96e02eda9c2e03c479bcb5f17f34d8f3, type: 3}
+      propertyPath: antidote
+      value: 
+      objectReference: {fileID: 11400000, guid: 28d47a0bfab76504eaa0b2469d84e81f, type: 2}
+    - target: {fileID: 2554598860014443788, guid: 96e02eda9c2e03c479bcb5f17f34d8f3, type: 3}
+      propertyPath: estusFlask
+      value: 
+      objectReference: {fileID: 11400000, guid: 53742d759b6041441978e9fa78b03368, type: 2}
+    - target: {fileID: 2554598860014443788, guid: 96e02eda9c2e03c479bcb5f17f34d8f3, type: 3}
+      propertyPath: currentConsumable
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 2554598860014443789, guid: 96e02eda9c2e03c479bcb5f17f34d8f3, type: 3}
       propertyPath: m_Name
       value: New Player

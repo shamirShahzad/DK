@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44402185, g: 0.49316466, b: 0.57223153, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -63920,6 +63920,14 @@ PrefabInstance:
       propertyPath: itemInteractableGameobject
       value: 
       objectReference: {fileID: 1960209441}
+    - target: {fileID: 2554598860014443788, guid: 96e02eda9c2e03c479bcb5f17f34d8f3, type: 3}
+      propertyPath: antidote
+      value: 
+      objectReference: {fileID: 11400000, guid: 28d47a0bfab76504eaa0b2469d84e81f, type: 2}
+    - target: {fileID: 2554598860014443788, guid: 96e02eda9c2e03c479bcb5f17f34d8f3, type: 3}
+      propertyPath: estusFlask
+      value: 
+      objectReference: {fileID: 11400000, guid: 53742d759b6041441978e9fa78b03368, type: 2}
     - target: {fileID: 2554598860014443789, guid: 96e02eda9c2e03c479bcb5f17f34d8f3, type: 3}
       propertyPath: m_Name
       value: New Player
