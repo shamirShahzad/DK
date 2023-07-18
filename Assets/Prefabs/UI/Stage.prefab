@@ -527,9 +527,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   levelObject: {fileID: 0}
+  singleLevelProgress:
+    level: 1
+    numberOfStars: 0
+    isCompleted: 0
   starsSlider: {fileID: 627623859532041973}
   levelNumberText: {fileID: 627623859501177635}
   lockIcon: {fileID: 2029989203622551065}
+  audioSource: {fileID: 0}
+  loadingScreen: {fileID: 0}
+  panelStage: {fileID: 0}
+  panelHome: {fileID: 0}
+  musicSource: {fileID: 0}
 --- !u!1 &1740332631833837720
 GameObject:
   m_ObjectHideFlags: 0
