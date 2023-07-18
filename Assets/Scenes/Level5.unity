@@ -15025,6 +15025,14 @@ PrefabInstance:
       propertyPath: itemInteractableGameobject
       value: 
       objectReference: {fileID: 610917128}
+    - target: {fileID: 2554598860014443788, guid: 96e02eda9c2e03c479bcb5f17f34d8f3, type: 3}
+      propertyPath: antidote
+      value: 
+      objectReference: {fileID: 11400000, guid: 28d47a0bfab76504eaa0b2469d84e81f, type: 2}
+    - target: {fileID: 2554598860014443788, guid: 96e02eda9c2e03c479bcb5f17f34d8f3, type: 3}
+      propertyPath: estusFlask
+      value: 
+      objectReference: {fileID: 11400000, guid: 53742d759b6041441978e9fa78b03368, type: 2}
     - target: {fileID: 2554598860014443789, guid: 96e02eda9c2e03c479bcb5f17f34d8f3, type: 3}
       propertyPath: m_Name
       value: New Player
@@ -22308,6 +22316,10 @@ PrefabInstance:
       value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 3320699929607011989, guid: cca7daa654f58ad4f9a14b4d6534deb0, type: 3}
+      propertyPath: soulsAwardedOnDeath
+      value: 280
+      objectReference: {fileID: 0}
+    - target: {fileID: 3320699929607011989, guid: cca7daa654f58ad4f9a14b4d6534deb0, type: 3}
       propertyPath: totalPoiseResetTime
       value: 2.5
       objectReference: {fileID: 0}
@@ -22335,6 +22347,10 @@ PrefabInstance:
       propertyPath: currentAttackType
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 4664210352641450463, guid: cca7daa654f58ad4f9a14b4d6534deb0, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 1222719676}
     - target: {fileID: 7767633217973460029, guid: cca7daa654f58ad4f9a14b4d6534deb0, type: 3}
       propertyPath: m_IsActive
       value: 0
@@ -22357,7 +22373,7 @@ PrefabInstance:
       objectReference: {fileID: 610917132}
     - target: {fileID: 8056325251144874707, guid: cca7daa654f58ad4f9a14b4d6534deb0, type: 3}
       propertyPath: blockLikelyHood
-      value: 67
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 8056325251144874707, guid: cca7daa654f58ad4f9a14b4d6534deb0, type: 3}
       propertyPath: comboLikelyhood
@@ -22369,12 +22385,16 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8056325251144874707, guid: cca7daa654f58ad4f9a14b4d6534deb0, type: 3}
       propertyPath: dodgeLikelyHood
-      value: 57
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 8056325251144874707, guid: cca7daa654f58ad4f9a14b4d6534deb0, type: 3}
       propertyPath: parryLikelyHood
       value: 17
       objectReference: {fileID: 0}
+    - target: {fileID: 8056325251144874707, guid: cca7daa654f58ad4f9a14b4d6534deb0, type: 3}
+      propertyPath: enemyBossManager
+      value: 
+      objectReference: {fileID: 1929748314}
     - target: {fileID: 8056325251144874707, guid: cca7daa654f58ad4f9a14b4d6534deb0, type: 3}
       propertyPath: allowAIToPerformBlock
       value: 1
@@ -22453,6 +22473,25 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cca7daa654f58ad4f9a14b4d6534deb0, type: 3}
+--- !u!1 &1929748313 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8056325251144874706, guid: cca7daa654f58ad4f9a14b4d6534deb0, type: 3}
+  m_PrefabInstance: {fileID: 1929748312}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1929748314
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1929748313}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 22deccd06ca38814d840e4d996d58dd4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bossName: Ronin Knight
+  particleFX: {fileID: 6924996066633571753, guid: bb52fa8e366dfa64caa7172e14cdab51, type: 3}
 --- !u!1 &1934864905
 GameObject:
   m_ObjectHideFlags: 0
